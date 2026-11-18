@@ -1,0 +1,8 @@
+PREFIX pgr: <http://w3id.org/tripletrail/pgr#>
+SELECT ?path_id (MAX(?agg) AS ?cost) WHERE {
+  SERVICE <http://w3id.org/tripletrail/pgr> {
+    [] pgr:function pgr:pgr_KSP ; pgr:network bench:micro ; pgr:K 5 ;
+       pgr:start_vid "{{src}}" ; pgr:end_vid "{{dst}}" ;
+       pgr:path_id ?path_id ; pgr:agg_cost ?agg .
+  }
+} GROUP BY ?path_id

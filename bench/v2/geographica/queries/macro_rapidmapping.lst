@@ -1,0 +1,132 @@
+Query 0 - Get_CLC_areas:
+
+PREFIX clc: <http://geo.linkedopendata.gr/corine/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+
+SELECT ?a ?aID ?aLandUse ?aGeo ?aGeoWKT 
+WHERE { 
+  GRAPH <http://geographica.di.uoa.gr/dataset/clc> { 
+    ?a rdf:type clc:Area ; 
+       clc:hasID ?aID ; 
+       clc:hasLandUse ?aLandUse ; 
+       <http://geo.linkedopendata.gr/corine/ontology#hasGeometry> ?aGeo . 
+    ?aGeo <http://geo.linkedopendata.gr/corine/ontology#asWKT> ?aGeoWKT. 
+  }  
+  FILTER(geof:sfIntersects(?aGeoWKT, "POLYGON((20.7858013633644 36.9947301001973,20.6070018260972 40.8452031365591,26.111857027467 40.875795540161,26.0004221014641 37.02141161985,20.7858013633644 36.9947301001973))"^^<http://www.opengis.net/ont/geosparql#wktLiteral>))
+} 
+
+
+Query 1 - Get_highways:
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>  
+
+SELECT ?r ?rName ?rGeo ?rGeoWKT 
+WHERE { 
+  GRAPH <http://geographica.di.uoa.gr/dataset/lgd> { 
+    ?r rdf:type lgdo:HighwayThing ; 
+       rdfs:label ?rName ; 
+       <http://linkedgeodata.org/ontology/hasGeometry> ?rGeo . 
+    ?rGeo <http://linkedgeodata.org/ontology/asWKT> ?rGeoWKT. 
+  } 
+  FILTER(geof:sfIntersects(?rGeoWKT, "POLYGON((20.7858013633644 36.9947301001973,20.6070018260972 40.8452031365591,26.111857027467 40.875795540161,26.0004221014641 37.02141161985,20.7858013633644 36.9947301001973))"^^<http://www.opengis.net/ont/geosparql#wktLiteral>))
+} 
+
+
+Query 2 - Get_municipalities:
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>   
+
+SELECT (geof:boundary(?gGeoWKT) as ?boundary) ?gLabel 
+WHERE { 
+  GRAPH <http://geographica.di.uoa.gr/dataset/gag> { 
+    ?g rdf:type gag:Δήμος; 
+       rdfs:label ?gLabel ; 
+       <http://geo.linkedopendata.gr/gag/ontology/hasGeometry> ?gGeo . 
+    ?gGeo <http://geo.linkedopendata.gr/gag/ontology/asWKT> ?gGeoWKT . 
+  } 
+  FILTER(geof:sfIntersects(?gGeoWKT, "POLYGON((20.7858013633644 36.9947301001973,20.6070018260972 40.8452031365591,26.111857027467 40.875795540161,26.0004221014641 37.02141161985,20.7858013633644 36.9947301001973))"^^<http://www.opengis.net/ont/geosparql#wktLiteral>))
+} 
+
+
+Query 3 - Get_hotspots:
+
+PREFIX noa: <http://teleios.di.uoa.gr/ontologies/noaOntology.owl#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+
+SELECT ?h ?sensor ?confidence ?producer ?satellite ?chain ?confirmation ?geomentry ?r ?wkt 
+WHERE {  
+  GRAPH <http://geographica.di.uoa.gr/dataset/hotspots> { 
+    ?h rdf:type noa:Hotspot; 
+       noa:isDerivedFromSensor ?sensor; 
+       noa:hasConfidence ?confidence; 
+       noa:isProducedBy ?producer; 
+       noa:isDerivedFromSatellite ?satellite; 
+       noa:producedFromProcessingChain ?chain; 
+       noa:hasConfirmation ?confirmation ; 
+       noa:hasAcquisitionTime "2007-07-26T00:45:00"^^xsd:dateTime; 
+       <http://teleios.di.uoa.gr/ontologies/noaOntology.owl#hasGeometry> ?geomentry. 
+    OPTIONAL {?h noa:refinedBy ?r} 
+    FILTER(!bound(?r)) 
+    ?geometry <http://teleios.di.uoa.gr/ontologies/noaOntology.owl#asWKT> ?wkt . 
+  FILTER(geof:sfIntersects(?wkt, "POLYGON((20.7858013633644 36.9947301001973,20.6070018260972 40.8452031365591,26.111857027467 40.875795540161,26.0004221014641 37.02141161985,20.7858013633644 36.9947301001973))"^^<http://www.opengis.net/ont/geosparql#wktLiteral>))
+  }
+}
+
+
+Query 4 - Get_coniferous_forests_in_fire:
+
+PREFIX clc: <http://geo.linkedopendata.gr/corine/ontology#> 
+PREFIX noa: <http://teleios.di.uoa.gr/ontologies/noaOntology.owl#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>  
+
+SELECT ?h ?hWKT 
+WHERE { 
+  GRAPH <http://geographica.di.uoa.gr/dataset/hotspots> { 
+    ?h  rdf:type noa:Hotspot ; 
+        <http://teleios.di.uoa.gr/ontologies/noaOntology.owl#hasGeometry> ?hGeo ; 
+        noa:hasAcquisitionTime "2007-07-26T00:45:00"^^xsd:dateTime . 
+    ?hGeo <http://teleios.di.uoa.gr/ontologies/noaOntology.owl#asWKT> ?hWKT. 
+  } 
+  GRAPH <http://geographica.di.uoa.gr/dataset/clc> { 
+    ?a  a clc:Area ; 
+        <http://geo.linkedopendata.gr/corine/ontology#hasGeometry> ?aGeo ; 
+        clc:hasLandUse clc:coniferousForest . 
+    ?aGeo <http://geo.linkedopendata.gr/corine/ontology#asWKT> ?aWKT . 
+  } 
+  FILTER(geof:sfIntersects(?hWKT, ?aWKT)) . 
+  FILTER(geof:sfIntersects(?aWKT, "POLYGON((20.7858013633644 36.9947301001973,20.6070018260972 40.8452031365591,26.111857027467 40.875795540161,26.0004221014641 37.02141161985,20.7858013633644 36.9947301001973))"^^<http://www.opengis.net/ont/geosparql#wktLiteral>))
+} 
+
+
+Query 5 - Get_road_segments_affected_by_fire:
+
+PREFIX clc: <http://geo.linkedopendata.gr/corine/ontology#> 
+PREFIX noa: <http://teleios.di.uoa.gr/ontologies/noaOntology.owl#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX lgdo: <http://linkedgeodata.org/ontology/> 
+
+SELECT ?r (geof:difference(?rWKT, ?hWKT) AS ?diff) 
+WHERE { 
+  GRAPH <http://geographica.di.uoa.gr/dataset/hotspots> { 
+    ?h  rdf:type noa:Hotspot ; 
+        <http://teleios.di.uoa.gr/ontologies/noaOntology.owl#hasGeometry> ?hGeo ; 
+        noa:hasAcquisitionTime ?hAcqTime . 
+	  ?hGeo <http://teleios.di.uoa.gr/ontologies/noaOntology.owl#asWKT> ?hWKT. 
+  } 
+  GRAPH <http://geographica.di.uoa.gr/dataset/lgd> { 
+    ?r  rdf:type lgdo:HighwayThing ; 
+        <http://linkedgeodata.org/ontology/hasGeometry> ?rGeo . 
+	  ?rGeo	<http://linkedgeodata.org/ontology/asWKT> ?rWKT. 
+  } 
+  FILTER(geof:sfIntersects(?rWKT, ?hWKT)) .  
+  FILTER(geof:sfIntersects(?rWKT, "POLYGON((20.7858013633644 36.9947301001973,20.6070018260972 40.8452031365591,26.111857027467 40.875795540161,26.0004221014641 37.02141161985,20.7858013633644 36.9947301001973))"^^<http://www.opengis.net/ont/geosparql#wktLiteral>))
+}

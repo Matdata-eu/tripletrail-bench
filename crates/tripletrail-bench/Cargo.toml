@@ -1,0 +1,25 @@
+[package]
+name = "tripletrail-bench"
+description = "Phase-0 benchmarks: a generated ERA-shaped network and real RINF data"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.95"
+repository = "https://github.com/Matdata-eu/tripletrail-bench"
+license = "Apache-2.0"
+publish = false
+default-run = "tripletrail-bench"
+
+[dependencies]
+tripletrail-testdir = { path = "../../core/crates/tripletrail-testdir" }
+tripletrail = { path = "../../core/crates/tripletrail" }
+tripletrail-store = { path = "../../core/crates/tripletrail-store" }
+oxigraph = { version = "0.5.13", default-features = false, features = ["rdf-12"], optional = true }
+
+[features]
+# On-disk store for the real-data benchmark (`rinf --store <dir>`).
+rocksdb = ["dep:oxigraph", "oxigraph/rocksdb"]
+
+# The access benchmark's row-rule table needs row-level policies, an enterprise feature: the
+# enterprise repository builds it with the feature `enterprise`.
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(feature, values("enterprise"))'] }

@@ -1,0 +1,5 @@
+SELECT ?r (SUM(geof:metricLength(geof:intersection(?w1, ?w2))) AS ?m) WHERE {
+  ?e a era:LinearElement ; geo:hasGeometry/geo:asWKT ?w1 .
+  ?r a bench:Region ; geo:hasGeometry/geo:asWKT ?w2 .
+  FILTER(geof:sfIntersects(?w1, ?w2))
+} GROUP BY ?r

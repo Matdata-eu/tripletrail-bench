@@ -1,0 +1,11 @@
+# The jobs that fit the NUC's ~12 GB to spare (bench.sh all nuc; workflow suite=all,
+# dataset=nuc, machine=nuc): the 1M-triple scales, no v2 large, no BSBM 10M.
+# One job per line: <suite> <dataset> [KEY=VALUE ...] (environment for that job only).
+v2 small
+v2 osm_norway
+geographica all
+bsbm 2785
+sparqloscope bsbm-2785
+sparqloscope rinf-0076
+trainmarks medium
+trainmarks large

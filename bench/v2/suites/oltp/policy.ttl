@@ -1,0 +1,3 @@
+@prefix sg: <https://matdata.eu/ns/sparql-guard#> .
+@prefix ex: <http://example.org/policies/> .
+ex:Edit a sg:Policy ; sg:agent sg:AuthenticatedAgent ; sg:writeAllGraphs true .

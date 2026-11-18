@@ -1,0 +1,2 @@
+{ "auth": { "trustedHeaders": { "agent": "x-forwarded-user" }, "anonymous": false },
+  "datasets": { "ds": { "policies": ["policy.ttl"] } } }

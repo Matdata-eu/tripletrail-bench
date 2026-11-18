@@ -1,0 +1,4 @@
+# The scale benchmark of #218, for a 64 GB server (ccx43): workflow suite=all dataset=scale.
+# osm_benelux first: it downloads the Europe extract, which osm_europe then uses and deletes.
+scale osm_benelux
+scale osm_europe

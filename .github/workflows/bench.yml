@@ -1,0 +1,342 @@
+name: Benchmarks
+# The run list shows the inputs in the run title.
+run-name: "${{ inputs.suite }} ${{ inputs.dataset }} at ${{ inputs.core_ref }} on ${{ inputs.machine }} (${{ inputs.engines }})"
+
+# Every benchmark through one entry point, bench/v2/bench.sh, on a Hetzner Cloud server rented
+# for the run (see bench/v2/cloud/README.md). Manual only, after approval in the `benchmark`
+# environment: never on push or pull request.
+#
+# suite = all runs every job of the profile bench/v2/profiles/<dataset>.txt (full: everything
+#   for a 64 GB server; scale: OSM Benelux and Europe; dashboard: both) on one server, one job
+#   after the other. A run that includes OSM Europe gets a 600 GB volume when volume_gb is 0.
+# suite = v2 | geographica | bsbm | sparqloscope | trainmarks | updates | scale runs that one job.
+# core_ref = the tag, branch or commit of Matdata-eu/tripletrail to measure.
+#
+# Needs the repository secrets HCLOUD_TOKEN (Hetzner project API token, read & write) and
+# RUNNER_ADMIN_TOKEN (fine-grained token for this repository with Administration: read and
+# write, to issue the runner registration token).
+#
+# The results are uploaded as artifacts, and the collect job pushes them together to the branch
+# bench-results/<run id> with a pull request.
+
+on:
+  workflow_dispatch:
+    inputs:
+      core_ref:
+        description: "TripleTrail tag, branch or commit to measure"
+        required: true
+        default: main
+      suite:
+        description: "all | v2 | geographica | bsbm | sparqloscope | trainmarks | updates | scale"
+        required: true
+        default: all
+      dataset:
+        description: "all: profile (full | scale | dashboard = full + scale); v2: small | large | osm_norway; geographica: all; bsbm: products (2785 ~ 1M triples, 28480 ~ 10M); sparqloscope: bsbm-<n> | rinf-<code> | dblp; trainmarks: medium | large | xlarge; updates: bsbm-<n> | rinf-<code>; scale: osm_benelux | osm_europe (OSM Europe, 1B triples, --memory-limit 32G)"
+        required: true
+        default: full
+      engines:
+        description: "default (each suite's own set), or space-separated engines (postgis tripletrail oxigraph qlever jena graphdb maplib)"
+        required: true
+        default: default
+      machine:
+        description: "Hetzner server type (ccx43 = 64 GB)"
+        required: true
+        default: ccx43
+      location:
+        description: "Hetzner location (fsn1, nbg1, hel1)"
+        required: false
+        default: fsn1
+      volume_gb:
+        description: "Hetzner only: an extra volume of this many GB for the work directory (0 for none; a run with OSM Europe gets 600 when left at 0)"
+        required: false
+        default: "0"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  # A maintainer approves every run before a server is rented (Settings → Environments →
+  # benchmark → Required reviewers). The environment holds no secrets, so teardown never waits.
+  approve:
+    runs-on: ubuntu-latest
+    environment: benchmark
+    steps:
+      - run: echo "approved by ${{ github.actor }}"
+
+  provision:
+    needs: approve
+    # Only curl calls.
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    outputs:
+      label: ${{ steps.create.outputs.label }}
+      server_id: ${{ steps.create.outputs.server_id }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create the Hetzner server
+        id: create
+        env:
+          HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
+          RUNNER_ADMIN_TOKEN: ${{ secrets.RUNNER_ADMIN_TOKEN }}
+          LABEL: bench-${{ github.run_id }}
+          SERVER_TYPE: ${{ inputs.machine }}
+          LOCATION: ${{ inputs.location }}
+          VOLUME_GB: ${{ ((inputs.volume_gb == '0' || inputs.volume_gb == '') && ((inputs.suite == 'all' && (inputs.dataset == 'scale' || inputs.dataset == 'dashboard')) || (inputs.suite == 'scale' && inputs.dataset == 'osm_europe'))) && '600' || inputs.volume_gb }}
+        run: |
+          set -euo pipefail
+          [ -n "$HCLOUD_TOKEN" ] && [ -n "$RUNNER_ADMIN_TOKEN" ] || { echo "::error::set the HCLOUD_TOKEN and RUNNER_ADMIN_TOKEN secrets (bench/v2/cloud/README.md)"; exit 1; }
+          # call <what> <curl args...>: the response body, or an error with the API's own message.
+          resp="$RUNNER_TEMP/api-response.json"
+          call() {
+            local what=$1; shift
+            local code; code=$(curl -sS -o "$resp" -w '%{http_code}' "$@")
+            if [ "${code:0:1}" != 2 ]; then
+              echo "::error::$what failed: HTTP $code: $(head -c 600 "$resp")" >&2; return 1; fi
+            cat "$resp"
+          }
+          call "GitHub runner registration token (RUNNER_ADMIN_TOKEN needs Administration: write on this repository)" \
+            -X POST -H "Authorization: Bearer $RUNNER_ADMIN_TOKEN" -H "Accept: application/vnd.github+json" \
+            "${{ github.api_url }}/repos/${{ github.repository }}/actions/runners/registration-token" >"$RUNNER_TEMP/reg.json"
+          reg=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["token"])' "$RUNNER_TEMP/reg.json")
+          echo "::add-mask::$reg"
+          # The extra volume, created with the run label so that teardown deletes it too; Hetzner
+          # formats it and mounts it at /mnt/HC_Volume_<id>, which setup-runner.sh links to /bench-volume.
+          vol=""
+          if [ "${VOLUME_GB:-0}" != 0 ]; then
+            python3 -c 'import json,os; print(json.dumps({"name": os.environ["LABEL"], "size": int(os.environ["VOLUME_GB"]),
+              "location": os.environ["LOCATION"], "format": "ext4",
+              "labels": {"purpose": "tripletrail-bench", "run": "${{ github.run_id }}"}}))' >vol.json
+            call "Hetzner volume create (${VOLUME_GB} GB in $LOCATION)" \
+              -X POST -H "Authorization: Bearer $HCLOUD_TOKEN" -H "Content-Type: application/json" \
+              --data @vol.json https://api.hetzner.cloud/v1/volumes >"$RUNNER_TEMP/volume.json"
+            vol=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["volume"]["id"])' "$RUNNER_TEMP/volume.json")
+            rm -f vol.json
+            echo "volume $vol (${VOLUME_GB} GB in $LOCATION)"
+          fi
+          python3 - "$reg" "$vol" >body.json <<'EOF'
+          import json, os, sys
+          vol = sys.argv[2]
+          script = open("bench/v2/cloud/setup-runner.sh").read().split("\n", 1)[1]
+          user_data = ("#!/bin/bash\n"
+                       f"export RUNNER_TOKEN='{sys.argv[1]}' LABELS='{os.environ['LABEL']}' "
+                       f"REPO_URL='${{ github.server_url }}/${{ github.repository }}' VOLUME_ID='{vol}'\n" + script)
+          body = {"name": os.environ["LABEL"], "server_type": os.environ["SERVER_TYPE"],
+                  "image": "ubuntu-24.04", "location": os.environ["LOCATION"],
+                  "user_data": user_data, "labels": {"purpose": "tripletrail-bench",
+                                                       "run": "${{ github.run_id }}"}}
+          if vol:
+              body.update(volumes=[int(vol)], automount=True)
+          print(json.dumps(body))
+          EOF
+          call "Hetzner server create ($SERVER_TYPE in $LOCATION)" \
+            -X POST -H "Authorization: Bearer $HCLOUD_TOKEN" -H "Content-Type: application/json" \
+            --data @body.json https://api.hetzner.cloud/v1/servers >"$RUNNER_TEMP/server.json"
+          id=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["server"]["id"])' "$RUNNER_TEMP/server.json")
+          rm -f body.json
+          echo "server $id ($SERVER_TYPE in $LOCATION), runner label $LABEL"
+          echo "label=$LABEL" >>"$GITHUB_OUTPUT"
+          echo "server_id=$id" >>"$GITHUB_OUTPUT"
+
+  await-runner:
+    needs: provision
+    # A queued job never times out on its own (GitHub waits up to a day for a runner), so when
+    # the server's setup fails the bench job would wait while the server is billed. Wait here
+    # for the runner instead: if it is not online in time, this job fails, bench is skipped
+    # and teardown deletes the server. Only curl calls.
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Wait for the server's runner to come online
+        env:
+          RUNNER_ADMIN_TOKEN: ${{ secrets.RUNNER_ADMIN_TOKEN }}
+          LABEL: bench-${{ github.run_id }}
+        run: |
+          set -uo pipefail
+          for i in $(seq 1 60); do
+            st=$(curl -sS -H "Authorization: Bearer $RUNNER_ADMIN_TOKEN" -H "Accept: application/vnd.github+json" \
+              "${{ github.api_url }}/repos/${{ github.repository }}/actions/runners?per_page=100" \
+              | python3 -c 'import json,os,sys
+          rs=[r for r in json.load(sys.stdin).get("runners",[]) if any(l["name"]==os.environ["LABEL"] for l in r["labels"])]
+          print(rs[0]["status"] if rs else "absent")' || echo error)
+            echo "$(date -u +%H:%M:%S) runner $LABEL: $st"
+            [ "$st" = online ] && exit 0
+            sleep 30
+          done
+          echo "::error::the runner on the Hetzner server did not come online in 30 minutes; the server is deleted by teardown."
+          exit 1
+
+  bench:
+    needs: [provision, await-runner]
+    runs-on: ${{ fromJSON(format('["self-hosted","{0}"]', needs.provision.outputs.label)) }}
+    timeout-minutes: 2880
+    env:
+      # On the extra volume when there is one (setup-runner.sh links it to /bench-volume): volume_gb
+      # set, or a run with OSM Europe, which gets 600 GB from provision when volume_gb is 0.
+      BENCH_WORK: ${{ (((inputs.volume_gb != '0' && inputs.volume_gb != '') || (inputs.suite == 'all' && (inputs.dataset == 'scale' || inputs.dataset == 'dashboard')) || (inputs.suite == 'scale' && inputs.dataset == 'osm_europe'))) && '/bench-volume/bench-work' || format('{0}/../bench-work', github.workspace) }}
+      BENCH_MACHINE: ${{ inputs.machine }}
+      DROP_AFTER: "1"
+      JENA_PORT: "3330"
+      TRIPLETRAIL_SRC: ${{ github.workspace }}/core
+      CARGO_TERM_COLOR: always
+    steps:
+      - name: Inputs of this run
+        run: |
+          {
+            echo "| input | value |"; echo "|---|---|"
+            echo "| core_ref | ${{ inputs.core_ref }} |"
+            echo "| suite | ${{ inputs.suite }} |"
+            echo "| dataset | ${{ inputs.dataset }} |"
+            echo "| engines | ${{ inputs.engines }} |"
+            echo "| machine | ${{ inputs.machine }} |"
+            echo "| location | ${{ inputs.location }} |"
+            echo "| volume_gb | ${{ ((inputs.volume_gb == '0' || inputs.volume_gb == '') && ((inputs.suite == 'all' && (inputs.dataset == 'scale' || inputs.dataset == 'dashboard')) || (inputs.suite == 'scale' && inputs.dataset == 'osm_europe'))) && '600' || inputs.volume_gb }} |"
+          } | tee -a "$GITHUB_STEP_SUMMARY"
+          mkdir -p "$BENCH_WORK"; df -h "$BENCH_WORK"
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: Matdata-eu/tripletrail
+          ref: ${{ inputs.core_ref }}
+          path: core
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: "1.97.0"
+      - name: Build tripletrail
+        working-directory: core
+        run: |
+          cargo build --release -p tripletrail-server
+          echo "TripleTrail ${{ inputs.core_ref }} = $(git rev-parse HEAD)" | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Fetch the Jena jar
+        run: |
+          mkdir -p "$BENCH_WORK/jena"
+          f="$BENCH_WORK/jena/jena-fuseki-geosparql-6.2.0.jar"
+          [ -f "$f" ] || curl -sSfL -o "$f" https://repo1.maven.org/maven2/org/apache/jena/jena-fuseki-geosparql/6.2.0/jena-fuseki-geosparql-6.2.0.jar
+      - name: Fetch the pinned inputs (OSM Norway, Geographica 2)
+        if: inputs.suite == 'all' || inputs.suite == 'v2' || inputs.suite == 'geographica'
+        env:
+          GH_TOKEN: ${{ secrets.BENCH_DATA_TOKEN || github.token }}
+          BENCH_DATA_REPO: ${{ vars.BENCH_DATA_REPO }}
+        run: bench/v2/data/fetch_inputs.sh
+      - name: Run ${{ inputs.suite }} ${{ inputs.dataset }}
+        run: bench/v2/bench.sh "${{ inputs.suite }}" "${{ inputs.dataset }}" ${{ inputs.engines }}
+      - name: Jobs of this run
+        if: always()
+        run: |
+          m="bench/v2/results/runs/${{ github.run_id }}.json"
+          [ -f "$m" ] && python3 - "$m" >>"$GITHUB_STEP_SUMMARY" <<'EOF'
+          import json, sys
+          m = json.load(open(sys.argv[1]))
+          print(f"\n**{m['request']}** at `{m['commit'][:8]}` on {m['machine']}\n")
+          print("| job | engines | status | time |\n|---|---|---|---|")
+          for j in m["jobs"]:
+              st = j["status"] + (f" ({j['reason']})" if j.get("reason") else "")
+              print(f"| {j['suite']} {j['dataset']} | {' '.join(j['engines'])} | {st} | {j['seconds'] // 60} min |")
+          EOF
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: results-${{ github.run_id }}-bench
+          path: bench/v2/results
+
+  teardown:
+    needs: [provision, await-runner, bench]
+    if: always() && needs.provision.result != 'skipped'
+    # Only curl calls.
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Delete the Hetzner server
+        env:
+          HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
+        run: |
+          set -uo pipefail
+          # By the run label, so a server is found even when provision failed after creating it.
+          ids=$(curl -sSf -H "Authorization: Bearer $HCLOUD_TOKEN" \
+            "https://api.hetzner.cloud/v1/servers?label_selector=run%3D${{ github.run_id }}" \
+            | python3 -c 'import json,sys; print(" ".join(str(s["id"]) for s in json.load(sys.stdin)["servers"]))')
+          for id in $ids; do
+            curl -sSf -X DELETE -H "Authorization: Bearer $HCLOUD_TOKEN" "https://api.hetzner.cloud/v1/servers/$id" >/dev/null \
+              && echo "deleted server $id"
+          done
+          [ -n "$ids" ] || echo "no server for run ${{ github.run_id }}"
+          # The run's volumes: deletable once the server delete has detached them.
+          vols=$(curl -sSf -H "Authorization: Bearer $HCLOUD_TOKEN" \
+            "https://api.hetzner.cloud/v1/volumes?label_selector=run%3D${{ github.run_id }}" \
+            | python3 -c 'import json,sys; print(" ".join(str(v["id"]) for v in json.load(sys.stdin)["volumes"]))')
+          for v in $vols; do
+            ok=""
+            for i in $(seq 1 40); do
+              curl -sSf -X DELETE -H "Authorization: Bearer $HCLOUD_TOKEN" "https://api.hetzner.cloud/v1/volumes/$v" >/dev/null \
+                && { ok=1; echo "deleted volume $v"; break; }
+              sleep 10
+            done
+            [ -n "$ok" ] || { echo "::error::volume $v was not deleted: delete it in the Hetzner console"; exit 1; }
+          done
+
+  # Puts the results into one commit on bench-results/<run id>.
+  collect:
+    needs: bench
+    if: always() && (needs.bench.result == 'success' || needs.bench.result == 'failure')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: results-${{ github.run_id }}-bench
+          path: bench/v2/results
+        continue-on-error: true
+      - name: Push the results and open a pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          b="bench-results/${{ github.run_id }}"
+          t="chore(bench): ${{ inputs.suite }} ${{ inputs.dataset }} results on ${{ inputs.machine }} at TripleTrail ${{ inputs.core_ref }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # The branch starts from main as it is now, not from the commit the run measured:
+          # GitHub compares a new branch with main, and a workflow file that changed on main
+          # since then would count as changed by this push, which the token may not do.
+          # The artifacts hold the whole results directory as it was at the run's commit. Only
+          # the files the run wrote or changed go onto main: copying the rest would put back
+          # results that were merged into main after that commit. Index files are rebuilt below.
+          new="$RUNNER_TEMP/run-files.txt"
+          { git diff --name-only --diff-filter=d -- bench/v2/results
+            git ls-files --others --exclude-standard -- bench/v2/results; } \
+            | grep -v -E '^bench/v2/results/(dashboard/|runs/README\.md$|(bsbm|trainmarks|sparqloscope)/report\.md$)' > "$new" || true
+          echo "files from this run: $(wc -l < "$new")"
+          tar -cf "$RUNNER_TEMP/run-files.tar" -T "$new"
+          git fetch --depth=1 origin main
+          git checkout -f -b "$b" FETCH_HEAD
+          git clean -fdq -- bench/v2/results
+          tar -xf "$RUNNER_TEMP/run-files.tar"
+          python3 bench/v2/runs.py index bench/v2/results/runs
+          # Sparqloscope's results are YAML: its report and dashboard files need PyYAML (MIT).
+          PY=python3
+          if ! python3 -c 'import yaml' 2>/dev/null; then
+            if python3 -m venv "$RUNNER_TEMP/py" && "$RUNNER_TEMP/py/bin/pip" install -q pyyaml; then
+              PY="$RUNNER_TEMP/py/bin/python3"
+            else
+              echo "::warning::no PyYAML: the Sparqloscope report and dashboard files stay as they are"
+            fi
+          fi
+          # The suites' reports cover every result of the suite, so they are rebuilt here too.
+          for s in bsbm trainmarks sparqloscope; do
+            [ -d bench/v2/results/$s ] || continue
+            "$PY" bench/v2/suites/$s/run_$s.py report >/dev/null || echo "::warning::$s report not rebuilt"
+          done
+          # The CSV files the benchmark dashboard reads (bench/v2/results/dashboard/README.md).
+          "$PY" bench/v2/dashboard.py || echo "::warning::dashboard files not written"
+          # The headline numbers the website reads (site/summary.py).
+          "$PY" site/summary.py bench/v2/results/dashboard || echo "::warning::summary.json not written"
+          git add bench/v2/results
+          git diff --cached --quiet && { echo "no results to commit"; exit 0; }
+          git commit -m "$t"
+          git push origin "$b"
+          # Opening the PR needs "Allow GitHub Actions to create and approve pull requests"
+          # (Settings > Actions > General). Without it the branch is still pushed: link to it.
+          if ! { command -v gh >/dev/null && gh pr create --base main --head "$b" --title "$t" \
+              --body "Results of the benchmark run ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} (${{ inputs.suite }} ${{ inputs.dataset }}, engines: ${{ inputs.engines }}). Run manifest: bench/v2/results/runs/${{ github.run_id }}.json."; }; then
+            echo "::notice::Results pushed to $b. Open the PR at ${{ github.server_url }}/${{ github.repository }}/pull/new/$b"
+          fi

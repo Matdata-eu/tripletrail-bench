@@ -1,0 +1,9 @@
+PREFIX pgr: <http://w3id.org/tripletrail/pgr#>
+SELECT (COUNT(*) AS ?components) (MAX(?size) AS ?largest) WHERE {
+  SELECT ?component (COUNT(?node) AS ?size) WHERE {
+    SERVICE <http://w3id.org/tripletrail/pgr> {
+      [] pgr:function pgr:pgr_connectedComponents ; pgr:network bench:micro ;
+         pgr:component ?component ; pgr:node ?node .
+    }
+  } GROUP BY ?component
+}

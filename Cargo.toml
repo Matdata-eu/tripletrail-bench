@@ -1,0 +1,18 @@
+# The micro-benchmarks (crates/tripletrail-bench) build against TripleTrail checked out in core/
+# (`git clone https://github.com/Matdata-eu/tripletrail core`), with the same patched crates.
+[workspace]
+resolver = "2"
+members = ["crates/tripletrail-bench"]
+exclude = ["core"]
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+debug = 1
+
+[patch.crates-io]
+spargebra = { path = "core/vendor/spargebra" }
+sparopt = { path = "core/vendor/sparopt" }
+spareval = { path = "core/vendor/spareval" }
+oxrdfxml = { path = "core/vendor/oxrdfxml" }
+sparesults = { path = "core/vendor/sparesults" }

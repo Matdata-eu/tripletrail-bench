@@ -1,0 +1,5 @@
+SELECT ?a (COUNT(?s) AS ?n) WHERE {
+  ?s a bench:OsmStation ; geo:hasGeometry/geo:asWKT ?w1 .
+  ?a a bench:OsmAdmin ; geo:hasGeometry/geo:asWKT ?w2 .
+  FILTER(geof:sfWithin(?w1, ?w2))
+} GROUP BY ?a

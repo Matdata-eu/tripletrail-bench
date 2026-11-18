@@ -1,0 +1,10 @@
+PREFIX spatialSearch: <https://qlever.cs.uni-freiburg.de/spatialSearch/>
+# spatialSearch with libspatialjoin, within-distance join
+SELECT (COUNT(*) AS ?n) WHERE {
+  ?s a era:Signal ; geo:hasGeometry/geo:asWKT ?w1 .
+  SERVICE spatialSearch: {
+    _:c spatialSearch:algorithm spatialSearch:libspatialjoin ; spatialSearch:left ?w1 ; spatialSearch:right ?w2 ;
+        spatialSearch:joinType spatialSearch:within-dist ; spatialSearch:maxDistance 20 ; spatialSearch:payload ?e .
+    { ?e a era:LinearElement ; geo:hasGeometry/geo:asWKT ?w2 }
+  }
+}

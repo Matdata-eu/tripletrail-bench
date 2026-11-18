@@ -1,0 +1,1 @@
+SELECT (COUNT(*) AS ?n) WHERE { ?s a bench:OsmStation ; rdfs:label ?l ; geo:hasGeometry ?g . ?g geo:asWKT ?w }

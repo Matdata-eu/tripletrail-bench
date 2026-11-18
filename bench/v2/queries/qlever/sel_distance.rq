@@ -1,0 +1,5 @@
+# QLever rejects uom:metre in geof:distance; geof:metricDistance is its metre distance
+SELECT ?s WHERE {
+  ?s a era:Signal ; geo:hasGeometry/geo:asWKT ?w .
+  FILTER(geof:metricDistance(?w, "{{pt_wkt}}"^^geo:wktLiteral) <= {{radius_m}})
+}

@@ -1,0 +1,5 @@
+SELECT (COUNT(*) AS ?n) WHERE {
+  ?t a bench:OsmTrack ; geo:hasGeometry/geo:asWKT ?w1 .
+  ?l a bench:OsmLanduse ; geo:hasGeometry/geo:asWKT ?w2 .
+  FILTER(geof:sfIntersects(?w1, ?w2))
+}

@@ -1,0 +1,12 @@
+PREFIX pgr: <http://w3id.org/tripletrail/pgr#>
+SELECT DISTINCT ?s WHERE {
+  SERVICE <http://w3id.org/tripletrail/pgr> {
+    [] pgr:function pgr:pgr_dijkstra ; pgr:network bench:micro ;
+       pgr:start_vid "{{src}}" ; pgr:end_vid "{{dst}}" ; pgr:node ?node .
+  }
+  BIND(IRI(STRBEFORE(?node, "#")) AS ?e)
+  ?e geo:hasGeometry/geo:asWKT ?ew .
+  ?s a era:Signal ; era:signalType <http://data.europa.eu/949/concepts/signal-types/main> ;
+     geo:hasGeometry/geo:asWKT ?sw .
+  FILTER(geof:distance(?sw, ?ew, uom:metre) <= {{radius_m}})
+}

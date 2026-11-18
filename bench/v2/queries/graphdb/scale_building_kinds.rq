@@ -1,0 +1,1 @@
+SELECT ?k (COUNT(?f) AS ?n) WHERE { ?f bench:building ?k } GROUP BY ?k

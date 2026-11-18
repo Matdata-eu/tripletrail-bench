@@ -1,0 +1,10 @@
+@prefix sg: <https://matdata.eu/ns/sparql-guard#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ex: <http://example.org/policies/> .
+@prefix o: <http://example.org/oltp/> .
+ex:Edit a sg:Policy ; sg:agent sg:AuthenticatedAgent ; sg:writeAllGraphs true ;
+  sg:visibleIf ex:Visible ; sg:editableIf ex:Editable .
+ex:Visible a sh:NodeShape ; sh:targetSubjectsOf o:status ;
+  sh:property [ sh:path o:status ; sh:in ( "active" "planned" ) ] .
+ex:Editable a sh:NodeShape ; sh:targetSubjectsOf o:owner ;
+  sh:property [ sh:path o:owner ; sh:hasValue sg:requestingAgent ] .

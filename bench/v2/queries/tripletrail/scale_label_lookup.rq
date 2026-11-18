@@ -1,0 +1,1 @@
+SELECT ?f WHERE { ?f rdfs:label "Amsterdam" ; a ?c }

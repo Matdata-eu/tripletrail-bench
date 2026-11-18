@@ -1,0 +1,4 @@
+SELECT ?s WHERE {
+  ?s a era:Signal ; geo:hasGeometry/geo:asWKT ?w .
+  FILTER(geof:distance(?w, "{{pt_wkt}}"^^geo:wktLiteral, uom:metre) <= {{radius_m}})
+}

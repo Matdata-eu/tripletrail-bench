@@ -1,0 +1,20 @@
+# Every result the benchmark dashboard shows, in one run: the jobs of full.txt, then the scale
+# benchmark (OSM Benelux and all of Europe, 1B triples). For a 64 GB server with a 600 GB volume
+# (workflow suite=all, dataset=dashboard, machine=ccx43: the workflow adds the volume itself when
+# volume_gb is 0). Roughly 8 to 12 hours for full.txt plus about 4 hours for the scale jobs.
+# One job per line: <suite> <dataset> [KEY=VALUE ...] (environment for that job only).
+v2 small
+v2 large
+v2 osm_norway
+geographica all
+bsbm 2785
+bsbm 28480
+sparqloscope bsbm-2785
+sparqloscope rinf-0076
+trainmarks medium
+trainmarks large
+trainmarks xlarge
+updates bsbm-28480
+# osm_benelux first: it downloads the Europe extract, which osm_europe then uses and deletes.
+scale osm_benelux
+scale osm_europe

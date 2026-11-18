@@ -1,0 +1,5 @@
+SELECT (COUNT(*) AS ?n) WHERE {
+  ?s a era:Signal ; geo:hasGeometry/geo:asWKT ?w1 .
+  ?e a era:LinearElement ; geo:hasGeometry/geo:asWKT ?w2 .
+  FILTER(geof:distance(?w1, ?w2, uom:metre) <= 20)
+}

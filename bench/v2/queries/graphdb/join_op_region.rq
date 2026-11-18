@@ -1,0 +1,5 @@
+SELECT ?r (COUNT(?o) AS ?n) WHERE {
+  ?o a era:OperationalPoint ; geo:hasGeometry/geo:asWKT ?w1 .
+  ?r a bench:Region ; geo:hasGeometry/geo:asWKT ?w2 .
+  FILTER(geof:sfWithin(?w1, ?w2))
+} GROUP BY ?r

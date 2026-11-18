@@ -1,0 +1,4 @@
+SELECT (geof:metricArea(geof:aggUnion(geof:buffer(?w, 50, uom:metre))) AS ?area) WHERE {
+  ?s a era:Signal ; geo:hasGeometry/geo:asWKT ?w .
+  FILTER(geof:sfWithin(?w, "{{bbox_wkt}}"^^geo:wktLiteral))
+}

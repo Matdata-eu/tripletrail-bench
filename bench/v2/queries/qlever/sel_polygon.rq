@@ -1,0 +1,4 @@
+SELECT ?s WHERE {
+  ?s a era:Signal ; geo:hasGeometry/geo:asWKT ?w .
+  FILTER(geof:sfWithin(?w, "{{poly_wkt}}"^^geo:wktLiteral))
+}

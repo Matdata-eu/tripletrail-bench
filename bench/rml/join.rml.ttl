@@ -1,0 +1,14 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix ex: <http://example.org/rail#> .
+
+# The line of each track through a join on the lines' source (not a template), so that the
+# processor joins the two files.
+<#Track> rml:logicalSource [ rml:source "data/tracks.csv" ; rml:referenceFormulation ql:CSV ] ;
+  rr:subjectMap [ rr:template "http://example.org/track/{id}" ] ;
+  rr:predicateObjectMap [ rr:predicate ex:line ; rr:objectMap [ rr:parentTriplesMap <#Line> ;
+      rr:joinCondition [ rr:child "line" ; rr:parent "id" ] ] ] .
+
+<#Line> rml:logicalSource [ rml:source "data/lines.csv" ; rml:referenceFormulation ql:CSV ] ;
+  rr:subjectMap [ rr:template "http://example.org/line/{name}" ; rr:class ex:Line ] .

@@ -1,0 +1,3 @@
+SELECT ?s WHERE {
+  ?s a era:OperationalPoint ; geo:hasGeometry/geo:asWKT ?w .
+} ORDER BY (geof:distance(?w, "{{pt_wkt}}"^^geo:wktLiteral, uom:metre)) LIMIT 10

@@ -1,0 +1,70 @@
+QUERY 1 - Boundary_CLC:
+
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+
+SELECT (geof:boundary(?o1) AS ?ret) 
+WHERE { 
+	GRAPH <http://geographica.di.uoa.gr/dataset/clc> {
+		?s1 <http://geo.linkedopendata.gr/corine/ontology#asWKT> ?o1
+	} 
+} 
+
+
+QUERY 2 - Envelope_CLC:
+
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+
+SELECT (geof:envelope(?o1) AS ?ret) 
+WHERE { 
+	GRAPH <http://geographica.di.uoa.gr/dataset/clc> {
+		?s1 <http://geo.linkedopendata.gr/corine/ontology#asWKT> ?o1
+	} 
+} 
+
+
+QUERY 3 - ConvexHull_CLC:
+
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+
+SELECT (geof:convexHull(?o1) AS ?ret) 
+WHERE { 
+	GRAPH <http://geographica.di.uoa.gr/dataset/clc> {
+		?s1 <http://geo.linkedopendata.gr/corine/ontology#asWKT> ?o1
+	} 
+} 
+
+
+QUERY 4 - Buffer_GeoNames:
+
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+
+SELECT (geof:buffer(?o1,0.04) AS ?ret) 
+WHERE { 
+	GRAPH <http://geographica.di.uoa.gr/dataset/geonames> {
+		?s1 <http://www.geonames.org/ontology#asWKT> ?o1
+	}
+} 
+
+
+QUERY 5 - Buffer_LGD:
+
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+
+SELECT (geof:buffer(?o1,0.04) AS ?ret) 
+WHERE { 
+	GRAPH <http://geographica.di.uoa.gr/dataset/lgd> {
+		?s1 <http://linkedgeodata.org/ontology/asWKT> ?o1
+	}
+} 
+
+
+QUERY 6 - Area_CLC:
+
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+
+SELECT (ext:area(?o1) AS ?ret) 
+WHERE { 
+	GRAPH <http://geographica.di.uoa.gr/dataset/clc> {
+		?s1 <http://geo.linkedopendata.gr/corine/ontology#asWKT> ?o1
+	} 
+}

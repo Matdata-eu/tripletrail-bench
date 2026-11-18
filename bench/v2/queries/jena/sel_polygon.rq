@@ -1,0 +1,5 @@
+# geometry-level relation triple: rewritten by jena-geosparql to use the spatial index
+SELECT ?s WHERE {
+  ?g geo:sfWithin "{{poly_wkt}}"^^geo:wktLiteral .
+  ?s a era:Signal ; geo:hasGeometry ?g .
+}

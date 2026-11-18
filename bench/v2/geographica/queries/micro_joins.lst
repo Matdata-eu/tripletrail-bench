@@ -1,0 +1,159 @@
+QUERY 18 - Equals_GeoNames_DBPedia:
+
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+
+SELECT ?s1 ?s2
+WHERE { 
+	GRAPH <http://geographica.di.uoa.gr/dataset/geonames> {
+		?s1 <http://www.geonames.org/ontology#asWKT> ?o1
+	} 
+	GRAPH <http://geographica.di.uoa.gr/dataset/dbpedia> {
+		?s2 <http://dbpedia.org/property/asWKT> ?o2
+	} 
+  	FILTER(geof:sfEquals(?o1, ?o2)).  
+} 
+
+
+QUERY 19 - Intersects_GeoNames_LGD:
+ 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+
+SELECT ?s1 ?s2 
+ WHERE { 
+	GRAPH <http://geographica.di.uoa.gr/dataset/geonames> {
+		?s1 <http://www.geonames.org/ontology#asWKT> ?o1
+	} 
+	GRAPH <http://geographica.di.uoa.gr/dataset/lgd> {
+		?s2 <http://linkedgeodata.org/ontology/asWKT> ?o2
+	} 
+  	FILTER(geof:sfIntersects(?o1, ?o2)).  
+} 
+
+
+QUERY 20 - Intersects_GeoNames_GAG:
+ 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+
+SELECT ?s1 ?s2 
+WHERE { 
+	GRAPH <http://geographica.di.uoa.gr/dataset/geonames> {
+		?s1 <http://www.geonames.org/ontology#asWKT> ?o1
+	} 
+	GRAPH <http://geographica.di.uoa.gr/dataset/gag> {
+		?s2 <http://geo.linkedopendata.gr/gag/ontology/asWKT> ?o2
+	} 
+  	FILTER(geof:sfIntersects(?o1, ?o2)).  
+} 
+
+
+QUERY 21 - Intersects_LGD_GAG:
+ 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+
+SELECT ?s1 ?s2 
+WHERE { 
+	GRAPH <http://geographica.di.uoa.gr/dataset/lgd> {
+		?s1 <http://linkedgeodata.org/ontology/asWKT> ?o1
+	} 
+	GRAPH <http://geographica.di.uoa.gr/dataset/gag> {
+		?s2 <http://geo.linkedopendata.gr/gag/ontology/asWKT> ?o2
+	} 
+  	FILTER(geof:sfIntersects(?o1, ?o2)).  
+} 
+
+
+QUERY 22 - Within_GeoNames_GAG:
+
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+
+SELECT ?s1 ?s2 
+WHERE { 
+	GRAPH <http://geographica.di.uoa.gr/dataset/geonames> {
+		?s1 <http://www.geonames.org/ontology#asWKT> ?o1
+	} 
+	GRAPH <http://geographica.di.uoa.gr/dataset/gag> {
+		?s2 <http://geo.linkedopendata.gr/gag/ontology/asWKT> ?o2
+	} 
+  	FILTER(geof:sfWithin(?o1, ?o2)).  
+} 
+
+
+QUERY 23 - Within_LGD_GAG:
+
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+
+SELECT ?s1 ?s2
+WHERE { 
+	GRAPH <http://geographica.di.uoa.gr/dataset/lgd> {
+		?s1 <http://linkedgeodata.org/ontology/asWKT> ?o1
+	} 
+	GRAPH <http://geographica.di.uoa.gr/dataset/gag> {
+		?s2 <http://geo.linkedopendata.gr/gag/ontology/asWKT> ?o2
+	} 
+	FILTER(geof:sfWithin(?o1, ?o2)).  
+} 
+
+
+QUERY 24 - Within_CLC_GAG:
+
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+
+SELECT ?s1 ?s2
+WHERE { 
+	GRAPH <http://geographica.di.uoa.gr/dataset/clc> {
+		?s1 <http://geo.linkedopendata.gr/corine/ontology#asWKT> ?o1
+	} 
+	GRAPH <http://geographica.di.uoa.gr/dataset/gag> {
+		?s2 <http://geo.linkedopendata.gr/gag/ontology/asWKT> ?o2
+	} 
+	FILTER(geof:sfWithin(?o1, ?o2)).  
+} 
+
+
+QUERY 25 - Crosses_LGD_GAG:
+
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+
+SELECT ?s1 ?s2
+WHERE { 
+	GRAPH <http://geographica.di.uoa.gr/dataset/lgd> {
+		?s1 <http://linkedgeodata.org/ontology/asWKT> ?o1
+	} 
+	GRAPH <http://geographica.di.uoa.gr/dataset/gag> {
+		?s2 <http://geo.linkedopendata.gr/gag/ontology/asWKT> ?o2
+	} 
+	FILTER(geof:sfCrosses(?o1, ?o2)).  
+} 
+
+
+QUERY 26 - Touches_GAG_GAG:
+ 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+
+SELECT ?s1 ?s2 
+WHERE { 
+	GRAPH <http://geographica.di.uoa.gr/dataset/gag> {
+		?s1 <http://geo.linkedopendata.gr/gag/ontology/asWKT> ?o1
+	} 
+	GRAPH <http://geographica.di.uoa.gr/dataset/gag> {
+		?s2 <http://geo.linkedopendata.gr/gag/ontology/asWKT> ?o2
+	} 
+ 	FILTER(?s1 != ?s2).  
+ 	FILTER(geof:sfTouches(?o1, ?o2)).  
+} 
+
+
+QUERY 27 - Overlaps_GAG_CLC:
+
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+
+SELECT ?s1 ?s2 
+WHERE { 
+	GRAPH <http://geographica.di.uoa.gr/dataset/gag> {
+		?s1 <http://geo.linkedopendata.gr/gag/ontology/asWKT> ?o1
+	} 
+	GRAPH <http://geographica.di.uoa.gr/dataset/clc> {
+		?s2 <http://geo.linkedopendata.gr/corine/ontology#asWKT> ?o2
+	} 
+	FILTER(geof:sfOverlaps(?o1, ?o2)).  
+}

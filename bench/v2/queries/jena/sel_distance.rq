@@ -1,0 +1,6 @@
+PREFIX spatial: <http://jena.apache.org/spatial#>
+# spatial:nearby (lat lon radius units limit) uses the spatial index
+SELECT ?s WHERE {
+  ?s spatial:nearby ({{lat}} {{lon}} {{radius_m}} uom:metre -1) .
+  ?s a era:Signal .
+}

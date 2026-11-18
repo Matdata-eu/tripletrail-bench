@@ -1,0 +1,809 @@
+Query 0 - Synthetic_Selection_Intersects_1_1.0:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX landOwnership: <http://geographica.di.uoa.gr/generator/landOwnership/>
+
+SELECT ?s1 
+WHERE {
+	?s1 landOwnership:hasGeometry ?s1Geo . 
+	?s1Geo landOwnership:asWKT ?geo1 . 
+	?s1 landOwnership:hasTag ?tag1 . 
+	?tag1 landOwnership:hasKey "1" .  
+	FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 90.0 0.0, 90.0 77.94970848221368, 0.0 77.94970848221368, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 1 - Synthetic_Selection_Intersects_512_1.0:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX landOwnership: <http://geographica.di.uoa.gr/generator/landOwnership/>
+
+SELECT ?s1 
+WHERE {
+	?s1 landOwnership:hasGeometry ?s1Geo . 
+	?s1Geo landOwnership:asWKT ?geo1 . 
+	?s1 landOwnership:hasTag ?tag1 . 
+	?tag1 landOwnership:hasKey "512" .  
+	FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 90.0 0.0, 90.0 77.94970848221368, 0.0 77.94970848221368, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 2 - Synthetic_Selection_Intersects_1_0.75:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX landOwnership: <http://geographica.di.uoa.gr/generator/landOwnership/>
+
+SELECT ?s1 
+WHERE {
+	?s1 landOwnership:hasGeometry ?s1Geo . 
+	?s1Geo landOwnership:asWKT ?geo1 . 
+	?s1 landOwnership:hasTag ?tag1 . 
+	?tag1 landOwnership:hasKey "1" .  
+	FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 78.0913058119689 0.0, 78.0913058119689 67.60809780677805, 0.0 67.60809780677805, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 3 - Synthetic_Selection_Intersects_512_0.75:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX landOwnership: <http://geographica.di.uoa.gr/generator/landOwnership/>
+
+SELECT ?s1 
+WHERE {
+	?s1 landOwnership:hasGeometry ?s1Geo . 
+	?s1Geo landOwnership:asWKT ?geo1 . 
+	?s1 landOwnership:hasTag ?tag1 . 
+	?tag1 landOwnership:hasKey "512" .  
+	FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 78.0913058119689 0.0, 78.0913058119689 67.60809780677805, 0.0 67.60809780677805, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 4 - Synthetic_Selection_Intersects_1_0.5:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX landOwnership: <http://geographica.di.uoa.gr/generator/landOwnership/>
+
+SELECT ?s1 
+WHERE {
+	?s1 landOwnership:hasGeometry ?s1Geo . 
+	?s1Geo landOwnership:asWKT ?geo1 . 
+	?s1 landOwnership:hasTag ?tag1 . 
+	?tag1 landOwnership:hasKey "1" .  
+	FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 63.86691556806645 0.0, 63.86691556806645 55.28941450221502, 0.0 55.28941450221502, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 5 - Synthetic_Selection_Intersects_512_0.5:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX landOwnership: <http://geographica.di.uoa.gr/generator/landOwnership/>
+
+SELECT ?s1 
+WHERE {
+  ?s1 landOwnership:hasGeometry ?s1Geo . 
+  ?s1Geo landOwnership:asWKT ?geo1 . 
+  ?s1 landOwnership:hasTag ?tag1 . 
+  ?tag1 landOwnership:hasKey "512" .  
+  FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 63.86691556806645 0.0, 63.86691556806645 55.28941450221502, 0.0 55.28941450221502, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 6 - Synthetic_Selection_Intersects_1_0.25:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX landOwnership: <http://geographica.di.uoa.gr/generator/landOwnership/>
+
+SELECT ?s1 
+WHERE {
+  ?s1 landOwnership:hasGeometry ?s1Geo . 
+  ?s1Geo landOwnership:asWKT ?geo1 . 
+  ?s1 landOwnership:hasTag ?tag1 . 
+  ?tag1 landOwnership:hasKey "1" .  
+  FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 45.07667166562743 0.0, 45.07667166562743 39.01658593939718, 0.0 39.01658593939718, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 7 - Synthetic_Selection_Intersects_512_0.25:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX landOwnership: <http://geographica.di.uoa.gr/generator/landOwnership/>
+
+SELECT ?s1 
+WHERE {
+  ?s1 landOwnership:hasGeometry ?s1Geo . 
+  ?s1Geo landOwnership:asWKT ?geo1 . 
+  ?s1 landOwnership:hasTag ?tag1 . 
+  ?tag1 landOwnership:hasKey "512" .  
+  FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 45.07667166562743 0.0, 45.07667166562743 39.01658593939718, 0.0 39.01658593939718, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 8 - Synthetic_Selection_Intersects_1_0.1:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX landOwnership: <http://geographica.di.uoa.gr/generator/landOwnership/>
+
+SELECT ?s1 
+WHERE {
+	?s1 landOwnership:hasGeometry ?s1Geo . 
+	?s1Geo landOwnership:asWKT ?geo1 . 
+	?s1 landOwnership:hasTag ?tag1 . 
+	?tag1 landOwnership:hasKey "1" .  
+	FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 28.569354592456698 0.0, 28.569354592456698 24.72083000570674, 0.0 24.72083000570674, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 9 - Synthetic_Selection_Intersects_512_0.1:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX landOwnership: <http://geographica.di.uoa.gr/generator/landOwnership/>
+
+SELECT ?s1 
+WHERE {
+	?s1 landOwnership:hasGeometry ?s1Geo . 
+	?s1Geo landOwnership:asWKT ?geo1 . 
+	?s1 landOwnership:hasTag ?tag1 . 
+	?tag1 landOwnership:hasKey "512" .  
+	FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 28.569354592456698 0.0, 28.569354592456698 24.72083000570674, 0.0 24.72083000570674, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 10 - Synthetic_Selection_Intersects_1_0.001:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX landOwnership: <http://geographica.di.uoa.gr/generator/landOwnership/>
+
+SELECT ?s1 
+WHERE {
+	?s1 landOwnership:hasGeometry ?s1Geo . 
+	?s1Geo landOwnership:asWKT ?geo1 . 
+	?s1 landOwnership:hasTag ?tag1 . 
+	?tag1 landOwnership:hasKey "1" .  
+	FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 3.105939958310361 0.0, 3.105939958310361 2.668866065439579, 0.0 2.668866065439579, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 11 - Synthetic_Selection_Intersects_512_0.001:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX landOwnership: <http://geographica.di.uoa.gr/generator/landOwnership/>
+
+SELECT ?s1 
+WHERE {
+	?s1 landOwnership:hasGeometry ?s1Geo . 
+	?s1Geo landOwnership:asWKT ?geo1 . 
+	?s1 landOwnership:hasTag ?tag1 . 
+	?tag1 landOwnership:hasKey "512" .  
+	FILTER(geof:sfIntersects(?geo1, "POLYGON ((0.0 0.0, 3.105939958310361 0.0, 3.105939958310361 2.668866065439579, 0.0 2.668866065439579, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 12 - Synthetic_Selection_Within_1_1.0:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX pointOfInterest: <http://geographica.di.uoa.gr/generator/pointOfInterest/>
+
+SELECT ?s1 
+WHERE {
+	?s1 pointOfInterest:hasGeometry ?s1Geo . 
+	?s1Geo pointOfInterest:asWKT ?geo1 . 
+	?s1 pointOfInterest:hasTag ?tag1 . 
+	?tag1 pointOfInterest:hasKey "1" .  
+	FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 90.0 0.0, 90.0 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 13 - Synthetic_Selection_Within_512_1.0:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX pointOfInterest: <http://geographica.di.uoa.gr/generator/pointOfInterest/>
+
+SELECT ?s1 
+WHERE {
+	?s1 pointOfInterest:hasGeometry ?s1Geo . 
+	?s1Geo pointOfInterest:asWKT ?geo1 . 
+	?s1 pointOfInterest:hasTag ?tag1 . 
+	?tag1 pointOfInterest:hasKey "512" .  
+	FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 90.0 0.0, 90.0 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 14 - Synthetic_Selection_Within_1_0.75:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX pointOfInterest: <http://geographica.di.uoa.gr/generator/pointOfInterest/>
+
+SELECT ?s1 
+WHERE {
+	?s1 pointOfInterest:hasGeometry ?s1Geo . 
+	?s1Geo pointOfInterest:asWKT ?geo1 . 
+	?s1 pointOfInterest:hasTag ?tag1 . 
+	?tag1 pointOfInterest:hasKey "1" .  
+	FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 67.53276922660304 0.0, 67.53276922660304 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 15 - Synthetic_Selection_Within_512_0.75:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX pointOfInterest: <http://geographica.di.uoa.gr/generator/pointOfInterest/>
+
+SELECT ?s1 
+WHERE {
+	?s1 pointOfInterest:hasGeometry ?s1Geo . 
+	?s1Geo pointOfInterest:asWKT ?geo1 . 
+	?s1 pointOfInterest:hasTag ?tag1 . 
+	?tag1 pointOfInterest:hasKey "512" .  
+	FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 67.53276922660304 0.0, 67.53276922660304 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 16 - Synthetic_Selection_Within_1_0.5:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX pointOfInterest: <http://geographica.di.uoa.gr/generator/pointOfInterest/>
+
+SELECT ?s1 
+WHERE {
+	?s1 pointOfInterest:hasGeometry ?s1Geo . 
+	?s1Geo pointOfInterest:asWKT ?geo1 . 
+	?s1 pointOfInterest:hasTag ?tag1 . 
+	?tag1 pointOfInterest:hasKey "1" .  
+	FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 45.032769226603044 0.0, 45.032769226603044 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 17 - Synthetic_Selection_Within_512_0.5:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX pointOfInterest: <http://geographica.di.uoa.gr/generator/pointOfInterest/>
+
+SELECT ?s1 
+WHERE {
+	?s1 pointOfInterest:hasGeometry ?s1Geo . 
+	?s1Geo pointOfInterest:asWKT ?geo1 . 
+	?s1 pointOfInterest:hasTag ?tag1 . 
+	?tag1 pointOfInterest:hasKey "512" .  
+	FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 45.032769226603044 0.0, 45.032769226603044 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 18 - Synthetic_Selection_Within_1_0.25:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX pointOfInterest: <http://geographica.di.uoa.gr/generator/pointOfInterest/>
+
+SELECT ?s1 
+WHERE {
+	?s1 pointOfInterest:hasGeometry ?s1Geo . 
+	?s1Geo pointOfInterest:asWKT ?geo1 . 
+	?s1 pointOfInterest:hasTag ?tag1 . 
+	?tag1 pointOfInterest:hasKey "1" .  
+	FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 22.532769226603044 0.0, 22.532769226603044 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 19 - Synthetic_Selection_Within_512_0.25:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX pointOfInterest: <http://geographica.di.uoa.gr/generator/pointOfInterest/>
+
+SELECT ?s1 
+WHERE {
+	?s1 pointOfInterest:hasGeometry ?s1Geo . 
+	?s1Geo pointOfInterest:asWKT ?geo1 . 
+	?s1 pointOfInterest:hasTag ?tag1 . 
+	?tag1 pointOfInterest:hasKey "512" .  
+	FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 22.532769226603044 0.0, 22.532769226603044 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 20 - Synthetic_Selection_Within_1_0.1:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX pointOfInterest: <http://geographica.di.uoa.gr/generator/pointOfInterest/>
+
+SELECT ?s1 
+WHERE {
+	?s1 pointOfInterest:hasGeometry ?s1Geo . 
+	?s1Geo pointOfInterest:asWKT ?geo1 . 
+	?s1 pointOfInterest:hasTag ?tag1 . 
+	?tag1 pointOfInterest:hasKey "1" .  
+	FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 8.997613111238904 0.0, 8.997613111238904 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 21 - Synthetic_Selection_Within_512_0.1:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX pointOfInterest: <http://geographica.di.uoa.gr/generator/pointOfInterest/>
+
+SELECT ?s1 
+WHERE {
+	?s1 pointOfInterest:hasGeometry ?s1Geo . 
+	?s1Geo pointOfInterest:asWKT ?geo1 . 
+	?s1 pointOfInterest:hasTag ?tag1 . 
+	?tag1 pointOfInterest:hasKey "512" .  
+	FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 8.997613111238904 0.0, 8.997613111238904 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 22 - Synthetic_Selection_Within_1_0.001:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX pointOfInterest: <http://geographica.di.uoa.gr/generator/pointOfInterest/>
+
+SELECT ?s1 
+WHERE {
+	?s1 pointOfInterest:hasGeometry ?s1Geo . 
+	?s1Geo pointOfInterest:asWKT ?geo1 . 
+	?s1 pointOfInterest:hasTag ?tag1 . 
+	?tag1 pointOfInterest:hasKey "1" .  
+	FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 0.032769571270841485 0.0, 0.032769571270841485 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 23 - Synthetic_Selection_Within_512_0.001:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX pointOfInterest: <http://geographica.di.uoa.gr/generator/pointOfInterest/>
+
+SELECT ?s1 
+WHERE {
+	?s1 pointOfInterest:hasGeometry ?s1Geo . 
+	?s1Geo pointOfInterest:asWKT ?geo1 . 
+	?s1 pointOfInterest:hasTag ?tag1 . 
+	?tag1 pointOfInterest:hasKey "512" .  
+	FILTER(geof:sfWithin(?geo1, "POLYGON ((0.0 0.0, 0.032769571270841485 0.0, 0.032769571270841485 90.0, 0.0 90.0, 0.0 0.0))"^^geo:wktLiteral)) .
+}
+
+
+Query 24 - Synthetic_Join_Intersects_1_1:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX landOwnership: <http://geographica.di.uoa.gr/generator/landOwnership/>
+PREFIX state: <http://geographica.di.uoa.gr/generator/state/>
+
+SELECT ?s1 ?s2 
+WHERE {
+	?s1 landOwnership:hasGeometry ?s1Geo . 
+	?s1Geo landOwnership:asWKT ?geo1 . 
+	?s1 landOwnership:hasTag ?tag1 . 
+	?tag1 landOwnership:hasKey "1" .  
+	?s2 state:hasGeometry ?s2Geo . 
+	?s2Geo state:asWKT ?geo2 . 
+	?s2 state:hasTag ?tag2 . 
+	?tag2 state:hasKey "1" .  
+	FILTER(geof:sfIntersects(?geo1, ?geo2)) .
+}
+
+
+Query 25 - Synthetic_Join_Intersects_1_512:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX landOwnership: <http://geographica.di.uoa.gr/generator/landOwnership/>
+PREFIX state: <http://geographica.di.uoa.gr/generator/state/>
+
+SELECT ?s1 ?s2 
+WHERE {
+	?s1 landOwnership:hasGeometry ?s1Geo . 
+	?s1Geo landOwnership:asWKT ?geo1 . 
+	?s1 landOwnership:hasTag ?tag1 . 
+	?tag1 landOwnership:hasKey "1" .  
+	?s2 state:hasGeometry ?s2Geo . 
+	?s2Geo state:asWKT ?geo2 . 
+	?s2 state:hasTag ?tag2 . 
+	?tag2 state:hasKey "512" .  
+	FILTER(geof:sfIntersects(?geo1, ?geo2)) .
+}
+
+
+Query 26 - Synthetic_Join_Intersects_512_1:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX landOwnership: <http://geographica.di.uoa.gr/generator/landOwnership/>
+PREFIX state: <http://geographica.di.uoa.gr/generator/state/>
+
+SELECT ?s1 ?s2 
+WHERE {
+	?s2 state:hasGeometry ?s2Geo . 
+	?s2Geo state:asWKT ?geo2 . 
+	?s2 state:hasTag ?tag2 . 
+	?tag2 state:hasKey "1" .  
+	?s1 landOwnership:hasGeometry ?s1Geo . 
+	?s1Geo landOwnership:asWKT ?geo1 . 
+	?s1 landOwnership:hasTag ?tag1 . 
+	?tag1 landOwnership:hasKey "512" .  
+	FILTER(geof:sfIntersects(?geo1, ?geo2)) .
+}
+
+
+Query 27 - Synthetic_Join_Intersects_512_512:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX landOwnership: <http://geographica.di.uoa.gr/generator/landOwnership/>
+PREFIX state: <http://geographica.di.uoa.gr/generator/state/>
+
+SELECT ?s1 ?s2 
+WHERE {
+	?s1 landOwnership:hasGeometry ?s1Geo . 
+	?s1Geo landOwnership:asWKT ?geo1 . 
+	?s1 landOwnership:hasTag ?tag1 . 
+	?tag1 landOwnership:hasKey "512" .  
+	?s2 state:hasGeometry ?s2Geo . 
+	?s2Geo state:asWKT ?geo2 . 
+	?s2 state:hasTag ?tag2 . 
+	?tag2 state:hasKey "512" .  
+	FILTER(geof:sfIntersects(?geo1, ?geo2)) .
+}
+
+
+Query 28 - Synthetic_Join_Touches_1_1:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX state: <http://geographica.di.uoa.gr/generator/state/>
+
+SELECT ?s1 ?s2 
+WHERE {
+	?s1 state:hasGeometry ?s1Geo . 
+	?s1Geo state:asWKT ?geo1 . 
+	?s1 state:hasTag ?tag1 . 
+	?tag1 state:hasKey "1" .  
+	?s2 state:hasGeometry ?s2Geo . 
+	?s2Geo state:asWKT ?geo2 . 
+	?s2 state:hasTag ?tag2 . 
+	?tag2 state:hasKey "1" .  
+	FILTER(geof:sfTouches(?geo1, ?geo2)) .
+}
+
+
+Query 29 - Synthetic_Join_Touches_1_512:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX state: <http://geographica.di.uoa.gr/generator/state/>
+
+SELECT ?s1 ?s2 
+WHERE {
+	?s1 state:hasGeometry ?s1Geo . 
+	?s1Geo state:asWKT ?geo1 . 
+	?s1 state:hasTag ?tag1 . 
+	?tag1 state:hasKey "1" .  
+	?s2 state:hasGeometry ?s2Geo . 
+	?s2Geo state:asWKT ?geo2 . 
+	?s2 state:hasTag ?tag2 . 
+	?tag2 state:hasKey "512" .  
+	FILTER(geof:sfTouches(?geo1, ?geo2)) .
+}
+
+
+Query 30 - Synthetic_Join_Touches_512_1:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX state: <http://geographica.di.uoa.gr/generator/state/>
+
+SELECT ?s1 ?s2 
+WHERE {
+	?s2 state:hasGeometry ?s2Geo . 
+	?s2Geo state:asWKT ?geo2 . 
+	?s2 state:hasTag ?tag2 . 
+	?tag2 state:hasKey "1" .  
+	?s1 state:hasGeometry ?s1Geo . 
+	?s1Geo state:asWKT ?geo1 . 
+	?s1 state:hasTag ?tag1 . 
+	?tag1 state:hasKey "512" .  
+	FILTER(geof:sfTouches(?geo1, ?geo2)) .
+}
+
+
+Query 31 - Synthetic_Join_Touches_512_512:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX state: <http://geographica.di.uoa.gr/generator/state/>
+
+SELECT ?s1 ?s2 
+WHERE {
+	?s1 state:hasGeometry ?s1Geo . 
+	?s1Geo state:asWKT ?geo1 . 
+	?s1 state:hasTag ?tag1 . 
+	?tag1 state:hasKey "512" .  
+	?s2 state:hasGeometry ?s2Geo . 
+	?s2Geo state:asWKT ?geo2 . 
+	?s2 state:hasTag ?tag2 . 
+	?tag2 state:hasKey "512" .  
+	FILTER(geof:sfTouches(?geo1, ?geo2)) .
+}
+
+
+Query 32 - Synthetic_Join_Within_1_1:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX state: <http://geographica.di.uoa.gr/generator/state/>
+
+SELECT ?s1 ?s2 
+WHERE {
+	?s1 pointOfInterest:hasGeometry ?s1Geo . 
+	?s1Geo pointOfInterest:asWKT ?geo1 . 
+	?s1 pointOfInterest:hasTag ?tag1 . 
+	?tag1 pointOfInterest:hasKey "1" .  
+	?s2 state:hasGeometry ?s2Geo . 
+	?s2Geo state:asWKT ?geo2 . 
+	?s2 state:hasTag ?tag2 . 
+	?tag2 state:hasKey "1" .  
+	FILTER(geof:sfWithin(?geo1, ?geo2)) .
+}
+
+
+Query 33 - Synthetic_Join_Within_1_512:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX state: <http://geographica.di.uoa.gr/generator/state/>
+PREFIX pointOfInterest: <http://geographica.di.uoa.gr/generator/pointOfInterest/>
+
+SELECT ?s1 ?s2 
+WHERE {
+	?s1 pointOfInterest:hasGeometry ?s1Geo . 
+	?s1Geo pointOfInterest:asWKT ?geo1 . 
+	?s1 pointOfInterest:hasTag ?tag1 . 
+	?tag1 pointOfInterest:hasKey "1" .  
+	?s2 state:hasGeometry ?s2Geo . 
+	?s2Geo state:asWKT ?geo2 . 
+	?s2 state:hasTag ?tag2 . 
+	?tag2 state:hasKey "512" .  
+	FILTER(geof:sfWithin(?geo1, ?geo2)) .
+}
+
+
+Query 34 - Synthetic_Join_Within_512_1:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX state: <http://geographica.di.uoa.gr/generator/state/>
+PREFIX pointOfInterest: <http://geographica.di.uoa.gr/generator/pointOfInterest/>
+
+SELECT ?s1 ?s2 
+WHERE {
+  ?s2 state:hasGeometry ?s2Geo . 
+  ?s2Geo state:asWKT ?geo2 . 
+  ?s2 state:hasTag ?tag2 . 
+  ?tag2 state:hasKey "1" .  
+  ?s1 pointOfInterest:hasGeometry ?s1Geo . 
+  ?s1Geo pointOfInterest:asWKT ?geo1 . 
+  ?s1 pointOfInterest:hasTag ?tag1 . 
+  ?tag1 pointOfInterest:hasKey "512" .  
+  FILTER(geof:sfWithin(?geo1, ?geo2)) .
+}
+
+
+Query 35 - Synthetic_Join_Within_512_512:
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geo-sf: <http://www.opengis.net/ont/sf#> 
+PREFIX state: <http://geographica.di.uoa.gr/generator/state/>
+PREFIX pointOfInterest: <http://geographica.di.uoa.gr/generator/pointOfInterest/>
+
+SELECT ?s1 ?s2 
+WHERE {
+	?s1 pointOfInterest:hasGeometry ?s1Geo . 
+	?s1Geo pointOfInterest:asWKT ?geo1 . 
+	?s1 pointOfInterest:hasTag ?tag1 . 
+	?tag1 pointOfInterest:hasKey "512" .  
+	?s2 state:hasGeometry ?s2Geo . 
+	?s2Geo state:asWKT ?geo2 . 
+	?s2 state:hasTag ?tag2 . 
+	?tag2 state:hasKey "512" .  
+	FILTER(geof:sfWithin(?geo1, ?geo2)) .
+}

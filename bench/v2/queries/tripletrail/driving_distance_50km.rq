@@ -1,0 +1,8 @@
+PREFIX pgr: <http://w3id.org/tripletrail/pgr#>
+SELECT (COUNT(?node) AS ?n) (SUM(?agg) AS ?sum) WHERE {
+  SERVICE <http://w3id.org/tripletrail/pgr> {
+    [] pgr:function pgr:pgr_drivingDistance ; pgr:network bench:micro ;
+       pgr:start_vid "{{src}}" ; pgr:distance {{distance}} ;
+       pgr:node ?node ; pgr:agg_cost ?agg .
+  }
+}

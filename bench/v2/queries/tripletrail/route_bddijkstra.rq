@@ -1,0 +1,8 @@
+PREFIX pgr: <http://w3id.org/tripletrail/pgr#>
+SELECT ?seq ?edge ?agg_cost WHERE {
+  SERVICE <http://w3id.org/tripletrail/pgr> {
+    [] pgr:function pgr:pgr_bdDijkstra ; pgr:network bench:micro ;
+       pgr:start_vid "{{src}}" ; pgr:end_vid "{{dst}}" ;
+       pgr:seq ?seq ; pgr:edge ?edge ; pgr:agg_cost ?agg_cost .
+  }
+} ORDER BY ?seq

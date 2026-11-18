@@ -1,0 +1,22 @@
+QUERY 28 - Extent_GAG:
+
+PREFIX strdf: <http://strdf.di.uoa.gr/ontology#> 
+
+SELECT (strdf:extent(?o1) AS ?ret)
+WHERE {  
+	GRAPH <http://geographica.di.uoa.gr/dataset/gag> {
+		?s1 <http://geo.linkedopendata.gr/gag/ontology/asWKT> ?o1
+	} 
+}
+
+
+QUERY 29 - Union_GAG:
+
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
+
+SELECT (geof:union(?o1) AS ?ret) 
+WHERE {  
+	GRAPH <http://geographica.di.uoa.gr/dataset/gag> {
+		?s1 <http://geo.linkedopendata.gr/gag/ontology/asWKT> ?o1
+	} 
+}

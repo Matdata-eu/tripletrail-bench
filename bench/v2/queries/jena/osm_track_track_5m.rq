@@ -1,0 +1,8 @@
+PREFIX spatial: <http://jena.apache.org/spatial#>
+# stand-in for the OSM<->RINF 5 m conflation join; spatial:nearbyGeom probes the spatial index
+SELECT (COUNT(*) AS ?n) WHERE {
+  ?t1 a bench:OsmTrack ; geo:hasGeometry/geo:asWKT ?w1 .
+  ?t2 spatial:nearbyGeom (?w1 5 uom:metre -1) .
+  ?t2 a bench:OsmTrack .
+  FILTER(?t1 != ?t2)
+}

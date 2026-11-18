@@ -1,0 +1,7 @@
+PREFIX spatial: <http://jena.apache.org/spatial#>
+# spatial:nearbyGeom (geometry radius units limit) probes the spatial index per signal
+SELECT (COUNT(*) AS ?n) WHERE {
+  ?s a era:Signal ; geo:hasGeometry/geo:asWKT ?w1 .
+  ?e spatial:nearbyGeom (?w1 20 uom:metre -1) .
+  ?e a era:LinearElement .
+}

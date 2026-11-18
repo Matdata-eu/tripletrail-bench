@@ -1,0 +1,24 @@
+# PostgreSQL + PostGIS + pgRouting for benchmark v2 on a machine without a local cluster.
+#   docker compose -f bench/v2/docker-compose.yml up -d postgis
+#   export PG_DSN_BASE="host=localhost port=5432 user=postgres password=bench" PG_CONTAINER=bench-postgis
+#   bench/v2/run_all.sh small
+# GraphDB and QLever are started by engines/graphdb.sh and engines/qlever.sh with `docker run`
+# (their stores are built offline by importrdf / qlever-index first, which compose does not model);
+# Jena runs from the jena-fuseki-geosparql jar and tripletrail from target/release/tripletrail.
+# The settings mirror engines/postgis.conf; scale shared_buffers / effective_cache_size with RAM
+# (about 1/4 and 2/3 of it).
+services:
+  postgis:
+    image: pgrouting/pgrouting:16-3.4-3.6.1
+    container_name: bench-postgis
+    environment:
+      POSTGRES_PASSWORD: bench
+    ports: ["5432:5432"]
+    shm_size: 6g
+    command: >
+      postgres -c shared_buffers=4GB -c work_mem=256MB -c maintenance_work_mem=1GB
+      -c effective_cache_size=10GB -c max_parallel_workers_per_gather=4 -c max_worker_processes=8
+      -c max_parallel_workers=4 -c random_page_cost=1.1 -c jit=off -c synchronous_commit=off
+      -c max_wal_size=8GB
+    volumes:
+      - ./work/postgres:/var/lib/postgresql/data

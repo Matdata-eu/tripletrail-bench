@@ -1,0 +1,15 @@
+# Every benchmark whose results are in bench/v2/results, for one synchronised run on a rented
+# 64 GB server (bench.sh all full; workflow suite=all, dataset=full, machine=ccx43).
+# One job per line: <suite> <dataset> [KEY=VALUE ...] (environment for that job only).
+v2 small
+v2 large
+v2 osm_norway
+geographica all
+bsbm 2785
+bsbm 28480
+sparqloscope bsbm-2785
+sparqloscope rinf-0076
+trainmarks medium
+trainmarks large
+trainmarks xlarge
+updates bsbm-28480

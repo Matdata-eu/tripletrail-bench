@@ -1,0 +1,13 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix ex: <http://example.org/rail#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<#Track> rml:logicalSource [ rml:source "data/tracks.csv" ; rml:referenceFormulation ql:CSV ] ;
+  rr:subjectMap [ rr:template "http://example.org/track/{id}" ; rr:class ex:Track ] ;
+  rr:predicateObjectMap
+    [ rr:predicate ex:name ; rr:objectMap [ rml:reference "name" ] ] ,
+    [ rr:predicate ex:km ; rr:objectMap [ rml:reference "km" ; rr:datatype xsd:decimal ] ] ,
+    [ rr:predicate ex:speed ; rr:objectMap [ rml:reference "speed" ; rr:datatype xsd:integer ] ] ,
+    [ rr:predicate ex:electrified ; rr:objectMap [ rml:reference "electrified" ; rr:datatype xsd:boolean ] ] .

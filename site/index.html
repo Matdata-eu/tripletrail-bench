@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TripleTrail benchmarks</title>
+<meta name="description" content="Benchmark results of TripleTrail against PostGIS, QLever, Jena, GraphDB, Oxigraph and maplib, with links to every run.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>TripleTrail benchmarks</h1>
+    <p class="lede">Every number on this page comes from a run of the
+      <a href="https://github.com/Matdata-eu/tripletrail-bench/actions/workflows/bench.yml">benchmark workflow</a>
+      on a rented server, with its inputs, logs and raw results in
+      <a href="https://github.com/Matdata-eu/tripletrail-bench">the repository</a>.
+      Lower times are better; higher query mixes per hour are better.</p>
+    <nav id="tabs" role="tablist"></nav>
+  </div>
+</header>
+<main class="wrap">
+  <div id="empty" hidden>
+    <h2>No results yet</h2>
+    <p>The first complete run on the published open core is on its way. Until then, the method
+      and the harness are in the <a href="https://github.com/Matdata-eu/tripletrail-bench">repository</a>.</p>
+  </div>
+  <div id="panels"></div>
+</main>
+<footer class="wrap">
+  <p>Engines: <a href="https://github.com/Matdata-eu/tripletrail">TripleTrail</a>, PostGIS, QLever,
+    Apache Jena, GraphDB, Oxigraph and maplib, each with the settings in
+    <a href="https://github.com/Matdata-eu/tripletrail-bench/tree/main/bench/v2/engines">bench/v2/engines</a>.
+    Data files: <a href="data/">data/</a> (CSV), <a href="data/summary.json">summary.json</a>.</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

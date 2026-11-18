@@ -1,0 +1,5 @@
+SELECT ?s WHERE {
+  ?s a era:Signal ; era:lineReference ?lr .
+  ?lr era:lineNationalId <{{line}}> ; era:kilometer ?km .
+  FILTER(?km >= {{km_a}} && ?km <= {{km_b}})
+}

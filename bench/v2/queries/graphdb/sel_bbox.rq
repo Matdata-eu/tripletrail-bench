@@ -1,0 +1,5 @@
+# GraphDB GeoSPARQL plugin: the triple form uses its spatial index (FILTER does not)
+SELECT ?s WHERE {
+  ?g geo:sfWithin "{{bbox_wkt}}"^^geo:wktLiteral .
+  ?s a era:Signal ; geo:hasGeometry ?g .
+}

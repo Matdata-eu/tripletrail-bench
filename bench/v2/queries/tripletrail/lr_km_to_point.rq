@@ -1,0 +1,4 @@
+PREFIX rail: <http://w3id.org/tripletrail/rail#>
+SELECT (rail:locate(?lw, {{km}} * 1000 / geof:metricLength(?lw)) AS ?p) WHERE {
+  <{{line}}> geo:hasGeometry/geo:asWKT ?lw .
+}

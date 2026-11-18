@@ -1,0 +1,9 @@
+PREFIX pgr: <http://w3id.org/tripletrail/pgr#>
+# cost only (no path rows): separates the search from producing ~500 rows per route
+SELECT ?agg_cost WHERE {
+  SERVICE <http://w3id.org/tripletrail/pgr> {
+    [] pgr:function pgr:pgr_dijkstraCost ; pgr:network bench:micro ;
+       pgr:start_vid "{{src}}" ; pgr:end_vid "{{dst}}" ;
+       pgr:agg_cost ?agg_cost .
+  }
+}

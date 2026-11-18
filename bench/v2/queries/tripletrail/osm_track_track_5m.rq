@@ -1,0 +1,7 @@
+# stand-in for the OSM<->RINF 5 m conflation join (no real RINF data here): OSM rail ways within
+# 5 m of another OSM rail way, ordered pairs
+SELECT (COUNT(*) AS ?n) WHERE {
+  ?t1 a bench:OsmTrack ; geo:hasGeometry/geo:asWKT ?w1 .
+  ?t2 a bench:OsmTrack ; geo:hasGeometry/geo:asWKT ?w2 .
+  FILTER(?t1 != ?t2 && geof:distance(?w1, ?w2, uom:metre) <= 5)
+}

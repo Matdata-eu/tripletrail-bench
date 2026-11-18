@@ -1,0 +1,6 @@
+PREFIX spatial: <http://jena.apache.org/spatial#>
+# spatial:withinBox (latMin lonMin latMax lonMax limit) uses the spatial index
+SELECT ?s WHERE {
+  ?s spatial:withinBox ({{miny}} {{minx}} {{maxy}} {{maxx}} -1) .
+  ?s a era:Signal .
+}

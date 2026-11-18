@@ -1,0 +1,3 @@
+SELECT (SUM(geof:metricLength(?w)) AS ?m) WHERE {
+  ?e a era:LinearElement ; geo:hasGeometry/geo:asWKT ?w .
+}

@@ -1,0 +1,8 @@
+PREFIX pgr: <http://w3id.org/tripletrail/pgr#>
+SELECT (COUNT(*) AS ?n) (SUM(?c) AS ?sum) WHERE {
+  SERVICE <http://w3id.org/tripletrail/pgr> {
+    [] pgr:function pgr:pgr_dijkstraCostMatrix ; pgr:network bench:micro ;
+       {{sparql_vids}} ;
+       pgr:agg_cost ?c .
+  }
+}

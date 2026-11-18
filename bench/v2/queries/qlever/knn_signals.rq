@@ -1,0 +1,10 @@
+PREFIX spatialSearch: <https://qlever.cs.uni-freiburg.de/spatialSearch/>
+# spatialSearch with the s2 index: k nearest neighbours
+SELECT ?s WHERE {
+  VALUES ?p { "{{pt_wkt}}"^^geo:wktLiteral }
+  SERVICE spatialSearch: {
+    _:c spatialSearch:algorithm spatialSearch:s2 ; spatialSearch:left ?p ; spatialSearch:right ?w ;
+        spatialSearch:numNearestNeighbors 10 ; spatialSearch:payload ?s ; spatialSearch:bindDistance ?d .
+    { ?s a era:Signal ; geo:hasGeometry/geo:asWKT ?w }
+  }
+} ORDER BY ?d
