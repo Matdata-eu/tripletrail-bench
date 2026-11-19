@@ -14,8 +14,8 @@
 #   worker: label sets Worker to another worker: label still on the item, or
 #   clears it; removing a status: label changes nothing.
 # - Run it by hand (Actions -> Project -> Run workflow) to add every existing
-#   issue and pull request, open and closed. Adding one that is already on the
-#   project changes nothing, so a second run is harmless.
+#   issue and pull request, open and closed. One that is already on the
+#   project is skipped, so a second run is harmless.
 #
 # GITHUB_TOKEN cannot write to an organisation project, so this needs the
 # repository secret PROJECT_TOKEN, set in each repository (an organisation
@@ -163,6 +163,12 @@ jobs:
                 // Stay under GitHub's limit on mutations per minute.
                 await new Promise((resolve) => setTimeout(resolve, 1000));
               } catch (error) {
+                // A race with another add (the project's own auto-add, or an
+                // event run) reports this; the item is on the project either way.
+                if (/Content already exists in this project/.test(error.message)) {
+                  core.info(`#${item.number} was already on the project`);
+                  continue;
+                }
                 failed += 1;
                 core.warning(`#${item.number}: ${error.message}`);
               }
