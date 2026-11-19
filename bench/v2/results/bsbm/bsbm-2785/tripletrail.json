@@ -1,0 +1,418 @@
+{
+ "engine": "tripletrail",
+ "dataset": "bsbm-2785",
+ "products": 2785,
+ "triples": 952930,
+ "runs": 50,
+ "warmup": 10,
+ "clients": 1,
+ "usecases": {
+  "explore": {
+   "querymixruns": 50.0,
+   "qmph": 70405.16,
+   "cqet": 0.04059,
+   "cqetg": 0.03985,
+   "totalruntime": 2.029,
+   "minquerymixruntime": 0.0178,
+   "maxquerymixruntime": 0.0612,
+   "queries": {
+    "1": {
+     "executecount": 50.0,
+     "aqet": 0.001234,
+     "aqetg": 0.001204,
+     "qps": 643.39,
+     "minqet": 0.00051943,
+     "maxqet": 0.00176576,
+     "avgresults": 1.4,
+     "timeoutcount": 0.0
+    },
+    "2": {
+     "executecount": 300.0,
+     "aqet": 0.002142,
+     "aqetg": 0.002057,
+     "qps": 370.6,
+     "minqet": 0.00059479,
+     "maxqet": 0.00528152,
+     "avgresults": 18.38,
+     "timeoutcount": 0.0
+    },
+    "3": {
+     "executecount": 50.0,
+     "aqet": 0.001381,
+     "aqetg": 0.001343,
+     "qps": 574.74,
+     "minqet": 0.00062819,
+     "maxqet": 0.00240779,
+     "avgresults": 0.76,
+     "timeoutcount": 0.0
+    },
+    "4": {
+     "executecount": 50.0,
+     "aqet": 0.001534,
+     "aqetg": 0.001482,
+     "qps": 517.4,
+     "minqet": 0.0005813,
+     "maxqet": 0.00256951,
+     "avgresults": 0.2,
+     "timeoutcount": 0.0
+    },
+    "5": {
+     "executecount": 100.0,
+     "aqet": 0.002056,
+     "aqetg": 0.001978,
+     "qps": 386.05,
+     "minqet": 0.00069276,
+     "maxqet": 0.00359096,
+     "avgresults": 3.82,
+     "timeoutcount": 0.0
+    },
+    "6": {
+     "executecount": 0.0,
+     "aqet": 0.0,
+     "aqetg": null,
+     "qps": null,
+     "minqet": null,
+     "maxqet": null,
+     "avgresults": null,
+     "timeoutcount": null
+    },
+    "7": {
+     "executecount": 200.0,
+     "aqet": 0.001701,
+     "aqetg": 0.001638,
+     "qps": 466.67,
+     "minqet": 0.00056037,
+     "maxqet": 0.00379543,
+     "avgresults": 10.62,
+     "timeoutcount": 0.0
+    },
+    "8": {
+     "executecount": 100.0,
+     "aqet": 0.00284,
+     "aqetg": 0.00273,
+     "qps": 279.55,
+     "minqet": 0.00061105,
+     "maxqet": 0.00504372,
+     "avgresults": 4.79,
+     "timeoutcount": 0.0
+    },
+    "9": {
+     "executecount": 200.0,
+     "aqet": 0.000548,
+     "aqetg": 0.000535,
+     "qps": 1447.59,
+     "minqet": 0.00022715,
+     "maxqet": 0.00083723,
+     "avgresults": 885.59,
+     "timeoutcount": 0.0
+    },
+    "10": {
+     "executecount": 100.0,
+     "aqet": 0.001467,
+     "aqetg": 0.001426,
+     "qps": 541.27,
+     "minqet": 0.00054291,
+     "maxqet": 0.00232301,
+     "avgresults": 1.96,
+     "timeoutcount": 0.0
+    },
+    "11": {
+     "executecount": 50.0,
+     "aqet": 0.000876,
+     "aqetg": 0.000858,
+     "qps": 906.01,
+     "minqet": 0.00043388,
+     "maxqet": 0.00139375,
+     "avgresults": 9.6,
+     "timeoutcount": 0.0
+    },
+    "12": {
+     "executecount": 50.0,
+     "aqet": 0.00099,
+     "aqetg": 0.00097,
+     "qps": 801.66,
+     "minqet": 0.00041029,
+     "maxqet": 0.00124736,
+     "avgresults": 1476.44,
+     "timeoutcount": 0.0
+    }
+   },
+   "status": "ok"
+  },
+  "bi": {
+   "querymixruns": 50.0,
+   "qmph": 30144.65,
+   "cqet": 0.1107,
+   "cqetg": 0.10657,
+   "totalruntime": 5.535,
+   "minquerymixruntime": 0.0712,
+   "maxquerymixruntime": 0.2036,
+   "queries": {
+    "1": {
+     "executecount": 50.0,
+     "aqet": 0.003661,
+     "aqetg": 0.003211,
+     "qps": 253.2,
+     "minqet": 0.00122301,
+     "maxqet": 0.00888666,
+     "avgresults": 10.0,
+     "timeoutcount": 0.0
+    },
+    "2": {
+     "executecount": 100.0,
+     "aqet": 0.002796,
+     "aqetg": 0.002636,
+     "qps": 331.51,
+     "minqet": 0.00110436,
+     "maxqet": 0.00514181,
+     "avgresults": 8.5,
+     "timeoutcount": 0.0
+    },
+    "3": {
+     "executecount": 50.0,
+     "aqet": 0.019548,
+     "aqetg": 0.019199,
+     "qps": 47.42,
+     "minqet": 0.00718525,
+     "maxqet": 0.0251027,
+     "avgresults": 10.0,
+     "timeoutcount": 0.0
+    },
+    "4": {
+     "executecount": 50.0,
+     "aqet": 0.021466,
+     "aqetg": 0.005327,
+     "qps": 43.18,
+     "minqet": 0.00089963,
+     "maxqet": 0.10463567,
+     "avgresults": 3.4,
+     "timeoutcount": 0.0
+    },
+    "5": {
+     "executecount": 150.0,
+     "aqet": 0.002968,
+     "aqetg": 0.002454,
+     "qps": 312.29,
+     "minqet": 0.00090809,
+     "maxqet": 0.01146786,
+     "avgresults": 5.59,
+     "timeoutcount": 0.0
+    },
+    "6": {
+     "executecount": 200.0,
+     "aqet": 0.011171,
+     "aqetg": 0.008956,
+     "qps": 82.98,
+     "minqet": 0.00146542,
+     "maxqet": 0.02903739,
+     "avgresults": 21.89,
+     "timeoutcount": 0.0
+    },
+    "7": {
+     "executecount": 100.0,
+     "aqet": 0.001544,
+     "aqetg": 0.001411,
+     "qps": 600.36,
+     "minqet": 0.00094282,
+     "maxqet": 0.00576599,
+     "avgresults": 2.26,
+     "timeoutcount": 0.0
+    },
+    "8": {
+     "executecount": 50.0,
+     "aqet": 0.003756,
+     "aqetg": 0.002848,
+     "qps": 246.79,
+     "minqet": 0.00133553,
+     "maxqet": 0.01245479,
+     "avgresults": 2.6,
+     "timeoutcount": 0.0
+    }
+   },
+   "status": "ok"
+  },
+  "update": {
+   "querymixruns": 50.0,
+   "qmph": 42227.66,
+   "cqet": 0.06983,
+   "cqetg": 0.06969,
+   "totalruntime": 3.491,
+   "minquerymixruntime": 0.0574,
+   "maxquerymixruntime": 0.0854,
+   "queries": {
+    "1": {
+     "executecount": 100.0,
+     "aqet": 0.00621,
+     "aqetg": 0.006124,
+     "qps": 131.89,
+     "minqet": 0.00368277,
+     "maxqet": 0.01422962,
+     "avgresults": 88.0,
+     "timeoutcount": 0.0
+    },
+    "2": {
+     "executecount": 150.0,
+     "aqet": 0.00252,
+     "aqetg": 0.002444,
+     "qps": 325.06,
+     "minqet": 0.00049721,
+     "maxqet": 0.00470167,
+     "avgresults": 88.0,
+     "timeoutcount": 0.0
+    },
+    "3": {
+     "executecount": 50.0,
+     "aqet": 0.001659,
+     "aqetg": 0.001635,
+     "qps": 493.73,
+     "minqet": 0.00121543,
+     "maxqet": 0.00253973,
+     "avgresults": 1.56,
+     "timeoutcount": 0.0
+    },
+    "4": {
+     "executecount": 300.0,
+     "aqet": 0.002721,
+     "aqetg": 0.002659,
+     "qps": 301.02,
+     "minqet": 0.00142238,
+     "maxqet": 0.00480058,
+     "avgresults": 18.62,
+     "timeoutcount": 0.0
+    },
+    "5": {
+     "executecount": 50.0,
+     "aqet": 0.001723,
+     "aqetg": 0.001702,
+     "qps": 475.28,
+     "minqet": 0.00101062,
+     "maxqet": 0.00311783,
+     "avgresults": 0.96,
+     "timeoutcount": 0.0
+    },
+    "6": {
+     "executecount": 50.0,
+     "aqet": 0.002379,
+     "aqetg": 0.002302,
+     "qps": 344.34,
+     "minqet": 0.0012878,
+     "maxqet": 0.00719628,
+     "avgresults": 0.12,
+     "timeoutcount": 0.0
+    },
+    "7": {
+     "executecount": 100.0,
+     "aqet": 0.002679,
+     "aqetg": 0.002578,
+     "qps": 305.69,
+     "minqet": 0.00104747,
+     "maxqet": 0.00411886,
+     "avgresults": 4.03,
+     "timeoutcount": 0.0
+    },
+    "8": {
+     "executecount": 0.0,
+     "aqet": 0.0,
+     "aqetg": null,
+     "qps": null,
+     "minqet": null,
+     "maxqet": null,
+     "avgresults": null,
+     "timeoutcount": null
+    },
+    "9": {
+     "executecount": 200.0,
+     "aqet": 0.001967,
+     "aqetg": 0.00193,
+     "qps": 416.45,
+     "minqet": 0.00123628,
+     "maxqet": 0.00508266,
+     "avgresults": 9.49,
+     "timeoutcount": 0.0
+    },
+    "10": {
+     "executecount": 100.0,
+     "aqet": 0.003333,
+     "aqetg": 0.003226,
+     "qps": 245.74,
+     "minqet": 0.00143903,
+     "maxqet": 0.00563262,
+     "avgresults": 4.71,
+     "timeoutcount": 0.0
+    },
+    "11": {
+     "executecount": 200.0,
+     "aqet": 0.000603,
+     "aqetg": 0.000597,
+     "qps": 1357.19,
+     "minqet": 0.00034887,
+     "maxqet": 0.00139949,
+     "avgresults": 889.43,
+     "timeoutcount": 0.0
+    },
+    "12": {
+     "executecount": 100.0,
+     "aqet": 0.001675,
+     "aqetg": 0.001653,
+     "qps": 489.12,
+     "minqet": 0.0010257,
+     "maxqet": 0.00263656,
+     "avgresults": 1.67,
+     "timeoutcount": 0.0
+    },
+    "13": {
+     "executecount": 50.0,
+     "aqet": 0.000974,
+     "aqetg": 0.000966,
+     "qps": 841.19,
+     "minqet": 0.00066171,
+     "maxqet": 0.00148427,
+     "avgresults": 9.6,
+     "timeoutcount": 0.0
+    },
+    "14": {
+     "executecount": 50.0,
+     "aqet": 0.001132,
+     "aqetg": 0.001124,
+     "qps": 723.36,
+     "minqet": 0.00077071,
+     "maxqet": 0.00160524,
+     "avgresults": 1562.42,
+     "timeoutcount": 0.0
+    }
+   },
+   "status": "ok"
+  }
+ },
+ "load": {
+  "engine": "tripletrail",
+  "dataset": "bsbm-2785",
+  "load_s": 1.16,
+  "start_s": 0.557,
+  "disk_bytes": 109559993,
+  "disk_by_file": {
+   "dict.idx": 3339408,
+   "LOCK": 0,
+   "gpos.seg": 3541704,
+   "geoms.bin": 40,
+   "spog.seg": 11252368,
+   "TIMELINE": 33,
+   "generation": 1,
+   "gpso.seg": 4263568,
+   "FORMAT": 2,
+   "wal.log": 0,
+   "stats.bin": 26640,
+   "gosp.seg": 4436064,
+   "RETIRED": 5,
+   "checksums": 310,
+   "ospg.seg": 4436064,
+   "CURRENT": 2,
+   "psog.seg": 4263568,
+   "posg.seg": 3541704,
+   "dict.bin": 59206144,
+   "gspo.seg": 11252368
+  },
+  "load_peak_rss_bytes": 952360960,
+  "load_peak_anon_bytes": 936042496
+ }
+}

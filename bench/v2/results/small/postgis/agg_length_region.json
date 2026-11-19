@@ -1,0 +1,180 @@
+{
+ "engine": "postgis",
+ "qid": "agg_length_region",
+ "family": "4 aggregate",
+ "kind": "groups",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 477.082,
+   "ok": true,
+   "rows": 9,
+   "result": {
+    "groups": {
+     "http://example.org/bench/region/0_0": 1496338.3710233606,
+     "http://example.org/bench/region/0_1": 1377082.34774532,
+     "http://example.org/bench/region/0_2": 1369935.224789568,
+     "http://example.org/bench/region/1_0": 1325263.9814366943,
+     "http://example.org/bench/region/1_1": 1716759.521568318,
+     "http://example.org/bench/region/1_2": 1580453.745324292,
+     "http://example.org/bench/region/2_0": 1474541.6305592165,
+     "http://example.org/bench/region/2_1": 1613973.502410716,
+     "http://example.org/bench/region/2_2": 1328139.7458146717
+    }
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 422.896,
+   "ok": true,
+   "rows": 9,
+   "result": {
+    "groups": {
+     "http://example.org/bench/region/0_0": 1496338.3710233606,
+     "http://example.org/bench/region/0_1": 1377082.34774532,
+     "http://example.org/bench/region/0_2": 1369935.224789568,
+     "http://example.org/bench/region/1_0": 1325263.9814366943,
+     "http://example.org/bench/region/1_1": 1716759.521568318,
+     "http://example.org/bench/region/1_2": 1580453.745324292,
+     "http://example.org/bench/region/2_0": 1474541.6305592165,
+     "http://example.org/bench/region/2_1": 1613973.502410716,
+     "http://example.org/bench/region/2_2": 1328139.7458146717
+    }
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 421.68,
+   "ok": true,
+   "rows": 9,
+   "result": {
+    "groups": {
+     "http://example.org/bench/region/0_0": 1496338.3710233606,
+     "http://example.org/bench/region/0_1": 1377082.34774532,
+     "http://example.org/bench/region/0_2": 1369935.224789568,
+     "http://example.org/bench/region/1_0": 1325263.9814366943,
+     "http://example.org/bench/region/1_1": 1716759.521568318,
+     "http://example.org/bench/region/1_2": 1580453.745324292,
+     "http://example.org/bench/region/2_0": 1474541.6305592165,
+     "http://example.org/bench/region/2_1": 1613973.502410716,
+     "http://example.org/bench/region/2_2": 1328139.7458146717
+    }
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 421.77,
+   "ok": true,
+   "rows": 9,
+   "result": {
+    "groups": {
+     "http://example.org/bench/region/0_0": 1496338.3710233606,
+     "http://example.org/bench/region/0_1": 1377082.34774532,
+     "http://example.org/bench/region/0_2": 1369935.224789568,
+     "http://example.org/bench/region/1_0": 1325263.9814366943,
+     "http://example.org/bench/region/1_1": 1716759.521568318,
+     "http://example.org/bench/region/1_2": 1580453.745324292,
+     "http://example.org/bench/region/2_0": 1474541.6305592165,
+     "http://example.org/bench/region/2_1": 1613973.502410716,
+     "http://example.org/bench/region/2_2": 1328139.7458146717
+    }
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 423.959,
+   "ok": true,
+   "rows": 9,
+   "result": {
+    "groups": {
+     "http://example.org/bench/region/0_0": 1496338.3710233606,
+     "http://example.org/bench/region/0_1": 1377082.34774532,
+     "http://example.org/bench/region/0_2": 1369935.224789568,
+     "http://example.org/bench/region/1_0": 1325263.9814366943,
+     "http://example.org/bench/region/1_1": 1716759.521568318,
+     "http://example.org/bench/region/1_2": 1580453.745324292,
+     "http://example.org/bench/region/2_0": 1474541.6305592165,
+     "http://example.org/bench/region/2_1": 1613973.502410716,
+     "http://example.org/bench/region/2_2": 1328139.7458146717
+    }
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 420.839,
+   "ok": true,
+   "rows": 9,
+   "result": {
+    "groups": {
+     "http://example.org/bench/region/0_0": 1496338.3710233606,
+     "http://example.org/bench/region/0_1": 1377082.34774532,
+     "http://example.org/bench/region/0_2": 1369935.224789568,
+     "http://example.org/bench/region/1_0": 1325263.9814366943,
+     "http://example.org/bench/region/1_1": 1716759.521568318,
+     "http://example.org/bench/region/1_2": 1580453.745324292,
+     "http://example.org/bench/region/2_0": 1474541.6305592165,
+     "http://example.org/bench/region/2_1": 1613973.502410716,
+     "http://example.org/bench/region/2_2": 1328139.7458146717
+    }
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 6,
+   "ms": 426.135,
+   "ok": true,
+   "rows": 9,
+   "result": {
+    "groups": {
+     "http://example.org/bench/region/0_0": 1496338.3710233606,
+     "http://example.org/bench/region/0_1": 1377082.34774532,
+     "http://example.org/bench/region/0_2": 1369935.224789568,
+     "http://example.org/bench/region/1_0": 1325263.9814366943,
+     "http://example.org/bench/region/1_1": 1716759.521568318,
+     "http://example.org/bench/region/1_2": 1580453.745324292,
+     "http://example.org/bench/region/2_0": 1474541.6305592165,
+     "http://example.org/bench/region/2_1": 1613973.502410716,
+     "http://example.org/bench/region/2_2": 1328139.7458146717
+    }
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 7,
+   "ms": 422.271,
+   "ok": true,
+   "rows": 9,
+   "result": {
+    "groups": {
+     "http://example.org/bench/region/0_0": 1496338.3710233606,
+     "http://example.org/bench/region/0_1": 1377082.34774532,
+     "http://example.org/bench/region/0_2": 1369935.224789568,
+     "http://example.org/bench/region/1_0": 1325263.9814366943,
+     "http://example.org/bench/region/1_1": 1716759.521568318,
+     "http://example.org/bench/region/1_2": 1580453.745324292,
+     "http://example.org/bench/region/2_0": 1474541.6305592165,
+     "http://example.org/bench/region/2_1": 1613973.502410716,
+     "http://example.org/bench/region/2_2": 1328139.7458146717
+    }
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 477.082,
+ "warm": {
+  "n": 5,
+  "p50_ms": 422.271,
+  "p95_ms": 426.135,
+  "min_ms": 420.839,
+  "max_ms": 426.135,
+  "mean_ms": 422.995
+ },
+ "dataset": "small",
+ "rss_after": "203 MiB (sum over backends, shared buffers counted per process)"
+}

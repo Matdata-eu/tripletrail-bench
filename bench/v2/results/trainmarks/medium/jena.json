@@ -1,0 +1,142 @@
+{
+ "engine": "jena",
+ "scale": "medium",
+ "triples": 98000,
+ "warm_runs": 5,
+ "queries": {
+  "q1_count": {
+   "runs": [
+    208.413,
+    82.762,
+    69.946,
+    98.363,
+    80.9,
+    50.53,
+    52.16
+   ],
+   "rows": 1,
+   "first_row": [
+    "98000"
+   ],
+   "status": "ok",
+   "cold_ms": 208.413,
+   "warm": {
+    "n": 5,
+    "median_ms": 69.946,
+    "min_ms": 50.53,
+    "max_ms": 98.363
+   }
+  },
+  "q2_customer_orders": {
+   "runs": [
+    493.766,
+    140.456,
+    93.734,
+    94.27,
+    89.003,
+    101.496,
+    89.414
+   ],
+   "rows": 20,
+   "first_row": [
+    "Paul Nilsen",
+    "112",
+    "295454.07000000007e0"
+   ],
+   "status": "ok",
+   "cold_ms": 493.766,
+   "warm": {
+    "n": 5,
+    "median_ms": 93.734,
+    "min_ms": 89.003,
+    "max_ms": 101.496
+   }
+  },
+  "q3_join_3_entities": {
+   "runs": [
+    34.696,
+    38.655,
+    26.178,
+    32.756,
+    16.218,
+    24.816,
+    29.951
+   ],
+   "rows": 50,
+   "first_row": [
+    "Frank Berg",
+    "Product-106",
+    "4999.47e0",
+    "completed"
+   ],
+   "status": "ok",
+   "cold_ms": 34.696,
+   "warm": {
+    "n": 5,
+    "median_ms": 26.178,
+    "min_ms": 16.218,
+    "max_ms": 32.756
+   }
+  },
+  "q4_optional_aggregation": {
+   "runs": [
+    163.444,
+    95.702,
+    70.92,
+    81.5,
+    91.885,
+    181.215,
+    72.149
+   ],
+   "rows": 50,
+   "first_row": [
+    "http://benchmark.example/Germany",
+    "http://benchmark.example/SMB",
+    "24",
+    "347"
+   ],
+   "status": "ok",
+   "cold_ms": 163.444,
+   "warm": {
+    "n": 5,
+    "median_ms": 81.5,
+    "min_ms": 70.92,
+    "max_ms": 181.215
+   }
+  },
+  "q5_construct": {
+   "runs": [
+    86.659,
+    30.613,
+    35.559,
+    35.179,
+    31.821,
+    31.317,
+    24.758
+   ],
+   "rows": 3878,
+   "first_row": [
+    "<http://benchmark.example/C000004> <http://benchmark.example/country> <http://benchmark.example/Norway> ."
+   ],
+   "status": "ok",
+   "cold_ms": 86.659,
+   "warm": {
+    "n": 5,
+    "median_ms": 31.821,
+    "min_ms": 24.758,
+    "max_ms": 35.559
+   }
+  },
+  "q6_delete_insert": {
+   "status": "ok",
+   "ms": 88.021
+  }
+ },
+ "load": {
+  "engine": "jena",
+  "dataset": "trainmarks-medium",
+  "load_s": 1.983,
+  "start_and_spatial_index_s": 2.232,
+  "disk_bytes": 201908714
+ }
+}

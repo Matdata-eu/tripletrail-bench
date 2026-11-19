@@ -1,0 +1,18 @@
+{
+ "engine": "jena",
+ "qid": "osm_track_landuse",
+ "family": "8 osm",
+ "kind": "scalars",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ok": false,
+   "error": "HTTP 503: Query timed out\n"
+  }
+ ],
+ "status": "failed",
+ "reason": "HTTP 503: Query timed out\n",
+ "dataset": "osm_norway",
+ "rss_after": "8151 MiB"
+}

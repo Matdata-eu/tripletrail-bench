@@ -1,0 +1,10 @@
+{
+ "engine": "qlever",
+ "qid": "cost_matrix_100",
+ "family": "6 routing",
+ "kind": "scalars",
+ "runs": [],
+ "status": "n/a",
+ "reason": "no routing",
+ "dataset": "large"
+}

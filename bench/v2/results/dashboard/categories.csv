@@ -1,0 +1,157 @@
+dataset,category,engine,ms
+bsbm-2785,join,tripletrail,4.969
+bsbm-2785,optional,tripletrail,5.12
+bsbm-2785,minus,tripletrail,4.636
+bsbm-2785,exists,tripletrail,3.392
+bsbm-2785,union,tripletrail,2.988
+bsbm-2785,group by / distinct,tripletrail,6.927
+bsbm-2785,property path,tripletrail,3.979
+bsbm-2785,regex / string,tripletrail,3.878
+bsbm-2785,result size,tripletrail,16.007
+bsbm-2785,numeric,tripletrail,6.458
+bsbm-2785,filter / language,tripletrail,1.662
+bsbm-2785,date,tripletrail,13.369
+bsbm-2785,count,tripletrail,2.358
+bsbm-2785,join,oxigraph,60.555
+bsbm-2785,optional,oxigraph,173.919
+bsbm-2785,minus,oxigraph,86.632
+bsbm-2785,exists,oxigraph,382.329
+bsbm-2785,union,oxigraph,276.985
+bsbm-2785,group by / distinct,oxigraph,40.883
+bsbm-2785,property path,oxigraph,35.606
+bsbm-2785,regex / string,oxigraph,12.479
+bsbm-2785,result size,oxigraph,65.413
+bsbm-2785,numeric,oxigraph,19.293
+bsbm-2785,filter / language,oxigraph,169.611
+bsbm-2785,date,oxigraph,32.91
+bsbm-2785,count,oxigraph,520.042
+bsbm-2785,join,qlever,20.37
+bsbm-2785,optional,qlever,21.661
+bsbm-2785,minus,qlever,16.074
+bsbm-2785,exists,qlever,17.87
+bsbm-2785,union,qlever,16.484
+bsbm-2785,group by / distinct,qlever,9.683
+bsbm-2785,property path,qlever,7.281
+bsbm-2785,regex / string,qlever,17.735
+bsbm-2785,result size,qlever,122.223
+bsbm-2785,numeric,qlever,6.235
+bsbm-2785,filter / language,qlever,6.816
+bsbm-2785,date,qlever,7.668
+bsbm-2785,count,qlever,4.103
+bsbm-2785,join,jena,73.746
+bsbm-2785,optional,jena,385.988
+bsbm-2785,minus,jena,122.395
+bsbm-2785,exists,jena,126.656
+bsbm-2785,union,jena,147.376
+bsbm-2785,group by / distinct,jena,99.846
+bsbm-2785,property path,jena,65.293
+bsbm-2785,regex / string,jena,30.808
+bsbm-2785,result size,jena,164.21
+bsbm-2785,numeric,jena,56.962
+bsbm-2785,filter / language,jena,62.634
+bsbm-2785,date,jena,85.697
+bsbm-2785,count,jena,575.566
+bsbm-2785,join,graphdb,49.622
+bsbm-2785,optional,graphdb,100.254
+bsbm-2785,minus,graphdb,52.475
+bsbm-2785,exists,graphdb,218.372
+bsbm-2785,union,graphdb,190.082
+bsbm-2785,group by / distinct,graphdb,76.87
+bsbm-2785,property path,graphdb,13.114
+bsbm-2785,regex / string,graphdb,41.926
+bsbm-2785,result size,graphdb,160.507
+bsbm-2785,numeric,graphdb,70.144
+bsbm-2785,filter / language,graphdb,56.109
+bsbm-2785,date,graphdb,113.532
+bsbm-2785,count,graphdb,265.339
+bsbm-2785,join,maplib,11.46
+bsbm-2785,optional,maplib,14.216
+bsbm-2785,minus,maplib,8.632
+bsbm-2785,exists,maplib,16.661
+bsbm-2785,union,maplib,11.795
+bsbm-2785,group by / distinct,maplib,8.383
+bsbm-2785,property path,maplib,30.135
+bsbm-2785,regex / string,maplib,6.704
+bsbm-2785,result size,maplib,58.928
+bsbm-2785,numeric,maplib,4.262
+bsbm-2785,filter / language,maplib,4.465
+bsbm-2785,date,maplib,10.981
+bsbm-2785,count,maplib,51.222
+rinf-0076,join,tripletrail,6.901
+rinf-0076,optional,tripletrail,10.772
+rinf-0076,minus,tripletrail,10.551
+rinf-0076,exists,tripletrail,10.523
+rinf-0076,union,tripletrail,7.218
+rinf-0076,group by / distinct,tripletrail,7.75
+rinf-0076,property path,tripletrail,9.708
+rinf-0076,regex / string,tripletrail,9.942
+rinf-0076,result size,tripletrail,42.832
+rinf-0076,numeric,tripletrail,1.674
+rinf-0076,filter / language,tripletrail,2.43
+rinf-0076,date,tripletrail,1.24
+rinf-0076,count,tripletrail,1.157
+rinf-0076,join,oxigraph,88.607
+rinf-0076,optional,oxigraph,454.681
+rinf-0076,minus,oxigraph,232.485
+rinf-0076,exists,oxigraph,824.312
+rinf-0076,union,oxigraph,609.361
+rinf-0076,group by / distinct,oxigraph,23.371
+rinf-0076,property path,oxigraph,59.041
+rinf-0076,regex / string,oxigraph,71.745
+rinf-0076,result size,oxigraph,136.842
+rinf-0076,numeric,oxigraph,3.062
+rinf-0076,filter / language,oxigraph,558.057
+rinf-0076,date,oxigraph,2.365
+rinf-0076,count,oxigraph,924.119
+rinf-0076,join,qlever,42.149
+rinf-0076,optional,qlever,33.336
+rinf-0076,minus,qlever,31.171
+rinf-0076,exists,qlever,25.299
+rinf-0076,union,qlever,23.669
+rinf-0076,group by / distinct,qlever,11.463
+rinf-0076,property path,qlever,47.904
+rinf-0076,regex / string,qlever,64.588
+rinf-0076,result size,qlever,275.12
+rinf-0076,numeric,qlever,6.178
+rinf-0076,filter / language,qlever,14.682
+rinf-0076,date,qlever,3.797
+rinf-0076,count,qlever,4.488
+rinf-0076,join,jena,76.757
+rinf-0076,optional,jena,537.033
+rinf-0076,minus,jena,193.031
+rinf-0076,exists,jena,258.064
+rinf-0076,union,jena,255.911
+rinf-0076,group by / distinct,jena,62.284
+rinf-0076,property path,jena,86.513
+rinf-0076,regex / string,jena,77.906
+rinf-0076,result size,jena,277.901
+rinf-0076,numeric,jena,7.326
+rinf-0076,filter / language,jena,181.027
+rinf-0076,date,jena,6.662
+rinf-0076,count,jena,913.047
+rinf-0076,join,graphdb,58.035
+rinf-0076,optional,graphdb,191.773
+rinf-0076,minus,graphdb,79.563
+rinf-0076,exists,graphdb,347.735
+rinf-0076,union,graphdb,155.987
+rinf-0076,group by / distinct,graphdb,43.725
+rinf-0076,property path,graphdb,56.173
+rinf-0076,regex / string,graphdb,171.172
+rinf-0076,result size,graphdb,224.159
+rinf-0076,numeric,graphdb,9.814
+rinf-0076,filter / language,graphdb,109.973
+rinf-0076,date,graphdb,9.174
+rinf-0076,count,graphdb,403.309
+rinf-0076,join,maplib,17.066
+rinf-0076,optional,maplib,24.849
+rinf-0076,minus,maplib,13.877
+rinf-0076,exists,maplib,22.853
+rinf-0076,union,maplib,20.936
+rinf-0076,group by / distinct,maplib,7.481
+rinf-0076,property path,maplib,82.046
+rinf-0076,regex / string,maplib,14.737
+rinf-0076,result size,maplib,130.605
+rinf-0076,numeric,maplib,2.263
+rinf-0076,filter / language,maplib,10.105
+rinf-0076,date,maplib,2.338
+rinf-0076,count,maplib,79.814

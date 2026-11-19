@@ -1,0 +1,116 @@
+{
+ "engine": "postgis",
+ "qid": "agg_total_length",
+ "family": "4 aggregate",
+ "kind": "scalars",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 60.425,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     13282488.070671584
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 61.514,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     13282488.070671668
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 62.424,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     13282488.070671678
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 61.837,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     13282488.070671687
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 61.996,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     13282488.070671633
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 51.232,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     13282488.07067163
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 6,
+   "ms": 61.286,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     13282488.070671676
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 7,
+   "ms": 57.681,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     13282488.070671609
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 60.425,
+ "warm": {
+  "n": 5,
+  "p50_ms": 61.286,
+  "p95_ms": 61.996,
+  "min_ms": 51.232,
+  "max_ms": 61.996,
+  "mean_ms": 58.806
+ },
+ "dataset": "small",
+ "rss_after": "209 MiB (sum over backends, shared buffers counted per process)"
+}

@@ -1,0 +1,10 @@
+{
+ "engine": "qlever",
+ "dataset": "small",
+ "load_s": 2.495,
+ "start_s": 0.508,
+ "disk_bytes": 16610757,
+ "wall_s": 10.805,
+ "rss_after_start": "6.012MiB / 61.31GiB",
+ "triples": 805538
+}

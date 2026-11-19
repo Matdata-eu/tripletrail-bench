@@ -1,0 +1,10 @@
+{
+ "engine": "jena",
+ "qid": "agg_length_region",
+ "family": "4 aggregate",
+ "kind": "groups",
+ "runs": [],
+ "status": "n/a",
+ "reason": "geof:metricLength / metricArea / aggUnion are not implemented by jena-geosparql 6.2 (they return no value; geof:intersection works)",
+ "dataset": "large"
+}

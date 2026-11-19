@@ -1,0 +1,166 @@
+{
+ "engine": "tripletrail",
+ "scale": "large",
+ "triples": 1001000,
+ "warm_runs": 5,
+ "queries": {
+  "q1_count": {
+   "runs": [
+    4.447,
+    2.709,
+    2.662,
+    2.283,
+    2.373,
+    2.447,
+    2.399
+   ],
+   "rows": 1,
+   "first_row": [
+    "1001000"
+   ],
+   "status": "ok",
+   "cold_ms": 4.447,
+   "warm": {
+    "n": 5,
+    "median_ms": 2.399,
+    "min_ms": 2.283,
+    "max_ms": 2.662
+   }
+  },
+  "q2_customer_orders": {
+   "runs": [
+    240.345,
+    187.69,
+    225.834,
+    190.414,
+    189.952,
+    189.273,
+    221.254
+   ],
+   "rows": 20,
+   "first_row": [
+    "Eve Andersen",
+    "663",
+    "1723710.6299999973"
+   ],
+   "status": "ok",
+   "cold_ms": 240.345,
+   "warm": {
+    "n": 5,
+    "median_ms": 190.414,
+    "min_ms": 189.273,
+    "max_ms": 225.834
+   }
+  },
+  "q3_join_3_entities": {
+   "runs": [
+    73.82,
+    73.497,
+    43.103,
+    72.829,
+    67.263,
+    72.849,
+    42.783
+   ],
+   "rows": 50,
+   "first_row": [
+    "Charlie Larsen",
+    "Product-570",
+    "4999.21",
+    "completed"
+   ],
+   "status": "ok",
+   "cold_ms": 73.82,
+   "warm": {
+    "n": 5,
+    "median_ms": 67.263,
+    "min_ms": 42.783,
+    "max_ms": 72.849
+   }
+  },
+  "q4_optional_aggregation": {
+   "runs": [
+    193.026,
+    192.592,
+    187.451,
+    174.767,
+    206.957,
+    188.02,
+    157.284
+   ],
+   "rows": 50,
+   "first_row": [
+    "http://benchmark.example/Canada",
+    "http://benchmark.example/Enterprise",
+    "227",
+    "3085"
+   ],
+   "status": "ok",
+   "cold_ms": 193.026,
+   "warm": {
+    "n": 5,
+    "median_ms": 187.451,
+    "min_ms": 157.284,
+    "max_ms": 206.957
+   }
+  },
+  "q5_construct": {
+   "runs": [
+    111.408,
+    111.633,
+    112.293,
+    104.165,
+    111.662,
+    99.594,
+    114.793
+   ],
+   "rows": 43091,
+   "first_row": [
+    "<http://benchmark.example/C000003> <http://benchmark.example/country> <http://benchmark.example/Norway> ."
+   ],
+   "status": "ok",
+   "cold_ms": 111.408,
+   "warm": {
+    "n": 5,
+    "median_ms": 111.662,
+    "min_ms": 99.594,
+    "max_ms": 114.793
+   }
+  },
+  "q6_delete_insert": {
+   "status": "ok",
+   "ms": 62.983
+  }
+ },
+ "load": {
+  "engine": "tripletrail",
+  "dataset": "trainmarks-large",
+  "load_s": 1.149,
+  "start_s": 0.565,
+  "disk_bytes": 50068174,
+  "disk_by_file": {
+   "dict.idx": 1771680,
+   "LOCK": 0,
+   "gpos.seg": 3834672,
+   "geoms.bin": 40,
+   "spog.seg": 8485344,
+   "TIMELINE": 33,
+   "generation": 1,
+   "gpso.seg": 4029560,
+   "FORMAT": 2,
+   "wal.log": 0,
+   "stats.bin": 12240,
+   "gosp.seg": 4591320,
+   "RETIRED": 5,
+   "checksums": 307,
+   "ospg.seg": 4591320,
+   "CURRENT": 2,
+   "psog.seg": 4029560,
+   "posg.seg": 3834672,
+   "dict.bin": 6402072,
+   "gspo.seg": 8485344
+  },
+  "load_peak_rss_bytes": 588345344,
+  "load_peak_anon_bytes": 294109184
+ }
+}

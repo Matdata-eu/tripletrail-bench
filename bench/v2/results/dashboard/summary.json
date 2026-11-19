@@ -1,0 +1,541 @@
+{
+ "engine": "tripletrail",
+ "provenance": [
+  {
+   "suite": "bsbm",
+   "dataset": "2785",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "e36d3ba",
+   "date": "2026-11-18"
+  },
+  {
+   "suite": "bsbm",
+   "dataset": "28480",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "e36d3ba",
+   "date": "2026-11-18"
+  },
+  {
+   "suite": "geographica",
+   "dataset": "all",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "e36d3ba",
+   "date": "2026-11-18"
+  },
+  {
+   "suite": "sparqloscope",
+   "dataset": "bsbm-2785",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "e36d3ba",
+   "date": "2026-11-18"
+  },
+  {
+   "suite": "sparqloscope",
+   "dataset": "rinf-0076",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "e36d3ba",
+   "date": "2026-11-18"
+  },
+  {
+   "suite": "trainmarks",
+   "dataset": "large",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "e36d3ba",
+   "date": "2026-11-18"
+  },
+  {
+   "suite": "trainmarks",
+   "dataset": "medium",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "e36d3ba",
+   "date": "2026-11-18"
+  },
+  {
+   "suite": "trainmarks",
+   "dataset": "xlarge",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "e36d3ba",
+   "date": "2026-11-18"
+  },
+  {
+   "suite": "v2",
+   "dataset": "large",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "e36d3ba",
+   "date": "2026-11-18"
+  },
+  {
+   "suite": "v2",
+   "dataset": "osm_norway",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "e36d3ba",
+   "date": "2026-11-18"
+  },
+  {
+   "suite": "v2",
+   "dataset": "small",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "e36d3ba",
+   "date": "2026-11-18"
+  }
+ ],
+ "suites": {
+  "sparqloscope_geomean_ms": [
+   {
+    "dataset": "bsbm-2785",
+    "metric": "geometric mean query time (ms)",
+    "tripletrail": 4.865,
+    "others": {
+     "graphdb": {
+      "value": 81.137,
+      "speedup": 16.68
+     },
+     "jena": {
+      "value": 108.87,
+      "speedup": 22.38
+     },
+     "maplib": {
+      "value": 11.856,
+      "speedup": 2.44
+     },
+     "oxigraph": {
+      "value": 74.339,
+      "speedup": 15.28
+     },
+     "qlever": {
+      "value": 14.198,
+      "speedup": 2.92
+     }
+    }
+   },
+   {
+    "dataset": "rinf-0076",
+    "metric": "geometric mean query time (ms)",
+    "tripletrail": 6.941,
+    "others": {
+     "graphdb": {
+      "value": 92.478,
+      "speedup": 13.32
+     },
+     "jena": {
+      "value": 118.399,
+      "speedup": 17.06
+     },
+     "maplib": {
+      "value": 16.227,
+      "speedup": 2.34
+     },
+     "oxigraph": {
+      "value": 107.812,
+      "speedup": 15.53
+     },
+     "qlever": {
+      "value": 24.136,
+      "speedup": 3.48
+     }
+    }
+   }
+  ],
+  "bsbm_qmph": [
+   {
+    "dataset": "bsbm-2785 bi",
+    "metric": "query mixes per hour",
+    "tripletrail": 30144.65,
+    "others": {
+     "graphdb": {
+      "value": 4660.6,
+      "speedup": 6.47
+     },
+     "jena": {
+      "value": 3000.65,
+      "speedup": 10.05
+     },
+     "maplib": {
+      "value": 16318.41,
+      "speedup": 1.85
+     },
+     "oxigraph": {
+      "value": 651.43,
+      "speedup": 46.27
+     },
+     "qlever": {
+      "value": 11292.74,
+      "speedup": 2.67
+     }
+    }
+   },
+   {
+    "dataset": "bsbm-2785 explore",
+    "metric": "query mixes per hour",
+    "tripletrail": 70405.16,
+    "others": {
+     "graphdb": {
+      "value": 27001.11,
+      "speedup": 2.61
+     },
+     "jena": {
+      "value": 9272.6,
+      "speedup": 7.59
+     },
+     "maplib": {
+      "value": 10621.66,
+      "speedup": 6.63
+     },
+     "oxigraph": {
+      "value": 34195.02,
+      "speedup": 2.06
+     },
+     "qlever": {
+      "value": 4483.3,
+      "speedup": 15.7
+     }
+    }
+   },
+   {
+    "dataset": "bsbm-2785 update",
+    "metric": "query mixes per hour",
+    "tripletrail": 42227.66,
+    "others": {
+     "graphdb": {
+      "value": 11691.34,
+      "speedup": 3.61
+     },
+     "jena": {
+      "value": 6094.16,
+      "speedup": 6.93
+     },
+     "maplib": {
+      "value": 1212.0,
+      "speedup": 34.84
+     },
+     "oxigraph": {
+      "value": 30659.65,
+      "speedup": 1.38
+     }
+    }
+   },
+   {
+    "dataset": "bsbm-28480 bi",
+    "metric": "query mixes per hour",
+    "tripletrail": 14131.32,
+    "others": {
+     "graphdb": {
+      "value": 582.45,
+      "speedup": 24.26
+     },
+     "jena": {
+      "value": 210.72,
+      "speedup": 67.06
+     },
+     "maplib": {
+      "value": 5346.44,
+      "speedup": 2.64
+     },
+     "oxigraph": {
+      "value": 52.53,
+      "speedup": 269.01
+     },
+     "qlever": {
+      "value": 3461.12,
+      "speedup": 4.08
+     }
+    }
+   },
+   {
+    "dataset": "bsbm-28480 explore",
+    "metric": "query mixes per hour",
+    "tripletrail": 52764.79,
+    "others": {
+     "graphdb": {
+      "value": 20761.04,
+      "speedup": 2.54
+     },
+     "jena": {
+      "value": 1859.39,
+      "speedup": 28.38
+     },
+     "maplib": {
+      "value": 6745.53,
+      "speedup": 7.82
+     },
+     "oxigraph": {
+      "value": 13492.46,
+      "speedup": 3.91
+     },
+     "qlever": {
+      "value": 4400.11,
+      "speedup": 11.99
+     }
+    }
+   },
+   {
+    "dataset": "bsbm-28480 update",
+    "metric": "query mixes per hour",
+    "tripletrail": 36272.52,
+    "others": {
+     "graphdb": {
+      "value": 10202.88,
+      "speedup": 3.56
+     },
+     "jena": {
+      "value": 1606.21,
+      "speedup": 22.58
+     },
+     "maplib": {
+      "value": 173.63,
+      "speedup": 208.91
+     },
+     "oxigraph": {
+      "value": 13495.72,
+      "speedup": 2.69
+     }
+    }
+   }
+  ],
+  "trainmarks_load_s": [
+   {
+    "dataset": "large",
+    "metric": "load time (s)",
+    "tripletrail": 1.149,
+    "others": {
+     "graphdb": {
+      "value": 12.434,
+      "speedup": 10.82
+     },
+     "jena": {
+      "value": 4.452,
+      "speedup": 3.87
+     },
+     "maplib": {
+      "value": 1.37,
+      "speedup": 1.19
+     },
+     "oxigraph": {
+      "value": 1.41,
+      "speedup": 1.23
+     },
+     "qlever": {
+      "value": 1.848,
+      "speedup": 1.61
+     }
+    }
+   },
+   {
+    "dataset": "medium",
+    "metric": "load time (s)",
+    "tripletrail": 0.589,
+    "others": {
+     "graphdb": {
+      "value": 6.84,
+      "speedup": 11.61
+     },
+     "jena": {
+      "value": 1.983,
+      "speedup": 3.37
+     },
+     "maplib": {
+      "value": 0.241,
+      "speedup": 0.41
+     },
+     "oxigraph": {
+      "value": 0.789,
+      "speedup": 1.34
+     },
+     "qlever": {
+      "value": 0.987,
+      "speedup": 1.68
+     }
+    }
+   },
+   {
+    "dataset": "xlarge",
+    "metric": "load time (s)",
+    "tripletrail": 3.84,
+    "others": {
+     "graphdb": {
+      "value": 45.017,
+      "speedup": 11.72
+     },
+     "jena": {
+      "value": 26.916,
+      "speedup": 7.01
+     },
+     "maplib": {
+      "value": 15.749,
+      "speedup": 4.1
+     },
+     "oxigraph": {
+      "value": 9.264,
+      "speedup": 2.41
+     },
+     "qlever": {
+      "value": 7.554,
+      "speedup": 1.97
+     }
+    }
+   }
+  ],
+  "spatial_load_s": [
+   {
+    "dataset": "large",
+    "metric": "load time (s)",
+    "tripletrail": 4.36,
+    "others": {
+     "graphdb": {
+      "value": 40.672,
+      "speedup": 9.33
+     },
+     "jena": {
+      "value": 56.887,
+      "speedup": 13.05
+     },
+     "postgis": {
+      "value": 35.28,
+      "speedup": 8.09
+     },
+     "qlever": {
+      "value": 9.345,
+      "speedup": 2.14
+     }
+    }
+   },
+   {
+    "dataset": "osm_norway",
+    "metric": "load time (s)",
+    "tripletrail": 1.686,
+    "others": {
+     "graphdb": {
+      "value": 18.058,
+      "speedup": 10.71
+     },
+     "jena": {
+      "value": 14.191,
+      "speedup": 8.42
+     },
+     "postgis": {
+      "value": 24.108,
+      "speedup": 14.3
+     },
+     "qlever": {
+      "value": 7.044,
+      "speedup": 4.18
+     }
+    }
+   },
+   {
+    "dataset": "small",
+    "metric": "load time (s)",
+    "tripletrail": 0.615,
+    "others": {
+     "graphdb": {
+      "value": 12.27,
+      "speedup": 19.95
+     },
+     "jena": {
+      "value": 5.95,
+      "speedup": 9.67
+     },
+     "postgis": {
+      "value": 4.481,
+      "speedup": 7.29
+     },
+     "qlever": {
+      "value": 2.495,
+      "speedup": 4.06
+     }
+    }
+   }
+  ],
+  "spatial_queries_p50_ms": [
+   {
+    "dataset": "large",
+    "metric": "geometric mean p50 over shared answered queries (ms)",
+    "others": {
+     "graphdb": {
+      "value": 615.985,
+      "tripletrail": 8.128,
+      "speedup": 75.79
+     },
+     "jena": {
+      "value": 182.194,
+      "tripletrail": 8.128,
+      "speedup": 22.42
+     },
+     "postgis": {
+      "value": 81.197,
+      "tripletrail": 37.546,
+      "speedup": 2.16
+     },
+     "qlever": {
+      "value": 248.69,
+      "tripletrail": 17.317,
+      "speedup": 14.36
+     }
+    }
+   },
+   {
+    "dataset": "osm_norway",
+    "metric": "geometric mean p50 over shared answered queries (ms)",
+    "others": {
+     "graphdb": {
+      "value": 206259.003,
+      "tripletrail": 22.62,
+      "speedup": 9118.44
+     },
+     "jena": {
+      "value": 18316.542,
+      "tripletrail": 44.075,
+      "speedup": 415.57
+     },
+     "postgis": {
+      "value": 665.287,
+      "tripletrail": 63.291,
+      "speedup": 10.51
+     },
+     "qlever": {
+      "value": 1840.292,
+      "tripletrail": 63.291,
+      "speedup": 29.08
+     }
+    }
+   },
+   {
+    "dataset": "small",
+    "metric": "geometric mean p50 over shared answered queries (ms)",
+    "others": {
+     "graphdb": {
+      "value": 92.075,
+      "tripletrail": 4.722,
+      "speedup": 19.5
+     },
+     "jena": {
+      "value": 87.467,
+      "tripletrail": 6.477,
+      "speedup": 13.51
+     },
+     "postgis": {
+      "value": 13.548,
+      "tripletrail": 10.147,
+      "speedup": 1.34
+     },
+     "qlever": {
+      "value": 42.515,
+      "tripletrail": 7.666,
+      "speedup": 5.55
+     }
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,710 @@
+{
+ "engine": "tripletrail",
+ "qid": "driving_distance_50km",
+ "family": "6 routing",
+ "kind": "scalars",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 3.322,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     6.0,
+     7951.9
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 9.635,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2568.0,
+     91896116.99999985
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 6.464,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1506.0,
+     58022436.49999993
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 6.485,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1707.0,
+     63377359.000000015
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 7.151,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1828.0,
+     66544195.9
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 6.75,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1628.0,
+     62221367.90000001
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 6,
+   "ms": 6.57,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1577.0,
+     60408725.9000001
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 7,
+   "ms": 8.495,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2374.0,
+     88070779.8000001
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 8,
+   "ms": 9.553,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2763.0,
+     100714480.59999989
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 9,
+   "ms": 4.801,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     994.0,
+     36652025.50000003
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 10,
+   "ms": 8.317,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2446.0,
+     91374584.69999994
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 11,
+   "ms": 8.295,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2454.0,
+     91236669.20000002
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 12,
+   "ms": 7.417,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2083.0,
+     77784769.90000002
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 13,
+   "ms": 5.155,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1195.0,
+     45076725.1
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 14,
+   "ms": 6.567,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1532.0,
+     58834017.999999955
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 15,
+   "ms": 5.707,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1166.0,
+     43142078.19999998
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 16,
+   "ms": 7.881,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2324.0,
+     84841058.79999994
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 17,
+   "ms": 6.645,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1797.0,
+     65727240.400000036
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 18,
+   "ms": 6.349,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1752.0,
+     66879009.699999936
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 19,
+   "ms": 5.735,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1551.0,
+     59700459.499999866
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 20,
+   "ms": 5.524,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1403.0,
+     51286811.19999996
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 21,
+   "ms": 8.221,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2633.0,
+     96828487.19999988
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 22,
+   "ms": 8.043,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2521.0,
+     93471324.10000005
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 23,
+   "ms": 6.994,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1915.0,
+     73484149.80000001
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 24,
+   "ms": 4.794,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     932.0,
+     34478589.90000002
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 25,
+   "ms": 2.662,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 26,
+   "ms": 5.772,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1542.0,
+     59367884.80000008
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 27,
+   "ms": 7.72,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2443.0,
+     87858416.6
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 28,
+   "ms": 6.166,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1684.0,
+     63290897.00000001
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 29,
+   "ms": 6.717,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1995.0,
+     76184623.70000018
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 30,
+   "ms": 6.08,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1650.0,
+     59017620.099999905
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 31,
+   "ms": 8.025,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2553.0,
+     91186119.20000002
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 32,
+   "ms": 5.523,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1499.0,
+     57708451.399999976
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 33,
+   "ms": 6.025,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1560.0,
+     53889378.699999906
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 34,
+   "ms": 5.326,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1289.0,
+     48316824.39999993
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 35,
+   "ms": 6.049,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1617.0,
+     61890485.19999995
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 36,
+   "ms": 4.589,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     943.0,
+     34295070.49999998
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 37,
+   "ms": 6.109,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1592.0,
+     58748164.599999994
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 38,
+   "ms": 6.25,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1692.0,
+     64587071.09999996
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 39,
+   "ms": 6.72,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1903.0,
+     72741555.10000005
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 40,
+   "ms": 7.627,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2419.0,
+     90231188.20000006
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 41,
+   "ms": 6.529,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1915.0,
+     73484149.80000001
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 42,
+   "ms": 4.928,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1090.0,
+     40265039.99999994
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 43,
+   "ms": 6.759,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1793.0,
+     65386045.50000006
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 44,
+   "ms": 5.595,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1465.0,
+     53073261.69999999
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 45,
+   "ms": 8.025,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2659.0,
+     96550408.69999988
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 46,
+   "ms": 5.285,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1234.0,
+     44919205.70000002
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 47,
+   "ms": 7.101,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2155.0,
+     81936591.99999999
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 48,
+   "ms": 5.177,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1208.0,
+     43413697.39999999
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 49,
+   "ms": 6.56,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1899.0,
+     72803905.99999996
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 50,
+   "ms": 6.038,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1674.0,
+     63831974.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 51,
+   "ms": 5.921,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1601.0,
+     60397866.899999976
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 52,
+   "ms": 5.482,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1489.0,
+     57302563.800000034
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 3.322,
+ "warm": {
+  "n": 50,
+  "p50_ms": 6.417,
+  "p95_ms": 8.317,
+  "min_ms": 2.662,
+  "max_ms": 9.553,
+  "mean_ms": 6.444
+ },
+ "dataset": "small",
+ "family_setup_ms": 6.1,
+ "rss_after": "473 MiB (heap 393 MiB)"
+}

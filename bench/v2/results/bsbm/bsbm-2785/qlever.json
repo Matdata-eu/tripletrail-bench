@@ -1,0 +1,247 @@
+{
+ "engine": "qlever",
+ "dataset": "bsbm-2785",
+ "products": 2785,
+ "triples": 952930,
+ "runs": 50,
+ "warmup": 10,
+ "clients": 1,
+ "usecases": {
+  "explore": {
+   "querymixruns": 50.0,
+   "qmph": 4483.3,
+   "cqet": 0.79088,
+   "cqetg": 0.79016,
+   "totalruntime": 39.544,
+   "minquerymixruntime": 0.6807,
+   "maxquerymixruntime": 0.842,
+   "queries": {
+    "1": {
+     "executecount": 50.0,
+     "aqet": 0.012479,
+     "aqetg": 0.012407,
+     "qps": 78.93,
+     "minqet": 0.01025926,
+     "maxqet": 0.02202933,
+     "avgresults": 1.4,
+     "timeoutcount": 0.0
+    },
+    "2": {
+     "executecount": 300.0,
+     "aqet": 0.023977,
+     "aqetg": 0.022703,
+     "qps": 41.08,
+     "minqet": 0.00489525,
+     "maxqet": 0.0326481,
+     "avgresults": 18.38,
+     "timeoutcount": 0.0
+    },
+    "3": {
+     "executecount": 50.0,
+     "aqet": 0.023798,
+     "aqetg": 0.023383,
+     "qps": 41.39,
+     "minqet": 0.01750163,
+     "maxqet": 0.03645182,
+     "avgresults": 0.76,
+     "timeoutcount": 0.0
+    },
+    "4": {
+     "executecount": 50.0,
+     "aqet": 0.046784,
+     "aqetg": 0.046447,
+     "qps": 21.05,
+     "minqet": 0.02982974,
+     "maxqet": 0.05589247,
+     "avgresults": 0.2,
+     "timeoutcount": 0.0
+    },
+    "5": {
+     "executecount": 100.0,
+     "aqet": 0.035991,
+     "aqetg": 0.034575,
+     "qps": 27.37,
+     "minqet": 0.01548759,
+     "maxqet": 0.0516965,
+     "avgresults": 3.82,
+     "timeoutcount": 0.0
+    },
+    "6": {
+     "executecount": 0.0,
+     "aqet": 0.0,
+     "aqetg": null,
+     "qps": null,
+     "minqet": null,
+     "maxqet": null,
+     "avgresults": null,
+     "timeoutcount": null
+    },
+    "7": {
+     "executecount": 200.0,
+     "aqet": 0.059634,
+     "aqetg": 0.059211,
+     "qps": 16.52,
+     "minqet": 0.04054354,
+     "maxqet": 0.07714489,
+     "avgresults": 10.62,
+     "timeoutcount": 0.0
+    },
+    "8": {
+     "executecount": 100.0,
+     "aqet": 0.039101,
+     "aqetg": 0.039003,
+     "qps": 25.19,
+     "minqet": 0.03154327,
+     "maxqet": 0.04337316,
+     "avgresults": 4.79,
+     "timeoutcount": 0.0
+    },
+    "9": {
+     "executecount": 0.0,
+     "aqet": 0.0,
+     "aqetg": NaN,
+     "qps": Infinity,
+     "minqet": 1.7976931348623157e+308,
+     "maxqet": 0.0,
+     "avgresults": 0.0,
+     "timeoutcount": 0.0
+    },
+    "10": {
+     "executecount": 100.0,
+     "aqet": 0.08383,
+     "aqetg": 0.083714,
+     "qps": 11.75,
+     "minqet": 0.07908707,
+     "maxqet": 0.10965369,
+     "avgresults": 1.96,
+     "timeoutcount": 0.0
+    },
+    "11": {
+     "executecount": 50.0,
+     "aqet": 0.007579,
+     "aqetg": 0.007497,
+     "qps": 129.95,
+     "minqet": 0.00489325,
+     "maxqet": 0.00971752,
+     "avgresults": 9.6,
+     "timeoutcount": 0.0
+    },
+    "12": {
+     "executecount": 0.0,
+     "aqet": 0.0,
+     "aqetg": NaN,
+     "qps": Infinity,
+     "minqet": 1.7976931348623157e+308,
+     "maxqet": 0.0,
+     "avgresults": 0.0,
+     "timeoutcount": 0.0
+    }
+   },
+   "status": "ok",
+   "note": "explore: Q9 (DESCRIBE) and Q12 (CONSTRUCT) skipped: the test driver asks for RDF/XML, which QLever does not serve"
+  },
+  "bi": {
+   "querymixruns": 50.0,
+   "qmph": 11292.74,
+   "cqet": 0.31061,
+   "cqetg": 0.29566,
+   "totalruntime": 15.531,
+   "minquerymixruntime": 0.1579,
+   "maxquerymixruntime": 0.5249,
+   "queries": {
+    "1": {
+     "executecount": 50.0,
+     "aqet": 0.009429,
+     "aqetg": 0.009,
+     "qps": 103.34,
+     "minqet": 0.00466515,
+     "maxqet": 0.01952377,
+     "avgresults": 10.0,
+     "timeoutcount": 0.0
+    },
+    "2": {
+     "executecount": 100.0,
+     "aqet": 0.03987,
+     "aqetg": 0.030822,
+     "qps": 24.44,
+     "minqet": 0.00302839,
+     "maxqet": 0.07789594,
+     "avgresults": 8.5,
+     "timeoutcount": 0.0
+    },
+    "3": {
+     "executecount": 50.0,
+     "aqet": 0.010559,
+     "aqetg": 0.010237,
+     "qps": 92.28,
+     "minqet": 0.00567929,
+     "maxqet": 0.01558364,
+     "avgresults": 10.0,
+     "timeoutcount": 0.0
+    },
+    "4": {
+     "executecount": 50.0,
+     "aqet": 0.045434,
+     "aqetg": 0.017451,
+     "qps": 21.45,
+     "minqet": 0.00418483,
+     "maxqet": 0.20509828,
+     "avgresults": 3.4,
+     "timeoutcount": 0.0
+    },
+    "5": {
+     "executecount": 150.0,
+     "aqet": 0.012072,
+     "aqetg": 0.011593,
+     "qps": 80.71,
+     "minqet": 0.00567606,
+     "maxqet": 0.02320985,
+     "avgresults": 5.59,
+     "timeoutcount": 0.0
+    },
+    "6": {
+     "executecount": 200.0,
+     "aqet": 0.026051,
+     "aqetg": 0.02486,
+     "qps": 37.4,
+     "minqet": 0.01312047,
+     "maxqet": 0.03974619,
+     "avgresults": 21.89,
+     "timeoutcount": 0.0
+    },
+    "7": {
+     "executecount": 100.0,
+     "aqet": 0.007074,
+     "aqetg": 0.006695,
+     "qps": 137.73,
+     "minqet": 0.00365583,
+     "maxqet": 0.0140736,
+     "avgresults": 2.26,
+     "timeoutcount": 0.0
+    },
+    "8": {
+     "executecount": 50.0,
+     "aqet": 0.010885,
+     "aqetg": 0.009787,
+     "qps": 89.51,
+     "minqet": 0.00519243,
+     "maxqet": 0.02650308,
+     "avgresults": 2.6,
+     "timeoutcount": 0.0
+    }
+   },
+   "status": "ok"
+  },
+  "update": {
+   "status": "n/a",
+   "reason": "updates need QLever's access token, which the BSBM test driver cannot send"
+  }
+ },
+ "load": {
+  "engine": "qlever",
+  "dataset": "bsbm-2785",
+  "load_s": 2.376,
+  "start_s": 0.505,
+  "disk_bytes": 38847678
+ }
+}

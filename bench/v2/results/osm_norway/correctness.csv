@@ -1,0 +1,16 @@
+qid,engine,reference,compared,match,tie,mismatch,note
+osm_station_admin,graphdb,postgis,5,5,0,0,
+osm_station_admin,jena,postgis,6,6,0,0,
+osm_station_admin,qlever,postgis,6,6,0,0,
+osm_station_admin,tripletrail,postgis,6,6,0,0,
+osm_track_landuse,graphdb,postgis,0,0,0,0,"failed: HTTP 503: Query interrupted: Query evaluation took too long
+"
+osm_track_landuse,jena,postgis,0,0,0,0,"failed: HTTP 503: Query timed out
+"
+osm_track_landuse,qlever,postgis,6,0,0,6,[6599.0] vs [6601.0] (x6)
+osm_track_landuse,tripletrail,postgis,6,6,0,0,
+osm_track_track_5m,graphdb,postgis,0,0,0,0,"failed: HTTP 503: Query interrupted: Query evaluation took too long
+"
+osm_track_track_5m,jena,postgis,6,0,0,6,[42326.0] vs [39689.0] (x6)
+osm_track_track_5m,qlever,postgis,6,0,0,6,[42326.0] vs [42292.0] (x6)
+osm_track_track_5m,tripletrail,postgis,6,0,0,6,[42326.0] vs [42328.0] (x6)

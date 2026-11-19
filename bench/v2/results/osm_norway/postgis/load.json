@@ -1,0 +1,14 @@
+{
+ "engine": "postgis",
+ "dataset": "osm_norway",
+ "load_s": 24.108,
+ "disk_bytes": 863584783,
+ "rows": {
+  "track": 13108,
+  "station": 1123,
+  "landuse": 275715,
+  "admin": 390
+ },
+ "wall_s": 64.307,
+ "rss_after_start": "186 MiB (sum over backends, shared buffers counted per process)"
+}

@@ -1,0 +1,10 @@
+{
+ "engine": "postgis",
+ "qid": "route_ch",
+ "family": "6 routing",
+ "kind": "path",
+ "runs": [],
+ "status": "n/a",
+ "reason": "pgRouting has no contraction-hierarchy query (pgr_contraction only contracts)",
+ "dataset": "large"
+}

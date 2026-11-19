@@ -1,0 +1,180 @@
+{
+ "engine": "qlever",
+ "qid": "join_op_region",
+ "family": "3 join",
+ "kind": "groups",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 104.857,
+   "ok": true,
+   "rows": 9,
+   "result": {
+    "groups": {
+     "http://example.org/bench/region/0_0": 461.0,
+     "http://example.org/bench/region/0_1": 440.0,
+     "http://example.org/bench/region/0_2": 434.0,
+     "http://example.org/bench/region/1_0": 414.0,
+     "http://example.org/bench/region/1_1": 543.0,
+     "http://example.org/bench/region/1_2": 499.0,
+     "http://example.org/bench/region/2_0": 459.0,
+     "http://example.org/bench/region/2_1": 506.0,
+     "http://example.org/bench/region/2_2": 420.0
+    }
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 88.344,
+   "ok": true,
+   "rows": 9,
+   "result": {
+    "groups": {
+     "http://example.org/bench/region/0_0": 461.0,
+     "http://example.org/bench/region/0_1": 440.0,
+     "http://example.org/bench/region/0_2": 434.0,
+     "http://example.org/bench/region/1_0": 414.0,
+     "http://example.org/bench/region/1_1": 543.0,
+     "http://example.org/bench/region/1_2": 499.0,
+     "http://example.org/bench/region/2_0": 459.0,
+     "http://example.org/bench/region/2_1": 506.0,
+     "http://example.org/bench/region/2_2": 420.0
+    }
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 100.207,
+   "ok": true,
+   "rows": 9,
+   "result": {
+    "groups": {
+     "http://example.org/bench/region/0_0": 461.0,
+     "http://example.org/bench/region/0_1": 440.0,
+     "http://example.org/bench/region/0_2": 434.0,
+     "http://example.org/bench/region/1_0": 414.0,
+     "http://example.org/bench/region/1_1": 543.0,
+     "http://example.org/bench/region/1_2": 499.0,
+     "http://example.org/bench/region/2_0": 459.0,
+     "http://example.org/bench/region/2_1": 506.0,
+     "http://example.org/bench/region/2_2": 420.0
+    }
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 100.118,
+   "ok": true,
+   "rows": 9,
+   "result": {
+    "groups": {
+     "http://example.org/bench/region/0_0": 461.0,
+     "http://example.org/bench/region/0_1": 440.0,
+     "http://example.org/bench/region/0_2": 434.0,
+     "http://example.org/bench/region/1_0": 414.0,
+     "http://example.org/bench/region/1_1": 543.0,
+     "http://example.org/bench/region/1_2": 499.0,
+     "http://example.org/bench/region/2_0": 459.0,
+     "http://example.org/bench/region/2_1": 506.0,
+     "http://example.org/bench/region/2_2": 420.0
+    }
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 92.982,
+   "ok": true,
+   "rows": 9,
+   "result": {
+    "groups": {
+     "http://example.org/bench/region/0_0": 461.0,
+     "http://example.org/bench/region/0_1": 440.0,
+     "http://example.org/bench/region/0_2": 434.0,
+     "http://example.org/bench/region/1_0": 414.0,
+     "http://example.org/bench/region/1_1": 543.0,
+     "http://example.org/bench/region/1_2": 499.0,
+     "http://example.org/bench/region/2_0": 459.0,
+     "http://example.org/bench/region/2_1": 506.0,
+     "http://example.org/bench/region/2_2": 420.0
+    }
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 110.045,
+   "ok": true,
+   "rows": 9,
+   "result": {
+    "groups": {
+     "http://example.org/bench/region/0_0": 461.0,
+     "http://example.org/bench/region/0_1": 440.0,
+     "http://example.org/bench/region/0_2": 434.0,
+     "http://example.org/bench/region/1_0": 414.0,
+     "http://example.org/bench/region/1_1": 543.0,
+     "http://example.org/bench/region/1_2": 499.0,
+     "http://example.org/bench/region/2_0": 459.0,
+     "http://example.org/bench/region/2_1": 506.0,
+     "http://example.org/bench/region/2_2": 420.0
+    }
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 6,
+   "ms": 101.234,
+   "ok": true,
+   "rows": 9,
+   "result": {
+    "groups": {
+     "http://example.org/bench/region/0_0": 461.0,
+     "http://example.org/bench/region/0_1": 440.0,
+     "http://example.org/bench/region/0_2": 434.0,
+     "http://example.org/bench/region/1_0": 414.0,
+     "http://example.org/bench/region/1_1": 543.0,
+     "http://example.org/bench/region/1_2": 499.0,
+     "http://example.org/bench/region/2_0": 459.0,
+     "http://example.org/bench/region/2_1": 506.0,
+     "http://example.org/bench/region/2_2": 420.0
+    }
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 7,
+   "ms": 102.003,
+   "ok": true,
+   "rows": 9,
+   "result": {
+    "groups": {
+     "http://example.org/bench/region/0_0": 461.0,
+     "http://example.org/bench/region/0_1": 440.0,
+     "http://example.org/bench/region/0_2": 434.0,
+     "http://example.org/bench/region/1_0": 414.0,
+     "http://example.org/bench/region/1_1": 543.0,
+     "http://example.org/bench/region/1_2": 499.0,
+     "http://example.org/bench/region/2_0": 459.0,
+     "http://example.org/bench/region/2_1": 506.0,
+     "http://example.org/bench/region/2_2": 420.0
+    }
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 104.857,
+ "warm": {
+  "n": 5,
+  "p50_ms": 101.234,
+  "p95_ms": 110.045,
+  "min_ms": 92.982,
+  "max_ms": 110.045,
+  "mean_ms": 101.276
+ },
+ "dataset": "small",
+ "rss_after": "89MiB / 61.31GiB"
+}

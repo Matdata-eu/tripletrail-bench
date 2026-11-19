@@ -1,0 +1,124 @@
+{
+ "engine": "postgis",
+ "qid": "components",
+ "family": "6 routing",
+ "kind": "scalars",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 892.688,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1.0,
+     688512.0
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 866.53,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1.0,
+     688512.0
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 866.12,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1.0,
+     688512.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 873.366,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1.0,
+     688512.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 873.074,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1.0,
+     688512.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 869.797,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1.0,
+     688512.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 6,
+   "ms": 864.586,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1.0,
+     688512.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 7,
+   "ms": 865.824,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1.0,
+     688512.0
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 892.688,
+ "warm": {
+  "n": 5,
+  "p50_ms": 869.797,
+  "p95_ms": 873.366,
+  "min_ms": 864.586,
+  "max_ms": 873.366,
+  "mean_ms": 869.329
+ },
+ "dataset": "large",
+ "rss_after": "803 MiB (sum over backends, shared buffers counted per process)"
+}

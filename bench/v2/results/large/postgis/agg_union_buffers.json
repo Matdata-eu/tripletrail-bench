@@ -1,0 +1,296 @@
+{
+ "engine": "postgis",
+ "qid": "agg_union_buffers",
+ "family": "4 aggregate",
+ "kind": "scalars",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 11.922,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     343633.3933047373
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 12.373,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     523137.45173056517
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 5.621,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     351407.8651481513
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 5.585,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     351428.4127289783
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 5.675,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     351394.6964004878
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 11.993,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     702673.1455082903
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 6,
+   "ms": 8.563,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     531054.2394913211
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 7,
+   "ms": 5.626,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     351219.4551295182
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 8,
+   "ms": 5.436,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     343628.0159441177
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 9,
+   "ms": 5.443,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     343631.6181831062
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 10,
+   "ms": 12.409,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     530944.8046739688
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 11,
+   "ms": 8.259,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     515438.1995534841
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 12,
+   "ms": 5.748,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     351289.6857199725
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 13,
+   "ms": 5.428,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     343625.059343813
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 14,
+   "ms": 5.485,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     343487.11257368233
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 15,
+   "ms": 8.805,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     531024.4609710295
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 16,
+   "ms": 5.462,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     343566.7027570838
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 17,
+   "ms": 5.556,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     351390.49617103674
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 18,
+   "ms": 8.713,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     530988.3466066634
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 19,
+   "ms": 5.549,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     351442.1598974336
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 20,
+   "ms": 5.476,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     343551.0762108229
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 21,
+   "ms": 8.455,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     515361.4033842012
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 22,
+   "ms": 5.418,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     343442.094276079
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 11.922,
+ "warm": {
+  "n": 20,
+  "p50_ms": 5.605,
+  "p95_ms": 12.409,
+  "min_ms": 5.418,
+  "max_ms": 12.409,
+  "mean_ms": 6.954
+ },
+ "dataset": "large",
+ "rss_after": "423 MiB (sum over backends, shared buffers counted per process)"
+}

@@ -1,0 +1,87 @@
+{"source": "bsbm-28480", "seed": 42, "source_triples": 9609918, "held_out": 1363500, "base_triples": 8246418, "batches": {"10": 50, "100": 30, "1000": 10, "10000": 5, "100000": 3, "1000000": 1}, "derive": [{"name": "derive-1000", "predicate": "http://xmlns.com/foaf/0.1/homepage", "triples_in_source": 868}, {"name": "derive-10000", "predicate": "http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/productPropertyNumeric4", "triples_in_source": 12835}, {"name": "derive-100000", "predicate": "http://www.w3.org/2000/01/rdf-schema#comment", "triples_in_source": 46139}]}
+=== updates bsbm-28480 on tripletrail (2026-11-19T02:50:51+00:00)
+loading updates-bsbm-28480 into tripletrail
+tripletrail 10 x 50 insert: 414.012 us/triple, p50 4.051 ms, failed 0, count ok
+tripletrail 10 x 50 delete: 381.974 us/triple, p50 3.956 ms, failed 0, count ok
+tripletrail 100 x 30 insert: 58.463 us/triple, p50 5.998 ms, failed 0, count ok
+tripletrail 100 x 30 delete: 61.125 us/triple, p50 6.021 ms, failed 0, count ok
+tripletrail 1000 x 10 insert: 24.92 us/triple, p50 24.17 ms, failed 0, count ok
+tripletrail 1000 x 10 delete: 19.745 us/triple, p50 19.639 ms, failed 0, count ok
+tripletrail 10000 x 5 insert: 12.65 us/triple, p50 124.627 ms, failed 0, count ok
+tripletrail 10000 x 5 delete: 9.921 us/triple, p50 99.884 ms, failed 0, count ok
+tripletrail 100000 x 3 insert: 12.515 us/triple, p50 1234.646 ms, failed 0, count ok
+tripletrail 100000 x 3 delete: 9.341 us/triple, p50 922.52 ms, failed 0, count ok
+tripletrail 1000000 x 1 insert: 4.914 us/triple, p50 4914.364 ms, failed 0, count ok
+tripletrail 1000000 x 1 delete: 5.309 us/triple, p50 5309.065 ms, failed 0, count ok
+tripletrail derive-1000: 760 rows, insert 29.115 ms, delete 31.617 ms, 760 nodes, count ok
+tripletrail derive-10000: 10998 rows, insert 833.721 ms, delete 338.11 ms, 10998 nodes, count ok
+tripletrail derive-100000: 39528 rows, insert 719.619 ms, delete 1019.541 ms, 39528 nodes, count ok
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/updates/bsbm-28480/tripletrail.json
+=== updates bsbm-28480 on oxigraph (2026-11-19T02:51:21+00:00)
+loading updates-bsbm-28480 into oxigraph
+oxigraph 10 x 50 insert: 208.948 us/triple, p50 2.072 ms, failed 0, count ok
+oxigraph 10 x 50 delete: 238.306 us/triple, p50 2.36 ms, failed 0, count ok
+oxigraph 100 x 30 insert: 41.394 us/triple, p50 4.31 ms, failed 0, count ok
+oxigraph 100 x 30 delete: 33.729 us/triple, p50 3.535 ms, failed 0, count ok
+oxigraph 1000 x 10 insert: 16.887 us/triple, p50 16.877 ms, failed 0, count ok
+oxigraph 1000 x 10 delete: 8.702 us/triple, p50 7.539 ms, failed 0, count ok
+oxigraph 10000 x 5 insert: 11.713 us/triple, p50 123.935 ms, failed 0, count ok
+oxigraph 10000 x 5 delete: 7.802 us/triple, p50 73.111 ms, failed 0, count ok
+oxigraph 100000 x 3 insert: 13.562 us/triple, p50 1347.262 ms, failed 0, count ok
+oxigraph 100000 x 3 delete: 8.714 us/triple, p50 889.055 ms, failed 0, count ok
+oxigraph 1000000 x 1 insert: None us/triple, p50 None ms, failed 1, count 8246418 != 9246418
+oxigraph 1000000 x 1 delete: None us/triple, p50 None ms, failed 1, count ok
+oxigraph derive-1000: 760 rows, insert 46.403 ms, delete 39.175 ms, 760 nodes, count ok
+oxigraph derive-10000: 10998 rows, insert 767.964 ms, delete 614.495 ms, 10998 nodes, count ok
+oxigraph derive-100000: 39528 rows, insert 3413.828 ms, delete 2302.166 ms, 39528 nodes, count ok
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/updates/bsbm-28480/oxigraph.json
+=== updates bsbm-28480 on jena (2026-11-19T02:52:32+00:00)
+loading updates-bsbm-28480 into jena
+jena 10 x 50 insert: 4735.122 us/triple, p50 44.739 ms, failed 0, count ok
+jena 10 x 50 delete: 3721.976 us/triple, p50 37.429 ms, failed 0, count ok
+jena 100 x 30 insert: 836.252 us/triple, p50 84.648 ms, failed 0, count ok
+jena 100 x 30 delete: 694.591 us/triple, p50 68.779 ms, failed 0, count ok
+jena 1000 x 10 insert: 210.056 us/triple, p50 213.829 ms, failed 0, count ok
+jena 1000 x 10 delete: 190.49 us/triple, p50 183.692 ms, failed 0, count ok
+jena 10000 x 5 insert: 121.492 us/triple, p50 1226.373 ms, failed 0, count ok
+jena 10000 x 5 delete: 115.027 us/triple, p50 1159.568 ms, failed 0, count ok
+jena 100000 x 3 insert: 83.342 us/triple, p50 8336.233 ms, failed 0, count ok
+jena 100000 x 3 delete: 79.333 us/triple, p50 7972.538 ms, failed 0, count ok
+jena 1000000 x 1 insert: 55.8 us/triple, p50 55800.009 ms, failed 0, count ok
+jena 1000000 x 1 delete: 54.039 us/triple, p50 54038.639 ms, failed 0, count ok
+jena derive-1000: 760 rows, insert 227.138 ms, delete 137.702 ms, 760 nodes, count ok
+jena derive-10000: 10998 rows, insert 1097.456 ms, delete 718.345 ms, 10998 nodes, count ok
+jena derive-100000: 39528 rows, insert 3700.055 ms, delete 2715.192 ms, 39528 nodes, count ok
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/updates/bsbm-28480/jena.json
+=== updates bsbm-28480 on graphdb (2026-11-19T02:56:54+00:00)
+loading updates-bsbm-28480 into graphdb
+graphdb 10 x 50 insert: 4669.694 us/triple, p50 45.968 ms, failed 0, count ok
+graphdb 10 x 50 delete: 4112.406 us/triple, p50 41.011 ms, failed 0, count ok
+graphdb 100 x 30 insert: 663.643 us/triple, p50 71.963 ms, failed 0, count ok
+graphdb 100 x 30 delete: 363.146 us/triple, p50 40.502 ms, failed 0, count ok
+graphdb 1000 x 10 insert: 253.545 us/triple, p50 255.258 ms, failed 0, count ok
+graphdb 1000 x 10 delete: 114.992 us/triple, p50 119.1 ms, failed 0, count ok
+graphdb 10000 x 5 insert: 168.789 us/triple, p50 1727.275 ms, failed 0, count ok
+graphdb 10000 x 5 delete: 68.048 us/triple, p50 676.717 ms, failed 0, count ok
+graphdb 100000 x 3 insert: 61.888 us/triple, p50 6227.424 ms, failed 0, count ok
+graphdb 100000 x 3 delete: 26.69 us/triple, p50 2598.371 ms, failed 0, count ok
+graphdb 1000000 x 1 insert: 30.144 us/triple, p50 30143.85 ms, failed 0, count ok
+graphdb 1000000 x 1 delete: 24.252 us/triple, p50 24252.198 ms, failed 0, count ok
+Traceback (most recent call last):
+  File "/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/suites/updates/run_updates.py", line 333, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/suites/updates/run_updates.py", line 329, in main
+    {"generate": cmd_generate, "run": cmd_run, "report": cmd_report}[a.cmd](a)
+  File "/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/suites/updates/run_updates.py", line 240, in cmd_run
+    made = count(cl, f"?n a <{NS}Derived>")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/suites/updates/run_updates.py", line 151, in count
+    _, rows = cl.query(f"SELECT (COUNT(*) AS ?n) WHERE {{ {where} }}", TIMEOUT)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/run.py", line 82, in query
+    raise RuntimeError(f"HTTP {r.status_code}: {body[:600].decode(errors='replace')}")
+RuntimeError: HTTP 400: MALFORMED QUERY: projection alias 'n' was previously used
+!!! updates bsbm-28480 failed on graphdb
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/updates/report.md
+=== done (2026-11-19T03:00:13+00:00)

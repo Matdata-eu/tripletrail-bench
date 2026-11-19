@@ -1,0 +1,399 @@
+{
+ "engine": "maplib",
+ "dataset": "bsbm-2785",
+ "products": 2785,
+ "triples": 952930,
+ "runs": 50,
+ "warmup": 10,
+ "clients": 1,
+ "usecases": {
+  "explore": {
+   "querymixruns": 50.0,
+   "qmph": 10621.66,
+   "cqet": 0.32878,
+   "cqetg": 0.32769,
+   "totalruntime": 16.439,
+   "minquerymixruntime": 0.233,
+   "maxquerymixruntime": 0.3664,
+   "queries": {
+    "1": {
+     "executecount": 50.0,
+     "aqet": 0.007753,
+     "aqetg": 0.007501,
+     "qps": 125.12,
+     "minqet": 0.00349345,
+     "maxqet": 0.01088939,
+     "avgresults": 1.4,
+     "timeoutcount": 0.0
+    },
+    "2": {
+     "executecount": 300.0,
+     "aqet": 0.024948,
+     "aqetg": 0.02398,
+     "qps": 38.88,
+     "minqet": 0.00675452,
+     "maxqet": 0.03597362,
+     "avgresults": 18.38,
+     "timeoutcount": 0.0
+    },
+    "3": {
+     "executecount": 50.0,
+     "aqet": 0.008116,
+     "aqetg": 0.007937,
+     "qps": 119.52,
+     "minqet": 0.00460661,
+     "maxqet": 0.01176364,
+     "avgresults": 0.76,
+     "timeoutcount": 0.0
+    },
+    "4": {
+     "executecount": 50.0,
+     "aqet": 0.007824,
+     "aqetg": 0.00772,
+     "qps": 123.98,
+     "minqet": 0.00507027,
+     "maxqet": 0.0112872,
+     "avgresults": 0.2,
+     "timeoutcount": 0.0
+    },
+    "5": {
+     "executecount": 100.0,
+     "aqet": 0.015498,
+     "aqetg": 0.015338,
+     "qps": 62.59,
+     "minqet": 0.01017255,
+     "maxqet": 0.0199236,
+     "avgresults": 3.82,
+     "timeoutcount": 0.0
+    },
+    "6": {
+     "executecount": 0.0,
+     "aqet": 0.0,
+     "aqetg": null,
+     "qps": null,
+     "minqet": null,
+     "maxqet": null,
+     "avgresults": null,
+     "timeoutcount": null
+    },
+    "7": {
+     "executecount": 200.0,
+     "aqet": 0.014078,
+     "aqetg": 0.013566,
+     "qps": 68.91,
+     "minqet": 0.00435035,
+     "maxqet": 0.02184856,
+     "avgresults": 10.62,
+     "timeoutcount": 0.0
+    },
+    "8": {
+     "executecount": 100.0,
+     "aqet": 0.016637,
+     "aqetg": 0.016242,
+     "qps": 58.31,
+     "minqet": 0.00730106,
+     "maxqet": 0.02204538,
+     "avgresults": 4.79,
+     "timeoutcount": 0.0
+    },
+    "9": {
+     "executecount": 0.0,
+     "aqet": 0.0,
+     "aqetg": NaN,
+     "qps": Infinity,
+     "minqet": 1.7976931348623157e+308,
+     "maxqet": 0.0,
+     "avgresults": 0.0,
+     "timeoutcount": 0.0
+    },
+    "10": {
+     "executecount": 100.0,
+     "aqet": 0.009696,
+     "aqetg": 0.009537,
+     "qps": 100.04,
+     "minqet": 0.00411156,
+     "maxqet": 0.01342629,
+     "avgresults": 1.96,
+     "timeoutcount": 0.0
+    },
+    "11": {
+     "executecount": 50.0,
+     "aqet": 0.015421,
+     "aqetg": 0.015134,
+     "qps": 62.9,
+     "minqet": 0.00483098,
+     "maxqet": 0.01833313,
+     "avgresults": 9.6,
+     "timeoutcount": 0.0
+    },
+    "12": {
+     "executecount": 0.0,
+     "aqet": 0.0,
+     "aqetg": NaN,
+     "qps": Infinity,
+     "minqet": 1.7976931348623157e+308,
+     "maxqet": 0.0,
+     "avgresults": 0.0,
+     "timeoutcount": 0.0
+    }
+   },
+   "status": "ok",
+   "note": "explore: Q9 (DESCRIBE) and Q12 (CONSTRUCT) skipped: the test driver asks for RDF/XML, which the maplib endpoint does not serve"
+  },
+  "bi": {
+   "querymixruns": 50.0,
+   "qmph": 16318.41,
+   "cqet": 0.21258,
+   "cqetg": 0.21133,
+   "totalruntime": 10.629,
+   "minquerymixruntime": 0.155,
+   "maxquerymixruntime": 0.2677,
+   "queries": {
+    "1": {
+     "executecount": 50.0,
+     "aqet": 0.01912,
+     "aqetg": 0.018906,
+     "qps": 50.4,
+     "minqet": 0.01317241,
+     "maxqet": 0.02520031,
+     "avgresults": 10.0,
+     "timeoutcount": 0.0
+    },
+    "2": {
+     "executecount": 100.0,
+     "aqet": 0.021747,
+     "aqetg": 0.019931,
+     "qps": 44.31,
+     "minqet": 0.00493222,
+     "maxqet": 0.03202601,
+     "avgresults": 8.5,
+     "timeoutcount": 0.0
+    },
+    "3": {
+     "executecount": 50.0,
+     "aqet": 0.019805,
+     "aqetg": 0.019522,
+     "qps": 48.65,
+     "minqet": 0.00924837,
+     "maxqet": 0.02973953,
+     "avgresults": 10.0,
+     "timeoutcount": 0.0
+    },
+    "4": {
+     "executecount": 50.0,
+     "aqet": 0.021613,
+     "aqetg": 0.016733,
+     "qps": 44.58,
+     "minqet": 0.00875995,
+     "maxqet": 0.06339811,
+     "avgresults": 3.4,
+     "timeoutcount": 0.0
+    },
+    "5": {
+     "executecount": 0.0,
+     "aqet": 0.0,
+     "aqetg": NaN,
+     "qps": Infinity,
+     "minqet": 1.7976931348623157e+308,
+     "maxqet": 0.0,
+     "avgresults": 0.0,
+     "timeoutcount": 0.0
+    },
+    "6": {
+     "executecount": 200.0,
+     "aqet": 0.019555,
+     "aqetg": 0.019265,
+     "qps": 49.28,
+     "minqet": 0.01071725,
+     "maxqet": 0.03076475,
+     "avgresults": 21.89,
+     "timeoutcount": 0.0
+    },
+    "7": {
+     "executecount": 100.0,
+     "aqet": 0.008878,
+     "aqetg": 0.008641,
+     "qps": 108.54,
+     "minqet": 0.00412324,
+     "maxqet": 0.01659424,
+     "avgresults": 3.04,
+     "timeoutcount": 0.0
+    },
+    "8": {
+     "executecount": 50.0,
+     "aqet": 0.01257,
+     "aqetg": 0.011766,
+     "qps": 76.66,
+     "minqet": 0.00554205,
+     "maxqet": 0.02408916,
+     "avgresults": 3.34,
+     "timeoutcount": 0.0
+    }
+   },
+   "status": "ok",
+   "note": "BI Q5 skipped: maplib 0.20.26 rejects GROUP BY on a variable its subquery does not bind"
+  },
+  "update": {
+   "querymixruns": 50.0,
+   "qmph": 1212.0,
+   "cqet": 2.95421,
+   "cqetg": 2.9365,
+   "totalruntime": 147.71,
+   "minquerymixruntime": 2.3349,
+   "maxquerymixruntime": 3.8147,
+   "queries": {
+    "1": {
+     "executecount": 100.0,
+     "aqet": 0.635652,
+     "aqetg": 0.599861,
+     "qps": 1.56,
+     "minqet": 0.22667542,
+     "maxqet": 1.20325963,
+     "avgresults": 0.0,
+     "timeoutcount": 0.0
+    },
+    "2": {
+     "executecount": 150.0,
+     "aqet": 0.44136,
+     "aqetg": 0.399794,
+     "qps": 2.25,
+     "minqet": 0.00789869,
+     "maxqet": 0.52339543,
+     "avgresults": 0.0,
+     "timeoutcount": 0.0
+    },
+    "3": {
+     "executecount": 50.0,
+     "aqet": 0.00945,
+     "aqetg": 0.009294,
+     "qps": 105.24,
+     "minqet": 0.00481637,
+     "maxqet": 0.01218724,
+     "avgresults": 1.56,
+     "timeoutcount": 0.0
+    },
+    "4": {
+     "executecount": 300.0,
+     "aqet": 0.028122,
+     "aqetg": 0.027235,
+     "qps": 35.37,
+     "minqet": 0.00704076,
+     "maxqet": 0.03751634,
+     "avgresults": 18.62,
+     "timeoutcount": 0.0
+    },
+    "5": {
+     "executecount": 50.0,
+     "aqet": 0.009281,
+     "aqetg": 0.009074,
+     "qps": 107.16,
+     "minqet": 0.00387828,
+     "maxqet": 0.01678786,
+     "avgresults": 0.96,
+     "timeoutcount": 0.0
+    },
+    "6": {
+     "executecount": 50.0,
+     "aqet": 0.0095,
+     "aqetg": 0.009349,
+     "qps": 104.69,
+     "minqet": 0.00583547,
+     "maxqet": 0.01312304,
+     "avgresults": 0.12,
+     "timeoutcount": 0.0
+    },
+    "7": {
+     "executecount": 100.0,
+     "aqet": 0.016591,
+     "aqetg": 0.016453,
+     "qps": 59.95,
+     "minqet": 0.01049749,
+     "maxqet": 0.0205567,
+     "avgresults": 4.03,
+     "timeoutcount": 0.0
+    },
+    "8": {
+     "executecount": 0.0,
+     "aqet": 0.0,
+     "aqetg": null,
+     "qps": null,
+     "minqet": null,
+     "maxqet": null,
+     "avgresults": null,
+     "timeoutcount": null
+    },
+    "9": {
+     "executecount": 200.0,
+     "aqet": 0.0143,
+     "aqetg": 0.013685,
+     "qps": 69.55,
+     "minqet": 0.00488862,
+     "maxqet": 0.02148744,
+     "avgresults": 9.49,
+     "timeoutcount": 0.0
+    },
+    "10": {
+     "executecount": 100.0,
+     "aqet": 0.016711,
+     "aqetg": 0.016362,
+     "qps": 59.52,
+     "minqet": 0.00905132,
+     "maxqet": 0.02306608,
+     "avgresults": 4.71,
+     "timeoutcount": 0.0
+    },
+    "11": {
+     "executecount": 0.0,
+     "aqet": 0.0,
+     "aqetg": NaN,
+     "qps": Infinity,
+     "minqet": 1.7976931348623157e+308,
+     "maxqet": 0.0,
+     "avgresults": 0.0,
+     "timeoutcount": 0.0
+    },
+    "12": {
+     "executecount": 100.0,
+     "aqet": 0.009687,
+     "aqetg": 0.009531,
+     "qps": 102.68,
+     "minqet": 0.00538443,
+     "maxqet": 0.01387351,
+     "avgresults": 1.67,
+     "timeoutcount": 0.0
+    },
+    "13": {
+     "executecount": 50.0,
+     "aqet": 0.018684,
+     "aqetg": 0.018261,
+     "qps": 53.23,
+     "minqet": 0.00769843,
+     "maxqet": 0.02264895,
+     "avgresults": 9.6,
+     "timeoutcount": 0.0
+    },
+    "14": {
+     "executecount": 0.0,
+     "aqet": 0.0,
+     "aqetg": NaN,
+     "qps": Infinity,
+     "minqet": 1.7976931348623157e+308,
+     "maxqet": 0.0,
+     "avgresults": 0.0,
+     "timeoutcount": 0.0
+    }
+   },
+   "status": "ok",
+   "note": "explore-and-update: Q9 (DESCRIBE) and Q12 (CONSTRUCT) skipped: the test driver asks for RDF/XML, which the maplib endpoint does not serve"
+  }
+ },
+ "load": {
+  "engine": "maplib",
+  "dataset": "bsbm-2785",
+  "load_s": 2.517,
+  "start_s": 1.671,
+  "disk_bytes": 0,
+  "load_peak_rss_bytes": 812781568,
+  "in_memory": true
+ }
+}

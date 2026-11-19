@@ -1,0 +1,16 @@
+dataset,engine,load_s,disk_gib,triples
+small,tripletrail,0.615,0.055,805538
+small,qlever,2.495,0.015,805538
+small,jena,5.95,0.31,805538
+small,graphdb,12.27,0.139,805538
+small,postgis,4.481,0.081,
+large,tripletrail,4.36,0.741,10539890
+large,qlever,9.345,0.2,10539890
+large,jena,56.887,1.944,10539890
+large,graphdb,40.672,1.07,10539890
+large,postgis,35.28,0.872,
+osm_norway,tripletrail,1.686,0.681,1458029
+osm_norway,qlever,7.044,0.186,1458029
+osm_norway,jena,14.191,0.792,1458029
+osm_norway,graphdb,18.058,1.011,1458029
+osm_norway,postgis,24.108,0.804,

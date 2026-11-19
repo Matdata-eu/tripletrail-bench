@@ -1,0 +1,116 @@
+{
+ "engine": "qlever",
+ "qid": "join_signal_ne_20m",
+ "family": "3 join",
+ "kind": "scalars",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 419.094,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     24145.0
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 392.672,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     24145.0
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 372.681,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     24145.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 402.32,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     24145.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 374.423,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     24145.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 393.998,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     24145.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 6,
+   "ms": 393.635,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     24145.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 7,
+   "ms": 397.302,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     24145.0
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 419.094,
+ "warm": {
+  "n": 5,
+  "p50_ms": 393.998,
+  "p95_ms": 402.32,
+  "min_ms": 374.423,
+  "max_ms": 402.32,
+  "mean_ms": 392.336
+ },
+ "dataset": "small",
+ "rss_after": "101MiB / 61.31GiB"
+}

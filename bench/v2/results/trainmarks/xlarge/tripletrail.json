@@ -1,0 +1,166 @@
+{
+ "engine": "tripletrail",
+ "scale": "xlarge",
+ "triples": 9995000,
+ "warm_runs": 5,
+ "queries": {
+  "q1_count": {
+   "runs": [
+    4.529,
+    3.157,
+    2.598,
+    2.412,
+    2.473,
+    2.548,
+    2.691
+   ],
+   "rows": 1,
+   "first_row": [
+    "9995000"
+   ],
+   "status": "ok",
+   "cold_ms": 4.529,
+   "warm": {
+    "n": 5,
+    "median_ms": 2.548,
+    "min_ms": 2.412,
+    "max_ms": 2.691
+   }
+  },
+  "q2_customer_orders": {
+   "runs": [
+    2360.275,
+    2383.04,
+    2304.66,
+    2372.88,
+    2382.303,
+    2334.447,
+    2393.322
+   ],
+   "rows": 20,
+   "first_row": [
+    "Quinn Larsen",
+    "5413",
+    "13698872.589999996"
+   ],
+   "status": "ok",
+   "cold_ms": 2360.275,
+   "warm": {
+    "n": 5,
+    "median_ms": 2372.88,
+    "min_ms": 2304.66,
+    "max_ms": 2393.322
+   }
+  },
+  "q3_join_3_entities": {
+   "runs": [
+    501.334,
+    500.616,
+    503.422,
+    499.201,
+    499.471,
+    498.019,
+    500.182
+   ],
+   "rows": 50,
+   "first_row": [
+    "Frank Pedersen",
+    "Product-4924",
+    "4999.98",
+    "completed"
+   ],
+   "status": "ok",
+   "cold_ms": 501.334,
+   "warm": {
+    "n": 5,
+    "median_ms": 499.471,
+    "min_ms": 498.019,
+    "max_ms": 503.422
+   }
+  },
+  "q4_optional_aggregation": {
+   "runs": [
+    2086.243,
+    2104.44,
+    2113.595,
+    2101.095,
+    2094.223,
+    2140.839,
+    2100.395
+   ],
+   "rows": 50,
+   "first_row": [
+    "http://benchmark.example/France",
+    "http://benchmark.example/Startup",
+    "2103",
+    "28110"
+   ],
+   "status": "ok",
+   "cold_ms": 2086.243,
+   "warm": {
+    "n": 5,
+    "median_ms": 2101.095,
+    "min_ms": 2094.223,
+    "max_ms": 2140.839
+   }
+  },
+  "q5_construct": {
+   "runs": [
+    1028.756,
+    1016.171,
+    1014.147,
+    1014.99,
+    1026.653,
+    1020.94,
+    1025.275
+   ],
+   "rows": 439240,
+   "first_row": [
+    "<http://benchmark.example/C000011> <http://benchmark.example/country> <http://benchmark.example/Norway> ."
+   ],
+   "status": "ok",
+   "cold_ms": 1028.756,
+   "warm": {
+    "n": 5,
+    "median_ms": 1020.94,
+    "min_ms": 1014.147,
+    "max_ms": 1026.653
+   }
+  },
+  "q6_delete_insert": {
+   "status": "ok",
+   "ms": 183.912
+  }
+ },
+ "load": {
+  "engine": "tripletrail",
+  "dataset": "trainmarks-xlarge",
+  "load_s": 3.84,
+  "start_s": 0.566,
+  "disk_bytes": 494838944,
+  "disk_by_file": {
+   "dict.idx": 17467672,
+   "LOCK": 0,
+   "gpos.seg": 36964048,
+   "geoms.bin": 40,
+   "spog.seg": 88282552,
+   "TIMELINE": 33,
+   "generation": 1,
+   "gpso.seg": 41384816,
+   "FORMAT": 2,
+   "wal.log": 0,
+   "stats.bin": 12240,
+   "gosp.seg": 40309872,
+   "RETIRED": 5,
+   "checksums": 317,
+   "ospg.seg": 40309872,
+   "CURRENT": 2,
+   "psog.seg": 41384816,
+   "posg.seg": 36964048,
+   "dict.bin": 63476056,
+   "gspo.seg": 88282552
+  },
+  "load_peak_rss_bytes": 1772257280,
+  "load_peak_anon_bytes": 1745821696
+ }
+}

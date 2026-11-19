@@ -1,0 +1,1081 @@
+{
+ "engine": "tripletrail",
+ "timeout_s": 300,
+ "queries": [
+  {
+   "workload": "micro_nontopological",
+   "n": 1,
+   "name": "Boundary_CLC",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 1600.0,
+     "rows": 44834,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 1590.8,
+     "rows": 44834,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 1604.7,
+     "rows": 44834,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_nontopological",
+   "n": 2,
+   "name": "Envelope_CLC",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 226.4,
+     "rows": 44834,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 193.3,
+     "rows": 44834,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 189.3,
+     "rows": 44834,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_nontopological",
+   "n": 3,
+   "name": "ConvexHull_CLC",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 520.8,
+     "rows": 44834,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 529.4,
+     "rows": 44834,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 555.3,
+     "rows": 44834,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_nontopological",
+   "n": 4,
+   "name": "Buffer_GeoNames",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 205.8,
+     "rows": 21990,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 202.6,
+     "rows": 21990,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 198.6,
+     "rows": 21990,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_nontopological",
+   "n": 5,
+   "name": "Buffer_LGD",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 693.0,
+     "rows": 12097,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 691.5,
+     "rows": 12097,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 680.0,
+     "rows": 12097,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_nontopological",
+   "n": 6,
+   "name": "Area_CLC",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 657.6,
+     "rows": 44834,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 130.7,
+     "rows": 44834,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 152.5,
+     "rows": 44834,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_selections",
+   "n": 7,
+   "name": "Equals_LGD_GivenLine",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 45.6,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 41.3,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 38.8,
+     "rows": 1,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_selections",
+   "n": 8,
+   "name": "Equals_GAG_GivenPolygon",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 65.8,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 62.2,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 65.3,
+     "rows": 1,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_selections",
+   "n": 9,
+   "name": "Intersects_LGD_GivenPolygon",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 95.8,
+     "rows": 216,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 46.6,
+     "rows": 216,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 43.5,
+     "rows": 216,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_selections",
+   "n": 10,
+   "name": "Intersects_CLC_GivenLine",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 8.2,
+     "rows": 20,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 9.8,
+     "rows": 20,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 8.6,
+     "rows": 20,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_selections",
+   "n": 11,
+   "name": "Overlaps_CLC_GivenPolygon",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 77.4,
+     "rows": 132,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 66.5,
+     "rows": 132,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 73.5,
+     "rows": 132,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_selections",
+   "n": 12,
+   "name": "Crosses_LGD_GivenLine",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 108.5,
+     "rows": 14,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 104.7,
+     "rows": 14,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 105.1,
+     "rows": 14,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_selections",
+   "n": 13,
+   "name": "Within_GeoNames_GivenPolygon",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 39.8,
+     "rows": 136,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 39.1,
+     "rows": 136,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 38.3,
+     "rows": 136,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_selections",
+   "n": 14,
+   "name": "Within_GeoNames_Point_Buffer",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 128.2,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 131.7,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 131.7,
+     "rows": 1,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_selections",
+   "n": 15,
+   "name": "GeoNames_Point_Distance",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 28.8,
+     "rows": 153,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 27.7,
+     "rows": 153,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 33.0,
+     "rows": 153,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_selections",
+   "n": 16,
+   "name": "Disjoint_GeoNames_GivenPolygon",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 234.9,
+     "rows": 21854,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 198.9,
+     "rows": 21854,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 229.8,
+     "rows": 21854,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_selections",
+   "n": 17,
+   "name": "Disjoint_LGD_GivenPolygon",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 149.9,
+     "rows": 11881,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 148.7,
+     "rows": 11881,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 136.7,
+     "rows": 11881,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_joins",
+   "n": 18,
+   "name": "Equals_GeoNames_DBPedia",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 20.8,
+     "rows": 91,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 19.3,
+     "rows": 91,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 18.1,
+     "rows": 91,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_joins",
+   "n": 19,
+   "name": "Intersects_GeoNames_LGD",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 20.6,
+     "rows": 0,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 21.4,
+     "rows": 0,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 20.1,
+     "rows": 0,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_joins",
+   "n": 20,
+   "name": "Intersects_GeoNames_GAG",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 112.7,
+     "rows": 18689,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 86.9,
+     "rows": 18689,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 66.1,
+     "rows": 18689,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_joins",
+   "n": 21,
+   "name": "Intersects_LGD_GAG",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 57.7,
+     "rows": 13318,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 70.0,
+     "rows": 13318,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 70.1,
+     "rows": 13318,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_joins",
+   "n": 22,
+   "name": "Within_GeoNames_GAG",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 87.1,
+     "rows": 18689,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 89.5,
+     "rows": 18689,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 87.9,
+     "rows": 18689,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_joins",
+   "n": 23,
+   "name": "Within_LGD_GAG",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 67.6,
+     "rows": 10673,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 68.3,
+     "rows": 10673,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 72.4,
+     "rows": 10673,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_joins",
+   "n": 24,
+   "name": "Within_CLC_GAG",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 379.1,
+     "rows": 34083,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 353.1,
+     "rows": 34083,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 366.6,
+     "rows": 34083,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_joins",
+   "n": 25,
+   "name": "Crosses_LGD_GAG",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 257.5,
+     "rows": 2645,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 247.4,
+     "rows": 2645,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 250.1,
+     "rows": 2645,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_joins",
+   "n": 26,
+   "name": "Touches_GAG_GAG",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 384.8,
+     "rows": 1022,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 380.3,
+     "rows": 1022,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 392.6,
+     "rows": 1022,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_joins",
+   "n": 27,
+   "name": "Overlaps_GAG_CLC",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 2929.1,
+     "rows": 17005,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 3003.5,
+     "rows": 17005,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 2986.5,
+     "rows": 17005,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_aggregations",
+   "n": 28,
+   "name": "Extent_GAG",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 270.8,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 17.3,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 16.4,
+     "rows": 1,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_aggregations",
+   "n": 29,
+   "name": "Union_GAG",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 462.5,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 461.0,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 533.0,
+     "rows": 1,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "macro_reversegeocoding",
+   "n": 0,
+   "name": "Find_Closest_Populated_Place",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 222.4,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 223.8,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 227.4,
+     "rows": 1,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "macro_reversegeocoding",
+   "n": 1,
+   "name": "Find_Closest_Motorway",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 203.8,
+     "rows": 1,
+     "rows_with_unbound": 1
+    },
+    {
+     "ok": true,
+     "ms": 195.7,
+     "rows": 1,
+     "rows_with_unbound": 1
+    },
+    {
+     "ok": true,
+     "ms": 193.5,
+     "rows": 1,
+     "rows_with_unbound": 1
+    }
+   ]
+  },
+  {
+   "workload": "macro_mapsearch",
+   "n": 0,
+   "name": "Thematic_Search",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 14.6,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 14.0,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 13.2,
+     "rows": 1,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "macro_mapsearch",
+   "n": 1,
+   "name": "Get_Around_POIs",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 21.6,
+     "rows": 13,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 16.8,
+     "rows": 13,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 20.6,
+     "rows": 13,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "macro_mapsearch",
+   "n": 2,
+   "name": "Get_Around_Roads",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 70.5,
+     "rows": 132,
+     "rows_with_unbound": 60
+    },
+    {
+     "ok": true,
+     "ms": 71.3,
+     "rows": 132,
+     "rows_with_unbound": 60
+    },
+    {
+     "ok": true,
+     "ms": 77.8,
+     "rows": 132,
+     "rows_with_unbound": 60
+    }
+   ]
+  },
+  {
+   "workload": "macro_rapidmapping",
+   "n": 0,
+   "name": "Get_CLC_areas",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 689.1,
+     "rows": 30453,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 701.0,
+     "rows": 30453,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 694.7,
+     "rows": 30453,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "macro_rapidmapping",
+   "n": 1,
+   "name": "Get_highways",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 57.1,
+     "rows": 4559,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 56.7,
+     "rows": 4559,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 28.0,
+     "rows": 4559,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "macro_rapidmapping",
+   "n": 2,
+   "name": "Get_municipalities",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 134.5,
+     "rows": 248,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 134.9,
+     "rows": 248,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 130.2,
+     "rows": 248,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "macro_rapidmapping",
+   "n": 3,
+   "name": "Get_hotspots",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 2412.7,
+     "rows": 902195,
+     "rows_with_unbound": 902195
+    },
+    {
+     "ok": true,
+     "ms": 2427.4,
+     "rows": 902195,
+     "rows_with_unbound": 902195
+    },
+    {
+     "ok": true,
+     "ms": 2423.7,
+     "rows": 902195,
+     "rows_with_unbound": 902195
+    }
+   ]
+  },
+  {
+   "workload": "macro_rapidmapping",
+   "n": 4,
+   "name": "Get_coniferous_forests_in_fire",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 13.9,
+     "rows": 50,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 14.1,
+     "rows": 50,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 13.1,
+     "rows": 50,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "macro_rapidmapping",
+   "n": 5,
+   "name": "Get_road_segments_affected_by_fire",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 185.7,
+     "rows": 17275,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 190.7,
+     "rows": 17275,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 183.1,
+     "rows": 17275,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "macro_computestatistics",
+   "n": 0,
+   "name": "Count_CLC_categories",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 24.4,
+     "rows": 12,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 12.1,
+     "rows": 12,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 9.9,
+     "rows": 12,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "macro_computestatistics",
+   "n": 1,
+   "name": "Count_GeoNames_categories",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 13.0,
+     "rows": 8,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 13.3,
+     "rows": 8,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 10.1,
+     "rows": 8,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "macro_computestatistics",
+   "n": 2,
+   "name": "Count_GeoNames_categories_in_ContinuousUrbanFabric",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 55.7,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 44.8,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 49.6,
+     "rows": 1,
+     "rows_with_unbound": 0
+    }
+   ]
+  }
+ ]
+}

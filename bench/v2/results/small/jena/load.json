@@ -1,0 +1,10 @@
+{
+ "engine": "jena",
+ "dataset": "small",
+ "load_s": 5.95,
+ "start_and_spatial_index_s": 5.271,
+ "disk_bytes": 332869271,
+ "wall_s": 11.252,
+ "rss_after_start": "939 MiB",
+ "triples": 805538
+}

@@ -1,0 +1,746 @@
+{
+ "engine": "tripletrail",
+ "qid": "knn_signals",
+ "family": "2 knn",
+ "kind": "ranked",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 15.379,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/9837",
+     "http://example.org/rinf-synth/sig/9838",
+     "http://example.org/rinf-synth/sig/9836",
+     "http://example.org/rinf-synth/sig/9835",
+     "http://example.org/rinf-synth/sig/9839",
+     "http://example.org/rinf-synth/sig/20400",
+     "http://example.org/rinf-synth/sig/20399",
+     "http://example.org/rinf-synth/sig/20401",
+     "http://example.org/rinf-synth/sig/9840",
+     "http://example.org/rinf-synth/sig/20398"
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 4.362,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/21912",
+     "http://example.org/rinf-synth/sig/21913",
+     "http://example.org/rinf-synth/sig/21914",
+     "http://example.org/rinf-synth/sig/21911",
+     "http://example.org/rinf-synth/sig/21910",
+     "http://example.org/rinf-synth/sig/21915",
+     "http://example.org/rinf-synth/sig/21909",
+     "http://example.org/rinf-synth/sig/21916",
+     "http://example.org/rinf-synth/sig/21917",
+     "http://example.org/rinf-synth/sig/21908"
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 5.04,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/9654",
+     "http://example.org/rinf-synth/sig/9655",
+     "http://example.org/rinf-synth/sig/9653",
+     "http://example.org/rinf-synth/sig/9656",
+     "http://example.org/rinf-synth/sig/9657",
+     "http://example.org/rinf-synth/sig/9652",
+     "http://example.org/rinf-synth/sig/9658",
+     "http://example.org/rinf-synth/sig/15896",
+     "http://example.org/rinf-synth/sig/9651",
+     "http://example.org/rinf-synth/sig/15897"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 4.259,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/343",
+     "http://example.org/rinf-synth/sig/342",
+     "http://example.org/rinf-synth/sig/344",
+     "http://example.org/rinf-synth/sig/341",
+     "http://example.org/rinf-synth/sig/345",
+     "http://example.org/rinf-synth/sig/20017",
+     "http://example.org/rinf-synth/sig/20018",
+     "http://example.org/rinf-synth/sig/20016",
+     "http://example.org/rinf-synth/sig/20019",
+     "http://example.org/rinf-synth/sig/20015"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 6.769,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/309",
+     "http://example.org/rinf-synth/sig/310",
+     "http://example.org/rinf-synth/sig/308",
+     "http://example.org/rinf-synth/sig/311",
+     "http://example.org/rinf-synth/sig/307",
+     "http://example.org/rinf-synth/sig/312",
+     "http://example.org/rinf-synth/sig/306",
+     "http://example.org/rinf-synth/sig/313",
+     "http://example.org/rinf-synth/sig/305",
+     "http://example.org/rinf-synth/sig/314"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 5.095,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/2935",
+     "http://example.org/rinf-synth/sig/2934",
+     "http://example.org/rinf-synth/sig/2936",
+     "http://example.org/rinf-synth/sig/2933",
+     "http://example.org/rinf-synth/sig/2937",
+     "http://example.org/rinf-synth/sig/2932",
+     "http://example.org/rinf-synth/sig/22623",
+     "http://example.org/rinf-synth/sig/22624",
+     "http://example.org/rinf-synth/sig/2938",
+     "http://example.org/rinf-synth/sig/22622"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 6,
+   "ms": 5.27,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/4833",
+     "http://example.org/rinf-synth/sig/4834",
+     "http://example.org/rinf-synth/sig/4835",
+     "http://example.org/rinf-synth/sig/4832",
+     "http://example.org/rinf-synth/sig/4836",
+     "http://example.org/rinf-synth/sig/4831",
+     "http://example.org/rinf-synth/sig/4837",
+     "http://example.org/rinf-synth/sig/4830",
+     "http://example.org/rinf-synth/sig/4838",
+     "http://example.org/rinf-synth/sig/4829"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 7,
+   "ms": 6.925,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/1411",
+     "http://example.org/rinf-synth/sig/1412",
+     "http://example.org/rinf-synth/sig/1413",
+     "http://example.org/rinf-synth/sig/1410",
+     "http://example.org/rinf-synth/sig/1414",
+     "http://example.org/rinf-synth/sig/1409",
+     "http://example.org/rinf-synth/sig/1408",
+     "http://example.org/rinf-synth/sig/1415",
+     "http://example.org/rinf-synth/sig/1407",
+     "http://example.org/rinf-synth/sig/1416"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 8,
+   "ms": 4.438,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/16471",
+     "http://example.org/rinf-synth/sig/16472",
+     "http://example.org/rinf-synth/sig/16470",
+     "http://example.org/rinf-synth/sig/16473",
+     "http://example.org/rinf-synth/sig/16469",
+     "http://example.org/rinf-synth/sig/16474",
+     "http://example.org/rinf-synth/sig/16468",
+     "http://example.org/rinf-synth/sig/16475",
+     "http://example.org/rinf-synth/sig/16467",
+     "http://example.org/rinf-synth/sig/16476"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 9,
+   "ms": 3.88,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/20553",
+     "http://example.org/rinf-synth/sig/20554",
+     "http://example.org/rinf-synth/sig/20555",
+     "http://example.org/rinf-synth/sig/20552",
+     "http://example.org/rinf-synth/sig/20556",
+     "http://example.org/rinf-synth/sig/20551",
+     "http://example.org/rinf-synth/sig/20550",
+     "http://example.org/rinf-synth/sig/20557",
+     "http://example.org/rinf-synth/sig/20558",
+     "http://example.org/rinf-synth/sig/20549"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 10,
+   "ms": 4.818,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/17546",
+     "http://example.org/rinf-synth/sig/17545",
+     "http://example.org/rinf-synth/sig/17547",
+     "http://example.org/rinf-synth/sig/17548",
+     "http://example.org/rinf-synth/sig/17544",
+     "http://example.org/rinf-synth/sig/734",
+     "http://example.org/rinf-synth/sig/735",
+     "http://example.org/rinf-synth/sig/733",
+     "http://example.org/rinf-synth/sig/17549",
+     "http://example.org/rinf-synth/sig/17543"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 11,
+   "ms": 4.032,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/16377",
+     "http://example.org/rinf-synth/sig/16376",
+     "http://example.org/rinf-synth/sig/16375",
+     "http://example.org/rinf-synth/sig/16378",
+     "http://example.org/rinf-synth/sig/16379",
+     "http://example.org/rinf-synth/sig/16374",
+     "http://example.org/rinf-synth/sig/9179",
+     "http://example.org/rinf-synth/sig/9178",
+     "http://example.org/rinf-synth/sig/9180",
+     "http://example.org/rinf-synth/sig/9177"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 12,
+   "ms": 7.918,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/4790",
+     "http://example.org/rinf-synth/sig/4789",
+     "http://example.org/rinf-synth/sig/4791",
+     "http://example.org/rinf-synth/sig/4788",
+     "http://example.org/rinf-synth/sig/4792",
+     "http://example.org/rinf-synth/sig/4787",
+     "http://example.org/rinf-synth/sig/4793",
+     "http://example.org/rinf-synth/sig/4786",
+     "http://example.org/rinf-synth/sig/4794",
+     "http://example.org/rinf-synth/sig/4785"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 13,
+   "ms": 4.062,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/21854",
+     "http://example.org/rinf-synth/sig/21855",
+     "http://example.org/rinf-synth/sig/21856",
+     "http://example.org/rinf-synth/sig/21853",
+     "http://example.org/rinf-synth/sig/21857",
+     "http://example.org/rinf-synth/sig/21852",
+     "http://example.org/rinf-synth/sig/21858",
+     "http://example.org/rinf-synth/sig/21851",
+     "http://example.org/rinf-synth/sig/21850",
+     "http://example.org/rinf-synth/sig/21859"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 14,
+   "ms": 5.25,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/21169",
+     "http://example.org/rinf-synth/sig/21170",
+     "http://example.org/rinf-synth/sig/21171",
+     "http://example.org/rinf-synth/sig/21168",
+     "http://example.org/rinf-synth/sig/21167",
+     "http://example.org/rinf-synth/sig/21172",
+     "http://example.org/rinf-synth/sig/21166",
+     "http://example.org/rinf-synth/sig/21173",
+     "http://example.org/rinf-synth/sig/21165",
+     "http://example.org/rinf-synth/sig/21174"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 15,
+   "ms": 6.168,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/10746",
+     "http://example.org/rinf-synth/sig/10747",
+     "http://example.org/rinf-synth/sig/10745",
+     "http://example.org/rinf-synth/sig/10748",
+     "http://example.org/rinf-synth/sig/10744",
+     "http://example.org/rinf-synth/sig/10749",
+     "http://example.org/rinf-synth/sig/10743",
+     "http://example.org/rinf-synth/sig/10750",
+     "http://example.org/rinf-synth/sig/10742",
+     "http://example.org/rinf-synth/sig/10751"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 16,
+   "ms": 6.235,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/2127",
+     "http://example.org/rinf-synth/sig/2128",
+     "http://example.org/rinf-synth/sig/2126",
+     "http://example.org/rinf-synth/sig/2129",
+     "http://example.org/rinf-synth/sig/2125",
+     "http://example.org/rinf-synth/sig/2130",
+     "http://example.org/rinf-synth/sig/2124",
+     "http://example.org/rinf-synth/sig/2131",
+     "http://example.org/rinf-synth/sig/2123",
+     "http://example.org/rinf-synth/sig/2132"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 17,
+   "ms": 4.471,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/8514",
+     "http://example.org/rinf-synth/sig/8515",
+     "http://example.org/rinf-synth/sig/8513",
+     "http://example.org/rinf-synth/sig/8516",
+     "http://example.org/rinf-synth/sig/8512",
+     "http://example.org/rinf-synth/sig/8511",
+     "http://example.org/rinf-synth/sig/8517",
+     "http://example.org/rinf-synth/sig/8510",
+     "http://example.org/rinf-synth/sig/8518",
+     "http://example.org/rinf-synth/sig/8509"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 18,
+   "ms": 5.89,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/8188",
+     "http://example.org/rinf-synth/sig/8187",
+     "http://example.org/rinf-synth/sig/8189",
+     "http://example.org/rinf-synth/sig/8186",
+     "http://example.org/rinf-synth/sig/8190",
+     "http://example.org/rinf-synth/sig/8185",
+     "http://example.org/rinf-synth/sig/16331",
+     "http://example.org/rinf-synth/sig/16332",
+     "http://example.org/rinf-synth/sig/16333",
+     "http://example.org/rinf-synth/sig/16330"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 19,
+   "ms": 4.767,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/5453",
+     "http://example.org/rinf-synth/sig/5454",
+     "http://example.org/rinf-synth/sig/5452",
+     "http://example.org/rinf-synth/sig/5451",
+     "http://example.org/rinf-synth/sig/5455",
+     "http://example.org/rinf-synth/sig/5450",
+     "http://example.org/rinf-synth/sig/5456",
+     "http://example.org/rinf-synth/sig/5449",
+     "http://example.org/rinf-synth/sig/5457",
+     "http://example.org/rinf-synth/sig/5448"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 20,
+   "ms": 4.251,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/16791",
+     "http://example.org/rinf-synth/sig/16792",
+     "http://example.org/rinf-synth/sig/16790",
+     "http://example.org/rinf-synth/sig/16793",
+     "http://example.org/rinf-synth/sig/16789",
+     "http://example.org/rinf-synth/sig/16788",
+     "http://example.org/rinf-synth/sig/16794",
+     "http://example.org/rinf-synth/sig/16787",
+     "http://example.org/rinf-synth/sig/16795",
+     "http://example.org/rinf-synth/sig/16786"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 21,
+   "ms": 3.914,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/17171",
+     "http://example.org/rinf-synth/sig/17172",
+     "http://example.org/rinf-synth/sig/17173",
+     "http://example.org/rinf-synth/sig/17170",
+     "http://example.org/rinf-synth/sig/17169",
+     "http://example.org/rinf-synth/sig/17174",
+     "http://example.org/rinf-synth/sig/17175",
+     "http://example.org/rinf-synth/sig/17168",
+     "http://example.org/rinf-synth/sig/17176",
+     "http://example.org/rinf-synth/sig/17167"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 22,
+   "ms": 4.527,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/14447",
+     "http://example.org/rinf-synth/sig/14446",
+     "http://example.org/rinf-synth/sig/14448",
+     "http://example.org/rinf-synth/sig/14445",
+     "http://example.org/rinf-synth/sig/14449",
+     "http://example.org/rinf-synth/sig/14444",
+     "http://example.org/rinf-synth/sig/10593",
+     "http://example.org/rinf-synth/sig/10594",
+     "http://example.org/rinf-synth/sig/14450",
+     "http://example.org/rinf-synth/sig/10595"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 23,
+   "ms": 6.611,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/5549",
+     "http://example.org/rinf-synth/sig/5550",
+     "http://example.org/rinf-synth/sig/5548",
+     "http://example.org/rinf-synth/sig/5547",
+     "http://example.org/rinf-synth/sig/5551",
+     "http://example.org/rinf-synth/sig/5552",
+     "http://example.org/rinf-synth/sig/5546",
+     "http://example.org/rinf-synth/sig/5553",
+     "http://example.org/rinf-synth/sig/5545",
+     "http://example.org/rinf-synth/sig/5554"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 24,
+   "ms": 5.124,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/1009",
+     "http://example.org/rinf-synth/sig/1010",
+     "http://example.org/rinf-synth/sig/1011",
+     "http://example.org/rinf-synth/sig/1008",
+     "http://example.org/rinf-synth/sig/1012",
+     "http://example.org/rinf-synth/sig/1007",
+     "http://example.org/rinf-synth/sig/1013",
+     "http://example.org/rinf-synth/sig/1006",
+     "http://example.org/rinf-synth/sig/1014",
+     "http://example.org/rinf-synth/sig/1005"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 25,
+   "ms": 3.181,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/20529",
+     "http://example.org/rinf-synth/sig/20530",
+     "http://example.org/rinf-synth/sig/20528",
+     "http://example.org/rinf-synth/sig/20531",
+     "http://example.org/rinf-synth/sig/20527",
+     "http://example.org/rinf-synth/sig/20532",
+     "http://example.org/rinf-synth/sig/20533",
+     "http://example.org/rinf-synth/sig/20526",
+     "http://example.org/rinf-synth/sig/20525",
+     "http://example.org/rinf-synth/sig/20534"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 26,
+   "ms": 4.321,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/2946",
+     "http://example.org/rinf-synth/sig/2945",
+     "http://example.org/rinf-synth/sig/2944",
+     "http://example.org/rinf-synth/sig/2947",
+     "http://example.org/rinf-synth/sig/2943",
+     "http://example.org/rinf-synth/sig/2948",
+     "http://example.org/rinf-synth/sig/2942",
+     "http://example.org/rinf-synth/sig/2949",
+     "http://example.org/rinf-synth/sig/2941",
+     "http://example.org/rinf-synth/sig/2950"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 27,
+   "ms": 3.821,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/17808",
+     "http://example.org/rinf-synth/sig/17807",
+     "http://example.org/rinf-synth/sig/17809",
+     "http://example.org/rinf-synth/sig/17806",
+     "http://example.org/rinf-synth/sig/17810",
+     "http://example.org/rinf-synth/sig/17805",
+     "http://example.org/rinf-synth/sig/17811",
+     "http://example.org/rinf-synth/sig/17804",
+     "http://example.org/rinf-synth/sig/17812",
+     "http://example.org/rinf-synth/sig/17803"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 28,
+   "ms": 4.541,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/7415",
+     "http://example.org/rinf-synth/sig/7414",
+     "http://example.org/rinf-synth/sig/22304",
+     "http://example.org/rinf-synth/sig/22305",
+     "http://example.org/rinf-synth/sig/7413",
+     "http://example.org/rinf-synth/sig/22303",
+     "http://example.org/rinf-synth/sig/7416",
+     "http://example.org/rinf-synth/sig/22306",
+     "http://example.org/rinf-synth/sig/22302",
+     "http://example.org/rinf-synth/sig/7417"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 29,
+   "ms": 3.98,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/6494",
+     "http://example.org/rinf-synth/sig/6493",
+     "http://example.org/rinf-synth/sig/6492",
+     "http://example.org/rinf-synth/sig/6495",
+     "http://example.org/rinf-synth/sig/6491",
+     "http://example.org/rinf-synth/sig/6496",
+     "http://example.org/rinf-synth/sig/6490",
+     "http://example.org/rinf-synth/sig/6497",
+     "http://example.org/rinf-synth/sig/6489",
+     "http://example.org/rinf-synth/sig/6498"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 30,
+   "ms": 5.937,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/8711",
+     "http://example.org/rinf-synth/sig/8712",
+     "http://example.org/rinf-synth/sig/8710",
+     "http://example.org/rinf-synth/sig/8713",
+     "http://example.org/rinf-synth/sig/8709",
+     "http://example.org/rinf-synth/sig/8708",
+     "http://example.org/rinf-synth/sig/8714",
+     "http://example.org/rinf-synth/sig/8707",
+     "http://example.org/rinf-synth/sig/8715",
+     "http://example.org/rinf-synth/sig/17367"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 31,
+   "ms": 4.617,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/7826",
+     "http://example.org/rinf-synth/sig/7825",
+     "http://example.org/rinf-synth/sig/7827",
+     "http://example.org/rinf-synth/sig/7824",
+     "http://example.org/rinf-synth/sig/7828",
+     "http://example.org/rinf-synth/sig/7823",
+     "http://example.org/rinf-synth/sig/7829",
+     "http://example.org/rinf-synth/sig/7822",
+     "http://example.org/rinf-synth/sig/7830",
+     "http://example.org/rinf-synth/sig/7821"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 32,
+   "ms": 4.075,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/sig/13475",
+     "http://example.org/rinf-synth/sig/13474",
+     "http://example.org/rinf-synth/sig/13476",
+     "http://example.org/rinf-synth/sig/13473",
+     "http://example.org/rinf-synth/sig/13472",
+     "http://example.org/rinf-synth/sig/13477",
+     "http://example.org/rinf-synth/sig/13478",
+     "http://example.org/rinf-synth/sig/13471",
+     "http://example.org/rinf-synth/sig/11563",
+     "http://example.org/rinf-synth/sig/11562"
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 15.379,
+ "warm": {
+  "n": 30,
+  "p50_ms": 4.579,
+  "p95_ms": 6.925,
+  "min_ms": 3.181,
+  "max_ms": 7.918,
+  "mean_ms": 4.972
+ },
+ "dataset": "small",
+ "rss_after": "203 MiB (heap 124 MiB)"
+}

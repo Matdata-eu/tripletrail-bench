@@ -1,0 +1,10 @@
+{
+ "engine": "qlever",
+ "qid": "agg_length_region",
+ "family": "4 aggregate",
+ "kind": "groups",
+ "runs": [],
+ "status": "n/a",
+ "reason": "geof:intersection is not supported by QLever (HTTP 400 'not supported')",
+ "dataset": "small"
+}

@@ -1,0 +1,144 @@
+{
+ "engine": "maplib",
+ "scale": "medium",
+ "triples": 98000,
+ "warm_runs": 5,
+ "queries": {
+  "q1_count": {
+   "runs": [
+    26.187,
+    23.048,
+    22.759,
+    14.636,
+    22.623,
+    22.773,
+    14.723
+   ],
+   "rows": 1,
+   "first_row": [
+    "98000"
+   ],
+   "status": "ok",
+   "cold_ms": 26.187,
+   "warm": {
+    "n": 5,
+    "median_ms": 22.623,
+    "min_ms": 14.636,
+    "max_ms": 22.773
+   }
+  },
+  "q2_customer_orders": {
+   "runs": [
+    12.643,
+    11.188,
+    11.565,
+    9.605,
+    10.553,
+    12.077,
+    10.21
+   ],
+   "rows": 20,
+   "first_row": [
+    "Paul Nilsen",
+    "295454.07",
+    "112"
+   ],
+   "status": "ok",
+   "cold_ms": 12.643,
+   "warm": {
+    "n": 5,
+    "median_ms": 10.553,
+    "min_ms": 9.605,
+    "max_ms": 12.077
+   }
+  },
+  "q3_join_3_entities": {
+   "runs": [
+    15.541,
+    15.03,
+    14.946,
+    13.366,
+    14.553,
+    15.444,
+    16.372
+   ],
+   "rows": 50,
+   "first_row": [
+    "completed",
+    "Product-106",
+    "4999.47",
+    "Frank Berg"
+   ],
+   "status": "ok",
+   "cold_ms": 15.541,
+   "warm": {
+    "n": 5,
+    "median_ms": 14.946,
+    "min_ms": 13.366,
+    "max_ms": 16.372
+   }
+  },
+  "q4_optional_aggregation": {
+   "runs": [
+    12.998,
+    13.527,
+    16.756,
+    12.765,
+    8.392,
+    10.414,
+    8.856
+   ],
+   "rows": 50,
+   "first_row": [
+    "http://benchmark.example/SMB",
+    "347",
+    "24",
+    "895156.49"
+   ],
+   "status": "ok",
+   "cold_ms": 12.998,
+   "warm": {
+    "n": 5,
+    "median_ms": 10.414,
+    "min_ms": 8.392,
+    "max_ms": 16.756
+   }
+  },
+  "q5_construct": {
+   "runs": [
+    35.729,
+    35.681,
+    35.561,
+    36.057,
+    29.462,
+    31.688,
+    28.264
+   ],
+   "rows": 3878,
+   "first_row": [
+    "<http://benchmark.example/C000004> <http://benchmark.example/country> <http://benchmark.example/Norway> ."
+   ],
+   "status": "ok",
+   "cold_ms": 35.729,
+   "warm": {
+    "n": 5,
+    "median_ms": 31.688,
+    "min_ms": 28.264,
+    "max_ms": 36.057
+   }
+  },
+  "q6_delete_insert": {
+   "status": "ok",
+   "ms": 8.37
+  }
+ },
+ "load": {
+  "engine": "maplib",
+  "dataset": "trainmarks-medium",
+  "load_s": 0.241,
+  "start_s": 0.78,
+  "disk_bytes": 0,
+  "load_peak_rss_bytes": 171941888,
+  "in_memory": true
+ }
+}

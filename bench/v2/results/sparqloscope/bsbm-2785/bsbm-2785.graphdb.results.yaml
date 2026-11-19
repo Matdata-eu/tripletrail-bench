@@ -1,0 +1,1029 @@
+timeout: 180
+engine: graphdb
+dataset: bsbm-2785
+queries:
+- query: join-2-small-large
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s bsbm:productPropertyNumeric6 ?o1 . ?s rdf:type ?o2 }'
+  runtime_info:
+    client_time: 0.213216102001752
+  result_size: 1
+  results:
+  - - '1000'
+  long_query: JOIN of a small and a large predicate
+- query: join-2-large-small
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . ?s bsbm:productPropertyNumeric6 ?o2 }'
+  runtime_info:
+    client_time: 0.025537945999531075
+  result_size: 1
+  results:
+  - - '1000'
+  long_query: JOIN of a large and a small predicate
+- query: join-2-large-large
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT
+    (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . ?s dc:publisher ?o2 }'
+  runtime_info:
+    client_time: 0.15721423200011486
+  result_size: 1
+  results:
+  - - '92144'
+  long_query: JOIN of two large predicates
+- query: join-2-largest-result
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s bsbm:productFeature ?o1 . ?s rdf:type ?o2 }'
+  runtime_info:
+    client_time: 0.05491715100288275
+  result_size: 1
+  results:
+  - - '102772'
+  long_query: JOIN of two predicates with the largest possible result
+- query: join-2-large-large-with-large-result
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s bsbm:productFeature ?o1 . ?s rdf:type ?o2 }'
+  runtime_info:
+    client_time: 0.06672802700268221
+  result_size: 1
+  results:
+  - - '102772'
+  long_query: JOIN of two large predicates with a reasonably large result
+- query: join-2-large-large-with-small-result
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (COUNT(*) AS ?count) WHERE { ?s
+    bsbm:rating1 ?o1 . ?s bsbm:rating3 ?o2 }'
+  runtime_info:
+    client_time: 0.06174874999851454
+  result_size: 1
+  results:
+  - - '13087'
+  long_query: JOIN of two large predicates with a small result
+- query: join-3-star-largest-sum-of-join-sizes
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count) WHERE { ?s dc:publisher ?o1 . ?s rdf:type ?o2
+    . ?s bsbm:productFeature ?o3 . }'
+  runtime_info:
+    client_time: 0.10822705100144958
+  result_size: 1
+  results:
+  - - '102772'
+  long_query: JOIN star of three large predicates with the largest sum of join sizes
+- query: join-3-chain-largest-sum-of-join-sizes
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count) WHERE { ?a bsbm:vendor ?b . ?b dc:publisher
+    ?c . ?c rdf:type ?d . }'
+  runtime_info:
+    client_time: 0.06293209899740759
+  result_size: 1
+  results:
+  - - '53840'
+  long_query: JOIN chain of three large predicates with the largest sum of join sizes
+- query: join-xlarge-star-on-small-predicates
+  sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s bsbm:productPropertyNumeric6 ?o0 . ?s bsbm:productPropertyTextual6 ?o1 . ?s rdfs:subClassOf
+    ?o2 . ?s foaf:homepage ?o3 . }'
+  runtime_info:
+    client_time: 0.010055358001409331
+  result_size: 1
+  results:
+  - - '0'
+  long_query: JOIN star of many small predicates
+- query: join-xlarge-chain-on-small-predicates
+  sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?v0 bsbm:productPropertyNumeric6 ?v1 . ?v1 bsbm:productPropertyTextual6 ?v2 . ?v2
+    rdfs:subClassOf ?v3 . ?v3 foaf:homepage ?v4 . }'
+  runtime_info:
+    client_time: 0.015126756999961799
+  result_size: 1
+  results:
+  - - '0'
+  long_query: JOIN chain of many small predicates
+- query: optional-join-small-large
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s bsbm:productPropertyNumeric6 ?o1 OPTIONAL { ?s rdf:type ?o2 } }'
+  runtime_info:
+    client_time: 0.013210247998358682
+  result_size: 1
+  results:
+  - - '1000'
+  long_query: OPTIONAL JOIN of a small and a large predicate
+- query: optional-join-large-small
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 OPTIONAL { ?s bsbm:productPropertyNumeric6 ?o2 } }'
+  runtime_info:
+    client_time: 0.22147472099823062
+  result_size: 1
+  results:
+  - - '92144'
+  long_query: OPTIONAL JOIN of a large and a small predicate
+- query: optional-join-large-large
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT
+    (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 OPTIONAL { ?s dc:publisher ?o2 } }'
+  runtime_info:
+    client_time: 0.14186543400137452
+  result_size: 1
+  results:
+  - - '92144'
+  long_query: OPTIONAL JOIN of two large predicates
+- query: optional-join-2-large-large-with-large-result
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s bsbm:productFeature ?o1 . OPTIONAL { ?s rdf:type ?o2 } }'
+  runtime_info:
+    client_time: 0.17848552800205653
+  result_size: 1
+  results:
+  - - '102772'
+  long_query: OPTIONAL JOIN of two large predicates with a reasonably large join result
+- query: optional-join-2-large-large-with-small-join-result-1
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (COUNT(*) AS ?count) WHERE { ?s
+    bsbm:rating1 ?o1 . OPTIONAL { ?s bsbm:rating3 ?o2 } }'
+  runtime_info:
+    client_time: 0.03910442399865133
+  result_size: 1
+  results:
+  - - '18744'
+  long_query: OPTIONAL JOIN of two large predicates with a small join result
+- query: optional-join-2-large-large-with-small-join-result-2
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (COUNT(*) AS ?count) WHERE { ?s
+    bsbm:rating3 ?o1 . OPTIONAL { ?s bsbm:rating1 ?o2 } }'
+  runtime_info:
+    client_time: 0.055481870000221534
+  result_size: 1
+  results:
+  - - '18856'
+  long_query: OPTIONAL JOIN of two large predicates with a small join result
+- query: optional-join-3-star-1
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count) WHERE { ?s dc:publisher ?o1 . ?s rdf:type ?o2
+    . OPTIONAL { ?s bsbm:productFeature ?o3 . } }'
+  runtime_info:
+    client_time: 0.20570866300113266
+  result_size: 1
+  results:
+  - - '189902'
+  long_query: OPTIONAL JOIN star of three large predicates with the largest sum of join sizes
+- query: optional-join-3-star-2
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count) WHERE { ?s dc:publisher ?o1 . OPTIONAL { ?s
+    rdf:type ?o2 . ?s bsbm:productFeature ?o3 . } }'
+  runtime_info:
+    client_time: 0.1921832350017212
+  result_size: 1
+  results:
+  - - '189902'
+  long_query: OPTIONAL JOIN star of three large predicates with the largest sum of join sizes
+- query: optional-join-3-chain-1
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count) WHERE { ?a bsbm:vendor ?b . ?b dc:publisher
+    ?c . OPTIONAL { ?c rdf:type ?d . } }'
+  runtime_info:
+    client_time: 0.12475043799713603
+  result_size: 1
+  results:
+  - - '53840'
+  long_query: OPTIONAL JOIN chain of three large predicates with the largest sum of join sizes
+- query: optional-join-3-chain-2
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count) WHERE { ?a bsbm:vendor ?b . OPTIONAL { ?b dc:publisher
+    ?c . ?c rdf:type ?d . } }'
+  runtime_info:
+    client_time: 0.12939485700189834
+  result_size: 1
+  results:
+  - - '53840'
+  long_query: OPTIONAL JOIN chain of three large predicates with the largest sum of join sizes
+- query: minus-join-small-large
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s bsbm:productPropertyNumeric6 ?o1 MINUS { ?s rdf:type ?o2 } }'
+  runtime_info:
+    client_time: 0.07177708699964569
+  result_size: 1
+  results:
+  - - '0'
+  long_query: MINUS JOIN of a small and a large predicate
+- query: minus-join-large-small
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 MINUS { ?s bsbm:productPropertyNumeric6 ?o2 } }'
+  runtime_info:
+    client_time: 0.04252907200134359
+  result_size: 1
+  results:
+  - - '91144'
+  long_query: MINUS JOIN of a large and a small predicate
+- query: minus-join-large-large
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT
+    (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 MINUS { ?s dc:publisher ?o2 } }'
+  runtime_info:
+    client_time: 0.036610524002753664
+  result_size: 1
+  results:
+  - - '0'
+  long_query: MINUS JOIN of two large predicates
+- query: minus-join-2-large-large-with-large-result
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s bsbm:productFeature ?o1 . MINUS { ?s rdf:type ?o2 } }'
+  runtime_info:
+    client_time: 0.05425246000231709
+  result_size: 1
+  results:
+  - - '0'
+  long_query: MINUS JOIN of two large predicates with a reasonably large join result
+- query: minus-join-2-large-large-with-small-join-result-1
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (COUNT(*) AS ?count) WHERE { ?s
+    bsbm:rating1 ?o1 . MINUS { ?s bsbm:rating3 ?o2 } }'
+  runtime_info:
+    client_time: 0.01371112799824914
+  result_size: 1
+  results:
+  - - '5657'
+  long_query: MINUS JOIN of two large predicates with a small join result
+- query: minus-join-2-large-large-with-small-join-result-2
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (COUNT(*) AS ?count) WHERE { ?s
+    bsbm:rating3 ?o1 . MINUS { ?s bsbm:rating1 ?o2 } }'
+  runtime_info:
+    client_time: 0.027731294998375233
+  result_size: 1
+  results:
+  - - '5769'
+  long_query: MINUS JOIN of two large predicates with a small join result
+- query: minus-join-3-star-1
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count) WHERE { ?s dc:publisher ?o1 . ?s rdf:type ?o2
+    . MINUS { ?s bsbm:productFeature ?o3 . } }'
+  runtime_info:
+    client_time: 0.09990442200069083
+  result_size: 1
+  results:
+  - - '87130'
+  long_query: MINUS JOIN star of three large predicates with the largest sum of join sizes
+- query: minus-join-3-star-2
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count) WHERE { ?s dc:publisher ?o1 . MINUS { ?s rdf:type
+    ?o2 . ?s bsbm:productFeature ?o3 . } }'
+  runtime_info:
+    client_time: 0.07935777599777794
+  result_size: 1
+  results:
+  - - '87130'
+  long_query: MINUS JOIN star of three large predicates with the largest sum of join sizes
+- query: minus-join-3-chain-1
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count) WHERE { ?a bsbm:vendor ?b . ?b dc:publisher
+    ?c . MINUS { ?c rdf:type ?d . } }'
+  runtime_info:
+    client_time: 0.09554860199932591
+  result_size: 1
+  results:
+  - - '0'
+  long_query: MINUS JOIN chain of three large predicates with the largest sum of join sizes
+- query: minus-join-3-chain-2
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count) WHERE { ?a bsbm:vendor ?b . MINUS { ?b dc:publisher
+    ?c . ?c rdf:type ?d . } }'
+  runtime_info:
+    client_time: 0.09065178399760043
+  result_size: 1
+  results:
+  - - '0'
+  long_query: MINUS JOIN chain of three large predicates with the largest sum of join sizes
+- query: exists-join-small-large
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s bsbm:productPropertyNumeric6 ?o1 FILTER EXISTS { ?s rdf:type ?o2 } }'
+  runtime_info:
+    client_time: 0.040326562000700505
+  result_size: 1
+  results:
+  - - '500'
+  long_query: EXISTS JOIN of a small and a large predicate
+- query: exists-join-large-small
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 FILTER EXISTS { ?s bsbm:productPropertyNumeric6 ?o2 } }'
+  runtime_info:
+    client_time: 0.33582850899983896
+  result_size: 1
+  results:
+  - - '1000'
+  long_query: EXISTS JOIN of a large and a small predicate
+- query: exists-join-large-large
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT
+    (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 FILTER EXISTS { ?s dc:publisher ?o2 } }'
+  runtime_info:
+    client_time: 0.5136479689972475
+  result_size: 1
+  results:
+  - - '92144'
+  long_query: EXISTS JOIN of two large predicates
+- query: exists-join-2-large-large-with-large-result
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s bsbm:productFeature ?o1 . FILTER EXISTS { ?s rdf:type ?o2 } }'
+  runtime_info:
+    client_time: 0.274389551999775
+  result_size: 1
+  results:
+  - - '51386'
+  long_query: EXISTS JOIN of two large predicates with a reasonably large join result
+- query: exists-join-2-large-large-with-small-join-result-1
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (COUNT(*) AS ?count) WHERE { ?s
+    bsbm:rating1 ?o1 . FILTER EXISTS { ?s bsbm:rating3 ?o2 } }'
+  runtime_info:
+    client_time: 0.06353458800003864
+  result_size: 1
+  results:
+  - - '13087'
+  long_query: EXISTS JOIN of two large predicates with a small join result
+- query: exists-join-2-large-large-with-small-join-result-2
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (COUNT(*) AS ?count) WHERE { ?s
+    bsbm:rating3 ?o1 . FILTER EXISTS { ?s bsbm:rating1 ?o2 } }'
+  runtime_info:
+    client_time: 0.08982907400059048
+  result_size: 1
+  results:
+  - - '13087'
+  long_query: EXISTS JOIN of two large predicates with a small join result
+- query: exists-join-3-star-1
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count) WHERE { ?s dc:publisher ?o1 . ?s rdf:type ?o2
+    . FILTER EXISTS { ?s bsbm:productFeature ?o3 . } }'
+  runtime_info:
+    client_time: 0.2808147999967332
+  result_size: 1
+  results:
+  - - '5014'
+  long_query: EXISTS JOIN star of three large predicates with the largest sum of join sizes
+- query: exists-join-3-star-2
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count) WHERE { ?s dc:publisher ?o1 . FILTER EXISTS
+    { ?s rdf:type ?o2 . ?s bsbm:productFeature ?o3 . } }'
+  runtime_info:
+    client_time: 0.35321104699687567
+  result_size: 1
+  results:
+  - - '2507'
+  long_query: EXISTS JOIN star of three large predicates with the largest sum of join sizes
+- query: exists-join-3-chain-1
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count) WHERE { ?a bsbm:vendor ?b . ?b dc:publisher
+    ?c . FILTER EXISTS { ?c rdf:type ?d . } }'
+  runtime_info:
+    client_time: 0.45957427800021833
+  result_size: 1
+  results:
+  - - '53840'
+  long_query: EXISTS JOIN chain of three large predicates with the largest sum of join sizes
+- query: exists-join-3-chain-2
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count) WHERE { ?a bsbm:vendor ?b . FILTER EXISTS {
+    ?b dc:publisher ?c . ?c rdf:type ?d . } }'
+  runtime_info:
+    client_time: 0.4965806709988101
+  result_size: 1
+  results:
+  - - '53840'
+  long_query: EXISTS JOIN chain of three large predicates with the largest sum of join sizes
+- query: union-no-constraint
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT
+    (COUNT(*) AS ?count) WHERE { { ?s rdf:type ?o } UNION { ?s dc:publisher ?o } }'
+  runtime_info:
+    client_time: 0.12439821799853235
+  result_size: 1
+  results:
+  - - '181781'
+  long_query: UNION of two large predicates, no constraint
+- query: union-constraint-from-star
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count) WHERE { { ?s dc:publisher ?o1 } UNION { ?s rdf:type
+    ?o1 } ?s bsbm:productFeature ?o2 }'
+  runtime_info:
+    client_time: 0.3290528309989895
+  result_size: 1
+  results:
+  - - '154158'
+  long_query: UNION of two large predicates, constrained by a large predicate known to have join partners
+- query: union-constraint-small-join
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (COUNT(*) AS ?count) WHERE { {
+    ?s bsbm:rating1 ?o1 } UNION { ?s bsbm:rating2 ?o1 } ?s bsbm:rating3 ?o2 }'
+  runtime_info:
+    client_time: 0.13163359700047295
+  result_size: 1
+  results:
+  - - '26351'
+  long_query: UNION of two large predicates, constrained by a join with a small result
+- query: union-constraint-large-join
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count) WHERE { { ?s rdf:type ?o1 } UNION { ?s dc:date
+    ?o1 } ?s bsbm:productFeature ?o2 }'
+  runtime_info:
+    client_time: 0.30780307600070955
+  result_size: 1
+  results:
+  - - '154158'
+  long_query: UNION of two large predicates, constrained by a join with a large result
+- query: union-constraint-filter-restrictive
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT
+    (COUNT(*) AS ?count) WHERE { { ?s rdf:type ?o } UNION { ?s dc:publisher ?o } FILTER (?s = ?o) }'
+  runtime_info:
+    client_time: 0.14961751399823697
+  result_size: 1
+  results:
+  - - '181781'
+  long_query: UNION of two large predicates, constraint by restrictive FILTER
+- query: multicolumn-join-small
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (COUNT(*) AS ?count) WHERE { ?s
+    bsbm:productPropertyNumeric5 ?o . ?s bsbm:productPropertyNumeric4 ?o }'
+  runtime_info:
+    client_time: 0.009476937997533241
+  result_size: 1
+  results:
+  - - '3'
+  long_query: Multicolumn JOIN small
+- query: multicolumn-join-large
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s bsbm:vendor ?o . ?s dc:publisher ?o }'
+  runtime_info:
+    client_time: 0.11718639800164965
+  result_size: 1
+  results:
+  - - '53840'
+  long_query: Multicolumn JOIN large
+- query: group-by-count-object-high-multiplicity
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT ?object (COUNT(?subject) AS ?count)
+    { ?subject bsbm:deliveryDays ?object . } GROUP BY ?object ORDER BY DESC(?count) LIMIT 10'
+  runtime_info:
+    client_time: 0.0723823079970316
+  result_size: 10
+  results:
+  - - '3'
+    - '14067'
+  - - '4'
+    - '13636'
+  - - '2'
+    - '9133'
+  - - '5'
+    - '8601'
+  - - '1'
+    - '3801'
+  long_query: GROUP BY with COUNT, for object with high multiplicity
+- query: group-by-count-object-low-multiplicity
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT ?object (COUNT(?subject) AS ?count)
+    { ?subject bsbm:offerWebpage ?object . } GROUP BY ?object ORDER BY DESC(?count) LIMIT 10'
+  runtime_info:
+    client_time: 0.17810840800302685
+  result_size: 10
+  results:
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromVendor1/Offer1/
+    - '1'
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromVendor1/Offer3/
+    - '1'
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromVendor1/Offer4/
+    - '1'
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromVendor1/Offer5/
+    - '1'
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromVendor1/Offer6/
+    - '1'
+  long_query: GROUP BY with COUNT, for object with low multiplicity
+- query: group-by-count-object-wrong-sort-order
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    SELECT ?o1 (COUNT(?s) AS ?count) { ?s bsbm:deliveryDays ?o1 . ?s dc:publisher ?o2 . } GROUP BY ?o1 ORDER BY DESC(?count)
+    LIMIT 10'
+  runtime_info:
+    client_time: 0.08845394500167458
+  result_size: 10
+  results:
+  - - '3'
+    - '14067'
+  - - '4'
+    - '13636'
+  - - '2'
+    - '9133'
+  - - '5'
+    - '8601'
+  - - '1'
+    - '3801'
+  long_query: GROUP BY with COUNT, for object but not sorted by object
+- query: group-by-complex-aggregate
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    SELECT ?o1 (COUNT(?s) AS ?count) (MIN(?s) AS ?min) (MAX(?s) AS ?max) (SAMPLE(?s) AS ?sample) { ?s bsbm:deliveryDays ?o1
+    . ?s dc:publisher ?o2 . } GROUP BY ?o1 ORDER BY DESC(?count) LIMIT 10'
+  runtime_info:
+    client_time: 0.3262039420005749
+  result_size: 10
+  results:
+  - - '3'
+    - '14067'
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromVendor1/Offer1003
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromVendor9/Offer16512
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromVendor29/Offer55697
+  - - '4'
+    - '13636'
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromVendor1/Offer1002
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromVendor9/Offer16510
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromVendor29/Offer55684
+  - - '2'
+    - '9133'
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromVendor1/Offer1001
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromVendor9/Offer16508
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromVendor29/Offer55690
+  - - '5'
+    - '8601'
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromVendor1/Offer1
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromVendor9/Offer16499
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromVendor29/Offer55665
+  - - '1'
+    - '3801'
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromVendor1/Offer1033
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromVendor9/Offer16496
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/dataFromVendor29/Offer55694
+  long_query: GROUP BY with COUNT and MIN and MAX and SAMPLE
+- query: group-by-implicit-numeric-baseline
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (COUNT(?o) AS ?count) { ?s bsbm:deliveryDays
+    ?o. }'
+  runtime_info:
+    client_time: 0.029973643999255728
+  result_size: 1
+  results:
+  - - '53840'
+  long_query: Implicit GROUP BY with COUNT on numeric predicate as baseline
+- query: group-by-implicit-numeric-sum
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (SUM(?o) AS ?sum) { ?s bsbm:deliveryDays
+    ?o. }'
+  runtime_info:
+    client_time: 0.1268391179983155
+  result_size: 1
+  results:
+  - - '190655'
+  long_query: Implicit GROUP BY with SUM on numeric predicate
+- query: group-by-implicit-numeric-min
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (MIN(?o) AS ?min) { ?s bsbm:deliveryDays
+    ?o. }'
+  runtime_info:
+    client_time: 0.046173940998414764
+  result_size: 1
+  results:
+  - - '1'
+  long_query: Implicit GROUP BY with MIN on numeric predicate
+- query: group-by-implicit-numeric-max
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (MAX(?o) AS ?max) { ?s bsbm:deliveryDays
+    ?o. }'
+  runtime_info:
+    client_time: 0.03408816299997852
+  result_size: 1
+  results:
+  - - '10'
+  long_query: Implicit GROUP BY with MAX on numeric predicate
+- query: group-by-implicit-numeric-avg
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (AVG(?o) AS ?avg) { ?s bsbm:deliveryDays
+    ?o. }'
+  runtime_info:
+    client_time: 0.05997943900001701
+  result_size: 1
+  results:
+  - - '3.541140416047548291233284'
+  long_query: Implicit GROUP BY with AVG on numeric predicate
+- query: group-by-implicit-string-baseline
+  sparql: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(?o) AS ?count) { ?s dc:title ?o. }'
+  runtime_info:
+    client_time: 0.016708487000869354
+  result_size: 1
+  results:
+  - - '26888'
+  long_query: Implicit GROUP BY with COUNT on string predicate as baseline
+- query: group-by-implicit-string-min
+  sparql: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (MIN(?o) AS ?min) { ?s dc:title ?o. }'
+  runtime_info:
+    client_time: 0.12106102899997495
+  result_size: 1
+  results:
+  - - aah disgusts resourcefully supines collinses bluebottles reorientation intercalated lecherous investigations futilities
+      inoculates
+  long_query: Implicit GROUP BY with MIN on string predicate
+- query: group-by-implicit-string-max
+  sparql: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (MAX(?o) AS ?max) { ?s dc:title ?o. }'
+  runtime_info:
+    client_time: 0.13222309599950677
+  result_size: 1
+  results:
+  - - zymoplastic contuses reattachment irately tuber postbags metalling fearfully oriel pharmacists misadded captivation
+      pales incarnates gluier
+  long_query: Implicit GROUP BY with MAX on string predicate
+- query: group-by-string-groupconcat
+  sparql: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (SUM(STRLEN(?cat)) AS ?sum) { { SELECT (GROUP_CONCAT(?o; SEPARATOR="
+    ") AS ?cat) { ?s dc:title ?o. } GROUP BY ?s } }'
+  runtime_info:
+    client_time: 0.2731407110004511
+  result_size: 1
+  results:
+  - - '2487830'
+  long_query: GROUP BY with GROUP_CONCAT on string predicate with high subject multiplicity
+- query: distinct-count-object-high-multiplicity
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (COUNT(DISTINCT ?object) AS ?count)
+    { ?subject bsbm:deliveryDays ?object . }'
+  runtime_info:
+    client_time: 0.038675482999678934
+  result_size: 1
+  results:
+  - - '10'
+  long_query: COUNT DISTINCT, for object with high multiplicity
+- query: distinct-count-object-low-multiplicity
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (COUNT(DISTINCT ?object) AS ?count)
+    { ?subject bsbm:offerWebpage ?object . }'
+  runtime_info:
+    client_time: 0.03967492299852893
+  result_size: 1
+  results:
+  - - '53840'
+  long_query: COUNT DISTINCT, for object with low multiplicity
+- query: distinct-count-object-wrong-sort-order
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    SELECT (COUNT(DISTINCT ?o1) AS ?count) { ?s bsbm:deliveryDays ?o1 . ?s dc:publisher ?o2 . }'
+  runtime_info:
+    client_time: 0.09931095200226991
+  result_size: 1
+  results:
+  - - '10'
+  long_query: COUNT DISTINCT, for object but not sorted by object
+- query: transitive-path-plus
+  sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(*) AS ?count) { ?s rdfs:subClassOf+ ?o }'
+  runtime_info:
+    client_time: 0.012985998000658583
+  result_size: 1
+  results:
+  - - '390'
+  long_query: Transitive path with plus
+- query: transitive-path-plus-fixed-subject
+  sparql: 'PREFIX bsbminst: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    SELECT (COUNT(*) AS ?count) { bsbminst:ProductType97 rdfs:subClassOf+ ?o }'
+  runtime_info:
+    client_time: 0.007358368002314819
+  result_size: 1
+  results:
+  - - '3'
+  long_query: Transitive path with plus and a fixed subject
+- query: transitive-path-large-join-and-plus
+  sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) { ?s rdf:type/rdfs:subClassOf+ ?o }'
+  runtime_info:
+    client_time: 0.017372475998854497
+  result_size: 1
+  results:
+  - - '7521'
+  long_query: Transitive path with a large join and plus
+- query: transitive-path-small-join-and-plus
+  sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) { ?s rdf:type/rdfs:subClassOf+ ?o }'
+  runtime_info:
+    client_time: 0.01781870699778665
+  result_size: 1
+  results:
+  - - '7521'
+  long_query: Transitive path with a small join and plus
+- query: regex-3-contains
+  sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o FILTER
+    CONTAINS(?o, "com") }'
+  runtime_info:
+    client_time: 0.06464436800160911
+  result_size: 1
+  results:
+  - - '177'
+  long_query: CONTAINS filter with fixed string of length 3
+- query: regex-3-fixed
+  sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o FILTER
+    REGEX(?o, "com") }'
+  runtime_info:
+    client_time: 0.0544074110002839
+  result_size: 1
+  results:
+  - - '177'
+  long_query: REGEX filter with fixed string of length 3
+- query: regex-3
+  sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o FILTER
+    REGEX(?o, "c.m") }'
+  runtime_info:
+    client_time: 0.033010334002028685
+  result_size: 1
+  results:
+  - - '258'
+  long_query: REGEX filter with expression of length 3
+- query: regex-prefix-1
+  sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o FILTER
+    REGEX(?o, "^C") }'
+  runtime_info:
+    client_time: 0.05347540100046899
+  result_size: 1
+  results:
+  - - '0'
+  long_query: REGEX filter with prefix of length 1
+- query: regex-prefix-2
+  sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?object
+    FILTER REGEX(?object, "^Co") }'
+  runtime_info:
+    client_time: 0.02927854400331853
+  result_size: 1
+  results:
+  - - '0'
+  long_query: REGEX filter with prefix of length 2
+- query: regex-prefix-3
+  sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?object
+    FILTER REGEX(?object, "^Com") }'
+  runtime_info:
+    client_time: 0.028552685002068756
+  result_size: 1
+  results:
+  - - '0'
+  long_query: REGEX filter with prefix of length 3
+- query: strlen
+  sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (SUM(STRLEN(?o)) AS ?checksum) { ?s rdfs:label ?o .
+    }'
+  runtime_info:
+    client_time: 0.028763244998117443
+  result_size: 1
+  results:
+  - - '139823'
+  long_query: String length for large string predicate
+- query: strbefore
+  sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (SUM(STRLEN(STRBEFORE(?o, "a"))) AS ?checksum) { ?s
+    rdfs:label ?o . }'
+  runtime_info:
+    client_time: 0.047378941999340896
+  result_size: 1
+  results:
+  - - '34911'
+  long_query: STRBEFORE string function
+- query: strafter
+  sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (SUM(STRLEN(STRAFTER(?o, "a"))) AS ?checksum) { ?s
+    rdfs:label ?o . }'
+  runtime_info:
+    client_time: 0.04356268099945737
+  result_size: 1
+  results:
+  - - '72083'
+  long_query: STRAFTER string function
+- query: strstarts
+  sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> SELECT (SUM(xsd:integer(STRSTARTS(?o,
+    "a"))) AS ?count) { ?s rdfs:label ?o . }'
+  runtime_info:
+    client_time: 0.04193338300319738
+  result_size: 1
+  results:
+  - - '438'
+  long_query: STRSTARTS string function
+- query: strends
+  sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> SELECT (SUM(xsd:integer(STRENDS(?o,
+    "a"))) AS ?count) { ?s rdfs:label ?o . }'
+  runtime_info:
+    client_time: 0.054451391002658056
+  result_size: 1
+  results:
+  - - '59'
+  long_query: STRENDS string function
+- query: result-size-tiny
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?s ?o WHERE { ?s rdf:type ?o } LIMIT 10'
+  runtime_info:
+    client_time: 0.009677259000454796
+  result_size: 10
+  results:
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType1
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType2
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType3
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType4
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType5
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  long_query: Export 10 tuples
+- query: result-size-small
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?s ?o WHERE { ?s rdf:type ?o } LIMIT 1000'
+  runtime_info:
+    client_time: 0.03505528399909963
+  result_size: 1000
+  results:
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType1
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType2
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType3
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType4
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType5
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  long_query: Export 1000 tuples
+- query: result-size-medium
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?s ?o WHERE { ?s rdf:type ?o } LIMIT 100000'
+  runtime_info:
+    client_time: 0.7566250359996047
+  result_size: 92144
+  results:
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType1
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType2
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType3
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType4
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType5
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  long_query: Export 100K tuples
+- query: result-size-large
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?s ?o WHERE { ?s rdf:type ?o } LIMIT 1000000'
+  runtime_info:
+    client_time: 0.649217114001658
+  result_size: 92144
+  results:
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType1
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType2
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType3
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType4
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType5
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  long_query: Export 1M tuples
+- query: result-size-xlarge
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?s ?o WHERE { ?s rdf:type ?o } LIMIT 10000000'
+  runtime_info:
+    client_time: 0.6392791959988244
+  result_size: 92144
+  results:
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType1
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType2
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType3
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType4
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  - - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType5
+    - http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/ProductType
+  long_query: Export 10M tuples
+- query: numeric-baseline
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (SUM(?o) AS ?sum) WHERE { ?s bsbm:deliveryDays
+    ?o }'
+  runtime_info:
+    client_time: 0.07270812700153328
+  result_size: 1
+  results:
+  - - '190655'
+  long_query: Baseline for numeric queries
+- query: numeric-abs
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (SUM(ABS(?o)) AS ?sum) WHERE {
+    ?s bsbm:deliveryDays ?o }'
+  runtime_info:
+    client_time: 0.08063859599860734
+  result_size: 1
+  results:
+  - - '190655'
+  long_query: ABS function
+- query: numeric-ceil
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (SUM(CEIL(?o)) AS ?sum) WHERE
+    { ?s bsbm:deliveryDays ?o }'
+  runtime_info:
+    client_time: 0.05927033899934031
+  result_size: 1
+  results:
+  - - '190655'
+  long_query: CEIL function
+- query: numeric-floor
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (SUM(FLOOR(?o)) AS ?sum) WHERE
+    { ?s bsbm:deliveryDays ?o }'
+  runtime_info:
+    client_time: 0.059253239996905904
+  result_size: 1
+  results:
+  - - '190655'
+  long_query: FLOOR function
+- query: numeric-round
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (SUM(ROUND(?o)) AS ?sum) WHERE
+    { ?s bsbm:deliveryDays ?o }'
+  runtime_info:
+    client_time: 0.08711907399992924
+  result_size: 1
+  results:
+  - - '190655'
+  long_query: ROUND function
+- query: numeric-add
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (SUM(?o + ?o) AS ?sum) WHERE {
+    ?s bsbm:deliveryDays ?o }'
+  runtime_info:
+    client_time: 0.0939616030009347
+  result_size: 1
+  results:
+  - - '381310'
+  long_query: Addition
+- query: numeric-greater
+  sparql: 'PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/> SELECT (SUM(?o > 0) AS ?sum) WHERE {
+    ?s bsbm:deliveryDays ?o }'
+  runtime_info:
+    client_time: 0.049568440997973084
+  result_size: 1
+  results:
+  - - None
+  long_query: Greater than
+- query: filter-few-results
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(?s) AS ?count) { ?s rdf:type ?o . FILTER
+    (?s = ?o) }'
+  runtime_info:
+    client_time: 0.07549449699945399
+  result_size: 1
+  results:
+  - - '0'
+  long_query: FILTER that filters out most rows and has few results
+- query: filter-many-results
+  sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(?s) AS ?count) { ?s rdf:type ?o . FILTER
+    (?s != ?o) }'
+  runtime_info:
+    client_time: 0.06427619899841375
+  result_size: 1
+  results:
+  - - '92144'
+  long_query: FILTER that filters out few rows and has many results
+- query: filter-language-en
+  sparql: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(?s) AS ?count) { ?s dc:title ?o . FILTER(LANG(?o) =
+    "en") }'
+  runtime_info:
+    client_time: 0.03640225299750455
+  result_size: 1
+  results:
+  - - '0'
+  long_query: FILTER on string predicate for only English literals
+- query: date-year
+  sparql: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (SUM(YEAR(?o)) AS ?sum) WHERE { ?s dc:date ?o }'
+  runtime_info:
+    client_time: 0.14921228399907704
+  result_size: 1
+  results:
+  - - '179935374'
+  long_query: YEAR function
+- query: date-month
+  sparql: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (SUM(MONTH(?o)) AS ?sum) WHERE { ?s dc:date ?o }'
+  runtime_info:
+    client_time: 0.12790907599992352
+  result_size: 1
+  results:
+  - - '446439'
+  long_query: MONTH function
+- query: date-day
+  sparql: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (SUM(DAY(?o)) AS ?sum) WHERE { ?s dc:date ?o }'
+  runtime_info:
+    client_time: 0.07667501700052526
+  result_size: 1
+  results:
+  - - '1412414'
+  long_query: DAY function
+- query: number-of-triples
+  sparql: SELECT (COUNT(?s) AS ?count) WHERE { ?s ?p ?o }
+  runtime_info:
+    client_time: 0.2580652429969632
+  result_size: 1
+  results:
+  - - '952930'
+  long_query: Total number of triples
+- query: number-of-subjects
+  sparql: SELECT (COUNT(DISTINCT ?s) AS ?count) WHERE { ?s ?p ?o }
+  runtime_info:
+    client_time: 0.30228285499833873
+  result_size: 1
+  results:
+  - - '89637'
+  long_query: Total number of distinct subjects
+- query: number-of-predicates
+  sparql: SELECT (COUNT(DISTINCT ?p) AS ?count) WHERE { ?s ?p ?o }
+  runtime_info:
+    client_time: 0.27739227999700233
+  result_size: 1
+  results:
+  - - '40'
+  long_query: Total number of distinct predicates
+- query: number-of-objects
+  sparql: SELECT (COUNT(DISTINCT ?o) AS ?count) WHERE { ?s ?p ?o }
+  runtime_info:
+    client_time: 0.2935221269981412
+  result_size: 1
+  results:
+  - - '201838'
+  long_query: Total number of distinct objects
+- query: number-of-literals
+  sparql: SELECT (COUNT(?o) AS ?count) WHERE { ?s ?p ?o FILTER ISLITERAL(?o) }
+  runtime_info:
+    client_time: 0.3045266150002135
+  result_size: 1
+  results:
+  - - '500215'
+  long_query: Total number of literals
+- query: number-of-blank-nodes
+  sparql: SELECT (COUNT(?s) AS ?count) WHERE { ?s ?p ?o FILTER ISBLANK(?s) }
+  runtime_info:
+    client_time: 0.1804287490012939
+  result_size: 1
+  results:
+  - - '0'
+  long_query: Total number of blank nodes
+load:
+  engine: graphdb
+  dataset: bsbm-2785
+  load_s: 12.942
+  start_s: 13.014
+  spatial_index_s: 0.003
+  disk_bytes: 186187683

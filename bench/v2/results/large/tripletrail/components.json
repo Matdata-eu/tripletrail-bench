@@ -1,0 +1,125 @@
+{
+ "engine": "tripletrail",
+ "qid": "components",
+ "family": "6 routing",
+ "kind": "scalars",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 534.093,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1.0,
+     688512.0
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 294.008,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1.0,
+     688512.0
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 287.011,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1.0,
+     688512.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 341.49,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1.0,
+     688512.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 296.011,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1.0,
+     688512.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 292.576,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1.0,
+     688512.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 6,
+   "ms": 295.709,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1.0,
+     688512.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 7,
+   "ms": 299.242,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1.0,
+     688512.0
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 534.093,
+ "warm": {
+  "n": 5,
+  "p50_ms": 296.011,
+  "p95_ms": 341.49,
+  "min_ms": 292.576,
+  "max_ms": 341.49,
+  "mean_ms": 305.006
+ },
+ "dataset": "large",
+ "family_setup_ms": 5.926,
+ "rss_after": "3115 MiB (heap 2333 MiB)"
+}

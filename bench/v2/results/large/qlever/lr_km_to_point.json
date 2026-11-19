@@ -1,0 +1,10 @@
+{
+ "engine": "qlever",
+ "qid": "lr_km_to_point",
+ "family": "5 linear referencing",
+ "kind": "point",
+ "runs": [],
+ "status": "n/a",
+ "reason": "no linear-referencing functions",
+ "dataset": "large"
+}

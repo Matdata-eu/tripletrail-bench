@@ -1,0 +1,3540 @@
+{
+ "engine": "postgis",
+ "qid": "route_constrained",
+ "family": "6 routing",
+ "kind": "path",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 30.675,
+   "ok": true,
+   "rows": 373,
+   "result": {
+    "n": 372,
+    "total": 188874.79999999993,
+    "digest": "fc451572113944eb",
+    "first": [
+     "http://example.org/rinf-synth/nr/24871#ab",
+     "http://example.org/rinf-synth/nr/14050#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/5743#ba",
+     "http://example.org/rinf-synth/nr/5742#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 28.107,
+   "ok": true,
+   "rows": 131,
+   "result": {
+    "n": 130,
+    "total": 66309.1,
+    "digest": "ea4ecb792cae2e31",
+    "first": [
+     "http://example.org/rinf-synth/nr/6060#ab",
+     "http://example.org/rinf-synth/nr/6061#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/5030#ba",
+     "http://example.org/rinf-synth/nr/5029#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 30.237,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 32.338,
+   "ok": true,
+   "rows": 550,
+   "result": {
+    "n": 549,
+    "total": 277284.6999999995,
+    "digest": "13eb23e6f4c8bfbc",
+    "first": [
+     "http://example.org/rinf-synth/nr/1866#ba",
+     "http://example.org/rinf-synth/nr/1865#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/14257#ba",
+     "http://example.org/rinf-synth/nr/14256#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 31.684,
+   "ok": true,
+   "rows": 501,
+   "result": {
+    "n": 500,
+    "total": 251845.70000000016,
+    "digest": "9ea615e8d3230b2f",
+    "first": [
+     "http://example.org/rinf-synth/nr/18015#ba",
+     "http://example.org/rinf-synth/nr/18014#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/9102#ab",
+     "http://example.org/rinf-synth/nr/9103#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 27.705,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 6,
+   "ms": 28.039,
+   "ok": true,
+   "rows": 60,
+   "result": {
+    "n": 59,
+    "total": 29532.600000000002,
+    "digest": "3300c04cb82a0375",
+    "first": [
+     "http://example.org/rinf-synth/nr/20817#ba",
+     "http://example.org/rinf-synth/nr/20816#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/20760#ba",
+     "http://example.org/rinf-synth/nr/20759#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 7,
+   "ms": 31.47,
+   "ok": true,
+   "rows": 482,
+   "result": {
+    "n": 481,
+    "total": 242478.79999999967,
+    "digest": "26a1f885ce4efc20",
+    "first": [
+     "http://example.org/rinf-synth/nr/18012#ab",
+     "http://example.org/rinf-synth/nr/18013#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/13299#ab",
+     "http://example.org/rinf-synth/nr/13300#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 8,
+   "ms": 28.024,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 9,
+   "ms": 30.73,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 10,
+   "ms": 27.431,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 11,
+   "ms": 27.478,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 12,
+   "ms": 30.832,
+   "ok": true,
+   "rows": 457,
+   "result": {
+    "n": 456,
+    "total": 229089.50000000006,
+    "digest": "9aacda36b932600c",
+    "first": [
+     "http://example.org/rinf-synth/nr/5586#ba",
+     "http://example.org/rinf-synth/nr/5585#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/10726#ba",
+     "http://example.org/rinf-synth/nr/10725#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 13,
+   "ms": 31.134,
+   "ok": true,
+   "rows": 391,
+   "result": {
+    "n": 390,
+    "total": 196270.29999999993,
+    "digest": "08f82e9fdb444dc7",
+    "first": [
+     "http://example.org/rinf-synth/nr/18350#ba",
+     "http://example.org/rinf-synth/nr/18349#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/24369#ab",
+     "http://example.org/rinf-synth/nr/24370#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 14,
+   "ms": 30.808,
+   "ok": true,
+   "rows": 490,
+   "result": {
+    "n": 489,
+    "total": 246560.49999999985,
+    "digest": "ed8d42cfc4c7fa46",
+    "first": [
+     "http://example.org/rinf-synth/nr/12369#ba",
+     "http://example.org/rinf-synth/nr/12368#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/6856#ba",
+     "http://example.org/rinf-synth/nr/6855#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 15,
+   "ms": 32.347,
+   "ok": true,
+   "rows": 684,
+   "result": {
+    "n": 683,
+    "total": 342530.5000000001,
+    "digest": "c2c7efedee58df13",
+    "first": [
+     "http://example.org/rinf-synth/nr/24400#ab",
+     "http://example.org/rinf-synth/nr/779#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/10519#ba",
+     "http://example.org/rinf-synth/nr/30016#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 16,
+   "ms": 27.722,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 17,
+   "ms": 31.139,
+   "ok": true,
+   "rows": 473,
+   "result": {
+    "n": 472,
+    "total": 237475.10000000003,
+    "digest": "bddf3b37afa60b93",
+    "first": [
+     "http://example.org/rinf-synth/nr/16001#ba",
+     "http://example.org/rinf-synth/nr/16000#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/19289#ba",
+     "http://example.org/rinf-synth/nr/19288#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 18,
+   "ms": 30.777,
+   "ok": true,
+   "rows": 338,
+   "result": {
+    "n": 337,
+    "total": 169570.80000000005,
+    "digest": "04331d9d62119999",
+    "first": [
+     "http://example.org/rinf-synth/nr/8344#ba",
+     "http://example.org/rinf-synth/nr/28768#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/890#ab",
+     "http://example.org/rinf-synth/nr/891#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 19,
+   "ms": 30.576,
+   "ok": true,
+   "rows": 307,
+   "result": {
+    "n": 306,
+    "total": 154790.79999999996,
+    "digest": "4ef0fcbaf682f93e",
+    "first": [
+     "http://example.org/rinf-synth/nr/16754#ab",
+     "http://example.org/rinf-synth/nr/16755#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/5078#ab",
+     "http://example.org/rinf-synth/nr/5079#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 20,
+   "ms": 28.259,
+   "ok": true,
+   "rows": 97,
+   "result": {
+    "n": 96,
+    "total": 50573.69999999999,
+    "digest": "48c054b04646618a",
+    "first": [
+     "http://example.org/rinf-synth/nr/22996#ba",
+     "http://example.org/rinf-synth/nr/22995#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/868#ba",
+     "http://example.org/rinf-synth/nr/867#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 21,
+   "ms": 29.852,
+   "ok": true,
+   "rows": 294,
+   "result": {
+    "n": 293,
+    "total": 151097.29999999996,
+    "digest": "84e7ad9f9055070f",
+    "first": [
+     "http://example.org/rinf-synth/nr/3212#ba",
+     "http://example.org/rinf-synth/nr/3211#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/1007#ba",
+     "http://example.org/rinf-synth/nr/1006#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 22,
+   "ms": 30.4,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 23,
+   "ms": 27.54,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 24,
+   "ms": 27.903,
+   "ok": true,
+   "rows": 116,
+   "result": {
+    "n": 115,
+    "total": 57349.2,
+    "digest": "a92c54833d30f6e3",
+    "first": [
+     "http://example.org/rinf-synth/nr/11809#ba",
+     "http://example.org/rinf-synth/nr/11808#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/20402#ba",
+     "http://example.org/rinf-synth/nr/20401#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 25,
+   "ms": 30.739,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 26,
+   "ms": 27.433,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 27,
+   "ms": 27.559,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 28,
+   "ms": 27.496,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 29,
+   "ms": 28.16,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 30,
+   "ms": 31.538,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 31,
+   "ms": 30.027,
+   "ok": true,
+   "rows": 288,
+   "result": {
+    "n": 287,
+    "total": 145591.40000000017,
+    "digest": "04c77fae19d62c66",
+    "first": [
+     "http://example.org/rinf-synth/nr/17251#ab",
+     "http://example.org/rinf-synth/nr/17252#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/8415#ba",
+     "http://example.org/rinf-synth/nr/8414#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 32,
+   "ms": 32.545,
+   "ok": true,
+   "rows": 461,
+   "result": {
+    "n": 460,
+    "total": 233225.29999999987,
+    "digest": "e0316a6a5f8777bd",
+    "first": [
+     "http://example.org/rinf-synth/nr/15132#ba",
+     "http://example.org/rinf-synth/nr/15131#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/7916#ab",
+     "http://example.org/rinf-synth/nr/7917#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 33,
+   "ms": 30.952,
+   "ok": true,
+   "rows": 323,
+   "result": {
+    "n": 322,
+    "total": 162127.19999999998,
+    "digest": "990aacf691937249",
+    "first": [
+     "http://example.org/rinf-synth/nr/20735#ba",
+     "http://example.org/rinf-synth/nr/20734#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/9161#ba",
+     "http://example.org/rinf-synth/nr/9160#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 34,
+   "ms": 27.556,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 35,
+   "ms": 32.386,
+   "ok": true,
+   "rows": 679,
+   "result": {
+    "n": 678,
+    "total": 339422.40000000014,
+    "digest": "c15c69c044386490",
+    "first": [
+     "http://example.org/rinf-synth/nr/22494#ab",
+     "http://example.org/rinf-synth/nr/22495#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/11190#ab",
+     "http://example.org/rinf-synth/nr/11191#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 36,
+   "ms": 28.965,
+   "ok": true,
+   "rows": 129,
+   "result": {
+    "n": 128,
+    "total": 64319.20000000001,
+    "digest": "3cff67afac83ef15",
+    "first": [
+     "http://example.org/rinf-synth/nr/9398#ab",
+     "http://example.org/rinf-synth/nr/9399#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/8881#ab",
+     "http://example.org/rinf-synth/nr/29082#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 37,
+   "ms": 30.964,
+   "ok": true,
+   "rows": 344,
+   "result": {
+    "n": 343,
+    "total": 177085.2000000001,
+    "digest": "a165bad74b1a72eb",
+    "first": [
+     "http://example.org/rinf-synth/nr/2856#ba",
+     "http://example.org/rinf-synth/nr/2855#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/14492#ba",
+     "http://example.org/rinf-synth/nr/14491#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 38,
+   "ms": 29.946,
+   "ok": true,
+   "rows": 238,
+   "result": {
+    "n": 237,
+    "total": 119002.39999999997,
+    "digest": "532c0ea80f36b549",
+    "first": [
+     "http://example.org/rinf-synth/nr/3666#ab",
+     "http://example.org/rinf-synth/nr/3667#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/15263#ba",
+     "http://example.org/rinf-synth/nr/15262#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 39,
+   "ms": 30.815,
+   "ok": true,
+   "rows": 310,
+   "result": {
+    "n": 309,
+    "total": 155085.69999999998,
+    "digest": "9d8d9ff31ea30789",
+    "first": [
+     "http://example.org/rinf-synth/nr/9308#ab",
+     "http://example.org/rinf-synth/nr/9309#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/22122#ba",
+     "http://example.org/rinf-synth/nr/22121#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 40,
+   "ms": 31.324,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 41,
+   "ms": 31.301,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 42,
+   "ms": 30.771,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 43,
+   "ms": 31.683,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 44,
+   "ms": 29.836,
+   "ok": true,
+   "rows": 327,
+   "result": {
+    "n": 326,
+    "total": 167480.50000000015,
+    "digest": "96b634cbd4d3bfce",
+    "first": [
+     "http://example.org/rinf-synth/nr/16486#ab",
+     "http://example.org/rinf-synth/nr/16487#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/3396#ab",
+     "http://example.org/rinf-synth/nr/3397#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 45,
+   "ms": 31.428,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 46,
+   "ms": 28.122,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 47,
+   "ms": 30.292,
+   "ok": true,
+   "rows": 294,
+   "result": {
+    "n": 293,
+    "total": 147458.30000000005,
+    "digest": "041ad0333769bad6",
+    "first": [
+     "http://example.org/rinf-synth/nr/8152#ba",
+     "http://example.org/rinf-synth/nr/8151#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/13132#ba",
+     "http://example.org/rinf-synth/nr/13131#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 48,
+   "ms": 27.853,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 49,
+   "ms": 32.252,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 50,
+   "ms": 29.837,
+   "ok": true,
+   "rows": 289,
+   "result": {
+    "n": 288,
+    "total": 144307.00000000003,
+    "digest": "8167678da8458b11",
+    "first": [
+     "http://example.org/rinf-synth/nr/8058#ab",
+     "http://example.org/rinf-synth/nr/8059#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/24865#ba",
+     "http://example.org/rinf-synth/nr/24864#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 51,
+   "ms": 30.885,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 52,
+   "ms": 32.246,
+   "ok": true,
+   "rows": 543,
+   "result": {
+    "n": 542,
+    "total": 276571.6000000003,
+    "digest": "45fb82b26bc84959",
+    "first": [
+     "http://example.org/rinf-synth/nr/20666#ab",
+     "http://example.org/rinf-synth/nr/20667#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/12009#ba",
+     "http://example.org/rinf-synth/nr/12008#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 53,
+   "ms": 29.677,
+   "ok": true,
+   "rows": 272,
+   "result": {
+    "n": 271,
+    "total": 137326.30000000005,
+    "digest": "a3aa7756ce190649",
+    "first": [
+     "http://example.org/rinf-synth/nr/18786#ab",
+     "http://example.org/rinf-synth/nr/18787#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/7534#ba",
+     "http://example.org/rinf-synth/nr/7533#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 54,
+   "ms": 27.505,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 55,
+   "ms": 31.397,
+   "ok": true,
+   "rows": 567,
+   "result": {
+    "n": 566,
+    "total": 283663.5999999999,
+    "digest": "2c4d96c46e377ac0",
+    "first": [
+     "http://example.org/rinf-synth/nr/12923#ba",
+     "http://example.org/rinf-synth/nr/12922#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/5856#ba",
+     "http://example.org/rinf-synth/nr/5855#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 56,
+   "ms": 27.858,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 57,
+   "ms": 27.579,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 58,
+   "ms": 30.538,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 59,
+   "ms": 30.569,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 60,
+   "ms": 27.654,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 61,
+   "ms": 29.224,
+   "ok": true,
+   "rows": 240,
+   "result": {
+    "n": 239,
+    "total": 120200.20000000003,
+    "digest": "a5ba0b66efd64ddb",
+    "first": [
+     "http://example.org/rinf-synth/nr/8123#ba",
+     "http://example.org/rinf-synth/nr/8122#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/3607#ab",
+     "http://example.org/rinf-synth/nr/3608#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 62,
+   "ms": 30.858,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 63,
+   "ms": 27.721,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 64,
+   "ms": 30.593,
+   "ok": true,
+   "rows": 290,
+   "result": {
+    "n": 289,
+    "total": 147468.0000000001,
+    "digest": "b318127ae96d2aa6",
+    "first": [
+     "http://example.org/rinf-synth/nr/6754#ba",
+     "http://example.org/rinf-synth/nr/6753#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/12251#ab",
+     "http://example.org/rinf-synth/nr/12252#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 65,
+   "ms": 27.616,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 66,
+   "ms": 32.032,
+   "ok": true,
+   "rows": 571,
+   "result": {
+    "n": 570,
+    "total": 287177.30000000005,
+    "digest": "18a27881cd2fc139",
+    "first": [
+     "http://example.org/rinf-synth/nr/29337#ba",
+     "http://example.org/rinf-synth/nr/9322#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/13108#ba",
+     "http://example.org/rinf-synth/nr/13107#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 67,
+   "ms": 28.351,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 68,
+   "ms": 30.146,
+   "ok": true,
+   "rows": 281,
+   "result": {
+    "n": 280,
+    "total": 140007.6999999999,
+    "digest": "eaf52b4fbba3f765",
+    "first": [
+     "http://example.org/rinf-synth/nr/6844#ab",
+     "http://example.org/rinf-synth/nr/6845#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/18909#ba",
+     "http://example.org/rinf-synth/nr/18908#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 69,
+   "ms": 31.169,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 70,
+   "ms": 28.781,
+   "ok": true,
+   "rows": 198,
+   "result": {
+    "n": 197,
+    "total": 98473.69999999997,
+    "digest": "7234c8cdd57b7014",
+    "first": [
+     "http://example.org/rinf-synth/nr/22898#ab",
+     "http://example.org/rinf-synth/nr/22899#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/20342#ba",
+     "http://example.org/rinf-synth/nr/20341#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 71,
+   "ms": 29.265,
+   "ok": true,
+   "rows": 168,
+   "result": {
+    "n": 167,
+    "total": 83890.20000000001,
+    "digest": "3b389dcc9d525e88",
+    "first": [
+     "http://example.org/rinf-synth/nr/6843#ab",
+     "http://example.org/rinf-synth/nr/6844#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/21136#ab",
+     "http://example.org/rinf-synth/nr/26479#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 72,
+   "ms": 28.343,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 73,
+   "ms": 32.334,
+   "ok": true,
+   "rows": 600,
+   "result": {
+    "n": 599,
+    "total": 300867.1000000001,
+    "digest": "b351ca7160797a41",
+    "first": [
+     "http://example.org/rinf-synth/nr/10038#ab",
+     "http://example.org/rinf-synth/nr/10039#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/5962#ab",
+     "http://example.org/rinf-synth/nr/5963#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 74,
+   "ms": 31.078,
+   "ok": true,
+   "rows": 411,
+   "result": {
+    "n": 410,
+    "total": 205789.90000000026,
+    "digest": "2c8f22426732a9c8",
+    "first": [
+     "http://example.org/rinf-synth/nr/10148#ba",
+     "http://example.org/rinf-synth/nr/10147#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/3070#ab",
+     "http://example.org/rinf-synth/nr/3071#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 75,
+   "ms": 30.105,
+   "ok": true,
+   "rows": 423,
+   "result": {
+    "n": 422,
+    "total": 213295.9000000001,
+    "digest": "ed292e3fb654709c",
+    "first": [
+     "http://example.org/rinf-synth/nr/12018#ba",
+     "http://example.org/rinf-synth/nr/12017#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/16260#ab",
+     "http://example.org/rinf-synth/nr/16261#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 76,
+   "ms": 29.391,
+   "ok": true,
+   "rows": 270,
+   "result": {
+    "n": 269,
+    "total": 134148.69999999998,
+    "digest": "79acac421ca248b8",
+    "first": [
+     "http://example.org/rinf-synth/nr/30418#ab",
+     "http://example.org/rinf-synth/nr/17426#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/12418#ab",
+     "http://example.org/rinf-synth/nr/12419#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 77,
+   "ms": 28.869,
+   "ok": true,
+   "rows": 191,
+   "result": {
+    "n": 190,
+    "total": 96841.8,
+    "digest": "ec8c57ab3b774bfc",
+    "first": [
+     "http://example.org/rinf-synth/nr/25018#ab",
+     "http://example.org/rinf-synth/nr/20040#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/18017#ba",
+     "http://example.org/rinf-synth/nr/18016#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 78,
+   "ms": 30.101,
+   "ok": true,
+   "rows": 338,
+   "result": {
+    "n": 337,
+    "total": 169743.10000000006,
+    "digest": "1393174412e9f70e",
+    "first": [
+     "http://example.org/rinf-synth/nr/14629#ba",
+     "http://example.org/rinf-synth/nr/14628#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/7990#ba",
+     "http://example.org/rinf-synth/nr/7989#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 79,
+   "ms": 30.991,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 80,
+   "ms": 29.6,
+   "ok": true,
+   "rows": 341,
+   "result": {
+    "n": 340,
+    "total": 169912.09999999995,
+    "digest": "8a630f9b2b26e195",
+    "first": [
+     "http://example.org/rinf-synth/nr/10912#ab",
+     "http://example.org/rinf-synth/nr/10913#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/10630#ba",
+     "http://example.org/rinf-synth/nr/10629#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 81,
+   "ms": 31.569,
+   "ok": true,
+   "rows": 529,
+   "result": {
+    "n": 528,
+    "total": 267188.3999999999,
+    "digest": "fffad85be09b1211",
+    "first": [
+     "http://example.org/rinf-synth/nr/3447#ab",
+     "http://example.org/rinf-synth/nr/3448#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/15306#ab",
+     "http://example.org/rinf-synth/nr/15307#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 82,
+   "ms": 27.959,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 83,
+   "ms": 28.532,
+   "ok": true,
+   "rows": 181,
+   "result": {
+    "n": 180,
+    "total": 90004.9,
+    "digest": "54d970b81e560d35",
+    "first": [
+     "http://example.org/rinf-synth/nr/11932#ba",
+     "http://example.org/rinf-synth/nr/11931#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/22374#ab",
+     "http://example.org/rinf-synth/nr/29959#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 84,
+   "ms": 30.198,
+   "ok": true,
+   "rows": 278,
+   "result": {
+    "n": 277,
+    "total": 139111.99999999994,
+    "digest": "a7acc940cccca323",
+    "first": [
+     "http://example.org/rinf-synth/nr/13218#ba",
+     "http://example.org/rinf-synth/nr/13217#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/11084#ab",
+     "http://example.org/rinf-synth/nr/11085#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 85,
+   "ms": 31.467,
+   "ok": true,
+   "rows": 445,
+   "result": {
+    "n": 444,
+    "total": 222308.90000000005,
+    "digest": "94ce610989c475cd",
+    "first": [
+     "http://example.org/rinf-synth/nr/16177#ba",
+     "http://example.org/rinf-synth/nr/16176#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/18934#ba",
+     "http://example.org/rinf-synth/nr/18933#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 86,
+   "ms": 27.87,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 87,
+   "ms": 30.908,
+   "ok": true,
+   "rows": 310,
+   "result": {
+    "n": 309,
+    "total": 156422.60000000012,
+    "digest": "3bfcf5da68e067df",
+    "first": [
+     "http://example.org/rinf-synth/nr/6153#ab",
+     "http://example.org/rinf-synth/nr/6154#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/1765#ba",
+     "http://example.org/rinf-synth/nr/1764#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 88,
+   "ms": 31.038,
+   "ok": true,
+   "rows": 471,
+   "result": {
+    "n": 470,
+    "total": 236801.6,
+    "digest": "e585506737920fac",
+    "first": [
+     "http://example.org/rinf-synth/nr/2525#ba",
+     "http://example.org/rinf-synth/nr/2524#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/8717#ab",
+     "http://example.org/rinf-synth/nr/8718#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 89,
+   "ms": 30.853,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 90,
+   "ms": 31.154,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 91,
+   "ms": 27.611,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 92,
+   "ms": 30.724,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 93,
+   "ms": 27.532,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 94,
+   "ms": 27.692,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 95,
+   "ms": 27.988,
+   "ok": true,
+   "rows": 102,
+   "result": {
+    "n": 101,
+    "total": 51116.39999999998,
+    "digest": "fdc4610681c5ef97",
+    "first": [
+     "http://example.org/rinf-synth/nr/8324#ab",
+     "http://example.org/rinf-synth/nr/8325#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/22314#ab",
+     "http://example.org/rinf-synth/nr/22315#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 96,
+   "ms": 31.939,
+   "ok": true,
+   "rows": 449,
+   "result": {
+    "n": 448,
+    "total": 224340.69999999987,
+    "digest": "838b00e48a85320b",
+    "first": [
+     "http://example.org/rinf-synth/nr/22253#ab",
+     "http://example.org/rinf-synth/nr/22254#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/11118#ab",
+     "http://example.org/rinf-synth/nr/11119#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 97,
+   "ms": 28.79,
+   "ok": true,
+   "rows": 178,
+   "result": {
+    "n": 177,
+    "total": 88837.79999999994,
+    "digest": "224963e4bbb8d24d",
+    "first": [
+     "http://example.org/rinf-synth/nr/9364#ab",
+     "http://example.org/rinf-synth/nr/9365#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/22951#ab",
+     "http://example.org/rinf-synth/nr/22952#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 98,
+   "ms": 32.154,
+   "ok": true,
+   "rows": 497,
+   "result": {
+    "n": 496,
+    "total": 250384.1000000001,
+    "digest": "3bf7364821491abd",
+    "first": [
+     "http://example.org/rinf-synth/nr/4214#ab",
+     "http://example.org/rinf-synth/nr/4215#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/9014#ab",
+     "http://example.org/rinf-synth/nr/9015#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 99,
+   "ms": 27.758,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 100,
+   "ms": 27.526,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 101,
+   "ms": 30.584,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 102,
+   "ms": 29.707,
+   "ok": true,
+   "rows": 376,
+   "result": {
+    "n": 375,
+    "total": 192186.99999999985,
+    "digest": "a63915208fe2230e",
+    "first": [
+     "http://example.org/rinf-synth/nr/22073#ba",
+     "http://example.org/rinf-synth/nr/22072#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/4179#ba",
+     "http://example.org/rinf-synth/nr/4178#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 103,
+   "ms": 27.727,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 104,
+   "ms": 30.681,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 105,
+   "ms": 32.337,
+   "ok": true,
+   "rows": 494,
+   "result": {
+    "n": 493,
+    "total": 247302.80000000025,
+    "digest": "5fb1e966e2fd5578",
+    "first": [
+     "http://example.org/rinf-synth/nr/16356#ab",
+     "http://example.org/rinf-synth/nr/16357#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/156#ab",
+     "http://example.org/rinf-synth/nr/157#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 106,
+   "ms": 31.008,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 107,
+   "ms": 27.626,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 108,
+   "ms": 30.903,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 109,
+   "ms": 31.342,
+   "ok": true,
+   "rows": 510,
+   "result": {
+    "n": 509,
+    "total": 255564.10000000003,
+    "digest": "f4eba0f107dd1a44",
+    "first": [
+     "http://example.org/rinf-synth/nr/16442#ab",
+     "http://example.org/rinf-synth/nr/16443#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/18061#ab",
+     "http://example.org/rinf-synth/nr/18062#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 110,
+   "ms": 31.136,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 111,
+   "ms": 29.274,
+   "ok": true,
+   "rows": 228,
+   "result": {
+    "n": 227,
+    "total": 114854.00000000006,
+    "digest": "1bee39fd8cbfbf05",
+    "first": [
+     "http://example.org/rinf-synth/nr/16713#ba",
+     "http://example.org/rinf-synth/nr/16712#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/7819#ab",
+     "http://example.org/rinf-synth/nr/7820#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 112,
+   "ms": 28.835,
+   "ok": true,
+   "rows": 169,
+   "result": {
+    "n": 168,
+    "total": 84688.0,
+    "digest": "563d5842830c972e",
+    "first": [
+     "http://example.org/rinf-synth/nr/18681#ba",
+     "http://example.org/rinf-synth/nr/18680#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/6271#ab",
+     "http://example.org/rinf-synth/nr/6272#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 113,
+   "ms": 29.31,
+   "ok": true,
+   "rows": 281,
+   "result": {
+    "n": 280,
+    "total": 140519.69999999998,
+    "digest": "449d239accc36bd4",
+    "first": [
+     "http://example.org/rinf-synth/nr/23381#ba",
+     "http://example.org/rinf-synth/nr/23380#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/8749#ab",
+     "http://example.org/rinf-synth/nr/8750#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 114,
+   "ms": 27.641,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 115,
+   "ms": 31.009,
+   "ok": true,
+   "rows": 365,
+   "result": {
+    "n": 364,
+    "total": 188337.99999999997,
+    "digest": "b3cc0f9cb8331775",
+    "first": [
+     "http://example.org/rinf-synth/nr/26331#ab",
+     "http://example.org/rinf-synth/nr/26332#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/3971#ab",
+     "http://example.org/rinf-synth/nr/26244#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 116,
+   "ms": 27.727,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 117,
+   "ms": 32.445,
+   "ok": true,
+   "rows": 548,
+   "result": {
+    "n": 547,
+    "total": 276117.7,
+    "digest": "9096e506464257fe",
+    "first": [
+     "http://example.org/rinf-synth/nr/15113#ba",
+     "http://example.org/rinf-synth/nr/15112#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/22831#ab",
+     "http://example.org/rinf-synth/nr/22832#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 118,
+   "ms": 27.87,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 119,
+   "ms": 30.741,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 120,
+   "ms": 31.626,
+   "ok": true,
+   "rows": 548,
+   "result": {
+    "n": 547,
+    "total": 273633.29999999993,
+    "digest": "d4bdbcce669fb592",
+    "first": [
+     "http://example.org/rinf-synth/nr/11624#ba",
+     "http://example.org/rinf-synth/nr/11623#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/16472#ba",
+     "http://example.org/rinf-synth/nr/16471#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 121,
+   "ms": 27.842,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 122,
+   "ms": 32.326,
+   "ok": true,
+   "rows": 547,
+   "result": {
+    "n": 546,
+    "total": 273197.1999999999,
+    "digest": "e243399566040dbd",
+    "first": [
+     "http://example.org/rinf-synth/nr/5059#ba",
+     "http://example.org/rinf-synth/nr/5058#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/20408#ba",
+     "http://example.org/rinf-synth/nr/20407#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 123,
+   "ms": 28.498,
+   "ok": true,
+   "rows": 141,
+   "result": {
+    "n": 140,
+    "total": 70295.10000000002,
+    "digest": "59873489d6314e01",
+    "first": [
+     "http://example.org/rinf-synth/nr/12798#ba",
+     "http://example.org/rinf-synth/nr/12797#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/14341#ba",
+     "http://example.org/rinf-synth/nr/14340#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 124,
+   "ms": 30.878,
+   "ok": true,
+   "rows": 316,
+   "result": {
+    "n": 315,
+    "total": 160251.9,
+    "digest": "8fa74c2552d2d8e7",
+    "first": [
+     "http://example.org/rinf-synth/nr/7796#ba",
+     "http://example.org/rinf-synth/nr/7795#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/12275#ba",
+     "http://example.org/rinf-synth/nr/12274#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 125,
+   "ms": 31.875,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 126,
+   "ms": 32.956,
+   "ok": true,
+   "rows": 405,
+   "result": {
+    "n": 404,
+    "total": 202831.4,
+    "digest": "809c65d578897f31",
+    "first": [
+     "http://example.org/rinf-synth/nr/26118#ba",
+     "http://example.org/rinf-synth/nr/3751#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/18404#ba",
+     "http://example.org/rinf-synth/nr/30145#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 127,
+   "ms": 27.959,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 128,
+   "ms": 31.989,
+   "ok": true,
+   "rows": 599,
+   "result": {
+    "n": 598,
+    "total": 298640.3000000001,
+    "digest": "3bdebe6e6133bd62",
+    "first": [
+     "http://example.org/rinf-synth/nr/12963#ba",
+     "http://example.org/rinf-synth/nr/12962#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/5864#ba",
+     "http://example.org/rinf-synth/nr/5863#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 129,
+   "ms": 29.201,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 130,
+   "ms": 28.248,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 131,
+   "ms": 31.361,
+   "ok": true,
+   "rows": 494,
+   "result": {
+    "n": 493,
+    "total": 247122.79999999996,
+    "digest": "8c6b5a5951bd04ef",
+    "first": [
+     "http://example.org/rinf-synth/nr/13441#ab",
+     "http://example.org/rinf-synth/nr/13442#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/13048#ab",
+     "http://example.org/rinf-synth/nr/13049#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 132,
+   "ms": 31.491,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 133,
+   "ms": 30.616,
+   "ok": true,
+   "rows": 312,
+   "result": {
+    "n": 311,
+    "total": 159831.6,
+    "digest": "6937ac421ac6a8af",
+    "first": [
+     "http://example.org/rinf-synth/nr/20998#ab",
+     "http://example.org/rinf-synth/nr/20999#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/16115#ab",
+     "http://example.org/rinf-synth/nr/16116#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 134,
+   "ms": 30.556,
+   "ok": true,
+   "rows": 315,
+   "result": {
+    "n": 314,
+    "total": 157665.29999999996,
+    "digest": "05e3d75e56ad7e47",
+    "first": [
+     "http://example.org/rinf-synth/nr/10309#ab",
+     "http://example.org/rinf-synth/nr/10310#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/6467#ab",
+     "http://example.org/rinf-synth/nr/6468#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 135,
+   "ms": 32.94,
+   "ok": true,
+   "rows": 394,
+   "result": {
+    "n": 393,
+    "total": 196729.90000000002,
+    "digest": "360943ee68415c70",
+    "first": [
+     "http://example.org/rinf-synth/nr/18715#ab",
+     "http://example.org/rinf-synth/nr/18716#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/11436#ba",
+     "http://example.org/rinf-synth/nr/11435#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 136,
+   "ms": 31.776,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 137,
+   "ms": 32.637,
+   "ok": true,
+   "rows": 425,
+   "result": {
+    "n": 424,
+    "total": 214139.40000000017,
+    "digest": "c75656c5bbcad0e6",
+    "first": [
+     "http://example.org/rinf-synth/nr/29047#ab",
+     "http://example.org/rinf-synth/nr/20318#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/4130#ab",
+     "http://example.org/rinf-synth/nr/26328#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 138,
+   "ms": 28.37,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 139,
+   "ms": 31.733,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 140,
+   "ms": 29.25,
+   "ok": true,
+   "rows": 199,
+   "result": {
+    "n": 198,
+    "total": 99763.79999999999,
+    "digest": "edad3a4340b89d4f",
+    "first": [
+     "http://example.org/rinf-synth/nr/29964#ba",
+     "http://example.org/rinf-synth/nr/10418#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/7978#ab",
+     "http://example.org/rinf-synth/nr/7979#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 141,
+   "ms": 29.209,
+   "ok": true,
+   "rows": 194,
+   "result": {
+    "n": 193,
+    "total": 98226.8,
+    "digest": "f9cbdeb3537dc707",
+    "first": [
+     "http://example.org/rinf-synth/nr/19131#ba",
+     "http://example.org/rinf-synth/nr/19130#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/1339#ba",
+     "http://example.org/rinf-synth/nr/1338#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 142,
+   "ms": 33.011,
+   "ok": true,
+   "rows": 513,
+   "result": {
+    "n": 512,
+    "total": 256399.9,
+    "digest": "012630ca22feedf7",
+    "first": [
+     "http://example.org/rinf-synth/nr/17195#ba",
+     "http://example.org/rinf-synth/nr/17194#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/22950#ab",
+     "http://example.org/rinf-synth/nr/22951#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 143,
+   "ms": 29.505,
+   "ok": true,
+   "rows": 224,
+   "result": {
+    "n": 223,
+    "total": 114088.10000000003,
+    "digest": "a5a0c7e1d160465f",
+    "first": [
+     "http://example.org/rinf-synth/nr/4108#ab",
+     "http://example.org/rinf-synth/nr/4109#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/18667#ba",
+     "http://example.org/rinf-synth/nr/18666#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 144,
+   "ms": 28.055,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 145,
+   "ms": 27.655,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 146,
+   "ms": 30.197,
+   "ok": true,
+   "rows": 192,
+   "result": {
+    "n": 191,
+    "total": 98077.49999999997,
+    "digest": "7e2e578add9fee4e",
+    "first": [
+     "http://example.org/rinf-synth/nr/17045#ab",
+     "http://example.org/rinf-synth/nr/17046#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/20106#ab",
+     "http://example.org/rinf-synth/nr/20107#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 147,
+   "ms": 31.536,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 148,
+   "ms": 31.398,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 149,
+   "ms": 32.333,
+   "ok": true,
+   "rows": 455,
+   "result": {
+    "n": 454,
+    "total": 229964.4,
+    "digest": "f7f43de852734e21",
+    "first": [
+     "http://example.org/rinf-synth/nr/16264#ba",
+     "http://example.org/rinf-synth/nr/16263#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/22042#ba",
+     "http://example.org/rinf-synth/nr/22041#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 150,
+   "ms": 28.893,
+   "ok": true,
+   "rows": 110,
+   "result": {
+    "n": 109,
+    "total": 55561.799999999996,
+    "digest": "b6691ab8cf0148b2",
+    "first": [
+     "http://example.org/rinf-synth/nr/1421#ab",
+     "http://example.org/rinf-synth/nr/1422#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/2921#ab",
+     "http://example.org/rinf-synth/nr/2922#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 151,
+   "ms": 29.975,
+   "ok": true,
+   "rows": 225,
+   "result": {
+    "n": 224,
+    "total": 112541.09999999998,
+    "digest": "6b256c779a6d6d2e",
+    "first": [
+     "http://example.org/rinf-synth/nr/19208#ba",
+     "http://example.org/rinf-synth/nr/19207#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/784#ba",
+     "http://example.org/rinf-synth/nr/783#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 152,
+   "ms": 33.598,
+   "ok": true,
+   "rows": 558,
+   "result": {
+    "n": 557,
+    "total": 280929.39999999973,
+    "digest": "8e7ea9e4cc1a698b",
+    "first": [
+     "http://example.org/rinf-synth/nr/18064#ba",
+     "http://example.org/rinf-synth/nr/18063#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/12325#ba",
+     "http://example.org/rinf-synth/nr/12324#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 153,
+   "ms": 32.331,
+   "ok": true,
+   "rows": 378,
+   "result": {
+    "n": 377,
+    "total": 189565.2999999999,
+    "digest": "8f279bc7489cb80b",
+    "first": [
+     "http://example.org/rinf-synth/nr/1104#ab",
+     "http://example.org/rinf-synth/nr/1105#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/28576#ba",
+     "http://example.org/rinf-synth/nr/28575#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 154,
+   "ms": 32.271,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 155,
+   "ms": 29.315,
+   "ok": true,
+   "rows": 209,
+   "result": {
+    "n": 208,
+    "total": 105076.09999999995,
+    "digest": "af2c62098c3a8ad4",
+    "first": [
+     "http://example.org/rinf-synth/nr/12121#ba",
+     "http://example.org/rinf-synth/nr/12120#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/6529#ba",
+     "http://example.org/rinf-synth/nr/6528#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 156,
+   "ms": 30.927,
+   "ok": true,
+   "rows": 314,
+   "result": {
+    "n": 313,
+    "total": 156461.7000000001,
+    "digest": "a00ef09adb26ae0c",
+    "first": [
+     "http://example.org/rinf-synth/nr/6790#ba",
+     "http://example.org/rinf-synth/nr/6789#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/11719#ab",
+     "http://example.org/rinf-synth/nr/11720#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 157,
+   "ms": 33.982,
+   "ok": true,
+   "rows": 494,
+   "result": {
+    "n": 493,
+    "total": 248260.6000000001,
+    "digest": "07df4fad56e7f90a",
+    "first": [
+     "http://example.org/rinf-synth/nr/17316#ba",
+     "http://example.org/rinf-synth/nr/17315#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/21013#ab",
+     "http://example.org/rinf-synth/nr/21014#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 158,
+   "ms": 31.206,
+   "ok": true,
+   "rows": 282,
+   "result": {
+    "n": 281,
+    "total": 144976.8999999999,
+    "digest": "f783414cdd4059e0",
+    "first": [
+     "http://example.org/rinf-synth/nr/5130#ba",
+     "http://example.org/rinf-synth/nr/26908#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/4367#ab",
+     "http://example.org/rinf-synth/nr/4368#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 159,
+   "ms": 28.387,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 160,
+   "ms": 31.384,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 161,
+   "ms": 31.971,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 162,
+   "ms": 28.036,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 163,
+   "ms": 30.588,
+   "ok": true,
+   "rows": 305,
+   "result": {
+    "n": 304,
+    "total": 152387.7,
+    "digest": "6d7874e3603924e2",
+    "first": [
+     "http://example.org/rinf-synth/nr/16665#ab",
+     "http://example.org/rinf-synth/nr/16666#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/10137#ab",
+     "http://example.org/rinf-synth/nr/10138#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 164,
+   "ms": 31.018,
+   "ok": true,
+   "rows": 383,
+   "result": {
+    "n": 382,
+    "total": 191995.39999999982,
+    "digest": "63b03e1175085544",
+    "first": [
+     "http://example.org/rinf-synth/nr/267#ab",
+     "http://example.org/rinf-synth/nr/268#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/17290#ab",
+     "http://example.org/rinf-synth/nr/17291#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 165,
+   "ms": 34.42,
+   "ok": true,
+   "rows": 805,
+   "result": {
+    "n": 804,
+    "total": 403036.4000000005,
+    "digest": "5936b4f1be3e539f",
+    "first": [
+     "http://example.org/rinf-synth/nr/1450#ba",
+     "http://example.org/rinf-synth/nr/1449#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/10511#ba",
+     "http://example.org/rinf-synth/nr/10510#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 166,
+   "ms": 32.95,
+   "ok": true,
+   "rows": 483,
+   "result": {
+    "n": 482,
+    "total": 241227.09999999992,
+    "digest": "79e2b37215667356",
+    "first": [
+     "http://example.org/rinf-synth/nr/29257#ab",
+     "http://example.org/rinf-synth/nr/17346#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/16468#ba",
+     "http://example.org/rinf-synth/nr/16467#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 167,
+   "ms": 32.668,
+   "ok": true,
+   "rows": 445,
+   "result": {
+    "n": 444,
+    "total": 228809.90000000008,
+    "digest": "14c97b7a12f0c86f",
+    "first": [
+     "http://example.org/rinf-synth/nr/14143#ab",
+     "http://example.org/rinf-synth/nr/14144#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/23083#ab",
+     "http://example.org/rinf-synth/nr/23084#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 168,
+   "ms": 29.389,
+   "ok": true,
+   "rows": 183,
+   "result": {
+    "n": 182,
+    "total": 91810.39999999997,
+    "digest": "18eb299790a79088",
+    "first": [
+     "http://example.org/rinf-synth/nr/4227#ba",
+     "http://example.org/rinf-synth/nr/4226#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/696#ba",
+     "http://example.org/rinf-synth/nr/695#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 169,
+   "ms": 34.611,
+   "ok": true,
+   "rows": 635,
+   "result": {
+    "n": 634,
+    "total": 317811.8000000001,
+    "digest": "5491407760a24e52",
+    "first": [
+     "http://example.org/rinf-synth/nr/6062#ba",
+     "http://example.org/rinf-synth/nr/6061#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/10973#ab",
+     "http://example.org/rinf-synth/nr/10974#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 170,
+   "ms": 28.61,
+   "ok": true,
+   "rows": 117,
+   "result": {
+    "n": 116,
+    "total": 58224.89999999999,
+    "digest": "0fe329b434038895",
+    "first": [
+     "http://example.org/rinf-synth/nr/12784#ba",
+     "http://example.org/rinf-synth/nr/12783#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/12193#ba",
+     "http://example.org/rinf-synth/nr/12192#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 171,
+   "ms": 32.822,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 172,
+   "ms": 31.272,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 173,
+   "ms": 33.251,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 174,
+   "ms": 28.632,
+   "ok": true,
+   "rows": 120,
+   "result": {
+    "n": 119,
+    "total": 59586.400000000016,
+    "digest": "ee68fa09215f6cd9",
+    "first": [
+     "http://example.org/rinf-synth/nr/30153#ba",
+     "http://example.org/rinf-synth/nr/10739#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/20435#ab",
+     "http://example.org/rinf-synth/nr/20436#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 175,
+   "ms": 32.375,
+   "ok": true,
+   "rows": 474,
+   "result": {
+    "n": 473,
+    "total": 236914.8999999998,
+    "digest": "536e673c6a6b75f5",
+    "first": [
+     "http://example.org/rinf-synth/nr/18665#ba",
+     "http://example.org/rinf-synth/nr/18664#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/22910#ba",
+     "http://example.org/rinf-synth/nr/22909#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 176,
+   "ms": 29.208,
+   "ok": true,
+   "rows": 220,
+   "result": {
+    "n": 219,
+    "total": 110563.79999999993,
+    "digest": "5f63865b20eb8960",
+    "first": [
+     "http://example.org/rinf-synth/nr/23063#ba",
+     "http://example.org/rinf-synth/nr/23062#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/22180#ab",
+     "http://example.org/rinf-synth/nr/22181#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 177,
+   "ms": 28.004,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 178,
+   "ms": 29.068,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 179,
+   "ms": 31.176,
+   "ok": true,
+   "rows": 330,
+   "result": {
+    "n": 329,
+    "total": 166199.20000000016,
+    "digest": "0618fc8cab9ee4a6",
+    "first": [
+     "http://example.org/rinf-synth/nr/19210#ba",
+     "http://example.org/rinf-synth/nr/19209#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/14297#ba",
+     "http://example.org/rinf-synth/nr/14296#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 180,
+   "ms": 31.15,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 181,
+   "ms": 30.916,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 182,
+   "ms": 33.08,
+   "ok": true,
+   "rows": 564,
+   "result": {
+    "n": 563,
+    "total": 282724.0999999999,
+    "digest": "d7efc2b6374d110b",
+    "first": [
+     "http://example.org/rinf-synth/nr/17112#ba",
+     "http://example.org/rinf-synth/nr/17111#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/10949#ab",
+     "http://example.org/rinf-synth/nr/10950#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 183,
+   "ms": 27.895,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 184,
+   "ms": 29.441,
+   "ok": true,
+   "rows": 230,
+   "result": {
+    "n": 229,
+    "total": 115030.3999999999,
+    "digest": "2128edf42516ab40",
+    "first": [
+     "http://example.org/rinf-synth/nr/23266#ab",
+     "http://example.org/rinf-synth/nr/23267#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/22171#ab",
+     "http://example.org/rinf-synth/nr/22172#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 185,
+   "ms": 27.945,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 186,
+   "ms": 31.893,
+   "ok": true,
+   "rows": 455,
+   "result": {
+    "n": 454,
+    "total": 228936.69999999998,
+    "digest": "959eed3f1921bc7b",
+    "first": [
+     "http://example.org/rinf-synth/nr/22864#ba",
+     "http://example.org/rinf-synth/nr/22863#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/7565#ba",
+     "http://example.org/rinf-synth/nr/28312#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 187,
+   "ms": 32.267,
+   "ok": true,
+   "rows": 491,
+   "result": {
+    "n": 490,
+    "total": 248720.99999999985,
+    "digest": "8a0149b8b7459e7e",
+    "first": [
+     "http://example.org/rinf-synth/nr/14268#ba",
+     "http://example.org/rinf-synth/nr/14267#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/1808#ba",
+     "http://example.org/rinf-synth/nr/1807#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 188,
+   "ms": 29.319,
+   "ok": true,
+   "rows": 212,
+   "result": {
+    "n": 211,
+    "total": 108353.50000000003,
+    "digest": "66a04b0d3178ab75",
+    "first": [
+     "http://example.org/rinf-synth/nr/4403#ab",
+     "http://example.org/rinf-synth/nr/4404#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/19099#ab",
+     "http://example.org/rinf-synth/nr/19100#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 189,
+   "ms": 28.963,
+   "ok": true,
+   "rows": 186,
+   "result": {
+    "n": 185,
+    "total": 94806.7,
+    "digest": "a2e7c0811d2e7f10",
+    "first": [
+     "http://example.org/rinf-synth/nr/6259#ba",
+     "http://example.org/rinf-synth/nr/6258#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/14221#ba",
+     "http://example.org/rinf-synth/nr/14220#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 190,
+   "ms": 30.159,
+   "ok": true,
+   "rows": 215,
+   "result": {
+    "n": 214,
+    "total": 109172.40000000005,
+    "digest": "58ec8c6796772f1d",
+    "first": [
+     "http://example.org/rinf-synth/nr/600#ba",
+     "http://example.org/rinf-synth/nr/599#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/16599#ba",
+     "http://example.org/rinf-synth/nr/16598#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 191,
+   "ms": 29.263,
+   "ok": true,
+   "rows": 162,
+   "result": {
+    "n": 161,
+    "total": 81029.69999999998,
+    "digest": "b5a796f360cbbfc0",
+    "first": [
+     "http://example.org/rinf-synth/nr/22251#ba",
+     "http://example.org/rinf-synth/nr/22250#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/3934#ab",
+     "http://example.org/rinf-synth/nr/3935#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 192,
+   "ms": 36.169,
+   "ok": true,
+   "rows": 482,
+   "result": {
+    "n": 481,
+    "total": 243755.50000000012,
+    "digest": "2d4135ef23c74d9f",
+    "first": [
+     "http://example.org/rinf-synth/nr/634#ab",
+     "http://example.org/rinf-synth/nr/635#ab"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/6835#ba",
+     "http://example.org/rinf-synth/nr/6834#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 193,
+   "ms": 29.969,
+   "ok": true,
+   "rows": 201,
+   "result": {
+    "n": 200,
+    "total": 103699.50000000001,
+    "digest": "1fa647dc0f65cd80",
+    "first": [
+     "http://example.org/rinf-synth/nr/15060#ba",
+     "http://example.org/rinf-synth/nr/15059#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/774#ba",
+     "http://example.org/rinf-synth/nr/773#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 194,
+   "ms": 28.18,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 195,
+   "ms": 32.563,
+   "ok": true,
+   "rows": 539,
+   "result": {
+    "n": 538,
+    "total": 271079.3000000001,
+    "digest": "4e16fa2b1d0f74d1",
+    "first": [
+     "http://example.org/rinf-synth/nr/9297#ba",
+     "http://example.org/rinf-synth/nr/9296#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/3530#ab",
+     "http://example.org/rinf-synth/nr/3531#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 196,
+   "ms": 31.034,
+   "ok": true,
+   "rows": 415,
+   "result": {
+    "n": 414,
+    "total": 208206.49999999988,
+    "digest": "45d27884f0493329",
+    "first": [
+     "http://example.org/rinf-synth/nr/25057#ba",
+     "http://example.org/rinf-synth/nr/25056#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/10330#ba",
+     "http://example.org/rinf-synth/nr/10329#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 197,
+   "ms": 30.61,
+   "ok": true,
+   "rows": 320,
+   "result": {
+    "n": 319,
+    "total": 161746.49999999994,
+    "digest": "456de95d3b742b77",
+    "first": [
+     "http://example.org/rinf-synth/nr/1436#ba",
+     "http://example.org/rinf-synth/nr/1435#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/20755#ab",
+     "http://example.org/rinf-synth/nr/20756#ab"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 198,
+   "ms": 28.194,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 199,
+   "ms": 30.642,
+   "ok": true,
+   "rows": 372,
+   "result": {
+    "n": 371,
+    "total": 185640.89999999994,
+    "digest": "88520d50f8c7ea25",
+    "first": [
+     "http://example.org/rinf-synth/nr/11688#ba",
+     "http://example.org/rinf-synth/nr/11687#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/16590#ba",
+     "http://example.org/rinf-synth/nr/16589#ba"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 200,
+   "ms": 27.952,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 201,
+   "ms": 31.613,
+   "ok": true,
+   "rows": 0,
+   "result": {
+    "n": 0,
+    "total": null,
+    "digest": "da39a3ee5e6b4b0d",
+    "first": [],
+    "last": []
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 202,
+   "ms": 31.457,
+   "ok": true,
+   "rows": 402,
+   "result": {
+    "n": 401,
+    "total": 202245.09999999998,
+    "digest": "e496fdcb58a99105",
+    "first": [
+     "http://example.org/rinf-synth/nr/20840#ba",
+     "http://example.org/rinf-synth/nr/20839#ba"
+    ],
+    "last": [
+     "http://example.org/rinf-synth/nr/19036#ab",
+     "http://example.org/rinf-synth/nr/19037#ab"
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 30.675,
+ "warm": {
+  "n": 200,
+  "p50_ms": 30.58,
+  "p95_ms": 32.94,
+  "min_ms": 27.431,
+  "max_ms": 36.169,
+  "mean_ms": 30.188
+ },
+ "dataset": "small",
+ "rss_after": "273 MiB (sum over backends, shared buffers counted per process)"
+}
