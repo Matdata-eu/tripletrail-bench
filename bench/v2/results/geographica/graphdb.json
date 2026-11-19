@@ -1,0 +1,886 @@
+{
+ "engine": "graphdb",
+ "timeout_s": 300,
+ "queries": [
+  {
+   "workload": "micro_nontopological",
+   "n": 1,
+   "name": "Boundary_CLC",
+   "runs": [
+    {
+     "ok": false,
+     "ms": 402441.7,
+     "error": "('Connection broken: IncompleteRead(2298 bytes read, 5894 more expected)', IncompleteRead(2298 bytes read, 5894 more expected))",
+     "timeout": true
+    }
+   ]
+  },
+  {
+   "workload": "micro_nontopological",
+   "n": 2,
+   "name": "Envelope_CLC",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 6313.7,
+     "rows": 44834,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 6240.0,
+     "rows": 44834,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 6230.7,
+     "rows": 44834,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_nontopological",
+   "n": 3,
+   "name": "ConvexHull_CLC",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 11504.4,
+     "rows": 44834,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 11350.3,
+     "rows": 44834,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 11406.1,
+     "rows": 44834,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_nontopological",
+   "n": 4,
+   "name": "Buffer_GeoNames",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 1751.7,
+     "rows": 21990,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 1569.6,
+     "rows": 21990,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 1555.6,
+     "rows": 21990,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_nontopological",
+   "n": 5,
+   "name": "Buffer_LGD",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 4979.1,
+     "rows": 12097,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 4827.5,
+     "rows": 12097,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 4818.2,
+     "rows": 12097,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_nontopological",
+   "n": 6,
+   "name": "Area_CLC",
+   "runs": [
+    {
+     "ok": false,
+     "ms": 20.9,
+     "error": "HTTP 500: Query evaluation error: Unknown function 'http://www.opengis.net/def/function/geosparql/metricArea'\n"
+    }
+   ]
+  },
+  {
+   "workload": "micro_selections",
+   "n": 7,
+   "name": "Equals_LGD_GivenLine",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 2079.2,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 1972.8,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 2000.2,
+     "rows": 1,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_selections",
+   "n": 8,
+   "name": "Equals_GAG_GivenPolygon",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 755.2,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 725.2,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 749.3,
+     "rows": 1,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_selections",
+   "n": 9,
+   "name": "Intersects_LGD_GivenPolygon",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 12498.3,
+     "rows": 216,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 12480.3,
+     "rows": 216,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 12465.7,
+     "rows": 216,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_selections",
+   "n": 10,
+   "name": "Intersects_CLC_GivenLine",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 9040.9,
+     "rows": 20,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 9014.7,
+     "rows": 20,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 8980.8,
+     "rows": 20,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_selections",
+   "n": 11,
+   "name": "Overlaps_CLC_GivenPolygon",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 51191.5,
+     "rows": 132,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 51113.1,
+     "rows": 132,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 51627.8,
+     "rows": 132,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_selections",
+   "n": 12,
+   "name": "Crosses_LGD_GivenLine",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 326.4,
+     "rows": 14,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 322.3,
+     "rows": 14,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 324.9,
+     "rows": 14,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_selections",
+   "n": 13,
+   "name": "Within_GeoNames_GivenPolygon",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 22262.6,
+     "rows": 136,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 22290.1,
+     "rows": 136,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 22400.7,
+     "rows": 136,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_selections",
+   "n": 14,
+   "name": "Within_GeoNames_Point_Buffer",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 1018.7,
+     "rows": 150,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 1003.3,
+     "rows": 150,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 1007.3,
+     "rows": 150,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_selections",
+   "n": 15,
+   "name": "GeoNames_Point_Distance",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 229.7,
+     "rows": 153,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 126.3,
+     "rows": 153,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 144.6,
+     "rows": 153,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_selections",
+   "n": 16,
+   "name": "Disjoint_GeoNames_GivenPolygon",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 22344.5,
+     "rows": 21854,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 22501.5,
+     "rows": 21854,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 22480.0,
+     "rows": 21854,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_selections",
+   "n": 17,
+   "name": "Disjoint_LGD_GivenPolygon",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 13035.4,
+     "rows": 11881,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 12874.2,
+     "rows": 11881,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 12885.8,
+     "rows": 11881,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_joins",
+   "n": 18,
+   "name": "Equals_GeoNames_DBPedia",
+   "runs": [
+    {
+     "ok": false,
+     "ms": 300010.1,
+     "error": "error body not decodable (plain text sent as gzip): ('Received response with content-encoding: gzip, but failed to decode it.', error('Error -3 while decompressing data: incorrect header check'))",
+     "timeout": true
+    }
+   ]
+  },
+  {
+   "workload": "micro_joins",
+   "n": 19,
+   "name": "Intersects_GeoNames_LGD",
+   "runs": [
+    {
+     "ok": false,
+     "ms": 300012.1,
+     "error": "HTTP 503: Query interrupted: Query evaluation took too long\n",
+     "timeout": true
+    }
+   ]
+  },
+  {
+   "workload": "micro_joins",
+   "n": 20,
+   "name": "Intersects_GeoNames_GAG",
+   "runs": [
+    {
+     "ok": false,
+     "ms": 300011.8,
+     "error": "error body not decodable (plain text sent as gzip): ('Received response with content-encoding: gzip, but failed to decode it.', error('Error -3 while decompressing data: incorrect header check'))",
+     "timeout": true
+    }
+   ]
+  },
+  {
+   "workload": "micro_joins",
+   "n": 21,
+   "name": "Intersects_LGD_GAG",
+   "runs": [
+    {
+     "ok": false,
+     "ms": 300013.6,
+     "error": "error body not decodable (plain text sent as gzip): ('Received response with content-encoding: gzip, but failed to decode it.', error('Error -3 while decompressing data: incorrect header check'))",
+     "timeout": true
+    }
+   ]
+  },
+  {
+   "workload": "micro_joins",
+   "n": 22,
+   "name": "Within_GeoNames_GAG",
+   "runs": [
+    {
+     "ok": false,
+     "ms": 300012.9,
+     "error": "error body not decodable (plain text sent as gzip): ('Received response with content-encoding: gzip, but failed to decode it.', error('Error -3 while decompressing data: incorrect header check'))",
+     "timeout": true
+    }
+   ]
+  },
+  {
+   "workload": "micro_joins",
+   "n": 23,
+   "name": "Within_LGD_GAG",
+   "runs": [
+    {
+     "ok": false,
+     "ms": 300012.0,
+     "error": "error body not decodable (plain text sent as gzip): ('Received response with content-encoding: gzip, but failed to decode it.', error('Error -3 while decompressing data: incorrect header check'))",
+     "timeout": true
+    }
+   ]
+  },
+  {
+   "workload": "micro_joins",
+   "n": 24,
+   "name": "Within_CLC_GAG",
+   "runs": [
+    {
+     "ok": false,
+     "ms": 300012.5,
+     "error": "error body not decodable (plain text sent as gzip): ('Received response with content-encoding: gzip, but failed to decode it.', error('Error -3 while decompressing data: incorrect header check'))",
+     "timeout": true
+    }
+   ]
+  },
+  {
+   "workload": "micro_joins",
+   "n": 25,
+   "name": "Crosses_LGD_GAG",
+   "runs": [
+    {
+     "ok": false,
+     "ms": 300010.8,
+     "error": "error body not decodable (plain text sent as gzip): ('Received response with content-encoding: gzip, but failed to decode it.', error('Error -3 while decompressing data: incorrect header check'))",
+     "timeout": true
+    }
+   ]
+  },
+  {
+   "workload": "micro_joins",
+   "n": 26,
+   "name": "Touches_GAG_GAG",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 199226.7,
+     "rows": 1022,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "micro_joins",
+   "n": 27,
+   "name": "Overlaps_GAG_CLC",
+   "runs": [
+    {
+     "ok": false,
+     "ms": 300011.5,
+     "error": "error body not decodable (plain text sent as gzip): ('Received response with content-encoding: gzip, but failed to decode it.', error('Error -3 while decompressing data: incorrect header check'))",
+     "timeout": true
+    }
+   ]
+  },
+  {
+   "workload": "micro_aggregations",
+   "n": 28,
+   "name": "Extent_GAG",
+   "runs": [
+    {
+     "ok": false,
+     "ms": 10.9,
+     "error": "HTTP 500: Query evaluation error: Unknown function 'http://www.opengis.net/def/function/geosparql/aggBoundingBox'\n"
+    }
+   ]
+  },
+  {
+   "workload": "micro_aggregations",
+   "n": 29,
+   "name": "Union_GAG",
+   "runs": [
+    {
+     "ok": false,
+     "ms": 7.9,
+     "error": "HTTP 500: Query evaluation error: Unknown function 'http://www.opengis.net/def/function/geosparql/aggUnion'\n"
+    }
+   ]
+  },
+  {
+   "workload": "macro_reversegeocoding",
+   "n": 0,
+   "name": "Find_Closest_Populated_Place",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 225.7,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 134.3,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 126.7,
+     "rows": 1,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "macro_reversegeocoding",
+   "n": 1,
+   "name": "Find_Closest_Motorway",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 122.2,
+     "rows": 1,
+     "rows_with_unbound": 1
+    },
+    {
+     "ok": true,
+     "ms": 106.6,
+     "rows": 1,
+     "rows_with_unbound": 1
+    },
+    {
+     "ok": true,
+     "ms": 84.9,
+     "rows": 1,
+     "rows_with_unbound": 1
+    }
+   ]
+  },
+  {
+   "workload": "macro_mapsearch",
+   "n": 0,
+   "name": "Thematic_Search",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 7.5,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 5.0,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 7.9,
+     "rows": 1,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "macro_mapsearch",
+   "n": 1,
+   "name": "Get_Around_POIs",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 201.9,
+     "rows": 13,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 208.2,
+     "rows": 13,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 178.2,
+     "rows": 13,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "macro_mapsearch",
+   "n": 2,
+   "name": "Get_Around_Roads",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 221.1,
+     "rows": 132,
+     "rows_with_unbound": 60
+    },
+    {
+     "ok": true,
+     "ms": 213.4,
+     "rows": 132,
+     "rows_with_unbound": 60
+    },
+    {
+     "ok": true,
+     "ms": 217.3,
+     "rows": 132,
+     "rows_with_unbound": 60
+    }
+   ]
+  },
+  {
+   "workload": "macro_rapidmapping",
+   "n": 0,
+   "name": "Get_CLC_areas",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 179519.4,
+     "rows": 30453,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "macro_rapidmapping",
+   "n": 1,
+   "name": "Get_highways",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 203.1,
+     "rows": 4559,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 204.0,
+     "rows": 4559,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 193.7,
+     "rows": 4559,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "macro_rapidmapping",
+   "n": 2,
+   "name": "Get_municipalities",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 2755.7,
+     "rows": 248,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 2722.9,
+     "rows": 248,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 2762.3,
+     "rows": 248,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "macro_rapidmapping",
+   "n": 3,
+   "name": "Get_hotspots",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 81735.5,
+     "rows": 902195,
+     "rows_with_unbound": 902195
+    },
+    {
+     "ok": true,
+     "ms": 81779.8,
+     "rows": 902195,
+     "rows_with_unbound": 902195
+    },
+    {
+     "ok": true,
+     "ms": 81581.8,
+     "rows": 902195,
+     "rows_with_unbound": 902195
+    }
+   ]
+  },
+  {
+   "workload": "macro_rapidmapping",
+   "n": 4,
+   "name": "Get_coniferous_forests_in_fire",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 12244.1,
+     "rows": 50,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 12284.9,
+     "rows": 50,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 12229.4,
+     "rows": 50,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "macro_rapidmapping",
+   "n": 5,
+   "name": "Get_road_segments_affected_by_fire",
+   "runs": [
+    {
+     "ok": false,
+     "ms": 300010.0,
+     "error": "HTTP 503: Query interrupted: Query evaluation took too long\n",
+     "timeout": true
+    }
+   ]
+  },
+  {
+   "workload": "macro_computestatistics",
+   "n": 0,
+   "name": "Count_CLC_categories",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 5389.7,
+     "rows": 12,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 5338.9,
+     "rows": 12,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 5374.6,
+     "rows": 12,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "macro_computestatistics",
+   "n": 1,
+   "name": "Count_GeoNames_categories",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 183.7,
+     "rows": 8,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 183.2,
+     "rows": 8,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 182.0,
+     "rows": 8,
+     "rows_with_unbound": 0
+    }
+   ]
+  },
+  {
+   "workload": "macro_computestatistics",
+   "n": 2,
+   "name": "Count_GeoNames_categories_in_ContinuousUrbanFabric",
+   "runs": [
+    {
+     "ok": true,
+     "ms": 13661.5,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 13691.0,
+     "rows": 1,
+     "rows_with_unbound": 0
+    },
+    {
+     "ok": true,
+     "ms": 13764.5,
+     "rows": 1,
+     "rows_with_unbound": 0
+    }
+   ]
+  }
+ ]
+}

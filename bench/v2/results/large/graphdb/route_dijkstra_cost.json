@@ -1,0 +1,10 @@
+{
+ "engine": "graphdb",
+ "qid": "route_dijkstra_cost",
+ "family": "6 routing",
+ "kind": "scalars",
+ "runs": [],
+ "status": "n/a",
+ "reason": "no routing",
+ "dataset": "large"
+}

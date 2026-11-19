@@ -1,0 +1,142 @@
+{
+ "engine": "jena",
+ "scale": "xlarge",
+ "triples": 9995000,
+ "warm_runs": 5,
+ "queries": {
+  "q1_count": {
+   "runs": [
+    3268.227,
+    2496.775,
+    1589.667,
+    1380.73,
+    1435.307,
+    1385.36,
+    1413.303
+   ],
+   "rows": 1,
+   "first_row": [
+    "9995000"
+   ],
+   "status": "ok",
+   "cold_ms": 3268.227,
+   "warm": {
+    "n": 5,
+    "median_ms": 1413.303,
+    "min_ms": 1380.73,
+    "max_ms": 1589.667
+   }
+  },
+  "q2_customer_orders": {
+   "runs": [
+    24909.54,
+    13187.944,
+    13350.144,
+    13030.215,
+    12759.725,
+    12907.23,
+    13614.117
+   ],
+   "rows": 20,
+   "first_row": [
+    "Quinn Larsen",
+    "5413",
+    "1.3698872589999996E7"
+   ],
+   "status": "ok",
+   "cold_ms": 24909.54,
+   "warm": {
+    "n": 5,
+    "median_ms": 13030.215,
+    "min_ms": 12759.725,
+    "max_ms": 13614.117
+   }
+  },
+  "q3_join_3_entities": {
+   "runs": [
+    1297.298,
+    1289.514,
+    1240.956,
+    1283.181,
+    1262.243,
+    1287.396,
+    1261.047
+   ],
+   "rows": 50,
+   "first_row": [
+    "Frank Pedersen",
+    "Product-4924",
+    "4999.98e0",
+    "completed"
+   ],
+   "status": "ok",
+   "cold_ms": 1297.298,
+   "warm": {
+    "n": 5,
+    "median_ms": 1262.243,
+    "min_ms": 1240.956,
+    "max_ms": 1287.396
+   }
+  },
+  "q4_optional_aggregation": {
+   "runs": [
+    17706.275,
+    14925.677,
+    14823.955,
+    14648.653,
+    16015.668,
+    14371.513,
+    15958.22
+   ],
+   "rows": 50,
+   "first_row": [
+    "http://benchmark.example/France",
+    "http://benchmark.example/Startup",
+    "2103",
+    "28110"
+   ],
+   "status": "ok",
+   "cold_ms": 17706.275,
+   "warm": {
+    "n": 5,
+    "median_ms": 14823.955,
+    "min_ms": 14371.513,
+    "max_ms": 16015.668
+   }
+  },
+  "q5_construct": {
+   "runs": [
+    2878.45,
+    1891.542,
+    1812.633,
+    1805.747,
+    1837.132,
+    1783.636,
+    1864.114
+   ],
+   "rows": 439240,
+   "first_row": [
+    "<http://benchmark.example/C000011> <http://benchmark.example/country> <http://benchmark.example/Norway> ."
+   ],
+   "status": "ok",
+   "cold_ms": 2878.45,
+   "warm": {
+    "n": 5,
+    "median_ms": 1812.633,
+    "min_ms": 1783.636,
+    "max_ms": 1864.114
+   }
+  },
+  "q6_delete_insert": {
+   "status": "ok",
+   "ms": 599.467
+  }
+ },
+ "load": {
+  "engine": "jena",
+  "dataset": "trainmarks-xlarge",
+  "load_s": 26.916,
+  "start_and_spatial_index_s": 2.232,
+  "disk_bytes": 1601157801
+ }
+}

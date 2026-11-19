@@ -1,0 +1,531 @@
+{
+ "sel_bbox/graphdb": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "sel_bbox/jena": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "sel_bbox/qlever": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "sel_bbox/tripletrail": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "sel_polygon/graphdb": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "sel_polygon/jena": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "sel_polygon/qlever": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "sel_polygon/tripletrail": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "sel_distance/graphdb": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "sel_distance/jena": {
+  "counts": {
+   "match": 32,
+   "tie": 0,
+   "mismatch": 1
+  },
+  "examples": [
+   {
+    "index": 2,
+    "verdict": "mismatch",
+    "note": "ref 6 got 7: 0 missing, 1 extra"
+   }
+  ],
+  "notes": {
+   "ref 6 got 7: 0 missing, 1 extra": 1
+  }
+ },
+ "sel_distance/qlever": {
+  "counts": {
+   "match": 32,
+   "tie": 0,
+   "mismatch": 1
+  },
+  "examples": [
+   {
+    "index": 2,
+    "verdict": "mismatch",
+    "note": "ref 6 got 7: 0 missing, 1 extra"
+   }
+  ],
+  "notes": {
+   "ref 6 got 7: 0 missing, 1 extra": 1
+  }
+ },
+ "sel_distance/tripletrail": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "knn_signals/graphdb": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "knn_signals/jena": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {
+   "match: same set, other order": 1
+  }
+ },
+ "knn_signals/qlever": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {
+   "match: same set, other order": 1
+  }
+ },
+ "knn_signals/tripletrail": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "knn_ops/graphdb": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "knn_ops/jena": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "knn_ops/qlever": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "knn_ops/tripletrail": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "join_signal_ne_20m/qlever": {
+  "counts": {
+   "match": 0,
+   "tie": 0,
+   "mismatch": 8
+  },
+  "examples": [
+   {
+    "index": 0,
+    "verdict": "mismatch",
+    "note": "[315812.0] vs [315805.0]"
+   },
+   {
+    "index": 1,
+    "verdict": "mismatch",
+    "note": "[315812.0] vs [315805.0]"
+   },
+   {
+    "index": 2,
+    "verdict": "mismatch",
+    "note": "[315812.0] vs [315805.0]"
+   },
+   {
+    "index": 3,
+    "verdict": "mismatch",
+    "note": "[315812.0] vs [315805.0]"
+   },
+   {
+    "index": 4,
+    "verdict": "mismatch",
+    "note": "[315812.0] vs [315805.0]"
+   }
+  ],
+  "notes": {
+   "[315812.0] vs [315805.0]": 8
+  }
+ },
+ "join_signal_ne_20m/tripletrail": {
+  "counts": {
+   "match": 8,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "join_op_region/graphdb": {
+  "counts": {
+   "match": 8,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "join_op_region/jena": {
+  "counts": {
+   "match": 8,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "join_op_region/qlever": {
+  "counts": {
+   "match": 0,
+   "tie": 0,
+   "mismatch": 8
+  },
+  "examples": [
+   {
+    "index": 0,
+    "verdict": "mismatch",
+    "note": "4 groups differ, e.g. 0_3: 2588.0 vs 2589.0"
+   },
+   {
+    "index": 1,
+    "verdict": "mismatch",
+    "note": "4 groups differ, e.g. 0_3: 2588.0 vs 2589.0"
+   },
+   {
+    "index": 2,
+    "verdict": "mismatch",
+    "note": "4 groups differ, e.g. 0_3: 2588.0 vs 2589.0"
+   },
+   {
+    "index": 3,
+    "verdict": "mismatch",
+    "note": "4 groups differ, e.g. 0_3: 2588.0 vs 2589.0"
+   },
+   {
+    "index": 4,
+    "verdict": "mismatch",
+    "note": "4 groups differ, e.g. 0_3: 2588.0 vs 2589.0"
+   }
+  ],
+  "notes": {
+   "4 groups differ, e.g. 0_3: 2588.0 vs 2589.0": 8
+  }
+ },
+ "join_op_region/tripletrail": {
+  "counts": {
+   "match": 8,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "agg_length_region/tripletrail": {
+  "counts": {
+   "match": 8,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "agg_total_length/qlever": {
+  "counts": {
+   "match": 0,
+   "tie": 0,
+   "mismatch": 8
+  },
+  "examples": [
+   {
+    "index": 0,
+    "verdict": "mismatch",
+    "note": "[166293719.21746284] vs [165988198.3654]"
+   },
+   {
+    "index": 1,
+    "verdict": "mismatch",
+    "note": "[166293719.21746182] vs [165988198.3654]"
+   },
+   {
+    "index": 2,
+    "verdict": "mismatch",
+    "note": "[166293719.21746135] vs [165988198.3654]"
+   },
+   {
+    "index": 3,
+    "verdict": "mismatch",
+    "note": "[166293719.21746138] vs [165988198.3654]"
+   },
+   {
+    "index": 4,
+    "verdict": "mismatch",
+    "note": "[166293719.21746314] vs [165988198.3654]"
+   }
+  ],
+  "notes": {
+   "[166293719.21746284] vs [165988198.3654]": 1,
+   "[166293719.21746182] vs [165988198.3654]": 1,
+   "[166293719.21746135] vs [165988198.3654]": 1,
+   "[166293719.21746138] vs [165988198.3654]": 1,
+   "[166293719.21746314] vs [165988198.3654]": 1,
+   "[166293719.21746236] vs [165988198.3654]": 1,
+   "[166293719.21746197] vs [165988198.3654]": 1,
+   "[166293719.21746147] vs [165988198.3654]": 1
+  }
+ },
+ "agg_total_length/tripletrail": {
+  "counts": {
+   "match": 8,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "agg_union_buffers/tripletrail": {
+  "counts": {
+   "match": 23,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "lr_km_to_point/tripletrail": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {
+   "match: 0.000 m": 26,
+   "match: 0.001 m": 7
+  }
+ },
+ "lr_assets_between_km/graphdb": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "lr_assets_between_km/jena": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "lr_assets_between_km/qlever": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "lr_assets_between_km/tripletrail": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "route_dijkstra/tripletrail": {
+  "counts": {
+   "match": 1003,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {
+   "match: no path": 23
+  }
+ },
+ "route_dijkstra_cost/tripletrail": {
+  "counts": {
+   "match": 1003,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "route_bddijkstra/tripletrail": {
+  "counts": {
+   "match": 1001,
+   "tie": 0,
+   "mismatch": 2
+  },
+  "examples": [
+   {
+    "index": 10,
+    "verdict": "mismatch",
+    "note": "cost 116812.4 vs 116700.80000000003 (232 vs 232 edges)"
+   },
+   {
+    "index": 764,
+    "verdict": "mismatch",
+    "note": "cost 180525.2000000001 vs 180465.59999999986 (354 vs 356 edges)"
+   }
+  ],
+  "notes": {
+   "cost 116812.4 vs 116700.80000000003 (232 vs 232 edges)": 1,
+   "match: no path": 23,
+   "cost 180525.2000000001 vs 180465.59999999986 (354 vs 356 edges)": 1
+  }
+ },
+ "route_constrained/tripletrail": {
+  "counts": {
+   "match": 203,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {
+   "match: no path": 74
+  }
+ },
+ "driving_distance_50km/tripletrail": {
+  "counts": {
+   "match": 53,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "ksp5/tripletrail": {
+  "counts": {
+   "match": 53,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "cost_matrix_100/tripletrail": {
+  "counts": {
+   "match": 13,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "components/tripletrail": {
+  "counts": {
+   "match": 8,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "mixed_route_signals/tripletrail": {
+  "counts": {
+   "match": 53,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ }
+}

@@ -1,0 +1,143 @@
+{
+ "engine": "graphdb",
+ "scale": "large",
+ "triples": 1001000,
+ "warm_runs": 5,
+ "queries": {
+  "q1_count": {
+   "runs": [
+    437.159,
+    284.812,
+    324.703,
+    296.099,
+    180.858,
+    201.723,
+    213.167
+   ],
+   "rows": 1,
+   "first_row": [
+    "1001000"
+   ],
+   "status": "ok",
+   "cold_ms": 437.159,
+   "warm": {
+    "n": 5,
+    "median_ms": 213.167,
+    "min_ms": 180.858,
+    "max_ms": 324.703
+   }
+  },
+  "q2_customer_orders": {
+   "runs": [
+    672.605,
+    507.994,
+    476.36,
+    503.913,
+    529.087,
+    470.832,
+    471.04
+   ],
+   "rows": 20,
+   "first_row": [
+    "Eve Andersen",
+    "663",
+    "1723710.6299999987"
+   ],
+   "status": "ok",
+   "cold_ms": 672.605,
+   "warm": {
+    "n": 5,
+    "median_ms": 476.36,
+    "min_ms": 470.832,
+    "max_ms": 529.087
+   }
+  },
+  "q3_join_3_entities": {
+   "runs": [
+    164.112,
+    82.332,
+    81.61,
+    108.333,
+    80.607,
+    106.323,
+    88.151
+   ],
+   "rows": 50,
+   "first_row": [
+    "Charlie Larsen",
+    "Product-570",
+    "4999.21",
+    "completed"
+   ],
+   "status": "ok",
+   "cold_ms": 164.112,
+   "warm": {
+    "n": 5,
+    "median_ms": 88.151,
+    "min_ms": 80.607,
+    "max_ms": 108.333
+   }
+  },
+  "q4_optional_aggregation": {
+   "runs": [
+    673.084,
+    720.319,
+    694.28,
+    684.129,
+    689.934,
+    687.041,
+    709.41
+   ],
+   "rows": 50,
+   "first_row": [
+    "http://benchmark.example/Canada",
+    "http://benchmark.example/Enterprise",
+    "227",
+    "3085"
+   ],
+   "status": "ok",
+   "cold_ms": 673.084,
+   "warm": {
+    "n": 5,
+    "median_ms": 689.934,
+    "min_ms": 684.129,
+    "max_ms": 709.41
+   }
+  },
+  "q5_construct": {
+   "runs": [
+    508.543,
+    361.649,
+    368.623,
+    362.297,
+    383.279,
+    361.846,
+    352.033
+   ],
+   "rows": 43091,
+   "first_row": [
+    "<http://benchmark.example/C000003> <http://benchmark.example/country> <http://benchmark.example/Norway> ."
+   ],
+   "status": "ok",
+   "cold_ms": 508.543,
+   "warm": {
+    "n": 5,
+    "median_ms": 362.297,
+    "min_ms": 352.033,
+    "max_ms": 383.279
+   }
+  },
+  "q6_delete_insert": {
+   "status": "ok",
+   "ms": 418.851
+  }
+ },
+ "load": {
+  "engine": "graphdb",
+  "dataset": "trainmarks-large",
+  "load_s": 12.434,
+  "start_s": 13.367,
+  "spatial_index_s": 0.003,
+  "disk_bytes": 135651177
+ }
+}

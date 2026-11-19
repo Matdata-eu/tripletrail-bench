@@ -1,0 +1,152 @@
+triples=805538 elements=26304 relations=30864 signals=24000 ops=4176 tracks=1201 regions=9
+=== postgis on small (2026-11-18T19:07:25+00:00)
+NOTICE:  database "rinf_small" does not exist, skipping
+{"engine": "postgis", "dataset": "small", "load_s": 4.481, "parse_and_convert_s": 1.442, "total_s": 6.106, "disk_bytes": 86974991, "rows": {"ne": 26304, "track": 1201, "signal": 24000, "op": 4176, "line": 48, "region": 9, "vertex": 52608, "micro_edges": 57120}, "wall_s": 6.716, "rss_after_start": "170 MiB (sum over backends, shared buffers counted per process)"}
+[postgis] restarted for family 1 selection in 1.3 s
+[postgis] sel_bbox                 ok         cold 20.223 ms  p50 0.601 p95 0.685 (n=30)
+[postgis] sel_polygon              ok         cold 0.605 ms  p50 0.519 p95 0.566 (n=30)
+[postgis] sel_distance             ok         cold 23.522 ms  p50 1.645 p95 4.0 (n=30)
+[postgis] restarted for family 2 knn in 1.2 s
+[postgis] knn_signals              ok         cold 36.324 ms  p50 0.749 p95 0.845 (n=30)
+[postgis] knn_ops                  ok         cold 1.53 ms  p50 0.731 p95 0.869 (n=30)
+[postgis] restarted for family 3 join in 1.2 s
+[postgis] join_signal_ne_20m       ok         cold 207.222 ms  p50 152.232 p95 154.063 (n=5)
+[postgis] join_op_region           ok         cold 5.769 ms  p50 3.788 p95 3.791 (n=5)
+[postgis] restarted for family 4 aggregate in 1.2 s
+[postgis] agg_length_region        ok         cold 477.082 ms  p50 422.271 p95 426.135 (n=5)
+[postgis] agg_total_length         ok         cold 60.425 ms  p50 61.286 p95 61.996 (n=5)
+[postgis] agg_union_buffers        ok         cold 11.991 ms  p50 5.564 p95 9.534 (n=20)
+[postgis] restarted for family 5 linear referencing in 1.2 s
+[postgis] lr_km_to_point           ok         cold 29.678 ms  p50 2.78 p95 3.459 (n=30)
+[postgis] lr_assets_between_km     ok         cold 1.282 ms  p50 0.278 p95 0.305 (n=30)
+[postgis] restarted for family 6 routing in 1.2 s
+[postgis] route_dijkstra           ok         cold 74.183 ms  p50 34.227 p95 37.146 (n=1000)
+[postgis] route_dijkstra_cost      ok         cold 32.538 ms  p50 33.502 p95 36.026 (n=1000)
+[postgis] route_bddijkstra         ok         cold 33.906 ms  p50 34.341 p95 38.337 (n=1000)
+[postgis] route_ch                 n/a        cold - ms  p50 - p95 - (n=0)  pgRouting has no contraction-hierarchy query (pgr_contraction only contracts)
+[postgis] route_constrained        ok         cold 30.675 ms  p50 30.58 p95 32.94 (n=200)
+[postgis] driving_distance_50km    ok         cold 34.38 ms  p50 113.564 p95 157.02 (n=50)
+[postgis] ksp5                     ok         cold 134.826 ms  p50 237.333 p95 633.135 (n=50)
+[postgis] cost_matrix_100          ok         cold 485.277 ms  p50 486.209 p95 530.236 (n=10)
+[postgis] components               ok         cold 52.305 ms  p50 50.61 p95 50.86 (n=5)
+[postgis] restarted for family 7 mixed in 1.2 s
+[postgis] mixed_route_signals      ok         cold 91.541 ms  p50 40.867 p95 50.242 (n=50)
+=== tripletrail on small (2026-11-18T19:10:14+00:00)
+{"engine": "tripletrail", "dataset": "small", "load_s": 0.615, "start_s": 0.566, "disk_bytes": 59568164, "disk_by_file": {"dict.idx": 3967392, "LOCK": 0, "gpos.seg": 2939168, "geoms.bin": 5136208, "spog.seg": 5389016, "TIMELINE": 33, "generation": 1, "gpso.seg": 3163496, "FORMAT": 2, "wal.log": 0, "stats.bin": 18000, "gosp.seg": 3841168, "RETIRED": 5, "checksums": 313, "ospg.seg": 3841168, "CURRENT": 2, "psog.seg": 3163496, "posg.seg": 2939168, "dict.bin": 19780512, "gspo.seg": 5389016}, "load_peak_rss_bytes": 622604288, "load_peak_anon_bytes": 283635712, "wall_s": 1.236, "rss_after_start": "132 MiB (heap 55 MiB)", "triples": 805538}
+[tripletrail] restarted for family 1 selection in 1.1 s
+[tripletrail] sel_bbox                 ok         cold 4.937 ms  p50 3.164 p95 3.991 (n=30)
+[tripletrail] sel_polygon              ok         cold 3.254 ms  p50 2.901 p95 3.147 (n=30)
+[tripletrail] sel_distance             ok         cold 2.772 ms  p50 2.432 p95 2.855 (n=30)
+[tripletrail] restarted for family 2 knn in 1.1 s
+[tripletrail] knn_signals              ok         cold 15.379 ms  p50 4.579 p95 6.925 (n=30)
+[tripletrail] knn_ops                  ok         cold 9.174 ms  p50 7.858 p95 10.834 (n=30)
+[tripletrail] restarted for family 3 join in 1.1 s
+[tripletrail] join_signal_ne_20m       ok         cold 61.088 ms  p50 59.104 p95 59.928 (n=5)
+[tripletrail] join_op_region           ok         cold 14.955 ms  p50 12.404 p95 13.11 (n=5)
+[tripletrail] restarted for family 4 aggregate in 1.1 s
+[tripletrail] agg_length_region        ok         cold 132.005 ms  p50 109.949 p95 127.144 (n=5)
+[tripletrail] agg_total_length         ok         cold 29.202 ms  p50 29.534 p95 33.157 (n=5)
+[tripletrail] agg_union_buffers        ok         cold 11.605 ms  p50 8.675 p95 12.269 (n=20)
+[tripletrail] restarted for family 5 linear referencing in 1.1 s
+[tripletrail] lr_km_to_point           ok         cold 5.932 ms  p50 4.642 p95 6.227 (n=30)
+[tripletrail] lr_assets_between_km     ok         cold 46.671 ms  p50 5.257 p95 5.704 (n=30)
+[tripletrail] restarted for family 6 routing in 1.1 s
+[tripletrail] setup routing: 6.1 ms
+[tripletrail] route_dijkstra           ok         cold 275.685 ms  p50 6.616 p95 10.606 (n=1000)
+[tripletrail] route_dijkstra_cost      ok         cold 3.362 ms  p50 4.199 p95 6.957 (n=1000)
+[tripletrail] route_bddijkstra         ok         cold 4.639 ms  p50 5.667 p95 10.913 (n=1000)
+[tripletrail] route_ch                 ok         cold 106.759 ms  p50 2.895 p95 4.47 (n=1000)
+[tripletrail] route_constrained        ok         cold 547.738 ms  p50 5.17 p95 8.969 (n=200)
+[tripletrail] driving_distance_50km    ok         cold 3.322 ms  p50 6.417 p95 8.317 (n=50)
+[tripletrail] ksp5                     ok         cold 12.199 ms  p50 14.43 p95 39.773 (n=50)
+[tripletrail] cost_matrix_100          ok         cold 62.994 ms  p50 31.76 p95 33.294 (n=10)
+[tripletrail] components               ok         cold 36.535 ms  p50 18.296 p95 35.104 (n=5)
+[tripletrail] restarted for family 7 mixed in 1.1 s
+[tripletrail] mixed_route_signals      ok         cold 101.488 ms  p50 76.684 p95 86.526 (n=50)
+=== qlever on small (2026-11-18T19:11:01+00:00)
+{"engine": "qlever", "dataset": "small", "load_s": 2.495, "start_s": 0.508, "disk_bytes": 16610757, "wall_s": 10.805, "rss_after_start": "6.012MiB / 61.31GiB", "triples": 805538}
+[qlever] restarted for family 1 selection in 0.8 s
+[qlever] sel_bbox                 ok         cold 52.93 ms  p50 31.377 p95 36.011 (n=30)
+[qlever] sel_polygon              ok         cold 28.62 ms  p50 27.864 p95 30.855 (n=30)
+[qlever] sel_distance             ok         cold 30.194 ms  p50 26.631 p95 29.744 (n=30)
+[qlever] restarted for family 2 knn in 0.8 s
+[qlever] knn_signals              ok         cold 49.771 ms  p50 26.297 p95 33.106 (n=30)
+[qlever] knn_ops                  ok         cold 18.816 ms  p50 17.598 p95 18.984 (n=30)
+[qlever] restarted for family 3 join in 0.9 s
+[qlever] join_signal_ne_20m       ok         cold 419.094 ms  p50 393.998 p95 402.32 (n=5)
+[qlever] join_op_region           ok         cold 104.857 ms  p50 101.234 p95 110.045 (n=5)
+[qlever] restarted for family 4 aggregate in 0.8 s
+[qlever] agg_length_region        n/a        cold - ms  p50 - p95 - (n=0)  geof:intersection is not supported by QLever (HTTP 400 'not supported')
+[qlever] agg_total_length         ok         cold 80.487 ms  p50 66.863 p95 73.217 (n=5)
+[qlever] agg_union_buffers        n/a        cold - ms  p50 - p95 - (n=0)  geof:buffer and geof:aggUnion are not supported by QLever
+[qlever] restarted for family 5 linear referencing in 0.8 s
+[qlever] lr_km_to_point           n/a        cold - ms  p50 - p95 - (n=0)  no linear-referencing functions
+[qlever] lr_assets_between_km     ok         cold 30.688 ms  p50 15.794 p95 19.077 (n=30)
+[qlever] route_dijkstra           n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[qlever] route_dijkstra_cost      n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[qlever] route_bddijkstra         n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[qlever] route_ch                 n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[qlever] route_constrained        n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[qlever] driving_distance_50km    n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[qlever] ksp5                     n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[qlever] cost_matrix_100          n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[qlever] components               n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[qlever] mixed_route_signals      n/a        cold - ms  p50 - p95 - (n=0)  no routing
+=== jena on small (2026-11-18T19:11:38+00:00)
+{"engine": "jena", "dataset": "small", "load_s": 5.95, "start_and_spatial_index_s": 5.271, "disk_bytes": 332869271, "wall_s": 11.252, "rss_after_start": "939 MiB", "triples": 805538}
+[jena] restarted for family 1 selection in 3.2 s
+[jena] sel_bbox                 ok         cold 125.736 ms  p50 18.091 p95 29.903 (n=30)
+[jena] sel_polygon              ok         cold 143.468 ms  p50 22.287 p95 38.034 (n=30)
+[jena] sel_distance             ok         cold 46.047 ms  p50 23.597 p95 34.46 (n=30)
+[jena] restarted for family 2 knn in 3.3 s
+[jena] knn_signals              ok         cold 1274.38 ms  p50 209.702 p95 316.848 (n=30)
+[jena] knn_ops                  ok         cold 173.942 ms  p50 39.73 p95 64.366 (n=30)
+[jena] restarted for family 3 join in 3.3 s
+[jena] join_signal_ne_20m       ok         cold 10933.913 ms  p50 7752.814 p95 7860.272 (n=5)
+[jena] join_op_region           ok         cold 560.071 ms  p50 244.956 p95 269.517 (n=5)
+[jena] agg_length_region        n/a        cold - ms  p50 - p95 - (n=0)  geof:metricLength / metricArea / aggUnion are not implemented by jena-geosparql 6.2 (they return no value; geof:intersection works)
+[jena] agg_total_length         n/a        cold - ms  p50 - p95 - (n=0)  geof:metricLength / metricArea / aggUnion are not implemented by jena-geosparql 6.2 (they return no value; geof:intersection works)
+[jena] agg_union_buffers        n/a        cold - ms  p50 - p95 - (n=0)  geof:metricLength / metricArea / aggUnion are not implemented by jena-geosparql 6.2 (they return no value; geof:intersection works)
+[jena] restarted for family 5 linear referencing in 3.2 s
+[jena] lr_km_to_point           n/a        cold - ms  p50 - p95 - (n=0)  no linear-referencing functions
+[jena] lr_assets_between_km     ok         cold 127.365 ms  p50 22.756 p95 35.281 (n=30)
+[jena] route_dijkstra           n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[jena] route_dijkstra_cost      n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[jena] route_bddijkstra         n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[jena] route_ch                 n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[jena] route_constrained        n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[jena] driving_distance_50km    n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[jena] ksp5                     n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[jena] cost_matrix_100          n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[jena] components               n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[jena] mixed_route_signals      n/a        cold - ms  p50 - p95 - (n=0)  no routing
+=== graphdb on small (2026-11-18T19:13:28+00:00)
+{"engine": "graphdb", "dataset": "small", "load_s": 12.27, "start_s": 12.872, "spatial_index_s": 2.534, "disk_bytes": 149648137, "wall_s": 37.466, "rss_after_start": "1.966GiB / 61.31GiB", "triples": 805538}
+[graphdb] restarted for family 1 selection in 13.0 s
+[graphdb] sel_bbox                 ok         cold 540.418 ms  p50 56.152 p95 68.994 (n=30)
+[graphdb] sel_polygon              ok         cold 58.781 ms  p50 40.0 p95 61.141 (n=30)
+[graphdb] sel_distance             ok         cold 396.251 ms  p50 185.734 p95 308.614 (n=30)
+[graphdb] restarted for family 2 knn in 13.3 s
+[graphdb] knn_signals              ok         cold 915.994 ms  p50 301.568 p95 507.891 (n=30)
+[graphdb] knn_ops                  ok         cold 75.09 ms  p50 62.202 p95 131.932 (n=30)
+[graphdb] restarted for family 3 join in 13.3 s
+[graphdb] join_signal_ne_20m       failed     cold - ms  p50 - p95 - (n=0)  HTTP 503: Query interrupted: Query evaluation took too long
+
+[graphdb] join_op_region           ok         cold 679.175 ms  p50 494.97 p95 499.107 (n=5)
+[graphdb] agg_length_region        n/a        cold - ms  p50 - p95 - (n=0)  geof:metricLength / metricArea / aggUnion (GeoSPARQL 1.1) are unknown to GraphDB 10.8 (HTTP 500 'Unknown function')
+[graphdb] agg_total_length         n/a        cold - ms  p50 - p95 - (n=0)  geof:metricLength / metricArea / aggUnion (GeoSPARQL 1.1) are unknown to GraphDB 10.8 (HTTP 500 'Unknown function')
+[graphdb] agg_union_buffers        n/a        cold - ms  p50 - p95 - (n=0)  geof:metricLength / metricArea / aggUnion (GeoSPARQL 1.1) are unknown to GraphDB 10.8 (HTTP 500 'Unknown function')
+[graphdb] restarted for family 5 linear referencing in 13.4 s
+[graphdb] lr_km_to_point           n/a        cold - ms  p50 - p95 - (n=0)  no linear-referencing functions
+[graphdb] lr_assets_between_km     ok         cold 219.919 ms  p50 14.485 p95 28.613 (n=30)
+[graphdb] route_dijkstra           n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[graphdb] route_dijkstra_cost      n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[graphdb] route_bddijkstra         n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[graphdb] route_ch                 n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[graphdb] route_constrained        n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[graphdb] driving_distance_50km    n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[graphdb] ksp5                     n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[graphdb] cost_matrix_100          n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[graphdb] components               n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[graphdb] mixed_route_signals      n/a        cold - ms  p50 - p95 - (n=0)  no routing
+=== done (2026-11-18T19:20:40+00:00)

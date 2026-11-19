@@ -1,0 +1,10 @@
+{
+ "engine": "graphdb",
+ "qid": "agg_total_length",
+ "family": "4 aggregate",
+ "kind": "scalars",
+ "runs": [],
+ "status": "n/a",
+ "reason": "geof:metricLength / metricArea / aggUnion (GeoSPARQL 1.1) are unknown to GraphDB 10.8 (HTTP 500 'Unknown function')",
+ "dataset": "small"
+}

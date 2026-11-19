@@ -1,0 +1,11 @@
+{
+ "engine": "graphdb",
+ "dataset": "osm_norway",
+ "load_s": 18.058,
+ "start_s": 14.298,
+ "spatial_index_s": 23.649,
+ "disk_bytes": 1085454660,
+ "wall_s": 56.115,
+ "rss_after_start": "5.801GiB / 61.31GiB",
+ "triples": 1458029
+}

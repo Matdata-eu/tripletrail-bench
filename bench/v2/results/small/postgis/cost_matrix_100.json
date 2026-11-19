@@ -1,0 +1,189 @@
+{
+ "engine": "postgis",
+ "qid": "cost_matrix_100",
+ "family": "6 routing",
+ "kind": "scalars",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 485.277,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     8934.0,
+     1612068145.5000072
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 498.042,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     9507.0,
+     1648293217.6000042
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 465.834,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     8653.0,
+     1532565691.5000026
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 482.578,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     9219.0,
+     1625163873.8999975
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 499.611,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     9212.0,
+     1616433356.1000063
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 501.107,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     9220.0,
+     1563427674.1999998
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 6,
+   "ms": 530.236,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     8934.0,
+     1558905933.6999924
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 7,
+   "ms": 475.621,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     8653.0,
+     1429849116.3999877
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 8,
+   "ms": 481.677,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     9029.0,
+     1519143614.6000032
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 9,
+   "ms": 483.528,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     9026.0,
+     1620041109.9000072
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 10,
+   "ms": 488.891,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     9217.0,
+     1625505431.3000033
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 11,
+   "ms": 489.343,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     9412.0,
+     1605143234.5999975
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 12,
+   "ms": 481.578,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     9213.0,
+     1619312341.699998
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 485.277,
+ "warm": {
+  "n": 10,
+  "p50_ms": 486.209,
+  "p95_ms": 530.236,
+  "min_ms": 475.621,
+  "max_ms": 530.236,
+  "mean_ms": 491.417
+ },
+ "dataset": "small",
+ "rss_after": "272 MiB (sum over backends, shared buffers counted per process)"
+}

@@ -1,0 +1,296 @@
+{
+ "engine": "tripletrail",
+ "qid": "agg_union_buffers",
+ "family": "4 aggregate",
+ "kind": "scalars",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 26.501,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     345517.94868386537
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 11.872,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     526137.1288256869
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 8.702,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     353199.55880400166
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 8.786,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     353292.66023961455
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 5.217,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     353133.5795882717
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 15.802,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     706819.2056740075
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 6,
+   "ms": 12.94,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     534081.0938281193
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 7,
+   "ms": 9.807,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     353083.1439327672
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 8,
+   "ms": 9.477,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     345305.0096372068
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 9,
+   "ms": 9.528,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     345293.7011014521
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 10,
+   "ms": 12.57,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     533698.4610714354
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 11,
+   "ms": 12.694,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     518116.2997998744
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 12,
+   "ms": 10.78,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     353217.8302088864
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 13,
+   "ms": 9.823,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     345495.62148007005
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 14,
+   "ms": 10.458,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     345379.70469610393
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 15,
+   "ms": 12.436,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     533793.9060753621
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 16,
+   "ms": 9.545,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     345381.69731609523
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 17,
+   "ms": 10.277,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     353441.20587976277
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 18,
+   "ms": 12.603,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     533529.4105704501
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 19,
+   "ms": 9.589,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     353285.2092847675
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 20,
+   "ms": 8.982,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     345292.76967870444
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 21,
+   "ms": 11.171,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     518325.4227141887
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 22,
+   "ms": 8.454,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     345361.6794587523
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 26.501,
+ "warm": {
+  "n": 20,
+  "p50_ms": 10.05,
+  "p95_ms": 15.802,
+  "min_ms": 5.217,
+  "max_ms": 15.802,
+  "mean_ms": 10.547
+ },
+ "dataset": "large",
+ "rss_after": "1430 MiB (heap 648 MiB)"
+}

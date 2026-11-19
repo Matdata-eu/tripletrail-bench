@@ -1,0 +1,10 @@
+{
+ "engine": "jena",
+ "qid": "driving_distance_50km",
+ "family": "6 routing",
+ "kind": "scalars",
+ "runs": [],
+ "status": "n/a",
+ "reason": "no routing",
+ "dataset": "large"
+}

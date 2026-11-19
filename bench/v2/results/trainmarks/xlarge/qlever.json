@@ -1,0 +1,142 @@
+{
+ "engine": "qlever",
+ "scale": "xlarge",
+ "triples": 9995000,
+ "warm_runs": 5,
+ "queries": {
+  "q1_count": {
+   "runs": [
+    74.763,
+    51.268,
+    59.992,
+    58.785,
+    63.053,
+    61.809,
+    52.946
+   ],
+   "rows": 1,
+   "first_row": [
+    "9995000"
+   ],
+   "status": "ok",
+   "cold_ms": 74.763,
+   "warm": {
+    "n": 5,
+    "median_ms": 59.992,
+    "min_ms": 52.946,
+    "max_ms": 63.053
+   }
+  },
+  "q2_customer_orders": {
+   "runs": [
+    439.632,
+    400.176,
+    412.319,
+    397.112,
+    373.789,
+    452.825,
+    486.519
+   ],
+   "rows": 20,
+   "first_row": [
+    "Quinn Larsen",
+    "5413",
+    "13698872.59"
+   ],
+   "status": "ok",
+   "cold_ms": 439.632,
+   "warm": {
+    "n": 5,
+    "median_ms": 412.319,
+    "min_ms": 373.789,
+    "max_ms": 486.519
+   }
+  },
+  "q3_join_3_entities": {
+   "runs": [
+    273.533,
+    261.381,
+    277.693,
+    270.898,
+    270.678,
+    274.762,
+    258.848
+   ],
+   "rows": 50,
+   "first_row": [
+    "Frank Pedersen",
+    "Product-4924",
+    "4999.98",
+    "completed"
+   ],
+   "status": "ok",
+   "cold_ms": 273.533,
+   "warm": {
+    "n": 5,
+    "median_ms": 270.898,
+    "min_ms": 258.848,
+    "max_ms": 277.693
+   }
+  },
+  "q4_optional_aggregation": {
+   "runs": [
+    647.676,
+    645.636,
+    619.647,
+    625.066,
+    676.851,
+    629.541,
+    639.66
+   ],
+   "rows": 50,
+   "first_row": [
+    "http://benchmark.example/France",
+    "http://benchmark.example/Startup",
+    "2103",
+    "28110"
+   ],
+   "status": "ok",
+   "cold_ms": 647.676,
+   "warm": {
+    "n": 5,
+    "median_ms": 629.541,
+    "min_ms": 619.647,
+    "max_ms": 676.851
+   }
+  },
+  "q5_construct": {
+   "runs": [
+    2812.123,
+    1658.514,
+    1681.1,
+    1863.853,
+    1694.744,
+    1632.997,
+    1948.163
+   ],
+   "rows": 439240,
+   "first_row": [
+    "<http://benchmark.example/C000011> <http://benchmark.example/country> <http://benchmark.example/Norway> ."
+   ],
+   "status": "ok",
+   "cold_ms": 2812.123,
+   "warm": {
+    "n": 5,
+    "median_ms": 1694.744,
+    "min_ms": 1632.997,
+    "max_ms": 1948.163
+   }
+  },
+  "q6_delete_insert": {
+   "status": "ok",
+   "ms": 38.131
+  }
+ },
+ "load": {
+  "engine": "qlever",
+  "dataset": "trainmarks-xlarge",
+  "load_s": 7.554,
+  "start_s": 0.474,
+  "disk_bytes": 164153850
+ }
+}

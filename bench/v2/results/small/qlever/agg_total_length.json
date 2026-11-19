@@ -1,0 +1,116 @@
+{
+ "engine": "qlever",
+ "qid": "agg_total_length",
+ "family": "4 aggregate",
+ "kind": "scalars",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 80.487,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     13261308.97391
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 52.456,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     13261308.97391
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 44.578,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     13261308.97391
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 44.94,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     13261308.97391
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 43.303,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     13261308.97391
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 73.217,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     13261308.97391
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 6,
+   "ms": 66.863,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     13261308.97391
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 7,
+   "ms": 70.232,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     13261308.97391
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 80.487,
+ "warm": {
+  "n": 5,
+  "p50_ms": 66.863,
+  "p95_ms": 73.217,
+  "min_ms": 43.303,
+  "max_ms": 73.217,
+  "mean_ms": 59.711
+ },
+ "dataset": "small",
+ "rss_after": "39.61MiB / 61.31GiB"
+}

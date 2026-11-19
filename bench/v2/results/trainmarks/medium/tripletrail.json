@@ -1,0 +1,166 @@
+{
+ "engine": "tripletrail",
+ "scale": "medium",
+ "triples": 98000,
+ "warm_runs": 5,
+ "queries": {
+  "q1_count": {
+   "runs": [
+    4.497,
+    2.755,
+    2.365,
+    2.471,
+    2.439,
+    2.731,
+    2.657
+   ],
+   "rows": 1,
+   "first_row": [
+    "98000"
+   ],
+   "status": "ok",
+   "cold_ms": 4.497,
+   "warm": {
+    "n": 5,
+    "median_ms": 2.471,
+    "min_ms": 2.365,
+    "max_ms": 2.731
+   }
+  },
+  "q2_customer_orders": {
+   "runs": [
+    47.578,
+    49.696,
+    44.426,
+    43.915,
+    45.085,
+    48.87,
+    49.863
+   ],
+   "rows": 20,
+   "first_row": [
+    "Paul Nilsen",
+    "112",
+    "295454.07000000007"
+   ],
+   "status": "ok",
+   "cold_ms": 47.578,
+   "warm": {
+    "n": 5,
+    "median_ms": 45.085,
+    "min_ms": 43.915,
+    "max_ms": 49.863
+   }
+  },
+  "q3_join_3_entities": {
+   "runs": [
+    12.97,
+    10.967,
+    11.508,
+    12.6,
+    12.052,
+    11.954,
+    11.586
+   ],
+   "rows": 50,
+   "first_row": [
+    "Frank Berg",
+    "Product-106",
+    "4999.47",
+    "completed"
+   ],
+   "status": "ok",
+   "cold_ms": 12.97,
+   "warm": {
+    "n": 5,
+    "median_ms": 11.954,
+    "min_ms": 11.508,
+    "max_ms": 12.6
+   }
+  },
+  "q4_optional_aggregation": {
+   "runs": [
+    39.646,
+    39.658,
+    39.072,
+    39.109,
+    40.794,
+    23.437,
+    39.974
+   ],
+   "rows": 50,
+   "first_row": [
+    "http://benchmark.example/Germany",
+    "http://benchmark.example/SMB",
+    "24",
+    "347"
+   ],
+   "status": "ok",
+   "cold_ms": 39.646,
+   "warm": {
+    "n": 5,
+    "median_ms": 39.109,
+    "min_ms": 23.437,
+    "max_ms": 40.794
+   }
+  },
+  "q5_construct": {
+   "runs": [
+    17.921,
+    17.135,
+    17.111,
+    17.451,
+    11.605,
+    17.696,
+    18.311
+   ],
+   "rows": 3878,
+   "first_row": [
+    "<http://benchmark.example/C000004> <http://benchmark.example/country> <http://benchmark.example/Norway> ."
+   ],
+   "status": "ok",
+   "cold_ms": 17.921,
+   "warm": {
+    "n": 5,
+    "median_ms": 17.451,
+    "min_ms": 11.605,
+    "max_ms": 18.311
+   }
+  },
+  "q6_delete_insert": {
+   "status": "ok",
+   "ms": 12.324
+  }
+ },
+ "load": {
+  "engine": "tripletrail",
+  "dataset": "trainmarks-medium",
+  "load_s": 0.589,
+  "start_s": 0.566,
+  "disk_bytes": 4873596,
+  "disk_by_file": {
+   "dict.idx": 180264,
+   "LOCK": 0,
+   "gpos.seg": 375752,
+   "geoms.bin": 40,
+   "spog.seg": 796448,
+   "TIMELINE": 33,
+   "generation": 1,
+   "gpso.seg": 388808,
+   "FORMAT": 2,
+   "wal.log": 0,
+   "stats.bin": 12240,
+   "gosp.seg": 458456,
+   "RETIRED": 5,
+   "checksums": 297,
+   "ospg.seg": 458456,
+   "CURRENT": 2,
+   "psog.seg": 388808,
+   "posg.seg": 375752,
+   "dict.bin": 641784,
+   "gspo.seg": 796448
+  },
+  "load_peak_rss_bytes": 246988800,
+  "load_peak_anon_bytes": 191352832
+ }
+}

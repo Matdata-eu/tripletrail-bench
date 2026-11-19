@@ -1,0 +1,10 @@
+{
+ "engine": "qlever",
+ "qid": "route_bddijkstra",
+ "family": "6 routing",
+ "kind": "path",
+ "runs": [],
+ "status": "n/a",
+ "reason": "no routing",
+ "dataset": "small"
+}

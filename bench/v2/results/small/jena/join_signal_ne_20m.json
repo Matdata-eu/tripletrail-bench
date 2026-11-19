@@ -1,0 +1,116 @@
+{
+ "engine": "jena",
+ "qid": "join_signal_ne_20m",
+ "family": "3 join",
+ "kind": "scalars",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 10933.913,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     24084.0
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 8403.394,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     24084.0
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 9471.978,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     24084.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 7752.814,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     24084.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 7779.355,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     24084.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 7718.418,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     24084.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 6,
+   "ms": 7860.272,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     24084.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 7,
+   "ms": 7721.848,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     24084.0
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 10933.913,
+ "warm": {
+  "n": 5,
+  "p50_ms": 7752.814,
+  "p95_ms": 7860.272,
+  "min_ms": 7718.418,
+  "max_ms": 7860.272,
+  "mean_ms": 7766.541
+ },
+ "dataset": "small",
+ "rss_after": "5471 MiB"
+}

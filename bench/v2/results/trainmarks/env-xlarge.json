@@ -1,0 +1,17 @@
+{
+ "cpu": "AMD EPYC-Milan Processor",
+ "cpus": 16,
+ "memory": "64291348 kB",
+ "kernel": "6.8.0-138-generic",
+ "disk_free": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/sda1       338G   22G  303G   7% /",
+ "tripletrail_commit": "e36d3baa57d39c18173c45084c771b95704d5bfc",
+ "bench_commit": "f5cbe28d459eba927112b36921d56fd2d7c45a20",
+ "postgres": "psql (PostgreSQL) 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1)",
+ "postgis": "dpkg-query: no packages found matching postgresql-16-postgis-3\ndpkg-query: no packages found matching postgresql-16-pgrouting",
+ "docker": "29.1.3",
+ "graphdb_image": "sha256:93bde2391ef4b68590da57b907ccd91429f12456cabad0f0032b7aac5b96bec2 mirror.gcr.io/ontotext/graphdb:10.8.0",
+ "qlever_image": "sha256:c19b86284ba8aefe5b35c515a6eaaf1de8dcd5f93e34a84d55d6385be6e9a77b commit-6693492751",
+ "oxigraph_image": "sha256:260454ee29c091d2cdb99dd156212594ff3127850627adb4cfdcd9b1e425d480 ghcr.io/oxigraph/oxigraph:0.5.13",
+ "java": "openjdk version \"21.0.13.0.3\" 2026-10-24\nOpenJDK Runtime Environment (build 21.0.13.0.3+1-1-24.04.1-Ubuntu)\nOpenJDK 64-Bit Server VM (build 21.0.13.0.3+1-1-24.04.1-Ubuntu, mixed mode, sharing)",
+ "jena_jar": "jena-fuseki-geosparql-6.2.0.jar"
+}

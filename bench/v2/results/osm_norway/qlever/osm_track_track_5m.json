@@ -1,0 +1,92 @@
+{
+ "engine": "qlever",
+ "qid": "osm_track_track_5m",
+ "family": "8 osm",
+ "kind": "scalars",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 853.971,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     42292.0
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 878.706,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     42292.0
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 830.749,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     42292.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 834.343,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     42292.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 811.399,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     42292.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 841.866,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     42292.0
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 853.971,
+ "warm": {
+  "n": 3,
+  "p50_ms": 834.343,
+  "p95_ms": 841.866,
+  "min_ms": 811.399,
+  "max_ms": 841.866,
+  "mean_ms": 829.203
+ },
+ "dataset": "osm_norway",
+ "rss_after": "172.4MiB / 61.31GiB"
+}

@@ -1,0 +1,92 @@
+{
+ "engine": "postgis",
+ "qid": "osm_track_landuse",
+ "family": "8 osm",
+ "kind": "scalars",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 822.31,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     6599.0
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 699.738,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     6599.0
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 699.002,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     6599.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 689.25,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     6599.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 700.594,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     6599.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 703.643,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     6599.0
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 822.31,
+ "warm": {
+  "n": 3,
+  "p50_ms": 700.594,
+  "p95_ms": 703.643,
+  "min_ms": 689.25,
+  "max_ms": 703.643,
+  "mean_ms": 697.829
+ },
+ "dataset": "osm_norway",
+ "rss_after": "838 MiB (sum over backends, shared buffers counted per process)"
+}

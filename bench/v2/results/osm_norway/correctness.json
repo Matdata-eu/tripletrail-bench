@@ -1,0 +1,195 @@
+{
+ "osm_station_admin/graphdb": {
+  "counts": {
+   "match": 5,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "osm_station_admin/jena": {
+  "counts": {
+   "match": 6,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "osm_station_admin/qlever": {
+  "counts": {
+   "match": 6,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "osm_station_admin/tripletrail": {
+  "counts": {
+   "match": 6,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "osm_track_landuse/qlever": {
+  "counts": {
+   "match": 0,
+   "tie": 0,
+   "mismatch": 6
+  },
+  "examples": [
+   {
+    "index": 0,
+    "verdict": "mismatch",
+    "note": "[6599.0] vs [6601.0]"
+   },
+   {
+    "index": 1,
+    "verdict": "mismatch",
+    "note": "[6599.0] vs [6601.0]"
+   },
+   {
+    "index": 2,
+    "verdict": "mismatch",
+    "note": "[6599.0] vs [6601.0]"
+   },
+   {
+    "index": 3,
+    "verdict": "mismatch",
+    "note": "[6599.0] vs [6601.0]"
+   },
+   {
+    "index": 4,
+    "verdict": "mismatch",
+    "note": "[6599.0] vs [6601.0]"
+   }
+  ],
+  "notes": {
+   "[6599.0] vs [6601.0]": 6
+  }
+ },
+ "osm_track_landuse/tripletrail": {
+  "counts": {
+   "match": 6,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "osm_track_track_5m/jena": {
+  "counts": {
+   "match": 0,
+   "tie": 0,
+   "mismatch": 6
+  },
+  "examples": [
+   {
+    "index": 0,
+    "verdict": "mismatch",
+    "note": "[42326.0] vs [39689.0]"
+   },
+   {
+    "index": 1,
+    "verdict": "mismatch",
+    "note": "[42326.0] vs [39689.0]"
+   },
+   {
+    "index": 2,
+    "verdict": "mismatch",
+    "note": "[42326.0] vs [39689.0]"
+   },
+   {
+    "index": 3,
+    "verdict": "mismatch",
+    "note": "[42326.0] vs [39689.0]"
+   },
+   {
+    "index": 4,
+    "verdict": "mismatch",
+    "note": "[42326.0] vs [39689.0]"
+   }
+  ],
+  "notes": {
+   "[42326.0] vs [39689.0]": 6
+  }
+ },
+ "osm_track_track_5m/qlever": {
+  "counts": {
+   "match": 0,
+   "tie": 0,
+   "mismatch": 6
+  },
+  "examples": [
+   {
+    "index": 0,
+    "verdict": "mismatch",
+    "note": "[42326.0] vs [42292.0]"
+   },
+   {
+    "index": 1,
+    "verdict": "mismatch",
+    "note": "[42326.0] vs [42292.0]"
+   },
+   {
+    "index": 2,
+    "verdict": "mismatch",
+    "note": "[42326.0] vs [42292.0]"
+   },
+   {
+    "index": 3,
+    "verdict": "mismatch",
+    "note": "[42326.0] vs [42292.0]"
+   },
+   {
+    "index": 4,
+    "verdict": "mismatch",
+    "note": "[42326.0] vs [42292.0]"
+   }
+  ],
+  "notes": {
+   "[42326.0] vs [42292.0]": 6
+  }
+ },
+ "osm_track_track_5m/tripletrail": {
+  "counts": {
+   "match": 0,
+   "tie": 0,
+   "mismatch": 6
+  },
+  "examples": [
+   {
+    "index": 0,
+    "verdict": "mismatch",
+    "note": "[42326.0] vs [42328.0]"
+   },
+   {
+    "index": 1,
+    "verdict": "mismatch",
+    "note": "[42326.0] vs [42328.0]"
+   },
+   {
+    "index": 2,
+    "verdict": "mismatch",
+    "note": "[42326.0] vs [42328.0]"
+   },
+   {
+    "index": 3,
+    "verdict": "mismatch",
+    "note": "[42326.0] vs [42328.0]"
+   },
+   {
+    "index": 4,
+    "verdict": "mismatch",
+    "note": "[42326.0] vs [42328.0]"
+   }
+  ],
+  "notes": {
+   "[42326.0] vs [42328.0]": 6
+  }
+ }
+}

@@ -1,0 +1,49 @@
+{"products":28480,"triples":9609918}
+=== bsbm 28480 on tripletrail (2026-11-19T00:13:14+00:00)
+loading bsbm-28480 into tripletrail
+tripletrail bsbm-28480 explore
+  QMpH 52764.79
+tripletrail bsbm-28480 bi
+  QMpH 14131.32
+tripletrail bsbm-28480 update
+  QMpH 36272.52
+=== bsbm 28480 on oxigraph (2026-11-19T00:13:52+00:00)
+loading bsbm-28480 into oxigraph
+oxigraph bsbm-28480 explore
+  QMpH 13492.46
+oxigraph bsbm-28480 bi
+  QMpH 52.53
+oxigraph bsbm-28480 update
+  QMpH 13495.72
+=== bsbm 28480 on qlever (2026-11-19T01:24:29+00:00)
+loading bsbm-28480 into qlever
+qlever bsbm-28480 explore
+  QMpH 4400.11
+qlever bsbm-28480 bi
+  QMpH 3461.12
+=== bsbm 28480 on jena (2026-11-19T01:26:39+00:00)
+loading bsbm-28480 into jena
+jena bsbm-28480 explore
+  QMpH 1859.39
+jena bsbm-28480 bi
+  QMpH 210.72
+jena bsbm-28480 update
+  QMpH 1606.21
+=== bsbm 28480 on graphdb (2026-11-19T01:49:21+00:00)
+loading bsbm-28480 into graphdb
+graphdb bsbm-28480 explore
+  QMpH 20761.04
+graphdb bsbm-28480 bi
+  QMpH 582.45
+graphdb bsbm-28480 update
+  QMpH 10202.88
+=== bsbm 28480 on maplib (2026-11-19T01:57:10+00:00)
+loading bsbm-28480 into maplib
+maplib bsbm-28480 explore
+  QMpH 6745.53
+maplib bsbm-28480 bi
+  QMpH 5346.44
+maplib bsbm-28480 update
+  QMpH 173.63
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/bsbm/report.md
+=== done (2026-11-19T02:16:20+00:00)

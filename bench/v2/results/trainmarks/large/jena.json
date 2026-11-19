@@ -1,0 +1,142 @@
+{
+ "engine": "jena",
+ "scale": "large",
+ "triples": 1001000,
+ "warm_runs": 5,
+ "queries": {
+  "q1_count": {
+   "runs": [
+    555.033,
+    191.358,
+    314.952,
+    426.004,
+    440.204,
+    441.837,
+    438.213
+   ],
+   "rows": 1,
+   "first_row": [
+    "1001000"
+   ],
+   "status": "ok",
+   "cold_ms": 555.033,
+   "warm": {
+    "n": 5,
+    "median_ms": 438.213,
+    "min_ms": 314.952,
+    "max_ms": 441.837
+   }
+  },
+  "q2_customer_orders": {
+   "runs": [
+    3200.868,
+    1495.803,
+    946.077,
+    756.137,
+    747.526,
+    738.617,
+    709.244
+   ],
+   "rows": 20,
+   "first_row": [
+    "Eve Andersen",
+    "663",
+    "1723710.6299999973e0"
+   ],
+   "status": "ok",
+   "cold_ms": 3200.868,
+   "warm": {
+    "n": 5,
+    "median_ms": 747.526,
+    "min_ms": 709.244,
+    "max_ms": 946.077
+   }
+  },
+  "q3_join_3_entities": {
+   "runs": [
+    131.375,
+    141.192,
+    115.211,
+    137.296,
+    111.66,
+    109.135,
+    109.534
+   ],
+   "rows": 50,
+   "first_row": [
+    "Charlie Larsen",
+    "Product-570",
+    "4999.21e0",
+    "completed"
+   ],
+   "status": "ok",
+   "cold_ms": 131.375,
+   "warm": {
+    "n": 5,
+    "median_ms": 111.66,
+    "min_ms": 109.135,
+    "max_ms": 137.296
+   }
+  },
+  "q4_optional_aggregation": {
+   "runs": [
+    928.121,
+    756.642,
+    756.289,
+    743.916,
+    749.333,
+    742.08,
+    723.773
+   ],
+   "rows": 50,
+   "first_row": [
+    "http://benchmark.example/Canada",
+    "http://benchmark.example/Enterprise",
+    "227",
+    "3085"
+   ],
+   "status": "ok",
+   "cold_ms": 928.121,
+   "warm": {
+    "n": 5,
+    "median_ms": 743.916,
+    "min_ms": 723.773,
+    "max_ms": 756.289
+   }
+  },
+  "q5_construct": {
+   "runs": [
+    310.747,
+    162.333,
+    148.77,
+    186.736,
+    146.095,
+    181.393,
+    150.012
+   ],
+   "rows": 43091,
+   "first_row": [
+    "<http://benchmark.example/C000003> <http://benchmark.example/country> <http://benchmark.example/Norway> ."
+   ],
+   "status": "ok",
+   "cold_ms": 310.747,
+   "warm": {
+    "n": 5,
+    "median_ms": 150.012,
+    "min_ms": 146.095,
+    "max_ms": 186.736
+   }
+  },
+  "q6_delete_insert": {
+   "status": "ok",
+   "ms": 187.162
+  }
+ },
+ "load": {
+  "engine": "jena",
+  "dataset": "trainmarks-large",
+  "load_s": 4.452,
+  "start_and_spatial_index_s": 2.222,
+  "disk_bytes": 316190433
+ }
+}

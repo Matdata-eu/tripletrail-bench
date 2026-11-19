@@ -1,0 +1,142 @@
+{
+ "engine": "qlever",
+ "scale": "medium",
+ "triples": 98000,
+ "warm_runs": 5,
+ "queries": {
+  "q1_count": {
+   "runs": [
+    12.371,
+    9.342,
+    9.125,
+    9.401,
+    8.965,
+    9.18,
+    7.093
+   ],
+   "rows": 1,
+   "first_row": [
+    "98000"
+   ],
+   "status": "ok",
+   "cold_ms": 12.371,
+   "warm": {
+    "n": 5,
+    "median_ms": 9.125,
+    "min_ms": 7.093,
+    "max_ms": 9.401
+   }
+  },
+  "q2_customer_orders": {
+   "runs": [
+    40.841,
+    29.536,
+    29.513,
+    31.032,
+    31.141,
+    29.594,
+    31.621
+   ],
+   "rows": 20,
+   "first_row": [
+    "Paul Nilsen",
+    "112",
+    "295454.07"
+   ],
+   "status": "ok",
+   "cold_ms": 40.841,
+   "warm": {
+    "n": 5,
+    "median_ms": 31.032,
+    "min_ms": 29.513,
+    "max_ms": 31.621
+   }
+  },
+  "q3_join_3_entities": {
+   "runs": [
+    64.953,
+    53.506,
+    38.69,
+    34.929,
+    33.378,
+    36.076,
+    32.026
+   ],
+   "rows": 50,
+   "first_row": [
+    "Frank Berg",
+    "Product-106",
+    "4999.47",
+    "completed"
+   ],
+   "status": "ok",
+   "cold_ms": 64.953,
+   "warm": {
+    "n": 5,
+    "median_ms": 34.929,
+    "min_ms": 32.026,
+    "max_ms": 38.69
+   }
+  },
+  "q4_optional_aggregation": {
+   "runs": [
+    43.744,
+    42.792,
+    42.33,
+    42.331,
+    43.625,
+    42.775,
+    42.683
+   ],
+   "rows": 50,
+   "first_row": [
+    "http://benchmark.example/Germany",
+    "http://benchmark.example/SMB",
+    "24",
+    "347"
+   ],
+   "status": "ok",
+   "cold_ms": 43.744,
+   "warm": {
+    "n": 5,
+    "median_ms": 42.683,
+    "min_ms": 42.33,
+    "max_ms": 43.625
+   }
+  },
+  "q5_construct": {
+   "runs": [
+    62.502,
+    64.352,
+    61.945,
+    60.308,
+    58.539,
+    59.325,
+    61.452
+   ],
+   "rows": 3878,
+   "first_row": [
+    "<http://benchmark.example/C000004> <http://benchmark.example/country> <http://benchmark.example/Norway> ."
+   ],
+   "status": "ok",
+   "cold_ms": 62.502,
+   "warm": {
+    "n": 5,
+    "median_ms": 60.308,
+    "min_ms": 58.539,
+    "max_ms": 61.945
+   }
+  },
+  "q6_delete_insert": {
+   "status": "ok",
+   "ms": 27.471
+  }
+ },
+ "load": {
+  "engine": "qlever",
+  "dataset": "trainmarks-medium",
+  "load_s": 0.987,
+  "start_s": 0.47,
+  "disk_bytes": 1666105
+ }
+}

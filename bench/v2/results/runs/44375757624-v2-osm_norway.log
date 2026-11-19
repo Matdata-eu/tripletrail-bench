@@ -1,0 +1,36 @@
+{"source": "osm_norway.osm.pbf", "triples": 1458029, "bbox": [-9.6846279, 54.3168041, 34.6889114, 81.0280176], "counts": {"track": 13108, "station": 1123, "landuse": 275715, "admin": 390}, "extract_s": 39.3}
+=== postgis on osm_norway (2026-11-18T20:56:42+00:00)
+NOTICE:  database "rinf_osm_norway" does not exist, skipping
+{"engine": "postgis", "dataset": "osm_norway", "load_s": 24.108, "disk_bytes": 863584783, "rows": {"track": 13108, "station": 1123, "landuse": 275715, "admin": 390}, "wall_s": 64.307, "rss_after_start": "186 MiB (sum over backends, shared buffers counted per process)"}
+[postgis] restarted for family 8 osm in 2.1 s
+[postgis] osm_station_admin        ok         cold 207.649 ms  p50 156.521 p95 156.771 (n=3)
+[postgis] osm_track_landuse        ok         cold 822.31 ms  p50 700.594 p95 703.643 (n=3)
+[postgis] osm_track_track_5m       ok         cold 2712.033 ms  p50 2685.272 p95 2699.667 (n=3)
+=== tripletrail on osm_norway (2026-11-18T20:58:14+00:00)
+{"engine": "tripletrail", "dataset": "osm_norway", "load_s": 1.686, "start_s": 0.566, "disk_bytes": 731090929, "disk_by_file": {"dict.idx": 10567432, "LOCK": 0, "gpos.seg": 4445056, "geoms.bin": 264573616, "spog.seg": 10846984, "TIMELINE": 33, "generation": 1, "gpso.seg": 6253024, "FORMAT": 2, "wal.log": 0, "stats.bin": 7056, "gosp.seg": 4801960, "RETIRED": 5, "checksums": 318, "ospg.seg": 4801960, "CURRENT": 2, "psog.seg": 6253024, "posg.seg": 4445056, "dict.bin": 403248416, "gspo.seg": 10846984}, "load_peak_rss_bytes": 1710092288, "load_peak_anon_bytes": 1632350208, "wall_s": 2.304, "rss_after_start": "809 MiB (heap 91 MiB)", "triples": 1458029}
+[tripletrail] restarted for family 8 osm in 1.1 s
+[tripletrail] osm_station_admin        ok         cold 42.866 ms  p50 22.62 p95 25.694 (n=3)
+[tripletrail] osm_track_landuse        ok         cold 159.376 ms  p50 130.506 p95 133.779 (n=3)
+[tripletrail] osm_track_track_5m       ok         cold 93.46 ms  p50 85.881 p95 94.205 (n=3)
+=== qlever on osm_norway (2026-11-18T20:58:20+00:00)
+{"engine": "qlever", "dataset": "osm_norway", "load_s": 7.044, "start_s": 0.484, "disk_bytes": 199670373, "wall_s": 7.629, "rss_after_start": "6.219MiB / 61.31GiB", "triples": 1458029}
+[qlever] restarted for family 8 osm in 0.7 s
+[qlever] osm_station_admin        ok         cold 3222.309 ms  p50 3149.477 p95 3162.333 (n=3)
+[qlever] osm_track_landuse        ok         cold 2369.209 ms  p50 2371.794 p95 2412.542 (n=3)
+[qlever] osm_track_track_5m       ok         cold 853.971 ms  p50 834.343 p95 841.866 (n=3)
+=== jena on osm_norway (2026-11-18T20:59:11+00:00)
+{"engine": "jena", "dataset": "osm_norway", "load_s": 14.191, "start_and_spatial_index_s": 32.781, "disk_bytes": 850761423, "wall_s": 47.003, "rss_after_start": "5626 MiB", "triples": 1458029}
+[jena] restarted for family 8 osm in 3.3 s
+[jena] osm_station_admin        ok         cold 6701.224 ms  p50 3615.977 p95 3654.972 (n=3)
+[jena] osm_track_landuse        failed     cold - ms  p50 - p95 - (n=0)  HTTP 503: Query timed out
+
+[jena] osm_track_track_5m       ok         cold 94472.561 ms  p50 92781.484 p95 94944.991 (n=3)
+=== graphdb on osm_norway (2026-11-18T21:19:48+00:00)
+{"engine": "graphdb", "dataset": "osm_norway", "load_s": 18.058, "start_s": 14.298, "spatial_index_s": 23.649, "disk_bytes": 1085454660, "wall_s": 56.115, "rss_after_start": "5.801GiB / 61.31GiB", "triples": 1458029}
+[graphdb] restarted for family 8 osm in 13.3 s
+[graphdb] osm_station_admin        ok         cold 205611.825 ms  p50 206259.003 p95 206445.741 (n=2)
+[graphdb] osm_track_landuse        failed     cold - ms  p50 - p95 - (n=0)  HTTP 503: Query interrupted: Query evaluation took too long
+
+[graphdb] osm_track_track_5m       failed     cold - ms  p50 - p95 - (n=0)  HTTP 503: Query interrupted: Query evaluation took too long
+
+=== done (2026-11-18T21:58:14+00:00)

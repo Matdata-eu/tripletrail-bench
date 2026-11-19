@@ -1,0 +1,56 @@
+=== trainmarks large on tripletrail (2026-11-19T02:33:22+00:00)
+loading trainmarks-large into tripletrail
+tripletrail large q1_count: 2.399 ms
+tripletrail large q2_customer_orders: 190.414 ms
+tripletrail large q3_join_3_entities: 67.263 ms
+tripletrail large q4_optional_aggregation: 187.451 ms
+tripletrail large q5_construct: 111.662 ms
+tripletrail large q6_delete_insert: {'status': 'ok', 'ms': 62.983}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/large/tripletrail.json
+=== trainmarks large on oxigraph (2026-11-19T02:33:30+00:00)
+loading trainmarks-large into oxigraph
+oxigraph large q1_count: 281.808 ms
+oxigraph large q2_customer_orders: 1035.237 ms
+oxigraph large q3_join_3_entities: 224.22 ms
+oxigraph large q4_optional_aggregation: 807.437 ms
+oxigraph large q5_construct: 426.223 ms
+oxigraph large q6_delete_insert: {'status': 'ok', 'ms': 59.747}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/large/oxigraph.json
+=== trainmarks large on qlever (2026-11-19T02:33:54+00:00)
+loading trainmarks-large into qlever
+qlever large q1_count: 11.04 ms
+qlever large q2_customer_orders: 74.53 ms
+qlever large q3_join_3_entities: 70.115 ms
+qlever large q4_optional_aggregation: 96.969 ms
+qlever large q5_construct: 301.354 ms
+qlever large q6_delete_insert: {'status': 'ok', 'ms': 23.578}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/large/qlever.json
+=== trainmarks large on jena (2026-11-19T02:34:04+00:00)
+loading trainmarks-large into jena
+jena large q1_count: 438.213 ms
+jena large q2_customer_orders: 747.526 ms
+jena large q3_join_3_entities: 111.66 ms
+jena large q4_optional_aggregation: 743.916 ms
+jena large q5_construct: 150.012 ms
+jena large q6_delete_insert: {'status': 'ok', 'ms': 187.162}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/large/jena.json
+=== trainmarks large on graphdb (2026-11-19T02:34:35+00:00)
+loading trainmarks-large into graphdb
+graphdb large q1_count: 213.167 ms
+graphdb large q2_customer_orders: 476.36 ms
+graphdb large q3_join_3_entities: 88.151 ms
+graphdb large q4_optional_aggregation: 689.934 ms
+graphdb large q5_construct: 362.297 ms
+graphdb large q6_delete_insert: {'status': 'ok', 'ms': 418.851}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/large/graphdb.json
+=== trainmarks large on maplib (2026-11-19T02:35:29+00:00)
+loading trainmarks-large into maplib
+maplib large q1_count: 70.584 ms
+maplib large q2_customer_orders: 17.898 ms
+maplib large q3_join_3_entities: 24.742 ms
+maplib large q4_optional_aggregation: 17.322 ms
+maplib large q5_construct: 114.957 ms
+maplib large q6_delete_insert: {'status': 'ok', 'ms': 21.099}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/large/maplib.json
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/report.md
+=== done (2026-11-19T02:35:35+00:00)

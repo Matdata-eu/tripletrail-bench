@@ -1,0 +1,144 @@
+{
+ "engine": "maplib",
+ "scale": "xlarge",
+ "triples": 9995000,
+ "warm_runs": 5,
+ "queries": {
+  "q1_count": {
+   "runs": [
+    525.421,
+    522.162,
+    523.116,
+    522.578,
+    522.792,
+    522.65,
+    525.963
+   ],
+   "rows": 1,
+   "first_row": [
+    "9995000"
+   ],
+   "status": "ok",
+   "cold_ms": 525.421,
+   "warm": {
+    "n": 5,
+    "median_ms": 522.792,
+    "min_ms": 522.578,
+    "max_ms": 525.963
+   }
+  },
+  "q2_customer_orders": {
+   "runs": [
+    106.942,
+    94.243,
+    97.566,
+    101.629,
+    94.787,
+    88.287,
+    93.429
+   ],
+   "rows": 20,
+   "first_row": [
+    "Quinn Larsen",
+    "5413",
+    "13698872.59"
+   ],
+   "status": "ok",
+   "cold_ms": 106.942,
+   "warm": {
+    "n": 5,
+    "median_ms": 94.787,
+    "min_ms": 88.287,
+    "max_ms": 101.629
+   }
+  },
+  "q3_join_3_entities": {
+   "runs": [
+    165.207,
+    148.116,
+    149.269,
+    136.279,
+    131.391,
+    124.485,
+    124.238
+   ],
+   "rows": 50,
+   "first_row": [
+    "Frank Pedersen",
+    "completed",
+    "4999.98",
+    "Product-4924"
+   ],
+   "status": "ok",
+   "cold_ms": 165.207,
+   "warm": {
+    "n": 5,
+    "median_ms": 131.391,
+    "min_ms": 124.238,
+    "max_ms": 149.269
+   }
+  },
+  "q4_optional_aggregation": {
+   "runs": [
+    152.267,
+    162.589,
+    157.07,
+    158.575,
+    230.354,
+    159.56,
+    153.708
+   ],
+   "rows": 50,
+   "first_row": [
+    "70872508.53",
+    "2103",
+    "http://benchmark.example/France",
+    "28110"
+   ],
+   "status": "ok",
+   "cold_ms": 152.267,
+   "warm": {
+    "n": 5,
+    "median_ms": 158.575,
+    "min_ms": 153.708,
+    "max_ms": 230.354
+   }
+  },
+  "q5_construct": {
+   "runs": [
+    804.502,
+    775.713,
+    721.839,
+    746.756,
+    710.784,
+    695.952,
+    699.672
+   ],
+   "rows": 439240,
+   "first_row": [
+    "<http://benchmark.example/C000011> <http://benchmark.example/country> <http://benchmark.example/Norway> ."
+   ],
+   "status": "ok",
+   "cold_ms": 804.502,
+   "warm": {
+    "n": 5,
+    "median_ms": 710.784,
+    "min_ms": 695.952,
+    "max_ms": 746.756
+   }
+  },
+  "q6_delete_insert": {
+   "status": "ok",
+   "ms": 43.154
+  }
+ },
+ "load": {
+  "engine": "maplib",
+  "dataset": "trainmarks-xlarge",
+  "load_s": 15.749,
+  "start_s": 1.011,
+  "disk_bytes": 0,
+  "load_peak_rss_bytes": 3637919744,
+  "in_memory": true
+ }
+}

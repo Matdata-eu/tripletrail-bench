@@ -1,0 +1,10 @@
+{
+ "engine": "qlever",
+ "qid": "agg_union_buffers",
+ "family": "4 aggregate",
+ "kind": "scalars",
+ "runs": [],
+ "status": "n/a",
+ "reason": "geof:buffer and geof:aggUnion are not supported by QLever",
+ "dataset": "large"
+}

@@ -1,0 +1,746 @@
+{
+ "engine": "qlever",
+ "qid": "knn_ops",
+ "family": "2 knn",
+ "kind": "ranked",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 18.816,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/3015",
+     "http://example.org/rinf-synth/op/3016",
+     "http://example.org/rinf-synth/op/350",
+     "http://example.org/rinf-synth/op/3712",
+     "http://example.org/rinf-synth/op/349",
+     "http://example.org/rinf-synth/op/3017",
+     "http://example.org/rinf-synth/op/351",
+     "http://example.org/rinf-synth/op/425",
+     "http://example.org/rinf-synth/op/3014",
+     "http://example.org/rinf-synth/op/3736"
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 17.232,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/433",
+     "http://example.org/rinf-synth/op/432",
+     "http://example.org/rinf-synth/op/3167",
+     "http://example.org/rinf-synth/op/434",
+     "http://example.org/rinf-synth/op/3738",
+     "http://example.org/rinf-synth/op/3166",
+     "http://example.org/rinf-synth/op/3168",
+     "http://example.org/rinf-synth/op/431",
+     "http://example.org/rinf-synth/op/3165",
+     "http://example.org/rinf-synth/op/3242"
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 17.231,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/3171",
+     "http://example.org/rinf-synth/op/506",
+     "http://example.org/rinf-synth/op/3172",
+     "http://example.org/rinf-synth/op/3762",
+     "http://example.org/rinf-synth/op/507",
+     "http://example.org/rinf-synth/op/505",
+     "http://example.org/rinf-synth/op/3170",
+     "http://example.org/rinf-synth/op/3173",
+     "http://example.org/rinf-synth/op/508",
+     "http://example.org/rinf-synth/op/504"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 17.276,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/2713",
+     "http://example.org/rinf-synth/op/2714",
+     "http://example.org/rinf-synth/op/2712",
+     "http://example.org/rinf-synth/op/3684",
+     "http://example.org/rinf-synth/op/264",
+     "http://example.org/rinf-synth/op/263",
+     "http://example.org/rinf-synth/op/3708",
+     "http://example.org/rinf-synth/op/339",
+     "http://example.org/rinf-synth/op/265",
+     "http://example.org/rinf-synth/op/338"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 18.984,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/3121",
+     "http://example.org/rinf-synth/op/3120",
+     "http://example.org/rinf-synth/op/1103",
+     "http://example.org/rinf-synth/op/3953",
+     "http://example.org/rinf-synth/op/3122",
+     "http://example.org/rinf-synth/op/1102",
+     "http://example.org/rinf-synth/op/3119",
+     "http://example.org/rinf-synth/op/1104",
+     "http://example.org/rinf-synth/op/1178",
+     "http://example.org/rinf-synth/op/3977"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 17.766,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/3169",
+     "http://example.org/rinf-synth/op/3168",
+     "http://example.org/rinf-synth/op/3170",
+     "http://example.org/rinf-synth/op/431",
+     "http://example.org/rinf-synth/op/3738",
+     "http://example.org/rinf-synth/op/506",
+     "http://example.org/rinf-synth/op/430",
+     "http://example.org/rinf-synth/op/432",
+     "http://example.org/rinf-synth/op/3762",
+     "http://example.org/rinf-synth/op/3167"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 6,
+   "ms": 18.079,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/1340",
+     "http://example.org/rinf-synth/op/1339",
+     "http://example.org/rinf-synth/op/3429",
+     "http://example.org/rinf-synth/op/4029",
+     "http://example.org/rinf-synth/op/3428",
+     "http://example.org/rinf-synth/op/1341",
+     "http://example.org/rinf-synth/op/3430",
+     "http://example.org/rinf-synth/op/1338",
+     "http://example.org/rinf-synth/op/3427",
+     "http://example.org/rinf-synth/op/3431"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 7,
+   "ms": 17.841,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/2045",
+     "http://example.org/rinf-synth/op/463",
+     "http://example.org/rinf-synth/op/462",
+     "http://example.org/rinf-synth/op/2044",
+     "http://example.org/rinf-synth/op/3747",
+     "http://example.org/rinf-synth/op/2046",
+     "http://example.org/rinf-synth/op/464",
+     "http://example.org/rinf-synth/op/461",
+     "http://example.org/rinf-synth/op/2043",
+     "http://example.org/rinf-synth/op/388"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 8,
+   "ms": 17.597,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/1903",
+     "http://example.org/rinf-synth/op/680",
+     "http://example.org/rinf-synth/op/1904",
+     "http://example.org/rinf-synth/op/1902",
+     "http://example.org/rinf-synth/op/605",
+     "http://example.org/rinf-synth/op/679",
+     "http://example.org/rinf-synth/op/604",
+     "http://example.org/rinf-synth/op/1828",
+     "http://example.org/rinf-synth/op/3817",
+     "http://example.org/rinf-synth/op/3793"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 9,
+   "ms": 17.117,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/1674",
+     "http://example.org/rinf-synth/op/1675",
+     "http://example.org/rinf-synth/op/4135",
+     "http://example.org/rinf-synth/op/1676",
+     "http://example.org/rinf-synth/op/2394",
+     "http://example.org/rinf-synth/op/4136",
+     "http://example.org/rinf-synth/op/2393",
+     "http://example.org/rinf-synth/op/2469",
+     "http://example.org/rinf-synth/op/2468",
+     "http://example.org/rinf-synth/op/2395"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 10,
+   "ms": 17.644,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/70",
+     "http://example.org/rinf-synth/op/71",
+     "http://example.org/rinf-synth/op/69",
+     "http://example.org/rinf-synth/op/3623",
+     "http://example.org/rinf-synth/op/3528",
+     "http://example.org/rinf-synth/op/3527",
+     "http://example.org/rinf-synth/op/3529",
+     "http://example.org/rinf-synth/op/72",
+     "http://example.org/rinf-synth/op/3622",
+     "http://example.org/rinf-synth/op/3526"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 11,
+   "ms": 17.391,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/313",
+     "http://example.org/rinf-synth/op/312",
+     "http://example.org/rinf-synth/op/314",
+     "http://example.org/rinf-synth/op/3699",
+     "http://example.org/rinf-synth/op/2040",
+     "http://example.org/rinf-synth/op/2039",
+     "http://example.org/rinf-synth/op/2041",
+     "http://example.org/rinf-synth/op/311",
+     "http://example.org/rinf-synth/op/3700",
+     "http://example.org/rinf-synth/op/2115"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 12,
+   "ms": 17.889,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/3531",
+     "http://example.org/rinf-synth/op/147",
+     "http://example.org/rinf-synth/op/3647",
+     "http://example.org/rinf-synth/op/3532",
+     "http://example.org/rinf-synth/op/148",
+     "http://example.org/rinf-synth/op/146",
+     "http://example.org/rinf-synth/op/3530",
+     "http://example.org/rinf-synth/op/3533",
+     "http://example.org/rinf-synth/op/149",
+     "http://example.org/rinf-synth/op/222"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 13,
+   "ms": 17.559,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/184",
+     "http://example.org/rinf-synth/op/183",
+     "http://example.org/rinf-synth/op/2560",
+     "http://example.org/rinf-synth/op/2635",
+     "http://example.org/rinf-synth/op/2559",
+     "http://example.org/rinf-synth/op/2634",
+     "http://example.org/rinf-synth/op/185",
+     "http://example.org/rinf-synth/op/259",
+     "http://example.org/rinf-synth/op/258",
+     "http://example.org/rinf-synth/op/2561"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 14,
+   "ms": 17.947,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/4034",
+     "http://example.org/rinf-synth/op/1359",
+     "http://example.org/rinf-synth/op/2007",
+     "http://example.org/rinf-synth/op/1358",
+     "http://example.org/rinf-synth/op/2006",
+     "http://example.org/rinf-synth/op/2008",
+     "http://example.org/rinf-synth/op/1360",
+     "http://example.org/rinf-synth/op/1357",
+     "http://example.org/rinf-synth/op/2005",
+     "http://example.org/rinf-synth/op/2009"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 15,
+   "ms": 17.315,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/1108",
+     "http://example.org/rinf-synth/op/1109",
+     "http://example.org/rinf-synth/op/1107",
+     "http://example.org/rinf-synth/op/3269",
+     "http://example.org/rinf-synth/op/3955",
+     "http://example.org/rinf-synth/op/3194",
+     "http://example.org/rinf-synth/op/3270",
+     "http://example.org/rinf-synth/op/3954",
+     "http://example.org/rinf-synth/op/3268",
+     "http://example.org/rinf-synth/op/3195"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 16,
+   "ms": 17.607,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/3991",
+     "http://example.org/rinf-synth/op/2375",
+     "http://example.org/rinf-synth/op/1224",
+     "http://example.org/rinf-synth/op/1223",
+     "http://example.org/rinf-synth/op/2376",
+     "http://example.org/rinf-synth/op/2374",
+     "http://example.org/rinf-synth/op/1225",
+     "http://example.org/rinf-synth/op/1222",
+     "http://example.org/rinf-synth/op/2377",
+     "http://example.org/rinf-synth/op/2373"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 17,
+   "ms": 17.504,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/2536",
+     "http://example.org/rinf-synth/op/1531",
+     "http://example.org/rinf-synth/op/2537",
+     "http://example.org/rinf-synth/op/1530",
+     "http://example.org/rinf-synth/op/4089",
+     "http://example.org/rinf-synth/op/2535",
+     "http://example.org/rinf-synth/op/1532",
+     "http://example.org/rinf-synth/op/1529",
+     "http://example.org/rinf-synth/op/2538",
+     "http://example.org/rinf-synth/op/1456"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 18,
+   "ms": 17.411,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/2731",
+     "http://example.org/rinf-synth/op/2730",
+     "http://example.org/rinf-synth/op/2732",
+     "http://example.org/rinf-synth/op/714",
+     "http://example.org/rinf-synth/op/3828",
+     "http://example.org/rinf-synth/op/713",
+     "http://example.org/rinf-synth/op/715",
+     "http://example.org/rinf-synth/op/2729",
+     "http://example.org/rinf-synth/op/789",
+     "http://example.org/rinf-synth/op/3852"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 19,
+   "ms": 17.927,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/1384",
+     "http://example.org/rinf-synth/op/1383",
+     "http://example.org/rinf-synth/op/2605",
+     "http://example.org/rinf-synth/op/2606",
+     "http://example.org/rinf-synth/op/2680",
+     "http://example.org/rinf-synth/op/1309",
+     "http://example.org/rinf-synth/op/2681",
+     "http://example.org/rinf-synth/op/1308",
+     "http://example.org/rinf-synth/op/2604",
+     "http://example.org/rinf-synth/op/1385"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 20,
+   "ms": 17.618,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/179",
+     "http://example.org/rinf-synth/op/2483",
+     "http://example.org/rinf-synth/op/178",
+     "http://example.org/rinf-synth/op/3657",
+     "http://example.org/rinf-synth/op/2482",
+     "http://example.org/rinf-synth/op/180",
+     "http://example.org/rinf-synth/op/2484",
+     "http://example.org/rinf-synth/op/177",
+     "http://example.org/rinf-synth/op/2481",
+     "http://example.org/rinf-synth/op/2485"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 21,
+   "ms": 17.541,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/2424",
+     "http://example.org/rinf-synth/op/3776",
+     "http://example.org/rinf-synth/op/551",
+     "http://example.org/rinf-synth/op/2425",
+     "http://example.org/rinf-synth/op/552",
+     "http://example.org/rinf-synth/op/550",
+     "http://example.org/rinf-synth/op/2423",
+     "http://example.org/rinf-synth/op/553",
+     "http://example.org/rinf-synth/op/2426",
+     "http://example.org/rinf-synth/op/549"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 22,
+   "ms": 20.749,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/2319",
+     "http://example.org/rinf-synth/op/2320",
+     "http://example.org/rinf-synth/op/4134",
+     "http://example.org/rinf-synth/op/1670",
+     "http://example.org/rinf-synth/op/1671",
+     "http://example.org/rinf-synth/op/2321",
+     "http://example.org/rinf-synth/op/4158",
+     "http://example.org/rinf-synth/op/1745",
+     "http://example.org/rinf-synth/op/1669",
+     "http://example.org/rinf-synth/op/1746"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 23,
+   "ms": 17.526,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/2622",
+     "http://example.org/rinf-synth/op/2623",
+     "http://example.org/rinf-synth/op/4162",
+     "http://example.org/rinf-synth/op/1757",
+     "http://example.org/rinf-synth/op/2621",
+     "http://example.org/rinf-synth/op/1758",
+     "http://example.org/rinf-synth/op/2624",
+     "http://example.org/rinf-synth/op/1756",
+     "http://example.org/rinf-synth/op/2620",
+     "http://example.org/rinf-synth/op/1759"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 24,
+   "ms": 17.696,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/901",
+     "http://example.org/rinf-synth/op/900",
+     "http://example.org/rinf-synth/op/902",
+     "http://example.org/rinf-synth/op/1840",
+     "http://example.org/rinf-synth/op/976",
+     "http://example.org/rinf-synth/op/1841",
+     "http://example.org/rinf-synth/op/1839",
+     "http://example.org/rinf-synth/op/975",
+     "http://example.org/rinf-synth/op/977",
+     "http://example.org/rinf-synth/op/3888"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 25,
+   "ms": 17.598,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/3731",
+     "http://example.org/rinf-synth/op/2643",
+     "http://example.org/rinf-synth/op/410",
+     "http://example.org/rinf-synth/op/411",
+     "http://example.org/rinf-synth/op/2642",
+     "http://example.org/rinf-synth/op/2644",
+     "http://example.org/rinf-synth/op/409",
+     "http://example.org/rinf-synth/op/412",
+     "http://example.org/rinf-synth/op/2641",
+     "http://example.org/rinf-synth/op/2645"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 26,
+   "ms": 17.365,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/2856",
+     "http://example.org/rinf-synth/op/3638",
+     "http://example.org/rinf-synth/op/119",
+     "http://example.org/rinf-synth/op/120",
+     "http://example.org/rinf-synth/op/2857",
+     "http://example.org/rinf-synth/op/118",
+     "http://example.org/rinf-synth/op/2855",
+     "http://example.org/rinf-synth/op/121",
+     "http://example.org/rinf-synth/op/2858",
+     "http://example.org/rinf-synth/op/117"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 27,
+   "ms": 17.529,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/3132",
+     "http://example.org/rinf-synth/op/4049",
+     "http://example.org/rinf-synth/op/1403",
+     "http://example.org/rinf-synth/op/1404",
+     "http://example.org/rinf-synth/op/3133",
+     "http://example.org/rinf-synth/op/3131",
+     "http://example.org/rinf-synth/op/1402",
+     "http://example.org/rinf-synth/op/1405",
+     "http://example.org/rinf-synth/op/3134",
+     "http://example.org/rinf-synth/op/3130"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 28,
+   "ms": 17.329,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/871",
+     "http://example.org/rinf-synth/op/870",
+     "http://example.org/rinf-synth/op/872",
+     "http://example.org/rinf-synth/op/2885",
+     "http://example.org/rinf-synth/op/3878",
+     "http://example.org/rinf-synth/op/2960",
+     "http://example.org/rinf-synth/op/2884",
+     "http://example.org/rinf-synth/op/3879",
+     "http://example.org/rinf-synth/op/2959",
+     "http://example.org/rinf-synth/op/2886"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 29,
+   "ms": 17.807,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/1855",
+     "http://example.org/rinf-synth/op/1856",
+     "http://example.org/rinf-synth/op/1352",
+     "http://example.org/rinf-synth/op/1351",
+     "http://example.org/rinf-synth/op/4032",
+     "http://example.org/rinf-synth/op/1854",
+     "http://example.org/rinf-synth/op/1353",
+     "http://example.org/rinf-synth/op/1857",
+     "http://example.org/rinf-synth/op/1277",
+     "http://example.org/rinf-synth/op/1276"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 30,
+   "ms": 18.485,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/787",
+     "http://example.org/rinf-synth/op/786",
+     "http://example.org/rinf-synth/op/788",
+     "http://example.org/rinf-synth/op/3851",
+     "http://example.org/rinf-synth/op/2658",
+     "http://example.org/rinf-synth/op/2657",
+     "http://example.org/rinf-synth/op/785",
+     "http://example.org/rinf-synth/op/3852",
+     "http://example.org/rinf-synth/op/2733",
+     "http://example.org/rinf-synth/op/2732"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 31,
+   "ms": 17.335,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/3384",
+     "http://example.org/rinf-synth/op/216",
+     "http://example.org/rinf-synth/op/217",
+     "http://example.org/rinf-synth/op/3669",
+     "http://example.org/rinf-synth/op/3385",
+     "http://example.org/rinf-synth/op/3383",
+     "http://example.org/rinf-synth/op/215",
+     "http://example.org/rinf-synth/op/218",
+     "http://example.org/rinf-synth/op/3386",
+     "http://example.org/rinf-synth/op/3382"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 32,
+   "ms": 17.462,
+   "ok": true,
+   "rows": 10,
+   "result": {
+    "n": 10,
+    "ids": [
+     "http://example.org/rinf-synth/op/2834",
+     "http://example.org/rinf-synth/op/1467",
+     "http://example.org/rinf-synth/op/2833",
+     "http://example.org/rinf-synth/op/4069",
+     "http://example.org/rinf-synth/op/1468",
+     "http://example.org/rinf-synth/op/2832",
+     "http://example.org/rinf-synth/op/1392",
+     "http://example.org/rinf-synth/op/1466",
+     "http://example.org/rinf-synth/op/4045",
+     "http://example.org/rinf-synth/op/1469"
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 18.816,
+ "warm": {
+  "n": 30,
+  "p50_ms": 17.598,
+  "p95_ms": 18.984,
+  "min_ms": 17.117,
+  "max_ms": 20.749,
+  "mean_ms": 17.763
+ },
+ "dataset": "small",
+ "rss_after": "48.61MiB / 61.31GiB"
+}

@@ -1,0 +1,142 @@
+{
+ "engine": "oxigraph",
+ "scale": "large",
+ "triples": 1001000,
+ "warm_runs": 5,
+ "queries": {
+  "q1_count": {
+   "runs": [
+    349.445,
+    275.144,
+    281.808,
+    282.41,
+    278.631,
+    278.22,
+    282.275
+   ],
+   "rows": 1,
+   "first_row": [
+    "1001000"
+   ],
+   "status": "ok",
+   "cold_ms": 349.445,
+   "warm": {
+    "n": 5,
+    "median_ms": 281.808,
+    "min_ms": 278.22,
+    "max_ms": 282.41
+   }
+  },
+  "q2_customer_orders": {
+   "runs": [
+    1038.173,
+    1036.269,
+    1067.771,
+    1035.236,
+    1035.237,
+    1048.91,
+    1029.398
+   ],
+   "rows": 20,
+   "first_row": [
+    "Eve Andersen",
+    "663",
+    "1723710.63"
+   ],
+   "status": "ok",
+   "cold_ms": 1038.173,
+   "warm": {
+    "n": 5,
+    "median_ms": 1035.237,
+    "min_ms": 1029.398,
+    "max_ms": 1067.771
+   }
+  },
+  "q3_join_3_entities": {
+   "runs": [
+    229.31,
+    223.606,
+    222.442,
+    252.428,
+    249.952,
+    224.22,
+    222.678
+   ],
+   "rows": 50,
+   "first_row": [
+    "Charlie Larsen",
+    "Product-570",
+    "4999.21",
+    "completed"
+   ],
+   "status": "ok",
+   "cold_ms": 229.31,
+   "warm": {
+    "n": 5,
+    "median_ms": 224.22,
+    "min_ms": 222.442,
+    "max_ms": 252.428
+   }
+  },
+  "q4_optional_aggregation": {
+   "runs": [
+    806.343,
+    810.287,
+    805.551,
+    809.635,
+    808.527,
+    807.437,
+    805.097
+   ],
+   "rows": 50,
+   "first_row": [
+    "http://benchmark.example/Canada",
+    "http://benchmark.example/Enterprise",
+    "227",
+    "3085"
+   ],
+   "status": "ok",
+   "cold_ms": 806.343,
+   "warm": {
+    "n": 5,
+    "median_ms": 807.437,
+    "min_ms": 805.097,
+    "max_ms": 809.635
+   }
+  },
+  "q5_construct": {
+   "runs": [
+    414.246,
+    408.531,
+    412.812,
+    440.968,
+    426.223,
+    407.808,
+    433.292
+   ],
+   "rows": 43091,
+   "first_row": [
+    "<http://benchmark.example/C000003> <http://benchmark.example/country> <http://benchmark.example/Norway> ."
+   ],
+   "status": "ok",
+   "cold_ms": 414.246,
+   "warm": {
+    "n": 5,
+    "median_ms": 426.223,
+    "min_ms": 407.808,
+    "max_ms": 440.968
+   }
+  },
+  "q6_delete_insert": {
+   "status": "ok",
+   "ms": 59.747
+  }
+ },
+ "load": {
+  "engine": "oxigraph",
+  "dataset": "trainmarks-large",
+  "load_s": 1.41,
+  "start_s": 0.952,
+  "disk_bytes": 131722300
+ }
+}

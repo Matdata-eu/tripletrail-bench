@@ -1,0 +1,142 @@
+{
+ "engine": "oxigraph",
+ "scale": "medium",
+ "triples": 98000,
+ "warm_runs": 5,
+ "queries": {
+  "q1_count": {
+   "runs": [
+    63.775,
+    26.271,
+    26.796,
+    25.496,
+    25.282,
+    26.179,
+    26.022
+   ],
+   "rows": 1,
+   "first_row": [
+    "98000"
+   ],
+   "status": "ok",
+   "cold_ms": 63.775,
+   "warm": {
+    "n": 5,
+    "median_ms": 26.022,
+    "min_ms": 25.282,
+    "max_ms": 26.796
+   }
+  },
+  "q2_customer_orders": {
+   "runs": [
+    81.395,
+    80.945,
+    83.024,
+    83.062,
+    82.824,
+    82.192,
+    84.189
+   ],
+   "rows": 20,
+   "first_row": [
+    "Paul Nilsen",
+    "112",
+    "295454.06999999995"
+   ],
+   "status": "ok",
+   "cold_ms": 81.395,
+   "warm": {
+    "n": 5,
+    "median_ms": 83.024,
+    "min_ms": 82.192,
+    "max_ms": 84.189
+   }
+  },
+  "q3_join_3_entities": {
+   "runs": [
+    19.129,
+    18.307,
+    18.171,
+    17.862,
+    18.007,
+    18.171,
+    18.014
+   ],
+   "rows": 50,
+   "first_row": [
+    "Frank Berg",
+    "Product-106",
+    "4999.47",
+    "completed"
+   ],
+   "status": "ok",
+   "cold_ms": 19.129,
+   "warm": {
+    "n": 5,
+    "median_ms": 18.014,
+    "min_ms": 17.862,
+    "max_ms": 18.171
+   }
+  },
+  "q4_optional_aggregation": {
+   "runs": [
+    59.393,
+    59.591,
+    59.035,
+    58.486,
+    58.742,
+    59.458,
+    59.776
+   ],
+   "rows": 50,
+   "first_row": [
+    "http://benchmark.example/Germany",
+    "http://benchmark.example/SMB",
+    "24",
+    "347"
+   ],
+   "status": "ok",
+   "cold_ms": 59.393,
+   "warm": {
+    "n": 5,
+    "median_ms": 59.035,
+    "min_ms": 58.486,
+    "max_ms": 59.776
+   }
+  },
+  "q5_construct": {
+   "runs": [
+    35.051,
+    32.513,
+    30.398,
+    31.087,
+    30.75,
+    31.294,
+    30.48
+   ],
+   "rows": 3878,
+   "first_row": [
+    "<http://benchmark.example/C000004> <http://benchmark.example/country> <http://benchmark.example/Norway> ."
+   ],
+   "status": "ok",
+   "cold_ms": 35.051,
+   "warm": {
+    "n": 5,
+    "median_ms": 30.75,
+    "min_ms": 30.398,
+    "max_ms": 31.294
+   }
+  },
+  "q6_delete_insert": {
+   "status": "ok",
+   "ms": 5.336
+  }
+ },
+ "load": {
+  "engine": "oxigraph",
+  "dataset": "trainmarks-medium",
+  "load_s": 0.789,
+  "start_s": 0.969,
+  "disk_bytes": 13406746
+ }
+}
