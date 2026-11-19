@@ -148,7 +148,9 @@ UNDO = f"DELETE WHERE {{ ?n a <{NS}Derived> ; ?p ?v }}"
 
 
 def count(cl, where="?s ?p ?o"):
-    _, rows = cl.query(f"SELECT (COUNT(*) AS ?n) WHERE {{ {where} }}", TIMEOUT)
+    # The alias must not be a variable of the pattern (the derive check counts ?n): SPARQL
+    # forbids that, and GraphDB rejects it ("projection alias 'n' was previously used").
+    _, rows = cl.query(f"SELECT (COUNT(*) AS ?count_) WHERE {{ {where} }}", TIMEOUT)
     return int(rows[0][0])
 
 
