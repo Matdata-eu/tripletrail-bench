@@ -65,7 +65,7 @@ const el = (tag, attrs = {}, ...kids) => {
     else if (k === "class") e.className = v;
     else e.setAttribute(k, v);
   }
-  for (const k of kids.flat()) if (k != null && k !== false) e.append(k);
+  for (const k of kids.flat(Infinity)) if (k != null && k !== false) e.append(k);
   return e;
 };
 const b = (text) => el("b", { text });
@@ -347,6 +347,44 @@ function bsbm(D) {
   };
 }
 
+const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
+const ratioText = (r) => r >= 1 ? `${times(r)} faster than` : `${times(1 / r)} slower than`;
+
+// Trainmarks: geometric mean of the warm medians of the read queries (the update left out).
+function tmGeo(D, scale) {
+  const q = D.tq.filter((r) => r.scale === scale);
+  const isRead = (r) => !/delete|insert|update/i.test(r.query);
+  const reads = q.filter((r) => isRead(r) && num(r.warm_ms));
+  const nq = uniq(q.filter(isRead).map((r) => r.query)).length;
+  return inOrder(uniq(reads.map((r) => r.engine)).map((e) => {
+    const rs = reads.filter((r) => r.engine === e);
+    return { engine: e, geomean_ms: gmean(rs.map((r) => num(r.warm_ms))), answered: rs.length, of: nq };
+  }));
+}
+
+// Spatial: answered queries of one dataset, and two ways to compare engines on them.
+const spOk = (q) => q.filter((r) => (r.status || "ok") === "ok" && num(r.p50_ms));
+// Over the queries every engine answered, so each engine is timed on the same questions.
+function spCommon(q) {
+  const ok = spOk(q);
+  const engines = ordered(q.map((r) => r.engine), ENGINES);
+  const common = uniq(ok.map((r) => r.query)).filter((qq) => engines.every((e) => ok.some((r) => r.query === qq && r.engine === e)));
+  const geo = engines.map((e) => ({ engine: e, geomean_ms: gmean(ok.filter((r) => r.engine === e && common.includes(r.query)).map((r) => num(r.p50_ms))), n: common.length }))
+    .filter((r) => r.geomean_ms != null);
+  return { common, geo };
+}
+// Pairwise: TripleTrail against each engine over the queries both answered (as summary.py does).
+function spPairwise(q) {
+  const ok = spOk(q);
+  const time = (e, qq) => num(ok.find((r) => r.engine === e && r.query === qq)?.p50_ms);
+  return ordered(ok.map((r) => r.engine), ENGINES).filter((e) => e !== OURS).map((e) => {
+    const both = uniq(ok.map((r) => r.query)).filter((qq) => time(OURS, qq) && time(e, qq));
+    if (!both.length) return null;
+    const ours = gmean(both.map((qq) => time(OURS, qq))), theirs = gmean(both.map((qq) => time(e, qq)));
+    return { engine: e, n: both.length, ours, theirs, speedup: theirs / ours };
+  }).filter(Boolean);
+}
+
 function trainmarks(D) {
   if (!D.tload.length && !D.tq.length) return null;
   return {
@@ -355,12 +393,7 @@ function trainmarks(D) {
     build(scale) {
       const loads = inOrder(D.tload.filter((r) => r.scale === scale).map((r) => ({ engine: r.engine, load_s: num(r.load_s) })));
       const q = D.tq.filter((r) => r.scale === scale);
-      const reads = q.filter((r) => !/delete|insert|update/i.test(r.query) && num(r.warm_ms));
-      const nq = uniq(q.filter((r) => !/delete|insert|update/i.test(r.query)).map((r) => r.query)).length;
-      const geo = inOrder(uniq(reads.map((r) => r.engine)).map((e) => {
-        const rs = reads.filter((r) => r.engine === e);
-        return { engine: e, geomean_ms: gmean(rs.map((r) => num(r.warm_ms))), answered: rs.length, of: nq };
-      }));
+      const geo = tmGeo(D, scale);
       const perQuery = q.map((r) => ({ group: r.query, engine: r.engine, v: num(r.warm_ms),
         extra: num(r.cold_ms) ? ` (cold ${fmt(num(r.cold_ms))})` : "" }));
       return [
@@ -403,12 +436,11 @@ function spatial(D) {
       const loads = inOrder(D.sload.filter((r) => r.dataset === ds).map((r) => ({
         engine: r.engine, load_s: num(r.load_s), disk_gib: num(r.disk_gib), triples: num(r.triples) })));
       const q = D.squeries.filter((r) => r.dataset === ds);
-      const ok = q.filter((r) => (r.status || "ok") === "ok" && num(r.p50_ms));
+      const ok = spOk(q);
       const engines = ordered(q.map((r) => r.engine), ENGINES);
-      // Over the queries every engine answered, so each engine is timed on the same questions.
-      const common = uniq(ok.map((r) => r.query)).filter((qq) => engines.every((e) => ok.some((r) => r.query === qq && r.engine === e)));
-      const geo = engines.map((e) => ({ engine: e, geomean_ms: gmean(ok.filter((r) => r.engine === e && common.includes(r.query)).map((r) => num(r.p50_ms))), n: common.length }))
-        .filter((r) => r.geomean_ms != null);
+      const { common, geo } = spCommon(q);
+      const pairs = spPairwise(q);
+      const nCommon = plural(common.length, "query", "queries");
       const total = uniq(q.map((r) => r.query)).length;
       const summary = engines.map((e) => {
         const mine = q.filter((r) => r.engine === e);
@@ -433,12 +465,14 @@ function spatial(D) {
       return [
         el("p", { class: "lead" },
           ourLoad?.triples ? ["The dataset holds ", b(Math.round(ourLoad.triples).toLocaleString("en")), " triples. "] : null,
-          versus(geo, { field: "geomean_ms", unit: "ms", what: `Geometric mean of the warm medians over the ${common.length} queries every engine answered:` }),
+          versus(geo, { field: "geomean_ms", unit: "ms", what: `Geometric mean of the warm medians over the ${nCommon} every engine answered:` }),
+          pairs.length ? ["Pairwise, over the queries TripleTrail and each engine both answered (routing only runs on PostGIS), TripleTrail is ",
+            pairs.flatMap((p, i) => [i ? (i === pairs.length - 1 ? " and " : ", ") : "", b(ratioText(p.speedup)), ` ${name(p.engine)} (${plural(p.n, "query", "queries")})`]), ". "] : null,
           versus(loads, { field: "load_s", unit: "s", what: "Load:" }),
           "Lower is better."),
         provLine(D.prov, "v2", ds),
         grid("three",
-          card("sp-geomean", "Geometric mean per engine", `Warm medians, ms, over the ${common.length} queries every engine answered.`,
+          card("sp-geomean", "Geometric mean per engine", `Warm medians, ms, over the ${nCommon} every engine answered.`,
             bars(geo.map((r) => ({ ...r, v: r.geomean_ms })), { label: (r) => `${fmt(r.v)} ms`, empty: "No query every engine answered",
               tip: (r) => [[null, "Geometric mean", `${fmt(r.v)} ms`], [null, "Over queries", String(r.n)]] })),
           card("sp-load", "Load time", "Bulk load into the engine's store, seconds. PostGIS loads tables, not triples.",
@@ -476,15 +510,37 @@ const SUITES = {
   sparqloscope_geomean_ms: ["Sparqloscope, query time", "sparqloscope", (d) => d],
   bsbm_qmph: ["BSBM, query mixes per hour", "bsbm", (d) => d.split(" ")[0]],
   trainmarks_load_s: ["Trainmarks, load", "trainmarks", (d) => d],
+  trainmarks_queries: ["Trainmarks, query time", "trainmarks", (d) => d],
   spatial_queries_p50_ms: ["Spatial, query time", "spatial", (d) => d],
   spatial_load_s: ["Spatial, load", "spatial", (d) => d],
 };
 const LABELS = { sparqloscope: SQ_SIZES, bsbm: BSBM_SIZES, trainmarks: TM_SIZES, spatial: SP_SIZES };
 
-function overview(summary, suites) {
+// Rows the page works out from the CSV files itself, the same way as on the suite's tab.
+function computedItems(D, suite) {
+  if (suite === "trainmarks_queries") {
+    // Engines that answered every read query, as in the Trainmarks tab's lead.
+    return ordered(D.tq.map((r) => r.scale), Object.keys(TM_SIZES)).map((scale) => {
+      const geo = tmGeo(D, scale).filter((r) => r.answered === r.of);
+      const ours = geo.find((r) => r.engine === OURS);
+      if (!ours) return null;
+      return { dataset: scale, others: Object.fromEntries(geo.filter((r) => r.engine !== OURS)
+        .map((r) => [r.engine, { speedup: r.geomean_ms / ours.geomean_ms }])) };
+    }).filter(Boolean);
+  }
+  if (suite === "spatial_queries_p50_ms") {
+    return ordered(D.squeries.map((r) => r.dataset), Object.keys(SP_SIZES)).map((ds) => ({
+      dataset: ds, others: Object.fromEntries(spPairwise(D.squeries.filter((r) => r.dataset === ds))
+        .map((p) => [p.engine, { speedup: p.speedup, n: p.n }])),
+    }));
+  }
+  return null;
+}
+
+function overview(summary, D) {
   const rows = [];
   for (const [suite, [label, tab, sizeOf]] of Object.entries(SUITES)) {
-    for (const item of (summary.suites || {})[suite] || []) {
+    for (const item of computedItems(D, suite) || (summary.suites || {})[suite] || []) {
       const size = sizeOf(item.dataset);
       const rest = item.dataset.slice(size.length).trim();
       rows.push({ label, tab, size, what: `${LABELS[tab][size] || size}${rest ? ` · ${rest}` : ""}`, others: item.others || {} });
@@ -512,11 +568,36 @@ function overview(summary, suites) {
         { label: "Dataset", l: true, get: (r) => el("a", { href: `#${r.tab}/${r.size}`, text: r.what }) },
         ...engines.map((e) => ({
           label: name(e),
-          get: (r) => r.others[e] ? times(r.others[e].speedup) : "–",
+          get: (r) => r.others[e] ? times(r.others[e].speedup) + (r.others[e].n ? ` (${r.others[e].n})` : "") : "–",
           cls: (r) => !r.others[e] ? "na" : r.others[e].speedup >= 1 ? "up" : "down",
         })),
-      ])),
+      ]),
+      spatialNote(D)),
   ];
+}
+
+// Spatial query time in the table is pairwise; the Spatial tab also compares all engines on the
+// queries every one of them answered. Where the two disagree, say so with both numbers.
+function spatialNote(D) {
+  const flips = [];
+  for (const ds of ordered(D.squeries.map((r) => r.dataset), Object.keys(SP_SIZES))) {
+    const q = D.squeries.filter((r) => r.dataset === ds);
+    const { common, geo } = spCommon(q);
+    const ours = geo.find((r) => r.engine === OURS);
+    if (!ours) continue;
+    for (const p of spPairwise(q)) {
+      const g = geo.find((r) => r.engine === p.engine);
+      if (!g) continue;
+      const all = g.geomean_ms / ours.geomean_ms;
+      if ((all >= 1) !== (p.speedup >= 1)) {
+        flips.push([`${SP_SIZES[ds] || ds}: TripleTrail is `, b(ratioText(p.speedup)), ` ${name(p.engine)} pairwise over ${plural(p.n, "query", "queries")}, but `,
+          b(ratioText(all)), ` it over the ${plural(common.length, "query", "queries")} every engine answered`]);
+      }
+    }
+  }
+  return el("p", { class: "note", style: "margin-top:10px" },
+    "Spatial query time is pairwise: each cell is over the queries TripleTrail and that engine both answered (their number in brackets). For PostGIS that includes routing, which the RDF engines do not run. The Spatial tab also compares every engine on only the queries all of them answered, which can give the opposite result. ",
+    flips.length ? ["Where it does: ", flips.flatMap((f, i) => [i ? "; " : "", ...f]), "."] : null);
 }
 
 function runs(D) {
@@ -556,7 +637,7 @@ async function main() {
 
   const suites = [sparqloscope(D), bsbm(D), trainmarks(D), spatial(D)].filter(Boolean);
   const tabs = [];
-  const ov = summary && summary.suites ? overview(summary, suites) : null;
+  const ov = summary && summary.suites ? overview(summary, D) : null;
   if (ov) tabs.push({ id: "overview", label: "Overview", build: () => ov });
   for (const s of suites) tabs.push({ id: s.label.toLowerCase(), ...s });
   const rn = runs(D);
