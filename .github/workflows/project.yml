@@ -1,8 +1,17 @@
 # Adds every issue and pull request of this repository to the organisation's
-# TripleTrail project (https://github.com/orgs/Matdata-eu/projects/2).
+# TripleTrail project (https://github.com/orgs/Matdata-eu/projects/2), and
+# mirrors two kinds of labels into the project's fields.
 #
-# - New and reopened issues and pull requests are added as they
-#   come in. The project's own "Item added" workflow then sets their Status.
+# - New and reopened issues and pull requests are added as they come in. The
+#   project's own "Item added" workflow then sets their Status.
+# - Labels set board fields, so anyone who can label an issue can claim it
+#   without access to the project:
+#     worker:<option>  sets Worker, e.g. worker:builder-1, worker:reviewer-even
+#     status:<option>  sets Status, e.g. status:in-progress, status:blocked
+#   <option> is the field option's name in lower case with spaces as dashes.
+#   Removing the last worker: label clears Worker; Status keeps its value
+#   until another status: label or a project workflow changes it. Fields set
+#   by hand on the board are left alone by unrelated labels.
 # - Run it by hand (Actions -> Project -> Run workflow) to add every existing
 #   issue and pull request, open and closed. Adding one that is already on the
 #   project changes nothing, so a second run is harmless.
@@ -18,15 +27,17 @@ name: Project
 
 on:
   issues:
-    types: [opened, reopened]
+    types: [opened, reopened, labeled, unlabeled]
   # pull_request_target so that pull requests from forks get the secret too.
   # The job checks out no code, so nothing from the pull request runs.
   pull_request_target:
-    types: [opened, reopened]
+    types: [opened, reopened, labeled, unlabeled]
   workflow_dispatch:
 
 permissions: {}
 
+# Each run applies the item's whole label set, so when GitHub drops a queued
+# run in favour of a newer one, nothing is lost.
 concurrency:
   group: project-${{ github.event.issue.number || github.event.pull_request.number || 'backfill' }}
 
@@ -50,27 +61,82 @@ jobs:
         with:
           github-token: ${{ env.PROJECT_TOKEN }}
           script: |
-            const project = await github.graphql(
+            const project = (await github.graphql(
               `query($login: String!, $number: Int!) {
-                 organization(login: $login) { projectV2(number: $number) { id } }
+                 organization(login: $login) {
+                   projectV2(number: $number) {
+                     id
+                     fields(first: 50) {
+                       nodes { ... on ProjectV2SingleSelectField { id name options { id name } } }
+                     }
+                   }
+                 }
                }`,
               { login: process.env.PROJECT_OWNER, number: Number(process.env.PROJECT_NUMBER) }
-            );
-            const projectId = project.organization.projectV2.id;
+            )).organization.projectV2;
 
             const add = async (contentId, label) => {
-              await github.graphql(
+              const result = await github.graphql(
                 `mutation($project: ID!, $content: ID!) {
                    addProjectV2ItemById(input: { projectId: $project, contentId: $content }) { item { id } }
                  }`,
-                { project: projectId, content: contentId }
+                { project: project.id, content: contentId }
               );
               core.info(`added ${label}`);
+              return result.addProjectV2ItemById.item.id;
+            };
+
+            const slug = (name) => name.trim().toLowerCase().replace(/\s+/g, '-');
+            const field = (name) => project.fields.nodes.find((f) => f.name === name && f.options);
+
+            // Sets a single-select field from the labels with this prefix.
+            // The label this event added wins over older ones. A field set by
+            // hand on the board is left alone unless a label of this kind
+            // changes.
+            const mirror = async (itemId, labels, prefix, fieldName, clearWhenNone) => {
+              const f = field(fieldName);
+              if (!f) {
+                core.warning(`the project has no single-select field ${fieldName}`);
+                return;
+              }
+              const wanted = labels.filter((l) => l.startsWith(prefix));
+              const added = context.payload.label && context.payload.label.name;
+              const pick = wanted.includes(added) ? added : wanted[wanted.length - 1];
+              const removed = context.payload.action === 'unlabeled' && added && added.startsWith(prefix);
+              if (!pick) {
+                if (!clearWhenNone || !removed) return;
+                await github.graphql(
+                  `mutation($project: ID!, $item: ID!, $field: ID!) {
+                     clearProjectV2ItemFieldValue(input: { projectId: $project, itemId: $item, fieldId: $field }) { clientMutationId }
+                   }`,
+                  { project: project.id, item: itemId, field: f.id }
+                );
+                core.info(`${fieldName} cleared`);
+                return;
+              }
+              const option = f.options.find((o) => slug(o.name) === pick.slice(prefix.length));
+              if (!option) {
+                core.warning(`${pick}: ${fieldName} has no such option (${f.options.map((o) => slug(o.name)).join(', ')})`);
+                return;
+              }
+              await github.graphql(
+                `mutation($project: ID!, $item: ID!, $field: ID!, $option: String!) {
+                   updateProjectV2ItemFieldValue(input: {
+                     projectId: $project, itemId: $item, fieldId: $field,
+                     value: { singleSelectOptionId: $option }
+                   }) { clientMutationId }
+                 }`,
+                { project: project.id, item: itemId, field: f.id, option: option.id }
+              );
+              core.info(`${fieldName} set to ${option.name}`);
             };
 
             if (context.eventName !== 'workflow_dispatch') {
               const item = context.payload.issue || context.payload.pull_request;
-              await add(item.node_id, `#${item.number}`);
+              const itemId = await add(item.node_id, `#${item.number}`);
+              const labels = (item.labels || []).map((l) => l.name);
+              await mirror(itemId, labels, 'worker:', 'Worker', true);
+              await mirror(itemId, labels, 'status:', 'Status', false);
               return;
             }
 
