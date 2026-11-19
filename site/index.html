@@ -11,12 +11,14 @@
 <header>
   <div class="wrap">
     <h1>TripleTrail benchmarks</h1>
-    <p class="lede">Every number on this page comes from a run of the
+    <p class="lede">TripleTrail against Oxigraph, QLever, Jena, GraphDB and maplib on three standard
+      SPARQL suites, and against PostGIS, QLever, Jena and GraphDB on its own spatial and routing
+      benchmark. Every number comes from a run of the
       <a href="https://github.com/Matdata-eu/tripletrail-bench/actions/workflows/bench.yml">benchmark workflow</a>
       on a rented server, with its inputs, logs and raw results in
-      <a href="https://github.com/Matdata-eu/tripletrail-bench">the repository</a>.
-      Lower times are better; higher query mixes per hour are better.</p>
-    <nav id="tabs" role="tablist"></nav>
+      <a href="https://github.com/Matdata-eu/tripletrail-bench">the repository</a>.</p>
+    <ul class="legend" id="legend" aria-label="Engines"></ul>
+    <nav id="tabs" role="tablist" aria-label="Benchmark"></nav>
   </div>
 </header>
 <main class="wrap">
@@ -26,6 +28,22 @@
       and the harness are in the <a href="https://github.com/Matdata-eu/tripletrail-bench">repository</a>.</p>
   </div>
   <div id="panels"></div>
+  <details class="method">
+    <summary>How these were measured</summary>
+    <dl>
+      <dt>Machine</dt>
+      <dd>Each tab names the machine, TripleTrail commit and date of its run, from
+        <a href="data/provenance.csv">provenance.csv</a>. One engine at a time, all times at the client over HTTP.</dd>
+      <dt>Sparqloscope</dt>
+      <dd>The benchmark behind the QLever evaluation site: about 100 generated queries per dataset, each isolating one SPARQL feature. One cold run per query after an engine restart.</dd>
+      <dt>BSBM</dt>
+      <dd>Berlin SPARQL Benchmark with its own test driver: warm-up mixes, then timed query mixes from a single client. QMpH is query mixes per hour.</dd>
+      <dt>Trainmarks</dt>
+      <dd>DataTreehouse/trainmarks data and queries run over HTTP; its own site times libraries in-process, so its numbers are not directly comparable.</dd>
+      <dt>Spatial</dt>
+      <dd>TripleTrail's own bench v2: GeoSPARQL selections, nearest neighbours, spatial joins, aggregates, linear referencing, routing and OSM queries, the same questions asked of PostGIS/pgRouting in SQL. Warm figures are medians of several runs after one cold run.</dd>
+    </dl>
+  </details>
 </main>
 <footer class="wrap">
   <p>Engines: <a href="https://github.com/Matdata-eu/tripletrail">TripleTrail</a>, PostGIS, QLever,
