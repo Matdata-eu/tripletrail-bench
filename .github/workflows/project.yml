@@ -9,9 +9,10 @@
 #     worker:<option>  sets Worker, e.g. worker:builder-1, worker:reviewer-even
 #     status:<option>  sets Status, e.g. status:in-progress, status:blocked
 #   <option> is the field option's name in lower case with spaces as dashes.
-#   Removing the last worker: label clears Worker; Status keeps its value
-#   until another status: label or a project workflow changes it. Fields set
-#   by hand on the board are left alone by unrelated labels.
+#   Only the label that changed is synced, so a field set later on the board
+#   (or Done set by the project's own workflow) stays as it is. Removing a
+#   worker: label sets Worker to another worker: label still on the item, or
+#   clears it; removing a status: label changes nothing.
 # - Run it by hand (Actions -> Project -> Run workflow) to add every existing
 #   issue and pull request, open and closed. Adding one that is already on the
 #   project changes nothing, so a second run is harmless.
@@ -36,10 +37,10 @@ on:
 
 permissions: {}
 
-# Each run applies the item's whole label set, so when GitHub drops a queued
-# run in favour of a newer one, nothing is lost.
+# One group per item and label, so two labels added at once both get synced
+# (GitHub drops a queued run when a newer one joins the same group).
 concurrency:
-  group: project-${{ github.event.issue.number || github.event.pull_request.number || 'backfill' }}
+  group: project-${{ github.event.issue.number || github.event.pull_request.number || 'backfill' }}-${{ github.event.label.name || github.event.action }}
 
 env:
   PROJECT_OWNER: Matdata-eu
@@ -89,22 +90,16 @@ jobs:
             const slug = (name) => name.trim().toLowerCase().replace(/\s+/g, '-');
             const field = (name) => project.fields.nodes.find((f) => f.name === name && f.options);
 
-            // Sets a single-select field from the labels with this prefix.
-            // The label this event added wins over older ones. A field set by
-            // hand on the board is left alone unless a label of this kind
-            // changes.
-            const mirror = async (itemId, labels, prefix, fieldName, clearWhenNone) => {
+            // Sets a single-select field to the option a label names, or clears
+            // it when pick is undefined and clearing is allowed.
+            const mirror = async (itemId, pick, prefix, fieldName, clearWhenNone) => {
               const f = field(fieldName);
               if (!f) {
                 core.warning(`the project has no single-select field ${fieldName}`);
                 return;
               }
-              const wanted = labels.filter((l) => l.startsWith(prefix));
-              const added = context.payload.label && context.payload.label.name;
-              const pick = wanted.includes(added) ? added : wanted[wanted.length - 1];
-              const removed = context.payload.action === 'unlabeled' && added && added.startsWith(prefix);
               if (!pick) {
-                if (!clearWhenNone || !removed) return;
+                if (!clearWhenNone) return;
                 await github.graphql(
                   `mutation($project: ID!, $item: ID!, $field: ID!) {
                      clearProjectV2ItemFieldValue(input: { projectId: $project, itemId: $item, fieldId: $field }) { clientMutationId }
@@ -135,8 +130,22 @@ jobs:
               const item = context.payload.issue || context.payload.pull_request;
               const itemId = await add(item.node_id, `#${item.number}`);
               const labels = (item.labels || []).map((l) => l.name);
-              await mirror(itemId, labels, 'worker:', 'Worker', true);
-              await mirror(itemId, labels, 'status:', 'Status', false);
+              const kinds = [['worker:', 'Worker', true], ['status:', 'Status', false]];
+              const changed = context.payload.label && context.payload.label.name;
+              for (const [prefix, fieldName, clearWhenNone] of kinds) {
+                if (context.payload.action === 'opened') {
+                  // Created with labels: apply the last one of each kind.
+                  const pick = labels.filter((l) => l.startsWith(prefix)).pop();
+                  if (pick) await mirror(itemId, pick, prefix, fieldName, false);
+                } else if (changed && changed.startsWith(prefix)) {
+                  if (context.payload.action === 'labeled') {
+                    await mirror(itemId, changed, prefix, fieldName, false);
+                  } else {
+                    const rest = labels.filter((l) => l.startsWith(prefix)).pop();
+                    await mirror(itemId, rest, prefix, fieldName, clearWhenNone);
+                  }
+                }
+              }
               return;
             }
 
