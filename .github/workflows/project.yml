@@ -1,0 +1,87 @@
+# Adds every issue and pull request of this repository to the organisation's
+# TripleTrail project (https://github.com/orgs/Matdata-eu/projects/2).
+#
+# - New, reopened and transferred issues and pull requests are added as they
+#   come in. The project's own "Item added" workflow then sets their Status.
+# - Run it by hand (Actions -> Project -> Run workflow) to add every existing
+#   issue and pull request, open and closed. Adding one that is already on the
+#   project changes nothing, so a second run is harmless.
+#
+# GITHUB_TOKEN cannot write to an organisation project, so this needs the
+# organisation secret PROJECT_TOKEN: a fine-grained personal access token with
+# resource owner Matdata-eu, organisation permission "Projects: Read and write",
+# and repository permissions "Issues: Read" and "Pull requests: Read" on the
+# TripleTrail repositories.
+name: Project
+
+on:
+  issues:
+    types: [opened, reopened, transferred]
+  # pull_request_target so that pull requests from forks get the secret too.
+  # The job checks out no code, so nothing from the pull request runs.
+  pull_request_target:
+    types: [opened, reopened]
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: project-${{ github.event.issue.number || github.event.pull_request.number || 'backfill' }}
+
+env:
+  PROJECT_OWNER: Matdata-eu
+  PROJECT_NUMBER: 2
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PROJECT_TOKEN }}
+          script: |
+            const project = await github.graphql(
+              `query($login: String!, $number: Int!) {
+                 organization(login: $login) { projectV2(number: $number) { id } }
+               }`,
+              { login: process.env.PROJECT_OWNER, number: Number(process.env.PROJECT_NUMBER) }
+            );
+            const projectId = project.organization.projectV2.id;
+
+            const add = async (contentId, label) => {
+              await github.graphql(
+                `mutation($project: ID!, $content: ID!) {
+                   addProjectV2ItemById(input: { projectId: $project, contentId: $content }) { item { id } }
+                 }`,
+                { project: projectId, content: contentId }
+              );
+              core.info(`added ${label}`);
+            };
+
+            if (context.eventName !== 'workflow_dispatch') {
+              const item = context.payload.issue || context.payload.pull_request;
+              await add(item.node_id, `#${item.number}`);
+              return;
+            }
+
+            // Backfill. The issues endpoint lists pull requests too, but under
+            // their issue id, so pull requests come from their own endpoint.
+            const options = { ...context.repo, state: 'all', per_page: 100 };
+            const issues = (await github.paginate(github.rest.issues.listForRepo, options))
+              .filter((issue) => !issue.pull_request);
+            const pulls = await github.paginate(github.rest.pulls.list, options);
+            const items = [...issues, ...pulls].sort((a, b) => a.number - b.number);
+            let failed = 0;
+            for (const item of items) {
+              try {
+                await add(item.node_id, `#${item.number}`);
+                // Stay under GitHub's limit on mutations per minute.
+                await new Promise((resolve) => setTimeout(resolve, 1000));
+              } catch (error) {
+                failed += 1;
+                core.warning(`#${item.number}: ${error.message}`);
+              }
+            }
+            core.notice(`${items.length - failed} of ${items.length} issues and pull requests are on the project`);
+            if (failed) core.setFailed(`${failed} could not be added`);
