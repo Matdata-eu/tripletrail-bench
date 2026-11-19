@@ -1,0 +1,22 @@
+{"products":28480,"triples":9609918}
+{"source": "bsbm-28480", "seed": 42, "source_triples": 9609918, "held_out": 1363500, "base_triples": 8246418, "batches": {"10": 50, "100": 30, "1000": 10, "10000": 5, "100000": 3, "1000000": 1}, "derive": [{"name": "derive-1000", "predicate": "http://xmlns.com/foaf/0.1/homepage", "triples_in_source": 868}, {"name": "derive-10000", "predicate": "http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/productPropertyNumeric4", "triples_in_source": 12835}, {"name": "derive-100000", "predicate": "http://www.w3.org/2000/01/rdf-schema#comment", "triples_in_source": 46139}]}
+=== updates bsbm-28480 on graphdb (2026-11-19T08:10:22+00:00)
+loading updates-bsbm-28480 into graphdb
+graphdb 10 x 50 insert: 3303.584 us/triple, p50 29.345 ms, failed 0, count ok
+graphdb 10 x 50 delete: 1813.616 us/triple, p50 17.255 ms, failed 0, count ok
+graphdb 100 x 30 insert: 696.987 us/triple, p50 74.928 ms, failed 0, count ok
+graphdb 100 x 30 delete: 253.28 us/triple, p50 25.214 ms, failed 0, count ok
+graphdb 1000 x 10 insert: 247.042 us/triple, p50 245.102 ms, failed 0, count ok
+graphdb 1000 x 10 delete: 98.929 us/triple, p50 102.233 ms, failed 0, count ok
+graphdb 10000 x 5 insert: 173.717 us/triple, p50 1644.246 ms, failed 0, count ok
+graphdb 10000 x 5 delete: 68.993 us/triple, p50 700.777 ms, failed 0, count ok
+graphdb 100000 x 3 insert: 67.729 us/triple, p50 6859.241 ms, failed 0, count ok
+graphdb 100000 x 3 delete: 28.261 us/triple, p50 2814.063 ms, failed 0, count ok
+graphdb 1000000 x 1 insert: 33.865 us/triple, p50 33865.446 ms, failed 0, count ok
+graphdb 1000000 x 1 delete: 18.979 us/triple, p50 18978.545 ms, failed 0, count ok
+graphdb derive-1000: 760 rows, insert 221.926 ms, delete 57.633 ms, 760 nodes, count ok
+graphdb derive-10000: 10998 rows, insert 766.472 ms, delete 364.196 ms, 10998 nodes, count ok
+graphdb derive-100000: 39528 rows, insert 2058.729 ms, delete 1083.042 ms, 39528 nodes, count ok
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/updates/bsbm-28480/graphdb.json
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/updates/report.md
+=== done (2026-11-19T08:13:59+00:00)

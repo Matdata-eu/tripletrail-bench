@@ -66,6 +66,14 @@
    "date": "2026-11-18"
   },
   {
+   "suite": "updates",
+   "dataset": "bsbm-28480",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "e36d3ba",
+   "date": "2026-11-19"
+  },
+  {
    "suite": "v2",
    "dataset": "large",
    "machine": "ccx43",
