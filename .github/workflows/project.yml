@@ -8,8 +8,9 @@
 #   project changes nothing, so a second run is harmless.
 #
 # GITHUB_TOKEN cannot write to an organisation project, so this needs the
-# repository secret PROJECT_TOKEN (an organisation secret does not reach the
-# private repositories on the organisation's plan): a fine-grained personal access token with
+# repository secret PROJECT_TOKEN, set in each repository (an organisation
+# secret does not reach private repositories on the organisation's plan): a
+# fine-grained personal access token with
 # resource owner Matdata-eu, organisation permission "Projects: Read and write",
 # and repository permissions "Issues: Read" and "Pull requests: Read" on the
 # TripleTrail repositories.
@@ -37,10 +38,17 @@ jobs:
   add:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env:
+      PROJECT_TOKEN: ${{ secrets.PROJECT_TOKEN }}
     steps:
-      - uses: actions/github-script@v8
+      # Without the secret (not set yet, or a pull request from a fork) the job
+      # passes without doing anything rather than failing every pull request.
+      - if: env.PROJECT_TOKEN == ''
+        run: echo "::notice::PROJECT_TOKEN is not set; nothing added"
+      - if: env.PROJECT_TOKEN != ''
+        uses: actions/github-script@v8
         with:
-          github-token: ${{ secrets.PROJECT_TOKEN }}
+          github-token: ${{ env.PROJECT_TOKEN }}
           script: |
             const project = await github.graphql(
               `query($login: String!, $number: Int!) {
