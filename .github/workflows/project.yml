@@ -1,14 +1,15 @@
 # Adds every issue and pull request of this repository to the organisation's
 # TripleTrail project (https://github.com/orgs/Matdata-eu/projects/2).
 #
-# - New, reopened and transferred issues and pull requests are added as they
+# - New and reopened issues and pull requests are added as they
 #   come in. The project's own "Item added" workflow then sets their Status.
 # - Run it by hand (Actions -> Project -> Run workflow) to add every existing
 #   issue and pull request, open and closed. Adding one that is already on the
 #   project changes nothing, so a second run is harmless.
 #
 # GITHUB_TOKEN cannot write to an organisation project, so this needs the
-# organisation secret PROJECT_TOKEN: a fine-grained personal access token with
+# repository secret PROJECT_TOKEN (an organisation secret does not reach the
+# private repositories on the organisation's plan): a fine-grained personal access token with
 # resource owner Matdata-eu, organisation permission "Projects: Read and write",
 # and repository permissions "Issues: Read" and "Pull requests: Read" on the
 # TripleTrail repositories.
@@ -16,7 +17,7 @@ name: Project
 
 on:
   issues:
-    types: [opened, reopened, transferred]
+    types: [opened, reopened]
   # pull_request_target so that pull requests from forks get the secret too.
   # The job checks out no code, so nothing from the pull request runs.
   pull_request_target:
@@ -37,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/github-script@v7
+      - uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.PROJECT_TOKEN }}
           script: |
