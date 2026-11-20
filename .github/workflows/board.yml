@@ -82,10 +82,11 @@ jobs:
                   ... on ProjectV2ItemFieldIterationValue { title field { ... on ProjectV2FieldCommon { name } } }
                 }
               }`;
-            const CONTENT = `
+            const ISSUE = `
               __typename
               ... on Issue { id number title state url repository { name isPrivate } }
-              ... on PullRequest { id number title state url repository { name isPrivate } }
+              ... on PullRequest { id number title state url repository { name isPrivate } }`;
+            const CONTENT = `${ISSUE}
               ... on DraftIssue { title }`;
 
             const project = (await github.graphql(
@@ -193,7 +194,7 @@ jobs:
               `query($owner: String!, $repo: String!, $number: Int!) {
                  repository(owner: $owner, name: $repo) {
                    issueOrPullRequest(number: $number) {
-                     ${CONTENT}
+                     ${ISSUE}
                      ... on Issue { projectItems(first: 20, includeArchived: true) { nodes { id project { id } ${VALUES} } } }
                      ... on PullRequest { projectItems(first: 20, includeArchived: true) { nodes { id project { id } ${VALUES} } } }
                    }
