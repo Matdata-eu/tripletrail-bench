@@ -1,0 +1,291 @@
+# Reads and sets fields of the organisation's TripleTrail project
+# (https://github.com/orgs/Matdata-eu/projects/2) for anyone who can run a
+# workflow in this repository, so that tools without access to GitHub Projects
+# (such as the REST API) can still claim, triage and look up items.
+#
+# Inputs:
+#   item     An issue or pull request number of this repository, or
+#            <repository>#<number> for another Matdata-eu repository.
+#            Empty lists every open item on the board; "all" lists closed
+#            items too.
+#   set      Fields to set, separated by ";", e.g.
+#            "Worker=Builder 1; Status=In progress". Field and option names
+#            are matched without regard to case, and dashes may stand for
+#            spaces (in-progress). An empty value clears the field. Leave it
+#            empty to only read the item. The item is added to the board
+#            first when it is not on it yet.
+#   request  Any text; it is shown in the run's name so that a script can
+#            find the run it started. .github/board.sh fills it in.
+#
+# The result is printed in the job log between the lines
+# "----- board result -----" and "----- end -----" (a tab-separated table),
+# and in the run's summary. .github/board.sh starts a run, waits for it and
+# prints that result.
+#
+# Needs the repository secret PROJECT_TOKEN, the same token as the Project
+# workflow (see project.yml).
+name: Board
+run-name: Board ${{ inputs.item || 'list' }} ${{ inputs.set }} [${{ inputs.request }}]
+
+on:
+  workflow_dispatch:
+    inputs:
+      item:
+        description: Issue or pull request number (or repository#number); empty lists open items, "all" lists every item
+        required: false
+        default: ''
+      set:
+        description: 'Fields to set, e.g. "Worker=Builder 1; Status=In progress" (an empty value clears); empty only reads'
+        required: false
+        default: ''
+      request:
+        description: Free text shown in the run name, so a script can find its run
+        required: false
+        default: ''
+
+permissions: {}
+
+env:
+  PROJECT_OWNER: Matdata-eu
+  PROJECT_NUMBER: 2
+
+jobs:
+  board:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PROJECT_TOKEN: ${{ secrets.PROJECT_TOKEN }}
+    steps:
+      - if: env.PROJECT_TOKEN == ''
+        run: |
+          echo "::error::PROJECT_TOKEN is not set in this repository"
+          exit 1
+      - uses: actions/github-script@v8
+        env:
+          ITEM: ${{ inputs.item }}
+          SET: ${{ inputs.set }}
+        with:
+          github-token: ${{ env.PROJECT_TOKEN }}
+          script: |
+            const VALUES = `
+              fieldValues(first: 50) {
+                nodes {
+                  __typename
+                  ... on ProjectV2ItemFieldSingleSelectValue { name field { ... on ProjectV2FieldCommon { name } } }
+                  ... on ProjectV2ItemFieldTextValue { text field { ... on ProjectV2FieldCommon { name } } }
+                  ... on ProjectV2ItemFieldNumberValue { number field { ... on ProjectV2FieldCommon { name } } }
+                  ... on ProjectV2ItemFieldDateValue { date field { ... on ProjectV2FieldCommon { name } } }
+                  ... on ProjectV2ItemFieldIterationValue { title field { ... on ProjectV2FieldCommon { name } } }
+                }
+              }`;
+            const CONTENT = `
+              __typename
+              ... on Issue { id number title state url repository { name } }
+              ... on PullRequest { id number title state url repository { name } }
+              ... on DraftIssue { title }`;
+
+            const project = (await github.graphql(
+              `query($login: String!, $number: Int!) {
+                 organization(login: $login) {
+                   projectV2(number: $number) {
+                     id
+                     fields(first: 50) {
+                       nodes {
+                         ... on ProjectV2FieldCommon { id name dataType }
+                         ... on ProjectV2SingleSelectField { options { id name } }
+                       }
+                     }
+                   }
+                 }
+               }`,
+              { login: process.env.PROJECT_OWNER, number: Number(process.env.PROJECT_NUMBER) }
+            )).organization.projectV2;
+
+            // The fields a value can be read from or written to, in board order.
+            const SETTABLE = ['SINGLE_SELECT', 'TEXT', 'NUMBER', 'DATE', 'ITERATION'];
+            const fields = project.fields.nodes.filter((f) => SETTABLE.includes(f.dataType) && f.name !== 'Title');
+            const norm = (s) => s.trim().toLowerCase().replace(/[\s_-]+/g, ' ');
+
+            const valuesOf = (item) => {
+              const out = {};
+              for (const v of item.fieldValues.nodes) {
+                if (!v.field || !v.field.name) continue;
+                const value = v.name ?? v.text ?? v.number ?? v.date ?? v.title;
+                if (value !== undefined && value !== null) out[v.field.name] = String(value);
+              }
+              return out;
+            };
+            const label = (c) => c.repository ? `${c.repository.name}#${c.number}` : '(draft)';
+            const clean = (s) => String(s ?? '').replace(/[\t\r\n]+/g, ' ');
+
+            const lines = [];
+            const summary = [];
+            const table = (rows) => {
+              const header = ['item', 'state', ...fields.map((f) => f.name), 'title'];
+              lines.push(header.join('\t'));
+              summary.push(`| ${header.join(' | ')} |`, `|${header.map(() => ' --- ').join('|')}|`);
+              for (const r of rows) {
+                const cells = [label(r.content), r.content.state || '', ...fields.map((f) => r.values[f.name] || ''), r.content.title]
+                  .map(clean);
+                lines.push(cells.join('\t'));
+                summary.push(`| ${cells.map((c) => c.replace(/\|/g, '\\|')).join(' | ')} |`);
+              }
+            };
+            const finish = async () => {
+              console.log('----- board result -----');
+              for (const l of lines) console.log(l);
+              console.log('----- end -----');
+              await core.summary.addRaw(summary.join('\n') + '\n').write();
+            };
+
+            const itemInput = (process.env.ITEM || '').trim();
+            if (itemInput === '' || itemInput.toLowerCase() === 'all') {
+              if (process.env.SET.trim()) {
+                core.setFailed('set needs an item');
+                return;
+              }
+              const rows = [];
+              let after = null;
+              do {
+                const page = (await github.graphql(
+                  `query($id: ID!, $after: String) {
+                     node(id: $id) {
+                       ... on ProjectV2 {
+                         items(first: 100, after: $after) {
+                           pageInfo { hasNextPage endCursor }
+                           nodes { isArchived content { ${CONTENT} } ${VALUES} }
+                         }
+                       }
+                     }
+                   }`,
+                  { id: project.id, after }
+                )).node.items;
+                for (const n of page.nodes) {
+                  if (n.isArchived || !n.content) continue;
+                  if (itemInput === '' && n.content.state && n.content.state !== 'OPEN') continue;
+                  rows.push({ content: n.content, values: valuesOf(n) });
+                }
+                after = page.pageInfo.hasNextPage ? page.pageInfo.endCursor : null;
+              } while (after);
+              rows.sort((a, b) => label(a.content).localeCompare(label(b.content), 'en', { numeric: true }));
+              table(rows);
+              core.notice(`${rows.length} items listed`);
+              await finish();
+              return;
+            }
+
+            const m = itemInput.match(/^(?:([\w.-]+)#)?#?(\d+)$/);
+            if (!m) {
+              core.setFailed(`item must be a number or repository#number, not "${itemInput}"`);
+              return;
+            }
+            const repo = m[1] || context.repo.repo;
+            const number = Number(m[2]);
+            const found = (await github.graphql(
+              `query($owner: String!, $repo: String!, $number: Int!) {
+                 repository(owner: $owner, name: $repo) {
+                   issueOrPullRequest(number: $number) {
+                     ${CONTENT}
+                     ... on Issue { projectItems(first: 20, includeArchived: true) { nodes { id project { id } ${VALUES} } } }
+                     ... on PullRequest { projectItems(first: 20, includeArchived: true) { nodes { id project { id } ${VALUES} } } }
+                   }
+                 }
+               }`,
+              { owner: process.env.PROJECT_OWNER, repo, number }
+            )).repository.issueOrPullRequest;
+            if (!found) {
+              core.setFailed(`${repo}#${number} does not exist`);
+              return;
+            }
+
+            const getItem = async () => (await github.graphql(
+              `query($id: ID!) { node(id: $id) { ... on ProjectV2Item { id ${VALUES} } } }`,
+              { id: itemId }
+            )).node;
+            let item = found.projectItems.nodes.find((n) => n.project.id === project.id);
+            let itemId = item && item.id;
+
+            const changes = (process.env.SET || '').split(';').map((s) => s.trim()).filter(Boolean);
+            if (changes.length && !itemId) {
+              itemId = (await github.graphql(
+                `mutation($project: ID!, $content: ID!) {
+                   addProjectV2ItemById(input: { projectId: $project, contentId: $content }) { item { id } }
+                 }`,
+                { project: project.id, content: found.id }
+              )).addProjectV2ItemById.item.id;
+              core.info(`added ${label(found)} to the board`);
+            }
+
+            let failed = 0;
+            for (const change of changes) {
+              const eq = change.indexOf('=');
+              if (eq < 0) {
+                core.error(`"${change}" is not Field=Value`);
+                failed += 1;
+                continue;
+              }
+              const name = change.slice(0, eq);
+              const raw = change.slice(eq + 1).trim();
+              const f = fields.find((x) => norm(x.name) === norm(name));
+              if (!f) {
+                core.error(`the board has no field "${name.trim()}" (fields: ${fields.map((x) => x.name).join(', ')})`);
+                failed += 1;
+                continue;
+              }
+              const ids = { project: project.id, item: itemId, field: f.id };
+              if (raw === '') {
+                await github.graphql(
+                  `mutation($project: ID!, $item: ID!, $field: ID!) {
+                     clearProjectV2ItemFieldValue(input: { projectId: $project, itemId: $item, fieldId: $field }) { clientMutationId }
+                   }`,
+                  ids
+                );
+                core.notice(`${label(found)}: ${f.name} cleared`);
+                continue;
+              }
+              let value;
+              let shown = raw;
+              if (f.dataType === 'SINGLE_SELECT') {
+                const option = f.options.find((o) => norm(o.name) === norm(raw));
+                if (!option) {
+                  core.error(`${f.name} has no option "${raw}" (options: ${f.options.map((o) => o.name).join(', ')})`);
+                  failed += 1;
+                  continue;
+                }
+                value = { singleSelectOptionId: option.id };
+                shown = option.name;
+              } else if (f.dataType === 'TEXT') {
+                value = { text: raw };
+              } else if (f.dataType === 'NUMBER') {
+                if (Number.isNaN(Number(raw))) {
+                  core.error(`${f.name} needs a number, not "${raw}"`);
+                  failed += 1;
+                  continue;
+                }
+                value = { number: Number(raw) };
+              } else if (f.dataType === 'DATE') {
+                if (!/^\d{4}-\d{2}-\d{2}$/.test(raw)) {
+                  core.error(`${f.name} needs a date as YYYY-MM-DD, not "${raw}"`);
+                  failed += 1;
+                  continue;
+                }
+                value = { date: raw };
+              } else {
+                core.error(`${f.name} is an iteration field; set it on the board`);
+                failed += 1;
+                continue;
+              }
+              await github.graphql(
+                `mutation($project: ID!, $item: ID!, $field: ID!, $value: ProjectV2FieldValue!) {
+                   updateProjectV2ItemFieldValue(input: { projectId: $project, itemId: $item, fieldId: $field, value: $value }) { clientMutationId }
+                 }`,
+                { ...ids, value }
+              );
+              core.notice(`${label(found)}: ${f.name} set to ${shown}`);
+            }
+
+            if (changes.length) item = await getItem();
+            if (!itemId) core.notice(`${label(found)} is not on the board`);
+            table([{ content: found, values: item ? valuesOf(item) : {} }]);
+            await finish();
+            if (failed) core.setFailed(`${failed} of ${changes.length} changes failed`);

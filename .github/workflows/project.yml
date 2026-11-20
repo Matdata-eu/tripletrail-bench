@@ -1,18 +1,10 @@
 # Adds every issue and pull request of this repository to the organisation's
-# TripleTrail project (https://github.com/orgs/Matdata-eu/projects/2), and
-# mirrors two kinds of labels into the project's fields.
+# TripleTrail project (https://github.com/orgs/Matdata-eu/projects/2).
 #
 # - New and reopened issues and pull requests are added as they come in. The
-#   project's own "Item added" workflow then sets their Status.
-# - Labels set board fields, so anyone who can label an issue can claim it
-#   without access to the project:
-#     worker:<option>  sets Worker, e.g. worker:builder-1, worker:reviewer-even
-#     status:<option>  sets Status, e.g. status:in-progress, status:blocked
-#   <option> is the field option's name in lower case with spaces as dashes.
-#   Only the label that changed is synced, so a field set later on the board
-#   (or Done set by the project's own workflow) stays as it is. Removing a
-#   worker: label sets Worker to another worker: label still on the item, or
-#   clears it; removing a status: label changes nothing.
+#   project's own "Item added" workflow then sets their Status. Fields are set
+#   on the board, or through the Board workflow (board.yml) by tools that
+#   cannot reach the project.
 # - Run it by hand (Actions -> Project -> Run workflow) to add every existing
 #   issue and pull request, open and closed. One that is already on the
 #   project is skipped, so a second run is harmless.
@@ -28,19 +20,17 @@ name: Project
 
 on:
   issues:
-    types: [opened, reopened, labeled, unlabeled]
+    types: [opened, reopened]
   # pull_request_target so that pull requests from forks get the secret too.
   # The job checks out no code, so nothing from the pull request runs.
   pull_request_target:
-    types: [opened, reopened, labeled, unlabeled]
+    types: [opened, reopened]
   workflow_dispatch:
 
 permissions: {}
 
-# One group per item and label, so two labels added at once both get synced
-# (GitHub drops a queued run when a newer one joins the same group).
 concurrency:
-  group: project-${{ github.event.issue.number || github.event.pull_request.number || 'backfill' }}-${{ github.event.label.name || github.event.action }}
+  group: project-${{ github.event.issue.number || github.event.pull_request.number || 'backfill' }}
 
 env:
   PROJECT_OWNER: Matdata-eu
@@ -64,14 +54,7 @@ jobs:
           script: |
             const project = (await github.graphql(
               `query($login: String!, $number: Int!) {
-                 organization(login: $login) {
-                   projectV2(number: $number) {
-                     id
-                     fields(first: 50) {
-                       nodes { ... on ProjectV2SingleSelectField { id name options { id name } } }
-                     }
-                   }
-                 }
+                 organization(login: $login) { projectV2(number: $number) { id } }
                }`,
               { login: process.env.PROJECT_OWNER, number: Number(process.env.PROJECT_NUMBER) }
             )).organization.projectV2;
@@ -87,65 +70,9 @@ jobs:
               return result.addProjectV2ItemById.item.id;
             };
 
-            const slug = (name) => name.trim().toLowerCase().replace(/\s+/g, '-');
-            const field = (name) => project.fields.nodes.find((f) => f.name === name && f.options);
-
-            // Sets a single-select field to the option a label names, or clears
-            // it when pick is undefined and clearing is allowed.
-            const mirror = async (itemId, pick, prefix, fieldName, clearWhenNone) => {
-              const f = field(fieldName);
-              if (!f) {
-                core.warning(`the project has no single-select field ${fieldName}`);
-                return;
-              }
-              if (!pick) {
-                if (!clearWhenNone) return;
-                await github.graphql(
-                  `mutation($project: ID!, $item: ID!, $field: ID!) {
-                     clearProjectV2ItemFieldValue(input: { projectId: $project, itemId: $item, fieldId: $field }) { clientMutationId }
-                   }`,
-                  { project: project.id, item: itemId, field: f.id }
-                );
-                core.info(`${fieldName} cleared`);
-                return;
-              }
-              const option = f.options.find((o) => slug(o.name) === pick.slice(prefix.length));
-              if (!option) {
-                core.warning(`${pick}: ${fieldName} has no such option (${f.options.map((o) => slug(o.name)).join(', ')})`);
-                return;
-              }
-              await github.graphql(
-                `mutation($project: ID!, $item: ID!, $field: ID!, $option: String!) {
-                   updateProjectV2ItemFieldValue(input: {
-                     projectId: $project, itemId: $item, fieldId: $field,
-                     value: { singleSelectOptionId: $option }
-                   }) { clientMutationId }
-                 }`,
-                { project: project.id, item: itemId, field: f.id, option: option.id }
-              );
-              core.info(`${fieldName} set to ${option.name}`);
-            };
-
             if (context.eventName !== 'workflow_dispatch') {
               const item = context.payload.issue || context.payload.pull_request;
-              const itemId = await add(item.node_id, `#${item.number}`);
-              const labels = (item.labels || []).map((l) => l.name);
-              const kinds = [['worker:', 'Worker', true], ['status:', 'Status', false]];
-              const changed = context.payload.label && context.payload.label.name;
-              for (const [prefix, fieldName, clearWhenNone] of kinds) {
-                if (context.payload.action === 'opened') {
-                  // Created with labels: apply the last one of each kind.
-                  const pick = labels.filter((l) => l.startsWith(prefix)).pop();
-                  if (pick) await mirror(itemId, pick, prefix, fieldName, false);
-                } else if (changed && changed.startsWith(prefix)) {
-                  if (context.payload.action === 'labeled') {
-                    await mirror(itemId, changed, prefix, fieldName, false);
-                  } else {
-                    const rest = labels.filter((l) => l.startsWith(prefix)).pop();
-                    await mirror(itemId, rest, prefix, fieldName, clearWhenNone);
-                  }
-                }
-              }
+              await add(item.node_id, `#${item.number}`);
               return;
             }
 
