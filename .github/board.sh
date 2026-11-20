@@ -46,12 +46,13 @@ if [[ -z $run ]]; then
   exit 1
 fi
 
+# The run can show completed a moment before its conclusion is filled in.
+conclusion=
 for _ in $(seq 300); do
-  status=$(gh api "repos/$repo/actions/runs/$run" --jq .status)
-  [[ $status == completed ]] && break
+  conclusion=$(gh api "repos/$repo/actions/runs/$run" --jq 'if .status == "completed" then .conclusion // "" else "" end')
+  [[ -n $conclusion ]] && break
   sleep 2
 done
-conclusion=$(gh api "repos/$repo/actions/runs/$run" --jq .conclusion)
 
 log=$(for job in $(gh api "repos/$repo/actions/runs/$run/jobs" --jq '.jobs[].id'); do
   gh api "repos/$repo/actions/jobs/$job/logs"
