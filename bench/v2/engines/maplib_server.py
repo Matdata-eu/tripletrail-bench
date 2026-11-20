@@ -9,9 +9,8 @@ load time and peak RSS, then serves
   GET|POST /query   query=...   SELECT/ASK -> application/sparql-results+json, or +xml when the
                                 Accept header asks for XML and not JSON (the BSBM test driver
                                 counts results from the XML form),
-                                CONSTRUCT  -> the triples as text (one per line)
-  POST     /update  update=...  SPARQL Update; INSERT DATA {...}, which maplib 0.20.26 does not
-                                implement, is sent as the equivalent INSERT {...} WHERE {}
+                                CONSTRUCT  -> the triples as N-Triples (one per line)
+  POST     /update  update=...  SPARQL Update
   GET      /health              200 once the data is loaded
 
 one request at a time (the suites use a single client). A failed request answers 500 with the
@@ -31,15 +30,34 @@ from maplib import Model
 
 model = Model()
 
+# The query form: the first keyword after the prologue (PREFIX/BASE lines and comments).
+PROLOGUE = re.compile(r"^(?:\s+|#[^\n]*\n|(?:PREFIX|BASE)\b[^\n]*\n)*", re.I)
 
-INSERT_DATA = re.compile(r"^(\s*(?:(?:PREFIX|BASE)\b[^\n]*\n\s*)*)INSERT\s+DATA\s*(\{(?:[^{}]|\{[^{}]*\})*\})\s*;?\s*$", re.S | re.I)
+
+def is_graph_query(q):
+    """CONSTRUCT or DESCRIBE, answered as N-Triples (SELECT and ASK as SPARQL JSON)."""
+    rest = q[PROLOGUE.match(q).end():].lstrip()
+    return rest[:9].upper().startswith(("CONSTRUCT", "DESCRIBE"))
 
 
-def as_supported_update(u):
-    """A lone INSERT DATA as INSERT ... WHERE {} (same triples; maplib 0.20.26 panics on INSERT DATA).
-    Only a single operation is rewritten (GRAPH blocks may nest one level); anything else is left as it is."""
-    m = INSERT_DATA.match(u)
-    return f"{m.group(1)}INSERT {m.group(2)} WHERE {{}}" if m else u
+# A named graph the data never uses, which holds a CONSTRUCT result while it is written out.
+CONSTRUCT_GRAPH = "urn:bench:maplib-server:construct"
+
+
+def construct_ntriples(q):
+    """A CONSTRUCT result as N-Triples, one triple per line, written by maplib itself.
+
+    maplib 0.22 answers CONSTRUCT as pretty Turtle (several objects on a line), which the suites
+    cannot count triples from by lines, or as tables whose literals lose what N-Triples needs
+    (the time zone of an xsd:dateTime column, INF and NaN). So the result is inserted into a
+    scratch named graph, which maplib writes as N-Triples, and the graph is dropped again. On
+    Trainmarks q5 (large, 43,091 triples) that takes about 13 ms more than the query alone, and
+    less than maplib's own Turtle answer (43 ms, query alone 30 ms, Turtle 120 ms)."""
+    try:
+        model.insert(q, target_graph=CONSTRUCT_GRAPH)
+        return model.write_bytes(format="ntriples", graph=CONSTRUCT_GRAPH)
+    finally:
+        model.update(f"DROP SILENT GRAPH <{CONSTRUCT_GRAPH}>")
 
 
 def json_to_xml(doc):
@@ -109,15 +127,16 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send(200, "ok")
             p = self.params()
             if path == "/query" and "query" in p:
-                r = model.query(p["query"], return_json=True)
-                if r.lstrip().startswith("{"):
-                    accept = self.headers.get("Accept", "")
-                    if "xml" in accept and "json" not in accept:
-                        return self.send(200, json_to_xml(r), "application/sparql-results+xml")
-                    return self.send(200, r, "application/sparql-results+json")
-                return self.send(200, r, "application/n-triples")
+                q = p["query"]
+                if is_graph_query(q):
+                    return self.send(200, construct_ntriples(q), "application/n-triples")
+                r = model.query(q, return_format="json")
+                accept = self.headers.get("Accept", "")
+                if "xml" in accept and "json" not in accept:
+                    return self.send(200, json_to_xml(r), "application/sparql-results+xml")
+                return self.send(200, r, "application/sparql-results+json")
             if path == "/update" and "update" in p:
-                model.update(as_supported_update(p["update"]))
+                model.update(p["update"])
                 return self.send(204, b"")
             return self.send(400, "expected /query?query=... or /update with update=...")
         except BaseException as e:  # noqa: BLE001 - also maplib's PanicException; reported and logged

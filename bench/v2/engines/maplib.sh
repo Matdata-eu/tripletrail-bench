@@ -8,11 +8,11 @@
 #   maplib.sh start <dataset> | stop | endpoint | rss | logs
 # The store lives in memory only: `load` and `start` both read the file, and `start` keeps a
 # server that already holds <dataset>. disk_bytes is 0.
-# Env: BENCH_WORK, MAPLIB_VERSION (default 0.20.26), MAPLIB_PY_IMAGE.
+# Env: BENCH_WORK, MAPLIB_VERSION (default 0.22.0; maplib_server.py needs 0.22.0 or later), MAPLIB_PY_IMAGE.
 set -euo pipefail
 HERE=$(cd "$(dirname "$0")" && pwd)
 W=${BENCH_WORK:-$HERE/../work}
-VERSION=${MAPLIB_VERSION:-0.20.26}
+VERSION=${MAPLIB_VERSION:-0.22.0}
 PY_IMAGE=${MAPLIB_PY_IMAGE:-mirror.gcr.io/library/python:3.12-slim}
 IMAGE=bench-maplib:$VERSION
 NAME=bench-maplib
