@@ -66,7 +66,7 @@ suite on one dataset, on a Hetzner server it rents for the run and deletes after
   care). Queries: one cold run, one warm-up, five timed runs (median); the update runs once.
   Trainmarks, BSBM and Sparqloscope also run maplib (in memory, Python; BSBM explore without
   Q9/Q12, like QLever, and BI without Q5, which maplib 0.22.0 still rejects; its endpoint answers
-  SELECT in XML when asked, so the BSBM driver counts its results, and CONSTRUCT as N-Triples):
+  SELECT in XML when asked, so the BSBM driver counts its results, and CONSTRUCT as N-Triples, which maplib writes from a scratch named graph; that adds about 13 ms on Trainmarks q5 large, measured against the query alone):
   `engines/maplib.sh` builds a small image with
   `pip install maplib==$MAPLIB_VERSION` (default 0.22.0; the endpoint needs 0.22.0 or later) and serves a Model through
   `engines/maplib_server.py`, a minimal SPARQL protocol endpoint, so it is timed over HTTP like
