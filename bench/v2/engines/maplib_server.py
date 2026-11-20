@@ -9,9 +9,8 @@ load time and peak RSS, then serves
   GET|POST /query   query=...   SELECT/ASK -> application/sparql-results+json, or +xml when the
                                 Accept header asks for XML and not JSON (the BSBM test driver
                                 counts results from the XML form),
-                                CONSTRUCT  -> the triples as text (one per line)
-  POST     /update  update=...  SPARQL Update; INSERT DATA {...}, which maplib 0.20.26 does not
-                                implement, is sent as the equivalent INSERT {...} WHERE {}
+                                CONSTRUCT  -> the triples as N-Triples (one per line)
+  POST     /update  update=...  SPARQL Update
   GET      /health              200 once the data is loaded
 
 one request at a time (the suites use a single client). A failed request answers 500 with the
@@ -31,15 +30,68 @@ from maplib import Model
 
 model = Model()
 
+# The query form: the first keyword after the prologue (PREFIX/BASE lines and comments).
+PROLOGUE = re.compile(r"^(?:\s+|#[^\n]*\n|(?:PREFIX|BASE)\b[^\n]*\n)*", re.I)
 
-INSERT_DATA = re.compile(r"^(\s*(?:(?:PREFIX|BASE)\b[^\n]*\n\s*)*)INSERT\s+DATA\s*(\{(?:[^{}]|\{[^{}]*\})*\})\s*;?\s*$", re.S | re.I)
+
+def is_graph_query(q):
+    """CONSTRUCT or DESCRIBE, which maplib answers as tables of triples (SELECT and ASK as JSON)."""
+    rest = q[PROLOGUE.match(q).end():].lstrip()
+    return rest[:9].upper().startswith(("CONSTRUCT", "DESCRIBE"))
 
 
-def as_supported_update(u):
-    """A lone INSERT DATA as INSERT ... WHERE {} (same triples; maplib 0.20.26 panics on INSERT DATA).
-    Only a single operation is rewritten (GRAPH blocks may nest one level); anything else is left as it is."""
-    m = INSERT_DATA.match(u)
-    return f"{m.group(1)}INSERT {m.group(2)} WHERE {{}}" if m else u
+ESCAPES = str.maketrans({"\\": "\\\\", '"': '\\"', "\n": "\\n", "\r": "\\r"})
+LANG_STRING = "<http://www.w3.org/1999/02/22-rdf-syntax-ns#langString>"
+SINGLE = re.compile(r'^RDFType\.(IRI|BlankNode)\(\)$|^RDFType\.Literal\("([^"]*)"\)$')
+
+
+def lexical(v):
+    if isinstance(v, bool):
+        return "true" if v else "false"
+    return (v.isoformat() if hasattr(v, "isoformat") else str(v)).translate(ESCAPES)
+
+
+def nt_single(v, kind, dt):
+    """A value of a column of one RDF type: an IRI, a blank node or a literal of datatype dt."""
+    if v is None:
+        return None
+    if kind == "IRI":
+        return f"<{v}>"
+    if kind == "BlankNode":
+        return f"_:{v}"
+    return f'"{lexical(v)}"^^<{dt}>'
+
+
+def nt_multi(v):
+    """A value of a column of several RDF types: a struct with one field per type (I = IRI,
+    B = blank node, <langString> with l = its language, <datatype> = a literal of it)."""
+    if v.get("I") is not None:
+        return f"<{v['I']}>"
+    if v.get("B") is not None:
+        return f"_:{v['B']}"
+    if v.get(LANG_STRING) is not None:
+        return f'"{lexical(v[LANG_STRING])}"@{v["l"]}'
+    for k, x in v.items():
+        if k.startswith("<") and x is not None:
+            return f'"{lexical(x)}"^^{k}'
+    return None
+
+
+def as_ntriples(tables):
+    """CONSTRUCT results as N-Triples, one triple per line. maplib 0.22 writes CONSTRUCT as
+    pretty Turtle (several objects on a line), which the suites cannot count triples from by
+    lines, so the triple tables are asked for with their RDF types and written out here."""
+    out = []
+    for sm in tables:
+        cols = []
+        for c in ("subject", "predicate", "object"):
+            m = SINGLE.match(str(sm.rdf_types[c]))
+            cols.append((lambda v, k=m.group(1) or "Literal", d=m.group(2): nt_single(v, k, d)) if m else nt_multi)
+        for row in sm.mappings.iter_rows():
+            terms = [f(v) for f, v in zip(cols, row)]
+            if None not in terms:
+                out.append(" ".join(terms) + " .\n")
+    return "".join(out)
 
 
 def json_to_xml(doc):
@@ -109,15 +161,16 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send(200, "ok")
             p = self.params()
             if path == "/query" and "query" in p:
-                r = model.query(p["query"], return_json=True)
-                if r.lstrip().startswith("{"):
-                    accept = self.headers.get("Accept", "")
-                    if "xml" in accept and "json" not in accept:
-                        return self.send(200, json_to_xml(r), "application/sparql-results+xml")
-                    return self.send(200, r, "application/sparql-results+json")
-                return self.send(200, r, "application/n-triples")
+                q = p["query"]
+                if is_graph_query(q):
+                    return self.send(200, as_ntriples(model.query(q, solution_mappings=True)), "application/n-triples")
+                r = model.query(q, return_format="json")
+                accept = self.headers.get("Accept", "")
+                if "xml" in accept and "json" not in accept:
+                    return self.send(200, json_to_xml(r), "application/sparql-results+xml")
+                return self.send(200, r, "application/sparql-results+json")
             if path == "/update" and "update" in p:
-                model.update(as_supported_update(p["update"]))
+                model.update(p["update"])
                 return self.send(204, b"")
             return self.send(400, "expected /query?query=... or /update with update=...")
         except BaseException as e:  # noqa: BLE001 - also maplib's PanicException; reported and logged

@@ -37,7 +37,7 @@ USECASES = {"explore": "explore", "bi": "bi", "update": "exploreAndUpdate"}
 # The test driver asks for RDF/XML for DESCRIBE (explore Q9) and CONSTRUCT (Q12), which QLever
 # does not serve (HTTP 406): QLever runs the mixes without them, so its QMpH is not comparable.
 # maplib's endpoint (engines/maplib_server.py) answers CONSTRUCT as N-Triples and has no
-# DESCRIBE, so it runs the explore mixes without them too. maplib 0.20.26 also rejects BI Q5
+# DESCRIBE, so it runs the explore mixes without them too. maplib (still 0.22.0) also rejects BI Q5
 # ("Tried grouping on a variable `?country` that is not defined in the inner query": the query
 # groups by a variable its subquery does not bind, which SPARQL allows).
 # Per engine and use case: (query numbers to leave out, note).
@@ -47,13 +47,14 @@ _MIX = {"explore": "explore", "update": "explore-and-update"}
 SKIP = {"qlever": {uc: (_RDFXML[0], _RDFXML[1].format(uc=_MIX[uc], e="QLever")) for uc in ("explore", "update")},
         "maplib": {**{uc: (_RDFXML[0], _RDFXML[1].format(uc=_MIX[uc], e="the maplib endpoint"))
                       for uc in ("explore", "update")},
-                   "bi": ("5", "BI Q5 skipped: maplib 0.20.26 rejects GROUP BY on a variable its "
+                   "bi": ("5", "BI Q5 skipped: maplib 0.22.0 rejects GROUP BY on a variable its "
                                "subquery does not bind")}}
 # Templates whose "result count" the test driver measures in bytes of the RDF answer, which
 # depends on the serialisation, so it is not compared between engines.
 BYTE_RESULTS = {("explore", "9"), ("explore", "12")}
 # Known causes of result counts that differ from the other engines (see wrong_counts).
-WRONG_CAUSE = {"maplib": "maplib 0.20.26 returns one all-unbound row for a GROUP BY over no solutions "
+# maplib 0.22.0 fixed this; the note stays for results measured with 0.20.26 until they are rerun.
+WRONG_CAUSE = {"maplib": "maplib 0.20.26 (fixed in 0.22.0) returns one all-unbound row for a GROUP BY over no solutions "
                          "(SPARQL: no rows), e.g. for a product type without products"}
 NO_UPDATE = {"qlever": "updates need QLever's access token, which the BSBM test driver cannot send"}
 

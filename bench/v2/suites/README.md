@@ -65,10 +65,10 @@ suite on one dataset, on a Hetzner server it rents for the run and deletes after
   library frameworks on the Trainmarks site parse into memory instead, so compare those with
   care). Queries: one cold run, one warm-up, five timed runs (median); the update runs once.
   Trainmarks, BSBM and Sparqloscope also run maplib (in memory, Python; BSBM explore without
-  Q9/Q12, like QLever, and BI without Q5, which maplib 0.20.26 rejects; its endpoint answers
-  SELECT in XML when asked, so the BSBM driver counts its results, and sends INSERT DATA as the
-  equivalent INSERT ... WHERE {}, which maplib does implement): `engines/maplib.sh` builds a small image with
-  `pip install maplib==$MAPLIB_VERSION` (default 0.20.26) and serves a Model through
+  Q9/Q12, like QLever, and BI without Q5, which maplib 0.22.0 still rejects; its endpoint answers
+  SELECT in XML when asked, so the BSBM driver counts its results, and CONSTRUCT as N-Triples):
+  `engines/maplib.sh` builds a small image with
+  `pip install maplib==$MAPLIB_VERSION` (default 0.22.0; the endpoint needs 0.22.0 or later) and serves a Model through
   `engines/maplib_server.py`, a minimal SPARQL protocol endpoint, so it is timed over HTTP like
   the others; its load is reading the file into RAM. xlarge (10M triples) needs the 64 GB server
   (Jena and GraphDB at 8 GB heap); it is part of the `full` profile.
