@@ -22,6 +22,10 @@
 # and in the run's summary. .github/board.sh starts a run, waits for it and
 # prints that result.
 #
+# The job log, summary and run name of a public repository are public, so a run
+# there shows and accepts only items of public repositories. Run it in a
+# private repository (board.sh uses tripletrail-enterprise) to see everything.
+#
 # Needs the repository secret PROJECT_TOKEN, the same token as the Project
 # workflow (see project.yml).
 name: Board
@@ -80,8 +84,8 @@ jobs:
               }`;
             const CONTENT = `
               __typename
-              ... on Issue { id number title state url repository { name } }
-              ... on PullRequest { id number title state url repository { name } }
+              ... on Issue { id number title state url repository { name isPrivate } }
+              ... on PullRequest { id number title state url repository { name isPrivate } }
               ... on DraftIssue { title }`;
 
             const project = (await github.graphql(
@@ -117,6 +121,10 @@ jobs:
             };
             const label = (c) => c.repository ? `${c.repository.name}#${c.number}` : '(draft)';
             const clean = (s) => String(s ?? '').replace(/[\t\r\n]+/g, ' ');
+
+            // A public repository's logs are public: keep private items out.
+            const publicOnly = !(context.payload.repository && context.payload.repository.private);
+            const hidden = (c) => publicOnly && (!c.repository || c.repository.isPrivate);
 
             const lines = [];
             const summary = [];
@@ -161,7 +169,7 @@ jobs:
                   { id: project.id, after }
                 )).node.items;
                 for (const n of page.nodes) {
-                  if (n.isArchived || !n.content) continue;
+                  if (n.isArchived || !n.content || hidden(n.content)) continue;
                   if (itemInput === '' && n.content.state && n.content.state !== 'OPEN') continue;
                   rows.push({ content: n.content, values: valuesOf(n) });
                 }
@@ -169,7 +177,7 @@ jobs:
               } while (after);
               rows.sort((a, b) => label(a.content).localeCompare(label(b.content), 'en', { numeric: true }));
               table(rows);
-              core.notice(`${rows.length} items listed`);
+              core.notice(`${rows.length} items listed${publicOnly ? ' (public repositories only)' : ''}`);
               await finish();
               return;
             }
@@ -193,8 +201,8 @@ jobs:
                }`,
               { owner: process.env.PROJECT_OWNER, repo, number }
             )).repository.issueOrPullRequest;
-            if (!found) {
-              core.setFailed(`${repo}#${number} does not exist`);
+            if (!found || hidden(found)) {
+              core.setFailed(`${repo}#${number} does not exist${publicOnly ? ' or is private (run this in a private repository)' : ''}`);
               return;
             }
 

@@ -5,26 +5,27 @@
 #
 #   .github/board.sh                                   open items on the board
 #   .github/board.sh all                               every item, closed too
-#   .github/board.sh 42                                one item of this repository
+#   .github/board.sh 42                                one item of the repository this checkout is
 #   .github/board.sh tripletrail-demo#3                an item of another repository
 #   .github/board.sh 42 'Worker=Builder 1; Status=In progress'
 #   .github/board.sh 42 'Worker='                      clears Worker
 #
-# Options: -R owner/repo runs the workflow in that repository instead of the
-# one this checkout comes from (BOARD_REPO does the same). Needs gh, signed in
-# with a token that may run workflows. Exits non-zero when the run fails.
+# The workflow runs in Matdata-eu/tripletrail-enterprise by default: it is
+# private, so its logs may show items of private repositories. -R owner/repo
+# (or BOARD_REPO) runs it elsewhere; a public repository shows only public
+# items. Needs gh, signed in with a token that may run workflows. Exits non-zero when the run fails.
 set -euo pipefail
 
-repo=${BOARD_REPO:-}
+repo=${BOARD_REPO:-Matdata-eu/tripletrail-enterprise}
 if [[ ${1:-} == -R ]]; then
   repo=$2
   shift 2
 fi
-if [[ -z $repo ]]; then
-  url=$(git -C "$(dirname "$0")" remote get-url origin)
-  repo=$(sed -E 's#\.git$##; s#^.*[/:]([^/]+/[^/]+)$#\1#' <<<"$url")
-fi
 item=${1:-}
+# A bare number means an item of this checkout's repository.
+if [[ $item =~ ^[0-9]+$ ]] && url=$(git -C "$(dirname "$0")" remote get-url origin 2>/dev/null); then
+  item="$(sed -E 's#\.git$##; s#^.*/##' <<<"$url")#$item"
+fi
 set_fields=${2:-}
 request="$(date +%s)-$RANDOM$RANDOM"
 
