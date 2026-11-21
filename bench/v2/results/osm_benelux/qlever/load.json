@@ -1,0 +1,10 @@
+{
+ "engine": "qlever",
+ "dataset": "osm_benelux",
+ "load_s": 198.259,
+ "start_s": 1.28,
+ "disk_bytes": 8894434068,
+ "wall_s": 203.708,
+ "rss_after_start": "21.64MiB / 61.31GiB",
+ "triples": 201065992
+}

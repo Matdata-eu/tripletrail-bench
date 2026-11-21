@@ -1,0 +1,41 @@
+{
+ "run": "44938601022",
+ "request": "scale osm_benelux",
+ "engines": "default",
+ "machine": "ccx43",
+ "commit": "cee8c3c2ef82f54d8b75ee12f6149e33095d5795",
+ "started": "2026-11-21T19:07:31+00:00",
+ "finished": "2026-11-21T19:32:55+00:00",
+ "env": {
+  "cpu": "AMD EPYC-Milan Processor",
+  "cpus": 16,
+  "memory": "64291352 kB",
+  "kernel": "6.8.0-138-generic",
+  "disk_free": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/sda1       338G   42G  282G  13% /",
+  "tripletrail_commit": "cee8c3c2ef82f54d8b75ee12f6149e33095d5795",
+  "bench_commit": "b21f10b90d5196a333ff9be676b9f4da8b5631f3",
+  "postgres": "psql (PostgreSQL) 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1)",
+  "postgis": "dpkg-query: no packages found matching postgresql-16-postgis-3\ndpkg-query: no packages found matching postgresql-16-pgrouting",
+  "docker": "29.1.3",
+  "graphdb_image": "Error response from daemon: No such image: mirror.gcr.io/ontotext/graphdb:10.8.0",
+  "qlever_image": "sha256:c19b86284ba8aefe5b35c515a6eaaf1de8dcd5f93e34a84d55d6385be6e9a77b commit-6693492751",
+  "oxigraph_image": "Error response from daemon: No such image: ghcr.io/oxigraph/oxigraph:0.5.13",
+  "java": "openjdk version \"21.0.13.1\" 2026-11-17\nOpenJDK Runtime Environment (build 21.0.13.1+2-1-24.04.1-Ubuntu)\nOpenJDK 64-Bit Server VM (build 21.0.13.1+2-1-24.04.1-Ubuntu, mixed mode, sharing)",
+  "jena_jar": "jena-fuseki-geosparql-6.2.0.jar"
+ },
+ "jobs": [
+  {
+   "suite": "scale",
+   "dataset": "osm_benelux",
+   "engines": [
+    "tripletrail",
+    "qlever"
+   ],
+   "status": "ok",
+   "seconds": 1524,
+   "finished": "2026-11-21T19:32:55+00:00",
+   "log": "44938601022-scale-osm_benelux.log"
+  }
+ ],
+ "workflow_run": "https://github.com/Matdata-eu/tripletrail-bench/actions/runs/44938601022"
+}

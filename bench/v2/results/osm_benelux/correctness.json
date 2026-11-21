@@ -1,0 +1,121 @@
+{
+ "osm_station_admin/qlever": {
+  "counts": {
+   "match": 6,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "osm_track_landuse/qlever": {
+  "counts": {
+   "match": 0,
+   "tie": 0,
+   "mismatch": 6
+  },
+  "examples": [
+   {
+    "index": 0,
+    "verdict": "mismatch",
+    "note": "[97465.0] vs [97424.0]"
+   },
+   {
+    "index": 1,
+    "verdict": "mismatch",
+    "note": "[97465.0] vs [97424.0]"
+   },
+   {
+    "index": 2,
+    "verdict": "mismatch",
+    "note": "[97465.0] vs [97424.0]"
+   },
+   {
+    "index": 3,
+    "verdict": "mismatch",
+    "note": "[97465.0] vs [97424.0]"
+   },
+   {
+    "index": 4,
+    "verdict": "mismatch",
+    "note": "[97465.0] vs [97424.0]"
+   }
+  ],
+  "notes": {
+   "[97465.0] vs [97424.0]": 6
+  }
+ },
+ "osm_track_track_5m/qlever": {
+  "counts": {
+   "match": 0,
+   "tie": 0,
+   "mismatch": 6
+  },
+  "examples": [
+   {
+    "index": 0,
+    "verdict": "mismatch",
+    "note": "[489166.0] vs [489252.0]"
+   },
+   {
+    "index": 1,
+    "verdict": "mismatch",
+    "note": "[489166.0] vs [489252.0]"
+   },
+   {
+    "index": 2,
+    "verdict": "mismatch",
+    "note": "[489166.0] vs [489252.0]"
+   },
+   {
+    "index": 3,
+    "verdict": "mismatch",
+    "note": "[489166.0] vs [489252.0]"
+   },
+   {
+    "index": 4,
+    "verdict": "mismatch",
+    "note": "[489166.0] vs [489252.0]"
+   }
+  ],
+  "notes": {
+   "[489166.0] vs [489252.0]": 6
+  }
+ },
+ "scale_class_counts/qlever": {
+  "counts": {
+   "match": 6,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "scale_building_kinds/qlever": {
+  "counts": {
+   "match": 6,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "scale_label_lookup/qlever": {
+  "counts": {
+   "match": 23,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "scale_named_stations/qlever": {
+  "counts": {
+   "match": 6,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ }
+}
