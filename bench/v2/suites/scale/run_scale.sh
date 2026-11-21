@@ -3,7 +3,7 @@
 # N-Triples (data/osm_scale.py, the shape of osm_norway plus buildings and highways), which each
 # engine loads and answers the OSM and scale query families of benchmark v2 on. TripleTrail runs
 # on its store on disk with --memory-limit, then takes small commits (updates.py) against it.
-#   run_scale.sh osm_benelux|osm_europe [engine...]     (default: tripletrail qlever)
+#   run_scale.sh osm_benelux|osm_europe [engine...]     (default: tripletrail qlever; graphdb by name)
 #     osm_benelux  Belgium, the Netherlands and Luxembourg (a bounding box of Europe), about 100M
 #                  triples; TripleTrail's commits are also timed on the store in memory there, the
 #                  reference of the acceptance criterion (p95 within 2x)
@@ -19,6 +19,9 @@ W=${BENCH_WORK:-$V2/work}
 export BENCH_WORK=$W
 DS=$1; shift
 ENGINES=${*:-tripletrail qlever}
+# GraphDB runs only when named (run_scale.sh osm_benelux graphdb). It gets half of a 64 GB
+# machine as heap; its default 8g is too small at this size.
+export GRAPHDB_HEAP=${GRAPHDB_HEAP:-32g}
 LIMIT=${TRIPLETRAIL_MEMORY_LIMIT:-32G}
 URL=${SCALE_PBF_URL:-https://download.geofabrik.de/europe-latest.osm.pbf}
 PBF=$W/inputs/europe-latest.osm.pbf
