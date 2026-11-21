@@ -13,11 +13,11 @@ Berlin SPARQL Benchmark with the official bsbmtools 0.2 test driver (seed 808080
 | QMpH bi | 30,145 | 651 | 11,293 | 3,001 | 4,661 | 16,318 * † |
 | QMpH update | 42,228 | 30,660 | n/a | 6,094 | 11,691 | 1,212 * |
 
-\* maplib: BI Q5 skipped: maplib 0.20.26 rejects GROUP BY on a variable its subquery does not bind
+\* maplib: BI Q5 skipped: maplib 0.22.0 rejects GROUP BY on a variable its subquery does not bind
 \* maplib: explore-and-update: Q9 (DESCRIBE) and Q12 (CONSTRUCT) skipped: the test driver asks for RDF/XML, which the maplib endpoint does not serve
 \* maplib: explore: Q9 (DESCRIBE) and Q12 (CONSTRUCT) skipped: the test driver asks for RDF/XML, which the maplib endpoint does not serve
 \* qlever: explore: Q9 (DESCRIBE) and Q12 (CONSTRUCT) skipped: the test driver asks for RDF/XML, which QLever does not serve
-† maplib: bi result counts differ from the other engines on Q7, Q8, so this QMpH includes wrong answers (maplib 0.20.26 returns one all-unbound row for a GROUP BY over no solutions (SPARQL: no rows), e.g. for a product type without products)
+† maplib: bi result counts differ from the other engines on Q7, Q8, so this QMpH includes wrong answers (maplib 0.20.26 (fixed in 0.22.0) returns one all-unbound row for a GROUP BY over no solutions (SPARQL: no rows), e.g. for a product type without products)
 
 ### explore: AQET per template (ms), average result count
 
@@ -59,11 +59,11 @@ Berlin SPARQL Benchmark with the official bsbmtools 0.2 test driver (seed 808080
 | QMpH bi | 14,131 | 53 | 3,461 | 211 | 582 | 5,346 * † |
 | QMpH update | 36,273 | 13,496 | n/a | 1,606 | 10,203 | 174 * |
 
-\* maplib: BI Q5 skipped: maplib 0.20.26 rejects GROUP BY on a variable its subquery does not bind
+\* maplib: BI Q5 skipped: maplib 0.22.0 rejects GROUP BY on a variable its subquery does not bind
 \* maplib: explore-and-update: Q9 (DESCRIBE) and Q12 (CONSTRUCT) skipped: the test driver asks for RDF/XML, which the maplib endpoint does not serve
 \* maplib: explore: Q9 (DESCRIBE) and Q12 (CONSTRUCT) skipped: the test driver asks for RDF/XML, which the maplib endpoint does not serve
 \* qlever: explore: Q9 (DESCRIBE) and Q12 (CONSTRUCT) skipped: the test driver asks for RDF/XML, which QLever does not serve
-† maplib: bi result counts differ from the other engines on Q7, Q8, so this QMpH includes wrong answers (maplib 0.20.26 returns one all-unbound row for a GROUP BY over no solutions (SPARQL: no rows), e.g. for a product type without products)
+† maplib: bi result counts differ from the other engines on Q7, Q8, so this QMpH includes wrong answers (maplib 0.20.26 (fixed in 0.22.0) returns one all-unbound row for a GROUP BY over no solutions (SPARQL: no rows), e.g. for a product type without products)
 
 ### explore: AQET per template (ms), average result count
 

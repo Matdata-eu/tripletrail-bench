@@ -10,7 +10,7 @@ bsbm-2785,bi,oxigraph,651.43,
 bsbm-2785,bi,qlever,11292.74,
 bsbm-2785,bi,jena,3000.65,
 bsbm-2785,bi,graphdb,4660.6,
-bsbm-2785,bi,maplib,16318.41,BI Q5 skipped: maplib 0.20.26 rejects GROUP BY on a variable its subquery does not bind; wrong result counts on Q7 Q8 (maplib 0.20.26 returns one all-unbound row for a GROUP BY over no solutions (SPARQL: no rows); e.g. for a product type without products)
+bsbm-2785,bi,maplib,16318.41,BI Q5 skipped: maplib 0.22.0 rejects GROUP BY on a variable its subquery does not bind; wrong result counts on Q7 Q8 (maplib 0.20.26 (fixed in 0.22.0) returns one all-unbound row for a GROUP BY over no solutions (SPARQL: no rows); e.g. for a product type without products)
 bsbm-2785,update,tripletrail,42227.66,
 bsbm-2785,update,oxigraph,30659.65,
 bsbm-2785,update,qlever,,
@@ -28,7 +28,7 @@ bsbm-28480,bi,oxigraph,52.53,
 bsbm-28480,bi,qlever,3461.12,
 bsbm-28480,bi,jena,210.72,
 bsbm-28480,bi,graphdb,582.45,
-bsbm-28480,bi,maplib,5346.44,BI Q5 skipped: maplib 0.20.26 rejects GROUP BY on a variable its subquery does not bind; wrong result counts on Q7 Q8 (maplib 0.20.26 returns one all-unbound row for a GROUP BY over no solutions (SPARQL: no rows); e.g. for a product type without products)
+bsbm-28480,bi,maplib,5346.44,BI Q5 skipped: maplib 0.22.0 rejects GROUP BY on a variable its subquery does not bind; wrong result counts on Q7 Q8 (maplib 0.20.26 (fixed in 0.22.0) returns one all-unbound row for a GROUP BY over no solutions (SPARQL: no rows); e.g. for a product type without products)
 bsbm-28480,update,tripletrail,36272.52,
 bsbm-28480,update,oxigraph,13495.72,
 bsbm-28480,update,qlever,,
