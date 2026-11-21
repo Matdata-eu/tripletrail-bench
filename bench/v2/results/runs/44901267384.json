@@ -1,0 +1,40 @@
+{
+ "run": "44901267384",
+ "request": "scale osm_europe",
+ "engines": "tripletrail",
+ "machine": "ccx43",
+ "commit": "cc8c2f43133c6e726a3ce7b1665c9366007a6ba3",
+ "started": "2026-11-21T12:00:24+00:00",
+ "finished": "2026-11-21T14:36:10+00:00",
+ "env": {
+  "cpu": "AMD EPYC-Milan Processor",
+  "cpus": 16,
+  "memory": "64291356 kB",
+  "kernel": "6.8.0-138-generic",
+  "disk_free": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/sda1       338G  8.4G  316G   3% /",
+  "tripletrail_commit": "cc8c2f43133c6e726a3ce7b1665c9366007a6ba3",
+  "bench_commit": "18cd3ce1e94d04f5ae6d46ddd545eda1ef672d16",
+  "postgres": "psql (PostgreSQL) 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1)",
+  "postgis": "dpkg-query: no packages found matching postgresql-16-postgis-3\ndpkg-query: no packages found matching postgresql-16-pgrouting",
+  "docker": "29.1.3",
+  "graphdb_image": "Error response from daemon: No such image: mirror.gcr.io/ontotext/graphdb:10.8.0",
+  "qlever_image": "Error response from daemon: No such image: mirror.gcr.io/adfreiburg/qlever:latest",
+  "oxigraph_image": "Error response from daemon: No such image: ghcr.io/oxigraph/oxigraph:0.5.13",
+  "java": "openjdk version \"21.0.13.1\" 2026-11-17\nOpenJDK Runtime Environment (build 21.0.13.1+2-1-24.04.1-Ubuntu)\nOpenJDK 64-Bit Server VM (build 21.0.13.1+2-1-24.04.1-Ubuntu, mixed mode, sharing)",
+  "jena_jar": "jena-fuseki-geosparql-6.2.0.jar"
+ },
+ "jobs": [
+  {
+   "suite": "scale",
+   "dataset": "osm_europe",
+   "engines": [
+    "tripletrail"
+   ],
+   "status": "ok",
+   "seconds": 9346,
+   "finished": "2026-11-21T14:36:10+00:00",
+   "log": "44901267384-scale-osm_europe.log"
+  }
+ ],
+ "workflow_run": "https://github.com/Matdata-eu/tripletrail-bench/actions/runs/44901267384"
+}

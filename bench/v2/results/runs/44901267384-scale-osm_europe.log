@@ -1,0 +1,28 @@
+downloading https://download.geofabrik.de/europe-latest.osm.pbf (2026-11-21T12:00:24+00:00)
+set a: 173102066 triples, {'station': 98863, 'track': 1252954, 'landuse': 33223578, 'admin': 18753}
+set b: 826940246 triples, {'highway': 40763783, 'building': 121271411} (capped)
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/suites/scale/run_scale.sh: line 71: 19747 Aborted                 (core dumped) osmium export -O -f geojsonseq --add-unique-id=type_id -i "sparse_file_array,$tmp/$set.idx" -o - "$tmp/$set.osm.pbf" 2> "$tmp/$set.export.log"
+     19748 Done                    | python3 "$CONV" --set "$set" --meta "$meta.part" --max-triples "$budget" >> "$nt.part"
+prepared osm_europe: 1000042312 triples
+=== tripletrail on osm_europe (2026-11-21T12:58:19+00:00)
+load 10 min: heap 18210 MB, store 1 MB, read 121893 MB, written 49155 MB, cpu 1207 s
+load 20 min: heap 9400 MB, store 4958 MB, read 187337 MB, written 66401 MB, cpu 1784 s
+load 31 min: heap 12288 MB, store 4958 MB, read 240055 MB, written 74593 MB, cpu 2105 s
+load 41 min: heap 18477 MB, store 4958 MB, read 336776 MB, written 78690 MB, cpu 2442 s
+load 52 min: heap 20190 MB, store 4958 MB, read 391625 MB, written 86882 MB, cpu 2744 s
+load 62 min: heap 25351 MB, store 38034 MB, read 425104 MB, written 152203 MB, cpu 4203 s
+load 73 min: heap 7675 MB, store 131884 MB, read 510676 MB, written 298730 MB, cpu 5177 s
+{"engine": "tripletrail", "dataset": "osm_europe", "load_s": 4931.481, "start_s": 12.833, "disk_bytes": 190935955949, "disk_by_file": {"dict.idx": 7072011352, "LOCK": 0, "TIMELINE": 33, "spog.seg": 9941576984, "geoms.bin": 49404206896, "gpos.seg": 3194102064, "generation": 1, "FORMAT": 2, "gpso.seg": 5256198624, "wal.log": 0, "stats.bin": 8208, "gosp.seg": 3568063440, "RETIRED": 5, "ospg.seg": 3568063440, "checksums": 346, "psog.seg": 5256198624, "CURRENT": 2, "dict.bin": 90539846880, "gspo.seg": 9941576984, "posg.seg": 3194102064}, "load_peak_rss_bytes": 63501770752, "load_peak_anon_bytes": 30819860480, "wall_s": 4944.348, "rss_after_start": "9788 MiB (heap 41 MiB)", "triples": 1000042312}
+[tripletrail] restarted for family 8 osm in 1.5 s
+[tripletrail] osm_station_admin        ok         cold 53129.782 ms  p50 3601.533 p95 3602.697 (n=3)
+[tripletrail] osm_track_landuse        failed     cold - ms  p50 - p95 - (n=0)  timeout: HTTP 503: The operation took longer than its timeout
+[tripletrail] osm_track_track_5m       ok         cold 104513.809 ms  p50 7798.358 p95 7838.666 (n=3)
+[tripletrail] restarted for family 9 scale in 10.7 s
+[tripletrail] scale_class_counts       ok         cold 200.817 ms  p50 1.179 p95 1.695 (n=3)
+[tripletrail] scale_building_kinds     ok         cold 10304.148 ms  p50 5.314 p95 5.316 (n=3)
+[tripletrail] scale_label_lookup       ok         cold 188.856 ms  p50 0.945 p95 2.46 (n=20)
+[tripletrail] scale_named_stations     ok         cold 359.718 ms  p50 30.043 p95 32.437 (n=3)
+updates: 60 x 10000: p50 89.4 ms, p95 353.4 ms, total 8.02 s
+per-commit ms: [540.7, 423.0, 261.8, 186.3, 167.7, 122.2, 887.8, 80.8, 89.7, 114.3, 98.3, 92.7, 87.5, 353.4, 113.1, 87.0, 91.0, 91.4, 83.8, 92.4, 228.8, 84.4, 83.5, 85.1, 99.5, 89.8, 95.6, 141.7, 83.8, 83.8, 82.1, 85.4, 80.5, 85.2, 160.4, 86.5, 99.5, 92.7, 84.6, 89.0, 79.6, 158.8, 83.2, 83.0, 87.4, 86.1, 82.2, 91.4, 175.7, 89.2, 81.3, 84.3, 82.4, 82.1, 93.4, 140.1, 84.6, 85.6, 97.8, 88.0]
+tripletrail rss after the updates: 17699 MiB (heap 1745 MiB)
+=== done (2026-11-21T14:36:10+00:00)

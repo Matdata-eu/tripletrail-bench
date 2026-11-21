@@ -1,0 +1,92 @@
+{
+ "engine": "tripletrail",
+ "qid": "osm_track_track_5m",
+ "family": "8 osm",
+ "kind": "scalars",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 104513.809,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     5446900.0
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 7706.724,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     5446900.0
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 7935.841,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     5446900.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 7838.666,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     5446900.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 7798.358,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     5446900.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 7787.782,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     5446900.0
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 104513.809,
+ "warm": {
+  "n": 3,
+  "p50_ms": 7798.358,
+  "p95_ms": 7838.666,
+  "min_ms": 7787.782,
+  "max_ms": 7838.666,
+  "mean_ms": 7808.269
+ },
+ "dataset": "osm_europe",
+ "rss_after": "53452 MiB (heap 27805 MiB)"
+}

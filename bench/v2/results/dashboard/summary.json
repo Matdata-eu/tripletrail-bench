@@ -26,6 +26,14 @@
    "date": "2026-11-18"
   },
   {
+   "suite": "scale",
+   "dataset": "osm_europe",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "cc8c2f4",
+   "date": "2026-11-21"
+  },
+  {
    "suite": "sparqloscope",
    "dataset": "bsbm-2785",
    "machine": "ccx43",
@@ -80,6 +88,14 @@
    "cpus": "16",
    "commit": "e36d3ba",
    "date": "2026-11-18"
+  },
+  {
+   "suite": "v2",
+   "dataset": "osm_europe",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "cc8c2f4",
+   "date": ""
   },
   {
    "suite": "v2",
@@ -417,6 +433,12 @@
       "speedup": 2.14
      }
     }
+   },
+   {
+    "dataset": "osm_europe",
+    "metric": "load time (s)",
+    "tripletrail": 4931.481,
+    "others": {}
    },
    {
     "dataset": "osm_norway",
