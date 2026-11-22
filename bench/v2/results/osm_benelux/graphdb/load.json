@@ -1,0 +1,11 @@
+{
+ "engine": "graphdb",
+ "dataset": "osm_benelux",
+ "load_s": 906.583,
+ "start_s": 49.426,
+ "spatial_index_s": 1082.251,
+ "disk_bytes": 44090354989,
+ "wall_s": 2045.309,
+ "rss_after_start": "24.57GiB / 61.31GiB",
+ "triples": 201065992
+}

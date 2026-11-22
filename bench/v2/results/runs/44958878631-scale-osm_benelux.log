@@ -1,0 +1,19 @@
+downloading https://download.geofabrik.de/europe-latest.osm.pbf (2026-11-21T22:58:13+00:00)
+set a: 20310102 triples, {'station': 3751, 'track': 96262, 'landuse': 3965065, 'admin': 183}
+set b: 180755890 triples, {'highway': 6777124, 'building': 28829148}
+prepared osm_benelux: 201065992 triples
+=== graphdb on osm_benelux (2026-11-21T23:09:37+00:00)
+{"engine": "graphdb", "dataset": "osm_benelux", "load_s": 906.583, "start_s": 49.426, "spatial_index_s": 1082.251, "disk_bytes": 44090354989, "wall_s": 2045.309, "rss_after_start": "24.57GiB / 61.31GiB", "triples": 201065992}
+[graphdb] restarted for family 8 osm in 18.2 s
+[graphdb] osm_station_admin        failed     cold - ms  p50 - p95 - (n=0)  HTTP 503: Query interrupted: Query evaluation took too long
+
+[graphdb] osm_track_landuse        failed     cold - ms  p50 - p95 - (n=0)  HTTP 503: Query interrupted: Query evaluation took too long
+
+[graphdb] osm_track_track_5m       failed     cold - ms  p50 - p95 - (n=0)  HTTP 503: Query interrupted: Query evaluation took too long
+
+[graphdb] restarted for family 9 scale in 16.9 s
+[graphdb] scale_class_counts       ok         cold 16089.97 ms  p50 12396.803 p95 12398.954 (n=3)
+[graphdb] scale_building_kinds     ok         cold 4722.346 ms  p50 4383.779 p95 4405.595 (n=3)
+[graphdb] scale_label_lookup       ok         cold 13.117 ms  p50 3.493 p95 6.146 (n=20)
+[graphdb] scale_named_stations     ok         cold 46.484 ms  p50 19.09 p95 22.17 (n=3)
+=== done (2026-11-22T00:16:54+00:00)
