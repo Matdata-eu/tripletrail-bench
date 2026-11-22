@@ -4,7 +4,7 @@
 #   bench.sh <suite> <dataset> [engine...]  one job: v2 small|large|osm_norway, geographica all,
 #                                            bsbm <products>, sparqloscope <dataset>,
 #                                            trainmarks <scale>, updates <dataset>,
-#                                            scale osm_benelux|osm_europe,
+#                                            scale osm_benelux|osm_europe|osm_planet,
 #                                            railpack (only with the enterprise repository's suite and packs)
 # Engines: none given (or "default") = each suite's own default set; otherwise each job runs the
 # given engines it supports (v2: postgis tripletrail qlever jena graphdb; geographica: tripletrail

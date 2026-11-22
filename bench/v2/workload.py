@@ -142,7 +142,7 @@ Q = [
     ("8 osm", "osm_station_admin", p_none, 3, "groups", 600, 0),
     ("8 osm", "osm_track_landuse", p_none, 3, "scalars", 600, 0),
     ("8 osm", "osm_track_track_5m", p_none, 3, "scalars", 600, 0),
-    # Scale (#218: osm_benelux, osm_europe from data/osm_scale.py): scans, groups and point
+    # Scale (#218: osm_benelux, osm_europe, osm_planet from data/osm_scale.py): scans, groups and point
     # lookups on a store larger than its memory limit
     ("9 scale", "scale_class_counts", p_none, 3, "groups", 600, 0),
     ("9 scale", "scale_building_kinds", p_none, 3, "groups", 600, 0),
@@ -151,7 +151,7 @@ Q = [
 ]
 
 # The datasets of the scale suite (suites/scale): the OSM queries and the scale family.
-SCALE_DATASETS = ("osm_benelux", "osm_europe")
+SCALE_DATASETS = ("osm_benelux", "osm_europe", "osm_planet")
 
 QUERIES = {q[1]: dict(family=q[0], qid=q[1], params=q[2], warm=q[3], kind=q[4], timeout=q[5], tol=q[6],
                      data={"8 osm": "osm", "9 scale": "scale"}.get(q[0], "rinf"))

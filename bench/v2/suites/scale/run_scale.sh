@@ -3,13 +3,16 @@
 # N-Triples (data/osm_scale.py, the shape of osm_norway plus buildings and highways), which each
 # engine loads and answers the OSM and scale query families of benchmark v2 on. TripleTrail runs
 # on its store on disk with --memory-limit, then takes small commits (updates.py) against it.
-#   run_scale.sh osm_benelux|osm_europe [engine...]     (default: tripletrail qlever; graphdb by name)
+#   run_scale.sh osm_benelux|osm_europe|osm_planet [engine...]     (default: tripletrail qlever; graphdb by name)
 #     osm_benelux  Belgium, the Netherlands and Luxembourg (a bounding box of Europe), about 100M
 #                  triples; TripleTrail's commits are also timed on the store in memory there, the
 #                  reference of the acceptance criterion (p95 within 2x)
 #     osm_europe   all of Europe, cut at SCALE_MAX_TRIPLES (default 1,000,000,000)
+#     osm_planet   the whole planet (planet.openstreetmap.org), cut at SCALE_MAX_TRIPLES (default
+#                  5,000,000,000); needs a server with 2.5 TB of work disk (bench.yml gives it a
+#                  2,500 GB volume) and more memory than a ccx43 (a ccx63)
 # Env: BENCH_WORK, TRIPLETRAIL_MEMORY_LIMIT (default 32G), SCALE_MAX_TRIPLES, SCALE_PBF_URL
-# (default Geofabrik's europe-latest), SCALE_KEEP=1 (keep the inputs, the N-Triples and the
+# (default Geofabrik's europe-latest, or the planet for osm_planet), SCALE_KEEP=1 (keep the inputs, the N-Triples and the
 # stores; otherwise each goes once it is no longer needed: the disk of a 360 GB server holds one
 # at a time). Results: results/<dataset>/ as for v2, plus updates-*.json and scale.json.
 set -uo pipefail
@@ -23,13 +26,17 @@ ENGINES=${*:-tripletrail qlever}
 # machine as heap; its default 8g is too small at this size.
 export GRAPHDB_HEAP=${GRAPHDB_HEAP:-32g}
 LIMIT=${TRIPLETRAIL_MEMORY_LIMIT:-32G}
-URL=${SCALE_PBF_URL:-https://download.geofabrik.de/europe-latest.osm.pbf}
-PBF=$W/inputs/europe-latest.osm.pbf
+case $DS in
+  osm_planet) URL=${SCALE_PBF_URL:-https://planet.openstreetmap.org/pbf/planet-latest.osm.pbf} ;;
+  *) URL=${SCALE_PBF_URL:-https://download.geofabrik.de/europe-latest.osm.pbf} ;;
+esac
+PBF=$W/inputs/$(basename "$URL")
 OUT=$V2/results/$DS
 CONV=$V2/data/osm_scale.py
 case $DS in
   osm_benelux) BBOX=2.5,49.4,7.3,53.6; MAX=${SCALE_MAX_TRIPLES:-0} ;;
   osm_europe) BBOX=""; MAX=${SCALE_MAX_TRIPLES:-1000000000} ;;
+  osm_planet) BBOX=""; MAX=${SCALE_MAX_TRIPLES:-5000000000} ;;
   *) echo "unknown scale dataset $DS" >&2; exit 2 ;;
 esac
 # Kills, memory pressure and stops of the runner service, into the run log as they happen:
@@ -59,14 +66,15 @@ prepare() {
     osmium extract -b "$BBOX" -O -o "$tmp/region.osm.pbf" "$PBF" || return 1
     src=$tmp/region.osm.pbf
   fi
-  python3 - "$meta.part" "$PBF" "$BBOX" "$MAX" <<'PY'
+  python3 - "$meta.part" "$PBF" "$BBOX" "$MAX" "$DS" <<'PY'
 import json, os, sys, time
-out, pbf, bbox, cap = sys.argv[1:]
+out, pbf, bbox, cap, ds = sys.argv[1:]
 st = os.stat(pbf)
 json.dump({"source": os.path.basename(pbf), "source_bytes": st.st_size,
            "source_mtime": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(st.st_mtime)),
            "bbox_filter": bbox or None, "max_triples": int(cap) or None,
-           "bbox": [float(v) for v in bbox.split(",")] if bbox else [-32.0, 34.0, 45.0, 72.0]},
+           "bbox": [float(v) for v in bbox.split(",")] if bbox else
+           ([-180.0, -85.0, 180.0, 85.0] if ds == "osm_planet" else [-32.0, 34.0, 45.0, 72.0])},
           open(out, "w"))
 PY
   rm -f "$nt.part"
@@ -101,7 +109,7 @@ PY
 }
 
 prepare || exit 1
-[ "$DS" = osm_europe ] && [ -z "${SCALE_KEEP:-}" ] && rm -f "$PBF"
+[ "$DS" != osm_benelux ] && [ -z "${SCALE_KEEP:-}" ] && rm -f "$PBF"
 cp "$W/data/$DS.meta.json" "$OUT/data.json"
 python3 "$V2/env.py" >"$OUT/env.json"
 # What is known about a failed load, into the run log and the results: the engine's load log
