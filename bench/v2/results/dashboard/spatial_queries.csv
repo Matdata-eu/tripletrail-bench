@@ -248,6 +248,13 @@ osm_benelux,9 scale,scale_building_kinds,qlever,ok,17.168,15.64,15.714
 osm_benelux,9 scale,scale_class_counts,qlever,ok,7.008,3.69,4.803
 osm_benelux,9 scale,scale_label_lookup,qlever,ok,9.701,6.731,8.488
 osm_benelux,9 scale,scale_named_stations,qlever,ok,89.273,86.564,89.465
+osm_benelux,8 osm,osm_station_admin,graphdb,failed,,,
+osm_benelux,8 osm,osm_track_landuse,graphdb,failed,,,
+osm_benelux,8 osm,osm_track_track_5m,graphdb,failed,,,
+osm_benelux,9 scale,scale_building_kinds,graphdb,ok,4744.589,4470.208,4502.525
+osm_benelux,9 scale,scale_class_counts,graphdb,ok,22890.402,12721.683,12792.097
+osm_benelux,9 scale,scale_label_lookup,graphdb,ok,14.486,4.075,6.09
+osm_benelux,9 scale,scale_named_stations,graphdb,ok,52.86,15.45,16.38
 osm_europe,8 osm,osm_station_admin,tripletrail,ok,53129.782,3601.533,3602.697
 osm_europe,8 osm,osm_track_landuse,tripletrail,failed,,,
 osm_europe,8 osm,osm_track_track_5m,tripletrail,ok,104513.809,7798.358,7838.666

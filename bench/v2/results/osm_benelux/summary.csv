@@ -6,10 +6,14 @@ osm_track_landuse,qlever,ok,15828.848,3,16008.91,16176.719,15988.968,16176.719,1
 osm_track_track_5m,tripletrail,ok,616.068,3,629.347,632.85,619.912,632.85,627.37
 osm_track_track_5m,qlever,ok,2314.61,3,2327.563,2336.316,2317.455,2336.316,2327.111
 scale_class_counts,tripletrail,ok,3.756,3,1.395,1.715,1.291,1.715,1.467
+scale_class_counts,graphdb,ok,22890.402,3,12721.683,12792.097,12640.804,12792.097,12718.195
 scale_class_counts,qlever,ok,7.008,3,3.69,4.803,3.538,4.803,4.01
 scale_building_kinds,tripletrail,ok,147.759,3,3.932,4.078,3.778,4.078,3.929
+scale_building_kinds,graphdb,ok,4744.589,3,4470.208,4502.525,4447.864,4502.525,4473.532
 scale_building_kinds,qlever,ok,17.168,3,15.64,15.714,15.436,15.714,15.597
 scale_label_lookup,tripletrail,ok,3.013,20,0.903,1.224,0.821,1.224,0.934
+scale_label_lookup,graphdb,ok,14.486,20,4.075,6.09,3.507,6.09,4.253
 scale_label_lookup,qlever,ok,9.701,20,6.731,8.488,6.259,8.488,6.918
 scale_named_stations,tripletrail,ok,5.204,3,2.763,2.813,2.594,2.813,2.723
+scale_named_stations,graphdb,ok,52.86,3,15.45,16.38,15.191,16.38,15.674
 scale_named_stations,qlever,ok,89.273,3,86.564,89.465,84.362,89.465,86.797

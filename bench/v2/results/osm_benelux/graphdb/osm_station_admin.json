@@ -1,0 +1,18 @@
+{
+ "engine": "graphdb",
+ "qid": "osm_station_admin",
+ "family": "8 osm",
+ "kind": "groups",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ok": false,
+   "error": "HTTP 500: Query evaluation error: org.apache.lucene.store.AlreadyClosedException: Already closed: MMapIndexInput(path=\"/opt/graphdb/home/data/repositories/bench/storage/GeoSPARQL/v3/index/_vu0_Lucene80_0.dvd\") [slice=randomaccess]\n"
+  }
+ ],
+ "status": "failed",
+ "reason": "HTTP 500: Query evaluation error: org.apache.lucene.store.AlreadyClosedException: Already closed: MMapIndexInput(path=\"/opt/graphdb/home/data/repositories/bench/storage/GeoSPARQL/v3/index/_vu0_Lucene80_0.dvd\") [slice=randomaccess]\n",
+ "dataset": "osm_benelux",
+ "rss_after": "23.63GiB / 61.31GiB"
+}

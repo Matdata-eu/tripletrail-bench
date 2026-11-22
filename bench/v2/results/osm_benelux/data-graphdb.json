@@ -1,0 +1,38 @@
+{
+ "source": "europe-latest.osm.pbf",
+ "source_bytes": 35523259116,
+ "source_mtime": "2026-11-22T07:34:34Z",
+ "bbox_filter": "2.5,49.4,7.3,53.6",
+ "max_triples": null,
+ "bbox": [
+  2.5,
+  49.4,
+  7.3,
+  53.6
+ ],
+ "sets": {
+  "a": {
+   "triples": 20311195,
+   "counts": {
+    "station": 3751,
+    "track": 96263,
+    "landuse": 3965281,
+    "admin": 183
+   },
+   "capped": false,
+   "seconds": 63.2
+  },
+  "b": {
+   "triples": 180763437,
+   "counts": {
+    "highway": 6778004,
+    "building": 28829720
+   },
+   "capped": false,
+   "seconds": 222.8
+  }
+ },
+ "triples": 201074632,
+ "convert_s": 373,
+ "nt_bytes": 36770609591
+}

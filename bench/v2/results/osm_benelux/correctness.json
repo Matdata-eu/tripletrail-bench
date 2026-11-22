@@ -82,6 +82,43 @@
    "[489166.0] vs [489252.0]": 6
   }
  },
+ "scale_class_counts/graphdb": {
+  "counts": {
+   "match": 0,
+   "tie": 0,
+   "mismatch": 6
+  },
+  "examples": [
+   {
+    "index": 0,
+    "verdict": "mismatch",
+    "note": "5 groups differ, e.g. geosparql#Geometry: 39671533.0 vs 39673202.0"
+   },
+   {
+    "index": 1,
+    "verdict": "mismatch",
+    "note": "5 groups differ, e.g. geosparql#Geometry: 39671533.0 vs 39673202.0"
+   },
+   {
+    "index": 2,
+    "verdict": "mismatch",
+    "note": "5 groups differ, e.g. geosparql#Geometry: 39671533.0 vs 39673202.0"
+   },
+   {
+    "index": 3,
+    "verdict": "mismatch",
+    "note": "5 groups differ, e.g. geosparql#Geometry: 39671533.0 vs 39673202.0"
+   },
+   {
+    "index": 4,
+    "verdict": "mismatch",
+    "note": "5 groups differ, e.g. geosparql#Geometry: 39671533.0 vs 39673202.0"
+   }
+  ],
+  "notes": {
+   "5 groups differ, e.g. geosparql#Geometry: 39671533.0 vs 39673202.0": 6
+  }
+ },
  "scale_class_counts/qlever": {
   "counts": {
    "match": 6,
@@ -90,6 +127,43 @@
   },
   "examples": [],
   "notes": {}
+ },
+ "scale_building_kinds/graphdb": {
+  "counts": {
+   "match": 0,
+   "tie": 0,
+   "mismatch": 6
+  },
+  "examples": [
+   {
+    "index": 0,
+    "verdict": "mismatch",
+    "note": "34 groups differ, e.g. construction: 89057.0 vs 88899.0"
+   },
+   {
+    "index": 1,
+    "verdict": "mismatch",
+    "note": "34 groups differ, e.g. construction: 89057.0 vs 88899.0"
+   },
+   {
+    "index": 2,
+    "verdict": "mismatch",
+    "note": "34 groups differ, e.g. construction: 89057.0 vs 88899.0"
+   },
+   {
+    "index": 3,
+    "verdict": "mismatch",
+    "note": "34 groups differ, e.g. construction: 89057.0 vs 88899.0"
+   },
+   {
+    "index": 4,
+    "verdict": "mismatch",
+    "note": "34 groups differ, e.g. construction: 89057.0 vs 88899.0"
+   }
+  ],
+  "notes": {
+   "34 groups differ, e.g. construction: 89057.0 vs 88899.0": 6
+  }
  },
  "scale_building_kinds/qlever": {
   "counts": {
@@ -100,9 +174,27 @@
   "examples": [],
   "notes": {}
  },
+ "scale_label_lookup/graphdb": {
+  "counts": {
+   "match": 23,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
  "scale_label_lookup/qlever": {
   "counts": {
    "match": 23,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "scale_named_stations/graphdb": {
+  "counts": {
+   "match": 6,
    "tie": 0,
    "mismatch": 0
   },

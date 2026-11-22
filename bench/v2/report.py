@@ -66,6 +66,12 @@ def main():
             out.append(f"| {NAMES[e]} | {l['load_s']:.1f} | {extra if extra is not None else '-'} | "
                        f"{fmt_bytes(l.get('disk_bytes'))} | {l.get('rss_after_start', '-')} | "
                        f"{fmt_count(l, e)} |")
+        counts = {fmt_count(loads[e], e) for e in engines if e != "postgis" and loads.get(e)}
+        if len(counts) > 1:
+            # An engine measured in its own run on a newer extract (data-<engine>.json says which).
+            out.append("\nThe engines loaded different extracts (see the Triples column), so their answers are"
+                       " compared across extracts. data-<engine>.json and env-<engine>.json describe an engine"
+                       " that ran on its own.")
         out.append("")
     notes = {}
     summary = []
