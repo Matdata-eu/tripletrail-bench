@@ -38,18 +38,19 @@ python3 "$V2/runs.py" start "$MANIFEST" --run "$RUN" --request "$SUITE $DS" --en
 
 # engines <suite>: the engines of this job (the requested ones the suite supports).
 engines() {
-  local all
+  local all extra=""
   case $1 in
     v2) all="postgis tripletrail qlever jena graphdb" ;;
     geographica) all="tripletrail qlever jena graphdb" ;;
-    scale) all="tripletrail qlever" ;;
+    # GraphDB runs the scale suite only when asked for by name (its own paid run).
+    scale) all="tripletrail qlever"; extra="graphdb" ;;
     railpack) all="tripletrail" ;;
     updates) all="tripletrail oxigraph jena graphdb" ;;
     *) all="tripletrail oxigraph qlever jena graphdb maplib" ;;
   esac
   [ -z "$REQ" ] && { echo "$all"; return; }
   local out=""
-  for e in $all; do case " $REQ " in *" $e "*) out="$out $e" ;; esac; done
+  for e in $all $extra; do case " $REQ " in *" $e "*) out="$out $e" ;; esac; done
   echo "${out# }"
 }
 
