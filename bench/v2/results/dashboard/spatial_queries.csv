@@ -262,6 +262,13 @@ osm_europe,9 scale,scale_building_kinds,tripletrail,ok,10304.148,5.314,5.316
 osm_europe,9 scale,scale_class_counts,tripletrail,ok,200.817,1.179,1.695
 osm_europe,9 scale,scale_label_lookup,tripletrail,ok,188.856,0.945,2.46
 osm_europe,9 scale,scale_named_stations,tripletrail,ok,359.718,30.043,32.437
+osm_europe,8 osm,osm_station_admin,qlever,ok,85409.145,54997.941,55446.02
+osm_europe,8 osm,osm_track_landuse,qlever,failed,,,
+osm_europe,8 osm,osm_track_track_5m,qlever,ok,23174.651,22728.507,22996.886
+osm_europe,9 scale,scale_building_kinds,qlever,ok,1234.799,32.636,34.12
+osm_europe,9 scale,scale_class_counts,qlever,ok,7.766,4.282,4.349
+osm_europe,9 scale,scale_label_lookup,qlever,ok,14.447,8.23,9.102
+osm_europe,9 scale,scale_named_stations,qlever,ok,779.469,850.837,859.991
 osm_europe,8 osm,osm_track_track_5m,graphdb,failed,,,
 osm_europe,9 scale,scale_building_kinds,graphdb,ok,22632.467,19368.75,19395.868
 osm_europe,9 scale,scale_class_counts,graphdb,ok,72755.013,62313.096,63121.403

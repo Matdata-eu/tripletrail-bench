@@ -473,6 +473,10 @@
      "graphdb": {
       "value": 4747.255,
       "speedup": 0.96
+     },
+     "qlever": {
+      "value": 1623.029,
+      "speedup": 0.33
      }
     }
    },
@@ -574,6 +578,11 @@
       "value": 1180.236,
       "tripletrail": 3.652,
       "speedup": 323.18
+     },
+     "qlever": {
+      "value": 327.028,
+      "tripletrail": 41.346,
+      "speedup": 7.91
      }
     }
    },

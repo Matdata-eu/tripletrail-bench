@@ -1,0 +1,10 @@
+{
+ "engine": "qlever",
+ "dataset": "osm_europe",
+ "load_s": 1623.029,
+ "start_s": 1.298,
+ "disk_bytes": 52118147258,
+ "wall_s": 1628.391,
+ "rss_after_start": "94.23MiB / 61.31GiB",
+ "triples": 1000066611
+}

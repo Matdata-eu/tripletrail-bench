@@ -1,0 +1,18 @@
+{
+ "engine": "qlever",
+ "qid": "osm_track_landuse",
+ "family": "8 osm",
+ "kind": "scalars",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ok": false,
+   "error": "HTTP 429: {\n    \"exception\": \"Operation timed out. Last operation: Spatial Join of ?w1 and ?w2 using intersects\",\n    \"query\": \"PREFIX era: <http://data.europa.eu/949/>\\nPREFIX geo: <http://www.opengis.net/ont/geosparql#>\\nPREFIX geof: <http://www.opengis.net/def/function/geosparql/>\\nPREFIX uom: <http://www.opengis.net/def/uom/OGC/1.0/>\\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\\nPREFIX bench: <http://example.org/bench/>\\nSELECT (COUNT(*) AS ?n) WHERE {\\n  ?t a bench:OsmTrack ; geo:hasGeometry/geo:asWKT ?w1 .\\n  ?l a bench:OsmLanduse ; geo:has"
+  }
+ ],
+ "status": "failed",
+ "reason": "HTTP 429: {\n    \"exception\": \"Operation timed out. Last operation: Spatial Join of ?w1 and ?w2 using intersects\",\n    \"query\": \"PREFIX era: <http://data.europa.eu/949/>\\nPREFIX geo: <http://www.opengis.net/ont/geosparql#>\\nPREFIX geof: <http://www.opengis.net/def/function/geosparql/>\\nPREFIX uom: <h",
+ "dataset": "osm_europe",
+ "rss_after": "1.866GiB / 61.31GiB"
+}

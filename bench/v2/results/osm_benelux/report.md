@@ -9,9 +9,9 @@
 
 | Query | tripletrail | GraphDB | QLever |
 |---|---|---|---|
-| osm_station_admin | 76 / 77 (104) | error [1] | 2.42 s / 2.42 s (2.46 s) |
-| osm_track_landuse | 1.53 s / 1.56 s (1.60 s) | error [2] | 16 s / 16 s (16 s) |
-| osm_track_track_5m | 629 / 633 (616) | error [3] | 2.33 s / 2.34 s (2.31 s) |
+| osm_station_admin | 76 / 77 (104) | timeout [1] | 2.42 s / 2.42 s (2.46 s) |
+| osm_track_landuse | 1.53 s / 1.56 s (1.60 s) | timeout [2] | 16 s / 16 s (16 s) |
+| osm_track_track_5m | 629 / 633 (616) | timeout [3] | 2.33 s / 2.34 s (2.31 s) |
 
 **Family 9 scale** — warm p50 / p95 in ms (cold first run in brackets)
 

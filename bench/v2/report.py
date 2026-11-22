@@ -98,7 +98,10 @@ def main():
                 cells.append(f"N/A [{notes[r['reason']]}]")
             elif st == "failed":
                 reason = r.get("reason", "")
-                short = "timeout" if "timeout" in reason.lower() or "cancel" in reason.lower() else "error"
+                low = reason.lower()
+                # QLever says "timed out" (HTTP 429), GraphDB "took too long" (HTTP 503).
+                short = "timeout" if any(w in low for w in ("timeout", "timed out", "took too long", "cancel")) \
+                    else "error"
                 notes.setdefault(f"{NAMES[e]} {qid}: {reason[:160]}", len(notes) + 1)
                 cells.append(f"{short} [{notes[f'{NAMES[e]} {qid}: {reason[:160]}']}]")
             else:
