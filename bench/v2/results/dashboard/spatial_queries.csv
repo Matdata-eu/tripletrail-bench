@@ -234,6 +234,13 @@ osm_norway,8 osm,osm_track_track_5m,graphdb,failed,,,
 osm_norway,8 osm,osm_station_admin,postgis,ok,207.649,156.521,156.771
 osm_norway,8 osm,osm_track_landuse,postgis,ok,822.31,700.594,703.643
 osm_norway,8 osm,osm_track_track_5m,postgis,ok,2712.033,2685.272,2699.667
+osm_benelux,8 osm,osm_station_admin,graphdb,failed,,,
+osm_benelux,8 osm,osm_track_landuse,graphdb,failed,,,
+osm_benelux,8 osm,osm_track_track_5m,graphdb,failed,,,
+osm_benelux,9 scale,scale_building_kinds,graphdb,ok,4722.346,4383.779,4405.595
+osm_benelux,9 scale,scale_class_counts,graphdb,ok,16089.97,12396.803,12398.954
+osm_benelux,9 scale,scale_label_lookup,graphdb,ok,13.117,3.493,6.146
+osm_benelux,9 scale,scale_named_stations,graphdb,ok,46.484,19.09,22.17
 osm_europe,8 osm,osm_station_admin,tripletrail,ok,53129.782,3601.533,3602.697
 osm_europe,8 osm,osm_track_landuse,tripletrail,failed,,,
 osm_europe,8 osm,osm_track_track_5m,tripletrail,ok,104513.809,7798.358,7838.666

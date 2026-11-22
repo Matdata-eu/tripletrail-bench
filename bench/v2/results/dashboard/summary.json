@@ -27,6 +27,14 @@
   },
   {
    "suite": "scale",
+   "dataset": "osm_benelux",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "5d76345",
+   "date": "2026-11-21"
+  },
+  {
+   "suite": "scale",
    "dataset": "osm_europe",
    "machine": "ccx43",
    "cpus": "16",
@@ -88,6 +96,14 @@
    "cpus": "16",
    "commit": "e36d3ba",
    "date": "2026-11-18"
+  },
+  {
+   "suite": "v2",
+   "dataset": "osm_benelux",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "5d76345",
+   "date": ""
   },
   {
    "suite": "v2",

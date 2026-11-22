@@ -1,0 +1,5 @@
+qid,engine,status,cold_ms,n,p50_ms,p95_ms,min_ms,max_ms,mean_ms
+scale_class_counts,graphdb,ok,16089.97,3,12396.803,12398.954,12367.621,12398.954,12387.793
+scale_building_kinds,graphdb,ok,4722.346,3,4383.779,4405.595,4342.834,4405.595,4377.403
+scale_label_lookup,graphdb,ok,13.117,20,3.493,6.146,3.175,6.146,3.79
+scale_named_stations,graphdb,ok,46.484,3,19.09,22.17,13.46,22.17,18.24
