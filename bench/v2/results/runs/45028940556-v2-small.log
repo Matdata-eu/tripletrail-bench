@@ -1,0 +1,31 @@
+triples=805538 elements=26304 relations=30864 signals=24000 ops=4176 tracks=1201 regions=9
+=== graphdb on small (2026-11-22T13:50:23+00:00)
+{"engine": "graphdb", "dataset": "small", "load_s": 12.528, "start_s": 13.545, "spatial_index_s": 2.761, "disk_bytes": 149656170, "wall_s": 36.711, "rss_after_start": "2.449GiB / 61.31GiB", "triples": 805538}
+[graphdb] restarted for family 1 selection in 13.7 s
+[graphdb] sel_bbox                 ok         cold 505.822 ms  p50 47.511 p95 66.515 (n=30)
+[graphdb] sel_polygon              ok         cold 65.049 ms  p50 45.695 p95 58.83 (n=30)
+[graphdb] sel_distance             ok         cold 426.628 ms  p50 189.443 p95 316.429 (n=30)
+[graphdb] restarted for family 2 knn in 13.9 s
+[graphdb] knn_signals              ok         cold 937.283 ms  p50 324.798 p95 483.186 (n=30)
+[graphdb] knn_ops                  ok         cold 82.23 ms  p50 90.753 p95 158.409 (n=30)
+[graphdb] restarted for family 3 join in 13.8 s
+[graphdb] join_signal_ne_20m       failed     cold - ms  p50 - p95 - (n=0)  HTTP 503: Query interrupted: Query evaluation took too long
+
+[graphdb] join_op_region           ok         cold 8054.526 ms  p50 7224.532 p95 7229.662 (n=5)
+[graphdb] agg_length_region        n/a        cold - ms  p50 - p95 - (n=0)  geof:metricLength / metricArea / aggUnion (GeoSPARQL 1.1) are unknown to GraphDB 10.8 (HTTP 500 'Unknown function')
+[graphdb] agg_total_length         n/a        cold - ms  p50 - p95 - (n=0)  geof:metricLength / metricArea / aggUnion (GeoSPARQL 1.1) are unknown to GraphDB 10.8 (HTTP 500 'Unknown function')
+[graphdb] agg_union_buffers        n/a        cold - ms  p50 - p95 - (n=0)  geof:metricLength / metricArea / aggUnion (GeoSPARQL 1.1) are unknown to GraphDB 10.8 (HTTP 500 'Unknown function')
+[graphdb] restarted for family 5 linear referencing in 13.8 s
+[graphdb] lr_km_to_point           n/a        cold - ms  p50 - p95 - (n=0)  no linear-referencing functions
+[graphdb] lr_assets_between_km     ok         cold 262.792 ms  p50 13.925 p95 26.208 (n=30)
+[graphdb] route_dijkstra           n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[graphdb] route_dijkstra_cost      n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[graphdb] route_bddijkstra         n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[graphdb] route_ch                 n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[graphdb] route_constrained        n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[graphdb] driving_distance_50km    n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[graphdb] ksp5                     n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[graphdb] cost_matrix_100          n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[graphdb] components               n/a        cold - ms  p50 - p95 - (n=0)  no routing
+[graphdb] mixed_route_signals      n/a        cold - ms  p50 - p95 - (n=0)  no routing
+=== done (2026-11-22T13:58:33+00:00)

@@ -2,7 +2,7 @@
 |---|---|---|---|---|---|
 | tripletrail | 0.6 | 0.566 | 57 MiB | 132 MiB (heap 55 MiB) | 805,538 |
 | PostGIS/pgRouting | 4.5 | - | 83 MiB | 170 MiB (sum over backends, shared buffers counted per process) | 165,466 rows |
-| GraphDB | 12.3 | 2.534 | 143 MiB | 1.966GiB / 61.31GiB | 805,538 |
+| GraphDB | 12.5 | 2.761 | 143 MiB | 2.449GiB / 61.31GiB | 805,538 |
 | Jena GeoSPARQL | 6.0 | 5.271 | 317 MiB | 939 MiB | 805,538 |
 | QLever | 2.5 | 0.508 | 16 MiB | 6.012MiB / 61.31GiB | 805,538 |
 
@@ -11,23 +11,23 @@
 
 | Query | tripletrail | PostGIS/pgRouting | GraphDB | Jena GeoSPARQL | QLever |
 |---|---|---|---|---|---|
-| sel_bbox | 3.2 / 4.0 (4.9) | 0.6 / 0.7 (20) | 56 / 69 (540) | 18 / 30 (126) | 31 / 36 (53) |
-| sel_polygon | 2.9 / 3.1 (3.3) | 0.5 / 0.6 (0.6) | 40 / 61 (59) | 22 / 38 (143) | 28 / 31 (29) |
-| sel_distance | 2.4 / 2.9 (2.8) | 1.6 / 4.0 (24) | 186 / 309 (396) | 24 / 34 (46) | 27 / 30 (30) |
+| sel_bbox | 3.2 / 4.0 (4.9) | 0.6 / 0.7 (20) | 48 / 67 (506) | 18 / 30 (126) | 31 / 36 (53) |
+| sel_polygon | 2.9 / 3.1 (3.3) | 0.5 / 0.6 (0.6) | 46 / 59 (65) | 22 / 38 (143) | 28 / 31 (29) |
+| sel_distance | 2.4 / 2.9 (2.8) | 1.6 / 4.0 (24) | 189 / 316 (427) | 24 / 34 (46) | 27 / 30 (30) |
 
 **Family 2 knn** — warm p50 / p95 in ms (cold first run in brackets)
 
 | Query | tripletrail | PostGIS/pgRouting | GraphDB | Jena GeoSPARQL | QLever |
 |---|---|---|---|---|---|
-| knn_signals | 4.6 / 6.9 (15) | 0.7 / 0.8 (36) | 302 / 508 (916) | 210 / 317 (1.27 s) | 26 / 33 (50) |
-| knn_ops | 7.9 / 11 (9.2) | 0.7 / 0.9 (1.5) | 62 / 132 (75) | 40 / 64 (174) | 18 / 19 (19) |
+| knn_signals | 4.6 / 6.9 (15) | 0.7 / 0.8 (36) | 325 / 483 (937) | 210 / 317 (1.27 s) | 26 / 33 (50) |
+| knn_ops | 7.9 / 11 (9.2) | 0.7 / 0.9 (1.5) | 91 / 158 (82) | 40 / 64 (174) | 18 / 19 (19) |
 
 **Family 3 join** — warm p50 / p95 in ms (cold first run in brackets)
 
 | Query | tripletrail | PostGIS/pgRouting | GraphDB | Jena GeoSPARQL | QLever |
 |---|---|---|---|---|---|
 | join_signal_ne_20m | 59 / 60 (61) | 152 / 154 (207) | error [1] | 7.75 s / 7.86 s (11 s) | 394 / 402 (419) |
-| join_op_region | 12 / 13 (15) | 3.8 / 3.8 (5.8) | 495 / 499 (679) | 245 / 270 (560) | 101 / 110 (105) |
+| join_op_region | 12 / 13 (15) | 3.8 / 3.8 (5.8) | 7.22 s / 7.23 s (8.05 s) | 245 / 270 (560) | 101 / 110 (105) |
 
 **Family 4 aggregate** — warm p50 / p95 in ms (cold first run in brackets)
 
@@ -42,7 +42,7 @@
 | Query | tripletrail | PostGIS/pgRouting | GraphDB | Jena GeoSPARQL | QLever |
 |---|---|---|---|---|---|
 | lr_km_to_point | 4.6 / 6.2 (5.9) | 2.8 / 3.5 (30) | N/A [6] | N/A [6] | N/A [6] |
-| lr_assets_between_km | 5.3 / 5.7 (47) | 0.3 / 0.3 (1.3) | 14 / 29 (220) | 23 / 35 (127) | 16 / 19 (31) |
+| lr_assets_between_km | 5.3 / 5.7 (47) | 0.3 / 0.3 (1.3) | 14 / 26 (263) | 23 / 35 (127) | 16 / 19 (31) |
 
 **Family 6 routing** — warm p50 / p95 in ms (cold first run in brackets)
 

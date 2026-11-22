@@ -71,12 +71,12 @@ small,4 aggregate,agg_union_buffers,graphdb,n/a,,,
 small,6 routing,components,graphdb,n/a,,,
 small,6 routing,cost_matrix_100,graphdb,n/a,,,
 small,6 routing,driving_distance_50km,graphdb,n/a,,,
-small,3 join,join_op_region,graphdb,ok,679.175,494.97,499.107
+small,3 join,join_op_region,graphdb,ok,8054.526,7224.532,7229.662
 small,3 join,join_signal_ne_20m,graphdb,failed,,,
-small,2 knn,knn_ops,graphdb,ok,75.09,62.202,131.932
-small,2 knn,knn_signals,graphdb,ok,915.994,301.568,507.891
+small,2 knn,knn_ops,graphdb,ok,82.23,90.753,158.409
+small,2 knn,knn_signals,graphdb,ok,937.283,324.798,483.186
 small,6 routing,ksp5,graphdb,n/a,,,
-small,5 linear referencing,lr_assets_between_km,graphdb,ok,219.919,14.485,28.613
+small,5 linear referencing,lr_assets_between_km,graphdb,ok,262.792,13.925,26.208
 small,5 linear referencing,lr_km_to_point,graphdb,n/a,,,
 small,7 mixed,mixed_route_signals,graphdb,n/a,,,
 small,6 routing,route_bddijkstra,graphdb,n/a,,,
@@ -84,9 +84,9 @@ small,6 routing,route_ch,graphdb,n/a,,,
 small,6 routing,route_constrained,graphdb,n/a,,,
 small,6 routing,route_dijkstra,graphdb,n/a,,,
 small,6 routing,route_dijkstra_cost,graphdb,n/a,,,
-small,1 selection,sel_bbox,graphdb,ok,540.418,56.152,68.994
-small,1 selection,sel_distance,graphdb,ok,396.251,185.734,308.614
-small,1 selection,sel_polygon,graphdb,ok,58.781,40,61.141
+small,1 selection,sel_bbox,graphdb,ok,505.822,47.511,66.515
+small,1 selection,sel_distance,graphdb,ok,426.628,189.443,316.429
+small,1 selection,sel_polygon,graphdb,ok,65.049,45.695,58.83
 small,4 aggregate,agg_length_region,postgis,ok,477.082,422.271,426.135
 small,4 aggregate,agg_total_length,postgis,ok,60.425,61.286,61.996
 small,4 aggregate,agg_union_buffers,postgis,ok,11.991,5.564,9.534

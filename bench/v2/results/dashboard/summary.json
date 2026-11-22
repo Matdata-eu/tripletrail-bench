@@ -500,8 +500,8 @@
     "tripletrail": 0.615,
     "others": {
      "graphdb": {
-      "value": 12.27,
-      "speedup": 19.95
+      "value": 12.528,
+      "speedup": 20.37
      },
      "jena": {
       "value": 5.95,
@@ -592,9 +592,9 @@
     "metric": "geometric mean p50 over shared answered queries (ms)",
     "others": {
      "graphdb": {
-      "value": 92.075,
+      "value": 142.947,
       "tripletrail": 4.722,
-      "speedup": 19.5
+      "speedup": 30.27
      },
      "jena": {
       "value": 87.467,

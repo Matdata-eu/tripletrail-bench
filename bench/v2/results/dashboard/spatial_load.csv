@@ -2,7 +2,7 @@ dataset,engine,load_s,disk_gib,triples
 small,tripletrail,0.615,0.055,805538
 small,qlever,2.495,0.015,805538
 small,jena,5.95,0.31,805538
-small,graphdb,12.27,0.139,805538
+small,graphdb,12.528,0.139,805538
 small,postgis,4.481,0.081,
 large,tripletrail,4.36,0.741,10539890
 large,qlever,9.345,0.2,10539890
