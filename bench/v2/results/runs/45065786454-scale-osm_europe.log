@@ -1,0 +1,20 @@
+downloading https://download.geofabrik.de/europe-latest.osm.pbf (2026-11-22T20:26:12+00:00)
+set a: 173148703 triples, {'station': 98861, 'track': 1252945, 'landuse': 33232895, 'admin': 18752}
+set b: 826917908 triples, {'highway': 40762454, 'building': 121268275} (capped)
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/suites/scale/run_scale.sh: line 74: 19572 Aborted                 (core dumped) osmium export -O -f geojsonseq --add-unique-id=type_id -i "sparse_file_array,$tmp/$set.idx" -o - "$tmp/$set.osm.pbf" 2> "$tmp/$set.export.log"
+     19573 Done                    | python3 "$CONV" --set "$set" --meta "$meta.part" --max-triples "$budget" >> "$nt.part"
+prepared osm_europe: 1000066611 triples
+=== qlever on osm_europe (2026-11-22T21:22:22+00:00)
+{"engine": "qlever", "dataset": "osm_europe", "load_s": 1623.029, "start_s": 1.298, "disk_bytes": 52118147258, "wall_s": 1628.391, "rss_after_start": "94.23MiB / 61.31GiB", "triples": 1000066611}
+[qlever] restarted for family 8 osm in 1.5 s
+[qlever] osm_station_admin        ok         cold 85409.145 ms  p50 54997.941 p95 55446.02 (n=3)
+[qlever] osm_track_landuse        failed     cold - ms  p50 - p95 - (n=0)  HTTP 429: {
+    "exception": "Operation timed out. Last operation: Spatial Join of ?w1 and ?w2 using intersects",
+    "query": "PREFIX era: <http://data.europa.eu/949/>\nPREFIX geo: <http://www.opengis.net/ont/geosparql#>\nPREFIX geof: <http://www.opengis.net/def/function/geosparql/>\nPREFIX uom: <h
+[qlever] osm_track_track_5m       ok         cold 23174.651 ms  p50 22728.507 p95 22996.886 (n=3)
+[qlever] restarted for family 9 scale in 1.6 s
+[qlever] scale_class_counts       ok         cold 7.766 ms  p50 4.282 p95 4.349 (n=3)
+[qlever] scale_building_kinds     ok         cold 1234.799 ms  p50 32.636 p95 34.12 (n=3)
+[qlever] scale_label_lookup       ok         cold 14.447 ms  p50 8.23 p95 9.102 (n=20)
+[qlever] scale_named_stations     ok         cold 779.469 ms  p50 850.837 p95 859.991 (n=3)
+=== done (2026-11-22T22:08:30+00:00)
