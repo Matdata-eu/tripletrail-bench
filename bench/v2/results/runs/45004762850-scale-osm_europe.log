@@ -1,0 +1,21 @@
+downloading https://download.geofabrik.de/europe-latest.osm.pbf (2026-11-22T08:58:19+00:00)
+set a: 173148703 triples, {'station': 98861, 'track': 1252945, 'landuse': 33232895, 'admin': 18752}
+set b: 826917908 triples, {'highway': 40762454, 'building': 121268275} (capped)
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/suites/scale/run_scale.sh: line 74: 19596 Aborted                 (core dumped) osmium export -O -f geojsonseq --add-unique-id=type_id -i "sparse_file_array,$tmp/$set.idx" -o - "$tmp/$set.osm.pbf" 2> "$tmp/$set.export.log"
+     19597 Done                    | python3 "$CONV" --set "$set" --meta "$meta.part" --max-triples "$budget" >> "$nt.part"
+prepared osm_europe: 1000066611 triples
+=== graphdb on osm_europe (2026-11-22T09:59:24+00:00)
+{"engine": "graphdb", "dataset": "osm_europe", "load_s": 4747.255, "start_s": 459.12, "spatial_index_s": 6286.912, "disk_bytes": 252241019278, "wall_s": 11499.841, "rss_after_start": "31.92GiB / 61.31GiB", "triples": 1000066611}
+[graphdb] restarted for family 8 osm in 48.1 s
+[graphdb] osm_station_admin        failed     cold - ms  p50 - p95 - (n=0)  HTTP 500: Query evaluation error: org.apache.lucene.store.AlreadyClosedException: Already closed: MMapIndexInput(path="/opt/graphdb/home/data/repositories/bench/storage/GeoSPARQL/v3/index/_ehn_Lucene80_0.dvd") [slice=randomaccess]
+
+[graphdb] osm_track_landuse        failed     cold - ms  p50 - p95 - (n=0)  HTTP 503: Query interrupted: Query evaluation took too long
+
+[graphdb] osm_track_track_5m       failed     cold - ms  p50 - p95 - (n=0)  HTTP 503: Query interrupted: Query evaluation took too long
+
+[graphdb] restarted for family 9 scale in 49.7 s
+[graphdb] scale_class_counts       ok         cold 72755.013 ms  p50 62313.096 p95 63121.403 (n=3)
+[graphdb] scale_building_kinds     ok         cold 22632.467 ms  p50 19368.75 p95 19395.868 (n=3)
+[graphdb] scale_label_lookup       ok         cold 32.592 ms  p50 5.227 p95 7.685 (n=20)
+[graphdb] scale_named_stations     ok         cold 1728.793 ms  p50 307.569 p95 353.517 (n=3)
+=== done (2026-11-22T13:53:50+00:00)

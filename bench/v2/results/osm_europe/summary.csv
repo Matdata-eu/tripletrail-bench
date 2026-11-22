@@ -2,6 +2,10 @@ qid,engine,status,cold_ms,n,p50_ms,p95_ms,min_ms,max_ms,mean_ms
 osm_station_admin,tripletrail,ok,53129.782,3,3601.533,3602.697,3502.991,3602.697,3569.074
 osm_track_track_5m,tripletrail,ok,104513.809,3,7798.358,7838.666,7787.782,7838.666,7808.269
 scale_class_counts,tripletrail,ok,200.817,3,1.179,1.695,1.16,1.695,1.345
+scale_class_counts,graphdb,ok,72755.013,3,62313.096,63121.403,61341.532,63121.403,62258.677
 scale_building_kinds,tripletrail,ok,10304.148,3,5.314,5.316,5.238,5.316,5.289
+scale_building_kinds,graphdb,ok,22632.467,3,19368.75,19395.868,19296.701,19395.868,19353.773
 scale_label_lookup,tripletrail,ok,188.856,20,0.945,2.46,0.793,2.46,1.04
+scale_label_lookup,graphdb,ok,32.592,20,5.227,7.685,4.283,7.685,5.475
 scale_named_stations,tripletrail,ok,359.718,3,30.043,32.437,29.657,32.437,30.712
+scale_named_stations,graphdb,ok,1728.793,3,307.569,353.517,299.358,353.517,320.148
