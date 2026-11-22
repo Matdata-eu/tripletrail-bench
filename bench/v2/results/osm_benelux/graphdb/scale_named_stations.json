@@ -1,0 +1,92 @@
+{
+ "engine": "graphdb",
+ "qid": "scale_named_stations",
+ "family": "9 scale",
+ "kind": "scalars",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 46.484,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     3429.0
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 24.98,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     3429.0
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 27.48,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     3429.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 22.17,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     3429.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 19.09,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     3429.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 13.46,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     3429.0
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 46.484,
+ "warm": {
+  "n": 3,
+  "p50_ms": 19.09,
+  "p95_ms": 22.17,
+  "min_ms": 13.46,
+  "max_ms": 22.17,
+  "mean_ms": 18.24
+ },
+ "dataset": "osm_benelux",
+ "rss_after": "25.35GiB / 61.31GiB"
+}
