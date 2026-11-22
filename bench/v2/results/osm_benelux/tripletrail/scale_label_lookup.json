@@ -1,0 +1,388 @@
+{
+ "engine": "tripletrail",
+ "qid": "scale_label_lookup",
+ "family": "9 scale",
+ "kind": "ids",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 3.013,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 1.648,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 1.642,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 1.224,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 1.148,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 1.082,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 6,
+   "ms": 0.964,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 7,
+   "ms": 1.004,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 8,
+   "ms": 0.925,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 9,
+   "ms": 0.855,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 10,
+   "ms": 1.009,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 11,
+   "ms": 0.912,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 12,
+   "ms": 0.929,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 13,
+   "ms": 0.856,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 14,
+   "ms": 0.834,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 15,
+   "ms": 0.904,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 16,
+   "ms": 0.875,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 17,
+   "ms": 0.903,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 18,
+   "ms": 0.872,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 19,
+   "ms": 0.847,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 20,
+   "ms": 0.864,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 21,
+   "ms": 0.86,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 22,
+   "ms": 0.821,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 3.013,
+ "warm": {
+  "n": 20,
+  "p50_ms": 0.903,
+  "p95_ms": 1.224,
+  "min_ms": 0.821,
+  "max_ms": 1.224,
+  "mean_ms": 0.934
+ },
+ "dataset": "osm_benelux",
+ "rss_after": "2482 MiB (heap 92 MiB)"
+}

@@ -1,0 +1,92 @@
+{
+ "engine": "tripletrail",
+ "qid": "osm_track_landuse",
+ "family": "8 osm",
+ "kind": "scalars",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 1595.67,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     97465.0
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 1521.125,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     97465.0
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 1573.699,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     97465.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 1564.171,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     97465.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 1532.263,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     97465.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 1523.304,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     97465.0
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 1595.67,
+ "warm": {
+  "n": 3,
+  "p50_ms": 1532.263,
+  "p95_ms": 1564.171,
+  "min_ms": 1523.304,
+  "max_ms": 1564.171,
+  "mean_ms": 1539.913
+ },
+ "dataset": "osm_benelux",
+ "rss_after": "8073 MiB (heap 1835 MiB)"
+}
