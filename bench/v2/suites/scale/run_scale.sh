@@ -9,8 +9,9 @@
 #                  reference of the acceptance criterion (p95 within 2x)
 #     osm_europe   all of Europe, cut at SCALE_MAX_TRIPLES (default 1,000,000,000)
 #     osm_planet   the whole planet (planet.openstreetmap.org), cut at SCALE_MAX_TRIPLES (default
-#                  5,000,000,000); needs a server with 2.5 TB of work disk (bench.yml gives it a
-#                  2,500 GB volume) and more memory than a ccx43 (a ccx63)
+#                  5,000,000,000); needs about 3 TB of work disk (bench.yml gives it a
+#                  3,000 GB volume: the N-Triples, about 1 TB, next to the largest store, GraphDB's
+#                  about 1.2 TB) and more memory than a ccx43 (a ccx53, 128 GB)
 # Env: BENCH_WORK, TRIPLETRAIL_MEMORY_LIMIT (default 32G), SCALE_MAX_TRIPLES, SCALE_PBF_URL
 # (default Geofabrik's europe-latest, or the planet for osm_planet), SCALE_KEEP=1 (keep the inputs, the N-Triples and the
 # stores; otherwise each goes once it is no longer needed: the disk of a 360 GB server holds one
