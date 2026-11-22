@@ -1,0 +1,19 @@
+downloading https://download.geofabrik.de/europe-latest.osm.pbf (2026-11-22T07:30:49+00:00)
+set a: 20311195 triples, {'station': 3751, 'track': 96263, 'landuse': 3965281, 'admin': 183}
+set b: 180763437 triples, {'highway': 6778004, 'building': 28829720}
+prepared osm_benelux: 201074632 triples
+=== graphdb on osm_benelux (2026-11-22T07:44:20+00:00)
+{"engine": "graphdb", "dataset": "osm_benelux", "load_s": 772.167, "start_s": 52.981, "spatial_index_s": 1146.741, "disk_bytes": 44091793533, "wall_s": 1978.083, "rss_after_start": "24.65GiB / 61.31GiB", "triples": 201074632}
+[graphdb] restarted for family 8 osm in 19.5 s
+[graphdb] osm_station_admin        failed     cold - ms  p50 - p95 - (n=0)  HTTP 500: Query evaluation error: org.apache.lucene.store.AlreadyClosedException: Already closed: MMapIndexInput(path="/opt/graphdb/home/data/repositories/bench/storage/GeoSPARQL/v3/index/_vu0_Lucene80_0.dvd") [slice=randomaccess]
+
+[graphdb] osm_track_landuse        failed     cold - ms  p50 - p95 - (n=0)  HTTP 503: Query interrupted: Query evaluation took too long
+
+[graphdb] osm_track_track_5m       failed     cold - ms  p50 - p95 - (n=0)  HTTP 503: Query interrupted: Query evaluation took too long
+
+[graphdb] restarted for family 9 scale in 17.9 s
+[graphdb] scale_class_counts       ok         cold 22890.402 ms  p50 12721.683 p95 12792.097 (n=3)
+[graphdb] scale_building_kinds     ok         cold 4744.589 ms  p50 4470.208 p95 4502.525 (n=3)
+[graphdb] scale_label_lookup       ok         cold 14.486 ms  p50 4.075 p95 6.09 (n=20)
+[graphdb] scale_named_stations     ok         cold 52.86 ms  p50 15.45 p95 16.38 (n=3)
+=== done (2026-11-22T08:50:38+00:00)

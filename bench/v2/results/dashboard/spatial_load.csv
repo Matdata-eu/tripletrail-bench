@@ -16,4 +16,5 @@ osm_norway,graphdb,18.058,1.011,1458029
 osm_norway,postgis,24.108,0.804,
 osm_benelux,tripletrail,155.096,30.745,201065992
 osm_benelux,qlever,198.259,8.284,201065992
+osm_benelux,graphdb,772.167,41.064,201074632
 osm_europe,tripletrail,4931.481,177.823,1000042312
