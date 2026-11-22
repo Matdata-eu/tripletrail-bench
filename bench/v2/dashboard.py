@@ -35,7 +35,7 @@ except ImportError:  # Sparqloscope's files are YAML; without PyYAML its two CSV
 HERE = os.path.dirname(os.path.abspath(__file__))
 ENGINES = ["tripletrail", "oxigraph", "qlever", "jena", "graphdb", "maplib", "postgis"]
 # bench v2 datasets in the order the dashboard shows them; any other dataset folder follows.
-V2_DATASETS = ["small", "large", "osm_norway", "osm_benelux", "osm_europe"]
+V2_DATASETS = ["small", "large", "osm_norway", "osm_benelux", "osm_europe", "osm_planet"]
 # Same categories as suites/sparqloscope/run_sparqloscope.py (first match wins).
 CATEGORIES = [
     ("join", r"^(join|multicolumn-join)"), ("optional", r"^optional"), ("minus", r"^minus"),
