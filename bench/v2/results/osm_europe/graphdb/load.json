@@ -1,0 +1,11 @@
+{
+ "engine": "graphdb",
+ "dataset": "osm_europe",
+ "load_s": 4747.255,
+ "start_s": 459.12,
+ "spatial_index_s": 6286.912,
+ "disk_bytes": 252241019278,
+ "wall_s": 11499.841,
+ "rss_after_start": "31.92GiB / 61.31GiB",
+ "triples": 1000066611
+}

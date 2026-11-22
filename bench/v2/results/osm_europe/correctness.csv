@@ -1,1 +1,8 @@
 qid,engine,reference,compared,match,tie,mismatch,note
+osm_station_admin,graphdb,tripletrail,0,0,0,0,"failed: HTTP 500: Query evaluation error: org.apache.lucene.store.AlreadyClosedException: Already closed: MMapIndexInput(path=""/opt/graphdb/home/data/repositories/bench/storage/GeoSPARQL/v3/index/_ehn"
+osm_track_track_5m,graphdb,tripletrail,0,0,0,0,"failed: HTTP 503: Query interrupted: Query evaluation took too long
+"
+scale_class_counts,graphdb,tripletrail,6,0,0,6,"7 groups differ, e.g. OsmStation: 98863.0 vs 98861.0 (x6)"
+scale_building_kinds,graphdb,tripletrail,6,0,0,6,keys differ (2502 vs 2505) (x6)
+scale_label_lookup,graphdb,tripletrail,23,23,0,0,
+scale_named_stations,graphdb,tripletrail,6,0,0,6,[88629.0] vs [88632.0] (x6)

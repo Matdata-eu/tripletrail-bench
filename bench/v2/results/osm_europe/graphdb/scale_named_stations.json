@@ -1,0 +1,92 @@
+{
+ "engine": "graphdb",
+ "qid": "scale_named_stations",
+ "family": "9 scale",
+ "kind": "scalars",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 1728.793,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     88632.0
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 373.325,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     88632.0
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 364.711,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     88632.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 353.517,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     88632.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 299.358,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     88632.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 307.569,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     88632.0
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 1728.793,
+ "warm": {
+  "n": 3,
+  "p50_ms": 307.569,
+  "p95_ms": 353.517,
+  "min_ms": 299.358,
+  "max_ms": 353.517,
+  "mean_ms": 320.148
+ },
+ "dataset": "osm_europe",
+ "rss_after": "30.93GiB / 61.31GiB"
+}

@@ -1,1 +1,122 @@
-{}
+{
+ "scale_class_counts/graphdb": {
+  "counts": {
+   "match": 0,
+   "tie": 0,
+   "mismatch": 6
+  },
+  "examples": [
+   {
+    "index": 0,
+    "verdict": "mismatch",
+    "note": "7 groups differ, e.g. OsmStation: 98863.0 vs 98861.0"
+   },
+   {
+    "index": 1,
+    "verdict": "mismatch",
+    "note": "7 groups differ, e.g. OsmStation: 98863.0 vs 98861.0"
+   },
+   {
+    "index": 2,
+    "verdict": "mismatch",
+    "note": "7 groups differ, e.g. OsmStation: 98863.0 vs 98861.0"
+   },
+   {
+    "index": 3,
+    "verdict": "mismatch",
+    "note": "7 groups differ, e.g. OsmStation: 98863.0 vs 98861.0"
+   },
+   {
+    "index": 4,
+    "verdict": "mismatch",
+    "note": "7 groups differ, e.g. OsmStation: 98863.0 vs 98861.0"
+   }
+  ],
+  "notes": {
+   "7 groups differ, e.g. OsmStation: 98863.0 vs 98861.0": 6
+  }
+ },
+ "scale_building_kinds/graphdb": {
+  "counts": {
+   "match": 0,
+   "tie": 0,
+   "mismatch": 6
+  },
+  "examples": [
+   {
+    "index": 0,
+    "verdict": "mismatch",
+    "note": "keys differ (2502 vs 2505)"
+   },
+   {
+    "index": 1,
+    "verdict": "mismatch",
+    "note": "keys differ (2502 vs 2505)"
+   },
+   {
+    "index": 2,
+    "verdict": "mismatch",
+    "note": "keys differ (2502 vs 2505)"
+   },
+   {
+    "index": 3,
+    "verdict": "mismatch",
+    "note": "keys differ (2502 vs 2505)"
+   },
+   {
+    "index": 4,
+    "verdict": "mismatch",
+    "note": "keys differ (2502 vs 2505)"
+   }
+  ],
+  "notes": {
+   "keys differ (2502 vs 2505)": 6
+  }
+ },
+ "scale_label_lookup/graphdb": {
+  "counts": {
+   "match": 23,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "scale_named_stations/graphdb": {
+  "counts": {
+   "match": 0,
+   "tie": 0,
+   "mismatch": 6
+  },
+  "examples": [
+   {
+    "index": 0,
+    "verdict": "mismatch",
+    "note": "[88629.0] vs [88632.0]"
+   },
+   {
+    "index": 1,
+    "verdict": "mismatch",
+    "note": "[88629.0] vs [88632.0]"
+   },
+   {
+    "index": 2,
+    "verdict": "mismatch",
+    "note": "[88629.0] vs [88632.0]"
+   },
+   {
+    "index": 3,
+    "verdict": "mismatch",
+    "note": "[88629.0] vs [88632.0]"
+   },
+   {
+    "index": 4,
+    "verdict": "mismatch",
+    "note": "[88629.0] vs [88632.0]"
+   }
+  ],
+  "notes": {
+   "[88629.0] vs [88632.0]": 6
+  }
+ }
+}

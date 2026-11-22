@@ -38,8 +38,8 @@
    "dataset": "osm_europe",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "cc8c2f4",
-   "date": "2026-11-21"
+   "commit": "3a26643",
+   "date": "2026-11-22"
   },
   {
    "suite": "sparqloscope",
@@ -110,7 +110,7 @@
    "dataset": "osm_europe",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "cc8c2f4",
+   "commit": "3a26643",
    "date": ""
   },
   {
@@ -469,7 +469,12 @@
     "dataset": "osm_europe",
     "metric": "load time (s)",
     "tripletrail": 4931.481,
-    "others": {}
+    "others": {
+     "graphdb": {
+      "value": 4747.255,
+      "speedup": 0.96
+     }
+    }
    },
    {
     "dataset": "osm_norway",
@@ -558,6 +563,17 @@
       "value": 162.807,
       "tripletrail": 19.319,
       "speedup": 8.43
+     }
+    }
+   },
+   {
+    "dataset": "osm_europe",
+    "metric": "geometric mean p50 over shared answered queries (ms)",
+    "others": {
+     "graphdb": {
+      "value": 1180.236,
+      "tripletrail": 3.652,
+      "speedup": 323.18
      }
     }
    },
