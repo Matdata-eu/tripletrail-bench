@@ -1,0 +1,92 @@
+{
+ "engine": "qlever",
+ "qid": "osm_track_landuse",
+ "family": "8 osm",
+ "kind": "scalars",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 15828.848,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     97424.0
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 16104.53,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     97424.0
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 15908.685,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     97424.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 15988.968,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     97424.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 16008.91,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     97424.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 16176.719,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     97424.0
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 15828.848,
+ "warm": {
+  "n": 3,
+  "p50_ms": 16008.91,
+  "p95_ms": 16176.719,
+  "min_ms": 15988.968,
+  "max_ms": 16176.719,
+  "mean_ms": 16058.199
+ },
+ "dataset": "osm_benelux",
+ "rss_after": "561.3MiB / 61.31GiB"
+}

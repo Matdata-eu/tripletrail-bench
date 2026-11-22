@@ -27,6 +27,14 @@
   },
   {
    "suite": "scale",
+   "dataset": "osm_benelux",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "cee8c3c",
+   "date": "2026-11-21"
+  },
+  {
+   "suite": "scale",
    "dataset": "osm_europe",
    "machine": "ccx43",
    "cpus": "16",
@@ -88,6 +96,14 @@
    "cpus": "16",
    "commit": "e36d3ba",
    "date": "2026-11-18"
+  },
+  {
+   "suite": "v2",
+   "dataset": "osm_benelux",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "cee8c3c",
+   "date": ""
   },
   {
    "suite": "v2",
@@ -435,6 +451,17 @@
     }
    },
    {
+    "dataset": "osm_benelux",
+    "metric": "load time (s)",
+    "tripletrail": 155.096,
+    "others": {
+     "qlever": {
+      "value": 198.259,
+      "speedup": 1.28
+     }
+    }
+   },
+   {
     "dataset": "osm_europe",
     "metric": "load time (s)",
     "tripletrail": 4931.481,
@@ -511,6 +538,17 @@
       "value": 248.69,
       "tripletrail": 17.317,
       "speedup": 14.36
+     }
+    }
+   },
+   {
+    "dataset": "osm_benelux",
+    "metric": "geometric mean p50 over shared answered queries (ms)",
+    "others": {
+     "qlever": {
+      "value": 162.807,
+      "tripletrail": 19.319,
+      "speedup": 8.43
      }
     }
    },

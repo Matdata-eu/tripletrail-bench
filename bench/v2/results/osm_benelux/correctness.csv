@@ -1,0 +1,8 @@
+qid,engine,reference,compared,match,tie,mismatch,note
+osm_station_admin,qlever,tripletrail,6,6,0,0,
+osm_track_landuse,qlever,tripletrail,6,0,0,6,[97465.0] vs [97424.0] (x6)
+osm_track_track_5m,qlever,tripletrail,6,0,0,6,[489166.0] vs [489252.0] (x6)
+scale_class_counts,qlever,tripletrail,6,6,0,0,
+scale_building_kinds,qlever,tripletrail,6,6,0,0,
+scale_label_lookup,qlever,tripletrail,23,23,0,0,
+scale_named_stations,qlever,tripletrail,6,6,0,0,
