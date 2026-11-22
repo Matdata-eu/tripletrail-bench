@@ -262,3 +262,7 @@ osm_europe,9 scale,scale_building_kinds,tripletrail,ok,10304.148,5.314,5.316
 osm_europe,9 scale,scale_class_counts,tripletrail,ok,200.817,1.179,1.695
 osm_europe,9 scale,scale_label_lookup,tripletrail,ok,188.856,0.945,2.46
 osm_europe,9 scale,scale_named_stations,tripletrail,ok,359.718,30.043,32.437
+osm_europe,9 scale,scale_building_kinds,graphdb,ok,22632.467,19368.75,19395.868
+osm_europe,9 scale,scale_class_counts,graphdb,ok,72755.013,62313.096,63121.403
+osm_europe,9 scale,scale_label_lookup,graphdb,ok,32.592,5.227,7.685
+osm_europe,9 scale,scale_named_stations,graphdb,ok,1728.793,307.569,353.517
