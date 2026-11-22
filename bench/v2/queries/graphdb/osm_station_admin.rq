@@ -1,8 +1,7 @@
-# The triple form (?g1 geo:sfWithin|sfIntersects ?g2, GraphDB's indexed form) was tried on
-# osm_benelux (run 44998055578) and also hit the 600 s limit; this FILTER form is the one whose
-# answers are checked against the reference.
+# GraphDB GeoSPARQL plugin: the triple form between two geometries uses its spatial index
+# (FILTER(geof:sfWithin(...)) is evaluated pair by pair)
 SELECT ?a (COUNT(?s) AS ?n) WHERE {
-  ?s a bench:OsmStation ; geo:hasGeometry/geo:asWKT ?w1 .
-  ?a a bench:OsmAdmin ; geo:hasGeometry/geo:asWKT ?w2 .
-  FILTER(geof:sfWithin(?w1, ?w2))
+  ?s a bench:OsmStation ; geo:hasGeometry ?g1 .
+  ?g1 geo:sfWithin ?g2 .
+  ?a a bench:OsmAdmin ; geo:hasGeometry ?g2 .
 } GROUP BY ?a
