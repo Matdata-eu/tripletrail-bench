@@ -1,6 +1,8 @@
 # The triple form (?g1 geo:sfWithin|sfIntersects ?g2, GraphDB's indexed form) was tried on
 # osm_benelux (run 44998055578) and also hit the 600 s limit; this FILTER form is the one whose
 # answers are checked against the reference.
+# On v2 small (run 45028940556) the triple form answered join_op_region correctly (8 of 8
+# against PostGIS) but took 7.22 s warm p50, against 495 ms for this FILTER form.
 SELECT ?r (COUNT(?o) AS ?n) WHERE {
   ?o a era:OperationalPoint ; geo:hasGeometry/geo:asWKT ?w1 .
   ?r a bench:Region ; geo:hasGeometry/geo:asWKT ?w2 .
