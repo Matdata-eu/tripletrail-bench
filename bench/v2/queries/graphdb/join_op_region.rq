@@ -1,5 +1,7 @@
+# GraphDB GeoSPARQL plugin: the triple form between two geometries uses its spatial index
+# (FILTER(geof:sfWithin(...)) is evaluated pair by pair)
 SELECT ?r (COUNT(?o) AS ?n) WHERE {
-  ?o a era:OperationalPoint ; geo:hasGeometry/geo:asWKT ?w1 .
-  ?r a bench:Region ; geo:hasGeometry/geo:asWKT ?w2 .
-  FILTER(geof:sfWithin(?w1, ?w2))
+  ?o a era:OperationalPoint ; geo:hasGeometry ?g1 .
+  ?g1 geo:sfWithin ?g2 .
+  ?r a bench:Region ; geo:hasGeometry ?g2 .
 } GROUP BY ?r
