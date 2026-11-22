@@ -12,7 +12,7 @@ The engines loaded different extracts (see the Triples column), so their answers
 |---|---|---|
 | osm_station_admin | 3.60 s / 3.60 s (53 s) | not run |
 | osm_track_landuse | timeout [1] | not run |
-| osm_track_track_5m | 7.80 s / 7.84 s (105 s) | not run |
+| osm_track_track_5m | 7.80 s / 7.84 s (105 s) | error [2] |
 
 **Family 9 scale** — warm p50 / p95 in ms (cold first run in brackets)
 
@@ -26,3 +26,9 @@ The engines loaded different extracts (see the Triples column), so their answers
 Notes:
 
 1. tripletrail osm_track_landuse: timeout: HTTP 503: The operation took longer than its timeout
+2. GraphDB osm_track_track_5m: HTTP 503: Query interrupted: Query evaluation took too long
+
+
+GraphDB's `osm_station_admin` and `osm_track_landuse` are not run here. In run 45004762850 they ran only in the
+triple form of bench commit 2b9eb00, which is not the query in main. The form in main already hit the 600 s limit
+at 201M triples (osm_benelux, run 44958878631).

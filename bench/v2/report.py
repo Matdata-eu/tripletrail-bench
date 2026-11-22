@@ -111,6 +111,10 @@ def main():
         out.append("\nNotes:\n")
         for text, n in notes.items():
             out.append(f"{n}. {text}")
+    # Hand-written notes about this dataset's results (notes.md next to report.md).
+    extra = os.path.join(folder, "notes.md")
+    if os.path.exists(extra):
+        out.append("\n" + open(extra).read().strip())
     md = "\n".join(out)
     print(md)
     with open(os.path.join(folder, "report.md"), "w") as f:
