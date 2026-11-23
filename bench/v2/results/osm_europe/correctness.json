@@ -3,7 +3,8 @@
   "counts": {
    "match": 0,
    "tie": 0,
-   "mismatch": 6
+   "mismatch": 0,
+   "other_extract": 6
   },
   "examples": [
    {
@@ -40,7 +41,8 @@
   "counts": {
    "match": 0,
    "tie": 0,
-   "mismatch": 6
+   "mismatch": 0,
+   "other_extract": 6
   },
   "examples": [
    {
@@ -77,7 +79,8 @@
   "counts": {
    "match": 0,
    "tie": 0,
-   "mismatch": 6
+   "mismatch": 0,
+   "other_extract": 6
   },
   "examples": [
    {
@@ -114,7 +117,8 @@
   "counts": {
    "match": 0,
    "tie": 0,
-   "mismatch": 6
+   "mismatch": 0,
+   "other_extract": 6
   },
   "examples": [
    {
@@ -151,7 +155,8 @@
   "counts": {
    "match": 0,
    "tie": 0,
-   "mismatch": 6
+   "mismatch": 0,
+   "other_extract": 6
   },
   "examples": [
    {
@@ -188,7 +193,8 @@
   "counts": {
    "match": 0,
    "tie": 0,
-   "mismatch": 6
+   "mismatch": 0,
+   "other_extract": 6
   },
   "examples": [
    {
@@ -225,7 +231,8 @@
   "counts": {
    "match": 23,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "other_extract": 0
   },
   "examples": [],
   "notes": {}
@@ -234,7 +241,8 @@
   "counts": {
    "match": 23,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "other_extract": 0
   },
   "examples": [],
   "notes": {}
@@ -243,7 +251,8 @@
   "counts": {
    "match": 0,
    "tie": 0,
-   "mismatch": 6
+   "mismatch": 0,
+   "other_extract": 6
   },
   "examples": [
    {
@@ -280,7 +289,8 @@
   "counts": {
    "match": 0,
    "tie": 0,
-   "mismatch": 6
+   "mismatch": 0,
+   "other_extract": 6
   },
   "examples": [
    {
