@@ -1,10 +1,10 @@
 {
  "engine": "postgis",
  "dataset": "large",
- "load_s": 35.28,
- "parse_and_convert_s": 21.347,
- "total_s": 57.559,
- "disk_bytes": 936632847,
+ "load_s": 35.279,
+ "parse_and_convert_s": 22.34,
+ "total_s": 58.624,
+ "disk_bytes": 936870415,
  "rows": {
   "ne": 344256,
   "track": 15665,
@@ -15,6 +15,6 @@
   "vertex": 688512,
   "micro_edges": 750112
  },
- "wall_s": 58.139,
+ "wall_s": 59.266,
  "rss_after_start": "185 MiB (sum over backends, shared buffers counted per process)"
 }

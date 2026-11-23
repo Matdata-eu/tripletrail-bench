@@ -7,55 +7,67 @@
   {
    "phase": "cold",
    "index": 0,
-   "ms": 60.425,
+   "ms": 66.096,
    "ok": true,
    "rows": 1,
    "result": {
     "values": [
-     13282488.070671584
+     13282488.070671618
     ]
    }
   },
   {
    "phase": "warmup",
    "index": 1,
-   "ms": 61.514,
+   "ms": 48.77,
    "ok": true,
    "rows": 1,
    "result": {
     "values": [
-     13282488.070671668
+     13282488.070671652
     ]
    }
   },
   {
    "phase": "warmup",
    "index": 2,
-   "ms": 62.424,
+   "ms": 48.252,
    "ok": true,
    "rows": 1,
    "result": {
     "values": [
-     13282488.070671678
+     13282488.07067167
     ]
    }
   },
   {
    "phase": "warm",
    "index": 3,
-   "ms": 61.837,
+   "ms": 48.797,
    "ok": true,
    "rows": 1,
    "result": {
     "values": [
-     13282488.070671687
+     13282488.070671652
     ]
    }
   },
   {
    "phase": "warm",
    "index": 4,
-   "ms": 61.996,
+   "ms": 62.635,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     13282488.070671653
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 49.94,
    "ok": true,
    "rows": 1,
    "result": {
@@ -66,50 +78,38 @@
   },
   {
    "phase": "warm",
-   "index": 5,
-   "ms": 51.232,
-   "ok": true,
-   "rows": 1,
-   "result": {
-    "values": [
-     13282488.07067163
-    ]
-   }
-  },
-  {
-   "phase": "warm",
    "index": 6,
-   "ms": 61.286,
+   "ms": 48.582,
    "ok": true,
    "rows": 1,
    "result": {
     "values": [
-     13282488.070671676
+     13282488.070671622
     ]
    }
   },
   {
    "phase": "warm",
    "index": 7,
-   "ms": 57.681,
+   "ms": 48.049,
    "ok": true,
    "rows": 1,
    "result": {
     "values": [
-     13282488.070671609
+     13282488.070671618
     ]
    }
   }
  ],
  "status": "ok",
- "cold_ms": 60.425,
+ "cold_ms": 66.096,
  "warm": {
   "n": 5,
-  "p50_ms": 61.286,
-  "p95_ms": 61.996,
-  "min_ms": 51.232,
-  "max_ms": 61.996,
-  "mean_ms": 58.806
+  "p50_ms": 48.797,
+  "p95_ms": 62.635,
+  "min_ms": 48.049,
+  "max_ms": 62.635,
+  "mean_ms": 51.601
  },
  "dataset": "small",
  "rss_after": "209 MiB (sum over backends, shared buffers counted per process)"

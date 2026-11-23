@@ -6,61 +6,61 @@
  "queries": {
   "q1_count": {
    "runs": [
-    4.529,
-    3.157,
-    2.598,
-    2.412,
-    2.473,
-    2.548,
-    2.691
+    5.005,
+    3.006,
+    2.801,
+    2.989,
+    2.64,
+    2.626,
+    2.636
    ],
    "rows": 1,
    "first_row": [
     "9995000"
    ],
    "status": "ok",
-   "cold_ms": 4.529,
+   "cold_ms": 5.005,
    "warm": {
     "n": 5,
-    "median_ms": 2.548,
-    "min_ms": 2.412,
-    "max_ms": 2.691
+    "median_ms": 2.64,
+    "min_ms": 2.626,
+    "max_ms": 2.989
    }
   },
   "q2_customer_orders": {
    "runs": [
-    2360.275,
-    2383.04,
-    2304.66,
-    2372.88,
-    2382.303,
-    2334.447,
-    2393.322
+    153.035,
+    142.191,
+    128.045,
+    123.536,
+    119.939,
+    103.781,
+    111.23
    ],
    "rows": 20,
    "first_row": [
     "Quinn Larsen",
     "5413",
-    "13698872.589999996"
+    "13698872.59"
    ],
    "status": "ok",
-   "cold_ms": 2360.275,
+   "cold_ms": 153.035,
    "warm": {
     "n": 5,
-    "median_ms": 2372.88,
-    "min_ms": 2304.66,
-    "max_ms": 2393.322
+    "median_ms": 119.939,
+    "min_ms": 103.781,
+    "max_ms": 128.045
    }
   },
   "q3_join_3_entities": {
    "runs": [
-    501.334,
-    500.616,
-    503.422,
-    499.201,
-    499.471,
-    498.019,
-    500.182
+    62.963,
+    93.597,
+    82.599,
+    87.331,
+    97.54,
+    78.731,
+    100.367
    ],
    "rows": 50,
    "first_row": [
@@ -70,23 +70,23 @@
     "completed"
    ],
    "status": "ok",
-   "cold_ms": 501.334,
+   "cold_ms": 62.963,
    "warm": {
     "n": 5,
-    "median_ms": 499.471,
-    "min_ms": 498.019,
-    "max_ms": 503.422
+    "median_ms": 87.331,
+    "min_ms": 78.731,
+    "max_ms": 100.367
    }
   },
   "q4_optional_aggregation": {
    "runs": [
-    2086.243,
-    2104.44,
-    2113.595,
-    2101.095,
-    2094.223,
-    2140.839,
-    2100.395
+    173.426,
+    190.318,
+    190.551,
+    150.114,
+    174.658,
+    186.811,
+    156.889
    ],
    "rows": 50,
    "first_row": [
@@ -96,47 +96,47 @@
     "28110"
    ],
    "status": "ok",
-   "cold_ms": 2086.243,
+   "cold_ms": 173.426,
    "warm": {
     "n": 5,
-    "median_ms": 2101.095,
-    "min_ms": 2094.223,
-    "max_ms": 2140.839
+    "median_ms": 174.658,
+    "min_ms": 150.114,
+    "max_ms": 190.551
    }
   },
   "q5_construct": {
    "runs": [
-    1028.756,
-    1016.171,
-    1014.147,
-    1014.99,
-    1026.653,
-    1020.94,
-    1025.275
+    1038.077,
+    1037.349,
+    1066.501,
+    1042.313,
+    1079.055,
+    1034.455,
+    1070.186
    ],
    "rows": 439240,
    "first_row": [
     "<http://benchmark.example/C000011> <http://benchmark.example/country> <http://benchmark.example/Norway> ."
    ],
    "status": "ok",
-   "cold_ms": 1028.756,
+   "cold_ms": 1038.077,
    "warm": {
     "n": 5,
-    "median_ms": 1020.94,
-    "min_ms": 1014.147,
-    "max_ms": 1026.653
+    "median_ms": 1066.501,
+    "min_ms": 1034.455,
+    "max_ms": 1079.055
    }
   },
   "q6_delete_insert": {
    "status": "ok",
-   "ms": 183.912
+   "ms": 176.069
   }
  },
  "load": {
   "engine": "tripletrail",
   "dataset": "trainmarks-xlarge",
-  "load_s": 3.84,
-  "start_s": 0.566,
+  "load_s": 3.765,
+  "start_s": 0.557,
   "disk_bytes": 494838944,
   "disk_by_file": {
    "dict.idx": 17467672,
@@ -152,15 +152,17 @@
    "stats.bin": 12240,
    "gosp.seg": 40309872,
    "RETIRED": 5,
+   "compact-keys": 0,
    "checksums": 317,
    "ospg.seg": 40309872,
+   "render-wkt": 0,
    "CURRENT": 2,
    "psog.seg": 41384816,
    "posg.seg": 36964048,
    "dict.bin": 63476056,
    "gspo.seg": 88282552
   },
-  "load_peak_rss_bytes": 1772257280,
-  "load_peak_anon_bytes": 1745821696
+  "load_peak_rss_bytes": 1694715904,
+  "load_peak_anon_bytes": 1660882944
  }
 }

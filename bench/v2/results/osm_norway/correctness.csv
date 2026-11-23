@@ -12,5 +12,5 @@ osm_track_landuse,tripletrail,postgis,6,6,0,0,
 osm_track_track_5m,graphdb,postgis,0,0,0,0,"failed: HTTP 503: Query interrupted: Query evaluation took too long
 "
 osm_track_track_5m,jena,postgis,6,0,0,6,[42326.0] vs [39689.0] (x6)
-osm_track_track_5m,qlever,postgis,6,0,0,6,[42326.0] vs [42292.0] (x6)
+osm_track_track_5m,qlever,postgis,6,0,0,6,[42326.0] vs [42346.0] (x6)
 osm_track_track_5m,tripletrail,postgis,6,0,0,6,[42326.0] vs [42328.0] (x6)

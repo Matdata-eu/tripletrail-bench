@@ -7,174 +7,174 @@
   {
    "phase": "cold",
    "index": 0,
-   "ms": 132.005,
+   "ms": 174.993,
    "ok": true,
    "rows": 9,
    "result": {
     "groups": {
-     "http://example.org/bench/region/0_2": 1369935.2261841,
-     "http://example.org/bench/region/0_0": 1496338.3701329322,
-     "http://example.org/bench/region/0_1": 1377082.3462845539,
-     "http://example.org/bench/region/1_1": 1716759.5230562023,
-     "http://example.org/bench/region/1_2": 1580453.7439399732,
-     "http://example.org/bench/region/1_0": 1325263.9823303283,
+     "http://example.org/bench/region/0_0": 1496338.3701329355,
+     "http://example.org/bench/region/0_1": 1377082.346284551,
+     "http://example.org/bench/region/0_2": 1369935.226184105,
+     "http://example.org/bench/region/1_0": 1325263.9823303327,
+     "http://example.org/bench/region/1_1": 1716759.5230561963,
+     "http://example.org/bench/region/1_2": 1580453.7439399776,
      "http://example.org/bench/region/2_0": 1474541.6336151913,
-     "http://example.org/bench/region/2_1": 1613973.5026601497,
-     "http://example.org/bench/region/2_2": 1328139.7461781634
+     "http://example.org/bench/region/2_1": 1613973.502660146,
+     "http://example.org/bench/region/2_2": 1328139.7461781562
     }
    }
   },
   {
    "phase": "warmup",
    "index": 1,
-   "ms": 79.002,
+   "ms": 174.733,
    "ok": true,
    "rows": 9,
    "result": {
     "groups": {
-     "http://example.org/bench/region/0_2": 1369935.2261841,
-     "http://example.org/bench/region/0_0": 1496338.3701329322,
-     "http://example.org/bench/region/0_1": 1377082.3462845539,
-     "http://example.org/bench/region/1_1": 1716759.5230562023,
-     "http://example.org/bench/region/1_2": 1580453.7439399732,
-     "http://example.org/bench/region/1_0": 1325263.9823303283,
+     "http://example.org/bench/region/0_0": 1496338.3701329355,
+     "http://example.org/bench/region/0_1": 1377082.346284551,
+     "http://example.org/bench/region/0_2": 1369935.226184105,
+     "http://example.org/bench/region/1_0": 1325263.9823303327,
+     "http://example.org/bench/region/1_1": 1716759.5230561963,
+     "http://example.org/bench/region/1_2": 1580453.7439399776,
      "http://example.org/bench/region/2_0": 1474541.6336151913,
-     "http://example.org/bench/region/2_1": 1613973.5026601497,
-     "http://example.org/bench/region/2_2": 1328139.7461781634
+     "http://example.org/bench/region/2_1": 1613973.502660146,
+     "http://example.org/bench/region/2_2": 1328139.7461781562
     }
    }
   },
   {
    "phase": "warmup",
    "index": 2,
-   "ms": 100.531,
+   "ms": 174.994,
    "ok": true,
    "rows": 9,
    "result": {
     "groups": {
-     "http://example.org/bench/region/0_2": 1369935.2261841,
-     "http://example.org/bench/region/0_0": 1496338.3701329322,
-     "http://example.org/bench/region/0_1": 1377082.3462845539,
-     "http://example.org/bench/region/1_1": 1716759.5230562023,
-     "http://example.org/bench/region/1_2": 1580453.7439399732,
-     "http://example.org/bench/region/1_0": 1325263.9823303283,
+     "http://example.org/bench/region/0_0": 1496338.3701329355,
+     "http://example.org/bench/region/0_1": 1377082.346284551,
+     "http://example.org/bench/region/0_2": 1369935.226184105,
+     "http://example.org/bench/region/1_0": 1325263.9823303327,
+     "http://example.org/bench/region/1_1": 1716759.5230561963,
+     "http://example.org/bench/region/1_2": 1580453.7439399776,
      "http://example.org/bench/region/2_0": 1474541.6336151913,
-     "http://example.org/bench/region/2_1": 1613973.5026601497,
-     "http://example.org/bench/region/2_2": 1328139.7461781634
+     "http://example.org/bench/region/2_1": 1613973.502660146,
+     "http://example.org/bench/region/2_2": 1328139.7461781562
     }
    }
   },
   {
    "phase": "warm",
    "index": 3,
-   "ms": 109.949,
+   "ms": 189.586,
    "ok": true,
    "rows": 9,
    "result": {
     "groups": {
-     "http://example.org/bench/region/0_2": 1369935.2261841,
-     "http://example.org/bench/region/0_0": 1496338.3701329322,
-     "http://example.org/bench/region/0_1": 1377082.3462845539,
-     "http://example.org/bench/region/1_1": 1716759.5230562023,
-     "http://example.org/bench/region/1_2": 1580453.7439399732,
-     "http://example.org/bench/region/1_0": 1325263.9823303283,
+     "http://example.org/bench/region/0_0": 1496338.3701329355,
+     "http://example.org/bench/region/0_1": 1377082.346284551,
+     "http://example.org/bench/region/0_2": 1369935.226184105,
+     "http://example.org/bench/region/1_0": 1325263.9823303327,
+     "http://example.org/bench/region/1_1": 1716759.5230561963,
+     "http://example.org/bench/region/1_2": 1580453.7439399776,
      "http://example.org/bench/region/2_0": 1474541.6336151913,
-     "http://example.org/bench/region/2_1": 1613973.5026601497,
-     "http://example.org/bench/region/2_2": 1328139.7461781634
+     "http://example.org/bench/region/2_1": 1613973.502660146,
+     "http://example.org/bench/region/2_2": 1328139.7461781562
     }
    }
   },
   {
    "phase": "warm",
    "index": 4,
-   "ms": 127.144,
+   "ms": 189.963,
    "ok": true,
    "rows": 9,
    "result": {
     "groups": {
-     "http://example.org/bench/region/0_2": 1369935.2261841,
-     "http://example.org/bench/region/0_0": 1496338.3701329322,
-     "http://example.org/bench/region/0_1": 1377082.3462845539,
-     "http://example.org/bench/region/1_1": 1716759.5230562023,
-     "http://example.org/bench/region/1_2": 1580453.7439399732,
-     "http://example.org/bench/region/1_0": 1325263.9823303283,
+     "http://example.org/bench/region/0_0": 1496338.3701329355,
+     "http://example.org/bench/region/0_1": 1377082.346284551,
+     "http://example.org/bench/region/0_2": 1369935.226184105,
+     "http://example.org/bench/region/1_0": 1325263.9823303327,
+     "http://example.org/bench/region/1_1": 1716759.5230561963,
+     "http://example.org/bench/region/1_2": 1580453.7439399776,
      "http://example.org/bench/region/2_0": 1474541.6336151913,
-     "http://example.org/bench/region/2_1": 1613973.5026601497,
-     "http://example.org/bench/region/2_2": 1328139.7461781634
+     "http://example.org/bench/region/2_1": 1613973.502660146,
+     "http://example.org/bench/region/2_2": 1328139.7461781562
     }
    }
   },
   {
    "phase": "warm",
    "index": 5,
-   "ms": 116.016,
+   "ms": 168.38,
    "ok": true,
    "rows": 9,
    "result": {
     "groups": {
-     "http://example.org/bench/region/0_2": 1369935.2261841,
-     "http://example.org/bench/region/0_0": 1496338.3701329322,
-     "http://example.org/bench/region/0_1": 1377082.3462845539,
-     "http://example.org/bench/region/1_1": 1716759.5230562023,
-     "http://example.org/bench/region/1_2": 1580453.7439399732,
-     "http://example.org/bench/region/1_0": 1325263.9823303283,
+     "http://example.org/bench/region/0_0": 1496338.3701329355,
+     "http://example.org/bench/region/0_1": 1377082.346284551,
+     "http://example.org/bench/region/0_2": 1369935.226184105,
+     "http://example.org/bench/region/1_0": 1325263.9823303327,
+     "http://example.org/bench/region/1_1": 1716759.5230561963,
+     "http://example.org/bench/region/1_2": 1580453.7439399776,
      "http://example.org/bench/region/2_0": 1474541.6336151913,
-     "http://example.org/bench/region/2_1": 1613973.5026601497,
-     "http://example.org/bench/region/2_2": 1328139.7461781634
+     "http://example.org/bench/region/2_1": 1613973.502660146,
+     "http://example.org/bench/region/2_2": 1328139.7461781562
     }
    }
   },
   {
    "phase": "warm",
    "index": 6,
-   "ms": 99.611,
+   "ms": 168.64,
    "ok": true,
    "rows": 9,
    "result": {
     "groups": {
-     "http://example.org/bench/region/0_2": 1369935.2261841,
-     "http://example.org/bench/region/0_0": 1496338.3701329322,
-     "http://example.org/bench/region/0_1": 1377082.3462845539,
-     "http://example.org/bench/region/1_1": 1716759.5230562023,
-     "http://example.org/bench/region/1_2": 1580453.7439399732,
-     "http://example.org/bench/region/1_0": 1325263.9823303283,
+     "http://example.org/bench/region/0_0": 1496338.3701329355,
+     "http://example.org/bench/region/0_1": 1377082.346284551,
+     "http://example.org/bench/region/0_2": 1369935.226184105,
+     "http://example.org/bench/region/1_0": 1325263.9823303327,
+     "http://example.org/bench/region/1_1": 1716759.5230561963,
+     "http://example.org/bench/region/1_2": 1580453.7439399776,
      "http://example.org/bench/region/2_0": 1474541.6336151913,
-     "http://example.org/bench/region/2_1": 1613973.5026601497,
-     "http://example.org/bench/region/2_2": 1328139.7461781634
+     "http://example.org/bench/region/2_1": 1613973.502660146,
+     "http://example.org/bench/region/2_2": 1328139.7461781562
     }
    }
   },
   {
    "phase": "warm",
    "index": 7,
-   "ms": 103.56,
+   "ms": 181.631,
    "ok": true,
    "rows": 9,
    "result": {
     "groups": {
-     "http://example.org/bench/region/0_2": 1369935.2261841,
-     "http://example.org/bench/region/0_0": 1496338.3701329322,
-     "http://example.org/bench/region/0_1": 1377082.3462845539,
-     "http://example.org/bench/region/1_1": 1716759.5230562023,
-     "http://example.org/bench/region/1_2": 1580453.7439399732,
-     "http://example.org/bench/region/1_0": 1325263.9823303283,
+     "http://example.org/bench/region/0_0": 1496338.3701329355,
+     "http://example.org/bench/region/0_1": 1377082.346284551,
+     "http://example.org/bench/region/0_2": 1369935.226184105,
+     "http://example.org/bench/region/1_0": 1325263.9823303327,
+     "http://example.org/bench/region/1_1": 1716759.5230561963,
+     "http://example.org/bench/region/1_2": 1580453.7439399776,
      "http://example.org/bench/region/2_0": 1474541.6336151913,
-     "http://example.org/bench/region/2_1": 1613973.5026601497,
-     "http://example.org/bench/region/2_2": 1328139.7461781634
+     "http://example.org/bench/region/2_1": 1613973.502660146,
+     "http://example.org/bench/region/2_2": 1328139.7461781562
     }
    }
   }
  ],
  "status": "ok",
- "cold_ms": 132.005,
+ "cold_ms": 174.993,
  "warm": {
   "n": 5,
-  "p50_ms": 109.949,
-  "p95_ms": 127.144,
-  "min_ms": 99.611,
-  "max_ms": 127.144,
-  "mean_ms": 111.256
+  "p50_ms": 181.631,
+  "p95_ms": 189.963,
+  "min_ms": 168.38,
+  "max_ms": 189.963,
+  "mean_ms": 179.64
  },
  "dataset": "small",
- "rss_after": "239 MiB (heap 158 MiB)"
+ "rss_after": "277 MiB (heap 203 MiB)"
 }

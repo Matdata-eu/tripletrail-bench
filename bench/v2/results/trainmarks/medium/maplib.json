@@ -6,139 +6,139 @@
  "queries": {
   "q1_count": {
    "runs": [
-    26.187,
-    23.048,
-    22.759,
-    14.636,
-    22.623,
-    22.773,
-    14.723
+    9.162,
+    3.959,
+    3.977,
+    3.605,
+    3.779,
+    3.567,
+    3.662
    ],
    "rows": 1,
    "first_row": [
     "98000"
    ],
    "status": "ok",
-   "cold_ms": 26.187,
+   "cold_ms": 9.162,
    "warm": {
     "n": 5,
-    "median_ms": 22.623,
-    "min_ms": 14.636,
-    "max_ms": 22.773
+    "median_ms": 3.662,
+    "min_ms": 3.567,
+    "max_ms": 3.977
    }
   },
   "q2_customer_orders": {
    "runs": [
-    12.643,
-    11.188,
-    11.565,
-    9.605,
-    10.553,
-    12.077,
-    10.21
+    18.672,
+    14.361,
+    11.334,
+    12.872,
+    12.76,
+    12.64,
+    12.864
    ],
    "rows": 20,
    "first_row": [
     "Paul Nilsen",
-    "295454.07",
-    "112"
+    "112",
+    "295454.07"
    ],
    "status": "ok",
-   "cold_ms": 12.643,
+   "cold_ms": 18.672,
    "warm": {
     "n": 5,
-    "median_ms": 10.553,
-    "min_ms": 9.605,
-    "max_ms": 12.077
+    "median_ms": 12.76,
+    "min_ms": 11.334,
+    "max_ms": 12.872
    }
   },
   "q3_join_3_entities": {
    "runs": [
-    15.541,
-    15.03,
-    14.946,
-    13.366,
-    14.553,
-    15.444,
-    16.372
+    19.685,
+    21.074,
+    22.362,
+    19.891,
+    19.215,
+    22.26,
+    19.882
    ],
    "rows": 50,
    "first_row": [
-    "completed",
+    "Frank Berg",
     "Product-106",
     "4999.47",
-    "Frank Berg"
+    "completed"
    ],
    "status": "ok",
-   "cold_ms": 15.541,
+   "cold_ms": 19.685,
    "warm": {
     "n": 5,
-    "median_ms": 14.946,
-    "min_ms": 13.366,
-    "max_ms": 16.372
+    "median_ms": 19.891,
+    "min_ms": 19.215,
+    "max_ms": 22.362
    }
   },
   "q4_optional_aggregation": {
    "runs": [
-    12.998,
-    13.527,
-    16.756,
-    12.765,
-    8.392,
-    10.414,
-    8.856
+    17.625,
+    15.816,
+    16.166,
+    17.81,
+    18.042,
+    17.683,
+    17.11
    ],
    "rows": 50,
    "first_row": [
+    "http://benchmark.example/Germany",
     "http://benchmark.example/SMB",
-    "347",
     "24",
-    "895156.49"
+    "347"
    ],
    "status": "ok",
-   "cold_ms": 12.998,
+   "cold_ms": 17.625,
    "warm": {
     "n": 5,
-    "median_ms": 10.414,
-    "min_ms": 8.392,
-    "max_ms": 16.756
+    "median_ms": 17.683,
+    "min_ms": 16.166,
+    "max_ms": 18.042
    }
   },
   "q5_construct": {
    "runs": [
-    35.729,
-    35.681,
-    35.561,
-    36.057,
-    29.462,
-    31.688,
-    28.264
+    186.623,
+    71.335,
+    74.703,
+    69.518,
+    74.724,
+    69.953,
+    73.859
    ],
    "rows": 3878,
    "first_row": [
     "<http://benchmark.example/C000004> <http://benchmark.example/country> <http://benchmark.example/Norway> ."
    ],
    "status": "ok",
-   "cold_ms": 35.729,
+   "cold_ms": 186.623,
    "warm": {
     "n": 5,
-    "median_ms": 31.688,
-    "min_ms": 28.264,
-    "max_ms": 36.057
+    "median_ms": 73.859,
+    "min_ms": 69.518,
+    "max_ms": 74.724
    }
   },
   "q6_delete_insert": {
    "status": "ok",
-   "ms": 8.37
+   "ms": 22.41
   }
  },
  "load": {
   "engine": "maplib",
   "dataset": "trainmarks-medium",
-  "load_s": 0.241,
-  "start_s": 0.78,
+  "load_s": 0.109,
+  "start_s": 0.95,
   "disk_bytes": 0,
-  "load_peak_rss_bytes": 171941888,
+  "load_peak_rss_bytes": 132284416,
   "in_memory": true
  }
 }

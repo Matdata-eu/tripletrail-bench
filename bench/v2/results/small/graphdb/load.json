@@ -1,11 +1,11 @@
 {
  "engine": "graphdb",
  "dataset": "small",
- "load_s": 12.27,
- "start_s": 12.872,
- "spatial_index_s": 2.534,
- "disk_bytes": 149648137,
- "wall_s": 37.466,
- "rss_after_start": "1.966GiB / 61.31GiB",
+ "load_s": 12.772,
+ "start_s": 13.085,
+ "spatial_index_s": 2.531,
+ "disk_bytes": 149632105,
+ "wall_s": 36.035,
+ "rss_after_start": "2.012GiB / 61.31GiB",
  "triples": 805538
 }

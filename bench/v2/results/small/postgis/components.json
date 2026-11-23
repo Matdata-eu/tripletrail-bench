@@ -7,7 +7,7 @@
   {
    "phase": "cold",
    "index": 0,
-   "ms": 52.305,
+   "ms": 53.298,
    "ok": true,
    "rows": 1,
    "result": {
@@ -20,7 +20,7 @@
   {
    "phase": "warmup",
    "index": 1,
-   "ms": 50.306,
+   "ms": 51.448,
    "ok": true,
    "rows": 1,
    "result": {
@@ -33,7 +33,7 @@
   {
    "phase": "warmup",
    "index": 2,
-   "ms": 50.632,
+   "ms": 55.558,
    "ok": true,
    "rows": 1,
    "result": {
@@ -46,7 +46,7 @@
   {
    "phase": "warm",
    "index": 3,
-   "ms": 50.572,
+   "ms": 52.651,
    "ok": true,
    "rows": 1,
    "result": {
@@ -59,7 +59,7 @@
   {
    "phase": "warm",
    "index": 4,
-   "ms": 50.519,
+   "ms": 52.375,
    "ok": true,
    "rows": 1,
    "result": {
@@ -72,7 +72,7 @@
   {
    "phase": "warm",
    "index": 5,
-   "ms": 50.86,
+   "ms": 52.263,
    "ok": true,
    "rows": 1,
    "result": {
@@ -85,7 +85,7 @@
   {
    "phase": "warm",
    "index": 6,
-   "ms": 50.61,
+   "ms": 52.984,
    "ok": true,
    "rows": 1,
    "result": {
@@ -98,7 +98,7 @@
   {
    "phase": "warm",
    "index": 7,
-   "ms": 50.651,
+   "ms": 52.231,
    "ok": true,
    "rows": 1,
    "result": {
@@ -110,15 +110,15 @@
   }
  ],
  "status": "ok",
- "cold_ms": 52.305,
+ "cold_ms": 53.298,
  "warm": {
   "n": 5,
-  "p50_ms": 50.61,
-  "p95_ms": 50.86,
-  "min_ms": 50.519,
-  "max_ms": 50.86,
-  "mean_ms": 50.642
+  "p50_ms": 52.375,
+  "p95_ms": 52.984,
+  "min_ms": 52.231,
+  "max_ms": 52.984,
+  "mean_ms": 52.501
  },
  "dataset": "small",
- "rss_after": "274 MiB (sum over backends, shared buffers counted per process)"
+ "rss_after": "270 MiB (sum over backends, shared buffers counted per process)"
 }

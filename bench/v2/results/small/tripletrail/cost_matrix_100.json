@@ -7,7 +7,7 @@
   {
    "phase": "cold",
    "index": 0,
-   "ms": 62.994,
+   "ms": 62.782,
    "ok": true,
    "rows": 1,
    "result": {
@@ -20,7 +20,7 @@
   {
    "phase": "warmup",
    "index": 1,
-   "ms": 45.982,
+   "ms": 43.294,
    "ok": true,
    "rows": 1,
    "result": {
@@ -33,7 +33,7 @@
   {
    "phase": "warmup",
    "index": 2,
-   "ms": 32.057,
+   "ms": 32.498,
    "ok": true,
    "rows": 1,
    "result": {
@@ -46,7 +46,7 @@
   {
    "phase": "warm",
    "index": 3,
-   "ms": 31.88,
+   "ms": 33.0,
    "ok": true,
    "rows": 1,
    "result": {
@@ -59,7 +59,7 @@
   {
    "phase": "warm",
    "index": 4,
-   "ms": 32.857,
+   "ms": 32.568,
    "ok": true,
    "rows": 1,
    "result": {
@@ -72,7 +72,7 @@
   {
    "phase": "warm",
    "index": 5,
-   "ms": 32.323,
+   "ms": 32.078,
    "ok": true,
    "rows": 1,
    "result": {
@@ -85,7 +85,7 @@
   {
    "phase": "warm",
    "index": 6,
-   "ms": 31.43,
+   "ms": 30.621,
    "ok": true,
    "rows": 1,
    "result": {
@@ -98,7 +98,7 @@
   {
    "phase": "warm",
    "index": 7,
-   "ms": 30.454,
+   "ms": 30.272,
    "ok": true,
    "rows": 1,
    "result": {
@@ -111,7 +111,7 @@
   {
    "phase": "warm",
    "index": 8,
-   "ms": 33.294,
+   "ms": 31.098,
    "ok": true,
    "rows": 1,
    "result": {
@@ -124,7 +124,7 @@
   {
    "phase": "warm",
    "index": 9,
-   "ms": 32.363,
+   "ms": 31.981,
    "ok": true,
    "rows": 1,
    "result": {
@@ -137,7 +137,7 @@
   {
    "phase": "warm",
    "index": 10,
-   "ms": 31.64,
+   "ms": 31.23,
    "ok": true,
    "rows": 1,
    "result": {
@@ -150,7 +150,7 @@
   {
    "phase": "warm",
    "index": 11,
-   "ms": 31.165,
+   "ms": 33.841,
    "ok": true,
    "rows": 1,
    "result": {
@@ -163,7 +163,7 @@
   {
    "phase": "warm",
    "index": 12,
-   "ms": 31.038,
+   "ms": 30.865,
    "ok": true,
    "rows": 1,
    "result": {
@@ -175,16 +175,16 @@
   }
  ],
  "status": "ok",
- "cold_ms": 62.994,
+ "cold_ms": 62.782,
  "warm": {
   "n": 10,
-  "p50_ms": 31.76,
-  "p95_ms": 33.294,
-  "min_ms": 30.454,
-  "max_ms": 33.294,
-  "mean_ms": 31.844
+  "p50_ms": 31.606,
+  "p95_ms": 33.841,
+  "min_ms": 30.272,
+  "max_ms": 33.841,
+  "mean_ms": 31.755
  },
  "dataset": "small",
- "family_setup_ms": 6.1,
- "rss_after": "710 MiB (heap 630 MiB)"
+ "family_setup_ms": 5.367,
+ "rss_after": "712 MiB (heap 639 MiB)"
 }

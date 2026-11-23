@@ -1,0 +1,83 @@
+Generating medium dataset (~100K triples)...
+  Generated 98000 triples in 0.08s
+  Wrote medium.ttl in 0.02s
+  Wrote medium.nt in 0.18s
+
+Generating large dataset (~1M triples)...
+  Generated 1001000 triples in 0.78s
+  Wrote large.ttl in 0.17s
+  Wrote large.nt in 1.77s
+
+Generating xlarge dataset (~10M triples)...
+  Generated 9995000 triples in 7.63s
+  Wrote xlarge.ttl in 1.63s
+  Wrote xlarge.nt in 17.98s
+
+Wrote 6 SPARQL queries to queries/
+
+File sizes:
+  data/medium.ttl: 3.6 MB
+  data/medium.nt: 10.9 MB
+  data/large.ttl: 36.9 MB
+  data/large.nt: 111.6 MB
+  data/xlarge.ttl: 368.7 MB
+  data/xlarge.nt: 1114.8 MB
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/data/trainmarks-medium.nt: 98000 triples
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/data/trainmarks-large.nt: 1001000 triples
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/data/trainmarks-xlarge.nt: 9995000 triples
+=== trainmarks medium on tripletrail (2026-11-23T03:43:04+00:00)
+loading trainmarks-medium into tripletrail
+tripletrail medium q1_count: 2.464 ms
+tripletrail medium q2_customer_orders: 9.513 ms
+tripletrail medium q3_join_3_entities: 5.217 ms
+tripletrail medium q4_optional_aggregation: 7.84 ms
+tripletrail medium q5_construct: 17.216 ms
+tripletrail medium q6_delete_insert: {'status': 'ok', 'ms': 12.357}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/medium/tripletrail.json
+=== trainmarks medium on oxigraph (2026-11-23T03:43:07+00:00)
+loading trainmarks-medium into oxigraph
+oxigraph medium q1_count: 27.139 ms
+oxigraph medium q2_customer_orders: 83.732 ms
+oxigraph medium q3_join_3_entities: 19.099 ms
+oxigraph medium q4_optional_aggregation: 61.104 ms
+oxigraph medium q5_construct: 31.765 ms
+oxigraph medium q6_delete_insert: {'status': 'ok', 'ms': 5.473}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/medium/oxigraph.json
+=== trainmarks medium on qlever (2026-11-23T03:43:13+00:00)
+loading trainmarks-medium into qlever
+qlever medium q1_count: 5.578 ms
+qlever medium q2_customer_orders: 26.987 ms
+qlever medium q3_join_3_entities: 30.306 ms
+qlever medium q4_optional_aggregation: 20.034 ms
+qlever medium q5_construct: 31.937 ms
+qlever medium q6_delete_insert: {'status': 'ok', 'ms': 28.75}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/medium/qlever.json
+=== trainmarks medium on jena (2026-11-23T03:43:17+00:00)
+loading trainmarks-medium into jena
+jena medium q1_count: 69.454 ms
+jena medium q2_customer_orders: 73.12 ms
+jena medium q3_join_3_entities: 20.226 ms
+jena medium q4_optional_aggregation: 78.146 ms
+jena medium q5_construct: 36.48 ms
+jena medium q6_delete_insert: {'status': 'ok', 'ms': 86.793}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/medium/jena.json
+=== trainmarks medium on graphdb (2026-11-23T03:43:29+00:00)
+loading trainmarks-medium into graphdb
+graphdb medium q1_count: 43.283 ms
+graphdb medium q2_customer_orders: 56.759 ms
+graphdb medium q3_join_3_entities: 22.582 ms
+graphdb medium q4_optional_aggregation: 83.54 ms
+graphdb medium q5_construct: 61.259 ms
+graphdb medium q6_delete_insert: {'status': 'ok', 'ms': 195.037}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/medium/graphdb.json
+=== trainmarks medium on maplib (2026-11-23T03:44:06+00:00)
+loading trainmarks-medium into maplib
+maplib medium q1_count: 3.662 ms
+maplib medium q2_customer_orders: 12.76 ms
+maplib medium q3_join_3_entities: 19.891 ms
+maplib medium q4_optional_aggregation: 17.683 ms
+maplib medium q5_construct: 73.859 ms
+maplib medium q6_delete_insert: {'status': 'ok', 'ms': 22.41}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/medium/maplib.json
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/report.md
+=== done (2026-11-23T03:44:10+00:00)

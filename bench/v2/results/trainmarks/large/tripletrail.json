@@ -6,61 +6,61 @@
  "queries": {
   "q1_count": {
    "runs": [
-    4.447,
-    2.709,
-    2.662,
-    2.283,
-    2.373,
-    2.447,
-    2.399
+    4.892,
+    3.032,
+    2.687,
+    2.677,
+    2.964,
+    3.031,
+    2.813
    ],
    "rows": 1,
    "first_row": [
     "1001000"
    ],
    "status": "ok",
-   "cold_ms": 4.447,
+   "cold_ms": 4.892,
    "warm": {
     "n": 5,
-    "median_ms": 2.399,
-    "min_ms": 2.283,
-    "max_ms": 2.662
+    "median_ms": 2.813,
+    "min_ms": 2.677,
+    "max_ms": 3.031
    }
   },
   "q2_customer_orders": {
    "runs": [
-    240.345,
-    187.69,
-    225.834,
-    190.414,
-    189.952,
-    189.273,
-    221.254
+    36.332,
+    31.317,
+    31.945,
+    36.104,
+    31.817,
+    33.814,
+    36.209
    ],
    "rows": 20,
    "first_row": [
     "Eve Andersen",
     "663",
-    "1723710.6299999973"
+    "1723710.63"
    ],
    "status": "ok",
-   "cold_ms": 240.345,
+   "cold_ms": 36.332,
    "warm": {
     "n": 5,
-    "median_ms": 190.414,
-    "min_ms": 189.273,
-    "max_ms": 225.834
+    "median_ms": 33.814,
+    "min_ms": 31.817,
+    "max_ms": 36.209
    }
   },
   "q3_join_3_entities": {
    "runs": [
-    73.82,
-    73.497,
-    43.103,
-    72.829,
-    67.263,
-    72.849,
-    42.783
+    25.323,
+    26.667,
+    23.538,
+    23.833,
+    22.84,
+    26.071,
+    24.47
    ],
    "rows": 50,
    "first_row": [
@@ -70,23 +70,23 @@
     "completed"
    ],
    "status": "ok",
-   "cold_ms": 73.82,
+   "cold_ms": 25.323,
    "warm": {
     "n": 5,
-    "median_ms": 67.263,
-    "min_ms": 42.783,
-    "max_ms": 72.849
+    "median_ms": 23.833,
+    "min_ms": 22.84,
+    "max_ms": 26.071
    }
   },
   "q4_optional_aggregation": {
    "runs": [
-    193.026,
-    192.592,
-    187.451,
-    174.767,
-    206.957,
-    188.02,
-    157.284
+    41.92,
+    44.022,
+    45.821,
+    33.573,
+    42.438,
+    48.299,
+    44.398
    ],
    "rows": 50,
    "first_row": [
@@ -96,47 +96,47 @@
     "3085"
    ],
    "status": "ok",
-   "cold_ms": 193.026,
+   "cold_ms": 41.92,
    "warm": {
     "n": 5,
-    "median_ms": 187.451,
-    "min_ms": 157.284,
-    "max_ms": 206.957
+    "median_ms": 44.398,
+    "min_ms": 33.573,
+    "max_ms": 48.299
    }
   },
   "q5_construct": {
    "runs": [
-    111.408,
-    111.633,
-    112.293,
-    104.165,
-    111.662,
-    99.594,
-    114.793
+    112.992,
+    115.241,
+    114.086,
+    96.737,
+    116.434,
+    87.559,
+    112.603
    ],
    "rows": 43091,
    "first_row": [
     "<http://benchmark.example/C000003> <http://benchmark.example/country> <http://benchmark.example/Norway> ."
    ],
    "status": "ok",
-   "cold_ms": 111.408,
+   "cold_ms": 112.992,
    "warm": {
     "n": 5,
-    "median_ms": 111.662,
-    "min_ms": 99.594,
-    "max_ms": 114.793
+    "median_ms": 112.603,
+    "min_ms": 87.559,
+    "max_ms": 116.434
    }
   },
   "q6_delete_insert": {
    "status": "ok",
-   "ms": 62.983
+   "ms": 47.807
   }
  },
  "load": {
   "engine": "tripletrail",
   "dataset": "trainmarks-large",
-  "load_s": 1.149,
-  "start_s": 0.565,
+  "load_s": 1.144,
+  "start_s": 0.557,
   "disk_bytes": 50068174,
   "disk_by_file": {
    "dict.idx": 1771680,
@@ -152,15 +152,17 @@
    "stats.bin": 12240,
    "gosp.seg": 4591320,
    "RETIRED": 5,
+   "compact-keys": 0,
    "checksums": 307,
    "ospg.seg": 4591320,
+   "render-wkt": 0,
    "CURRENT": 2,
    "psog.seg": 4029560,
    "posg.seg": 3834672,
    "dict.bin": 6402072,
    "gspo.seg": 8485344
   },
-  "load_peak_rss_bytes": 588345344,
-  "load_peak_anon_bytes": 294109184
+  "load_peak_rss_bytes": 674594816,
+  "load_peak_anon_bytes": 659202048
  }
 }

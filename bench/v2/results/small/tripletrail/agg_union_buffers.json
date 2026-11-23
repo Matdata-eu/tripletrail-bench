@@ -7,7 +7,7 @@
   {
    "phase": "cold",
    "index": 0,
-   "ms": 11.605,
+   "ms": 13.724,
    "ok": true,
    "rows": 1,
    "result": {
@@ -19,7 +19,7 @@
   {
    "phase": "warmup",
    "index": 1,
-   "ms": 4.674,
+   "ms": 8.948,
    "ok": true,
    "rows": 1,
    "result": {
@@ -31,7 +31,7 @@
   {
    "phase": "warmup",
    "index": 2,
-   "ms": 8.893,
+   "ms": 9.085,
    "ok": true,
    "rows": 1,
    "result": {
@@ -43,7 +43,7 @@
   {
    "phase": "warm",
    "index": 3,
-   "ms": 7.509,
+   "ms": 9.063,
    "ok": true,
    "rows": 1,
    "result": {
@@ -55,7 +55,7 @@
   {
    "phase": "warm",
    "index": 4,
-   "ms": 6.028,
+   "ms": 12.406,
    "ok": true,
    "rows": 1,
    "result": {
@@ -67,7 +67,7 @@
   {
    "phase": "warm",
    "index": 5,
-   "ms": 8.756,
+   "ms": 9.51,
    "ok": true,
    "rows": 1,
    "result": {
@@ -79,7 +79,7 @@
   {
    "phase": "warm",
    "index": 6,
-   "ms": 11.571,
+   "ms": 12.401,
    "ok": true,
    "rows": 1,
    "result": {
@@ -91,7 +91,7 @@
   {
    "phase": "warm",
    "index": 7,
-   "ms": 8.463,
+   "ms": 10.02,
    "ok": true,
    "rows": 1,
    "result": {
@@ -103,7 +103,7 @@
   {
    "phase": "warm",
    "index": 8,
-   "ms": 8.571,
+   "ms": 9.351,
    "ok": true,
    "rows": 1,
    "result": {
@@ -115,7 +115,7 @@
   {
    "phase": "warm",
    "index": 9,
-   "ms": 8.612,
+   "ms": 10.266,
    "ok": true,
    "rows": 1,
    "result": {
@@ -127,7 +127,7 @@
   {
    "phase": "warm",
    "index": 10,
-   "ms": 8.582,
+   "ms": 9.529,
    "ok": true,
    "rows": 1,
    "result": {
@@ -139,7 +139,7 @@
   {
    "phase": "warm",
    "index": 11,
-   "ms": 8.777,
+   "ms": 9.323,
    "ok": true,
    "rows": 1,
    "result": {
@@ -151,7 +151,7 @@
   {
    "phase": "warm",
    "index": 12,
-   "ms": 8.326,
+   "ms": 9.644,
    "ok": true,
    "rows": 1,
    "result": {
@@ -163,7 +163,7 @@
   {
    "phase": "warm",
    "index": 13,
-   "ms": 8.738,
+   "ms": 9.107,
    "ok": true,
    "rows": 1,
    "result": {
@@ -175,7 +175,7 @@
   {
    "phase": "warm",
    "index": 14,
-   "ms": 8.518,
+   "ms": 8.889,
    "ok": true,
    "rows": 1,
    "result": {
@@ -187,7 +187,7 @@
   {
    "phase": "warm",
    "index": 15,
-   "ms": 11.298,
+   "ms": 11.142,
    "ok": true,
    "rows": 1,
    "result": {
@@ -199,7 +199,7 @@
   {
    "phase": "warm",
    "index": 16,
-   "ms": 9.07,
+   "ms": 9.152,
    "ok": true,
    "rows": 1,
    "result": {
@@ -211,7 +211,7 @@
   {
    "phase": "warm",
    "index": 17,
-   "ms": 8.775,
+   "ms": 8.669,
    "ok": true,
    "rows": 1,
    "result": {
@@ -223,7 +223,7 @@
   {
    "phase": "warm",
    "index": 18,
-   "ms": 12.269,
+   "ms": 12.112,
    "ok": true,
    "rows": 1,
    "result": {
@@ -235,7 +235,7 @@
   {
    "phase": "warm",
    "index": 19,
-   "ms": 8.238,
+   "ms": 8.929,
    "ok": true,
    "rows": 1,
    "result": {
@@ -247,7 +247,7 @@
   {
    "phase": "warm",
    "index": 20,
-   "ms": 8.333,
+   "ms": 9.15,
    "ok": true,
    "rows": 1,
    "result": {
@@ -259,7 +259,7 @@
   {
    "phase": "warm",
    "index": 21,
-   "ms": 9.006,
+   "ms": 8.695,
    "ok": true,
    "rows": 1,
    "result": {
@@ -271,7 +271,7 @@
   {
    "phase": "warm",
    "index": 22,
-   "ms": 8.769,
+   "ms": 8.759,
    "ok": true,
    "rows": 1,
    "result": {
@@ -282,15 +282,15 @@
   }
  ],
  "status": "ok",
- "cold_ms": 11.605,
+ "cold_ms": 13.724,
  "warm": {
   "n": 20,
-  "p50_ms": 8.675,
-  "p95_ms": 12.269,
-  "min_ms": 6.028,
-  "max_ms": 12.269,
-  "mean_ms": 8.91
+  "p50_ms": 9.337,
+  "p95_ms": 12.406,
+  "min_ms": 8.669,
+  "max_ms": 12.406,
+  "mean_ms": 9.806
  },
  "dataset": "small",
- "rss_after": "268 MiB (heap 187 MiB)"
+ "rss_after": "265 MiB (heap 191 MiB)"
 }

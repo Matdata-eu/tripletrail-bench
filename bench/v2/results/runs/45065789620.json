@@ -1,0 +1,214 @@
+{
+ "run": "45065789620",
+ "request": "all full",
+ "engines": "default",
+ "machine": "ccx43",
+ "commit": "a9aae028c98a89754ec4f547ee1aaa739e616efc",
+ "started": "2026-11-22T20:26:44+00:00",
+ "finished": "2026-11-23T04:10:54+00:00",
+ "env": {
+  "cpu": "AMD EPYC-Milan Processor",
+  "cpus": 16,
+  "memory": "64291352 kB",
+  "kernel": "6.8.0-138-generic",
+  "disk_free": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/sda1       338G   24G  301G   8% /",
+  "tripletrail_commit": "a9aae028c98a89754ec4f547ee1aaa739e616efc",
+  "bench_commit": "686d9d91ff96f98a5a9fa1af088a86c5ea55047a",
+  "postgres": "psql (PostgreSQL) 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1)",
+  "postgis": "dpkg-query: no packages found matching postgresql-16-postgis-3\ndpkg-query: no packages found matching postgresql-16-pgrouting",
+  "docker": "29.1.3",
+  "graphdb_image": "sha256:93bde2391ef4b68590da57b907ccd91429f12456cabad0f0032b7aac5b96bec2 mirror.gcr.io/ontotext/graphdb:10.8.0",
+  "qlever_image": "sha256:22bada6032ee54e80aabd94b745143f9e753ecc5921b2e2f3bd0796e75eb8c94 commit-ba7b74ccb0",
+  "oxigraph_image": "sha256:260454ee29c091d2cdb99dd156212594ff3127850627adb4cfdcd9b1e425d480 ghcr.io/oxigraph/oxigraph:0.5.13",
+  "java": "openjdk version \"21.0.13.1\" 2026-11-17\nOpenJDK Runtime Environment (build 21.0.13.1+2-1-24.04.1-Ubuntu)\nOpenJDK 64-Bit Server VM (build 21.0.13.1+2-1-24.04.1-Ubuntu, mixed mode, sharing)",
+  "jena_jar": "jena-fuseki-geosparql-6.2.0.jar"
+ },
+ "jobs": [
+  {
+   "suite": "v2",
+   "dataset": "small",
+   "engines": [
+    "postgis",
+    "tripletrail",
+    "qlever",
+    "jena",
+    "graphdb"
+   ],
+   "status": "ok",
+   "seconds": 815,
+   "finished": "2026-11-22T20:40:31+00:00",
+   "log": "45065789620-v2-small.log"
+  },
+  {
+   "suite": "v2",
+   "dataset": "large",
+   "engines": [
+    "postgis",
+    "tripletrail",
+    "qlever",
+    "jena",
+    "graphdb"
+   ],
+   "status": "ok",
+   "seconds": 5939,
+   "finished": "2026-11-22T22:19:30+00:00",
+   "log": "45065789620-v2-large.log"
+  },
+  {
+   "suite": "v2",
+   "dataset": "osm_norway",
+   "engines": [
+    "postgis",
+    "tripletrail",
+    "qlever",
+    "jena",
+    "graphdb"
+   ],
+   "status": "ok",
+   "seconds": 3754,
+   "finished": "2026-11-22T23:22:04+00:00",
+   "log": "45065789620-v2-osm_norway.log"
+  },
+  {
+   "suite": "geographica",
+   "dataset": "all",
+   "engines": [
+    "tripletrail",
+    "qlever",
+    "jena",
+    "graphdb"
+   ],
+   "status": "ok",
+   "seconds": 7166,
+   "finished": "2026-11-23T01:21:30+00:00",
+   "log": "45065789620-geographica-all.log"
+  },
+  {
+   "suite": "bsbm",
+   "dataset": "2785",
+   "engines": [
+    "tripletrail",
+    "oxigraph",
+    "qlever",
+    "jena",
+    "graphdb",
+    "maplib"
+   ],
+   "status": "ok",
+   "seconds": 930,
+   "finished": "2026-11-23T01:37:00+00:00",
+   "log": "45065789620-bsbm-2785.log"
+  },
+  {
+   "suite": "bsbm",
+   "dataset": "28480",
+   "engines": [
+    "tripletrail",
+    "oxigraph",
+    "qlever",
+    "jena",
+    "graphdb",
+    "maplib"
+   ],
+   "status": "ok",
+   "seconds": 6607,
+   "finished": "2026-11-23T03:27:07+00:00",
+   "log": "45065789620-bsbm-28480.log"
+  },
+  {
+   "suite": "sparqloscope",
+   "dataset": "bsbm-2785",
+   "engines": [
+    "tripletrail",
+    "oxigraph",
+    "qlever",
+    "jena",
+    "graphdb",
+    "maplib"
+   ],
+   "status": "ok",
+   "seconds": 379,
+   "finished": "2026-11-23T03:33:26+00:00",
+   "log": "45065789620-sparqloscope-bsbm-2785.log"
+  },
+  {
+   "suite": "sparqloscope",
+   "dataset": "rinf-0076",
+   "engines": [
+    "tripletrail",
+    "oxigraph",
+    "qlever",
+    "jena",
+    "graphdb",
+    "maplib"
+   ],
+   "status": "ok",
+   "seconds": 543,
+   "finished": "2026-11-23T03:42:29+00:00",
+   "log": "45065789620-sparqloscope-rinf-0076.log"
+  },
+  {
+   "suite": "trainmarks",
+   "dataset": "medium",
+   "engines": [
+    "tripletrail",
+    "oxigraph",
+    "qlever",
+    "jena",
+    "graphdb",
+    "maplib"
+   ],
+   "status": "ok",
+   "seconds": 101,
+   "finished": "2026-11-23T03:44:10+00:00",
+   "log": "45065789620-trainmarks-medium.log"
+  },
+  {
+   "suite": "trainmarks",
+   "dataset": "large",
+   "engines": [
+    "tripletrail",
+    "oxigraph",
+    "qlever",
+    "jena",
+    "graphdb",
+    "maplib"
+   ],
+   "status": "ok",
+   "seconds": 132,
+   "finished": "2026-11-23T03:46:22+00:00",
+   "log": "45065789620-trainmarks-large.log"
+  },
+  {
+   "suite": "trainmarks",
+   "dataset": "xlarge",
+   "engines": [
+    "tripletrail",
+    "oxigraph",
+    "qlever",
+    "jena",
+    "graphdb",
+    "maplib"
+   ],
+   "status": "ok",
+   "seconds": 874,
+   "finished": "2026-11-23T04:00:56+00:00",
+   "log": "45065789620-trainmarks-xlarge.log"
+  },
+  {
+   "suite": "updates",
+   "dataset": "bsbm-28480",
+   "engines": [
+    "tripletrail",
+    "oxigraph",
+    "jena",
+    "graphdb"
+   ],
+   "status": "ok",
+   "seconds": 598,
+   "finished": "2026-11-23T04:10:54+00:00",
+   "log": "45065789620-updates-bsbm-28480.log"
+  }
+ ],
+ "workflow_run": "https://github.com/Matdata-eu/tripletrail-bench/actions/runs/45065789620"
+}
