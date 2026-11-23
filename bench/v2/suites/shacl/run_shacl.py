@@ -258,8 +258,9 @@ def failed_on_smaller(ds, triples, profile, engine):
         r = json.load(open(f))
         if r.get("timed_out") or ("error" in r and "skipped" not in r):
             return f"{'timed out' if r.get('timed_out') else 'failed'} on {meta['dataset']}"
-        if "skipped" in r and "on rinf" in r["skipped"]:
-            return r["skipped"]
+        if "skipped" in r:
+            # Skipped there (after a timeout on an earlier profile, or on a smaller dataset still).
+            return f"skipped on {meta['dataset']}: {r['skipped']}"
     return None
 
 
