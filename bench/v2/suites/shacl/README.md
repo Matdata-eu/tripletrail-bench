@@ -1,0 +1,54 @@
+# SHACL suite
+
+SHACL validation (Core and SHACL-SPARQL) and SHACL-AF rules on real railway data: RINF, the EU
+Register of Infrastructure, against the shapes the EU Agency for Railways (ERA) publishes for it.
+Tracker: Matdata-eu/tripletrail-bench#29 (phase 0), #30 to #34 (the suite).
+
+## Phase 0: what each engine supports
+
+Phase 0 answers two questions before a suite is built: which engines can run the ERA shapes at
+all, and how long one country takes. It runs in a cloud session, never in CI.
+
+```bash
+export BENCH_WORK=/path/with/space          # data and reports; never in git
+export JENA_HOME=/path/to/apache-jena-6.2.0 TOPBRAID_HOME=/path/to/shacl-1.5.0
+export TRIPLETRAIL_BIN=/path/to/core/target/release/tripletrail
+pip install rdflib pyshacl==0.30.1                     # rdflib reads every engine's report
+(cd bench/v2/suites/shacl/rdf4j && mvn -q package)   # RDF4J ShaclSail as a command
+
+bench/v2/suites/data/fetch_rinf.py 0076                # RINF Norway, ~1.6 M triples
+bench/v2/suites/shacl/fetch_shapes.sh                  # ERA shapes, ontology, code lists (pinned)
+cat $BENCH_WORK/data/rinf-0076.nt $BENCH_WORK/data/shacl/lookup.nt >$BENCH_WORK/data/shacl/no.nt
+
+bench/v2/suites/shacl/probes.py $BENCH_WORK/shacl/probes.json   # feature probes, all engines
+bench/v2/suites/shacl/run_phase0.py $BENCH_WORK/data/shacl/no.nt \
+  $BENCH_WORK/data/shacl/era-rinf-shapes.ttl $BENCH_WORK/shacl    # the ERA shapes, all engines
+bench/v2/suites/shacl/report.py bench/v2/results/shacl/phase0     # after copying the JSON files
+```
+
+- **Engines**: TripleTrail (`tripletrail validate`, `tripletrail infer`), Apache Jena
+  (`shacl validate`), TopBraid SHACL API (`shaclvalidate.sh`, `shaclinfer.sh`), pySHACL (`-a`,
+  SHACL-AF on), RDF4J ShaclSail (`rdf4j/`, a memory store, bulk validation of one transaction)
+  and GraphDB (`graphdb_validate.sh`: the shapes are added to a SHACL repository that holds the
+  data). maplib's open build has no SHACL (its `validate` asks to contact Data Treehouse), and
+  Oxigraph, QLever and PostGIS have none, so they stay out.
+- **Feature probes** (`features/`): five validation features and the AF rules, each a small
+  shapes file on `features/data.ttl` with the number of results it should give in its first
+  comment. They are ours.
+- **Data**: the RINF graph with the ERA ontology and every SKOS code list appended, since 82 of
+  the SPARQL constraints read `skos:` concepts. Every engine gets the same single file.
+- **Same results**: a report is reduced to sorted keys (focus node, path, constraint component,
+  severity; a blank-node path is `_:`), and their SHA-256 is compared with Jena's. Engines name
+  blank property shapes differently, so the shape is not part of the key.
+- **Time and memory**: wall time of the whole command (parsing included, JVM start included) and
+  the peak resident memory of its process tree (for GraphDB, its container's cgroup peak).
+
+## Licences
+
+- **RINF data**: ERA publishes no licence for it. It is fetched at run time from ERA's public
+  endpoint and never committed or released. Results hold only timings, counts and hashes, never
+  reports or inferred triples.
+- **ERA shapes, ontology and code lists**: EUPL-1.2, from the
+  [ERA ontology repository](https://gitlab.com/era-europa-eu/public/interoperable-data-programme/era-ontology/era-ontology),
+  fetched at run time, pinned to a commit and the shapes' SHA-256 (`fetch_shapes.sh`).
+- **Engines**: downloaded or installed at run time; none is redistributed.

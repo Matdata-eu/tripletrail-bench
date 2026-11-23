@@ -1,0 +1,8 @@
+{
+ "date": "2026-11-23",
+ "data": "RINF graph 0076 (Norway) from ERA's rinf-plus endpoint, 1,594,395 triples, plus the ERA ontology and 425 SKOS code lists (106,150 triples): 1,700,545 triples in one N-Triples file",
+ "shapes": "ERA-RINF-shapes.ttl at era-ontology commit 8177357 (SHA-256 e0038a08…), 7,640 triples: 76 node shapes, 393 property shapes, 211 SPARQL constraints used 336 times, 7 SPARQL targets, no rules",
+ "machine": "cloud session container, 4 cores, 15 GB memory; engines run one at a time",
+ "tripletrail_commit": "0586d56",
+ "engines": {"tripletrail": "release build of core 0586d56", "jena": "apache-jena 6.2.0, Java 21", "topbraid": "TopBraid SHACL API 1.5.0, Java 21", "pyshacl": "pySHACL 0.30.1 (-a), Python 3.13", "rdf4j": "RDF4J 5.3.2 ShaclSail on a memory store, Java 21, -Xmx12g", "graphdb": "GraphDB 10.8.0 (Docker), -Xmx8g"}
+}

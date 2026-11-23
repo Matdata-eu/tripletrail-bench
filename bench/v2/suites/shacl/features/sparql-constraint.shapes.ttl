@@ -1,0 +1,9 @@
+# SHACL-SPARQL constraint (sh:sparql): a section must not start and end at the same point (s2).
+# Expected: 1 result.
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ex: <http://example.org/> .
+ex:SectionShape a sh:NodeShape ; sh:targetClass ex:Section ;
+  sh:sparql [ a sh:SPARQLConstraint ;
+    sh:message "starts and ends at the same point" ;
+    sh:select """PREFIX ex: <http://example.org/>
+      SELECT $this WHERE { $this ex:from ?p ; ex:to ?p . }""" ] .

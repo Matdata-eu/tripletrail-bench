@@ -1,0 +1,10 @@
+# SHACL-AF rules (sh:rule, sh:TripleRule and sh:SPARQLRule), run by an engine's inference
+# command: every section gets ex:checked true (triple rule) and long sections become
+# ex:LongSection (SPARQL rule). Expected: 3 new triples.
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ex: <http://example.org/> .
+ex:SectionShape a sh:NodeShape ; sh:targetClass ex:Section ;
+  sh:rule [ a sh:TripleRule ; sh:subject sh:this ; sh:predicate ex:checked ; sh:object true ] ;
+  sh:rule [ a sh:SPARQLRule ;
+    sh:construct """PREFIX ex: <http://example.org/>
+      CONSTRUCT { $this a ex:LongSection } WHERE { $this ex:length ?l . FILTER (?l > 1000) }""" ] .
