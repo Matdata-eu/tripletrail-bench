@@ -27,10 +27,6 @@ wait_up() {
   return 1
 }
 
-# Stops the server and waits until it has exited and let go of the port: a server holding a
-# store of a billion triples can take minutes to close, and one still exiting made the next
-# start fail with "Address already in use" (scale run 42845266505). Killed after
-# TRIPLETRAIL_STOP_TIMEOUT seconds (default 600).
 # `serve` makes each dataset's map in the background once it is open (core #115): the
 # profile, shapes and facet counts, up to 5 minutes a dataset. Queries timed meanwhile
 # would share the cores with it, so the bench waits for its line in the log (the served
@@ -52,6 +48,10 @@ wait_warm() {
   echo "tripletrail: no map line for $1 within ${TRIPLETRAIL_WARM_WAIT:-600} s, timing anyway" >&2
 }
 
+# Stops the server and waits until it has exited and let go of the port: a server holding a
+# store of a billion triples can take minutes to close, and one still exiting made the next
+# start fail with "Address already in use" (scale run 42845266505). Killed after
+# TRIPLETRAIL_STOP_TIMEOUT seconds (default 600).
 stop() {
   if [ -f "$PIDF" ]; then
     local pid; pid=$(cat "$PIDF")
