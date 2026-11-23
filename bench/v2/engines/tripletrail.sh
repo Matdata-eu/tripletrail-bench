@@ -140,14 +140,18 @@ case "$1" in
     t1=$(date +%s.%N)
     start "$ds"
     t2=$(date +%s.%N)
+    # Memory when the dataset first answers, before the background work of start (the spatial
+    # index, the map warm-up) has run: the bench's rss_after_start is taken after wait_warm, so
+    # it includes that work, as runs from before tripletrail-bench#39 did not (core #188).
+    answering=$("$0" rss)
     wait_warm "$ds"  # after t2: start_s stays the time until the dataset answers
     bytes=$(du -sb "$W/tripletrail/$ds" | cut -f1)
     peak=$(awk -F: '/Maximum resident/ {gsub(/ /,"",$2); print $2*1024}' "$W/tripletrail/$ds.load.log")
     # Bytes by kind of store file (dict.bin, geoms.bin, dict.idx, spog.seg, ...: numbered
     # pieces and runs counted under their kind), for what takes the space (#370).
     files=$(find "$W/tripletrail/$ds" -type f -printf '%s %f\n' | awk '{n=$2; gsub(/-[0-9]+/,"",n); gsub(/\.[0-9]+[ar]?\./,".",n); s[n]+=$1} END {sep=""; for (k in s) {printf "%s\"%s\":%d", sep, k, s[k]; sep=","}}')
-    printf '{"engine":"tripletrail","dataset":"%s","load_s":%.3f,"start_s":%.3f,"disk_bytes":%s,"disk_by_file":{%s},"load_peak_rss_bytes":%s,"load_peak_anon_bytes":%s}\n' \
-      "$ds" "$(echo "$t1 - $t0" | bc)" "$(echo "$t2 - $t1" | bc)" "$bytes" "$files" "${peak:-null}" "$((anon * 1024))"
+    printf '{"engine":"tripletrail","dataset":"%s","load_s":%.3f,"start_s":%.3f,"disk_bytes":%s,"disk_by_file":{%s},"load_peak_rss_bytes":%s,"load_peak_anon_bytes":%s,"rss_when_answering":"%s"}\n' \
+      "$ds" "$(echo "$t1 - $t0" | bc)" "$(echo "$t2 - $t1" | bc)" "$bytes" "$files" "${peak:-null}" "$((anon * 1024))" "$answering"
     ;;
   start) start "$2" && wait_warm "$2" ;;
   stop) stop ;;

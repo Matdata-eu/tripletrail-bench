@@ -64,7 +64,8 @@ def main():
                 continue
             extra = l.get("spatial_index_s", l.get("start_and_spatial_index_s", l.get("start_s")))
             out.append(f"| {NAMES[e]} | {l['load_s']:.1f} | {extra if extra is not None else '-'} | "
-                       f"{fmt_bytes(l.get('disk_bytes'))} | {l.get('rss_after_start', '-')} | "
+                       f"{fmt_bytes(l.get('disk_bytes'))} | {l.get('rss_after_start', '-')}"
+                       f"{'; ' + l['rss_when_answering'] + ' when it first answered' if l.get('rss_when_answering') else ''} | "
                        f"{fmt_count(l, e)} |")
         counts = {fmt_count(loads[e], e) for e in engines if e != "postgis" and loads.get(e)}
         if len(counts) > 1:
