@@ -10,7 +10,7 @@ run-name: "${{ inputs.suite }} ${{ inputs.dataset }} at ${{ inputs.core_ref }} o
 #   for a 64 GB server; scale: OSM Benelux and Europe; dashboard: both) on one server, one job
 #   after the other. A run that includes OSM Europe gets a 600 GB volume when volume_gb is 0, and
 #   scale osm_planet (5B triples) gets 3,000 GB.
-# suite = v2 | geographica | bsbm | sparqloscope | trainmarks | updates | scale runs that one job.
+# suite = v2 | geographica | bsbm | sparqloscope | trainmarks | updates | scale | shacl runs that one job.
 # core_ref = the tag, branch or commit of Matdata-eu/tripletrail to measure.
 #
 # Needs the repository secrets HCLOUD_TOKEN (Hetzner project API token, read & write) and
@@ -28,15 +28,15 @@ on:
         required: true
         default: main
       suite:
-        description: "all | v2 | geographica | bsbm | sparqloscope | trainmarks | updates | scale"
+        description: "all | v2 | geographica | bsbm | sparqloscope | trainmarks | updates | scale | shacl"
         required: true
         default: all
       dataset:
-        description: "all: profile (full | scale | dashboard = full + scale); v2: small | large | osm_norway; geographica: all; bsbm: products (2785 ~ 1M triples, 28480 ~ 10M); sparqloscope: bsbm-<n> | rinf-<code> | dblp; trainmarks: medium | large | xlarge; updates: bsbm-<n> | rinf-<code>; scale: osm_benelux | osm_europe (OSM Europe, 1B triples, --memory-limit 32G) | osm_planet (5B triples, 3,000 GB volume, use ccx53 or larger)"
+        description: "all: profile (full | scale | dashboard = full + scale); v2: small | large | osm_norway; geographica: all; bsbm: products (2785 ~ 1M triples, 28480 ~ 10M); sparqloscope: bsbm-<n> | rinf-<code> | dblp; trainmarks: medium | large | xlarge; updates: bsbm-<n> | rinf-<code>; shacl: rinf-<code> | rinf-all (profile all shacl: S, M and L); scale: osm_benelux | osm_europe (OSM Europe, 1B triples, --memory-limit 32G) | osm_planet (5B triples, 3,000 GB volume, use ccx53 or larger)"
         required: true
         default: full
       engines:
-        description: "default (each suite's own set), or space-separated engines (postgis tripletrail oxigraph qlever jena graphdb maplib)"
+        description: "default (each suite's own set), or space-separated engines (postgis tripletrail oxigraph qlever jena graphdb maplib; shacl also topbraid rdf4j pyshacl)"
         required: true
         default: default
       machine:
@@ -323,7 +323,7 @@ jobs:
             fi
           fi
           # The suites' reports cover every result of the suite, so they are rebuilt here too.
-          for s in bsbm trainmarks sparqloscope; do
+          for s in bsbm trainmarks sparqloscope shacl; do
             [ -d bench/v2/results/$s ] || continue
             "$PY" bench/v2/suites/$s/run_$s.py report >/dev/null || echo "::warning::$s report not rebuilt"
           done
