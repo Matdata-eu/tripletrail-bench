@@ -1,0 +1,5 @@
+# SHACL Core: s2 has no ex:code (minCount). Expected: 1 result.
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ex: <http://example.org/> .
+ex:SectionShape a sh:NodeShape ; sh:targetClass ex:Section ;
+  sh:property [ sh:path ex:code ; sh:minCount 1 ] .

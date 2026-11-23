@@ -1,0 +1,9 @@
+# SHACL-AF SPARQL target (sh:target [ a sh:SPARQLTarget ]): sections longer than 1000 must have a
+# code; only s2 is a target. Expected: 1 result.
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ex: <http://example.org/> .
+ex:LongSectionShape a sh:NodeShape ;
+  sh:target [ a sh:SPARQLTarget ;
+    sh:select """PREFIX ex: <http://example.org/>
+      SELECT ?this WHERE { ?this ex:length ?l . FILTER (?l > 1000) }""" ] ;
+  sh:property [ sh:path ex:code ; sh:minCount 1 ] .

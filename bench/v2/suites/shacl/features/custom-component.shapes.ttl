@@ -1,0 +1,9 @@
+# SHACL-SPARQL constraint component (sh:ConstraintComponent with a validator): ex:maxValueOf
+# 1000 on ex:length fails for s2. Expected: 1 result.
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ex: <http://example.org/> .
+ex:MaxValueComponent a sh:ConstraintComponent ;
+  sh:parameter [ sh:path ex:maxValueOf ] ;
+  sh:validator [ a sh:SPARQLAskValidator ; sh:ask "ASK { FILTER ($value <= $maxValueOf) }" ] .
+ex:SectionShape a sh:NodeShape ; sh:targetClass ex:Section ;
+  sh:property [ sh:path ex:length ; ex:maxValueOf 1000 ] .

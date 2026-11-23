@@ -1,0 +1,13 @@
+# SHACL-AF SPARQL function (sh:SPARQLFunction) called from a SPARQL constraint: ex:tooLong(?l)
+# is true above 1000, so s2 fails. Expected: 1 result.
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ex: <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+ex:tooLong a sh:SPARQLFunction ;
+  sh:parameter [ sh:path ex:l ; sh:datatype xsd:integer ] ;
+  sh:returnType xsd:boolean ;
+  sh:select "SELECT ?r WHERE { BIND ($l > 1000 AS ?r) }" .
+ex:SectionShape a sh:NodeShape ; sh:targetClass ex:Section ;
+  sh:sparql [ a sh:SPARQLConstraint ;
+    sh:select """PREFIX ex: <http://example.org/>
+      SELECT $this WHERE { $this ex:length ?l . FILTER (ex:tooLong(?l)) }""" ] .

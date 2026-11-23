@@ -1,0 +1,7 @@
+# Data for the feature probes: two sections of line, one of them too long and without a code.
+@prefix ex: <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+ex:s1 a ex:Section ; ex:code "S1" ; ex:length 120 ; ex:from ex:op1 ; ex:to ex:op2 .
+ex:s2 a ex:Section ; ex:length 9000 ; ex:from ex:op2 ; ex:to ex:op2 .
+ex:op1 a ex:OperationalPoint .
+ex:op2 a ex:OperationalPoint .
