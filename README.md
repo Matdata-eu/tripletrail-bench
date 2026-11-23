@@ -82,8 +82,10 @@ real-world tarballs into one N-Quads file, each dataset in the named graph the q
   `geof:metricDistance`, its `spatialSearch` service (S2 for KNN, libspatialjoin for the
   distance joins). PostGIS uses `ST_Intersects` / `ST_DWithin` on `geography`, `<->` KNN and
   pgRouting functions on a `micro_edges` table built from the same N-Triples.
-- **Spatial indexes.** TripleTrail builds its R-tree on the first spatial query (this is in the cold
-  times). PostGIS has GiST indexes on `geom` and on `geom::geography`, then `VACUUM ANALYZE`.
+- **Spatial indexes.** TripleTrail's `serve` builds its R-tree in the background once a dataset is
+  open, and makes each dataset's map (profile, shapes, facet counts) after that. The bench waits for
+  the map's line in the server log ("map ready") before it times anything, so neither is in the
+  query times. PostGIS has GiST indexes on `geom` and on `geom::geography`, then `VACUUM ANALYZE`.
   GraphDB has its GeoSPARQL plugin enabled after loading (the time is in "index"). Jena builds
   its spatial index file at first start. QLever builds with
   `--vocabulary-type on-disk-compressed-geo-split`.
@@ -92,6 +94,11 @@ real-world tarballs into one N-Quads file, each dataset in the named graph the q
   `max_parallel_workers_per_gather=4`, `random_page_cost=1.1`, `jit=off`
   (`engines/postgis.conf`). GraphDB and Jena `-Xms8g -Xmx8g`. QLever `-m 8G -c 2G`. TripleTrail
   default settings.
+- **Memory after start.** "RSS after start" is taken once the engine is ready to be timed: for
+  TripleTrail, after the R-tree and the map warm-up above. The figure "when it first answered" is
+  TripleTrail's RSS as soon as the dataset answers `ASK {}`, before that start-up work. Runs from
+  before tripletrail-bench#39 took RSS after start at that moment, so compare those with the
+  "when it first answered" figure.
 - **Routing graph.** TripleTrail builds named networks from the ERA micro profile edge query
   (`queries/tripletrail/setup_routing.ru`; `bench:microc` adds gauge and electrification columns for
   the constrained route). PostGIS gets the same edges, computed in Python by
