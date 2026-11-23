@@ -7,86 +7,86 @@
   {
    "phase": "cold",
    "index": 0,
-   "ms": 5.204,
+   "ms": 136.522,
    "ok": true,
    "rows": 1,
    "result": {
     "values": [
-     3429.0
+     3431.0
     ]
    }
   },
   {
    "phase": "warmup",
    "index": 1,
-   "ms": 3.015,
+   "ms": 5.931,
    "ok": true,
    "rows": 1,
    "result": {
     "values": [
-     3429.0
+     3431.0
     ]
    }
   },
   {
    "phase": "warmup",
    "index": 2,
-   "ms": 2.68,
+   "ms": 4.873,
    "ok": true,
    "rows": 1,
    "result": {
     "values": [
-     3429.0
+     3431.0
     ]
    }
   },
   {
    "phase": "warm",
    "index": 3,
-   "ms": 2.763,
+   "ms": 5.234,
    "ok": true,
    "rows": 1,
    "result": {
     "values": [
-     3429.0
+     3431.0
     ]
    }
   },
   {
    "phase": "warm",
    "index": 4,
-   "ms": 2.594,
+   "ms": 5.252,
    "ok": true,
    "rows": 1,
    "result": {
     "values": [
-     3429.0
+     3431.0
     ]
    }
   },
   {
    "phase": "warm",
    "index": 5,
-   "ms": 2.813,
+   "ms": 5.249,
    "ok": true,
    "rows": 1,
    "result": {
     "values": [
-     3429.0
+     3431.0
     ]
    }
   }
  ],
  "status": "ok",
- "cold_ms": 5.204,
+ "cold_ms": 136.522,
  "warm": {
   "n": 3,
-  "p50_ms": 2.763,
-  "p95_ms": 2.813,
-  "min_ms": 2.594,
-  "max_ms": 2.813,
-  "mean_ms": 2.723
+  "p50_ms": 5.249,
+  "p95_ms": 5.252,
+  "min_ms": 5.234,
+  "max_ms": 5.252,
+  "mean_ms": 5.245
  },
  "dataset": "osm_benelux",
- "rss_after": "2563 MiB (heap 136 MiB)"
+ "rss_after": "10185 MiB (heap 2790 MiB)"
 }
