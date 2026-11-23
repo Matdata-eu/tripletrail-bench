@@ -38,8 +38,8 @@
    "dataset": "osm_europe",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "cc8c2f4",
-   "date": "2026-11-21"
+   "commit": "a9aae02",
+   "date": "2026-11-22"
   },
   {
    "suite": "sparqloscope",
@@ -191,77 +191,77 @@
    {
     "dataset": "bsbm-2785 bi",
     "metric": "query mixes per hour",
-    "tripletrail": 28930.71,
+    "tripletrail": 30134.47,
     "others": {
      "graphdb": {
       "value": 4734.54,
-      "speedup": 6.11
+      "speedup": 6.36
      },
      "jena": {
       "value": 2906.87,
-      "speedup": 9.95
+      "speedup": 10.37
      },
      "maplib": {
       "value": 10816.56,
-      "speedup": 2.67
+      "speedup": 2.79
      },
      "oxigraph": {
       "value": 630.83,
-      "speedup": 45.86
+      "speedup": 47.77
      },
      "qlever": {
       "value": 11255.14,
-      "speedup": 2.57
+      "speedup": 2.68
      }
     }
    },
    {
     "dataset": "bsbm-2785 explore",
     "metric": "query mixes per hour",
-    "tripletrail": 59838.41,
+    "tripletrail": 83401.0,
     "others": {
      "graphdb": {
       "value": 22448.22,
-      "speedup": 2.67
+      "speedup": 3.72
      },
      "jena": {
       "value": 9749.36,
-      "speedup": 6.14
+      "speedup": 8.55
      },
      "maplib": {
       "value": 4839.43,
-      "speedup": 12.36
+      "speedup": 17.23
      },
      "oxigraph": {
       "value": 37379.67,
-      "speedup": 1.6
+      "speedup": 2.23
      },
      "qlever": {
       "value": 4661.18,
-      "speedup": 12.84
+      "speedup": 17.89
      }
     }
    },
    {
     "dataset": "bsbm-2785 update",
     "metric": "query mixes per hour",
-    "tripletrail": 37796.79,
+    "tripletrail": 43236.96,
     "others": {
      "graphdb": {
       "value": 12641.38,
-      "speedup": 2.99
+      "speedup": 3.42
      },
      "jena": {
       "value": 5808.25,
-      "speedup": 6.51
+      "speedup": 7.44
      },
      "maplib": {
       "value": 2072.82,
-      "speedup": 18.23
+      "speedup": 20.86
      },
      "oxigraph": {
       "value": 29194.27,
-      "speedup": 1.29
+      "speedup": 1.48
      }
     }
    },
