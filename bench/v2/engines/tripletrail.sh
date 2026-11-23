@@ -4,7 +4,7 @@
 #   tripletrail.sh start <dataset> | stop | endpoint | rss
 # Env: BENCH_WORK, TRIPLETRAIL_RESULT_CACHE_MB (default 0: result cache off), TRIPLETRAIL_BIN (default core/target/release/tripletrail: the
 # TripleTrail repository checked out in core/, built with `cargo build --release -p tripletrail-server`), TRIPLETRAIL_SERVE_ARGS (more `serve` options, such as
-# `--pack ds=DIR`).
+# `--pack ds=DIR`), TRIPLETRAIL_WARM_WAIT (seconds to wait for the background map warm-up after start, default 600).
 set -euo pipefail
 HERE=$(cd "$(dirname "$0")" && pwd)
 W=${BENCH_WORK:-$HERE/../work}
@@ -31,6 +31,27 @@ wait_up() {
 # store of a billion triples can take minutes to close, and one still exiting made the next
 # start fail with "Address already in use" (scale run 42845266505). Killed after
 # TRIPLETRAIL_STOP_TIMEOUT seconds (default 600).
+# `serve` makes each dataset's map in the background once it is open (core #115): the
+# profile, shapes and facet counts, up to 5 minutes a dataset. Queries timed meanwhile
+# would share the cores with it, so the bench waits for its line in the log (the served
+# dataset is always "ds"): "ds: map ready", "ds: map made ahead in part" or "ds: the map was
+# not made ahead". A core from before #115 has no --no-warm-up and logs none of them, so the
+# wait is skipped there; TRIPLETRAIL_WARM_WAIT (seconds, default 600) bounds it.
+wait_warm() {
+  local deadline=$(($(date +%s) + ${TRIPLETRAIL_WARM_WAIT:-600}))
+  grep -q -- "--no-warm-up" <<<"${TRIPLETRAIL_SERVE_ARGS:-}" && return 0
+  "$BIN" serve --help 2>/dev/null | grep -q -- "--no-warm-up" || return 0
+  while [ "$(date +%s)" -lt "$deadline" ]; do
+    if grep -qE "^ds: (map |the map was not made ahead)" "$W/tripletrail/server.log"; then
+      grep -E "^ds: (map |the map was not made ahead)" "$W/tripletrail/server.log" | tail -n 1 >&2
+      return 0
+    fi
+    kill -0 "$(cat "$PIDF")" 2>/dev/null || return 0
+    sleep 0.5
+  done
+  echo "tripletrail: no map line for $1 within ${TRIPLETRAIL_WARM_WAIT:-600} s, timing anyway" >&2
+}
+
 stop() {
   if [ -f "$PIDF" ]; then
     local pid; pid=$(cat "$PIDF")
@@ -119,6 +140,7 @@ case "$1" in
     t1=$(date +%s.%N)
     start "$ds"
     t2=$(date +%s.%N)
+    wait_warm "$ds"  # after t2: start_s stays the time until the dataset answers
     bytes=$(du -sb "$W/tripletrail/$ds" | cut -f1)
     peak=$(awk -F: '/Maximum resident/ {gsub(/ /,"",$2); print $2*1024}' "$W/tripletrail/$ds.load.log")
     # Bytes by kind of store file (dict.bin, geoms.bin, dict.idx, spog.seg, ...: numbered
@@ -127,7 +149,7 @@ case "$1" in
     printf '{"engine":"tripletrail","dataset":"%s","load_s":%.3f,"start_s":%.3f,"disk_bytes":%s,"disk_by_file":{%s},"load_peak_rss_bytes":%s,"load_peak_anon_bytes":%s}\n' \
       "$ds" "$(echo "$t1 - $t0" | bc)" "$(echo "$t2 - $t1" | bc)" "$bytes" "$files" "${peak:-null}" "$((anon * 1024))"
     ;;
-  start) start "$2" ;;
+  start) start "$2" && wait_warm "$2" ;;
   stop) stop ;;
   endpoint) echo "$EP" ;;
   # Resident memory, and of it the anonymous part (heap); the rest is mapped store files.
