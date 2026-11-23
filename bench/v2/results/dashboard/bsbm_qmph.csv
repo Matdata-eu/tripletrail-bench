@@ -1,17 +1,17 @@
 scale,usecase,engine,qmph,note
-bsbm-2785,explore,tripletrail,59838.41,
+bsbm-2785,explore,tripletrail,59815.4,
 bsbm-2785,explore,oxigraph,37379.67,
 bsbm-2785,explore,qlever,4661.18,explore: Q9 (DESCRIBE) and Q12 (CONSTRUCT) skipped: the test driver asks for RDF/XML; which QLever does not serve
 bsbm-2785,explore,jena,9749.36,
 bsbm-2785,explore,graphdb,22448.22,
 bsbm-2785,explore,maplib,4839.43,explore: Q9 (DESCRIBE) and Q12 (CONSTRUCT) skipped: the test driver asks for RDF/XML; which the maplib endpoint does not serve
-bsbm-2785,bi,tripletrail,28930.71,
+bsbm-2785,bi,tripletrail,27815.06,
 bsbm-2785,bi,oxigraph,630.83,
 bsbm-2785,bi,qlever,11255.14,
 bsbm-2785,bi,jena,2906.87,
 bsbm-2785,bi,graphdb,4734.54,
 bsbm-2785,bi,maplib,10816.56,BI Q5 skipped: maplib 0.22.0 rejects GROUP BY on a variable its subquery does not bind
-bsbm-2785,update,tripletrail,37796.79,
+bsbm-2785,update,tripletrail,38202.93,
 bsbm-2785,update,oxigraph,29194.27,
 bsbm-2785,update,qlever,,
 bsbm-2785,update,jena,5808.25,

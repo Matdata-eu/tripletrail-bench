@@ -38,8 +38,8 @@
    "dataset": "osm_europe",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "cc8c2f4",
-   "date": "2026-11-21"
+   "commit": "a9aae02",
+   "date": "2026-11-22"
   },
   {
    "suite": "sparqloscope",
@@ -191,38 +191,38 @@
    {
     "dataset": "bsbm-2785 bi",
     "metric": "query mixes per hour",
-    "tripletrail": 28930.71,
+    "tripletrail": 27815.06,
     "others": {
      "graphdb": {
       "value": 4734.54,
-      "speedup": 6.11
+      "speedup": 5.87
      },
      "jena": {
       "value": 2906.87,
-      "speedup": 9.95
+      "speedup": 9.57
      },
      "maplib": {
       "value": 10816.56,
-      "speedup": 2.67
+      "speedup": 2.57
      },
      "oxigraph": {
       "value": 630.83,
-      "speedup": 45.86
+      "speedup": 44.09
      },
      "qlever": {
       "value": 11255.14,
-      "speedup": 2.57
+      "speedup": 2.47
      }
     }
    },
    {
     "dataset": "bsbm-2785 explore",
     "metric": "query mixes per hour",
-    "tripletrail": 59838.41,
+    "tripletrail": 59815.4,
     "others": {
      "graphdb": {
       "value": 22448.22,
-      "speedup": 2.67
+      "speedup": 2.66
      },
      "jena": {
       "value": 9749.36,
@@ -238,30 +238,30 @@
      },
      "qlever": {
       "value": 4661.18,
-      "speedup": 12.84
+      "speedup": 12.83
      }
     }
    },
    {
     "dataset": "bsbm-2785 update",
     "metric": "query mixes per hour",
-    "tripletrail": 37796.79,
+    "tripletrail": 38202.93,
     "others": {
      "graphdb": {
       "value": 12641.38,
-      "speedup": 2.99
+      "speedup": 3.02
      },
      "jena": {
       "value": 5808.25,
-      "speedup": 6.51
+      "speedup": 6.58
      },
      "maplib": {
       "value": 2072.82,
-      "speedup": 18.23
+      "speedup": 18.43
      },
      "oxigraph": {
       "value": 29194.27,
-      "speedup": 1.29
+      "speedup": 1.31
      }
     }
    },
