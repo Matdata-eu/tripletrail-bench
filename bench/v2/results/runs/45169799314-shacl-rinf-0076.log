@@ -1,0 +1,28 @@
++ curl -sSfL --retry 4 -o /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/shacl-engines/apache-jena-6.2.0.tar.gz.part https://archive.apache.org/dist/jena/binaries/apache-jena-6.2.0.tar.gz
++ tar xzf /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/shacl-engines/apache-jena-6.2.0.tar.gz -C /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/shacl-engines
++ curl -sSfL --retry 4 -o /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/shacl-engines/shacl-1.5.0.zip.part https://repo1.maven.org/maven2/org/topbraid/shacl/1.5.0/shacl-1.5.0-bin.zip
++ unzip -q -o /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/shacl-engines/shacl-1.5.0.zip -d /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/shacl-engines
++ /usr/bin/python3 -m venv /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/shacl-engines/py
+The virtual environment was not created successfully because ensurepip is not
+available.  On Debian/Ubuntu systems, you need to install the python3-venv
+package using the following command.
+
+    apt install python3.12-venv
+
+You may need to use sudo with that command.  After installing the python3-venv
+package, recreate your virtual environment.
+
+Failing command: /home/gha/runner/_work/tripletrail-bench/bench-work/shacl-engines/py/bin/python3
+
+Traceback (most recent call last):
+  File "/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/suites/shacl/run_shacl.py", line 345, in <module>
+    main()
+  File "/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/suites/shacl/run_shacl.py", line 337, in main
+    setup()
+  File "/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/suites/shacl/run_shacl.py", line 84, in setup
+    sh([sys.executable, "-m", "venv", venv])
+  File "/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/suites/shacl/run_shacl.py", line 60, in sh
+    subprocess.run(cmd, check=True, **kw)
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/bin/python3', '-m', 'venv', '/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/shacl-engines/py']' returned non-zero exit status 1.

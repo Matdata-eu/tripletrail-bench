@@ -1,0 +1,77 @@
+{
+ "run": "45169799314",
+ "request": "all shacl",
+ "engines": "default",
+ "machine": "ccx43",
+ "commit": "154ce86d3b4b5e6d44eedf007d0b41946577c39c",
+ "started": "2026-11-23T12:04:43+00:00",
+ "finished": "2026-11-23T12:07:55+00:00",
+ "env": {
+  "cpu": "AMD EPYC-Milan Processor",
+  "cpus": 16,
+  "memory": "64291352 kB",
+  "kernel": "6.8.0-138-generic",
+  "disk_free": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/sda1       338G  8.5G  316G   3% /",
+  "tripletrail_commit": "154ce86d3b4b5e6d44eedf007d0b41946577c39c",
+  "bench_commit": "e02ba0228c197062c9aadbadb02538b3260b37aa",
+  "postgres": "psql (PostgreSQL) 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1)",
+  "postgis": "dpkg-query: no packages found matching postgresql-16-postgis-3\ndpkg-query: no packages found matching postgresql-16-pgrouting",
+  "docker": "29.1.3",
+  "graphdb_image": "Error response from daemon: No such image: mirror.gcr.io/ontotext/graphdb:10.8.0",
+  "qlever_image": "Error response from daemon: No such image: mirror.gcr.io/adfreiburg/qlever:latest",
+  "oxigraph_image": "Error response from daemon: No such image: ghcr.io/oxigraph/oxigraph:0.5.13",
+  "java": "openjdk version \"21.0.13.1\" 2026-11-17\nOpenJDK Runtime Environment (build 21.0.13.1+2-1-24.04.1-Ubuntu)\nOpenJDK 64-Bit Server VM (build 21.0.13.1+2-1-24.04.1-Ubuntu, mixed mode, sharing)",
+  "jena_jar": "jena-fuseki-geosparql-6.2.0.jar"
+ },
+ "jobs": [
+  {
+   "suite": "shacl",
+   "dataset": "rinf-0076",
+   "engines": [
+    "tripletrail",
+    "jena",
+    "topbraid",
+    "graphdb",
+    "rdf4j",
+    "pyshacl"
+   ],
+   "status": "failed",
+   "seconds": 190,
+   "finished": "2026-11-23T12:07:54+00:00",
+   "log": "45169799314-shacl-rinf-0076.log"
+  },
+  {
+   "suite": "shacl",
+   "dataset": "rinf-0080",
+   "engines": [
+    "tripletrail",
+    "jena",
+    "topbraid",
+    "graphdb",
+    "rdf4j",
+    "pyshacl"
+   ],
+   "status": "failed",
+   "seconds": 0,
+   "finished": "2026-11-23T12:07:54+00:00",
+   "log": "45169799314-shacl-rinf-0080.log"
+  },
+  {
+   "suite": "shacl",
+   "dataset": "rinf-all",
+   "engines": [
+    "tripletrail",
+    "jena",
+    "topbraid",
+    "graphdb",
+    "rdf4j",
+    "pyshacl"
+   ],
+   "status": "failed",
+   "seconds": 1,
+   "finished": "2026-11-23T12:07:55+00:00",
+   "log": "45169799314-shacl-rinf-all.log"
+  }
+ ],
+ "workflow_run": "https://github.com/Matdata-eu/tripletrail-bench/actions/runs/45169799314"
+}
