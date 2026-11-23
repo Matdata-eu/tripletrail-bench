@@ -27,14 +27,26 @@ wait_up() {
   return 1
 }
 
-# `serve` makes each dataset's map in the background once it is open (core #115): the
-# profile, shapes and facet counts, up to 5 minutes a dataset. Queries timed meanwhile
-# would share the cores with it, so the bench waits for its line in the log (the served
-# dataset is always "ds"): "ds: map ready", "ds: map made ahead in part" or "ds: the map was
-# not made ahead". A core from before #115 has no --no-warm-up and logs none of them, so the
-# wait is skipped there; TRIPLETRAIL_WARM_WAIT (seconds, default 600) bounds it.
+# `serve` builds each dataset's spatial index in the background once it is open, then makes
+# its map (core #115: profile, shapes and facet counts, up to 5 minutes a dataset). Queries
+# timed meanwhile would share the cores with them, so the bench waits for both: GET /$/ready
+# answers 200 once the index is built (503 before; a core without it answers 404 and is not
+# waited for), and the map logs a line (the served dataset is always "ds"): "ds: map ready",
+# "ds: map made ahead in part" or "ds: the map was not made ahead". A core from before #115
+# has no --no-warm-up and logs none of them, so that wait is skipped there;
+# TRIPLETRAIL_WARM_WAIT (seconds, default 600) bounds the two waits together.
 wait_warm() {
-  local deadline=$(($(date +%s) + ${TRIPLETRAIL_WARM_WAIT:-600}))
+  local deadline=$(($(date +%s) + ${TRIPLETRAIL_WARM_WAIT:-600})) code
+  # The spatial index, built in the background at open: /$/ready answers 200 once every
+  # dataset's index is built, 503 before (a core without /$/ready answers 404: not waited for).
+  while [ "$(date +%s)" -lt "$deadline" ]; do
+    code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 5 "http://localhost:$PORT/\$/ready" || true)
+    [ "$code" = 503 ] || break
+    kill -0 "$(cat "$PIDF")" 2>/dev/null || return 0
+    sleep 0.5
+  done
+  [ "$code" = 503 ] && echo "tripletrail: spatial index of $1 not built within ${TRIPLETRAIL_WARM_WAIT:-600} s, timing anyway" >&2
+  # The map (core #115), made by its own thread after the datasets are open.
   grep -q -- "--no-warm-up" <<<"${TRIPLETRAIL_SERVE_ARGS:-}" && return 0
   "$BIN" serve --help 2>/dev/null | grep -q -- "--no-warm-up" || return 0
   while [ "$(date +%s)" -lt "$deadline" ]; do

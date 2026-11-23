@@ -83,9 +83,9 @@ real-world tarballs into one N-Quads file, each dataset in the named graph the q
   distance joins). PostGIS uses `ST_Intersects` / `ST_DWithin` on `geography`, `<->` KNN and
   pgRouting functions on a `micro_edges` table built from the same N-Triples.
 - **Spatial indexes.** TripleTrail's `serve` builds its R-tree in the background once a dataset is
-  open, and makes each dataset's map (profile, shapes, facet counts) after that. The bench waits for
-  the map's line in the server log ("map ready") before it times anything, so neither is in the
-  query times. PostGIS has GiST indexes on `geom` and on `geom::geography`, then `VACUUM ANALYZE`.
+  open, and makes each dataset's map (profile, shapes, facet counts) after that. The bench waits until
+  `/$/ready` answers 200 (the index is built) and the map's line is in the server log ("map
+  ready") before it times anything, so neither is in the query times. PostGIS has GiST indexes on `geom` and on `geom::geography`, then `VACUUM ANALYZE`.
   GraphDB has its GeoSPARQL plugin enabled after loading (the time is in "index"). Jena builds
   its spatial index file at first start. QLever builds with
   `--vocabulary-type on-disk-compressed-geo-split`.
