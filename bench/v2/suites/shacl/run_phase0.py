@@ -28,6 +28,7 @@ import re
 import resource
 import subprocess
 import sys
+import tempfile
 import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -87,8 +88,10 @@ FIELDS = {SH + "focusNode": 0, SH + "resultPath": 1, SH + "sourceConstraintCompo
 
 
 def count_report_nt(path, riot):
+    # riot's warnings go to a file: a pipe read only after stdout could fill and hang it.
+    errf = tempfile.TemporaryFile(mode="w+")
     p = subprocess.Popen([riot, "--syntax=turtle", "--output=nt", path], stdout=subprocess.PIPE,
-                         stderr=subprocess.PIPE, text=True)
+                         stderr=errf, text=True)
     results, fields, conforms, shapes = set(), {}, None, {}
     for line in p.stdout:
         m = NT.match(line.rstrip("\n"))
@@ -104,9 +107,9 @@ def count_report_nt(path, riot):
             conforms = o.startswith('"true"')
         elif pred == SH + "sourceShape":
             shapes[s] = o
-    err = p.stderr.read()
     if p.wait() != 0:
-        return {"report_parse_error": err.strip()[-300:]}
+        errf.seek(0)
+        return {"report_parse_error": errf.read().strip()[-300:]}
     sev, keys = {}, []
     for r in results:
         f = fields.get(r, [None] * 4)

@@ -21,7 +21,8 @@ command: start, parsing, validation, report), the median, the validation time wh
 logs it, peak memory, the results by severity and the SHA-256 of the sorted result keys (focus
 node, path, constraint component, severity). A run under SHACL_REPEAT_BELOW seconds (300) is
 repeated twice more. A timeout (SHACL_TIMEOUT, 3600 s) or a crash is recorded as the result,
-and an engine that times out skips the dataset's later profiles. Reports hold RINF values, so
+and an engine that times out skips the dataset's later profiles; an engine that timed out or
+failed on a profile of a smaller dataset (one already in results/shacl/) skips it on this one. Reports hold RINF values, so
 they stay in $BENCH_WORK; only the JSON is committed.
 """
 import argparse
@@ -217,13 +218,17 @@ def run(ds, engines):
     data, shapes = prepare(ds)
     work = os.path.join(W, "shacl", ds)
     timed_out = set()
+    triples = sum(1 for _ in open(data, "rb"))
     for profile in PROFILES:
         res = os.path.join(RESULTS, ds, profile)
         os.makedirs(res, exist_ok=True)
         os.makedirs(os.path.join(work, profile), exist_ok=True)
         for engine in engines:
+            smaller = failed_on_smaller(ds, triples, profile, engine)
             if engine in timed_out:
                 rec = {"engine": engine, "skipped": "timed out on an earlier profile of this dataset"}
+            elif smaller:
+                rec = {"engine": engine, "skipped": smaller}
             else:
                 print(f"=== shacl {ds} {profile} on {engine}", flush=True)
                 rec = run_one(engine, data, shapes[profile], os.path.join(work, profile))
@@ -233,12 +238,29 @@ def run(ds, engines):
                     print(f"!!! shacl {ds} {profile} failed on {engine}: {rec['error']}", flush=True)
             json.dump(rec, open(os.path.join(res, f"{engine}.json"), "w"), indent=1)
             print(json.dumps({k: v for k, v in rec.items() if k != "runs"}), flush=True)
-    meta = {"dataset": ds, "data_triples": sum(1 for _ in open(data, "rb")),
+    meta = {"dataset": ds, "data_triples": triples,
             "shapes_sha256": subprocess.run(["sha256sum", shapes["era"]], capture_output=True,
                                             text=True).stdout.split()[0],
             "profiles": {p: sum(1 for line in open(f) if line.strip()) for p, f in shapes.items()}}
     json.dump(meta, open(os.path.join(RESULTS, ds, "data.json"), "w"), indent=1)
     report()
+
+
+def failed_on_smaller(ds, triples, profile, engine):
+    """Why to skip: the engine timed out or failed on this profile of a smaller dataset."""
+    for d in glob.glob(os.path.join(RESULTS, "*", "data.json")):
+        meta = json.load(open(d))
+        if meta["dataset"] == ds or meta["data_triples"] >= triples:
+            continue
+        f = os.path.join(os.path.dirname(d), profile, f"{engine}.json")
+        if not os.path.exists(f):
+            continue
+        r = json.load(open(f))
+        if r.get("timed_out") or ("error" in r and "skipped" not in r):
+            return f"{'timed out' if r.get('timed_out') else 'failed'} on {meta['dataset']}"
+        if "skipped" in r and "on rinf" in r["skipped"]:
+            return r["skipped"]
+    return None
 
 
 def agreement(recs):

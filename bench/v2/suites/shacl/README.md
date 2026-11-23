@@ -67,7 +67,9 @@ On the Benchmarks workflow: suite `all`, dataset `shacl` (one server for the thr
   published.
 - **Runs**: a run under 300 s (`SHACL_REPEAT_BELOW`) is repeated twice more and the median kept.
   `SHACL_TIMEOUT` (3,600 s) bounds a run; a timeout or crash is the result, and an engine that
-  times out skips the dataset's later profiles. TripleTrail, GraphDB and RDF4J also log their
+  times out skips the dataset's later profiles, and one that timed out or failed on a profile of
+  a smaller dataset skips that profile on the larger ones (so pySHACL and RDF4J do not spend hours
+  on M and L after failing on S). TripleTrail, GraphDB and RDF4J also log their
   validation time apart from loading.
 - **Agreement**: the result keys of each engine are compared with TopBraid's and with the
   majority's (the hash most engines share).
