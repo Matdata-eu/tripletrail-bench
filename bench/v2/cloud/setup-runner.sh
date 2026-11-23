@@ -25,7 +25,7 @@ mkdir -p /etc/needrestart/conf.d
 echo "\$nrconf{restart} = 'l';" >/etc/needrestart/conf.d/90-bench.conf
 for i in 1 2 3; do apt-get update -q && break; sleep 10; done
 apt-get install -y -q ca-certificates curl git jq unzip bc time build-essential clang pkg-config \
-  python3 python3-pip python3-requests python3-yaml python3-psycopg2 openjdk-21-jre-headless docker.io gh \
+  python3 python3-pip python3-venv python3-requests python3-yaml python3-psycopg2 openjdk-21-jre-headless docker.io gh \
   postgresql-client osmium-tool
 systemctl enable --now docker
 
