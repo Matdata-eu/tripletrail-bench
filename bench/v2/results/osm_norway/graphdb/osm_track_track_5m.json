@@ -14,5 +14,5 @@
  "status": "failed",
  "reason": "HTTP 503: Query interrupted: Query evaluation took too long\n",
  "dataset": "osm_norway",
- "rss_after": "5.958GiB / 61.31GiB"
+ "rss_after": "5.947GiB / 61.31GiB"
 }

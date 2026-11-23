@@ -14,5 +14,5 @@
  "status": "failed",
  "reason": "HTTP 503: Query interrupted: Query evaluation took too long\n",
  "dataset": "small",
- "rss_after": "5.746GiB / 61.31GiB"
+ "rss_after": "5.767GiB / 61.31GiB"
 }

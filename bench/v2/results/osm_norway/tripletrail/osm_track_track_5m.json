@@ -7,7 +7,7 @@
   {
    "phase": "cold",
    "index": 0,
-   "ms": 93.46,
+   "ms": 81.479,
    "ok": true,
    "rows": 1,
    "result": {
@@ -19,7 +19,7 @@
   {
    "phase": "warmup",
    "index": 1,
-   "ms": 95.283,
+   "ms": 49.03,
    "ok": true,
    "rows": 1,
    "result": {
@@ -31,7 +31,7 @@
   {
    "phase": "warmup",
    "index": 2,
-   "ms": 85.392,
+   "ms": 44.659,
    "ok": true,
    "rows": 1,
    "result": {
@@ -43,7 +43,7 @@
   {
    "phase": "warm",
    "index": 3,
-   "ms": 80.773,
+   "ms": 44.591,
    "ok": true,
    "rows": 1,
    "result": {
@@ -55,7 +55,7 @@
   {
    "phase": "warm",
    "index": 4,
-   "ms": 85.881,
+   "ms": 40.071,
    "ok": true,
    "rows": 1,
    "result": {
@@ -67,7 +67,7 @@
   {
    "phase": "warm",
    "index": 5,
-   "ms": 94.205,
+   "ms": 41.161,
    "ok": true,
    "rows": 1,
    "result": {
@@ -78,15 +78,15 @@
   }
  ],
  "status": "ok",
- "cold_ms": 93.46,
+ "cold_ms": 81.479,
  "warm": {
   "n": 3,
-  "p50_ms": 85.881,
-  "p95_ms": 94.205,
-  "min_ms": 80.773,
-  "max_ms": 94.205,
-  "mean_ms": 86.953
+  "p50_ms": 41.161,
+  "p95_ms": 44.591,
+  "min_ms": 40.071,
+  "max_ms": 44.591,
+  "mean_ms": 41.941
  },
  "dataset": "osm_norway",
- "rss_after": "1337 MiB (heap 617 MiB)"
+ "rss_after": "785 MiB (heap 589 MiB)"
 }

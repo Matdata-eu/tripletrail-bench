@@ -7,7 +7,7 @@
   {
    "phase": "cold",
    "index": 0,
-   "ms": 49350.498,
+   "ms": 52499.948,
    "ok": true,
    "rows": 5,
    "result": {
@@ -23,7 +23,7 @@
   {
    "phase": "warmup",
    "index": 1,
-   "ms": 3572.108,
+   "ms": 3752.458,
    "ok": true,
    "rows": 5,
    "result": {
@@ -39,7 +39,7 @@
   {
    "phase": "warmup",
    "index": 2,
-   "ms": 24370.086,
+   "ms": 25547.602,
    "ok": true,
    "rows": 5,
    "result": {
@@ -55,7 +55,7 @@
   {
    "phase": "warm",
    "index": 3,
-   "ms": 37333.946,
+   "ms": 40009.038,
    "ok": true,
    "rows": 5,
    "result": {
@@ -71,7 +71,7 @@
   {
    "phase": "warm",
    "index": 4,
-   "ms": 2550.69,
+   "ms": 2650.634,
    "ok": true,
    "rows": 5,
    "result": {
@@ -87,7 +87,7 @@
   {
    "phase": "warm",
    "index": 5,
-   "ms": 8117.561,
+   "ms": 8540.57,
    "ok": true,
    "rows": 5,
    "result": {
@@ -103,7 +103,7 @@
   {
    "phase": "warm",
    "index": 6,
-   "ms": 8331.368,
+   "ms": 8932.589,
    "ok": true,
    "rows": 5,
    "result": {
@@ -119,7 +119,7 @@
   {
    "phase": "warm",
    "index": 7,
-   "ms": 48675.535,
+   "ms": 53335.414,
    "ok": true,
    "rows": 5,
    "result": {
@@ -135,7 +135,7 @@
   {
    "phase": "warm",
    "index": 8,
-   "ms": 24831.104,
+   "ms": 26512.903,
    "ok": true,
    "rows": 5,
    "result": {
@@ -151,7 +151,7 @@
   {
    "phase": "warm",
    "index": 9,
-   "ms": 52010.633,
+   "ms": 56199.949,
    "ok": true,
    "rows": 5,
    "result": {
@@ -167,7 +167,7 @@
   {
    "phase": "warm",
    "index": 10,
-   "ms": 1896.524,
+   "ms": 1988.706,
    "ok": true,
    "rows": 5,
    "result": {
@@ -183,7 +183,7 @@
   {
    "phase": "warm",
    "index": 11,
-   "ms": 68598.324,
+   "ms": 73144.304,
    "ok": true,
    "rows": 5,
    "result": {
@@ -199,7 +199,7 @@
   {
    "phase": "warm",
    "index": 12,
-   "ms": 5799.725,
+   "ms": 6100.071,
    "ok": true,
    "rows": 5,
    "result": {
@@ -215,7 +215,7 @@
   {
    "phase": "warm",
    "index": 13,
-   "ms": 27466.26,
+   "ms": 29630.524,
    "ok": true,
    "rows": 5,
    "result": {
@@ -231,7 +231,7 @@
   {
    "phase": "warm",
    "index": 14,
-   "ms": 6535.732,
+   "ms": 7019.353,
    "ok": true,
    "rows": 5,
    "result": {
@@ -247,7 +247,7 @@
   {
    "phase": "warm",
    "index": 15,
-   "ms": 4222.529,
+   "ms": 4506.615,
    "ok": true,
    "rows": 5,
    "result": {
@@ -263,7 +263,7 @@
   {
    "phase": "warm",
    "index": 16,
-   "ms": 6253.134,
+   "ms": 6636.673,
    "ok": true,
    "rows": 5,
    "result": {
@@ -279,7 +279,7 @@
   {
    "phase": "warm",
    "index": 17,
-   "ms": 1654.715,
+   "ms": 1797.752,
    "ok": true,
    "rows": 5,
    "result": {
@@ -295,7 +295,7 @@
   {
    "phase": "warm",
    "index": 18,
-   "ms": 35985.417,
+   "ms": 39882.655,
    "ok": true,
    "rows": 5,
    "result": {
@@ -311,7 +311,7 @@
   {
    "phase": "warm",
    "index": 19,
-   "ms": 15762.724,
+   "ms": 17137.284,
    "ok": true,
    "rows": 5,
    "result": {
@@ -327,7 +327,7 @@
   {
    "phase": "warm",
    "index": 20,
-   "ms": 6345.709,
+   "ms": 6884.95,
    "ok": true,
    "rows": 5,
    "result": {
@@ -343,7 +343,7 @@
   {
    "phase": "warm",
    "index": 21,
-   "ms": 10128.784,
+   "ms": 10934.257,
    "ok": true,
    "rows": 5,
    "result": {
@@ -359,7 +359,7 @@
   {
    "phase": "warm",
    "index": 22,
-   "ms": 28134.426,
+   "ms": 30338.695,
    "ok": true,
    "rows": 5,
    "result": {
@@ -375,7 +375,7 @@
   {
    "phase": "warm",
    "index": 23,
-   "ms": 22959.463,
+   "ms": 24047.007,
    "ok": true,
    "rows": 5,
    "result": {
@@ -391,7 +391,7 @@
   {
    "phase": "warm",
    "index": 24,
-   "ms": 2815.929,
+   "ms": 2988.081,
    "ok": true,
    "rows": 5,
    "result": {
@@ -407,7 +407,7 @@
   {
    "phase": "warm",
    "index": 25,
-   "ms": 31399.758,
+   "ms": 33922.489,
    "ok": true,
    "rows": 5,
    "result": {
@@ -423,7 +423,7 @@
   {
    "phase": "warm",
    "index": 26,
-   "ms": 17402.732,
+   "ms": 18388.74,
    "ok": true,
    "rows": 5,
    "result": {
@@ -439,7 +439,7 @@
   {
    "phase": "warm",
    "index": 27,
-   "ms": 16836.712,
+   "ms": 18406.02,
    "ok": true,
    "rows": 5,
    "result": {
@@ -455,7 +455,7 @@
   {
    "phase": "warm",
    "index": 28,
-   "ms": 28930.208,
+   "ms": 31104.563,
    "ok": true,
    "rows": 5,
    "result": {
@@ -471,7 +471,7 @@
   {
    "phase": "warm",
    "index": 29,
-   "ms": 11189.413,
+   "ms": 11998.628,
    "ok": true,
    "rows": 5,
    "result": {
@@ -487,7 +487,7 @@
   {
    "phase": "warm",
    "index": 30,
-   "ms": 37602.849,
+   "ms": 41995.586,
    "ok": true,
    "rows": 5,
    "result": {
@@ -503,7 +503,7 @@
   {
    "phase": "warm",
    "index": 31,
-   "ms": 1255.161,
+   "ms": 1309.696,
    "ok": true,
    "rows": 5,
    "result": {
@@ -519,7 +519,7 @@
   {
    "phase": "warm",
    "index": 32,
-   "ms": 21001.801,
+   "ms": 22404.415,
    "ok": true,
    "rows": 5,
    "result": {
@@ -535,7 +535,7 @@
   {
    "phase": "warm",
    "index": 33,
-   "ms": 13889.71,
+   "ms": 14887.636,
    "ok": true,
    "rows": 5,
    "result": {
@@ -551,7 +551,7 @@
   {
    "phase": "warm",
    "index": 34,
-   "ms": 2768.55,
+   "ms": 2899.365,
    "ok": true,
    "rows": 5,
    "result": {
@@ -567,7 +567,7 @@
   {
    "phase": "warm",
    "index": 35,
-   "ms": 12821.474,
+   "ms": 13645.893,
    "ok": true,
    "rows": 5,
    "result": {
@@ -583,7 +583,7 @@
   {
    "phase": "warm",
    "index": 36,
-   "ms": 3059.392,
+   "ms": 3229.183,
    "ok": true,
    "rows": 5,
    "result": {
@@ -599,7 +599,7 @@
   {
    "phase": "warm",
    "index": 37,
-   "ms": 25719.639,
+   "ms": 27998.438,
    "ok": true,
    "rows": 5,
    "result": {
@@ -615,7 +615,7 @@
   {
    "phase": "warm",
    "index": 38,
-   "ms": 2829.069,
+   "ms": 2977.017,
    "ok": true,
    "rows": 5,
    "result": {
@@ -631,7 +631,7 @@
   {
    "phase": "warm",
    "index": 39,
-   "ms": 3893.828,
+   "ms": 4162.517,
    "ok": true,
    "rows": 5,
    "result": {
@@ -647,7 +647,7 @@
   {
    "phase": "warm",
    "index": 40,
-   "ms": 3858.63,
+   "ms": 4092.185,
    "ok": true,
    "rows": 5,
    "result": {
@@ -663,7 +663,7 @@
   {
    "phase": "warm",
    "index": 41,
-   "ms": 10540.274,
+   "ms": 11402.195,
    "ok": true,
    "rows": 5,
    "result": {
@@ -679,7 +679,7 @@
   {
    "phase": "warm",
    "index": 42,
-   "ms": 5367.454,
+   "ms": 5668.362,
    "ok": true,
    "rows": 5,
    "result": {
@@ -695,7 +695,7 @@
   {
    "phase": "warm",
    "index": 43,
-   "ms": 15818.452,
+   "ms": 17082.741,
    "ok": true,
    "rows": 5,
    "result": {
@@ -711,7 +711,7 @@
   {
    "phase": "warm",
    "index": 44,
-   "ms": 21596.228,
+   "ms": 23243.011,
    "ok": true,
    "rows": 5,
    "result": {
@@ -727,7 +727,7 @@
   {
    "phase": "warm",
    "index": 45,
-   "ms": 11374.932,
+   "ms": 12199.213,
    "ok": true,
    "rows": 5,
    "result": {
@@ -743,7 +743,7 @@
   {
    "phase": "warm",
    "index": 46,
-   "ms": 7649.888,
+   "ms": 8218.878,
    "ok": true,
    "rows": 5,
    "result": {
@@ -759,7 +759,7 @@
   {
    "phase": "warm",
    "index": 47,
-   "ms": 3857.292,
+   "ms": 4072.671,
    "ok": true,
    "rows": 5,
    "result": {
@@ -775,7 +775,7 @@
   {
    "phase": "warm",
    "index": 48,
-   "ms": 22030.394,
+   "ms": 23160.493,
    "ok": true,
    "rows": 5,
    "result": {
@@ -791,7 +791,7 @@
   {
    "phase": "warm",
    "index": 49,
-   "ms": 19654.083,
+   "ms": 20749.195,
    "ok": true,
    "rows": 5,
    "result": {
@@ -803,67 +803,19 @@
      622907.6000000004
     ]
    }
-  },
-  {
-   "phase": "warm",
-   "index": 50,
-   "ms": 3463.491,
-   "ok": true,
-   "rows": 5,
-   "result": {
-    "costs": [
-     189175.39999999976,
-     189382.7999999998,
-     189577.3999999998,
-     189766.69999999975,
-     189978.4999999999
-    ]
-   }
-  },
-  {
-   "phase": "warm",
-   "index": 51,
-   "ms": 26640.798,
-   "ok": true,
-   "rows": 5,
-   "result": {
-    "costs": [
-     746075.0999999989,
-     746947.6999999989,
-     746965.099999999,
-     746986.2999999988,
-     746998.9999999991
-    ]
-   }
-  },
-  {
-   "phase": "warm",
-   "index": 52,
-   "ms": 50642.899,
-   "ok": true,
-   "rows": 5,
-   "result": {
-    "costs": [
-     1013242.3000000024,
-     1014135.0000000023,
-     1014156.9000000027,
-     1014157.7000000025,
-     1014194.7000000024
-    ]
-   }
   }
  ],
  "truncated": "stopped after 900 s budget",
  "status": "ok",
- "cold_ms": 49350.498,
+ "cold_ms": 52499.948,
  "warm": {
-  "n": 50,
-  "p50_ms": 12098.203,
-  "p95_ms": 50642.899,
-  "min_ms": 1255.161,
-  "max_ms": 68598.324,
-  "mean_ms": 17190.107
+  "n": 47,
+  "p50_ms": 12199.213,
+  "p95_ms": 53335.414,
+  "min_ms": 1309.696,
+  "max_ms": 73144.304,
+  "mean_ms": 17839.088
  },
  "dataset": "large",
- "rss_after": "790 MiB (sum over backends, shared buffers counted per process)"
+ "rss_after": "787 MiB (sum over backends, shared buffers counted per process)"
 }

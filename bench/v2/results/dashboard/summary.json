@@ -6,24 +6,24 @@
    "dataset": "2785",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "e36d3ba",
-   "date": "2026-11-18"
+   "commit": "a9aae02",
+   "date": "2026-11-22"
   },
   {
    "suite": "bsbm",
    "dataset": "28480",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "e36d3ba",
-   "date": "2026-11-18"
+   "commit": "a9aae02",
+   "date": "2026-11-22"
   },
   {
    "suite": "geographica",
    "dataset": "all",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "e36d3ba",
-   "date": "2026-11-18"
+   "commit": "a9aae02",
+   "date": "2026-11-22"
   },
   {
    "suite": "scale",
@@ -38,64 +38,64 @@
    "dataset": "osm_europe",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "cc8c2f4",
-   "date": "2026-11-21"
+   "commit": "a9aae02",
+   "date": "2026-11-22"
   },
   {
    "suite": "sparqloscope",
    "dataset": "bsbm-2785",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "e36d3ba",
-   "date": "2026-11-18"
+   "commit": "a9aae02",
+   "date": "2026-11-22"
   },
   {
    "suite": "sparqloscope",
    "dataset": "rinf-0076",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "e36d3ba",
-   "date": "2026-11-18"
+   "commit": "a9aae02",
+   "date": "2026-11-22"
   },
   {
    "suite": "trainmarks",
    "dataset": "large",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "e36d3ba",
-   "date": "2026-11-18"
+   "commit": "a9aae02",
+   "date": "2026-11-22"
   },
   {
    "suite": "trainmarks",
    "dataset": "medium",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "e36d3ba",
-   "date": "2026-11-18"
+   "commit": "a9aae02",
+   "date": "2026-11-22"
   },
   {
    "suite": "trainmarks",
    "dataset": "xlarge",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "e36d3ba",
-   "date": "2026-11-18"
+   "commit": "a9aae02",
+   "date": "2026-11-22"
   },
   {
    "suite": "updates",
    "dataset": "bsbm-28480",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "e36d3ba",
-   "date": "2026-11-19"
+   "commit": "a9aae02",
+   "date": "2026-11-22"
   },
   {
    "suite": "v2",
    "dataset": "large",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "e36d3ba",
-   "date": "2026-11-18"
+   "commit": "a9aae02",
+   "date": "2026-11-22"
   },
   {
    "suite": "v2",
@@ -118,16 +118,16 @@
    "dataset": "osm_norway",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "e36d3ba",
-   "date": "2026-11-18"
+   "commit": "a9aae02",
+   "date": "2026-11-22"
   },
   {
    "suite": "v2",
    "dataset": "small",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "e36d3ba",
-   "date": "2026-11-18"
+   "commit": "a9aae02",
+   "date": "2026-11-22"
   }
  ],
  "suites": {
@@ -135,54 +135,54 @@
    {
     "dataset": "bsbm-2785",
     "metric": "geometric mean query time (ms)",
-    "tripletrail": 4.865,
+    "tripletrail": 6.018,
     "others": {
      "graphdb": {
-      "value": 81.137,
-      "speedup": 16.68
+      "value": 73.475,
+      "speedup": 12.21
      },
      "jena": {
-      "value": 108.87,
-      "speedup": 22.38
+      "value": 106.741,
+      "speedup": 17.74
      },
      "maplib": {
-      "value": 11.856,
-      "speedup": 2.44
+      "value": 11.942,
+      "speedup": 1.98
      },
      "oxigraph": {
-      "value": 74.339,
-      "speedup": 15.28
+      "value": 76.42,
+      "speedup": 12.7
      },
      "qlever": {
-      "value": 14.198,
-      "speedup": 2.92
+      "value": 14.119,
+      "speedup": 2.35
      }
     }
    },
    {
     "dataset": "rinf-0076",
     "metric": "geometric mean query time (ms)",
-    "tripletrail": 6.941,
+    "tripletrail": 6.964,
     "others": {
      "graphdb": {
-      "value": 92.478,
-      "speedup": 13.32
+      "value": 97.518,
+      "speedup": 14.0
      },
      "jena": {
-      "value": 118.399,
-      "speedup": 17.06
+      "value": 126.444,
+      "speedup": 18.16
      },
      "maplib": {
-      "value": 16.227,
-      "speedup": 2.34
+      "value": 14.668,
+      "speedup": 2.11
      },
      "oxigraph": {
-      "value": 107.812,
-      "speedup": 15.53
+      "value": 111.095,
+      "speedup": 15.95
      },
      "qlever": {
-      "value": 24.136,
-      "speedup": 3.48
+      "value": 18.834,
+      "speedup": 2.7
      }
     }
    }
@@ -191,154 +191,154 @@
    {
     "dataset": "bsbm-2785 bi",
     "metric": "query mixes per hour",
-    "tripletrail": 30144.65,
+    "tripletrail": 28930.71,
     "others": {
      "graphdb": {
-      "value": 4660.6,
-      "speedup": 6.47
+      "value": 4734.54,
+      "speedup": 6.11
      },
      "jena": {
-      "value": 3000.65,
-      "speedup": 10.05
+      "value": 2906.87,
+      "speedup": 9.95
      },
      "maplib": {
-      "value": 16318.41,
-      "speedup": 1.85
+      "value": 10816.56,
+      "speedup": 2.67
      },
      "oxigraph": {
-      "value": 651.43,
-      "speedup": 46.27
+      "value": 630.83,
+      "speedup": 45.86
      },
      "qlever": {
-      "value": 11292.74,
-      "speedup": 2.67
+      "value": 11255.14,
+      "speedup": 2.57
      }
     }
    },
    {
     "dataset": "bsbm-2785 explore",
     "metric": "query mixes per hour",
-    "tripletrail": 70405.16,
+    "tripletrail": 59838.41,
     "others": {
      "graphdb": {
-      "value": 27001.11,
-      "speedup": 2.61
+      "value": 22448.22,
+      "speedup": 2.67
      },
      "jena": {
-      "value": 9272.6,
-      "speedup": 7.59
+      "value": 9749.36,
+      "speedup": 6.14
      },
      "maplib": {
-      "value": 10621.66,
-      "speedup": 6.63
+      "value": 4839.43,
+      "speedup": 12.36
      },
      "oxigraph": {
-      "value": 34195.02,
-      "speedup": 2.06
+      "value": 37379.67,
+      "speedup": 1.6
      },
      "qlever": {
-      "value": 4483.3,
-      "speedup": 15.7
+      "value": 4661.18,
+      "speedup": 12.84
      }
     }
    },
    {
     "dataset": "bsbm-2785 update",
     "metric": "query mixes per hour",
-    "tripletrail": 42227.66,
+    "tripletrail": 37796.79,
     "others": {
      "graphdb": {
-      "value": 11691.34,
-      "speedup": 3.61
+      "value": 12641.38,
+      "speedup": 2.99
      },
      "jena": {
-      "value": 6094.16,
-      "speedup": 6.93
+      "value": 5808.25,
+      "speedup": 6.51
      },
      "maplib": {
-      "value": 1212.0,
-      "speedup": 34.84
+      "value": 2072.82,
+      "speedup": 18.23
      },
      "oxigraph": {
-      "value": 30659.65,
-      "speedup": 1.38
+      "value": 29194.27,
+      "speedup": 1.29
      }
     }
    },
    {
     "dataset": "bsbm-28480 bi",
     "metric": "query mixes per hour",
-    "tripletrail": 14131.32,
+    "tripletrail": 13542.12,
     "others": {
      "graphdb": {
-      "value": 582.45,
-      "speedup": 24.26
+      "value": 611.12,
+      "speedup": 22.16
      },
      "jena": {
-      "value": 210.72,
-      "speedup": 67.06
+      "value": 211.13,
+      "speedup": 64.14
      },
      "maplib": {
-      "value": 5346.44,
-      "speedup": 2.64
+      "value": 9496.67,
+      "speedup": 1.43
      },
      "oxigraph": {
-      "value": 52.53,
-      "speedup": 269.01
+      "value": 52.31,
+      "speedup": 258.88
      },
      "qlever": {
-      "value": 3461.12,
-      "speedup": 4.08
+      "value": 3532.28,
+      "speedup": 3.83
      }
     }
    },
    {
     "dataset": "bsbm-28480 explore",
     "metric": "query mixes per hour",
-    "tripletrail": 52764.79,
+    "tripletrail": 46024.31,
     "others": {
      "graphdb": {
-      "value": 20761.04,
-      "speedup": 2.54
+      "value": 18230.74,
+      "speedup": 2.52
      },
      "jena": {
-      "value": 1859.39,
-      "speedup": 28.38
+      "value": 2002.55,
+      "speedup": 22.98
      },
      "maplib": {
-      "value": 6745.53,
-      "speedup": 7.82
+      "value": 3342.2,
+      "speedup": 13.77
      },
      "oxigraph": {
-      "value": 13492.46,
-      "speedup": 3.91
+      "value": 13243.41,
+      "speedup": 3.48
      },
      "qlever": {
-      "value": 4400.11,
-      "speedup": 11.99
+      "value": 4579.55,
+      "speedup": 10.05
      }
     }
    },
    {
     "dataset": "bsbm-28480 update",
     "metric": "query mixes per hour",
-    "tripletrail": 36272.52,
+    "tripletrail": 33555.95,
     "others": {
      "graphdb": {
-      "value": 10202.88,
-      "speedup": 3.56
+      "value": 9730.14,
+      "speedup": 3.45
      },
      "jena": {
-      "value": 1606.21,
-      "speedup": 22.58
+      "value": 1760.3,
+      "speedup": 19.06
      },
      "maplib": {
-      "value": 173.63,
-      "speedup": 208.91
+      "value": 714.72,
+      "speedup": 46.95
      },
      "oxigraph": {
-      "value": 13495.72,
-      "speedup": 2.69
+      "value": 12595.69,
+      "speedup": 2.66
      }
     }
    }
@@ -347,53 +347,53 @@
    {
     "dataset": "large",
     "metric": "load time (s)",
-    "tripletrail": 1.149,
+    "tripletrail": 1.144,
     "others": {
      "graphdb": {
-      "value": 12.434,
-      "speedup": 10.82
+      "value": 13.21,
+      "speedup": 11.55
      },
      "jena": {
-      "value": 4.452,
-      "speedup": 3.87
+      "value": 4.887,
+      "speedup": 4.27
      },
      "maplib": {
-      "value": 1.37,
-      "speedup": 1.19
+      "value": 0.353,
+      "speedup": 0.31
      },
      "oxigraph": {
-      "value": 1.41,
-      "speedup": 1.23
+      "value": 1.664,
+      "speedup": 1.45
      },
      "qlever": {
-      "value": 1.848,
-      "speedup": 1.61
+      "value": 1.942,
+      "speedup": 1.7
      }
     }
    },
    {
     "dataset": "medium",
     "metric": "load time (s)",
-    "tripletrail": 0.589,
+    "tripletrail": 0.613,
     "others": {
      "graphdb": {
-      "value": 6.84,
-      "speedup": 11.61
+      "value": 7.06,
+      "speedup": 11.52
      },
      "jena": {
-      "value": 1.983,
-      "speedup": 3.37
+      "value": 2.043,
+      "speedup": 3.33
      },
      "maplib": {
-      "value": 0.241,
-      "speedup": 0.41
+      "value": 0.109,
+      "speedup": 0.18
      },
      "oxigraph": {
-      "value": 0.789,
-      "speedup": 1.34
+      "value": 0.829,
+      "speedup": 1.35
      },
      "qlever": {
-      "value": 0.987,
+      "value": 1.027,
       "speedup": 1.68
      }
     }
@@ -401,27 +401,27 @@
    {
     "dataset": "xlarge",
     "metric": "load time (s)",
-    "tripletrail": 3.84,
+    "tripletrail": 3.765,
     "others": {
      "graphdb": {
-      "value": 45.017,
-      "speedup": 11.72
+      "value": 49.332,
+      "speedup": 13.1
      },
      "jena": {
-      "value": 26.916,
-      "speedup": 7.01
+      "value": 26.275,
+      "speedup": 6.98
      },
      "maplib": {
-      "value": 15.749,
-      "speedup": 4.1
+      "value": 3.098,
+      "speedup": 0.82
      },
      "oxigraph": {
-      "value": 9.264,
-      "speedup": 2.41
+      "value": 13.136,
+      "speedup": 3.49
      },
      "qlever": {
-      "value": 7.554,
-      "speedup": 1.97
+      "value": 10.233,
+      "speedup": 2.72
      }
     }
    }
@@ -430,23 +430,23 @@
    {
     "dataset": "large",
     "metric": "load time (s)",
-    "tripletrail": 4.36,
+    "tripletrail": 4.906,
     "others": {
      "graphdb": {
-      "value": 40.672,
-      "speedup": 9.33
+      "value": 50.086,
+      "speedup": 10.21
      },
      "jena": {
-      "value": 56.887,
-      "speedup": 13.05
+      "value": 58.069,
+      "speedup": 11.84
      },
      "postgis": {
-      "value": 35.28,
-      "speedup": 8.09
+      "value": 35.279,
+      "speedup": 7.19
      },
      "qlever": {
-      "value": 9.345,
-      "speedup": 2.14
+      "value": 10.547,
+      "speedup": 2.15
      }
     }
    },
@@ -483,46 +483,46 @@
    {
     "dataset": "osm_norway",
     "metric": "load time (s)",
-    "tripletrail": 1.686,
+    "tripletrail": 1.742,
     "others": {
      "graphdb": {
-      "value": 18.058,
-      "speedup": 10.71
+      "value": 17.616,
+      "speedup": 10.11
      },
      "jena": {
-      "value": 14.191,
-      "speedup": 8.42
+      "value": 14.868,
+      "speedup": 8.54
      },
      "postgis": {
-      "value": 24.108,
-      "speedup": 14.3
+      "value": 24.415,
+      "speedup": 14.02
      },
      "qlever": {
-      "value": 7.044,
-      "speedup": 4.18
+      "value": 7.255,
+      "speedup": 4.16
      }
     }
    },
    {
     "dataset": "small",
     "metric": "load time (s)",
-    "tripletrail": 0.615,
+    "tripletrail": 1.155,
     "others": {
      "graphdb": {
-      "value": 12.27,
-      "speedup": 19.95
+      "value": 12.772,
+      "speedup": 11.06
      },
      "jena": {
-      "value": 5.95,
-      "speedup": 9.67
+      "value": 6.226,
+      "speedup": 5.39
      },
      "postgis": {
-      "value": 4.481,
-      "speedup": 7.29
+      "value": 4.538,
+      "speedup": 3.93
      },
      "qlever": {
-      "value": 2.495,
-      "speedup": 4.06
+      "value": 2.501,
+      "speedup": 2.17
      }
     }
    }
@@ -533,24 +533,24 @@
     "metric": "geometric mean p50 over shared answered queries (ms)",
     "others": {
      "graphdb": {
-      "value": 615.985,
-      "tripletrail": 8.128,
-      "speedup": 75.79
+      "value": 595.591,
+      "tripletrail": 9.768,
+      "speedup": 60.97
      },
      "jena": {
-      "value": 182.194,
-      "tripletrail": 8.128,
-      "speedup": 22.42
+      "value": 194.609,
+      "tripletrail": 9.768,
+      "speedup": 19.92
      },
      "postgis": {
-      "value": 81.197,
-      "tripletrail": 37.546,
-      "speedup": 2.16
+      "value": 87.056,
+      "tripletrail": 42.074,
+      "speedup": 2.07
      },
      "qlever": {
-      "value": 248.69,
-      "tripletrail": 17.317,
-      "speedup": 14.36
+      "value": 234.42,
+      "tripletrail": 18.635,
+      "speedup": 12.58
      }
     }
    },
@@ -591,24 +591,24 @@
     "metric": "geometric mean p50 over shared answered queries (ms)",
     "others": {
      "graphdb": {
-      "value": 206259.003,
-      "tripletrail": 22.62,
-      "speedup": 9118.44
+      "value": 204261.684,
+      "tripletrail": 41.272,
+      "speedup": 4949.16
      },
      "jena": {
-      "value": 18316.542,
-      "tripletrail": 44.075,
-      "speedup": 415.57
+      "value": 19625.067,
+      "tripletrail": 41.216,
+      "speedup": 476.15
      },
      "postgis": {
-      "value": 665.287,
-      "tripletrail": 63.291,
-      "speedup": 10.51
+      "value": 676.657,
+      "tripletrail": 65.096,
+      "speedup": 10.39
      },
      "qlever": {
-      "value": 1840.292,
-      "tripletrail": 63.291,
-      "speedup": 29.08
+      "value": 1389.003,
+      "tripletrail": 65.096,
+      "speedup": 21.34
      }
     }
    },
@@ -617,24 +617,24 @@
     "metric": "geometric mean p50 over shared answered queries (ms)",
     "others": {
      "graphdb": {
-      "value": 92.075,
-      "tripletrail": 4.722,
-      "speedup": 19.5
+      "value": 82.448,
+      "tripletrail": 5.629,
+      "speedup": 14.65
      },
      "jena": {
-      "value": 87.467,
-      "tripletrail": 6.477,
-      "speedup": 13.51
+      "value": 85.761,
+      "tripletrail": 7.672,
+      "speedup": 11.18
      },
      "postgis": {
-      "value": 13.548,
-      "tripletrail": 10.147,
-      "speedup": 1.34
+      "value": 14.25,
+      "tripletrail": 12.021,
+      "speedup": 1.19
      },
      "qlever": {
-      "value": 42.515,
-      "tripletrail": 7.666,
-      "speedup": 5.55
+      "value": 36.464,
+      "tripletrail": 9.144,
+      "speedup": 3.99
      }
     }
    }

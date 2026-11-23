@@ -1,68 +1,68 @@
 | Engine | Load (s) | Index / start (s) | On disk | RSS after start | Triples |
 |---|---|---|---|---|---|
-| tripletrail | 0.6 | 0.566 | 57 MiB | 132 MiB (heap 55 MiB) | 805,538 |
+| tripletrail | 1.2 | 0.565 | 48 MiB | 157 MiB (heap 85 MiB) | 805,538 |
 | PostGIS/pgRouting | 4.5 | - | 83 MiB | 170 MiB (sum over backends, shared buffers counted per process) | 165,466 rows |
-| GraphDB | 12.3 | 2.534 | 143 MiB | 1.966GiB / 61.31GiB | 805,538 |
-| Jena GeoSPARQL | 6.0 | 5.271 | 317 MiB | 939 MiB | 805,538 |
-| QLever | 2.5 | 0.508 | 16 MiB | 6.012MiB / 61.31GiB | 805,538 |
+| GraphDB | 12.8 | 2.531 | 143 MiB | 2.012GiB / 61.31GiB | 805,538 |
+| Jena GeoSPARQL | 6.2 | 5.298 | 317 MiB | 939 MiB | 805,538 |
+| QLever | 2.5 | 0.527 | 16 MiB | 5.895MiB / 61.31GiB | 805,538 |
 
 
 **Family 1 selection** — warm p50 / p95 in ms (cold first run in brackets)
 
 | Query | tripletrail | PostGIS/pgRouting | GraphDB | Jena GeoSPARQL | QLever |
 |---|---|---|---|---|---|
-| sel_bbox | 3.2 / 4.0 (4.9) | 0.6 / 0.7 (20) | 56 / 69 (540) | 18 / 30 (126) | 31 / 36 (53) |
-| sel_polygon | 2.9 / 3.1 (3.3) | 0.5 / 0.6 (0.6) | 40 / 61 (59) | 22 / 38 (143) | 28 / 31 (29) |
-| sel_distance | 2.4 / 2.9 (2.8) | 1.6 / 4.0 (24) | 186 / 309 (396) | 24 / 34 (46) | 27 / 30 (30) |
+| sel_bbox | 3.9 / 4.4 (9.6) | 0.7 / 0.8 (21) | 40 / 64 (483) | 21 / 35 (133) | 27 / 31 (40) |
+| sel_polygon | 3.2 / 3.6 (3.6) | 0.6 / 0.7 (0.6) | 29 / 54 (63) | 25 / 36 (118) | 25 / 27 (25) |
+| sel_distance | 3.4 / 4.2 (3.9) | 1.7 / 4.6 (24) | 172 / 285 (410) | 24 / 35 (50) | 23 / 26 (16) |
 
 **Family 2 knn** — warm p50 / p95 in ms (cold first run in brackets)
 
 | Query | tripletrail | PostGIS/pgRouting | GraphDB | Jena GeoSPARQL | QLever |
 |---|---|---|---|---|---|
-| knn_signals | 4.6 / 6.9 (15) | 0.7 / 0.8 (36) | 302 / 508 (916) | 210 / 317 (1.27 s) | 26 / 33 (50) |
-| knn_ops | 7.9 / 11 (9.2) | 0.7 / 0.9 (1.5) | 62 / 132 (75) | 40 / 64 (174) | 18 / 19 (19) |
+| knn_signals | 6.2 / 10 (18) | 0.9 / 0.9 (37) | 311 / 657 (924) | 200 / 319 (1.33 s) | 18 / 34 (45) |
+| knn_ops | 12 / 16 (13) | 0.8 / 0.9 (1.5) | 79 / 93 (79) | 36 / 82 (147) | 17 / 19 (19) |
 
 **Family 3 join** — warm p50 / p95 in ms (cold first run in brackets)
 
 | Query | tripletrail | PostGIS/pgRouting | GraphDB | Jena GeoSPARQL | QLever |
 |---|---|---|---|---|---|
-| join_signal_ne_20m | 59 / 60 (61) | 152 / 154 (207) | error [1] | 7.75 s / 7.86 s (11 s) | 394 / 402 (419) |
-| join_op_region | 12 / 13 (15) | 3.8 / 3.8 (5.8) | 495 / 499 (679) | 245 / 270 (560) | 101 / 110 (105) |
+| join_signal_ne_20m | 67 / 73 (65) | 162 / 177 (216) | error [1] | 7.74 s / 7.94 s (11 s) | 326 / 330 (304) |
+| join_op_region | 17 / 17 (17) | 3.8 / 3.9 (5.9) | 466 / 499 (664) | 227 / 248 (603) | 77 / 93 (106) |
 
 **Family 4 aggregate** — warm p50 / p95 in ms (cold first run in brackets)
 
 | Query | tripletrail | PostGIS/pgRouting | GraphDB | Jena GeoSPARQL | QLever |
 |---|---|---|---|---|---|
-| agg_length_region | 110 / 127 (132) | 422 / 426 (477) | N/A [2] | N/A [3] | N/A [4] |
-| agg_total_length | 30 / 33 (29) | 61 / 62 (60) | N/A [2] | N/A [3] | 67 / 73 (80) |
-| agg_union_buffers | 8.7 / 12 (12) | 5.6 / 9.5 (12) | N/A [2] | N/A [3] | N/A [5] |
+| agg_length_region | 182 / 190 (175) | 425 / 426 (480) | N/A [2] | N/A [3] | N/A [4] |
+| agg_total_length | 37 / 41 (51) | 49 / 63 (66) | N/A [2] | N/A [3] | 59 / 68 (76) |
+| agg_union_buffers | 9.3 / 12 (14) | 5.7 / 9.7 (12) | N/A [2] | N/A [3] | N/A [5] |
 
 **Family 5 linear referencing** — warm p50 / p95 in ms (cold first run in brackets)
 
 | Query | tripletrail | PostGIS/pgRouting | GraphDB | Jena GeoSPARQL | QLever |
 |---|---|---|---|---|---|
-| lr_km_to_point | 4.6 / 6.2 (5.9) | 2.8 / 3.5 (30) | N/A [6] | N/A [6] | N/A [6] |
-| lr_assets_between_km | 5.3 / 5.7 (47) | 0.3 / 0.3 (1.3) | 14 / 29 (220) | 23 / 35 (127) | 16 / 19 (31) |
+| lr_km_to_point | 5.5 / 6.5 (6.2) | 2.8 / 3.5 (40) | N/A [6] | N/A [6] | N/A [6] |
+| lr_assets_between_km | 3.6 / 3.9 (45) | 0.4 / 0.5 (1.0) | 11 / 22 (226) | 19 / 31 (176) | 16 / 18 (27) |
 
 **Family 6 routing** — warm p50 / p95 in ms (cold first run in brackets)
 
 | Query | tripletrail | PostGIS/pgRouting | GraphDB | Jena GeoSPARQL | QLever |
 |---|---|---|---|---|---|
-| route_dijkstra | 6.6 / 11 (276) | 34 / 37 (74) | N/A [7] | N/A [7] | N/A [7] |
-| route_dijkstra_cost | 4.2 / 7.0 (3.4) | 34 / 36 (33) | N/A [7] | N/A [7] | N/A [7] |
-| route_bddijkstra | 5.7 / 11 (4.6) | 34 / 38 (34) | N/A [7] | N/A [7] | N/A [7] |
-| route_ch | 2.9 / 4.5 (107) | N/A [8] | N/A [7] | N/A [7] | N/A [7] |
-| route_constrained | 5.2 / 9.0 (548) | 31 / 33 (31) | N/A [7] | N/A [7] | N/A [7] |
-| driving_distance_50km | 6.4 / 8.3 (3.3) | 114 / 157 (34) | N/A [7] | N/A [7] | N/A [7] |
-| ksp5 | 14 / 40 (12) | 237 / 633 (135) | N/A [7] | N/A [7] | N/A [7] |
-| cost_matrix_100 | 32 / 33 (63) | 486 / 530 (485) | N/A [7] | N/A [7] | N/A [7] |
-| components | 18 / 35 (37) | 51 / 51 (52) | N/A [7] | N/A [7] | N/A [7] |
+| route_dijkstra | 7.5 / 12 (279) | 36 / 41 (85) | N/A [7] | N/A [7] | N/A [7] |
+| route_dijkstra_cost | 5.4 / 8.6 (4.8) | 35 / 41 (33) | N/A [7] | N/A [7] | N/A [7] |
+| route_bddijkstra | 6.5 / 12 (5.0) | 36 / 42 (37) | N/A [7] | N/A [7] | N/A [7] |
+| route_ch | 3.2 / 5.3 (110) | N/A [8] | N/A [7] | N/A [7] | N/A [7] |
+| route_constrained | 7.1 / 10 (558) | 31 / 34 (31) | N/A [7] | N/A [7] | N/A [7] |
+| driving_distance_50km | 6.7 / 9.0 (3.6) | 113 / 164 (32) | N/A [7] | N/A [7] | N/A [7] |
+| ksp5 | 18 / 44 (13) | 244 / 842 (137) | N/A [7] | N/A [7] | N/A [7] |
+| cost_matrix_100 | 32 / 34 (63) | 507 / 565 (491) | N/A [7] | N/A [7] | N/A [7] |
+| components | 20 / 41 (38) | 52 / 53 (53) | N/A [7] | N/A [7] | N/A [7] |
 
 **Family 7 mixed** — warm p50 / p95 in ms (cold first run in brackets)
 
 | Query | tripletrail | PostGIS/pgRouting | GraphDB | Jena GeoSPARQL | QLever |
 |---|---|---|---|---|---|
-| mixed_route_signals | 77 / 87 (101) | 41 / 50 (92) | N/A [7] | N/A [7] | N/A [7] |
+| mixed_route_signals | 80 / 90 (106) | 43 / 51 (98) | N/A [7] | N/A [7] | N/A [7] |
 
 Notes:
 

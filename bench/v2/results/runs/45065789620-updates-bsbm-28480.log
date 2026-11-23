@@ -1,0 +1,75 @@
+{"source": "bsbm-28480", "seed": 42, "source_triples": 9609918, "held_out": 1363500, "base_triples": 8246418, "batches": {"10": 50, "100": 30, "1000": 10, "10000": 5, "100000": 3, "1000000": 1}, "derive": [{"name": "derive-1000", "predicate": "http://xmlns.com/foaf/0.1/homepage", "triples_in_source": 868}, {"name": "derive-10000", "predicate": "http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/productPropertyNumeric4", "triples_in_source": 12835}, {"name": "derive-100000", "predicate": "http://www.w3.org/2000/01/rdf-schema#comment", "triples_in_source": 46139}]}
+=== updates bsbm-28480 on tripletrail (2026-11-23T04:01:17+00:00)
+loading updates-bsbm-28480 into tripletrail
+tripletrail 10 x 50 insert: 431.808 us/triple, p50 4.256 ms, failed 0, count ok
+tripletrail 10 x 50 delete: 413.288 us/triple, p50 4.127 ms, failed 0, count ok
+tripletrail 100 x 30 insert: 62.864 us/triple, p50 6.313 ms, failed 0, count ok
+tripletrail 100 x 30 delete: 59.891 us/triple, p50 5.941 ms, failed 0, count ok
+tripletrail 1000 x 10 insert: 24.58 us/triple, p50 23.645 ms, failed 0, count ok
+tripletrail 1000 x 10 delete: 21.321 us/triple, p50 21.663 ms, failed 0, count ok
+tripletrail 10000 x 5 insert: 12.509 us/triple, p50 128.962 ms, failed 0, count ok
+tripletrail 10000 x 5 delete: 12.335 us/triple, p50 122.999 ms, failed 0, count ok
+tripletrail 100000 x 3 insert: 13.104 us/triple, p50 1327.109 ms, failed 0, count ok
+tripletrail 100000 x 3 delete: 10.159 us/triple, p50 1018.623 ms, failed 0, count ok
+tripletrail 1000000 x 1 insert: 5.118 us/triple, p50 5118.242 ms, failed 0, count ok
+tripletrail 1000000 x 1 delete: 5.787 us/triple, p50 5787.401 ms, failed 0, count ok
+tripletrail derive-1000: 760 rows, insert 24.558 ms, delete 27.799 ms, 760 nodes, count ok
+tripletrail derive-10000: 10998 rows, insert 889.882 ms, delete 353.322 ms, 10998 nodes, count ok
+tripletrail derive-100000: 39528 rows, insert 732.091 ms, delete 1043.538 ms, 39528 nodes, count ok
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/updates/bsbm-28480/tripletrail.json
+=== updates bsbm-28480 on oxigraph (2026-11-23T04:01:49+00:00)
+loading updates-bsbm-28480 into oxigraph
+oxigraph 10 x 50 insert: 225.804 us/triple, p50 2.272 ms, failed 0, count ok
+oxigraph 10 x 50 delete: 220.734 us/triple, p50 2.213 ms, failed 0, count ok
+oxigraph 100 x 30 insert: 34.357 us/triple, p50 3.291 ms, failed 0, count ok
+oxigraph 100 x 30 delete: 31.974 us/triple, p50 3.311 ms, failed 0, count ok
+oxigraph 1000 x 10 insert: 18.887 us/triple, p50 19.236 ms, failed 0, count ok
+oxigraph 1000 x 10 delete: 10.586 us/triple, p50 8.035 ms, failed 0, count ok
+oxigraph 10000 x 5 insert: 12.388 us/triple, p50 121.795 ms, failed 0, count ok
+oxigraph 10000 x 5 delete: 8.403 us/triple, p50 87.189 ms, failed 0, count ok
+oxigraph 100000 x 3 insert: 13.932 us/triple, p50 1401.758 ms, failed 0, count ok
+oxigraph 100000 x 3 delete: 9.229 us/triple, p50 922.562 ms, failed 0, count ok
+oxigraph 1000000 x 1 insert: None us/triple, p50 None ms, failed 1, count 8246418 != 9246418
+oxigraph 1000000 x 1 delete: None us/triple, p50 None ms, failed 1, count ok
+oxigraph derive-1000: 760 rows, insert 71.001 ms, delete 66.119 ms, 760 nodes, count ok
+oxigraph derive-10000: 10998 rows, insert 767.547 ms, delete 644.572 ms, 10998 nodes, count ok
+oxigraph derive-100000: 39528 rows, insert 3487.132 ms, delete 2375.344 ms, 39528 nodes, count ok
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/updates/bsbm-28480/oxigraph.json
+=== updates bsbm-28480 on jena (2026-11-23T04:03:04+00:00)
+loading updates-bsbm-28480 into jena
+jena 10 x 50 insert: 4721.878 us/triple, p50 44.663 ms, failed 0, count ok
+jena 10 x 50 delete: 3837.172 us/triple, p50 37.996 ms, failed 0, count ok
+jena 100 x 30 insert: 847.384 us/triple, p50 83.99 ms, failed 0, count ok
+jena 100 x 30 delete: 671.928 us/triple, p50 66.79 ms, failed 0, count ok
+jena 1000 x 10 insert: 196.943 us/triple, p50 194.178 ms, failed 0, count ok
+jena 1000 x 10 delete: 169.832 us/triple, p50 161.661 ms, failed 0, count ok
+jena 10000 x 5 insert: 119.611 us/triple, p50 1195.057 ms, failed 0, count ok
+jena 10000 x 5 delete: 113.873 us/triple, p50 1145.147 ms, failed 0, count ok
+jena 100000 x 3 insert: 82.902 us/triple, p50 8322.235 ms, failed 0, count ok
+jena 100000 x 3 delete: 80.49 us/triple, p50 8044.377 ms, failed 0, count ok
+jena 1000000 x 1 insert: 55.528 us/triple, p50 55527.855 ms, failed 0, count ok
+jena 1000000 x 1 delete: 54.447 us/triple, p50 54446.655 ms, failed 0, count ok
+jena derive-1000: 760 rows, insert 218.466 ms, delete 136.007 ms, 760 nodes, count ok
+jena derive-10000: 10998 rows, insert 1101.456 ms, delete 1010.374 ms, 10998 nodes, count ok
+jena derive-100000: 39528 rows, insert 3731.372 ms, delete 3577.29 ms, 39528 nodes, count ok
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/updates/bsbm-28480/jena.json
+=== updates bsbm-28480 on graphdb (2026-11-23T04:07:29+00:00)
+loading updates-bsbm-28480 into graphdb
+graphdb 10 x 50 insert: 4915.906 us/triple, p50 48.475 ms, failed 0, count ok
+graphdb 10 x 50 delete: 2695.55 us/triple, p50 26.184 ms, failed 0, count ok
+graphdb 100 x 30 insert: 558.808 us/triple, p50 45.412 ms, failed 0, count ok
+graphdb 100 x 30 delete: 249.559 us/triple, p50 22.583 ms, failed 0, count ok
+graphdb 1000 x 10 insert: 238.858 us/triple, p50 235.201 ms, failed 0, count ok
+graphdb 1000 x 10 delete: 101.835 us/triple, p50 99.545 ms, failed 0, count ok
+graphdb 10000 x 5 insert: 175.368 us/triple, p50 1700.2 ms, failed 0, count ok
+graphdb 10000 x 5 delete: 66.976 us/triple, p50 671.175 ms, failed 0, count ok
+graphdb 100000 x 3 insert: 64.059 us/triple, p50 6443.571 ms, failed 0, count ok
+graphdb 100000 x 3 delete: 27.526 us/triple, p50 2683.924 ms, failed 0, count ok
+graphdb 1000000 x 1 insert: 31.575 us/triple, p50 31574.965 ms, failed 0, count ok
+graphdb 1000000 x 1 delete: 21.326 us/triple, p50 21325.761 ms, failed 0, count ok
+graphdb derive-1000: 760 rows, insert 166.308 ms, delete 79.905 ms, 760 nodes, count ok
+graphdb derive-10000: 10998 rows, insert 727.244 ms, delete 381.854 ms, 10998 nodes, count ok
+graphdb derive-100000: 39528 rows, insert 1877.225 ms, delete 1114.477 ms, 39528 nodes, count ok
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/updates/bsbm-28480/graphdb.json
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/updates/report.md
+=== done (2026-11-23T04:10:54+00:00)

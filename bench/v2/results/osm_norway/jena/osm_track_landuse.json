@@ -14,5 +14,5 @@
  "status": "failed",
  "reason": "HTTP 503: Query timed out\n",
  "dataset": "osm_norway",
- "rss_after": "8151 MiB"
+ "rss_after": "7949 MiB"
 }

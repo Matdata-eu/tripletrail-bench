@@ -1,0 +1,197 @@
+{"quads": 2065148, "file": "/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/data/geographica.nq"}
+=== geographica on tripletrail (2026-11-22T23:22:22+00:00)
+[tripletrail] micro_nontopological      1 Boundary_CLC                                  cold    1678.4 ms rows 44834 warm 1525.4 ms
+[tripletrail] micro_nontopological      2 Envelope_CLC                                  cold     242.1 ms rows 44834 warm 228.5 ms
+[tripletrail] micro_nontopological      3 ConvexHull_CLC                                cold     565.4 ms rows 44834 warm 535.3 ms
+[tripletrail] micro_nontopological      4 Buffer_GeoNames                               cold     229.2 ms rows 21990 warm 208.9 ms
+[tripletrail] micro_nontopological      5 Buffer_LGD                                    cold     778.9 ms rows 12097 warm 742.0 ms
+[tripletrail] micro_nontopological      6 Area_CLC                                      cold     677.3 ms rows 44834 warm 133.8 ms
+[tripletrail] micro_selections          7 Equals_LGD_GivenLine                          cold      49.6 ms rows 1 warm 16.8 ms
+[tripletrail] micro_selections          8 Equals_GAG_GivenPolygon                       cold     356.1 ms rows 1 warm 352.2 ms
+[tripletrail] micro_selections          9 Intersects_LGD_GivenPolygon                   cold      65.9 ms rows 216 warm 57.2 ms
+[tripletrail] micro_selections         10 Intersects_CLC_GivenLine                      cold      13.7 ms rows 20 warm 10.3 ms
+[tripletrail] micro_selections         11 Overlaps_CLC_GivenPolygon                     cold      88.5 ms rows 132 warm 70.1 ms
+[tripletrail] micro_selections         12 Crosses_LGD_GivenLine                         cold     108.1 ms rows 14 warm 104.4 ms
+[tripletrail] micro_selections         13 Within_GeoNames_GivenPolygon                  cold      45.4 ms rows 136 warm 40.6 ms
+[tripletrail] micro_selections         14 Within_GeoNames_Point_Buffer                  cold     128.6 ms rows 1 warm 137.3 ms
+[tripletrail] micro_selections         15 GeoNames_Point_Distance                       cold      32.4 ms rows 153 warm 28.2 ms
+[tripletrail] micro_selections         16 Disjoint_GeoNames_GivenPolygon                cold     248.4 ms rows 21854 warm 245.0 ms
+[tripletrail] micro_selections         17 Disjoint_LGD_GivenPolygon                     cold     240.4 ms rows 11881 warm 239.1 ms
+[tripletrail] micro_joins              18 Equals_GeoNames_DBPedia                       cold      22.8 ms rows 91 warm 20.5 ms
+[tripletrail] micro_joins              19 Intersects_GeoNames_LGD                       cold      22.7 ms rows 0 warm 21.3 ms
+[tripletrail] micro_joins              20 Intersects_GeoNames_GAG                       cold     111.4 ms rows 18689 warm 87.1 ms
+[tripletrail] micro_joins              21 Intersects_LGD_GAG                            cold      57.2 ms rows 13318 warm 61.6 ms
+[tripletrail] micro_joins              22 Within_GeoNames_GAG                           cold      90.4 ms rows 18689 warm 83.6 ms
+[tripletrail] micro_joins              23 Within_LGD_GAG                                cold      59.8 ms rows 10673 warm 69.7 ms
+[tripletrail] micro_joins              24 Within_CLC_GAG                                cold     485.3 ms rows 34083 warm 419.8 ms
+[tripletrail] micro_joins              25 Crosses_LGD_GAG                               cold     341.4 ms rows 2645 warm 322.5 ms
+[tripletrail] micro_joins              26 Touches_GAG_GAG                               cold    1791.5 ms rows 1022 warm 1784.7 ms
+[tripletrail] micro_joins              27 Overlaps_GAG_CLC                              cold    5536.6 ms rows 17005 warm 5494.9 ms
+[tripletrail] micro_aggregations       28 Extent_GAG                                    cold     357.1 ms rows 1 warm 185.8 ms
+[tripletrail] micro_aggregations       29 Union_GAG                                     cold     660.0 ms rows 1 warm 631.6 ms
+[tripletrail] macro_reversegeocoding    0 Find_Closest_Populated_Place                  cold     269.6 ms rows 1 warm 261.7 ms
+[tripletrail] macro_reversegeocoding    1 Find_Closest_Motorway                         cold     285.1 ms rows 1 warm 248.8 ms
+[tripletrail] macro_mapsearch           0 Thematic_Search                               cold      15.3 ms rows 1 warm 13.7 ms
+[tripletrail] macro_mapsearch           1 Get_Around_POIs                               cold      34.2 ms rows 13 warm 14.9 ms
+[tripletrail] macro_mapsearch           2 Get_Around_Roads                              cold      76.3 ms rows 132 warm 74.8 ms
+[tripletrail] macro_rapidmapping        0 Get_CLC_areas                                 cold     675.7 ms rows 30453 warm 719.8 ms
+[tripletrail] macro_rapidmapping        1 Get_highways                                  cold      85.4 ms rows 4559 warm 84.8 ms
+[tripletrail] macro_rapidmapping        2 Get_municipalities                            cold     641.9 ms rows 248 warm 614.3 ms
+[tripletrail] macro_rapidmapping        3 Get_hotspots                                  cold    3367.9 ms rows 902195 warm 2912.7 ms
+[tripletrail] macro_rapidmapping        4 Get_coniferous_forests_in_fire                cold      16.3 ms rows 50 warm 14.4 ms
+[tripletrail] macro_rapidmapping        5 Get_road_segments_affected_by_fire            cold     371.6 ms rows 17275 warm 345.2 ms
+[tripletrail] macro_computestatistics   0 Count_CLC_categories                          cold      43.9 ms rows 12 warm 9.2 ms
+[tripletrail] macro_computestatistics   1 Count_GeoNames_categories                     cold      16.8 ms rows 8 warm 14.4 ms
+[tripletrail] macro_computestatistics   2 Count_GeoNames_categories_in_ContinuousUrbanFabric cold      62.3 ms rows 1 warm 50.0 ms
+=== geographica on qlever (2026-11-22T23:23:44+00:00)
+[qlever] micro_nontopological      1 Boundary_CLC                                  FAILED HTTP 400: {
+    "exception": "Not supported: Function \"<http://www.opengis.net/def/functi
+[qlever] micro_nontopological      2 Envelope_CLC                                  cold     465.8 ms rows 44834 warm 377.6 ms
+[qlever] micro_nontopological      3 ConvexHull_CLC                                FAILED HTTP 400: {
+    "exception": "Not supported: Function \"<http://www.opengis.net/def/functi
+[qlever] micro_nontopological      4 Buffer_GeoNames                               FAILED HTTP 400: {
+    "exception": "Not supported: Function \"<http://www.opengis.net/def/functi
+[qlever] micro_nontopological      5 Buffer_LGD                                    FAILED HTTP 400: {
+    "exception": "Not supported: Function \"<http://www.opengis.net/def/functi
+[qlever] micro_nontopological      6 Area_CLC                                      cold     232.5 ms rows 44834 warm 185.8 ms
+[qlever] micro_selections          7 Equals_LGD_GivenLine                          cold      46.7 ms rows 1 warm 52.1 ms
+[qlever] micro_selections          8 Equals_GAG_GivenPolygon                       cold     144.7 ms rows 1 warm 141.7 ms
+[qlever] micro_selections          9 Intersects_LGD_GivenPolygon                   cold     114.8 ms rows 216 warm 109.9 ms
+[qlever] micro_selections         10 Intersects_CLC_GivenLine                      cold     583.8 ms rows 20 warm 577.0 ms
+[qlever] micro_selections         11 Overlaps_CLC_GivenPolygon                     cold     895.2 ms rows 132 warm 844.3 ms
+[qlever] micro_selections         12 Crosses_LGD_GivenLine                         cold      87.0 ms rows 14 warm 82.0 ms
+[qlever] micro_selections         13 Within_GeoNames_GivenPolygon                  cold      71.3 ms rows 136 warm 62.9 ms
+[qlever] micro_selections         14 Within_GeoNames_Point_Buffer                  FAILED HTTP 400: {
+    "exception": "Not supported: Function \"<http://www.opengis.net/def/functi
+[qlever] micro_selections         15 GeoNames_Point_Distance                       FAILED HTTP 500: {
+    "exception": "Unsupported unit of measurement for distance.. In file \"/ql
+[qlever] micro_selections         16 Disjoint_GeoNames_GivenPolygon                FAILED HTTP 400: {
+    "exception": "Not supported: Function \"<http://www.opengis.net/def/functi
+[qlever] micro_selections         17 Disjoint_LGD_GivenPolygon                     FAILED HTTP 400: {
+    "exception": "Not supported: Function \"<http://www.opengis.net/def/functi
+[qlever] micro_joins              18 Equals_GeoNames_DBPedia                       cold     111.9 ms rows 91 warm 106.7 ms
+[qlever] micro_joins              19 Intersects_GeoNames_LGD                       cold     309.9 ms rows 0 warm 317.0 ms
+[qlever] micro_joins              20 Intersects_GeoNames_GAG                       cold    1787.9 ms rows 18689 warm 1702.8 ms
+[qlever] micro_joins              21 Intersects_LGD_GAG                            cold    1982.3 ms rows 13321 warm 1893.2 ms
+[qlever] micro_joins              22 Within_GeoNames_GAG                           cold    1734.3 ms rows 18689 warm 1736.6 ms
+[qlever] micro_joins              23 Within_LGD_GAG                                cold    1833.3 ms rows 10676 warm 1884.0 ms
+[qlever] micro_joins              24 Within_CLC_GAG                                cold    5216.1 ms rows 34083 warm 5163.8 ms
+[qlever] micro_joins              25 Crosses_LGD_GAG                               cold    1814.2 ms rows 2639 warm 1799.6 ms
+[qlever] micro_joins              26 Touches_GAG_GAG                               cold    3269.0 ms rows 1192 warm 3306.9 ms
+[qlever] micro_joins              27 Overlaps_GAG_CLC                              cold    5136.9 ms rows 17160 warm 5040.2 ms
+[qlever] micro_aggregations       28 Extent_GAG                                    FAILED HTTP 400: {
+    "exception": "Not supported: Function \"<http://www.opengis.net/def/functi
+[qlever] micro_aggregations       29 Union_GAG                                     FAILED HTTP 400: {
+    "exception": "Not supported: Function \"<http://www.opengis.net/def/functi
+[qlever] macro_reversegeocoding    0 Find_Closest_Populated_Place                  FAILED HTTP 500: {
+    "exception": "Unsupported unit of measurement for distance.. In file \"/ql
+[qlever] macro_reversegeocoding    1 Find_Closest_Motorway                         FAILED HTTP 500: {
+    "exception": "Unsupported unit of measurement for distance.. In file \"/ql
+[qlever] macro_mapsearch           0 Thematic_Search                               cold      77.9 ms rows 1 warm 77.0 ms
+[qlever] macro_mapsearch           1 Get_Around_POIs                               cold     134.1 ms rows 13 warm 123.1 ms
+[qlever] macro_mapsearch           2 Get_Around_Roads                              cold      80.4 ms rows 132 warm 80.4 ms
+[qlever] macro_rapidmapping        0 Get_CLC_areas                                 FAILED Invalid control character at: line 1 column 265289729 (char 265289728)
+[qlever] macro_rapidmapping        1 Get_highways                                  cold     348.6 ms rows 4559 warm 344.3 ms
+[qlever] macro_rapidmapping        2 Get_municipalities                            FAILED HTTP 400: {
+    "exception": "Not supported: Function \"<http://www.opengis.net/def/functi
+[qlever] macro_rapidmapping        3 Get_hotspots                                  cold   28857.4 ms rows 902195 warm 28857.7 ms
+[qlever] macro_rapidmapping        4 Get_coniferous_forests_in_fire                cold     938.9 ms rows 50 warm 940.7 ms
+[qlever] macro_rapidmapping        5 Get_road_segments_affected_by_fire            FAILED HTTP 400: {
+    "exception": "Not supported: Function \"<http://www.opengis.net/def/functi
+[qlever] macro_computestatistics   0 Count_CLC_categories                          cold     649.8 ms rows 12 warm 624.8 ms
+[qlever] macro_computestatistics   1 Count_GeoNames_categories                     cold      98.0 ms rows 8 warm 100.0 ms
+[qlever] macro_computestatistics   2 Count_GeoNames_categories_in_ContinuousUrbanFabric cold     138.0 ms rows 1 warm 138.0 ms
+=== geographica on jena (2026-11-22T23:34:34+00:00)
+[jena] micro_nontopological      1 Boundary_CLC                                  cold   18640.9 ms rows 44834 warm 16305.2 ms
+[jena] micro_nontopological      2 Envelope_CLC                                  cold    6658.8 ms rows 44834 warm 6571.5 ms
+[jena] micro_nontopological      3 ConvexHull_CLC                                cold    8220.2 ms rows 44834 warm 8086.0 ms
+[jena] micro_nontopological      4 Buffer_GeoNames                               FAILED HTTP 500: Function 'BufferFF' takes three arguments
+
+[jena] micro_nontopological      5 Buffer_LGD                                    FAILED HTTP 500: Function 'BufferFF' takes three arguments
+
+[jena] micro_nontopological      6 Area_CLC                                      cold      76.7 ms rows 44834 warm 52.0 ms
+[jena] micro_selections          7 Equals_LGD_GivenLine                          cold     556.9 ms rows 1 warm 111.4 ms
+[jena] micro_selections          8 Equals_GAG_GivenPolygon                       cold     694.9 ms rows 1 warm 69.5 ms
+[jena] micro_selections          9 Intersects_LGD_GivenPolygon                   cold     157.5 ms rows 216 warm 126.9 ms
+[jena] micro_selections         10 Intersects_CLC_GivenLine                      cold    6233.9 ms rows 20 warm 6114.2 ms
+[jena] micro_selections         11 Overlaps_CLC_GivenPolygon                     cold    6520.4 ms rows 132 warm 6605.7 ms
+[jena] micro_selections         12 Crosses_LGD_GivenLine                         cold     169.2 ms rows 14 warm 37.4 ms
+[jena] micro_selections         13 Within_GeoNames_GivenPolygon                  cold     558.7 ms rows 136 warm 143.8 ms
+[jena] micro_selections         14 Within_GeoNames_Point_Buffer                  FAILED HTTP 500: Function 'BufferFF' takes three arguments
+
+[jena] micro_selections         15 GeoNames_Point_Distance                       cold      87.1 ms rows 153 warm 72.6 ms
+[jena] micro_selections         16 Disjoint_GeoNames_GivenPolygon                cold     534.0 ms rows 21854 warm 292.1 ms
+[jena] micro_selections         17 Disjoint_LGD_GivenPolygon                     cold     516.7 ms rows 11881 warm 375.1 ms
+[jena] micro_joins              18 Equals_GeoNames_DBPedia                       cold  246286.8 ms rows 0
+[jena] micro_joins              19 Intersects_GeoNames_LGD                       FAILED HTTP 503: Query timed out
+
+[jena] micro_joins              20 Intersects_GeoNames_GAG                       cold    8695.0 ms rows 18689 warm 8237.4 ms
+[jena] micro_joins              21 Intersects_LGD_GAG                            cold    5257.3 ms rows 13318 warm 5075.6 ms
+[jena] micro_joins              22 Within_GeoNames_GAG                           cold   17188.9 ms rows 18689 warm 16950.7 ms
+[jena] micro_joins              23 Within_LGD_GAG                                cold    9439.2 ms rows 10673 warm 8291.0 ms
+[jena] micro_joins              24 Within_CLC_GAG                                cold   43038.7 ms rows 34083 warm 41370.5 ms
+[jena] micro_joins              25 Crosses_LGD_GAG                               cold    8534.7 ms rows 2645 warm 8477.4 ms
+[jena] micro_joins              26 Touches_GAG_GAG                               cold    1297.0 ms rows 1022 warm 1223.4 ms
+[jena] micro_joins              27 Overlaps_GAG_CLC                              FAILED Expecting ',' delimiter: line 12226 column 1 (char 638026)
+[jena] micro_aggregations       28 Extent_GAG                                    cold       4.3 ms rows 325 warm 2.8 ms
+[jena] micro_aggregations       29 Union_GAG                                     cold       2.9 ms rows 325 warm 2.8 ms
+[jena] macro_reversegeocoding    0 Find_Closest_Populated_Place                  cold     152.2 ms rows 1 warm 99.8 ms
+[jena] macro_reversegeocoding    1 Find_Closest_Motorway                         cold      76.4 ms rows 1 warm 46.8 ms
+[jena] macro_mapsearch           0 Thematic_Search                               cold       8.2 ms rows 1 warm 6.2 ms
+[jena] macro_mapsearch           1 Get_Around_POIs                               cold     290.4 ms rows 13 warm 263.3 ms
+[jena] macro_mapsearch           2 Get_Around_Roads                              cold    1058.2 ms rows 132 warm 749.2 ms
+[jena] macro_rapidmapping        0 Get_CLC_areas                                 cold   13841.3 ms rows 30453 warm 13103.5 ms
+[jena] macro_rapidmapping        1 Get_highways                                  cold     177.2 ms rows 4559 warm 128.9 ms
+[jena] macro_rapidmapping        2 Get_municipalities                            cold    1370.7 ms rows 248 warm 691.8 ms
+[jena] macro_rapidmapping        3 Get_hotspots                                  cold   24878.3 ms rows 902195 warm 24777.3 ms
+[jena] macro_rapidmapping        4 Get_coniferous_forests_in_fire                cold     958.2 ms rows 50 warm 577.1 ms
+[jena] macro_rapidmapping        5 Get_road_segments_affected_by_fire            FAILED Expecting ',' delimiter: line 1686 column 1 (char 290505)
+[jena] macro_computestatistics   0 Count_CLC_categories                          cold    6248.5 ms rows 12 warm 6252.9 ms
+[jena] macro_computestatistics   1 Count_GeoNames_categories                     cold     259.0 ms rows 8 warm 222.6 ms
+[jena] macro_computestatistics   2 Count_GeoNames_categories_in_ContinuousUrbanFabric cold     199.5 ms rows 1 warm 193.1 ms
+=== geographica on graphdb (2026-11-23T00:03:37+00:00)
+[graphdb] micro_nontopological      1 Boundary_CLC                                  FAILED ('Connection broken: IncompleteRead(1010 bytes read, 7182 more expected)', IncompleteRead(
+[graphdb] micro_nontopological      2 Envelope_CLC                                  cold    6660.0 ms rows 44834 warm 6243.2 ms
+[graphdb] micro_nontopological      3 ConvexHull_CLC                                cold   11492.5 ms rows 44834 warm 11343.2 ms
+[graphdb] micro_nontopological      4 Buffer_GeoNames                               cold    1750.0 ms rows 21990 warm 1565.5 ms
+[graphdb] micro_nontopological      5 Buffer_LGD                                    cold    4966.1 ms rows 12097 warm 4810.7 ms
+[graphdb] micro_nontopological      6 Area_CLC                                      FAILED HTTP 500: Query evaluation error: Unknown function 'http://www.opengis.net/def/function/ge
+[graphdb] micro_selections          7 Equals_LGD_GivenLine                          cold    2012.2 ms rows 1 warm 1947.4 ms
+[graphdb] micro_selections          8 Equals_GAG_GivenPolygon                       cold     728.3 ms rows 1 warm 753.2 ms
+[graphdb] micro_selections          9 Intersects_LGD_GivenPolygon                   cold   12544.5 ms rows 216 warm 12519.5 ms
+[graphdb] micro_selections         10 Intersects_CLC_GivenLine                      cold    9095.1 ms rows 20 warm 9000.6 ms
+[graphdb] micro_selections         11 Overlaps_CLC_GivenPolygon                     cold   50944.8 ms rows 132 warm 50996.3 ms
+[graphdb] micro_selections         12 Crosses_LGD_GivenLine                         cold     328.8 ms rows 14 warm 296.8 ms
+[graphdb] micro_selections         13 Within_GeoNames_GivenPolygon                  cold   22430.4 ms rows 136 warm 22183.0 ms
+[graphdb] micro_selections         14 Within_GeoNames_Point_Buffer                  cold     996.4 ms rows 150 warm 976.6 ms
+[graphdb] micro_selections         15 GeoNames_Point_Distance                       cold     255.9 ms rows 153 warm 121.0 ms
+[graphdb] micro_selections         16 Disjoint_GeoNames_GivenPolygon                cold   22333.3 ms rows 21854 warm 22274.1 ms
+[graphdb] micro_selections         17 Disjoint_LGD_GivenPolygon                     cold   12789.0 ms rows 11881 warm 12912.8 ms
+[graphdb] micro_joins              18 Equals_GeoNames_DBPedia                       FAILED error body not decodable (plain text sent as gzip): ('Received response with content-encod
+[graphdb] micro_joins              19 Intersects_GeoNames_LGD                       FAILED HTTP 503: Query interrupted: Query evaluation took too long
+
+[graphdb] micro_joins              20 Intersects_GeoNames_GAG                       FAILED error body not decodable (plain text sent as gzip): ('Received response with content-encod
+[graphdb] micro_joins              21 Intersects_LGD_GAG                            FAILED error body not decodable (plain text sent as gzip): ('Received response with content-encod
+[graphdb] micro_joins              22 Within_GeoNames_GAG                           FAILED error body not decodable (plain text sent as gzip): ('Received response with content-encod
+[graphdb] micro_joins              23 Within_LGD_GAG                                FAILED error body not decodable (plain text sent as gzip): ('Received response with content-encod
+[graphdb] micro_joins              24 Within_CLC_GAG                                FAILED error body not decodable (plain text sent as gzip): ('Received response with content-encod
+[graphdb] micro_joins              25 Crosses_LGD_GAG                               FAILED error body not decodable (plain text sent as gzip): ('Received response with content-encod
+[graphdb] micro_joins              26 Touches_GAG_GAG                               cold  199544.5 ms rows 1022
+[graphdb] micro_joins              27 Overlaps_GAG_CLC                              FAILED error body not decodable (plain text sent as gzip): ('Received response with content-encod
+[graphdb] micro_aggregations       28 Extent_GAG                                    FAILED HTTP 500: Query evaluation error: Unknown function 'http://www.opengis.net/def/function/ge
+[graphdb] micro_aggregations       29 Union_GAG                                     FAILED HTTP 500: Query evaluation error: Unknown function 'http://www.opengis.net/def/function/ge
+[graphdb] macro_reversegeocoding    0 Find_Closest_Populated_Place                  cold     192.1 ms rows 1 warm 127.8 ms
+[graphdb] macro_reversegeocoding    1 Find_Closest_Motorway                         cold     132.4 ms rows 1 warm 77.7 ms
+[graphdb] macro_mapsearch           0 Thematic_Search                               cold       6.1 ms rows 1 warm 4.9 ms
+[graphdb] macro_mapsearch           1 Get_Around_POIs                               cold     215.0 ms rows 13 warm 208.5 ms
+[graphdb] macro_mapsearch           2 Get_Around_Roads                              cold     225.4 ms rows 132 warm 192.2 ms
+[graphdb] macro_rapidmapping        0 Get_CLC_areas                                 cold  183936.4 ms rows 30453
+[graphdb] macro_rapidmapping        1 Get_highways                                  cold     203.7 ms rows 4559 warm 172.1 ms
+[graphdb] macro_rapidmapping        2 Get_municipalities                            cold    2787.3 ms rows 248 warm 2769.0 ms
+[graphdb] macro_rapidmapping        3 Get_hotspots                                  cold   83796.2 ms rows 902195 warm 83076.2 ms
+[graphdb] macro_rapidmapping        4 Get_coniferous_forests_in_fire                cold   12415.5 ms rows 50 warm 12425.7 ms
+[graphdb] macro_rapidmapping        5 Get_road_segments_affected_by_fire            FAILED HTTP 503: Query interrupted: Query evaluation took too long
+
+[graphdb] macro_computestatistics   0 Count_CLC_categories                          cold    5492.9 ms rows 12 warm 5428.0 ms
+[graphdb] macro_computestatistics   1 Count_GeoNames_categories                     cold     186.8 ms rows 8 warm 156.1 ms
+[graphdb] macro_computestatistics   2 Count_GeoNames_categories_in_ContinuousUrbanFabric cold   13780.7 ms rows 1 warm 13746.1 ms

@@ -7,17 +7,17 @@
   {
    "phase": "cold",
    "index": 0,
-   "ms": 14.955,
+   "ms": 17.437,
    "ok": true,
    "rows": 9,
    "result": {
     "groups": {
+     "http://example.org/bench/region/0_0": 461.0,
      "http://example.org/bench/region/0_1": 440.0,
      "http://example.org/bench/region/0_2": 434.0,
-     "http://example.org/bench/region/0_0": 461.0,
+     "http://example.org/bench/region/1_0": 414.0,
      "http://example.org/bench/region/1_1": 543.0,
      "http://example.org/bench/region/1_2": 499.0,
-     "http://example.org/bench/region/1_0": 414.0,
      "http://example.org/bench/region/2_0": 459.0,
      "http://example.org/bench/region/2_1": 506.0,
      "http://example.org/bench/region/2_2": 420.0
@@ -27,17 +27,17 @@
   {
    "phase": "warmup",
    "index": 1,
-   "ms": 21.059,
+   "ms": 15.044,
    "ok": true,
    "rows": 9,
    "result": {
     "groups": {
+     "http://example.org/bench/region/0_0": 461.0,
      "http://example.org/bench/region/0_1": 440.0,
      "http://example.org/bench/region/0_2": 434.0,
-     "http://example.org/bench/region/0_0": 461.0,
+     "http://example.org/bench/region/1_0": 414.0,
      "http://example.org/bench/region/1_1": 543.0,
      "http://example.org/bench/region/1_2": 499.0,
-     "http://example.org/bench/region/1_0": 414.0,
      "http://example.org/bench/region/2_0": 459.0,
      "http://example.org/bench/region/2_1": 506.0,
      "http://example.org/bench/region/2_2": 420.0
@@ -47,17 +47,17 @@
   {
    "phase": "warmup",
    "index": 2,
-   "ms": 12.331,
+   "ms": 15.944,
    "ok": true,
    "rows": 9,
    "result": {
     "groups": {
+     "http://example.org/bench/region/0_0": 461.0,
      "http://example.org/bench/region/0_1": 440.0,
      "http://example.org/bench/region/0_2": 434.0,
-     "http://example.org/bench/region/0_0": 461.0,
+     "http://example.org/bench/region/1_0": 414.0,
      "http://example.org/bench/region/1_1": 543.0,
      "http://example.org/bench/region/1_2": 499.0,
-     "http://example.org/bench/region/1_0": 414.0,
      "http://example.org/bench/region/2_0": 459.0,
      "http://example.org/bench/region/2_1": 506.0,
      "http://example.org/bench/region/2_2": 420.0
@@ -67,17 +67,17 @@
   {
    "phase": "warm",
    "index": 3,
-   "ms": 12.404,
+   "ms": 16.305,
    "ok": true,
    "rows": 9,
    "result": {
     "groups": {
+     "http://example.org/bench/region/0_0": 461.0,
      "http://example.org/bench/region/0_1": 440.0,
      "http://example.org/bench/region/0_2": 434.0,
-     "http://example.org/bench/region/0_0": 461.0,
+     "http://example.org/bench/region/1_0": 414.0,
      "http://example.org/bench/region/1_1": 543.0,
      "http://example.org/bench/region/1_2": 499.0,
-     "http://example.org/bench/region/1_0": 414.0,
      "http://example.org/bench/region/2_0": 459.0,
      "http://example.org/bench/region/2_1": 506.0,
      "http://example.org/bench/region/2_2": 420.0
@@ -87,17 +87,17 @@
   {
    "phase": "warm",
    "index": 4,
-   "ms": 12.222,
+   "ms": 15.996,
    "ok": true,
    "rows": 9,
    "result": {
     "groups": {
+     "http://example.org/bench/region/0_0": 461.0,
      "http://example.org/bench/region/0_1": 440.0,
      "http://example.org/bench/region/0_2": 434.0,
-     "http://example.org/bench/region/0_0": 461.0,
+     "http://example.org/bench/region/1_0": 414.0,
      "http://example.org/bench/region/1_1": 543.0,
      "http://example.org/bench/region/1_2": 499.0,
-     "http://example.org/bench/region/1_0": 414.0,
      "http://example.org/bench/region/2_0": 459.0,
      "http://example.org/bench/region/2_1": 506.0,
      "http://example.org/bench/region/2_2": 420.0
@@ -107,17 +107,17 @@
   {
    "phase": "warm",
    "index": 5,
-   "ms": 12.071,
+   "ms": 16.579,
    "ok": true,
    "rows": 9,
    "result": {
     "groups": {
+     "http://example.org/bench/region/0_0": 461.0,
      "http://example.org/bench/region/0_1": 440.0,
      "http://example.org/bench/region/0_2": 434.0,
-     "http://example.org/bench/region/0_0": 461.0,
+     "http://example.org/bench/region/1_0": 414.0,
      "http://example.org/bench/region/1_1": 543.0,
      "http://example.org/bench/region/1_2": 499.0,
-     "http://example.org/bench/region/1_0": 414.0,
      "http://example.org/bench/region/2_0": 459.0,
      "http://example.org/bench/region/2_1": 506.0,
      "http://example.org/bench/region/2_2": 420.0
@@ -127,17 +127,17 @@
   {
    "phase": "warm",
    "index": 6,
-   "ms": 13.11,
+   "ms": 16.521,
    "ok": true,
    "rows": 9,
    "result": {
     "groups": {
+     "http://example.org/bench/region/0_0": 461.0,
      "http://example.org/bench/region/0_1": 440.0,
      "http://example.org/bench/region/0_2": 434.0,
-     "http://example.org/bench/region/0_0": 461.0,
+     "http://example.org/bench/region/1_0": 414.0,
      "http://example.org/bench/region/1_1": 543.0,
      "http://example.org/bench/region/1_2": 499.0,
-     "http://example.org/bench/region/1_0": 414.0,
      "http://example.org/bench/region/2_0": 459.0,
      "http://example.org/bench/region/2_1": 506.0,
      "http://example.org/bench/region/2_2": 420.0
@@ -147,17 +147,17 @@
   {
    "phase": "warm",
    "index": 7,
-   "ms": 12.834,
+   "ms": 16.904,
    "ok": true,
    "rows": 9,
    "result": {
     "groups": {
+     "http://example.org/bench/region/0_0": 461.0,
      "http://example.org/bench/region/0_1": 440.0,
      "http://example.org/bench/region/0_2": 434.0,
-     "http://example.org/bench/region/0_0": 461.0,
+     "http://example.org/bench/region/1_0": 414.0,
      "http://example.org/bench/region/1_1": 543.0,
      "http://example.org/bench/region/1_2": 499.0,
-     "http://example.org/bench/region/1_0": 414.0,
      "http://example.org/bench/region/2_0": 459.0,
      "http://example.org/bench/region/2_1": 506.0,
      "http://example.org/bench/region/2_2": 420.0
@@ -166,15 +166,15 @@
   }
  ],
  "status": "ok",
- "cold_ms": 14.955,
+ "cold_ms": 17.437,
  "warm": {
   "n": 5,
-  "p50_ms": 12.404,
-  "p95_ms": 13.11,
-  "min_ms": 12.071,
-  "max_ms": 13.11,
-  "mean_ms": 12.528
+  "p50_ms": 16.521,
+  "p95_ms": 16.904,
+  "min_ms": 15.996,
+  "max_ms": 16.904,
+  "mean_ms": 16.461
  },
  "dataset": "small",
- "rss_after": "299 MiB (heap 220 MiB)"
+ "rss_after": "304 MiB (heap 231 MiB)"
 }

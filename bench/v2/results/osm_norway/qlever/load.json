@@ -1,10 +1,10 @@
 {
  "engine": "qlever",
  "dataset": "osm_norway",
- "load_s": 7.044,
- "start_s": 0.484,
- "disk_bytes": 199670373,
- "wall_s": 7.629,
- "rss_after_start": "6.219MiB / 61.31GiB",
+ "load_s": 7.255,
+ "start_s": 0.505,
+ "disk_bytes": 199670371,
+ "wall_s": 7.87,
+ "rss_after_start": "6.109MiB / 61.31GiB",
  "triples": 1458029
 }

@@ -9,7 +9,7 @@
    "runs": [
     {
      "ok": false,
-     "ms": 45.4,
+     "ms": 44.7,
      "error": "HTTP 400: {\n    \"exception\": \"Not supported: Function \\\"<http://www.opengis.net/def/function/geosparql/boundary>\\\" is currently not supported by QLever.\",\n    \"metadata\": {\n        \"line\": 3,\n        \"positionInLine\": 8,\n        \"startIndex\": 72,\n        \"stopIndex\": 89\n    },\n    \"query\": \"PREFIX geof: <http"
     }
    ]
@@ -21,19 +21,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 351.2,
+     "ms": 465.8,
      "rows": 44834,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 262.9,
+     "ms": 377.6,
      "rows": 44834,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 252.3,
+     "ms": 382.7,
      "rows": 44834,
      "rows_with_unbound": 0
     }
@@ -46,7 +46,7 @@
    "runs": [
     {
      "ok": false,
-     "ms": 41.8,
+     "ms": 41.9,
      "error": "HTTP 400: {\n    \"exception\": \"Not supported: Function \\\"<http://www.opengis.net/def/function/geosparql/convexHull>\\\" is currently not supported by QLever.\",\n    \"metadata\": {\n        \"line\": 3,\n        \"positionInLine\": 8,\n        \"startIndex\": 72,\n        \"stopIndex\": 91\n    },\n    \"query\": \"PREFIX geof: <ht"
     }
    ]
@@ -58,7 +58,7 @@
    "runs": [
     {
      "ok": false,
-     "ms": 43.0,
+     "ms": 43.2,
      "error": "HTTP 400: {\n    \"exception\": \"Not supported: Function \\\"<http://www.opengis.net/def/function/geosparql/buffer>\\\" is currently not supported by QLever.\",\n    \"metadata\": {\n        \"line\": 3,\n        \"positionInLine\": 8,\n        \"startIndex\": 72,\n        \"stopIndex\": 92\n    },\n    \"query\": \"PREFIX geof: <http:/"
     }
    ]
@@ -70,7 +70,7 @@
    "runs": [
     {
      "ok": false,
-     "ms": 42.0,
+     "ms": 43.1,
      "error": "HTTP 400: {\n    \"exception\": \"Not supported: Function \\\"<http://www.opengis.net/def/function/geosparql/buffer>\\\" is currently not supported by QLever.\",\n    \"metadata\": {\n        \"line\": 3,\n        \"positionInLine\": 8,\n        \"startIndex\": 72,\n        \"stopIndex\": 92\n    },\n    \"query\": \"PREFIX geof: <http:/"
     }
    ]
@@ -82,19 +82,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 253.9,
+     "ms": 232.5,
      "rows": 44834,
      "rows_with_unbound": 14
     },
     {
      "ok": true,
-     "ms": 205.2,
+     "ms": 185.8,
      "rows": 44834,
      "rows_with_unbound": 14
     },
     {
      "ok": true,
-     "ms": 185.2,
+     "ms": 190.8,
      "rows": 44834,
      "rows_with_unbound": 14
     }
@@ -107,19 +107,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 58.5,
+     "ms": 46.7,
      "rows": 1,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 58.8,
+     "ms": 52.1,
      "rows": 1,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 53.7,
+     "ms": 53.0,
      "rows": 1,
      "rows_with_unbound": 0
     }
@@ -132,19 +132,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 143.3,
+     "ms": 144.7,
      "rows": 1,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 144.0,
+     "ms": 144.9,
      "rows": 1,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 140.0,
+     "ms": 141.7,
      "rows": 1,
      "rows_with_unbound": 0
     }
@@ -157,19 +157,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 122.1,
+     "ms": 114.8,
      "rows": 216,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 122.5,
+     "ms": 109.9,
      "rows": 216,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 120.9,
+     "ms": 111.6,
      "rows": 216,
      "rows_with_unbound": 0
     }
@@ -182,19 +182,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 606.2,
+     "ms": 583.8,
      "rows": 20,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 588.2,
+     "ms": 577.0,
      "rows": 20,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 604.3,
+     "ms": 595.0,
      "rows": 20,
      "rows_with_unbound": 0
     }
@@ -207,19 +207,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 911.4,
+     "ms": 895.2,
      "rows": 132,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 828.3,
+     "ms": 874.1,
      "rows": 132,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 827.1,
+     "ms": 844.3,
      "rows": 132,
      "rows_with_unbound": 0
     }
@@ -232,19 +232,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 87.9,
+     "ms": 87.0,
      "rows": 14,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 87.1,
+     "ms": 82.0,
      "rows": 14,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 86.0,
+     "ms": 84.0,
      "rows": 14,
      "rows_with_unbound": 0
     }
@@ -257,19 +257,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 67.1,
+     "ms": 71.3,
      "rows": 136,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 68.9,
+     "ms": 62.9,
      "rows": 136,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 65.3,
+     "ms": 64.0,
      "rows": 136,
      "rows_with_unbound": 0
     }
@@ -282,7 +282,7 @@
    "runs": [
     {
      "ok": false,
-     "ms": 42.9,
+     "ms": 44.0,
      "error": "HTTP 400: {\n    \"exception\": \"Not supported: Function \\\"<http://www.opengis.net/def/function/geosparql/buffer>\\\" is currently not supported by QLever.\",\n    \"metadata\": {\n        \"line\": 8,\n        \"positionInLine\": 27,\n        \"startIndex\": 224,\n        \"stopIndex\": 319\n    },\n    \"query\": \"PREFIX geof: <htt"
     }
    ]
@@ -294,7 +294,7 @@
    "runs": [
     {
      "ok": false,
-     "ms": 44.1,
+     "ms": 51.0,
      "error": "HTTP 500: {\n    \"exception\": \"Unsupported unit of measurement for distance.. In file \\\"/qlever/src/util/UnitOfMeasurement.cpp\\\" at line 34\",\n    \"query\": \"PREFIX geof: <http://www.opengis.net/def/function/geosparql/> \\n\\nSELECT ?s1 \\nWHERE { \\n\\tGRAPH <http://geographica.di.uoa.gr/dataset/geonames> {\\n\\t\\t?s1"
     }
    ]
@@ -306,7 +306,7 @@
    "runs": [
     {
      "ok": false,
-     "ms": 27.3,
+     "ms": 25.0,
      "error": "HTTP 400: {\n    \"exception\": \"Not supported: Function \\\"<http://www.opengis.net/def/function/geosparql/sfDisjoint>\\\" is currently not supported by QLever.\",\n    \"query\": \"PREFIX geof: <http://www.opengis.net/def/function/geosparql/> \\n\\nSELECT ?s1 ?o1 \\nWHERE { \\n\\tGRAPH <http://geographica.di.uoa.gr/dataset/"
     }
    ]
@@ -330,19 +330,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 151.1,
+     "ms": 111.9,
      "rows": 91,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 142.0,
+     "ms": 107.1,
      "rows": 91,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 144.1,
+     "ms": 106.7,
      "rows": 91,
      "rows_with_unbound": 0
     }
@@ -355,19 +355,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 341.1,
+     "ms": 309.9,
      "rows": 0,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 339.0,
+     "ms": 319.1,
      "rows": 0,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 379.9,
+     "ms": 317.0,
      "rows": 0,
      "rows_with_unbound": 0
     }
@@ -380,19 +380,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 1824.7,
+     "ms": 1787.9,
      "rows": 18689,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 1891.4,
+     "ms": 1702.8,
      "rows": 18689,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 1834.5,
+     "ms": 1755.6,
      "rows": 18689,
      "rows_with_unbound": 0
     }
@@ -405,19 +405,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 2043.1,
+     "ms": 1982.3,
      "rows": 13321,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 2062.2,
+     "ms": 1893.2,
      "rows": 13321,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 2031.7,
+     "ms": 1931.0,
      "rows": 13321,
      "rows_with_unbound": 0
     }
@@ -430,19 +430,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 1829.1,
+     "ms": 1734.3,
      "rows": 18689,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 1847.3,
+     "ms": 1736.6,
      "rows": 18689,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 1832.3,
+     "ms": 1753.7,
      "rows": 18689,
      "rows_with_unbound": 0
     }
@@ -455,19 +455,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 2049.6,
+     "ms": 1833.3,
      "rows": 10676,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 1978.2,
+     "ms": 1884.0,
      "rows": 10676,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 1985.1,
+     "ms": 1892.7,
      "rows": 10676,
      "rows_with_unbound": 0
     }
@@ -480,19 +480,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 5928.0,
+     "ms": 5216.1,
      "rows": 34083,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 5898.0,
+     "ms": 5163.8,
      "rows": 34083,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 5809.0,
+     "ms": 5210.9,
      "rows": 34083,
      "rows_with_unbound": 0
     }
@@ -505,19 +505,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 1867.6,
+     "ms": 1814.2,
      "rows": 2639,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 1893.2,
+     "ms": 1856.8,
      "rows": 2639,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 1895.2,
+     "ms": 1799.6,
      "rows": 2639,
      "rows_with_unbound": 0
     }
@@ -530,20 +530,20 @@
    "runs": [
     {
      "ok": true,
-     "ms": 3271.6,
-     "rows": 236,
+     "ms": 3269.0,
+     "rows": 1192,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 3361.2,
-     "rows": 236,
+     "ms": 3306.9,
+     "rows": 1192,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 3298.1,
-     "rows": 236,
+     "ms": 3309.9,
+     "rows": 1192,
      "rows_with_unbound": 0
     }
    ]
@@ -555,19 +555,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 5836.8,
+     "ms": 5136.9,
      "rows": 17160,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 5876.4,
+     "ms": 5040.2,
      "rows": 17160,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 5859.7,
+     "ms": 5048.2,
      "rows": 17160,
      "rows_with_unbound": 0
     }
@@ -580,7 +580,7 @@
    "runs": [
     {
      "ok": false,
-     "ms": 42.8,
+     "ms": 43.0,
      "error": "HTTP 400: {\n    \"exception\": \"Not supported: Function \\\"<http://www.opengis.net/def/function/geosparql/aggBoundingBox>\\\" is currently not supported by QLever.\",\n    \"metadata\": {\n        \"line\": 4,\n        \"positionInLine\": 8,\n        \"startIndex\": 121,\n        \"stopIndex\": 144\n    },\n    \"query\": \"PREFIX geo"
     }
    ]
@@ -604,7 +604,7 @@
    "runs": [
     {
      "ok": false,
-     "ms": 35.8,
+     "ms": 37.0,
      "error": "HTTP 500: {\n    \"exception\": \"Unsupported unit of measurement for distance.. In file \\\"/qlever/src/util/UnitOfMeasurement.cpp\\\" at line 34\",\n    \"query\": \"PREFIX geonames: <http://www.geonames.org/ontology#> \\nPREFIX geof: <http://www.opengis.net/def/function/geosparql/> \\nPREFIX geo: <http://www.opengis.net/"
     }
    ]
@@ -616,7 +616,7 @@
    "runs": [
     {
      "ok": false,
-     "ms": 37.3,
+     "ms": 39.0,
      "error": "HTTP 500: {\n    \"exception\": \"Unsupported unit of measurement for distance.. In file \\\"/qlever/src/util/UnitOfMeasurement.cpp\\\" at line 34\",\n    \"query\": \"PREFIX lgdo: <http://linkedgeodata.org/ontology/>\\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-"
     }
    ]
@@ -628,19 +628,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 70.0,
+     "ms": 77.9,
      "rows": 1,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 68.1,
+     "ms": 77.0,
      "rows": 1,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 75.9,
+     "ms": 78.0,
      "rows": 1,
      "rows_with_unbound": 0
     }
@@ -653,19 +653,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 158.1,
+     "ms": 134.1,
      "rows": 13,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 124.0,
+     "ms": 133.0,
      "rows": 13,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 124.0,
+     "ms": 123.1,
      "rows": 13,
      "rows_with_unbound": 0
     }
@@ -678,19 +678,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 84.7,
+     "ms": 80.4,
      "rows": 132,
      "rows_with_unbound": 60
     },
     {
      "ok": true,
-     "ms": 77.8,
+     "ms": 80.4,
      "rows": 132,
      "rows_with_unbound": 60
     },
     {
      "ok": true,
-     "ms": 79.5,
+     "ms": 83.4,
      "rows": 132,
      "rows_with_unbound": 60
     }
@@ -703,8 +703,8 @@
    "runs": [
     {
      "ok": false,
-     "ms": 461939.5,
-     "error": "Invalid control character at: line 1 column 272629761 (char 272629760)",
+     "ms": 451051.9,
+     "error": "Invalid control character at: line 1 column 265289729 (char 265289728)",
      "timeout": true
     }
    ]
@@ -716,19 +716,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 360.2,
+     "ms": 348.6,
      "rows": 4559,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 332.4,
+     "ms": 349.6,
      "rows": 4559,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 351.5,
+     "ms": 344.3,
      "rows": 4559,
      "rows_with_unbound": 0
     }
@@ -741,7 +741,7 @@
    "runs": [
     {
      "ok": false,
-     "ms": 43.9,
+     "ms": 44.0,
      "error": "HTTP 400: {\n    \"exception\": \"Not supported: Function \\\"<http://www.opengis.net/def/function/geosparql/boundary>\\\" is currently not supported by QLever.\",\n    \"metadata\": {\n        \"line\": 6,\n        \"positionInLine\": 8,\n        \"startIndex\": 244,\n        \"stopIndex\": 266\n    },\n    \"query\": \"PREFIX gag: <htt"
     }
    ]
@@ -753,19 +753,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 28711.6,
+     "ms": 28857.4,
      "rows": 902195,
      "rows_with_unbound": 902195
     },
     {
      "ok": true,
-     "ms": 29031.5,
+     "ms": 29068.5,
      "rows": 902195,
      "rows_with_unbound": 902195
     },
     {
      "ok": true,
-     "ms": 28423.7,
+     "ms": 28857.7,
      "rows": 902195,
      "rows_with_unbound": 902195
     }
@@ -778,19 +778,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 944.5,
+     "ms": 938.9,
      "rows": 50,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 931.4,
+     "ms": 940.7,
      "rows": 50,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 941.7,
+     "ms": 949.8,
      "rows": 50,
      "rows_with_unbound": 0
     }
@@ -803,7 +803,7 @@
    "runs": [
     {
      "ok": false,
-     "ms": 43.0,
+     "ms": 44.0,
      "error": "HTTP 400: {\n    \"exception\": \"Not supported: Function \\\"<http://www.opengis.net/def/function/geosparql/difference>\\\" is currently not supported by QLever.\",\n    \"metadata\": {\n        \"line\": 7,\n        \"positionInLine\": 11,\n        \"startIndex\": 314,\n        \"stopIndex\": 342\n    },\n    \"query\": \"PREFIX clc: <"
     }
    ]
@@ -815,19 +815,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 657.9,
+     "ms": 649.8,
      "rows": 12,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 635.9,
+     "ms": 627.1,
      "rows": 12,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 638.1,
+     "ms": 624.8,
      "rows": 12,
      "rows_with_unbound": 0
     }
@@ -840,19 +840,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 102.0,
+     "ms": 98.0,
      "rows": 8,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 99.0,
+     "ms": 101.0,
      "rows": 8,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 94.1,
+     "ms": 100.0,
      "rows": 8,
      "rows_with_unbound": 0
     }
@@ -865,19 +865,19 @@
    "runs": [
     {
      "ok": true,
-     "ms": 145.9,
+     "ms": 138.0,
      "rows": 1,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 144.9,
+     "ms": 140.0,
      "rows": 1,
      "rows_with_unbound": 0
     },
     {
      "ok": true,
-     "ms": 151.1,
+     "ms": 138.0,
      "rows": 1,
      "rows_with_unbound": 0
     }

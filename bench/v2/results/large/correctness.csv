@@ -23,7 +23,7 @@ join_signal_ne_20m,graphdb,postgis,0,0,0,0,"failed: HTTP 503: Query interrupted:
 "
 join_signal_ne_20m,jena,postgis,0,0,0,0,"failed: HTTP 503: Query timed out
 "
-join_signal_ne_20m,qlever,postgis,8,0,0,8,[315812.0] vs [315805.0] (x8)
+join_signal_ne_20m,qlever,postgis,8,0,0,8,[315812.0] vs [315829.0] (x8)
 join_signal_ne_20m,tripletrail,postgis,8,8,0,0,
 join_op_region,graphdb,postgis,8,8,0,0,
 join_op_region,jena,postgis,8,8,0,0,
@@ -35,7 +35,7 @@ agg_length_region,qlever,postgis,0,0,0,0,n/a: geof:intersection is not supported
 agg_length_region,tripletrail,postgis,8,8,0,0,
 agg_total_length,graphdb,postgis,0,0,0,0,n/a: geof:metricLength / metricArea / aggUnion (GeoSPARQL 1.1) are unknown to GraphDB 10.8 (HTTP 500 'Unknown function')
 agg_total_length,jena,postgis,0,0,0,0,n/a: geof:metricLength / metricArea / aggUnion are not implemented by jena-geosparql 6.2 (they return no value; geof:intersection works)
-agg_total_length,qlever,postgis,8,0,0,8,[166293719.21746284] vs [165988198.3654]; [166293719.21746182] vs [165988198.3654]; [166293719.21746135] vs [165988198.3654]
+agg_total_length,qlever,postgis,8,0,0,8,[166293719.21746182] vs [165988198.3654]; [166293719.21746174] vs [165988198.3654]; [166293719.2174618] vs [165988198.3654]
 agg_total_length,tripletrail,postgis,8,8,0,0,
 agg_union_buffers,graphdb,postgis,0,0,0,0,n/a: geof:metricLength / metricArea / aggUnion (GeoSPARQL 1.1) are unknown to GraphDB 10.8 (HTTP 500 'Unknown function')
 agg_union_buffers,jena,postgis,0,0,0,0,n/a: geof:metricLength / metricArea / aggUnion are not implemented by jena-geosparql 6.2 (they return no value; geof:intersection works)
@@ -76,7 +76,7 @@ driving_distance_50km,tripletrail,postgis,53,53,0,0,
 ksp5,graphdb,postgis,0,0,0,0,n/a: no routing
 ksp5,jena,postgis,0,0,0,0,n/a: no routing
 ksp5,qlever,postgis,0,0,0,0,n/a: no routing
-ksp5,tripletrail,postgis,53,53,0,0,
+ksp5,tripletrail,postgis,50,50,0,0,
 cost_matrix_100,graphdb,postgis,0,0,0,0,n/a: no routing
 cost_matrix_100,jena,postgis,0,0,0,0,n/a: no routing
 cost_matrix_100,qlever,postgis,0,0,0,0,n/a: no routing

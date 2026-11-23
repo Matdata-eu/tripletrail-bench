@@ -7,7 +7,7 @@
   {
    "phase": "cold",
    "index": 0,
-   "ms": 485.277,
+   "ms": 490.95,
    "ok": true,
    "rows": 1,
    "result": {
@@ -20,7 +20,7 @@
   {
    "phase": "warmup",
    "index": 1,
-   "ms": 498.042,
+   "ms": 534.511,
    "ok": true,
    "rows": 1,
    "result": {
@@ -33,7 +33,7 @@
   {
    "phase": "warmup",
    "index": 2,
-   "ms": 465.834,
+   "ms": 486.175,
    "ok": true,
    "rows": 1,
    "result": {
@@ -46,7 +46,7 @@
   {
    "phase": "warm",
    "index": 3,
-   "ms": 482.578,
+   "ms": 509.555,
    "ok": true,
    "rows": 1,
    "result": {
@@ -59,7 +59,7 @@
   {
    "phase": "warm",
    "index": 4,
-   "ms": 499.611,
+   "ms": 549.739,
    "ok": true,
    "rows": 1,
    "result": {
@@ -72,7 +72,7 @@
   {
    "phase": "warm",
    "index": 5,
-   "ms": 501.107,
+   "ms": 564.666,
    "ok": true,
    "rows": 1,
    "result": {
@@ -85,7 +85,7 @@
   {
    "phase": "warm",
    "index": 6,
-   "ms": 530.236,
+   "ms": 497.138,
    "ok": true,
    "rows": 1,
    "result": {
@@ -98,7 +98,7 @@
   {
    "phase": "warm",
    "index": 7,
-   "ms": 475.621,
+   "ms": 513.646,
    "ok": true,
    "rows": 1,
    "result": {
@@ -111,7 +111,7 @@
   {
    "phase": "warm",
    "index": 8,
-   "ms": 481.677,
+   "ms": 502.546,
    "ok": true,
    "rows": 1,
    "result": {
@@ -124,7 +124,7 @@
   {
    "phase": "warm",
    "index": 9,
-   "ms": 483.528,
+   "ms": 503.192,
    "ok": true,
    "rows": 1,
    "result": {
@@ -137,7 +137,7 @@
   {
    "phase": "warm",
    "index": 10,
-   "ms": 488.891,
+   "ms": 503.931,
    "ok": true,
    "rows": 1,
    "result": {
@@ -150,7 +150,7 @@
   {
    "phase": "warm",
    "index": 11,
-   "ms": 489.343,
+   "ms": 510.865,
    "ok": true,
    "rows": 1,
    "result": {
@@ -163,7 +163,7 @@
   {
    "phase": "warm",
    "index": 12,
-   "ms": 481.578,
+   "ms": 503.321,
    "ok": true,
    "rows": 1,
    "result": {
@@ -175,15 +175,15 @@
   }
  ],
  "status": "ok",
- "cold_ms": 485.277,
+ "cold_ms": 490.95,
  "warm": {
   "n": 10,
-  "p50_ms": 486.209,
-  "p95_ms": 530.236,
-  "min_ms": 475.621,
-  "max_ms": 530.236,
-  "mean_ms": 491.417
+  "p50_ms": 506.743,
+  "p95_ms": 564.666,
+  "min_ms": 497.138,
+  "max_ms": 564.666,
+  "mean_ms": 515.86
  },
  "dataset": "small",
- "rss_after": "272 MiB (sum over backends, shared buffers counted per process)"
+ "rss_after": "273 MiB (sum over backends, shared buffers counted per process)"
 }

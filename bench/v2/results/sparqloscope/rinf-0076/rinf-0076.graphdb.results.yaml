@@ -6,7 +6,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) WHERE { ?s era:hasEmergencyPlan ?o1 . ?s rdf:type ?o2 }'
   runtime_info:
-    client_time: 0.2155798549974861
+    client_time: 0.21802006000143592
   result_size: 1
   results:
   - - '3896'
@@ -15,7 +15,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) WHERE { ?s rdf:type ?o1 . ?s era:hasEmergencyPlan ?o2 }'
   runtime_info:
-    client_time: 0.024796522997348802
+    client_time: 0.039872052999271546
   result_size: 1
   results:
   - - '3896'
@@ -24,7 +24,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) WHERE { ?s rdf:type ?o1 . ?s era:hasTopoCoordinate ?o2 }'
   runtime_info:
-    client_time: 0.14092363599775126
+    client_time: 0.14741929299998446
   result_size: 1
   results:
   - - '108276'
@@ -33,7 +33,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o1 . ?s rdf:type ?o2 }'
   runtime_info:
-    client_time: 0.09206206100134295
+    client_time: 0.1067897200009611
   result_size: 1
   results:
   - - '257569'
@@ -42,7 +42,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o1 . ?s rdf:type ?o2 }'
   runtime_info:
-    client_time: 0.08046113000091282
+    client_time: 0.10565439300262369
   result_size: 1
   results:
   - - '257569'
@@ -51,7 +51,7 @@ queries:
   sparql: 'PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*) AS
     ?count) WHERE { ?s era:hasSequence ?o1 . ?s geo:hasGeometry ?o2 }'
   runtime_info:
-    client_time: 0.03684351400079322
+    client_time: 0.04291284599821665
   result_size: 1
   results:
   - - '4349'
@@ -61,7 +61,7 @@ queries:
     PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o1 . ?s rdf:type ?o2 . ?s
     era:validity ?o3 . }'
   runtime_info:
-    client_time: 0.15571053799794754
+    client_time: 0.17642576700018253
   result_size: 1
   results:
   - - '256760'
@@ -70,7 +70,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) WHERE { ?a era:hasTopoCoordinate ?b . ?b era:onLinearElement ?c . ?c rdf:type ?d . }'
   runtime_info:
-    client_time: 0.15227829899959033
+    client_time: 0.13821500999983982
   result_size: 1
   results:
   - - '209316'
@@ -84,7 +84,7 @@ queries:
     ?o19 . ?s era:hasExternalCleaning ?o20 . ?s era:hasWaterRestocking ?o21 . ?s era:hasToiletDischarge ?o22 . ?s <http://www.w3.org/2006/time#hasBeginning>
     ?o23 . ?s <http://www.w3.org/2006/time#inXSDDateTimeStamp> ?o24 . }'
   runtime_info:
-    client_time: 0.042257204000634374
+    client_time: 0.04115797700069379
   result_size: 1
   results:
   - - '0'
@@ -99,7 +99,7 @@ queries:
     ?v23 . ?v23 <http://www.w3.org/2006/time#hasBeginning> ?v24 . ?v24 <http://www.w3.org/2006/time#inXSDDateTimeStamp> ?v25
     . }'
   runtime_info:
-    client_time: 0.028097902999434154
+    client_time: 0.02137850100189098
   result_size: 1
   results:
   - - '0'
@@ -108,7 +108,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) WHERE { ?s era:hasEmergencyPlan ?o1 OPTIONAL { ?s rdf:type ?o2 } }'
   runtime_info:
-    client_time: 0.026608273001329508
+    client_time: 0.022873769001307664
   result_size: 1
   results:
   - - '3896'
@@ -117,7 +117,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) WHERE { ?s rdf:type ?o1 OPTIONAL { ?s era:hasEmergencyPlan ?o2 } }'
   runtime_info:
-    client_time: 0.8532301619998179
+    client_time: 0.9138811320008244
   result_size: 1
   results:
   - - '528699'
@@ -126,7 +126,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) WHERE { ?s rdf:type ?o1 OPTIONAL { ?s era:hasTopoCoordinate ?o2 } }'
   runtime_info:
-    client_time: 0.7176762249982858
+    client_time: 0.7601046670024516
   result_size: 1
   results:
   - - '528699'
@@ -135,7 +135,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o1 . OPTIONAL { ?s rdf:type ?o2 } }'
   runtime_info:
-    client_time: 0.16210123899872997
+    client_time: 0.2815373539997381
   result_size: 1
   results:
   - - '257569'
@@ -144,7 +144,7 @@ queries:
   sparql: 'PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*) AS
     ?count) WHERE { ?s era:hasSequence ?o1 . OPTIONAL { ?s geo:hasGeometry ?o2 } }'
   runtime_info:
-    client_time: 0.06117946700032917
+    client_time: 0.08989389999987907
   result_size: 1
   results:
   - - '24234'
@@ -153,7 +153,7 @@ queries:
   sparql: 'PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*) AS
     ?count) WHERE { ?s geo:hasGeometry ?o1 . OPTIONAL { ?s era:hasSequence ?o2 } }'
   runtime_info:
-    client_time: 0.08658807000028901
+    client_time: 0.15975454399813316
   result_size: 1
   results:
   - - '67438'
@@ -163,7 +163,7 @@ queries:
     PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o1 . ?s rdf:type ?o2 . OPTIONAL
     { ?s era:validity ?o3 . } }'
   runtime_info:
-    client_time: 0.37605877399983
+    client_time: 0.5601580690017727
   result_size: 1
   results:
   - - '257569'
@@ -173,7 +173,7 @@ queries:
     PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o1 . OPTIONAL { ?s rdf:type
     ?o2 . ?s era:validity ?o3 . } }'
   runtime_info:
-    client_time: 0.31110814600106096
+    client_time: 0.1823538019998523
   result_size: 1
   results:
   - - '257569'
@@ -182,7 +182,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) WHERE { ?a era:hasTopoCoordinate ?b . ?b era:onLinearElement ?c . OPTIONAL { ?c rdf:type ?d . } }'
   runtime_info:
-    client_time: 0.20120793300156947
+    client_time: 0.20462646799933282
   result_size: 1
   results:
   - - '209316'
@@ -191,7 +191,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) WHERE { ?a era:hasTopoCoordinate ?b . OPTIONAL { ?b era:onLinearElement ?c . ?c rdf:type ?d . } }'
   runtime_info:
-    client_time: 0.204267985001934
+    client_time: 0.2103150619986991
   result_size: 1
   results:
   - - '209316'
@@ -200,7 +200,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) WHERE { ?s era:hasEmergencyPlan ?o1 MINUS { ?s rdf:type ?o2 } }'
   runtime_info:
-    client_time: 0.12256063399763661
+    client_time: 0.11673049000091851
   result_size: 1
   results:
   - - '0'
@@ -209,7 +209,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) WHERE { ?s rdf:type ?o1 MINUS { ?s era:hasEmergencyPlan ?o2 } }'
   runtime_info:
-    client_time: 0.14153623699894524
+    client_time: 0.1329339389994857
   result_size: 1
   results:
   - - '524803'
@@ -218,7 +218,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) WHERE { ?s rdf:type ?o1 MINUS { ?s era:hasTopoCoordinate ?o2 } }'
   runtime_info:
-    client_time: 0.12147962400194956
+    client_time: 0.17653810499905376
   result_size: 1
   results:
   - - '420423'
@@ -227,7 +227,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o1 . MINUS { ?s rdf:type ?o2 } }'
   runtime_info:
-    client_time: 0.11344517299949075
+    client_time: 0.11657963399920845
   result_size: 1
   results:
   - - '0'
@@ -236,7 +236,7 @@ queries:
   sparql: 'PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*) AS
     ?count) WHERE { ?s era:hasSequence ?o1 . MINUS { ?s geo:hasGeometry ?o2 } }'
   runtime_info:
-    client_time: 0.021612862998154014
+    client_time: 0.04710296900157118
   result_size: 1
   results:
   - - '19885'
@@ -245,7 +245,7 @@ queries:
   sparql: 'PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*) AS
     ?count) WHERE { ?s geo:hasGeometry ?o1 . MINUS { ?s era:hasSequence ?o2 } }'
   runtime_info:
-    client_time: 0.023335973000939703
+    client_time: 0.050536472001113
   result_size: 1
   results:
   - - '63089'
@@ -255,7 +255,7 @@ queries:
     PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o1 . ?s rdf:type ?o2 . MINUS
     { ?s era:validity ?o3 . } }'
   runtime_info:
-    client_time: 0.08039025899779517
+    client_time: 0.11213311699975748
   result_size: 1
   results:
   - - '809'
@@ -265,7 +265,7 @@ queries:
     PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o1 . MINUS { ?s rdf:type ?o2
     . ?s era:validity ?o3 . } }'
   runtime_info:
-    client_time: 0.08733626100001857
+    client_time: 0.08734193300188053
   result_size: 1
   results:
   - - '809'
@@ -274,7 +274,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) WHERE { ?a era:hasTopoCoordinate ?b . ?b era:onLinearElement ?c . MINUS { ?c rdf:type ?d . } }'
   runtime_info:
-    client_time: 0.15208749700104818
+    client_time: 0.15113522200044827
   result_size: 1
   results:
   - - '0'
@@ -283,7 +283,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) WHERE { ?a era:hasTopoCoordinate ?b . MINUS { ?b era:onLinearElement ?c . ?c rdf:type ?d . } }'
   runtime_info:
-    client_time: 0.07895469799768762
+    client_time: 0.10694121800042922
   result_size: 1
   results:
   - - '0'
@@ -292,7 +292,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) WHERE { ?s era:hasEmergencyPlan ?o1 FILTER EXISTS { ?s rdf:type ?o2 } }'
   runtime_info:
-    client_time: 0.02481362300022738
+    client_time: 0.028282903997023823
   result_size: 1
   results:
   - - '974'
@@ -301,7 +301,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) WHERE { ?s rdf:type ?o1 FILTER EXISTS { ?s era:hasEmergencyPlan ?o2 } }'
   runtime_info:
-    client_time: 2.342718693998904
+    client_time: 3.288131979999889
   result_size: 1
   results:
   - - '3896'
@@ -310,7 +310,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) WHERE { ?s rdf:type ?o1 FILTER EXISTS { ?s era:hasTopoCoordinate ?o2 } }'
   runtime_info:
-    client_time: 1.785930425998231
+    client_time: 1.5591554999991786
   result_size: 1
   results:
   - - '108276'
@@ -319,7 +319,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o1 . FILTER EXISTS { ?s rdf:type ?o2 } }'
   runtime_info:
-    client_time: 0.4581895729970711
+    client_time: 0.229570291001437
   result_size: 1
   results:
   - - '66074'
@@ -328,7 +328,7 @@ queries:
   sparql: 'PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*) AS
     ?count) WHERE { ?s era:hasSequence ?o1 . FILTER EXISTS { ?s geo:hasGeometry ?o2 } }'
   runtime_info:
-    client_time: 0.17495075899933
+    client_time: 0.10656093700163183
   result_size: 1
   results:
   - - '4349'
@@ -337,7 +337,7 @@ queries:
   sparql: 'PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*) AS
     ?count) WHERE { ?s geo:hasGeometry ?o1 . FILTER EXISTS { ?s era:hasSequence ?o2 } }'
   runtime_info:
-    client_time: 0.4566834619981819
+    client_time: 0.22843527299846755
   result_size: 1
   results:
   - - '4349'
@@ -347,7 +347,7 @@ queries:
     PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o1 . ?s rdf:type ?o2 . FILTER
     EXISTS { ?s era:validity ?o3 . } }'
   runtime_info:
-    client_time: 0.27466841200293857
+    client_time: 0.3156244969977706
   result_size: 1
   results:
   - - '256760'
@@ -357,7 +357,7 @@ queries:
     PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o1 . FILTER EXISTS { ?s rdf:type
     ?o2 . ?s era:validity ?o3 . } }'
   runtime_info:
-    client_time: 0.2849469040011172
+    client_time: 0.27636539400191396
   result_size: 1
   results:
   - - '65265'
@@ -366,7 +366,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) WHERE { ?a era:hasTopoCoordinate ?b . ?b era:onLinearElement ?c . FILTER EXISTS { ?c rdf:type ?d . } }'
   runtime_info:
-    client_time: 0.2901069519975863
+    client_time: 0.28426087999832816
   result_size: 1
   results:
   - - '69772'
@@ -375,7 +375,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) WHERE { ?a era:hasTopoCoordinate ?b . FILTER EXISTS { ?b era:onLinearElement ?c . ?c rdf:type ?d . } }'
   runtime_info:
-    client_time: 0.2995754039984604
+    client_time: 0.2993813089997275
   result_size: 1
   results:
   - - '69772'
@@ -384,7 +384,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) WHERE { { ?s rdf:type ?o } UNION { ?s era:hasTopoCoordinate ?o } }'
   runtime_info:
-    client_time: 0.1726499700016575
+    client_time: 0.1914726149989292
   result_size: 1
   results:
   - - '598471'
@@ -394,7 +394,7 @@ queries:
     PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*) AS ?count) WHERE { { ?s rdfs:label ?o1 } UNION { ?s rdf:type
     ?o1 } ?s era:validity ?o2 }'
   runtime_info:
-    client_time: 0.27217259099779767
+    client_time: 0.2200764720000734
   result_size: 1
   results:
   - - '230392'
@@ -403,7 +403,7 @@ queries:
   sparql: 'PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*) AS
     ?count) WHERE { { ?s era:startsAt ?o1 } UNION { ?s era:hasWalkway ?o1 } ?s geo:hasGeometry ?o2 }'
   runtime_info:
-    client_time: 0.024979412999527995
+    client_time: 0.0316978900009417
   result_size: 1
   results:
   - - '5373'
@@ -413,7 +413,7 @@ queries:
     PREFIX geo: <http://www.opengis.net/ont/geosparql#> SELECT (COUNT(*) AS ?count) WHERE { { ?s rdf:type ?o1 } UNION { ?s
     geo:hasGeometry ?o1 } ?s rdfs:label ?o2 }'
   runtime_info:
-    client_time: 0.2513515790014935
+    client_time: 0.24555241499911062
   result_size: 1
   results:
   - - '320958'
@@ -422,7 +422,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) WHERE { { ?s rdf:type ?o } UNION { ?s era:hasTopoCoordinate ?o } FILTER (?s = ?o) }'
   runtime_info:
-    client_time: 0.3130170660006115
+    client_time: 0.34212031299830414
   result_size: 1
   results:
   - - '598471'
@@ -431,7 +431,7 @@ queries:
   sparql: 'PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*) AS ?count) WHERE { ?s era:complianceInfTsi ?o . ?s era:dieselThermalAllowed
     ?o }'
   runtime_info:
-    client_time: 0.012011260998406215
+    client_time: 0.02557156700277119
   result_size: 1
   results:
   - - '1024'
@@ -440,7 +440,7 @@ queries:
   sparql: 'PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*) AS ?count) WHERE { ?s era:notYetAvailable ?o . ?s era:notApplicable
     ?o }'
   runtime_info:
-    client_time: 0.020994602997234324
+    client_time: 0.03808359299728181
   result_size: 1
   results:
   - - '0'
@@ -449,7 +449,7 @@ queries:
   sparql: 'PREFIX era: <http://data.europa.eu/949/> SELECT ?object (COUNT(?subject) AS ?count) { ?subject era:infrastructureManager
     ?object . } GROUP BY ?object ORDER BY DESC(?count) LIMIT 10'
   runtime_info:
-    client_time: 0.067278937996889
+    client_time: 0.06760525199933909
   result_size: 1
   results:
   - - http://data.europa.eu/949/body/organisation/organisationRole/0076_IM
@@ -459,7 +459,7 @@ queries:
   sparql: 'PREFIX era: <http://data.europa.eu/949/> SELECT ?object (COUNT(?subject) AS ?count) { ?subject era:hasTopoCoordinate
     ?object . } GROUP BY ?object ORDER BY DESC(?count) LIMIT 10'
   runtime_info:
-    client_time: 0.14920686700133956
+    client_time: 0.1697593000026245
   result_size: 10
   results:
   - - https://data.banenor.no/data/_topological_coordinate__netelement_1983bc9a-d125-4ca0-8f1c-0b9b34c13f17_0.0_0.83286908
@@ -477,7 +477,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT ?o1 (COUNT(?s)
     AS ?count) { ?s era:inCountry ?o1 . ?s rdf:type ?o2 . } GROUP BY ?o1 ORDER BY DESC(?count) LIMIT 10'
   runtime_info:
-    client_time: 0.05124636500113411
+    client_time: 0.05040988099790411
   result_size: 1
   results:
   - - http://publications.europa.eu/resource/authority/country/NOR
@@ -488,7 +488,7 @@ queries:
     AS ?count) (MIN(?s) AS ?min) (MAX(?s) AS ?max) (SAMPLE(?s) AS ?sample) { ?s era:inCountry ?o1 . ?s rdf:type ?o2 . } GROUP
     BY ?o1 ORDER BY DESC(?count) LIMIT 10'
   runtime_info:
-    client_time: 0.19631121199927293
+    client_time: 0.19090542199774063
   result_size: 1
   results:
   - - http://publications.europa.eu/resource/authority/country/NOR
@@ -500,7 +500,7 @@ queries:
 - query: group-by-implicit-numeric-baseline
   sparql: 'PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(?o) AS ?count) { ?s era:crossSectionArea ?o. }'
   runtime_info:
-    client_time: 0.009009280998725444
+    client_time: 0.006572033998963889
   result_size: 1
   results:
   - - '959'
@@ -508,7 +508,7 @@ queries:
 - query: group-by-implicit-numeric-sum
   sparql: 'PREFIX era: <http://data.europa.eu/949/> SELECT (SUM(?o) AS ?sum) { ?s era:crossSectionArea ?o. }'
   runtime_info:
-    client_time: 0.012198092001199257
+    client_time: 0.01900196600035997
   result_size: 1
   results:
   - - '41106'
@@ -516,7 +516,7 @@ queries:
 - query: group-by-implicit-numeric-min
   sparql: 'PREFIX era: <http://data.europa.eu/949/> SELECT (MIN(?o) AS ?min) { ?s era:crossSectionArea ?o. }'
   runtime_info:
-    client_time: 0.008802411000942811
+    client_time: 0.009305584000685485
   result_size: 1
   results:
   - - '0'
@@ -524,7 +524,7 @@ queries:
 - query: group-by-implicit-numeric-max
   sparql: 'PREFIX era: <http://data.europa.eu/949/> SELECT (MAX(?o) AS ?max) { ?s era:crossSectionArea ?o. }'
   runtime_info:
-    client_time: 0.017324260999885155
+    client_time: 0.008639403000415768
   result_size: 1
   results:
   - - '110'
@@ -532,7 +532,7 @@ queries:
 - query: group-by-implicit-numeric-avg
   sparql: 'PREFIX era: <http://data.europa.eu/949/> SELECT (AVG(?o) AS ?avg) { ?s era:crossSectionArea ?o. }'
   runtime_info:
-    client_time: 0.01199190199986333
+    client_time: 0.012860750997788273
   result_size: 1
   results:
   - - '42.863399374348279457768509'
@@ -540,7 +540,7 @@ queries:
 - query: group-by-implicit-string-baseline
   sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(?o) AS ?count) { ?s rdfs:label ?o. }'
   runtime_info:
-    client_time: 0.04077548499844852
+    client_time: 0.04040431300018099
   result_size: 1
   results:
   - - '66074'
@@ -548,7 +548,7 @@ queries:
 - query: group-by-implicit-string-min
   sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (MIN(?o) AS ?min) { ?s rdfs:label ?o. }'
   runtime_info:
-    client_time: 0.16483359899939387
+    client_time: 0.1872741710030823
   result_size: 1
   results:
   - - '"466,885 ""Snarvei"""'
@@ -556,7 +556,7 @@ queries:
 - query: group-by-implicit-string-max
   sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (MAX(?o) AS ?max) { ?s rdfs:label ?o. }'
   runtime_info:
-    client_time: 0.10826449199885246
+    client_time: 0.11134060599943041
   result_size: 1
   results:
   - - Landsomfattende LPS - korrigert fra associated positioning system
@@ -565,7 +565,7 @@ queries:
   sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (SUM(STRLEN(?cat)) AS ?sum) { { SELECT (GROUP_CONCAT(?o;
     SEPARATOR=" ") AS ?cat) { ?s rdfs:label ?o. } GROUP BY ?s } }'
   runtime_info:
-    client_time: 0.22497295500215841
+    client_time: 0.23196184699918376
   result_size: 1
   results:
   - - '849533'
@@ -574,7 +574,7 @@ queries:
   sparql: 'PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(DISTINCT ?object) AS ?count) { ?subject era:infrastructureManager
     ?object . }'
   runtime_info:
-    client_time: 0.02414343300188193
+    client_time: 0.021682868002244504
   result_size: 1
   results:
   - - '1'
@@ -583,7 +583,7 @@ queries:
   sparql: 'PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(DISTINCT ?object) AS ?count) { ?subject era:hasTopoCoordinate
     ?object . }'
   runtime_info:
-    client_time: 0.03195005299858167
+    client_time: 0.04639618500004872
   result_size: 1
   results:
   - - '69266'
@@ -592,7 +592,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(DISTINCT
     ?o1) AS ?count) { ?s era:inCountry ?o1 . ?s rdf:type ?o2 . }'
   runtime_info:
-    client_time: 0.06965282899909653
+    client_time: 0.07958733199848211
   result_size: 1
   results:
   - - '1'
@@ -600,7 +600,7 @@ queries:
 - query: transitive-path-plus
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(*) AS ?count) { ?s rdf:rest+ ?o }'
   runtime_info:
-    client_time: 0.11738449199765455
+    client_time: 0.11277499300194904
   result_size: 1
   results:
   - - '55955'
@@ -609,7 +609,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(*) AS ?count) { <https://data.banenor.no/data/_linearlocation_track_KO-SPO-000053_2019-01-01_sequence_0>
     rdf:rest+ ?o }'
   runtime_info:
-    client_time: 0.008064270001341356
+    client_time: 0.007862123999075266
   result_size: 1
   results:
   - - '20'
@@ -618,7 +618,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) { ?s era:hasSequence/rdf:rest+ ?o }'
   runtime_info:
-    client_time: 0.11629090300266398
+    client_time: 0.09240449700155295
   result_size: 1
   results:
   - - '27742'
@@ -627,7 +627,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX era: <http://data.europa.eu/949/> SELECT (COUNT(*)
     AS ?count) { ?s era:includes/rdf:rest+ ?o }'
   runtime_info:
-    client_time: 0.09044536099827383
+    client_time: 0.07235188100094092
   result_size: 1
   results:
   - - '20057'
@@ -636,7 +636,7 @@ queries:
   sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o FILTER
     CONTAINS(?o, "com") }'
   runtime_info:
-    client_time: 0.17900464999911492
+    client_time: 0.16692868300015107
   result_size: 1
   results:
   - - '0'
@@ -645,7 +645,7 @@ queries:
   sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o FILTER
     REGEX(?o, "com") }'
   runtime_info:
-    client_time: 0.18926175099841203
+    client_time: 0.13676062400190858
   result_size: 1
   results:
   - - '0'
@@ -654,7 +654,7 @@ queries:
   sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o FILTER
     REGEX(?o, "c.m") }'
   runtime_info:
-    client_time: 0.1813885810006468
+    client_time: 0.14828142000260414
   result_size: 1
   results:
   - - '3'
@@ -663,7 +663,7 @@ queries:
   sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o FILTER
     REGEX(?o, "^C") }'
   runtime_info:
-    client_time: 0.1982711519995064
+    client_time: 0.11368656400009058
   result_size: 1
   results:
   - - '55'
@@ -672,7 +672,7 @@ queries:
   sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?object
     FILTER REGEX(?object, "^Co") }'
   runtime_info:
-    client_time: 0.18921230100022512
+    client_time: 0.14153414300017175
   result_size: 1
   results:
   - - '0'
@@ -681,7 +681,7 @@ queries:
   sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?object
     FILTER REGEX(?object, "^Com") }'
   runtime_info:
-    client_time: 0.1707439890014939
+    client_time: 0.14423191099922406
   result_size: 1
   results:
   - - '0'
@@ -690,7 +690,7 @@ queries:
   sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (SUM(STRLEN(?o)) AS ?checksum) { ?s rdfs:label ?o .
     }'
   runtime_info:
-    client_time: 0.14431958600107464
+    client_time: 0.19263343100101338
   result_size: 1
   results:
   - - '817008'
@@ -699,7 +699,7 @@ queries:
   sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (SUM(STRLEN(STRBEFORE(?o, "a"))) AS ?checksum) { ?s
     rdfs:label ?o . }'
   runtime_info:
-    client_time: 0.1916286220002803
+    client_time: 0.15714374800154474
   result_size: 1
   results:
   - - '92299'
@@ -708,7 +708,7 @@ queries:
   sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (SUM(STRLEN(STRAFTER(?o, "a"))) AS ?checksum) { ?s
     rdfs:label ?o . }'
   runtime_info:
-    client_time: 0.14109372600069037
+    client_time: 0.16722895499697188
   result_size: 1
   results:
   - - '216892'
@@ -717,7 +717,7 @@ queries:
   sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> SELECT (SUM(xsd:integer(STRSTARTS(?o,
     "a"))) AS ?count) { ?s rdfs:label ?o . }'
   runtime_info:
-    client_time: 0.14518407599825878
+    client_time: 0.1730561279982794
   result_size: 1
   results:
   - - '0'
@@ -726,7 +726,7 @@ queries:
   sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> SELECT (SUM(xsd:integer(STRENDS(?o,
     "a"))) AS ?count) { ?s rdfs:label ?o . }'
   runtime_info:
-    client_time: 0.16574743899764144
+    client_time: 0.16339957599848276
   result_size: 1
   results:
   - - '1282'
@@ -734,7 +734,7 @@ queries:
 - query: result-size-tiny
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?s ?o WHERE { ?s rdf:type ?o } LIMIT 10'
   runtime_info:
-    client_time: 0.006364520999341039
+    client_time: 0.006900978001795011
   result_size: 10
   results:
   - - https://data.banenor.no/data/_subsidiary_location_NO-S.1
@@ -751,7 +751,7 @@ queries:
 - query: result-size-small
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?s ?o WHERE { ?s rdf:type ?o } LIMIT 1000'
   runtime_info:
-    client_time: 0.018322110998269636
+    client_time: 0.03188633299942012
   result_size: 1000
   results:
   - - https://data.banenor.no/data/_subsidiary_location_NO-S.1
@@ -768,7 +768,7 @@ queries:
 - query: result-size-medium
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?s ?o WHERE { ?s rdf:type ?o } LIMIT 100000'
   runtime_info:
-    client_time: 0.5072749860009935
+    client_time: 0.5161901179999404
   result_size: 100000
   results:
   - - https://data.banenor.no/data/_subsidiary_location_NO-S.1
@@ -785,7 +785,7 @@ queries:
 - query: result-size-large
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?s ?o WHERE { ?s rdf:type ?o } LIMIT 1000000'
   runtime_info:
-    client_time: 3.0796114709992253
+    client_time: 3.1336891800019657
   result_size: 528699
   results:
   - - https://data.banenor.no/data/_subsidiary_location_NO-S.1
@@ -802,7 +802,7 @@ queries:
 - query: result-size-xlarge
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?s ?o WHERE { ?s rdf:type ?o } LIMIT 10000000'
   runtime_info:
-    client_time: 3.1066977980008232
+    client_time: 3.237763739998627
   result_size: 528699
   results:
   - - https://data.banenor.no/data/_subsidiary_location_NO-S.1
@@ -819,7 +819,7 @@ queries:
 - query: numeric-baseline
   sparql: 'PREFIX era: <http://data.europa.eu/949/> SELECT (SUM(?o) AS ?sum) WHERE { ?s era:crossSectionArea ?o }'
   runtime_info:
-    client_time: 0.011212101999262813
+    client_time: 0.009635440997953992
   result_size: 1
   results:
   - - '41106'
@@ -827,7 +827,7 @@ queries:
 - query: numeric-abs
   sparql: 'PREFIX era: <http://data.europa.eu/949/> SELECT (SUM(ABS(?o)) AS ?sum) WHERE { ?s era:crossSectionArea ?o }'
   runtime_info:
-    client_time: 0.013950212000054307
+    client_time: 0.014404432000446832
   result_size: 1
   results:
   - - '41106'
@@ -835,7 +835,7 @@ queries:
 - query: numeric-ceil
   sparql: 'PREFIX era: <http://data.europa.eu/949/> SELECT (SUM(CEIL(?o)) AS ?sum) WHERE { ?s era:crossSectionArea ?o }'
   runtime_info:
-    client_time: 0.008409931000642246
+    client_time: 0.010021500998846022
   result_size: 1
   results:
   - - '41106'
@@ -843,7 +843,7 @@ queries:
 - query: numeric-floor
   sparql: 'PREFIX era: <http://data.europa.eu/949/> SELECT (SUM(FLOOR(?o)) AS ?sum) WHERE { ?s era:crossSectionArea ?o }'
   runtime_info:
-    client_time: 0.007755050999548985
+    client_time: 0.009085874000447802
   result_size: 1
   results:
   - - '41106'
@@ -851,7 +851,7 @@ queries:
 - query: numeric-round
   sparql: 'PREFIX era: <http://data.europa.eu/949/> SELECT (SUM(ROUND(?o)) AS ?sum) WHERE { ?s era:crossSectionArea ?o }'
   runtime_info:
-    client_time: 0.007848400000511901
+    client_time: 0.008451440000499133
   result_size: 1
   results:
   - - '41106'
@@ -859,7 +859,7 @@ queries:
 - query: numeric-add
   sparql: 'PREFIX era: <http://data.europa.eu/949/> SELECT (SUM(?o + ?o) AS ?sum) WHERE { ?s era:crossSectionArea ?o }'
   runtime_info:
-    client_time: 0.013792961999570252
+    client_time: 0.014841950000118231
   result_size: 1
   results:
   - - '82212'
@@ -867,7 +867,7 @@ queries:
 - query: numeric-greater
   sparql: 'PREFIX era: <http://data.europa.eu/949/> SELECT (SUM(?o > 0) AS ?sum) WHERE { ?s era:crossSectionArea ?o }'
   runtime_info:
-    client_time: 0.007942182000988396
+    client_time: 0.006167434999952093
   result_size: 1
   results:
   - - None
@@ -876,7 +876,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(?s) AS ?count) { ?s rdf:type ?o . FILTER
     (?s = ?o) }'
   runtime_info:
-    client_time: 0.17884086900085094
+    client_time: 0.1571070840000175
   result_size: 1
   results:
   - - '0'
@@ -885,7 +885,7 @@ queries:
   sparql: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(?s) AS ?count) { ?s rdf:type ?o . FILTER
     (?s != ?o) }'
   runtime_info:
-    client_time: 0.12761742300062906
+    client_time: 0.13957256300273002
   result_size: 1
   results:
   - - '528699'
@@ -894,7 +894,7 @@ queries:
   sparql: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(?s) AS ?count) { ?s rdfs:label ?o . FILTER(LANG(?o)
     = "en") }'
   runtime_info:
-    client_time: 0.058274376002373174
+    client_time: 0.08802432000084082
   result_size: 1
   results:
   - - '33549'
@@ -902,7 +902,7 @@ queries:
 - query: date-year
   sparql: SELECT (SUM(YEAR(?o)) AS ?sum) WHERE { ?s <http://www.w3.org/2006/time#inXSDDate> ?o }
   runtime_info:
-    client_time: 0.00744478100023116
+    client_time: 0.013414674998784903
   result_size: 1
   results:
   - - '407673'
@@ -910,7 +910,7 @@ queries:
 - query: date-month
   sparql: SELECT (SUM(MONTH(?o)) AS ?sum) WHERE { ?s <http://www.w3.org/2006/time#inXSDDate> ?o }
   runtime_info:
-    client_time: 0.011122940999484854
+    client_time: 0.010514383000554517
   result_size: 1
   results:
   - - '1529'
@@ -918,7 +918,7 @@ queries:
 - query: date-day
   sparql: SELECT (SUM(DAY(?o)) AS ?sum) WHERE { ?s <http://www.w3.org/2006/time#inXSDDate> ?o }
   runtime_info:
-    client_time: 0.009323459998995531
+    client_time: 0.011673265002173139
   result_size: 1
   results:
   - - '2529'
@@ -926,7 +926,7 @@ queries:
 - query: number-of-triples
   sparql: SELECT (COUNT(?s) AS ?count) WHERE { ?s ?p ?o }
   runtime_info:
-    client_time: 0.41412741399835795
+    client_time: 0.42572727099832264
   result_size: 1
   results:
   - - '1594395'
@@ -934,7 +934,7 @@ queries:
 - query: number-of-subjects
   sparql: SELECT (COUNT(DISTINCT ?s) AS ?count) WHERE { ?s ?p ?o }
   runtime_info:
-    client_time: 0.4664335890010989
+    client_time: 0.4719518380006775
   result_size: 1
   results:
   - - '360904'
@@ -942,7 +942,7 @@ queries:
 - query: number-of-predicates
   sparql: SELECT (COUNT(DISTINCT ?p) AS ?count) WHERE { ?s ?p ?o }
   runtime_info:
-    client_time: 0.4263429950005957
+    client_time: 0.43443331500020577
   result_size: 1
   results:
   - - '124'
@@ -950,7 +950,7 @@ queries:
 - query: number-of-objects
   sparql: SELECT (COUNT(DISTINCT ?o) AS ?count) WHERE { ?s ?p ?o }
   runtime_info:
-    client_time: 0.48125805200106697
+    client_time: 0.48813417599740205
   result_size: 1
   results:
   - - '467302'
@@ -958,7 +958,7 @@ queries:
 - query: number-of-literals
   sparql: SELECT (COUNT(?o) AS ?count) WHERE { ?s ?p ?o FILTER ISLITERAL(?o) }
   runtime_info:
-    client_time: 0.3720964800013462
+    client_time: 0.39212844100256916
   result_size: 1
   results:
   - - '311870'
@@ -966,7 +966,7 @@ queries:
 - query: number-of-blank-nodes
   sparql: SELECT (COUNT(?s) AS ?count) WHERE { ?s ?p ?o FILTER ISBLANK(?s) }
   runtime_info:
-    client_time: 0.2918184709997149
+    client_time: 0.2909395130009216
   result_size: 1
   results:
   - - '0'
@@ -974,7 +974,7 @@ queries:
 load:
   engine: graphdb
   dataset: rinf-0076
-  load_s: 16.443
-  start_s: 13.082
-  spatial_index_s: 0.003
-  disk_bytes: 253104874
+  load_s: 17.509
+  start_s: 13.539
+  spatial_index_s: 0.004
+  disk_bytes: 253120906

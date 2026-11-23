@@ -1,10 +1,10 @@
 {
  "engine": "jena",
  "dataset": "osm_norway",
- "load_s": 14.191,
- "start_and_spatial_index_s": 32.781,
+ "load_s": 14.868,
+ "start_and_spatial_index_s": 33.815,
  "disk_bytes": 850761423,
- "wall_s": 47.003,
- "rss_after_start": "5626 MiB",
+ "wall_s": 48.717,
+ "rss_after_start": "5524 MiB",
  "triples": 1458029
 }

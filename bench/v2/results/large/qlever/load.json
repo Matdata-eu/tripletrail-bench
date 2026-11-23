@@ -1,10 +1,10 @@
 {
  "engine": "qlever",
  "dataset": "large",
- "load_s": 9.345,
- "start_s": 0.531,
- "disk_bytes": 214222101,
- "wall_s": 9.993,
- "rss_after_start": "6.633MiB / 61.31GiB",
+ "load_s": 10.547,
+ "start_s": 0.534,
+ "disk_bytes": 214228232,
+ "wall_s": 11.196,
+ "rss_after_start": "6.562MiB / 61.31GiB",
  "triples": 10539890
 }

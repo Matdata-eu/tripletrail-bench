@@ -6,139 +6,139 @@
  "queries": {
   "q1_count": {
    "runs": [
-    525.421,
-    522.162,
-    523.116,
-    522.578,
-    522.792,
-    522.65,
-    525.963
+    8.446,
+    3.677,
+    3.148,
+    2.939,
+    3.382,
+    3.678,
+    3.671
    ],
    "rows": 1,
    "first_row": [
     "9995000"
    ],
    "status": "ok",
-   "cold_ms": 525.421,
+   "cold_ms": 8.446,
    "warm": {
     "n": 5,
-    "median_ms": 522.792,
-    "min_ms": 522.578,
-    "max_ms": 525.963
+    "median_ms": 3.382,
+    "min_ms": 2.939,
+    "max_ms": 3.678
    }
   },
   "q2_customer_orders": {
    "runs": [
-    106.942,
-    94.243,
-    97.566,
-    101.629,
-    94.787,
-    88.287,
-    93.429
+    58.209,
+    43.687,
+    40.0,
+    35.903,
+    38.292,
+    34.17,
+    37.733
    ],
    "rows": 20,
    "first_row": [
     "Quinn Larsen",
     "5413",
-    "13698872.59"
+    "13698872.589999996"
    ],
    "status": "ok",
-   "cold_ms": 106.942,
+   "cold_ms": 58.209,
    "warm": {
     "n": 5,
-    "median_ms": 94.787,
-    "min_ms": 88.287,
-    "max_ms": 101.629
+    "median_ms": 37.733,
+    "min_ms": 34.17,
+    "max_ms": 40.0
    }
   },
   "q3_join_3_entities": {
    "runs": [
-    165.207,
-    148.116,
-    149.269,
-    136.279,
-    131.391,
-    124.485,
-    124.238
+    65.103,
+    55.408,
+    47.549,
+    48.047,
+    47.691,
+    49.004,
+    49.131
    ],
    "rows": 50,
    "first_row": [
     "Frank Pedersen",
-    "completed",
+    "Product-4924",
     "4999.98",
-    "Product-4924"
+    "completed"
    ],
    "status": "ok",
-   "cold_ms": 165.207,
+   "cold_ms": 65.103,
    "warm": {
     "n": 5,
-    "median_ms": 131.391,
-    "min_ms": 124.238,
-    "max_ms": 149.269
+    "median_ms": 48.047,
+    "min_ms": 47.549,
+    "max_ms": 49.131
    }
   },
   "q4_optional_aggregation": {
    "runs": [
-    152.267,
-    162.589,
-    157.07,
-    158.575,
-    230.354,
-    159.56,
-    153.708
+    37.882,
+    40.859,
+    35.113,
+    38.226,
+    36.727,
+    42.897,
+    36.423
    ],
    "rows": 50,
    "first_row": [
-    "70872508.53",
-    "2103",
     "http://benchmark.example/France",
+    "http://benchmark.example/Startup",
+    "2103",
     "28110"
    ],
    "status": "ok",
-   "cold_ms": 152.267,
+   "cold_ms": 37.882,
    "warm": {
     "n": 5,
-    "median_ms": 158.575,
-    "min_ms": 153.708,
-    "max_ms": 230.354
+    "median_ms": 36.727,
+    "min_ms": 35.113,
+    "max_ms": 42.897
    }
   },
   "q5_construct": {
    "runs": [
-    804.502,
-    775.713,
-    721.839,
-    746.756,
-    710.784,
-    695.952,
-    699.672
+    500.194,
+    430.055,
+    397.425,
+    421.007,
+    447.942,
+    440.548,
+    510.954
    ],
    "rows": 439240,
    "first_row": [
     "<http://benchmark.example/C000011> <http://benchmark.example/country> <http://benchmark.example/Norway> ."
    ],
    "status": "ok",
-   "cold_ms": 804.502,
+   "cold_ms": 500.194,
    "warm": {
     "n": 5,
-    "median_ms": 710.784,
-    "min_ms": 695.952,
-    "max_ms": 746.756
+    "median_ms": 440.548,
+    "min_ms": 397.425,
+    "max_ms": 510.954
    }
   },
   "q6_delete_insert": {
    "status": "ok",
-   "ms": 43.154
+   "ms": 37.43
   }
  },
  "load": {
   "engine": "maplib",
   "dataset": "trainmarks-xlarge",
-  "load_s": 15.749,
-  "start_s": 1.011,
+  "load_s": 3.098,
+  "start_s": 0.681,
   "disk_bytes": 0,
-  "load_peak_rss_bytes": 3637919744,
+  "load_peak_rss_bytes": 3447447552,
   "in_memory": true
  }
 }
