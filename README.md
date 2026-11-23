@@ -121,7 +121,7 @@ containers), Java 21 for Jena, Python 3 with `requests`, `pyyaml` and `psycopg2`
 for OSM, `bc` and GNU `time`, and either a local PostgreSQL 16 with PostGIS and pgRouting or the
 compose service (`docker compose -f bench/v2/docker-compose.yml up -d postgis`). Environment
 variables: `BENCH_WORK`, `WARM_SCALE`, `ONLY` (queries or families, e.g. `ONLY=6,mixed_*`),
-`SKIP_LOAD=1`, `DROP_AFTER=1`, `TRIPLETRAIL_BIN`, `JENA_JAR`, `JENA_HEAP`, `GRAPHDB_IMAGE`,
+`SKIP_LOAD=1`, `DROP_AFTER=1`, `TRIPLETRAIL_BIN`, `TRIPLETRAIL_WARM_WAIT`, `JENA_JAR`, `JENA_HEAP`, `GRAPHDB_IMAGE`,
 `GRAPHDB_HEAP`, `QLEVER_IMAGE`, `QLEVER_MEMORY`, `QLEVER_CACHE`, `PG_DSN_BASE`, `PG_CONTAINER`,
 `GEOGRAPHICA_TIMEOUT`.
 
