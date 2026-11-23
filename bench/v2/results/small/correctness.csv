@@ -1,90 +1,90 @@
-qid,engine,reference,compared,match,tie,mismatch,note
-sel_bbox,graphdb,postgis,33,33,0,0,
-sel_bbox,jena,postgis,33,33,0,0,
-sel_bbox,qlever,postgis,33,33,0,0,
-sel_bbox,tripletrail,postgis,33,33,0,0,
-sel_polygon,graphdb,postgis,33,33,0,0,
-sel_polygon,jena,postgis,33,33,0,0,
-sel_polygon,qlever,postgis,33,33,0,0,
-sel_polygon,tripletrail,postgis,33,33,0,0,
-sel_distance,graphdb,postgis,33,33,0,0,
-sel_distance,jena,postgis,33,32,0,1,"ref 7 got 8: 0 missing, 1 extra"
-sel_distance,qlever,postgis,33,32,0,1,"ref 7 got 8: 0 missing, 1 extra"
-sel_distance,tripletrail,postgis,33,33,0,0,
-knn_signals,graphdb,postgis,33,33,0,0,
-knn_signals,jena,postgis,33,33,0,0,
-knn_signals,qlever,postgis,33,33,0,0,
-knn_signals,tripletrail,postgis,33,33,0,0,
-knn_ops,graphdb,postgis,33,32,0,1,9/10 in common
-knn_ops,jena,postgis,33,33,0,0,"match: same set, other order"
-knn_ops,qlever,postgis,33,33,0,0,"match: same set, other order"
-knn_ops,tripletrail,postgis,33,32,0,1,9/10 in common
-join_signal_ne_20m,graphdb,postgis,0,0,0,0,"failed: HTTP 503: Query interrupted: Query evaluation took too long
+qid,engine,reference,compared,match,tie,mismatch,other_extract,note
+sel_bbox,graphdb,postgis,33,33,0,0,0,
+sel_bbox,jena,postgis,33,33,0,0,0,
+sel_bbox,qlever,postgis,33,33,0,0,0,
+sel_bbox,tripletrail,postgis,33,33,0,0,0,
+sel_polygon,graphdb,postgis,33,33,0,0,0,
+sel_polygon,jena,postgis,33,33,0,0,0,
+sel_polygon,qlever,postgis,33,33,0,0,0,
+sel_polygon,tripletrail,postgis,33,33,0,0,0,
+sel_distance,graphdb,postgis,33,33,0,0,0,
+sel_distance,jena,postgis,33,32,0,1,0,"ref 7 got 8: 0 missing, 1 extra"
+sel_distance,qlever,postgis,33,32,0,1,0,"ref 7 got 8: 0 missing, 1 extra"
+sel_distance,tripletrail,postgis,33,33,0,0,0,
+knn_signals,graphdb,postgis,33,33,0,0,0,
+knn_signals,jena,postgis,33,33,0,0,0,
+knn_signals,qlever,postgis,33,33,0,0,0,
+knn_signals,tripletrail,postgis,33,33,0,0,0,
+knn_ops,graphdb,postgis,33,32,0,1,0,9/10 in common
+knn_ops,jena,postgis,33,33,0,0,0,"match: same set, other order"
+knn_ops,qlever,postgis,33,33,0,0,0,"match: same set, other order"
+knn_ops,tripletrail,postgis,33,32,0,1,0,9/10 in common
+join_signal_ne_20m,graphdb,postgis,0,0,0,0,0,"failed: HTTP 503: Query interrupted: Query evaluation took too long
 "
-join_signal_ne_20m,jena,postgis,8,0,0,8,[24145.0] vs [24084.0] (x8)
-join_signal_ne_20m,qlever,postgis,8,8,0,0,
-join_signal_ne_20m,tripletrail,postgis,8,8,0,0,
-join_op_region,graphdb,postgis,8,8,0,0,
-join_op_region,jena,postgis,8,8,0,0,
-join_op_region,qlever,postgis,8,8,0,0,
-join_op_region,tripletrail,postgis,8,8,0,0,
-agg_length_region,graphdb,postgis,0,0,0,0,n/a: geof:metricLength / metricArea / aggUnion (GeoSPARQL 1.1) are unknown to GraphDB 10.8 (HTTP 500 'Unknown function')
-agg_length_region,jena,postgis,0,0,0,0,n/a: geof:metricLength / metricArea / aggUnion are not implemented by jena-geosparql 6.2 (they return no value; geof:intersection works)
-agg_length_region,qlever,postgis,0,0,0,0,n/a: geof:intersection is not supported by QLever (HTTP 400 'not supported')
-agg_length_region,tripletrail,postgis,8,8,0,0,
-agg_total_length,graphdb,postgis,0,0,0,0,n/a: geof:metricLength / metricArea / aggUnion (GeoSPARQL 1.1) are unknown to GraphDB 10.8 (HTTP 500 'Unknown function')
-agg_total_length,jena,postgis,0,0,0,0,n/a: geof:metricLength / metricArea / aggUnion are not implemented by jena-geosparql 6.2 (they return no value; geof:intersection works)
-agg_total_length,qlever,postgis,8,0,0,8,[13282488.070671618] vs [13261308.97391] (x2); [13282488.070671652] vs [13261308.97391] (x2); [13282488.07067167] vs [13261308.97391]
-agg_total_length,tripletrail,postgis,8,8,0,0,
-agg_union_buffers,graphdb,postgis,0,0,0,0,n/a: geof:metricLength / metricArea / aggUnion (GeoSPARQL 1.1) are unknown to GraphDB 10.8 (HTTP 500 'Unknown function')
-agg_union_buffers,jena,postgis,0,0,0,0,n/a: geof:metricLength / metricArea / aggUnion are not implemented by jena-geosparql 6.2 (they return no value; geof:intersection works)
-agg_union_buffers,qlever,postgis,0,0,0,0,n/a: geof:buffer and geof:aggUnion are not supported by QLever
-agg_union_buffers,tripletrail,postgis,23,23,0,0,
-lr_km_to_point,graphdb,postgis,0,0,0,0,n/a: no linear-referencing functions
-lr_km_to_point,jena,postgis,0,0,0,0,n/a: no linear-referencing functions
-lr_km_to_point,qlever,postgis,0,0,0,0,n/a: no linear-referencing functions
-lr_km_to_point,tripletrail,postgis,33,33,0,0,match: 0.000 m (x21); match: 0.001 m (x12)
-lr_assets_between_km,graphdb,postgis,33,33,0,0,
-lr_assets_between_km,jena,postgis,33,33,0,0,
-lr_assets_between_km,qlever,postgis,33,33,0,0,
-lr_assets_between_km,tripletrail,postgis,33,33,0,0,
-route_dijkstra,graphdb,postgis,0,0,0,0,n/a: no routing
-route_dijkstra,jena,postgis,0,0,0,0,n/a: no routing
-route_dijkstra,qlever,postgis,0,0,0,0,n/a: no routing
-route_dijkstra,tripletrail,postgis,1003,1003,0,0,match: no path (x64)
-route_dijkstra_cost,graphdb,postgis,0,0,0,0,n/a: no routing
-route_dijkstra_cost,jena,postgis,0,0,0,0,n/a: no routing
-route_dijkstra_cost,qlever,postgis,0,0,0,0,n/a: no routing
-route_dijkstra_cost,tripletrail,postgis,1003,1003,0,0,
-route_bddijkstra,graphdb,postgis,0,0,0,0,n/a: no routing
-route_bddijkstra,jena,postgis,0,0,0,0,n/a: no routing
-route_bddijkstra,qlever,postgis,0,0,0,0,n/a: no routing
-route_bddijkstra,tripletrail,postgis,1003,989,1,13,match: no path (x64); cost 90053.70000000004 vs 89838.50000000001 (178 vs 178 edges); cost 173070.3 vs 172747.69999999992 (344 vs 344 edges)
-route_ch,graphdb,tripletrail,0,0,0,0,n/a: no routing
-route_ch,jena,tripletrail,0,0,0,0,n/a: no routing
-route_ch,postgis,tripletrail,0,0,0,0,n/a: pgRouting has no contraction-hierarchy query (pgr_contraction only contracts)
-route_ch,qlever,tripletrail,0,0,0,0,n/a: no routing
-route_constrained,graphdb,postgis,0,0,0,0,n/a: no routing
-route_constrained,jena,postgis,0,0,0,0,n/a: no routing
-route_constrained,qlever,postgis,0,0,0,0,n/a: no routing
-route_constrained,tripletrail,postgis,203,203,0,0,match: no path (x90)
-driving_distance_50km,graphdb,postgis,0,0,0,0,n/a: no routing
-driving_distance_50km,jena,postgis,0,0,0,0,n/a: no routing
-driving_distance_50km,qlever,postgis,0,0,0,0,n/a: no routing
-driving_distance_50km,tripletrail,postgis,53,53,0,0,
-ksp5,graphdb,postgis,0,0,0,0,n/a: no routing
-ksp5,jena,postgis,0,0,0,0,n/a: no routing
-ksp5,qlever,postgis,0,0,0,0,n/a: no routing
-ksp5,tripletrail,postgis,53,53,0,0,
-cost_matrix_100,graphdb,postgis,0,0,0,0,n/a: no routing
-cost_matrix_100,jena,postgis,0,0,0,0,n/a: no routing
-cost_matrix_100,qlever,postgis,0,0,0,0,n/a: no routing
-cost_matrix_100,tripletrail,postgis,13,13,0,0,
-components,graphdb,postgis,0,0,0,0,n/a: no routing
-components,jena,postgis,0,0,0,0,n/a: no routing
-components,qlever,postgis,0,0,0,0,n/a: no routing
-components,tripletrail,postgis,8,8,0,0,
-mixed_route_signals,graphdb,postgis,0,0,0,0,n/a: no routing
-mixed_route_signals,jena,postgis,0,0,0,0,n/a: no routing
-mixed_route_signals,qlever,postgis,0,0,0,0,n/a: no routing
-mixed_route_signals,tripletrail,postgis,53,53,0,0,
+join_signal_ne_20m,jena,postgis,8,0,0,8,0,[24145.0] vs [24084.0] (x8)
+join_signal_ne_20m,qlever,postgis,8,8,0,0,0,
+join_signal_ne_20m,tripletrail,postgis,8,8,0,0,0,
+join_op_region,graphdb,postgis,8,8,0,0,0,
+join_op_region,jena,postgis,8,8,0,0,0,
+join_op_region,qlever,postgis,8,8,0,0,0,
+join_op_region,tripletrail,postgis,8,8,0,0,0,
+agg_length_region,graphdb,postgis,0,0,0,0,0,n/a: geof:metricLength / metricArea / aggUnion (GeoSPARQL 1.1) are unknown to GraphDB 10.8 (HTTP 500 'Unknown function')
+agg_length_region,jena,postgis,0,0,0,0,0,n/a: geof:metricLength / metricArea / aggUnion are not implemented by jena-geosparql 6.2 (they return no value; geof:intersection works)
+agg_length_region,qlever,postgis,0,0,0,0,0,n/a: geof:intersection is not supported by QLever (HTTP 400 'not supported')
+agg_length_region,tripletrail,postgis,8,8,0,0,0,
+agg_total_length,graphdb,postgis,0,0,0,0,0,n/a: geof:metricLength / metricArea / aggUnion (GeoSPARQL 1.1) are unknown to GraphDB 10.8 (HTTP 500 'Unknown function')
+agg_total_length,jena,postgis,0,0,0,0,0,n/a: geof:metricLength / metricArea / aggUnion are not implemented by jena-geosparql 6.2 (they return no value; geof:intersection works)
+agg_total_length,qlever,postgis,8,0,0,8,0,[13282488.070671618] vs [13261308.97391] (x2); [13282488.070671652] vs [13261308.97391] (x2); [13282488.07067167] vs [13261308.97391]
+agg_total_length,tripletrail,postgis,8,8,0,0,0,
+agg_union_buffers,graphdb,postgis,0,0,0,0,0,n/a: geof:metricLength / metricArea / aggUnion (GeoSPARQL 1.1) are unknown to GraphDB 10.8 (HTTP 500 'Unknown function')
+agg_union_buffers,jena,postgis,0,0,0,0,0,n/a: geof:metricLength / metricArea / aggUnion are not implemented by jena-geosparql 6.2 (they return no value; geof:intersection works)
+agg_union_buffers,qlever,postgis,0,0,0,0,0,n/a: geof:buffer and geof:aggUnion are not supported by QLever
+agg_union_buffers,tripletrail,postgis,23,23,0,0,0,
+lr_km_to_point,graphdb,postgis,0,0,0,0,0,n/a: no linear-referencing functions
+lr_km_to_point,jena,postgis,0,0,0,0,0,n/a: no linear-referencing functions
+lr_km_to_point,qlever,postgis,0,0,0,0,0,n/a: no linear-referencing functions
+lr_km_to_point,tripletrail,postgis,33,33,0,0,0,match: 0.000 m (x21); match: 0.001 m (x12)
+lr_assets_between_km,graphdb,postgis,33,33,0,0,0,
+lr_assets_between_km,jena,postgis,33,33,0,0,0,
+lr_assets_between_km,qlever,postgis,33,33,0,0,0,
+lr_assets_between_km,tripletrail,postgis,33,33,0,0,0,
+route_dijkstra,graphdb,postgis,0,0,0,0,0,n/a: no routing
+route_dijkstra,jena,postgis,0,0,0,0,0,n/a: no routing
+route_dijkstra,qlever,postgis,0,0,0,0,0,n/a: no routing
+route_dijkstra,tripletrail,postgis,1003,1003,0,0,0,match: no path (x64)
+route_dijkstra_cost,graphdb,postgis,0,0,0,0,0,n/a: no routing
+route_dijkstra_cost,jena,postgis,0,0,0,0,0,n/a: no routing
+route_dijkstra_cost,qlever,postgis,0,0,0,0,0,n/a: no routing
+route_dijkstra_cost,tripletrail,postgis,1003,1003,0,0,0,
+route_bddijkstra,graphdb,postgis,0,0,0,0,0,n/a: no routing
+route_bddijkstra,jena,postgis,0,0,0,0,0,n/a: no routing
+route_bddijkstra,qlever,postgis,0,0,0,0,0,n/a: no routing
+route_bddijkstra,tripletrail,postgis,1003,989,1,13,0,match: no path (x64); cost 90053.70000000004 vs 89838.50000000001 (178 vs 178 edges); cost 173070.3 vs 172747.69999999992 (344 vs 344 edges)
+route_ch,graphdb,tripletrail,0,0,0,0,0,n/a: no routing
+route_ch,jena,tripletrail,0,0,0,0,0,n/a: no routing
+route_ch,postgis,tripletrail,0,0,0,0,0,n/a: pgRouting has no contraction-hierarchy query (pgr_contraction only contracts)
+route_ch,qlever,tripletrail,0,0,0,0,0,n/a: no routing
+route_constrained,graphdb,postgis,0,0,0,0,0,n/a: no routing
+route_constrained,jena,postgis,0,0,0,0,0,n/a: no routing
+route_constrained,qlever,postgis,0,0,0,0,0,n/a: no routing
+route_constrained,tripletrail,postgis,203,203,0,0,0,match: no path (x90)
+driving_distance_50km,graphdb,postgis,0,0,0,0,0,n/a: no routing
+driving_distance_50km,jena,postgis,0,0,0,0,0,n/a: no routing
+driving_distance_50km,qlever,postgis,0,0,0,0,0,n/a: no routing
+driving_distance_50km,tripletrail,postgis,53,53,0,0,0,
+ksp5,graphdb,postgis,0,0,0,0,0,n/a: no routing
+ksp5,jena,postgis,0,0,0,0,0,n/a: no routing
+ksp5,qlever,postgis,0,0,0,0,0,n/a: no routing
+ksp5,tripletrail,postgis,53,53,0,0,0,
+cost_matrix_100,graphdb,postgis,0,0,0,0,0,n/a: no routing
+cost_matrix_100,jena,postgis,0,0,0,0,0,n/a: no routing
+cost_matrix_100,qlever,postgis,0,0,0,0,0,n/a: no routing
+cost_matrix_100,tripletrail,postgis,13,13,0,0,0,
+components,graphdb,postgis,0,0,0,0,0,n/a: no routing
+components,jena,postgis,0,0,0,0,0,n/a: no routing
+components,qlever,postgis,0,0,0,0,0,n/a: no routing
+components,tripletrail,postgis,8,8,0,0,0,
+mixed_route_signals,graphdb,postgis,0,0,0,0,0,n/a: no routing
+mixed_route_signals,jena,postgis,0,0,0,0,0,n/a: no routing
+mixed_route_signals,qlever,postgis,0,0,0,0,0,n/a: no routing
+mixed_route_signals,tripletrail,postgis,53,53,0,0,0,

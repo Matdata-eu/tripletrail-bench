@@ -12,6 +12,10 @@ Runs are matched by run index (same parameters). Checks per result kind:
   path     same total cost (relative tolerance) and same edge sequence; same cost with another
            edge sequence counts as "tie" (an equal-cost alternative), not as a mismatch
   costs    same number of paths, costs equal within the tolerance
+
+An engine whose load.json names another triple count than the reference's ran on another extract
+(the scale suite downloads the newest OSM file): its differing answers are counted under
+other_extract instead of mismatch, since they say nothing about either engine.
 """
 import csv
 import glob
@@ -90,6 +94,19 @@ def cmp(kind, ref, got, tol):
     raise ValueError(kind)
 
 
+def triples(folder):
+    """Triples each engine loaded, from its load.json (engines without the field are left out)."""
+    out = {}
+    for p in glob.glob(os.path.join(folder, "*", "load.json")):
+        try:
+            n = json.load(open(p)).get("triples")
+        except (OSError, ValueError):
+            continue
+        if isinstance(n, int):
+            out[os.path.basename(os.path.dirname(p))] = n
+    return out
+
+
 def load(folder):
     res = {}
     for p in glob.glob(os.path.join(folder, "*", "*.json")):
@@ -103,6 +120,7 @@ def load(folder):
 def main():
     folder = sys.argv[1]
     res = load(folder)
+    loaded = triples(folder)
     rows, details = [], {}
     for qid, q in QUERIES.items():
         by = res.get(qid, {})
@@ -116,7 +134,7 @@ def main():
                 continue
             if not rec.get("status", "").startswith("ok"):
                 rows.append(dict(qid=qid, engine=e, reference=ref_engine, compared=0, match=0, tie=0,
-                                 mismatch=0, note=f"{rec.get('status')}: {rec.get('reason', '')}"[:200]))
+                                 mismatch=0, other_extract=0, note=f"{rec.get('status')}: {rec.get('reason', '')}"[:200]))
                 continue
             counts = {"match": 0, "tie": 0, "mismatch": 0}
             notes, examples = {}, []
@@ -131,18 +149,25 @@ def main():
                 if v != "match" and len(examples) < 5:
                     examples.append({"index": r["index"], "verdict": v, "note": note})
             summary_note = "; ".join(f"{k} (x{n})" if n > 1 else k for k, n in list(notes.items())[:3])
-            rows.append(dict(qid=qid, engine=e, reference=ref_engine, compared=sum(counts.values()), **counts,
+            if e in loaded and ref_engine in loaded and loaded[e] != loaded[ref_engine]:
+                # Another extract: a differing answer says nothing about either engine.
+                summary_note = (f"other extract ({loaded[e]:,} triples against {loaded[ref_engine]:,}): "
+                                f"{counts['match'] + counts['tie']} agree, {counts['mismatch']} differ")
+                counts = {"match": counts["match"], "tie": counts["tie"], "mismatch": 0, "other_extract": counts["mismatch"]}
+            rows.append(dict(qid=qid, engine=e, reference=ref_engine, compared=sum(counts.values()),
+                             **{k: counts.get(k, 0) for k in ("match", "tie", "mismatch", "other_extract")},
                              note=summary_note[:300]))
             details[f"{qid}/{e}"] = {"counts": counts, "examples": examples, "notes": notes}
     with open(os.path.join(folder, "correctness.csv"), "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=["qid", "engine", "reference", "compared", "match", "tie", "mismatch", "note"])
+        w = csv.DictWriter(f, fieldnames=["qid", "engine", "reference", "compared", "match", "tie", "mismatch", "other_extract", "note"])
         w.writeheader()
         w.writerows(rows)
     with open(os.path.join(folder, "correctness.json"), "w") as f:
         json.dump(details, f, indent=1)
     for r in rows:
         print(f"{r['qid']:24s} {r['engine']:8s} vs {r['reference']:8s} {r['compared']:5d} compared: "
-              f"{r['match']} match, {r['tie']} tie, {r['mismatch']} mismatch  {r['note'][:150]}")
+              f"{r['match']} match, {r['tie']} tie, {r['mismatch']} mismatch, {r['other_extract']} other extract"
+              f"  {r['note'][:150]}")
 
 
 if __name__ == "__main__":
