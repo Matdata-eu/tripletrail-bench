@@ -2,6 +2,8 @@
 
 - **One machine, one run each.** The timings come from a 4-core cloud container, so they show how
   the engines compare, not what a server would do. The full suite (#30) runs on a ccx43.
+  TripleTrail, Jena and TopBraid ran with a 1,800 s timeout and pySHACL, RDF4J and GraphDB with
+  3,600 s (`timeout_s`); no engine that finished came near either.
 - **TripleTrail, Jena, TopBraid and GraphDB give the same 31,783 results** (28,884 violations,
   2,899 warnings, from 9 shapes): their result keys hash the same.
 - **GraphDB** validates when the shapes are added to a repository that already holds the data. Its

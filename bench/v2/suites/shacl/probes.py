@@ -79,6 +79,7 @@ def infer(engine, shapes, tmp):
 
 
 def main():
+    run_phase0.need_rdflib()
     out, *engines = sys.argv[1:]
     engines = engines or ["tripletrail", "jena", "topbraid", "pyshacl", "rdf4j"]
     res = {}

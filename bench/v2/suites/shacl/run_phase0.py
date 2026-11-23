@@ -73,10 +73,7 @@ def version(engine):
 
 def count_report(path):
     """Results in the report, by severity, and whether it says it conforms (rdflib)."""
-    try:
-        import rdflib
-    except ImportError:
-        return {}
+    import rdflib
     g = rdflib.Graph()
     try:
         g.parse(path, format="turtle")
@@ -128,7 +125,16 @@ def run(engine, cmd, stdout_to, out):
             "wall_s": round(wall, 3), "peak_rss_bytes": peak}
 
 
+def need_rdflib():
+    """Reports are read with rdflib; without it every engine would look as if it gave nothing."""
+    try:
+        import rdflib  # noqa: F401
+    except ImportError:
+        sys.exit("rdflib is needed to read the reports: pip install rdflib")
+
+
 def main():
+    need_rdflib()
     data, shapes, out, *engines = sys.argv[1:]
     os.makedirs(out, exist_ok=True)
     engines = engines or list(commands(data, shapes, ""))

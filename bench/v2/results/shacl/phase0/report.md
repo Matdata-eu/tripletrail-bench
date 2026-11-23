@@ -4,16 +4,16 @@ Data: RINF graph 0076 (Norway) from ERA's rinf-plus endpoint, 1,594,395 triples,
 
 ## Feature support
 
-Each cell is a probe in `bench/v2/suites/shacl/features/` on `data.ttl`: yes when the engine gives the expected number of results (or inferred triples), no otherwise. AF rules run with the engine's own inference command; n/a means it has none.
+Each cell is a probe in `bench/v2/suites/shacl/features/` on `data.ttl`: yes when the engine gives the expected number of results (or inferred triples), no with the number it gave otherwise (0 when it does not run the feature). AF rules run with the engine's own inference command; n/a means it has none.
 
 | engine | version | Core | SPARQL constraints | SPARQL targets | SPARQL functions | SPARQL components | AF rules |
 |---|---|---|---|---|---|---|---|
 | tripletrail | tripletrail 0.1.0 | yes | yes | yes | yes | yes | yes |
-| jena | apache-jena-6.2.0 | yes | yes | yes | no (wrong count) | yes | n/a |
+| jena | apache-jena-6.2.0 | yes | yes | yes | no (0 results) | yes | n/a |
 | topbraid | shacl-1.5.0 | yes | yes | yes | yes | yes | yes |
 | pyshacl | pyshacl 0.30.1 | yes | yes | yes | yes | yes | yes |
-| rdf4j | rdf4j 5.3.2 | yes | yes | no (error) | no (wrong count) | no (wrong count) | n/a |
-| graphdb | graphdb:10.8.0 | yes | yes | no (error) | no (error) | no (wrong count) | n/a |
+| rdf4j | rdf4j 5.3.2 | yes | yes | no (error) | no (0 results) | no (0 results) | n/a |
+| graphdb | graphdb:10.8.0 | yes | yes | no (error) | no (error) | no (0 results) | n/a |
 
 ## ERA RINF shapes on the data
 
@@ -32,6 +32,8 @@ Same results: the engine's sorted result keys (focus node, path, constraint comp
 
 - **One machine, one run each.** The timings come from a 4-core cloud container, so they show how
   the engines compare, not what a server would do. The full suite (#30) runs on a ccx43.
+  TripleTrail, Jena and TopBraid ran with a 1,800 s timeout and pySHACL, RDF4J and GraphDB with
+  3,600 s (`timeout_s`); no engine that finished came near either.
 - **TripleTrail, Jena, TopBraid and GraphDB give the same 31,783 results** (28,884 violations,
   2,899 warnings, from 9 shapes): their result keys hash the same.
 - **GraphDB** validates when the shapes are added to a repository that already holds the data. Its

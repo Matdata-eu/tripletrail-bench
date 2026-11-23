@@ -13,7 +13,7 @@ all, and how long one country takes. It runs in a cloud session, never in CI.
 export BENCH_WORK=/path/with/space          # data and reports; never in git
 export JENA_HOME=/path/to/apache-jena-6.2.0 TOPBRAID_HOME=/path/to/shacl-1.5.0
 export TRIPLETRAIL_BIN=/path/to/core/target/release/tripletrail
-pip install pyshacl==0.30.1
+pip install rdflib pyshacl==0.30.1                     # rdflib reads every engine's report
 (cd bench/v2/suites/shacl/rdf4j && mvn -q package)   # RDF4J ShaclSail as a command
 
 bench/v2/suites/data/fetch_rinf.py 0076                # RINF Norway, ~1.6 M triples

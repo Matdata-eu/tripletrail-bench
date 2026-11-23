@@ -15,7 +15,15 @@ import sys
 PROBES = [("core", "Core"), ("sparql-constraint", "SPARQL constraints"),
           ("sparql-target", "SPARQL targets"), ("sparql-function", "SPARQL functions"),
           ("custom-component", "SPARQL components"), ("rule", "AF rules")]
-MARK = {"pass": "yes", "fail": "no (wrong count)", "error": "no (error)", "n/a": "n/a"}
+MARK = {"pass": "yes", "error": "no (error)", "n/a": "n/a"}
+
+
+def mark(cell):
+    """yes, no (n results) when the count differs (0 when the feature is not run), no (error)."""
+    v = cell.get("verdict")
+    if v == "fail":
+        return f"no ({cell.get('got')} results)"
+    return MARK.get(v, "")
 
 
 def num(n):
@@ -34,14 +42,15 @@ def main():
         out += [f"Data: {meta.get('data', '')}. Shapes: {meta.get('shapes', '')}. Machine: {meta.get('machine', '')}.", ""]
     out += ["## Feature support", "",
             "Each cell is a probe in `bench/v2/suites/shacl/features/` on `data.ttl`: yes when the engine gives "
-            "the expected number of results (or inferred triples), no otherwise. AF rules run with the engine's "
+            "the expected number of results (or inferred triples), no with the number it gave otherwise (0 when it "
+            "does not run the feature). AF rules run with the engine's "
             "own inference command; n/a means it has none.", "",
             "| engine | version | " + " | ".join(t for _, t in PROBES) + " |",
             "|---|---|" + "---|" * len(PROBES)]
     for e in engines:
         p = probes.get(e, {})
         out.append(f"| {e} | {p.get('version') or runs.get(e, {}).get('version') or ''} | "
-                   + " | ".join(MARK.get(p.get(k, {}).get("verdict"), "") for k, _ in PROBES) + " |")
+                   + " | ".join(mark(p.get(k, {})) for k, _ in PROBES) + " |")
     ref = runs.get("jena", {}).get("results_sha256")
     out += ["", "## ERA RINF shapes on the data", "",
             "Same results: the engine's sorted result keys (focus node, path, constraint component, severity) "
