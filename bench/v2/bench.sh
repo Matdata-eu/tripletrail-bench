@@ -4,6 +4,7 @@
 #   bench.sh <suite> <dataset> [engine...]  one job: v2 small|large|osm_norway, geographica all,
 #                                            bsbm <products>, sparqloscope <dataset>,
 #                                            trainmarks <scale>, updates <dataset>,
+#                                            shacl rinf-<code>|rinf-all,
 #                                            scale osm_benelux|osm_europe|osm_planet,
 #                                            railpack (only with the enterprise repository's suite and packs)
 # Engines: none given (or "default") = each suite's own default set; otherwise each job runs the
@@ -46,6 +47,7 @@ engines() {
     scale) all="tripletrail qlever"; extra="graphdb" ;;
     railpack) all="tripletrail" ;;
     updates) all="tripletrail oxigraph jena graphdb" ;;
+    shacl) all="tripletrail jena topbraid graphdb rdf4j pyshacl" ;;
     *) all="tripletrail oxigraph qlever jena graphdb maplib" ;;
   esac
   [ -z "$REQ" ] && { echo "$all"; return; }
@@ -142,7 +144,7 @@ while read -r suite ds extra; do
       fi ;;
     geographica)
       [ -d "$W/inputs/geographica2/datasets" ] || skip="input geographica2/ is missing (data/fetch_inputs.sh)" ;;
-    bsbm|sparqloscope|trainmarks|updates) ;;
+    bsbm|sparqloscope|trainmarks|updates|shacl) ;;
     railpack)
       [ -d "$V2/../../packs/rail-era" ] && [ -f "$V2/suites/railpack/run_railpack.py" ] \
         || skip="the rail pack (packs/rail-era) is not in this tree" ;;

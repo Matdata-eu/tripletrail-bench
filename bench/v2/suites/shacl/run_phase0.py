@@ -28,6 +28,7 @@ import re
 import resource
 import subprocess
 import sys
+import tempfile
 import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -72,7 +73,61 @@ def version(engine):
 
 
 def count_report(path):
-    """Results in the report, by severity, and whether it says it conforms (rdflib)."""
+    """Results in the report, by severity, and whether it says it conforms. With JENA_HOME set,
+    Jena's riot turns the report into N-Triples, read line by line (a report of a million results
+    is too big for rdflib); otherwise rdflib reads it."""
+    jena = os.environ.get("JENA_HOME")
+    if jena and os.path.exists(f"{jena}/bin/riot"):
+        return count_report_nt(path, f"{jena}/bin/riot")
+    return count_report_rdflib(path)
+
+
+NT = re.compile(r'^(\S+) <([^>]*)> (.*) \.$')
+FIELDS = {SH + "focusNode": 0, SH + "resultPath": 1, SH + "sourceConstraintComponent": 2,
+          SH + "resultSeverity": 3}
+
+
+def count_report_nt(path, riot):
+    # riot's warnings go to a file: a pipe read only after stdout could fill and hang it.
+    errf = tempfile.TemporaryFile(mode="w+")
+    p = subprocess.Popen([riot, "--syntax=turtle", "--output=nt", path], stdout=subprocess.PIPE,
+                         stderr=errf, text=True)
+    results, fields, conforms, shapes = set(), {}, None, {}
+    for line in p.stdout:
+        m = NT.match(line.rstrip("\n"))
+        if not m:
+            continue
+        s, pred, o = m.groups()
+        if pred == SH + "result":
+            results.add(o)
+        elif pred in FIELDS:
+            v = "_:" if o.startswith("_:") else o[1:-1] if o.startswith("<") else o
+            fields.setdefault(s, [None] * 4)[FIELDS[pred]] = v
+        elif pred == SH + "conforms":
+            conforms = o.startswith('"true"')
+        elif pred == SH + "sourceShape":
+            shapes[s] = o
+    if p.wait() != 0:
+        errf.seek(0)
+        return {"report_parse_error": errf.read().strip()[-300:]}
+    sev, keys = {}, []
+    for r in results:
+        f = fields.get(r, [None] * 4)
+        k = (f[3] or "none").rsplit("#", 1)[-1]
+        sev[k] = sev.get(k, 0) + 1
+        keys.append("\t".join("None" if v is None else v for v in f))
+    return summary(sev, keys, conforms, {shapes.get(r) for r in results})
+
+
+def summary(sev, keys, conforms, shapes):
+    keys = sorted(set(keys))
+    return {"results": sum(sev.values()), "by_severity": sev, "conforms": conforms,
+            "shapes_with_results": len(shapes), "distinct_results": len(keys),
+            "results_sha256": hashlib.sha256("\n".join(keys).encode()).hexdigest()}
+
+
+def count_report_rdflib(path):
+    """count_report with rdflib."""
     import rdflib
     g = rdflib.Graph()
     try:
@@ -93,11 +148,7 @@ def count_report(path):
     conforms = [bool(o.toPython()) for o in g.objects(None, rdflib.URIRef(SH + "conforms"))]
     shapes = {str(g.value(r, rdflib.URIRef(SH + "sourceShape")))
               for r in g.objects(None, rdflib.URIRef(SH + "result"))}
-    keys.sort()
-    return {"results": sum(sev.values()), "by_severity": sev,
-            "conforms": conforms[0] if conforms else None, "shapes_with_results": len(shapes),
-            "distinct_results": len(set(keys)),
-            "results_sha256": hashlib.sha256("\n".join(sorted(set(keys))).encode()).hexdigest()}
+    return summary(sev, keys, conforms[0] if conforms else None, shapes)
 
 
 def run(engine, cmd, stdout_to, out):
@@ -118,9 +169,10 @@ def run(engine, cmd, stdout_to, out):
             break
         time.sleep(0.2)
     wall = time.monotonic() - t0
-    # ru_maxrss of the child (kB on Linux); a child that forks (the shell scripts) reports its
-    # largest descendant through RUSAGE_CHILDREN, which is read as well.
-    peak = max(ru.ru_maxrss, resource.getrusage(resource.RUSAGE_CHILDREN).ru_maxrss) * 1024
+    # ru_maxrss (kB on Linux) as wait4 answers it: the largest of the child and of every
+    # descendant it waited for, so the JVM under a launcher script counts, and engines run one
+    # after the other in one process do not inherit each other's peak.
+    peak = ru.ru_maxrss * 1024
     return {"exit": os.waitstatus_to_exitcode(status), "timed_out": timed_out,
             "wall_s": round(wall, 3), "peak_rss_bytes": peak}
 

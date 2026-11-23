@@ -4,6 +4,7 @@
 #   run_suite.sh sparqloscope <dataset> [engine...]   bsbm-<products> | rinf-<code> | dblp
 #   run_suite.sh trainmarks <scale> [engine...]       medium | large | xlarge
 #   run_suite.sh updates <dataset> [engine...]        bsbm-<products> | rinf-<code> | any $BENCH_WORK/data/<name>.nt
+#   run_suite.sh shacl <dataset> [engine...]          rinf-<code> | rinf-all (engines: tripletrail jena topbraid graphdb rdf4j pyshacl)
 # Default engines: tripletrail oxigraph qlever jena graphdb maplib (updates: no qlever, no maplib). Datasets are generated or downloaded
 # on first use (into $BENCH_WORK/data, never into git). DROP_AFTER=1 deletes each engine's store
 # after its run (needed for dblp on a 300 GB disk). Never run in CI on pull requests: see
@@ -15,6 +16,7 @@ W=${BENCH_WORK:-$V2/work}
 SUITE=$1; DS=$2; shift 2
 DEFAULT="tripletrail oxigraph qlever jena graphdb maplib"
 [ "$SUITE" = updates ] && DEFAULT="tripletrail oxigraph jena graphdb"
+[ "$SUITE" = shacl ] && DEFAULT="tripletrail jena topbraid graphdb rdf4j pyshacl"
 ENGINES=${*:-$DEFAULT}
 ALL="tripletrail oxigraph qlever jena graphdb maplib postgis"
 # The general suites need no spatial index.
@@ -47,6 +49,10 @@ case $SUITE in
       rinf-*) [ -f "$W/data/$DS.nt" ] || python3 "$HERE/data/fetch_rinf.py" "${DS#rinf-}" ;;
     esac
     python3 "$HERE/updates/run_updates.py" generate --source "$DS" || exit 1 ;;
+  shacl)
+    # setup makes a venv with rdflib and pySHACL; the suite then runs in it.
+    python3 "$HERE/shacl/run_shacl.py" setup || exit 1
+    SHPY=$W/shacl-engines/py/bin/python3 ;;
   *) echo "unknown suite $SUITE" >&2; exit 2 ;;
 esac
 
@@ -58,6 +64,8 @@ for e in $ENGINES; do
     sparqloscope) python3 "$HERE/sparqloscope/run_sparqloscope.py" run --dataset "$DS" --engine "$e" ;;
     trainmarks) python3 "$HERE/trainmarks/run_trainmarks.py" run --scale "$DS" --engine "$e" ;;
     updates) python3 "$HERE/updates/run_updates.py" run --source "$DS" --engine "$e" ;;
+    # run_shacl.py prints "!!! " itself for a profile an engine fails on.
+    shacl) "$SHPY" "$HERE/shacl/run_shacl.py" run --dataset "$DS" --engine "$e" ;;
   esac || echo "!!! $SUITE $DS failed on $e"
   "$V2/engines/$e.sh" stop >/dev/null 2>&1
   if [ -n "${DROP_AFTER:-}" ]; then
@@ -70,6 +78,7 @@ case $SUITE in
   sparqloscope) python3 "$HERE/sparqloscope/run_sparqloscope.py" report ;;
   trainmarks) python3 "$HERE/trainmarks/run_trainmarks.py" report ;;
   updates) python3 "$HERE/updates/run_updates.py" report ;;
+  shacl) python3 "$HERE/shacl/run_shacl.py" report ;;
 esac
 # Again now that the engines' images are pulled (the first capture runs before, on a fresh server).
 python3 "$V2/env.py" >"$ENV_FILE"

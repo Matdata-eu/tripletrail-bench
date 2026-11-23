@@ -1,6 +1,6 @@
 # SHACL suite
 
-SHACL validation (Core and SHACL-SPARQL) and SHACL-AF rules on real railway data: RINF, the EU
+SHACL validation (Core and SHACL-SPARQL) and, later, SHACL-AF rules on real railway data: RINF, the EU
 Register of Infrastructure, against the shapes the EU Agency for Railways (ERA) publishes for it.
 Tracker: Matdata-eu/tripletrail-bench#29 (phase 0), #30 to #34 (the suite).
 
@@ -42,6 +42,42 @@ bench/v2/suites/shacl/report.py bench/v2/results/shacl/phase0     # after copyin
   blank property shapes differently, so the shape is not part of the key.
 - **Time and memory**: wall time of the whole command (parsing included, JVM start included) and
   the peak resident memory of its process tree (for GraphDB, its container's cgroup peak).
+
+## The validation suite
+
+`run_shacl.py` runs the ERA shapes in three profiles on one RINF dataset with every engine, through
+the same entry point as the other suites:
+
+```bash
+bench/v2/suites/run_suite.sh shacl rinf-0076            # step S, Norway, all engines
+bench/v2/bench.sh all shacl                             # steps S, M (Germany) and L (all of RINF)
+```
+
+On the Benchmarks workflow: suite `all`, dataset `shacl` (one server for the three steps), or suite
+`shacl` with dataset `rinf-<code>` or `rinf-all`.
+
+- **Engines** are set up by `run_shacl.py setup` into `$BENCH_WORK/shacl-engines`: Jena and TopBraid
+  downloaded and checked against their SHA-256, rdflib and pySHACL in a venv, and the RDF4J jar
+  built in a Maven container (the bench server has Java 21 but no Maven). GraphDB is its Docker
+  image. TripleTrail is the core build of the run. `JAVA_HEAP` (48g) sets the JVMs' heap and
+  `GRAPHDB_HEAP` GraphDB's.
+- **Profiles**, made from the pinned shapes at run time: `core` drops every SPARQL constraint and
+  SPARQL target (SHACL Core only); `era-local` unlinks the 5 SPARQL constraints and 2 property
+  shapes ERA marks `era:scope "global"`, which need the whole network; `era` is the shapes as
+  published.
+- **Runs**: a run under 300 s (`SHACL_REPEAT_BELOW`) is repeated twice more and the median kept.
+  `SHACL_TIMEOUT` (3,600 s) bounds a run; a timeout or crash is the result, and an engine that
+  times out skips the dataset's later profiles, and one that timed out or failed on a profile of
+  a smaller dataset skips that profile on the larger ones (so pySHACL and RDF4J do not spend hours
+  on M and L after failing on S). TripleTrail, GraphDB and RDF4J also log their
+  validation time apart from loading.
+- **Agreement**: the result keys of each engine are compared with TopBraid's and with the
+  majority's (the hash most engines share).
+- **Output**: `results/shacl/<dataset>/<profile>/<engine>.json`, `results/shacl/<dataset>/data.json`
+  and `results/shacl/report.md`. Reports are counted and deleted in the work directory.
+
+Not yet measured (tracker #30): the ten slowest shapes per engine, and the cost of revalidating
+after inserting or deleting 1,000 triples in a store engine.
 
 ## Licences
 
