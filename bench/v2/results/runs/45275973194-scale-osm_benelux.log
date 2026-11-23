@@ -1,0 +1,22 @@
+downloading https://download.geofabrik.de/europe-latest.osm.pbf (2026-11-23T22:10:58+00:00)
+set a: 20312749 triples, {'station': 3753, 'track': 96270, 'landuse': 3965580, 'admin': 183}
+set b: 180776380 triples, {'highway': 6778842, 'building': 28831410}
+prepared osm_benelux: 201089129 triples
+=== tripletrail on osm_benelux (2026-11-23T22:24:10+00:00)
+ds: map ready: 6 collections and their facets in 49.8 s
+{"engine": "tripletrail", "dataset": "osm_benelux", "load_s": 167.209, "start_s": 0.574, "disk_bytes": 12431672153, "disk_by_file": {"dict.idx": 1434373512, "LOCK": 0, "gpos.seg": 100544608, "geoms.bin": 1353083792, "namespaces.bin": 217, "spog.seg": 1867573400, "TIMELINE": 33, "generation": 1, "gpso.seg": 100544608, "FORMAT": 2, "wal.log": 0, "stats.bin": 8208, "gosp.seg": 100544608, "RETIRED": 5, "compact-keys": 0, "checksums": 365, "ospg.seg": 679273120, "render-wkt": 0, "CURRENT": 2, "psog.seg": 997817264, "posg.seg": 621580120, "dict.bin": 5075783680, "gspo.seg": 100544608}, "load_peak_rss_bytes": 30739263488, "load_peak_anon_bytes": 17844072448, "rss_when_answering": "1752 MiB (heap 31 MiB)", "wall_s": 217.57, "rss_after_start": "10099 MiB (heap 2771 MiB)", "triples": 201089129}
+[tripletrail] restarted for family 8 osm in 51.8 s
+[tripletrail] osm_station_admin        ok         cold 300.318 ms  p50 108.363 p95 115.027 (n=3)
+[tripletrail] osm_track_landuse        ok         cold 1854.551 ms  p50 1308.882 p95 1326.063 (n=3)
+[tripletrail] osm_track_track_5m       ok         cold 587.68 ms  p50 585.868 p95 599.827 (n=3)
+[tripletrail] restarted for family 9 scale in 51.8 s
+[tripletrail] scale_class_counts       ok         cold 8.522 ms  p50 2.626 p95 3.083 (n=3)
+[tripletrail] scale_building_kinds     ok         cold 111.941 ms  p50 7.772 p95 9.016 (n=3)
+[tripletrail] scale_label_lookup       ok         cold 10.254 ms  p50 2.215 p95 2.618 (n=20)
+[tripletrail] scale_named_stations     ok         cold 138.349 ms  p50 5.293 p95 5.317 (n=3)
+ds: map ready: 6 collections and their facets in 49.9 s
+updates: 60 x 10000: p50 139.6 ms, p95 219.6 ms, total 8.64 s
+per-commit ms: [142.1, 102.4, 128.6, 134.1, 136.3, 107.4, 160.7, 133.5, 139.3, 108.3, 115.3, 140.3, 142.3, 214.0, 126.6, 134.3, 144.9, 140.1, 150.7, 141.5, 231.3, 101.8, 124.8, 108.4, 132.3, 130.0, 162.6, 212.6, 108.0, 140.0, 140.8, 115.6, 139.8, 139.7, 264.1, 139.4, 138.5, 141.6, 140.5, 123.3, 134.3, 182.5, 139.5, 147.3, 146.2, 150.0, 123.3, 141.5, 255.5, 100.2, 144.3, 144.3, 140.4, 134.4, 139.4, 219.6, 110.8, 136.5, 137.5, 140.0]
+tripletrail rss after the updates: 10673 MiB (heap 3285 MiB)
+updates: 60 x 10000: p50 128.2 ms, p95 214.2 ms, total 8.0 s
+=== done (2026-11-23T22:33:01+00:00)

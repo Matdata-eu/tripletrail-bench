@@ -1,8 +1,8 @@
 {
  "engine": "tripletrail",
  "dataset": "osm_benelux",
- "load_s": 168.112,
- "start_s": 0.569,
+ "load_s": 167.209,
+ "start_s": 0.574,
  "disk_bytes": 12431672153,
  "disk_by_file": {
   "dict.idx": 1434373512,
@@ -29,9 +29,10 @@
   "dict.bin": 5075783680,
   "gspo.seg": 100544608
  },
- "load_peak_rss_bytes": 30663507968,
- "load_peak_anon_bytes": 17768030208,
- "wall_s": 217.84,
- "rss_after_start": "10098 MiB (heap 2769 MiB)",
+ "load_peak_rss_bytes": 30739263488,
+ "load_peak_anon_bytes": 17844072448,
+ "rss_when_answering": "1752 MiB (heap 31 MiB)",
+ "wall_s": 217.57,
+ "rss_after_start": "10099 MiB (heap 2771 MiB)",
  "triples": 201089129
 }

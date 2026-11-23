@@ -1,7 +1,7 @@
 {
  "source": "europe-latest.osm.pbf",
  "source_bytes": 35534160283,
- "source_mtime": "2026-11-23T07:01:06Z",
+ "source_mtime": "2026-11-23T22:12:48Z",
  "bbox_filter": "2.5,49.4,7.3,53.6",
  "max_triples": null,
  "bbox": [
@@ -20,7 +20,7 @@
     "admin": 183
    },
    "capped": false,
-   "seconds": 69.7
+   "seconds": 72.6
   },
   "b": {
    "triples": 180776380,
@@ -29,10 +29,10 @@
     "building": 28831410
    },
    "capped": false,
-   "seconds": 270.0
+   "seconds": 279.1
   }
  },
  "triples": 201089129,
- "convert_s": 433,
+ "convert_s": 457,
  "nt_bytes": 36773336451
 }

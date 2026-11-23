@@ -102,7 +102,7 @@
    "dataset": "osm_benelux",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "44f5dcd",
+   "commit": "0f9b0a1",
    "date": ""
   },
   {
@@ -453,15 +453,15 @@
    {
     "dataset": "osm_benelux",
     "metric": "load time (s)",
-    "tripletrail": 168.112,
+    "tripletrail": 167.209,
     "others": {
      "graphdb": {
       "value": 906.583,
-      "speedup": 5.39
+      "speedup": 5.42
      },
      "qlever": {
       "value": 198.259,
-      "speedup": 1.18
+      "speedup": 1.19
      }
     }
    },
@@ -560,13 +560,13 @@
     "others": {
      "graphdb": {
       "value": 245.353,
-      "tripletrail": 3.99,
-      "speedup": 61.49
+      "tripletrail": 3.933,
+      "speedup": 62.38
      },
      "qlever": {
       "value": 162.807,
-      "tripletrail": 28.946,
-      "speedup": 5.62
+      "tripletrail": 29.595,
+      "speedup": 5.5
      }
     }
    },
