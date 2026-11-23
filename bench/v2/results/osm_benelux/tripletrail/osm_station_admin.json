@@ -7,7 +7,7 @@
   {
    "phase": "cold",
    "index": 0,
-   "ms": 103.874,
+   "ms": 278.156,
    "ok": true,
    "rows": 149,
    "result": {
@@ -47,7 +47,7 @@
      "https://www.openstreetmap.org/way/95335": 91.0,
      "https://www.openstreetmap.org/way/2227367": 7.0,
      "https://www.openstreetmap.org/way/5048137": 9.0,
-     "https://www.openstreetmap.org/way/125331": 34.0,
+     "https://www.openstreetmap.org/way/125331": 36.0,
      "https://www.openstreetmap.org/way/124899": 11.0,
      "https://www.openstreetmap.org/way/124911": 6.0,
      "https://www.openstreetmap.org/way/345359": 11.0,
@@ -84,8 +84,6 @@
      "https://www.openstreetmap.org/way/815649": 19.0,
      "https://www.openstreetmap.org/way/815621": 6.0,
      "https://www.openstreetmap.org/way/815593": 9.0,
-     "https://www.openstreetmap.org/way/124771": 16.0,
-     "https://www.openstreetmap.org/way/125427": 71.0,
      "https://www.openstreetmap.org/way/125125": 11.0,
      "https://www.openstreetmap.org/way/4479271": 10.0,
      "https://www.openstreetmap.org/way/1322077": 3.0,
@@ -160,14 +158,16 @@
      "https://www.openstreetmap.org/way/125269": 3.0,
      "https://www.openstreetmap.org/way/126613": 528.0,
      "https://www.openstreetmap.org/way/4479187": 6.0,
-     "https://www.openstreetmap.org/way/4479093": 26.0
+     "https://www.openstreetmap.org/way/4479093": 26.0,
+     "https://www.openstreetmap.org/way/124771": 16.0,
+     "https://www.openstreetmap.org/way/125427": 71.0
     }
    }
   },
   {
    "phase": "warmup",
    "index": 1,
-   "ms": 76.929,
+   "ms": 108.867,
    "ok": true,
    "rows": 149,
    "result": {
@@ -207,7 +207,7 @@
      "https://www.openstreetmap.org/way/95335": 91.0,
      "https://www.openstreetmap.org/way/2227367": 7.0,
      "https://www.openstreetmap.org/way/5048137": 9.0,
-     "https://www.openstreetmap.org/way/125331": 34.0,
+     "https://www.openstreetmap.org/way/125331": 36.0,
      "https://www.openstreetmap.org/way/124899": 11.0,
      "https://www.openstreetmap.org/way/124911": 6.0,
      "https://www.openstreetmap.org/way/345359": 11.0,
@@ -244,8 +244,6 @@
      "https://www.openstreetmap.org/way/815649": 19.0,
      "https://www.openstreetmap.org/way/815621": 6.0,
      "https://www.openstreetmap.org/way/815593": 9.0,
-     "https://www.openstreetmap.org/way/124771": 16.0,
-     "https://www.openstreetmap.org/way/125427": 71.0,
      "https://www.openstreetmap.org/way/125125": 11.0,
      "https://www.openstreetmap.org/way/4479271": 10.0,
      "https://www.openstreetmap.org/way/1322077": 3.0,
@@ -320,14 +318,16 @@
      "https://www.openstreetmap.org/way/125269": 3.0,
      "https://www.openstreetmap.org/way/126613": 528.0,
      "https://www.openstreetmap.org/way/4479187": 6.0,
-     "https://www.openstreetmap.org/way/4479093": 26.0
+     "https://www.openstreetmap.org/way/4479093": 26.0,
+     "https://www.openstreetmap.org/way/124771": 16.0,
+     "https://www.openstreetmap.org/way/125427": 71.0
     }
    }
   },
   {
    "phase": "warmup",
    "index": 2,
-   "ms": 91.984,
+   "ms": 119.783,
    "ok": true,
    "rows": 149,
    "result": {
@@ -367,7 +367,7 @@
      "https://www.openstreetmap.org/way/95335": 91.0,
      "https://www.openstreetmap.org/way/2227367": 7.0,
      "https://www.openstreetmap.org/way/5048137": 9.0,
-     "https://www.openstreetmap.org/way/125331": 34.0,
+     "https://www.openstreetmap.org/way/125331": 36.0,
      "https://www.openstreetmap.org/way/124899": 11.0,
      "https://www.openstreetmap.org/way/124911": 6.0,
      "https://www.openstreetmap.org/way/345359": 11.0,
@@ -404,8 +404,6 @@
      "https://www.openstreetmap.org/way/815649": 19.0,
      "https://www.openstreetmap.org/way/815621": 6.0,
      "https://www.openstreetmap.org/way/815593": 9.0,
-     "https://www.openstreetmap.org/way/124771": 16.0,
-     "https://www.openstreetmap.org/way/125427": 71.0,
      "https://www.openstreetmap.org/way/125125": 11.0,
      "https://www.openstreetmap.org/way/4479271": 10.0,
      "https://www.openstreetmap.org/way/1322077": 3.0,
@@ -480,14 +478,16 @@
      "https://www.openstreetmap.org/way/125269": 3.0,
      "https://www.openstreetmap.org/way/126613": 528.0,
      "https://www.openstreetmap.org/way/4479187": 6.0,
-     "https://www.openstreetmap.org/way/4479093": 26.0
+     "https://www.openstreetmap.org/way/4479093": 26.0,
+     "https://www.openstreetmap.org/way/124771": 16.0,
+     "https://www.openstreetmap.org/way/125427": 71.0
     }
    }
   },
   {
    "phase": "warm",
    "index": 3,
-   "ms": 76.906,
+   "ms": 95.14,
    "ok": true,
    "rows": 149,
    "result": {
@@ -527,7 +527,7 @@
      "https://www.openstreetmap.org/way/95335": 91.0,
      "https://www.openstreetmap.org/way/2227367": 7.0,
      "https://www.openstreetmap.org/way/5048137": 9.0,
-     "https://www.openstreetmap.org/way/125331": 34.0,
+     "https://www.openstreetmap.org/way/125331": 36.0,
      "https://www.openstreetmap.org/way/124899": 11.0,
      "https://www.openstreetmap.org/way/124911": 6.0,
      "https://www.openstreetmap.org/way/345359": 11.0,
@@ -564,8 +564,6 @@
      "https://www.openstreetmap.org/way/815649": 19.0,
      "https://www.openstreetmap.org/way/815621": 6.0,
      "https://www.openstreetmap.org/way/815593": 9.0,
-     "https://www.openstreetmap.org/way/124771": 16.0,
-     "https://www.openstreetmap.org/way/125427": 71.0,
      "https://www.openstreetmap.org/way/125125": 11.0,
      "https://www.openstreetmap.org/way/4479271": 10.0,
      "https://www.openstreetmap.org/way/1322077": 3.0,
@@ -640,14 +638,16 @@
      "https://www.openstreetmap.org/way/125269": 3.0,
      "https://www.openstreetmap.org/way/126613": 528.0,
      "https://www.openstreetmap.org/way/4479187": 6.0,
-     "https://www.openstreetmap.org/way/4479093": 26.0
+     "https://www.openstreetmap.org/way/4479093": 26.0,
+     "https://www.openstreetmap.org/way/124771": 16.0,
+     "https://www.openstreetmap.org/way/125427": 71.0
     }
    }
   },
   {
    "phase": "warm",
    "index": 4,
-   "ms": 76.11,
+   "ms": 97.745,
    "ok": true,
    "rows": 149,
    "result": {
@@ -687,7 +687,7 @@
      "https://www.openstreetmap.org/way/95335": 91.0,
      "https://www.openstreetmap.org/way/2227367": 7.0,
      "https://www.openstreetmap.org/way/5048137": 9.0,
-     "https://www.openstreetmap.org/way/125331": 34.0,
+     "https://www.openstreetmap.org/way/125331": 36.0,
      "https://www.openstreetmap.org/way/124899": 11.0,
      "https://www.openstreetmap.org/way/124911": 6.0,
      "https://www.openstreetmap.org/way/345359": 11.0,
@@ -724,8 +724,6 @@
      "https://www.openstreetmap.org/way/815649": 19.0,
      "https://www.openstreetmap.org/way/815621": 6.0,
      "https://www.openstreetmap.org/way/815593": 9.0,
-     "https://www.openstreetmap.org/way/124771": 16.0,
-     "https://www.openstreetmap.org/way/125427": 71.0,
      "https://www.openstreetmap.org/way/125125": 11.0,
      "https://www.openstreetmap.org/way/4479271": 10.0,
      "https://www.openstreetmap.org/way/1322077": 3.0,
@@ -800,14 +798,16 @@
      "https://www.openstreetmap.org/way/125269": 3.0,
      "https://www.openstreetmap.org/way/126613": 528.0,
      "https://www.openstreetmap.org/way/4479187": 6.0,
-     "https://www.openstreetmap.org/way/4479093": 26.0
+     "https://www.openstreetmap.org/way/4479093": 26.0,
+     "https://www.openstreetmap.org/way/124771": 16.0,
+     "https://www.openstreetmap.org/way/125427": 71.0
     }
    }
   },
   {
    "phase": "warm",
    "index": 5,
-   "ms": 74.376,
+   "ms": 95.751,
    "ok": true,
    "rows": 149,
    "result": {
@@ -847,7 +847,7 @@
      "https://www.openstreetmap.org/way/95335": 91.0,
      "https://www.openstreetmap.org/way/2227367": 7.0,
      "https://www.openstreetmap.org/way/5048137": 9.0,
-     "https://www.openstreetmap.org/way/125331": 34.0,
+     "https://www.openstreetmap.org/way/125331": 36.0,
      "https://www.openstreetmap.org/way/124899": 11.0,
      "https://www.openstreetmap.org/way/124911": 6.0,
      "https://www.openstreetmap.org/way/345359": 11.0,
@@ -884,8 +884,6 @@
      "https://www.openstreetmap.org/way/815649": 19.0,
      "https://www.openstreetmap.org/way/815621": 6.0,
      "https://www.openstreetmap.org/way/815593": 9.0,
-     "https://www.openstreetmap.org/way/124771": 16.0,
-     "https://www.openstreetmap.org/way/125427": 71.0,
      "https://www.openstreetmap.org/way/125125": 11.0,
      "https://www.openstreetmap.org/way/4479271": 10.0,
      "https://www.openstreetmap.org/way/1322077": 3.0,
@@ -960,21 +958,23 @@
      "https://www.openstreetmap.org/way/125269": 3.0,
      "https://www.openstreetmap.org/way/126613": 528.0,
      "https://www.openstreetmap.org/way/4479187": 6.0,
-     "https://www.openstreetmap.org/way/4479093": 26.0
+     "https://www.openstreetmap.org/way/4479093": 26.0,
+     "https://www.openstreetmap.org/way/124771": 16.0,
+     "https://www.openstreetmap.org/way/125427": 71.0
     }
    }
   }
  ],
  "status": "ok",
- "cold_ms": 103.874,
+ "cold_ms": 278.156,
  "warm": {
   "n": 3,
-  "p50_ms": 76.11,
-  "p95_ms": 76.906,
-  "min_ms": 74.376,
-  "max_ms": 76.906,
-  "mean_ms": 75.797
+  "p50_ms": 95.751,
+  "p95_ms": 97.745,
+  "min_ms": 95.14,
+  "max_ms": 97.745,
+  "mean_ms": 96.212
  },
  "dataset": "osm_benelux",
- "rss_after": "2845 MiB (heap 389 MiB)"
+ "rss_after": "10285 MiB (heap 2921 MiB)"
 }
