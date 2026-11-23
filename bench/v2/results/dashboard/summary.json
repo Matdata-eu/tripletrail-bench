@@ -38,8 +38,8 @@
    "dataset": "osm_europe",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "a9aae02",
-   "date": "2026-11-22"
+   "commit": "cc8c2f4",
+   "date": "2026-11-21"
   },
   {
    "suite": "sparqloscope",
