@@ -14,7 +14,7 @@ osm_norway,qlever,7.255,0.186,1458029
 osm_norway,jena,14.868,0.792,1458029
 osm_norway,graphdb,17.616,1.011,1458029
 osm_norway,postgis,24.415,0.796,
-osm_benelux,tripletrail,168.112,11.578,201089129
+osm_benelux,tripletrail,167.209,11.578,201089129
 osm_benelux,qlever,198.259,8.284,201065992
 osm_benelux,graphdb,906.583,41.062,201065992
 osm_europe,tripletrail,4931.481,177.823,1000042312

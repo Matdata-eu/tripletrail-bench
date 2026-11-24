@@ -7,7 +7,7 @@
   {
    "phase": "cold",
    "index": 0,
-   "ms": 573.339,
+   "ms": 587.68,
    "ok": true,
    "rows": 1,
    "result": {
@@ -19,7 +19,7 @@
   {
    "phase": "warmup",
    "index": 1,
-   "ms": 539.464,
+   "ms": 592.904,
    "ok": true,
    "rows": 1,
    "result": {
@@ -31,7 +31,7 @@
   {
    "phase": "warmup",
    "index": 2,
-   "ms": 543.611,
+   "ms": 592.38,
    "ok": true,
    "rows": 1,
    "result": {
@@ -43,7 +43,7 @@
   {
    "phase": "warm",
    "index": 3,
-   "ms": 568.245,
+   "ms": 585.868,
    "ok": true,
    "rows": 1,
    "result": {
@@ -55,7 +55,7 @@
   {
    "phase": "warm",
    "index": 4,
-   "ms": 561.343,
+   "ms": 585.56,
    "ok": true,
    "rows": 1,
    "result": {
@@ -67,7 +67,7 @@
   {
    "phase": "warm",
    "index": 5,
-   "ms": 558.135,
+   "ms": 599.827,
    "ok": true,
    "rows": 1,
    "result": {
@@ -78,15 +78,15 @@
   }
  ],
  "status": "ok",
- "cold_ms": 573.339,
+ "cold_ms": 587.68,
  "warm": {
   "n": 3,
-  "p50_ms": 561.343,
-  "p95_ms": 568.245,
-  "min_ms": 558.135,
-  "max_ms": 568.245,
-  "mean_ms": 562.574
+  "p50_ms": 585.868,
+  "p95_ms": 599.827,
+  "min_ms": 585.56,
+  "max_ms": 599.827,
+  "mean_ms": 590.418
  },
  "dataset": "osm_benelux",
- "rss_after": "11333 MiB (heap 3626 MiB)"
+ "rss_after": "11453 MiB (heap 3745 MiB)"
 }

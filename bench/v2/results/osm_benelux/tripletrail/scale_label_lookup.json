@@ -7,7 +7,7 @@
   {
    "phase": "cold",
    "index": 0,
-   "ms": 10.107,
+   "ms": 10.254,
    "ok": true,
    "rows": 3,
    "result": {
@@ -23,7 +23,7 @@
   {
    "phase": "warmup",
    "index": 1,
-   "ms": 2.341,
+   "ms": 2.537,
    "ok": true,
    "rows": 3,
    "result": {
@@ -39,7 +39,7 @@
   {
    "phase": "warmup",
    "index": 2,
-   "ms": 2.382,
+   "ms": 2.517,
    "ok": true,
    "rows": 3,
    "result": {
@@ -55,7 +55,7 @@
   {
    "phase": "warm",
    "index": 3,
-   "ms": 2.21,
+   "ms": 2.604,
    "ok": true,
    "rows": 3,
    "result": {
@@ -71,38 +71,6 @@
   {
    "phase": "warm",
    "index": 4,
-   "ms": 2.148,
-   "ok": true,
-   "rows": 3,
-   "result": {
-    "n": 3,
-    "digest": "6cab431e3f698cb2",
-    "ids": [
-     "https://www.openstreetmap.org/way/240915096",
-     "https://www.openstreetmap.org/way/525047244",
-     "https://www.openstreetmap.org/way/649654108"
-    ]
-   }
-  },
-  {
-   "phase": "warm",
-   "index": 5,
-   "ms": 2.291,
-   "ok": true,
-   "rows": 3,
-   "result": {
-    "n": 3,
-    "digest": "6cab431e3f698cb2",
-    "ids": [
-     "https://www.openstreetmap.org/way/240915096",
-     "https://www.openstreetmap.org/way/525047244",
-     "https://www.openstreetmap.org/way/649654108"
-    ]
-   }
-  },
-  {
-   "phase": "warm",
-   "index": 6,
    "ms": 2.28,
    "ok": true,
    "rows": 3,
@@ -118,8 +86,40 @@
   },
   {
    "phase": "warm",
+   "index": 5,
+   "ms": 2.196,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 6,
+   "ms": 2.618,
+   "ok": true,
+   "rows": 3,
+   "result": {
+    "n": 3,
+    "digest": "6cab431e3f698cb2",
+    "ids": [
+     "https://www.openstreetmap.org/way/240915096",
+     "https://www.openstreetmap.org/way/525047244",
+     "https://www.openstreetmap.org/way/649654108"
+    ]
+   }
+  },
+  {
+   "phase": "warm",
    "index": 7,
-   "ms": 2.399,
+   "ms": 2.382,
    "ok": true,
    "rows": 3,
    "result": {
@@ -135,7 +135,7 @@
   {
    "phase": "warm",
    "index": 8,
-   "ms": 2.291,
+   "ms": 2.349,
    "ok": true,
    "rows": 3,
    "result": {
@@ -151,7 +151,7 @@
   {
    "phase": "warm",
    "index": 9,
-   "ms": 2.46,
+   "ms": 2.615,
    "ok": true,
    "rows": 3,
    "result": {
@@ -167,7 +167,7 @@
   {
    "phase": "warm",
    "index": 10,
-   "ms": 2.523,
+   "ms": 2.172,
    "ok": true,
    "rows": 3,
    "result": {
@@ -183,7 +183,7 @@
   {
    "phase": "warm",
    "index": 11,
-   "ms": 2.679,
+   "ms": 2.116,
    "ok": true,
    "rows": 3,
    "result": {
@@ -199,7 +199,7 @@
   {
    "phase": "warm",
    "index": 12,
-   "ms": 2.833,
+   "ms": 2.31,
    "ok": true,
    "rows": 3,
    "result": {
@@ -215,7 +215,7 @@
   {
    "phase": "warm",
    "index": 13,
-   "ms": 2.512,
+   "ms": 2.24,
    "ok": true,
    "rows": 3,
    "result": {
@@ -231,7 +231,7 @@
   {
    "phase": "warm",
    "index": 14,
-   "ms": 2.527,
+   "ms": 2.215,
    "ok": true,
    "rows": 3,
    "result": {
@@ -247,7 +247,7 @@
   {
    "phase": "warm",
    "index": 15,
-   "ms": 2.47,
+   "ms": 2.193,
    "ok": true,
    "rows": 3,
    "result": {
@@ -263,7 +263,7 @@
   {
    "phase": "warm",
    "index": 16,
-   "ms": 2.18,
+   "ms": 2.233,
    "ok": true,
    "rows": 3,
    "result": {
@@ -279,7 +279,7 @@
   {
    "phase": "warm",
    "index": 17,
-   "ms": 2.301,
+   "ms": 2.215,
    "ok": true,
    "rows": 3,
    "result": {
@@ -295,7 +295,7 @@
   {
    "phase": "warm",
    "index": 18,
-   "ms": 2.175,
+   "ms": 1.998,
    "ok": true,
    "rows": 3,
    "result": {
@@ -311,7 +311,7 @@
   {
    "phase": "warm",
    "index": 19,
-   "ms": 2.188,
+   "ms": 1.916,
    "ok": true,
    "rows": 3,
    "result": {
@@ -327,7 +327,7 @@
   {
    "phase": "warm",
    "index": 20,
-   "ms": 1.83,
+   "ms": 1.782,
    "ok": true,
    "rows": 3,
    "result": {
@@ -343,7 +343,7 @@
   {
    "phase": "warm",
    "index": 21,
-   "ms": 1.888,
+   "ms": 1.751,
    "ok": true,
    "rows": 3,
    "result": {
@@ -359,7 +359,7 @@
   {
    "phase": "warm",
    "index": 22,
-   "ms": 1.924,
+   "ms": 1.876,
    "ok": true,
    "rows": 3,
    "result": {
@@ -374,15 +374,15 @@
   }
  ],
  "status": "ok",
- "cold_ms": 10.107,
+ "cold_ms": 10.254,
  "warm": {
   "n": 20,
-  "p50_ms": 2.291,
-  "p95_ms": 2.833,
-  "min_ms": 1.83,
-  "max_ms": 2.833,
-  "mean_ms": 2.305
+  "p50_ms": 2.215,
+  "p95_ms": 2.618,
+  "min_ms": 1.751,
+  "max_ms": 2.618,
+  "mean_ms": 2.203
  },
  "dataset": "osm_benelux",
- "rss_after": "10135 MiB (heap 2765 MiB)"
+ "rss_after": "9984 MiB (heap 2612 MiB)"
 }
