@@ -1,0 +1,19 @@
+{
+ "engine": "graphdb",
+ "version": "graphdb:10.8.0",
+ "timeout_s": 3600,
+ "runs": [
+  {
+   "exit": 2,
+   "timed_out": false,
+   "wall_s": 13.813,
+   "peak_rss_bytes": 1084751872,
+   "validate_s": null
+  }
+ ],
+ "wall_s": 13.813,
+ "peak_rss_bytes": 1084751872,
+ "timed_out": false,
+ "exit": 2,
+ "error": "graphdb: loading the data failed"
+}

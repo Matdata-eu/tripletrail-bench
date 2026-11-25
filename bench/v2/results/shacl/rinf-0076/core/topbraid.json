@@ -1,0 +1,42 @@
+{
+ "engine": "topbraid",
+ "version": "shacl-1.5.0",
+ "timeout_s": 3600,
+ "runs": [
+  {
+   "exit": 1,
+   "timed_out": false,
+   "wall_s": 33.835,
+   "peak_rss_bytes": 7423574016,
+   "validate_s": null
+  },
+  {
+   "exit": 1,
+   "timed_out": false,
+   "wall_s": 32.633,
+   "peak_rss_bytes": 7101288448,
+   "validate_s": null
+  },
+  {
+   "exit": 1,
+   "timed_out": false,
+   "wall_s": 31.431,
+   "peak_rss_bytes": 4996431872,
+   "validate_s": null
+  }
+ ],
+ "wall_s": 32.633,
+ "peak_rss_bytes": 7423574016,
+ "timed_out": false,
+ "exit": 1,
+ "report_bytes": 1350468,
+ "results": 1701,
+ "by_severity": {
+  "Warning": 1697,
+  "Violation": 4
+ },
+ "conforms": false,
+ "shapes_with_results": 3,
+ "distinct_results": 1701,
+ "results_sha256": "465e850c6c0224209297368250753669116968b610c3d1b21fbe4e4df0f20b75"
+}

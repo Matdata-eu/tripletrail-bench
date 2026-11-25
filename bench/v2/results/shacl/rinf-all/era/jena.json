@@ -1,0 +1,19 @@
+{
+ "engine": "jena",
+ "version": "apache-jena-6.2.0",
+ "timeout_s": 3600,
+ "runs": [
+  {
+   "exit": 1,
+   "timed_out": false,
+   "wall_s": 1657.444,
+   "peak_rss_bytes": 28969095168,
+   "validate_s": null
+  }
+ ],
+ "wall_s": 1657.444,
+ "peak_rss_bytes": 28969095168,
+ "timed_out": false,
+ "exit": 1,
+ "error": "\tat java.base/java.util.regex.Pattern$BmpCharProperty.match(Pattern.java:4134)"
+}

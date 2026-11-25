@@ -1,0 +1,33 @@
+{
+ "engine": "jena",
+ "version": "apache-jena-6.2.0",
+ "timeout_s": 3600,
+ "runs": [
+  {
+   "exit": 1,
+   "timed_out": false,
+   "wall_s": 268.062,
+   "peak_rss_bytes": 23154413568,
+   "validate_s": null
+  },
+  {
+   "exit": 1,
+   "timed_out": false,
+   "wall_s": 266.861,
+   "peak_rss_bytes": 23244337152,
+   "validate_s": null
+  },
+  {
+   "exit": 1,
+   "timed_out": false,
+   "wall_s": 263.845,
+   "peak_rss_bytes": 23347924992,
+   "validate_s": null
+  }
+ ],
+ "wall_s": 266.861,
+ "peak_rss_bytes": 23347924992,
+ "timed_out": false,
+ "exit": 1,
+ "error": "\tat java.base/java.util.regex.Pattern$Branch.match(Pattern.java:4914)"
+}

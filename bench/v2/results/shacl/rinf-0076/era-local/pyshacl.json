@@ -1,0 +1,33 @@
+{
+ "engine": "pyshacl",
+ "version": "pyshacl 0.30.1",
+ "timeout_s": 3600,
+ "runs": [
+  {
+   "exit": 1,
+   "timed_out": false,
+   "wall_s": 57.662,
+   "peak_rss_bytes": 2364334080,
+   "validate_s": null
+  },
+  {
+   "exit": 1,
+   "timed_out": false,
+   "wall_s": 57.264,
+   "peak_rss_bytes": 2363490304,
+   "validate_s": null
+  },
+  {
+   "exit": 1,
+   "timed_out": false,
+   "wall_s": 455.668,
+   "peak_rss_bytes": 2653757440,
+   "validate_s": null
+  }
+ ],
+ "wall_s": 57.662,
+ "peak_rss_bytes": 2653757440,
+ "timed_out": false,
+ "exit": 1,
+ "error": "pyparsing.exceptions.ParseException: Expected SelectQuery, found 'era'  (at char 627), (line:16, col:18)"
+}

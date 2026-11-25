@@ -1,0 +1,21 @@
+{
+ "engine": "topbraid",
+ "version": "shacl-1.5.0",
+ "timeout_s": 3600,
+ "runs": [
+  {
+   "exit": 1,
+   "timed_out": false,
+   "wall_s": 2477.004,
+   "peak_rss_bytes": 36473884672,
+   "validate_s": null
+  }
+ ],
+ "wall_s": 2477.004,
+ "peak_rss_bytes": 36473884672,
+ "timed_out": false,
+ "exit": 1,
+ "report_bytes": 279047,
+ "report_parse_error": "07:29:39 ERROR riot            :: [line: 1, col: 3 ] Undefined prefix:",
+ "error": "\tat java.base/java.util.regex.Pattern$Curly.match(Pattern.java:4544)"
+}

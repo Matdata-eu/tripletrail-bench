@@ -1,0 +1,19 @@
+{
+ "engine": "jena",
+ "version": "apache-jena-6.2.0",
+ "timeout_s": 3600,
+ "runs": [
+  {
+   "exit": 1,
+   "timed_out": false,
+   "wall_s": 1474.057,
+   "peak_rss_bytes": 24899231744,
+   "validate_s": null
+  }
+ ],
+ "wall_s": 1474.057,
+ "peak_rss_bytes": 24899231744,
+ "timed_out": false,
+ "exit": 1,
+ "error": "\tat java.base/java.util.regex.Pattern$Curly.match0(Pattern.java:4582)"
+}

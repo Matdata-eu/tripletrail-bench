@@ -1,0 +1,42 @@
+{
+ "engine": "jena",
+ "version": "apache-jena-6.2.0",
+ "timeout_s": 3600,
+ "runs": [
+  {
+   "exit": 0,
+   "timed_out": false,
+   "wall_s": 49.054,
+   "peak_rss_bytes": 4399415296,
+   "validate_s": null
+  },
+  {
+   "exit": 0,
+   "timed_out": false,
+   "wall_s": 49.052,
+   "peak_rss_bytes": 4355158016,
+   "validate_s": null
+  },
+  {
+   "exit": 0,
+   "timed_out": false,
+   "wall_s": 49.249,
+   "peak_rss_bytes": 5342851072,
+   "validate_s": null
+  }
+ ],
+ "wall_s": 49.054,
+ "peak_rss_bytes": 5342851072,
+ "timed_out": false,
+ "exit": 0,
+ "report_bytes": 34078242,
+ "results": 31783,
+ "by_severity": {
+  "Violation": 28884,
+  "Warning": 2899
+ },
+ "conforms": false,
+ "shapes_with_results": 9,
+ "distinct_results": 31180,
+ "results_sha256": "7a54b1a583ff9e2f67eb551bab6d39e3277f5fe6a50660d214cb5ee20e3f1de5"
+}

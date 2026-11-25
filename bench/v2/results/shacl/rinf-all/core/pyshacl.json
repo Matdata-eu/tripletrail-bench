@@ -1,0 +1,19 @@
+{
+ "engine": "pyshacl",
+ "version": "pyshacl 0.30.1",
+ "timeout_s": 3600,
+ "runs": [
+  {
+   "exit": -9,
+   "timed_out": true,
+   "wall_s": 3602.79,
+   "peak_rss_bytes": 43392671744,
+   "validate_s": null
+  }
+ ],
+ "wall_s": 3602.79,
+ "peak_rss_bytes": 43392671744,
+ "timed_out": true,
+ "exit": -9,
+ "error": "timed out"
+}

@@ -1,0 +1,21 @@
+{
+ "engine": "topbraid",
+ "version": "shacl-1.5.0",
+ "timeout_s": 3600,
+ "runs": [
+  {
+   "exit": 1,
+   "timed_out": false,
+   "wall_s": 601.398,
+   "peak_rss_bytes": 25329229824,
+   "validate_s": null
+  }
+ ],
+ "wall_s": 601.398,
+ "peak_rss_bytes": 25329229824,
+ "timed_out": false,
+ "exit": 1,
+ "report_bytes": 278922,
+ "report_parse_error": "06:48:22 ERROR riot            :: [line: 1, col: 3 ] Undefined prefix:",
+ "error": "\tat java.base/java.util.regex.Pattern$GroupTail.match(Pattern.java:5000)"
+}

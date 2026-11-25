@@ -1,0 +1,191 @@
+engines ready in /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/shacl-engines
+=== shacl rinf-0080 on tripletrail (2026-11-25T01:36:59+00:00)
++ /home/gha/runner/_work/tripletrail-bench/bench-work/shacl-engines/py/bin/python3 /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/suites/data/fetch_rinf.py 0080
+http://data.europa.eu/949/graph/0080 1/146 http://data.europa.eu/949/automaticDroppingDeviceRequired 26983
+http://data.europa.eu/949/graph/0080 2/146 http://data.europa.eu/949/canonicalURI 287864
+http://data.europa.eu/949/graph/0080 3/146 http://data.europa.eu/949/cantDeficiency 34689
+http://data.europa.eu/949/graph/0080 4/146 http://data.europa.eu/949/conditionalRegenerativeBrake 28217
+http://data.europa.eu/949/graph/0080 5/146 http://data.europa.eu/949/contactLineSystem 64066
+http://data.europa.eu/949/graph/0080 6/146 http://data.europa.eu/949/contactLineSystemType 36634
+http://data.europa.eu/949/graph/0080 7/146 http://data.europa.eu/949/contactStripMaterial 26983
+http://data.europa.eu/949/graph/0080 8/146 http://data.europa.eu/949/crossSectionArea 488
+http://data.europa.eu/949/graph/0080 9/146 http://data.europa.eu/949/currentLimitationRequired 27928
+http://data.europa.eu/949/graph/0080 10/146 http://data.europa.eu/949/dataRadioCompatible 31489
+http://data.europa.eu/949/graph/0080 11/146 http://data.europa.eu/949/documentUrl 7
+http://data.europa.eu/949/graph/0080 12/146 http://data.europa.eu/949/eddyCurrentBraking 35870
+http://data.europa.eu/949/graph/0080 13/146 http://data.europa.eu/949/endsAt 26539
+http://data.europa.eu/949/graph/0080 14/146 http://data.europa.eu/949/energySupplySystem 26662
+http://data.europa.eu/949/graph/0080 15/146 http://data.europa.eu/949/etcs 36647
+http://data.europa.eu/949/graph/0080 16/146 http://data.europa.eu/949/etcsBaseline 711
+http://data.europa.eu/949/graph/0080 17/146 http://data.europa.eu/949/etcsDegradedSituation 196
+http://data.europa.eu/949/graph/0080 18/146 http://data.europa.eu/949/etcsInfill 93
+http://data.europa.eu/949/graph/0080 19/146 http://data.europa.eu/949/etcsLevelType 913
+http://data.europa.eu/949/graph/0080 20/146 http://data.europa.eu/949/etcsMVersion 905
+http://data.europa.eu/949/graph/0080 21/146 http://data.europa.eu/949/etcsSystemCompatibility 710
+http://data.europa.eu/949/graph/0080 22/146 http://data.europa.eu/949/freightCorridor 14593
+http://data.europa.eu/949/graph/0080 23/146 http://data.europa.eu/949/gaugingProfile 103364
+http://data.europa.eu/949/graph/0080 24/146 http://data.europa.eu/949/gprsForETCS 782
+http://data.europa.eu/949/graph/0080 25/146 http://data.europa.eu/949/gradientProfile 279746
+http://data.europa.eu/949/graph/0080 26/146 http://data.europa.eu/949/gsmRActiveMobiles 780
+http://data.europa.eu/949/graph/0080 27/146 http://data.europa.eu/949/gsmRNoCoverage 36425
+http://data.europa.eu/949/graph/0080 28/146 http://data.europa.eu/949/gsmROptionalFunctions 243503
+http://data.europa.eu/949/graph/0080 29/146 http://data.europa.eu/949/gsmRVersion 34976
+http://data.europa.eu/949/graph/0080 30/146 http://data.europa.eu/949/gsmrNetworkCoverage 520065
+http://data.europa.eu/949/graph/0080 31/146 http://data.europa.eu/949/hasBallast 36647
+http://data.europa.eu/949/graph/0080 32/146 http://data.europa.eu/949/hasETCSRestrictionsConditions 904
+http://data.europa.eu/949/graph/0080 33/146 http://data.europa.eu/949/hasElectricShoreSupply 27419
+http://data.europa.eu/949/graph/0080 34/146 http://data.europa.eu/949/hasEmergencyPlan 1013
+http://data.europa.eu/949/graph/0080 35/146 http://data.europa.eu/949/hasEtcsNationalPacket44 912
+http://data.europa.eu/949/graph/0080 36/146 http://data.europa.eu/949/hasExternalCleaning 27419
+http://data.europa.eu/949/graph/0080 37/146 http://data.europa.eu/949/hasHotAxleBoxDetector 35619
+http://data.europa.eu/949/graph/0080 38/146 http://data.europa.eu/949/hasLRS 11763
+http://data.europa.eu/949/graph/0080 39/146 http://data.europa.eu/949/hasLevelCrossings 36647
+http://data.europa.eu/949/graph/0080 40/146 http://data.europa.eu/949/hasLrsCoordinate 42127
+http://data.europa.eu/949/graph/0080 41/146 http://data.europa.eu/949/hasOrganisationRole 1
+http://data.europa.eu/949/graph/0080 42/146 http://data.europa.eu/949/hasPart 244923
+http://data.europa.eu/949/graph/0080 43/146 http://data.europa.eu/949/hasPhaseSeparation 24203
+http://data.europa.eu/949/graph/0080 44/146 http://data.europa.eu/949/hasSandRestocking 27419
+http://data.europa.eu/949/graph/0080 45/146 http://data.europa.eu/949/hasSevereWeatherConditions 36645
+http://data.europa.eu/949/graph/0080 46/146 http://data.europa.eu/949/hasSystemSeparation 24199
+http://data.europa.eu/949/graph/0080 47/146 http://data.europa.eu/949/hasTSITrainDetection 32232
+http://data.europa.eu/949/graph/0080 48/146 http://data.europa.eu/949/hasToiletDischarge 27419
+http://data.europa.eu/949/graph/0080 49/146 http://data.europa.eu/949/hasWaterRestocking 27419
+http://data.europa.eu/949/graph/0080 50/146 http://data.europa.eu/949/inCountry 299068
+http://data.europa.eu/949/graph/0080 51/146 http://data.europa.eu/949/infrastructureManager 268631
+http://data.europa.eu/949/graph/0080 52/146 http://data.europa.eu/949/isPartOf 244923
+http://data.europa.eu/949/graph/0080 53/146 http://data.europa.eu/949/isQuietRoute 36248
+http://data.europa.eu/949/graph/0080 54/146 http://data.europa.eu/949/kilometer 11763
+http://data.europa.eu/949/graph/0080 55/146 http://data.europa.eu/949/kmPost 15123
+http://data.europa.eu/949/graph/0080 56/146 http://data.europa.eu/949/legacyRadioSystem 35746
+http://data.europa.eu/949/graph/0080 57/146 http://data.europa.eu/949/lengthOfPlatform 13159
+http://data.europa.eu/949/graph/0080 58/146 http://data.europa.eu/949/lengthOfSectionOfLine 23708
+http://data.europa.eu/949/graph/0080 59/146 http://data.europa.eu/949/lengthOfSiding 27419
+http://data.europa.eu/949/graph/0080 60/146 http://data.europa.eu/949/lengthOfTunnel 2831
+http://data.europa.eu/949/graph/0080 61/146 http://data.europa.eu/949/lineCategory 327650
+http://data.europa.eu/949/graph/0080 62/146 http://data.europa.eu/949/lineId 1586
+http://data.europa.eu/949/graph/0080 63/146 http://data.europa.eu/949/loadCapabilityLineCategory 86
+http://data.europa.eu/949/graph/0080 64/146 http://data.europa.eu/949/loadCapabilitySpeed 86
+http://data.europa.eu/949/graph/0080 65/146 http://data.europa.eu/949/localRulesOrRestrictions 34049
+http://data.europa.eu/949/graph/0080 66/146 http://data.europa.eu/949/localRulesOrRestrictionsDoc 787
+http://data.europa.eu/949/graph/0080 67/146 http://data.europa.eu/949/magneticBraking 36647
+http://data.europa.eu/949/graph/0080 68/146 http://data.europa.eu/949/maxCurrentStandstillPantograph 14
+http://data.europa.eu/949/graph/0080 69/146 http://data.europa.eu/949/maxTrainCurrent 26807
+http://data.europa.eu/949/graph/0080 70/146 http://data.europa.eu/949/maximumAltitude 35139
+http://data.europa.eu/949/graph/0080 71/146 http://data.europa.eu/949/maximumBrakingDistance 35425
+http://data.europa.eu/949/graph/0080 72/146 http://data.europa.eu/949/maximumContactWireHeight 26685
+http://data.europa.eu/949/graph/0080 73/146 http://data.europa.eu/949/maximumPermittedSpeed 36441
+http://data.europa.eu/949/graph/0080 74/146 http://data.europa.eu/949/maximumTrainDeceleration 18980
+http://data.europa.eu/949/graph/0080 75/146 http://data.europa.eu/949/minimumContactWireHeight 26685
+http://data.europa.eu/949/graph/0080 76/146 http://data.europa.eu/949/minimumHorizontalRadius 35464
+http://data.europa.eu/949/graph/0080 77/146 http://data.europa.eu/949/minimumWheelDiameter 36647
+http://data.europa.eu/949/graph/0080 78/146 http://data.europa.eu/949/nationalLine 23708
+http://data.europa.eu/949/graph/0080 79/146 http://data.europa.eu/949/netReference 69613
+http://data.europa.eu/949/graph/0080 80/146 http://data.europa.eu/949/notApplicable 2178097
+http://data.europa.eu/949/graph/0080 81/146 http://data.europa.eu/949/notYetAvailable 1540450
+http://data.europa.eu/949/graph/0080 82/146 http://data.europa.eu/949/offsetFromKilometricPost 15123
+http://data.europa.eu/949/graph/0080 83/146 http://data.europa.eu/949/opEnd 23708
+http://data.europa.eu/949/graph/0080 84/146 http://data.europa.eu/949/opName 19233
+http://data.europa.eu/949/graph/0080 85/146 http://data.europa.eu/949/opStart 23708
+http://data.europa.eu/949/graph/0080 86/146 http://data.europa.eu/949/opType 19233
+http://data.europa.eu/949/graph/0080 87/146 http://data.europa.eu/949/operatingLanguage 36647
+http://data.europa.eu/949/graph/0080 88/146 http://data.europa.eu/949/organisationCode 1
+http://data.europa.eu/949/graph/0080 89/146 http://data.europa.eu/949/otherPantographHead 26985
+http://data.europa.eu/949/graph/0080 90/146 http://data.europa.eu/949/partOfTENT 32322
+http://data.europa.eu/949/graph/0080 91/146 http://data.europa.eu/949/permittedContactForce 26642
+http://data.europa.eu/949/graph/0080 92/146 http://data.europa.eu/949/platformHeight 11509
+http://data.europa.eu/949/graph/0080 93/146 http://data.europa.eu/949/platformId 13175
+http://data.europa.eu/949/graph/0080 94/146 http://data.europa.eu/949/primaryLocation 16011
+http://data.europa.eu/949/graph/0080 95/146 http://data.europa.eu/949/primaryLocationCode 9618
+http://data.europa.eu/949/graph/0080 96/146 http://data.europa.eu/949/profileNumberSemiTrailers 55038
+http://data.europa.eu/949/graph/0080 97/146 http://data.europa.eu/949/profileNumberSwapBodies 55038
+http://data.europa.eu/949/graph/0080 98/146 http://data.europa.eu/949/protectionLegacySystem 37586
+http://data.europa.eu/949/graph/0080 99/146 http://data.europa.eu/949/publicNetworkRoaming 34759
+http://data.europa.eu/949/graph/0080 100/146 http://data.europa.eu/949/publicNetworkRoamingDetails 34671
+http://data.europa.eu/949/graph/0080 101/146 http://data.europa.eu/949/railInclination 36647
+http://data.europa.eu/949/graph/0080 102/146 http://data.europa.eu/949/referenceBorderPoint 96
+http://data.europa.eu/949/graph/0080 103/146 http://data.europa.eu/949/role 1
+http://data.europa.eu/949/graph/0080 104/146 http://data.europa.eu/949/roleOf 1
+http://data.europa.eu/949/graph/0080 105/146 http://data.europa.eu/949/rollingStockFireCategory 1007
+http://data.europa.eu/949/graph/0080 106/146 http://data.europa.eu/949/safeConsistLengthInformationNecessary 914
+http://data.europa.eu/949/graph/0080 107/146 http://data.europa.eu/949/sidingId 27419
+http://data.europa.eu/949/graph/0080 108/146 http://data.europa.eu/949/solNature 23708
+http://data.europa.eu/949/graph/0080 109/146 http://data.europa.eu/949/specificInformation 36647
+http://data.europa.eu/949/graph/0080 110/146 http://data.europa.eu/949/startsAt 26539
+http://data.europa.eu/949/graph/0080 111/146 http://data.europa.eu/949/switchProtectControlWarning 36647
+http://data.europa.eu/949/graph/0080 112/146 http://data.europa.eu/949/switchRadioSystem 66
+http://data.europa.eu/949/graph/0080 113/146 http://data.europa.eu/949/systemSeparationInfoLength 4
+http://data.europa.eu/949/graph/0080 114/146 http://data.europa.eu/949/systemSeparationInfoPantographLowered 4
+http://data.europa.eu/949/graph/0080 115/146 http://data.europa.eu/949/systemSeparationInfoSwitchOffBreaker 4
+http://data.europa.eu/949/graph/0080 116/146 http://data.europa.eu/949/temperatureRange 36647
+http://data.europa.eu/949/graph/0080 117/146 http://data.europa.eu/949/tenClassification 50340
+http://data.europa.eu/949/graph/0080 118/146 http://data.europa.eu/949/tentNetworkLevel 32322
+http://data.europa.eu/949/graph/0080 119/146 http://data.europa.eu/949/trackDirection 36647
+http://data.europa.eu/949/graph/0080 120/146 http://data.europa.eu/949/trackId 201498
+http://data.europa.eu/949/graph/0080 121/146 http://data.europa.eu/949/trackLoadCapability 36410
+http://data.europa.eu/949/graph/0080 122/146 http://data.europa.eu/949/trackSystemSeparationInfo 40
+http://data.europa.eu/949/graph/0080 123/146 http://data.europa.eu/949/trainDetectionSystem 48843
+http://data.europa.eu/949/graph/0080 124/146 http://data.europa.eu/949/trainDetectionSystemSpecificCheck 3279
+http://data.europa.eu/949/graph/0080 125/146 http://data.europa.eu/949/trainDetectionSystemSpecificCheckDocument 4968
+http://data.europa.eu/949/graph/0080 126/146 http://data.europa.eu/949/trainDetectionSystemType 38802
+http://data.europa.eu/949/graph/0080 127/146 http://data.europa.eu/949/tsiPantographHead 26500
+http://data.europa.eu/949/graph/0080 128/146 http://data.europa.eu/949/tsiSwitchCrossing 36647
+http://data.europa.eu/949/graph/0080 129/146 http://data.europa.eu/949/tunnelIdentification 2831
+http://data.europa.eu/949/graph/0080 130/146 http://data.europa.eu/949/typeOfTraffic 21033
+http://data.europa.eu/949/graph/0080 131/146 http://data.europa.eu/949/uopid 19233
+http://data.europa.eu/949/graph/0080 132/146 http://data.europa.eu/949/usesGroup555 34759
+http://data.europa.eu/949/graph/0080 133/146 http://data.europa.eu/949/validity 287864
+http://data.europa.eu/949/graph/0080 134/146 http://data.europa.eu/949/verificationCCS 304
+http://data.europa.eu/949/graph/0080 135/146 http://data.europa.eu/949/verificationENE 896
+http://data.europa.eu/949/graph/0080 136/146 http://data.europa.eu/949/verificationINF 896
+http://data.europa.eu/949/graph/0080 137/146 http://data.europa.eu/949/wheelSetGauge 182271
+http://data.europa.eu/949/graph/0080 138/146 http://www.opengis.net/ont/geosparql#asWKT 45772
+http://data.europa.eu/949/graph/0080 139/146 http://www.opengis.net/ont/geosparql#hasGeometry 69613
+http://data.europa.eu/949/graph/0080 140/146 http://www.w3.org/1999/02/22-rdf-syntax-ns#type 1103359
+http://data.europa.eu/949/graph/0080 141/146 http://www.w3.org/2000/01/rdf-schema#label 571987
+http://data.europa.eu/949/graph/0080 142/146 http://www.w3.org/2003/01/geo/wgs84_pos#lat 43074
+http://data.europa.eu/949/graph/0080 143/146 http://www.w3.org/2003/01/geo/wgs84_pos#long 43074
+http://data.europa.eu/949/graph/0080 144/146 http://www.w3.org/2006/time#hasBeginning 3
+http://data.europa.eu/949/graph/0080 145/146 http://www.w3.org/2006/time#hasEnd 1
+http://data.europa.eu/949/graph/0080 146/146 http://www.w3.org/2006/time#inXSDDate 3
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/data/rinf-0080.nt: 11724050 triples (expected 11724050)
+=== shacl rinf-0080 core on tripletrail
+{"engine": "tripletrail", "version": "tripletrail 0.1.0", "timeout_s": 3600, "wall_s": 35.844, "peak_rss_bytes": 1704984576, "timed_out": false, "exit": 1, "validate_s": 30.3, "report_bytes": 365376498, "results": 281387, "by_severity": {"Warning": 281291, "Violation": 96}, "conforms": false, "shapes_with_results": 4, "distinct_results": 281387, "results_sha256": "4a120f234fdb5e871a50ac02f7bef97961605c31226e42fb01a1ce10899549e6"}
+=== shacl rinf-0080 era-local on tripletrail
+{"engine": "tripletrail", "version": "tripletrail 0.1.0", "timeout_s": 3600, "wall_s": 185.815, "peak_rss_bytes": 12537577472, "timed_out": false, "exit": 1, "validate_s": 180.3, "report_bytes": 941379802, "results": 894300, "by_severity": {"Warning": 596722, "Violation": 297578}, "conforms": false, "shapes_with_results": 12, "distinct_results": 894300, "results_sha256": "d771f8b1cf218a07a26f67b2fe4e764c9742779736fd55c27831f3a9b2a51df5"}
+=== shacl rinf-0080 era on tripletrail
+{"engine": "tripletrail", "version": "tripletrail 0.1.0", "timeout_s": 3600, "wall_s": 218.25, "peak_rss_bytes": 13228875776, "timed_out": false, "exit": 1, "validate_s": 212.7, "report_bytes": 941381733, "results": 894300, "by_severity": {"Warning": 596722, "Violation": 297578}, "conforms": false, "shapes_with_results": 12, "distinct_results": 894300, "results_sha256": "d771f8b1cf218a07a26f67b2fe4e764c9742779736fd55c27831f3a9b2a51df5"}
+=== shacl rinf-0080 on jena (2026-11-25T02:04:07+00:00)
+=== shacl rinf-0080 core on jena
+{"engine": "jena", "version": "apache-jena-6.2.0", "timeout_s": 3600, "wall_s": 75.07, "peak_rss_bytes": 14987628544, "timed_out": false, "exit": 0, "report_bytes": 218328278, "results": 281387, "by_severity": {"Warning": 281291, "Violation": 96}, "conforms": false, "shapes_with_results": 4, "distinct_results": 281387, "results_sha256": "4a120f234fdb5e871a50ac02f7bef97961605c31226e42fb01a1ce10899549e6"}
+=== shacl rinf-0080 era-local on jena
+{"engine": "jena", "version": "apache-jena-6.2.0", "timeout_s": 3600, "wall_s": 885.913, "peak_rss_bytes": 14155792384, "timed_out": false, "exit": 0, "report_bytes": 940807115, "results": 947629, "by_severity": {"Violation": 297578, "Warning": 650051}, "conforms": false, "shapes_with_results": 12, "distinct_results": 894300, "results_sha256": "d771f8b1cf218a07a26f67b2fe4e764c9742779736fd55c27831f3a9b2a51df5"}
+=== shacl rinf-0080 era on jena
+{"engine": "jena", "version": "apache-jena-6.2.0", "timeout_s": 3600, "wall_s": 921.954, "peak_rss_bytes": 14188384256, "timed_out": false, "exit": 0, "report_bytes": 898665469, "results": 947629, "by_severity": {"Warning": 650051, "Violation": 297578}, "conforms": false, "shapes_with_results": 12, "distinct_results": 894300, "results_sha256": "d771f8b1cf218a07a26f67b2fe4e764c9742779736fd55c27831f3a9b2a51df5"}
+=== shacl rinf-0080 on topbraid (2026-11-25T02:38:53+00:00)
+=== shacl rinf-0080 core on topbraid
+{"engine": "topbraid", "version": "shacl-1.5.0", "timeout_s": 3600, "wall_s": 243.044, "peak_rss_bytes": 16497037312, "timed_out": false, "exit": 1, "report_bytes": 217313040, "results": 281387, "by_severity": {"Warning": 281291, "Violation": 96}, "conforms": false, "shapes_with_results": 4, "distinct_results": 281387, "results_sha256": "4a120f234fdb5e871a50ac02f7bef97961605c31226e42fb01a1ce10899549e6"}
+=== shacl rinf-0080 era-local on topbraid
+{"engine": "topbraid", "version": "shacl-1.5.0", "timeout_s": 3600, "wall_s": 1176.107, "peak_rss_bytes": 14086053888, "timed_out": false, "exit": 1, "report_bytes": 941019122, "results": 947629, "by_severity": {"Warning": 650051, "Violation": 297578}, "conforms": false, "shapes_with_results": 12, "distinct_results": 894300, "results_sha256": "d771f8b1cf218a07a26f67b2fe4e764c9742779736fd55c27831f3a9b2a51df5"}
+=== shacl rinf-0080 era on topbraid
+{"engine": "topbraid", "version": "shacl-1.5.0", "timeout_s": 3600, "wall_s": 1322.68, "peak_rss_bytes": 16019972096, "timed_out": false, "exit": 1, "report_bytes": 898877496, "results": 947629, "by_severity": {"Warning": 650051, "Violation": 297578}, "conforms": false, "shapes_with_results": 12, "distinct_results": 894300, "results_sha256": "d771f8b1cf218a07a26f67b2fe4e764c9742779736fd55c27831f3a9b2a51df5"}
+=== shacl rinf-0080 on graphdb (2026-11-25T03:33:28+00:00)
+=== shacl rinf-0080 core on graphdb
+!!! shacl rinf-0080 core failed on graphdb: graphdb: loading the data failed
+{"engine": "graphdb", "version": "graphdb:10.8.0", "timeout_s": 3600, "wall_s": 13.813, "peak_rss_bytes": 1084751872, "timed_out": false, "exit": 2, "error": "graphdb: loading the data failed"}
+=== shacl rinf-0080 era-local on graphdb
+!!! shacl rinf-0080 era-local failed on graphdb: graphdb: loading the data failed
+{"engine": "graphdb", "version": "graphdb:10.8.0", "timeout_s": 3600, "wall_s": 13.811, "peak_rss_bytes": 1084489728, "timed_out": false, "exit": 2, "error": "graphdb: loading the data failed"}
+=== shacl rinf-0080 era on graphdb
+!!! shacl rinf-0080 era failed on graphdb: graphdb: loading the data failed
+{"engine": "graphdb", "version": "graphdb:10.8.0", "timeout_s": 3600, "wall_s": 14.012, "peak_rss_bytes": 1084620800, "timed_out": false, "exit": 2, "error": "graphdb: loading the data failed"}
+=== shacl rinf-0080 on rdf4j (2026-11-25T03:34:12+00:00)
+=== shacl rinf-0080 core on rdf4j
+{"engine": "rdf4j", "version": "rdf4j 5.3.2", "timeout_s": 3600, "wall_s": 469.488, "peak_rss_bytes": 23585820672, "timed_out": false, "exit": 1, "validate_s": 466.6, "report_bytes": 1522268, "results": 2100, "by_severity": {"Warning": 2004, "Violation": 96}, "conforms": false, "shapes_with_results": 4, "distinct_results": 2100, "results_sha256": "01c794fb92eec7aa5fb77342f4d6262b4587711eb5acabaa67543019e6e51459"}
+{"engine": "rdf4j", "skipped": "failed on rinf-0076"}
+{"engine": "rdf4j", "skipped": "failed on rinf-0076"}
+=== shacl rinf-0080 on pyshacl (2026-11-25T03:42:05+00:00)
+=== shacl rinf-0080 core on pyshacl
+{"engine": "pyshacl", "version": "pyshacl 0.30.1", "timeout_s": 3600, "wall_s": 2994.097, "peak_rss_bytes": 15957991424, "timed_out": false, "exit": 1, "report_bytes": 173634306, "results": 281387, "by_severity": {"Warning": 281291, "Violation": 96}, "conforms": false, "shapes_with_results": 4, "distinct_results": 281387, "results_sha256": "4a120f234fdb5e871a50ac02f7bef97961605c31226e42fb01a1ce10899549e6"}
+{"engine": "pyshacl", "skipped": "failed on rinf-0076"}
+{"engine": "pyshacl", "skipped": "failed on rinf-0076"}
+=== done (2026-11-25T04:32:07+00:00)

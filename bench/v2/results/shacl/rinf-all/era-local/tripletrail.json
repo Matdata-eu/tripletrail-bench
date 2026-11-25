@@ -1,0 +1,29 @@
+{
+ "engine": "tripletrail",
+ "version": "tripletrail 0.1.0",
+ "timeout_s": 3600,
+ "runs": [
+  {
+   "exit": 1,
+   "timed_out": false,
+   "wall_s": 585.043,
+   "peak_rss_bytes": 37695283200,
+   "validate_s": 563.3
+  }
+ ],
+ "wall_s": 585.043,
+ "peak_rss_bytes": 37695283200,
+ "timed_out": false,
+ "exit": 1,
+ "validate_s": 563.3,
+ "report_bytes": 3721720215,
+ "results": 3552367,
+ "by_severity": {
+  "Warning": 3359256,
+  "Violation": 193111
+ },
+ "conforms": false,
+ "shapes_with_results": 78,
+ "distinct_results": 3505579,
+ "results_sha256": "ca112824506ca850ecd001ffd4a692810c355f358c1dd5f86fa9ebbfc9c92f5f"
+}
