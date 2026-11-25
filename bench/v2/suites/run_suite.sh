@@ -70,7 +70,9 @@ for e in $ENGINES; do
   "$V2/engines/$e.sh" stop >/dev/null 2>&1
   if [ -n "${DROP_AFTER:-}" ]; then
     case $SUITE in bsbm) d=bsbm-$DS ;; trainmarks) d=trainmarks-$DS ;; updates) d=updates-$DS ;; *) d=$DS ;; esac
-    rm -rf "${W:?}/$e/$d"
+    # tripletrail-ids keeps its store in tripletrail's directory (engines/tripletrail-ids.sh).
+    s=$e; [ "$e" = tripletrail-ids ] && s=tripletrail
+    rm -rf "${W:?}/$s/$d"
   fi
 done
 case $SUITE in

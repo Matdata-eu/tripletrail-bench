@@ -36,7 +36,7 @@ on:
         required: true
         default: full
       engines:
-        description: "default (each suite's own set), or space-separated engines (postgis tripletrail oxigraph qlever jena graphdb maplib; shacl also topbraid rdf4j pyshacl)"
+        description: "default (each suite's own set), or space-separated engines (postgis tripletrail oxigraph qlever jena graphdb maplib; tripletrail-ids = the id-column executor, only when named; shacl also topbraid rdf4j pyshacl)"
         required: true
         default: default
       machine:
