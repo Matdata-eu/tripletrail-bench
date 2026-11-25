@@ -86,7 +86,7 @@ def failure_reason(err, e):
 
 
 def update_endpoint(e, ep):
-    if e in ("tripletrail", "oxigraph", "jena", "maplib"):
+    if e in ("tripletrail", "tripletrail-ids", "oxigraph", "jena", "maplib"):
         return ep.rsplit("/query", 1)[0] + "/update"
     if e == "graphdb":
         return ep + "/statements"

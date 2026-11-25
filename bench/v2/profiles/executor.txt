@@ -1,0 +1,11 @@
+# The id-column executor against the default one (tripletrail#11): the suites its acceptance
+# criteria name, for engines "tripletrail tripletrail-ids maplib qlever" on a 64 GB server
+# (workflow suite=all, dataset=executor, machine=ccx43).
+# One job per line: <suite> <dataset> [KEY=VALUE ...] (environment for that job only).
+trainmarks medium
+trainmarks large
+trainmarks xlarge
+bsbm 2785
+bsbm 28480
+sparqloscope bsbm-2785
+sparqloscope rinf-0076

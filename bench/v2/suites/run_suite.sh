@@ -18,7 +18,7 @@ DEFAULT="tripletrail oxigraph qlever jena graphdb maplib"
 [ "$SUITE" = updates ] && DEFAULT="tripletrail oxigraph jena graphdb"
 [ "$SUITE" = shacl ] && DEFAULT="tripletrail jena topbraid graphdb rdf4j pyshacl"
 ENGINES=${*:-$DEFAULT}
-ALL="tripletrail oxigraph qlever jena graphdb maplib postgis"
+ALL="tripletrail tripletrail-ids oxigraph qlever jena graphdb maplib postgis"
 # The general suites need no spatial index.
 export GRAPHDB_NO_GEO=1
 mkdir -p "$V2/results/$SUITE"
