@@ -35,12 +35,6 @@ medium,q3_join_3_entities,maplib,6.837,6.948
 medium,q4_optional_aggregation,maplib,6.367,6.444
 medium,q5_construct,maplib,23.423,121.577
 medium,q6_delete_insert,maplib,8.543,
-medium,q1_count,tripletrail-ids,0.993,3.579
-medium,q2_customer_orders,tripletrail-ids,3.103,4.208
-medium,q3_join_3_entities,tripletrail-ids,1.653,1.818
-medium,q4_optional_aggregation,tripletrail-ids,2.922,3.31
-medium,q5_construct,tripletrail-ids,4.556,4.494
-medium,q6_delete_insert,tripletrail-ids,4.622,
 large,q1_count,tripletrail,1.235,2.536
 large,q2_customer_orders,tripletrail,12.026,15.014
 large,q3_join_3_entities,tripletrail,8.519,8.558
@@ -77,12 +71,6 @@ large,q3_join_3_entities,maplib,12.719,12.71
 large,q4_optional_aggregation,maplib,11.262,11.54
 large,q5_construct,maplib,44.556,156.937
 large,q6_delete_insert,maplib,11.003,
-large,q1_count,tripletrail-ids,1.027,3.549
-large,q2_customer_orders,tripletrail-ids,12.465,13.596
-large,q3_join_3_entities,tripletrail-ids,8.316,8.988
-large,q4_optional_aggregation,tripletrail-ids,14.114,15.063
-large,q5_construct,tripletrail-ids,41.184,41.354
-large,q6_delete_insert,tripletrail-ids,25.434,
 xlarge,q1_count,tripletrail,1.039,2.541
 xlarge,q2_customer_orders,tripletrail,82.857,90.958
 xlarge,q3_join_3_entities,tripletrail,31.697,30.828
@@ -119,9 +107,3 @@ xlarge,q3_join_3_entities,maplib,37.346,38.932
 xlarge,q4_optional_aggregation,maplib,32.351,33.74
 xlarge,q5_construct,maplib,246.892,366.021
 xlarge,q6_delete_insert,maplib,15.959,
-xlarge,q1_count,tripletrail-ids,1.016,3.423
-xlarge,q2_customer_orders,tripletrail-ids,82.975,88.255
-xlarge,q3_join_3_entities,tripletrail-ids,31.844,32.09
-xlarge,q4_optional_aggregation,tripletrail-ids,117.385,118.386
-xlarge,q5_construct,tripletrail-ids,419.218,402.484
-xlarge,q6_delete_insert,tripletrail-ids,100.447,

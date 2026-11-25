@@ -77,19 +77,6 @@ bsbm-2785,numeric,maplib,3.521
 bsbm-2785,filter / language,maplib,2.855
 bsbm-2785,date,maplib,3.029
 bsbm-2785,count,maplib,12.074
-bsbm-2785,join,tripletrail-ids,2.14
-bsbm-2785,optional,tripletrail-ids,2.179
-bsbm-2785,minus,tripletrail-ids,2.3
-bsbm-2785,exists,tripletrail-ids,1.935
-bsbm-2785,union,tripletrail-ids,2.096
-bsbm-2785,group by / distinct,tripletrail-ids,2.802
-bsbm-2785,property path,tripletrail-ids,1.483
-bsbm-2785,regex / string,tripletrail-ids,1.558
-bsbm-2785,result size,tripletrail-ids,12.909
-bsbm-2785,numeric,tripletrail-ids,3.649
-bsbm-2785,filter / language,tripletrail-ids,1.153
-bsbm-2785,date,tripletrail-ids,5.369
-bsbm-2785,count,tripletrail-ids,0.931
 rinf-0076,join,tripletrail,2.678
 rinf-0076,optional,tripletrail,3.935
 rinf-0076,minus,tripletrail,3.494
@@ -168,16 +155,3 @@ rinf-0076,numeric,maplib,2.48
 rinf-0076,filter / language,maplib,2.777
 rinf-0076,date,maplib,1.849
 rinf-0076,count,maplib,22.28
-rinf-0076,join,tripletrail-ids,2.719
-rinf-0076,optional,tripletrail-ids,4.034
-rinf-0076,minus,tripletrail-ids,3.568
-rinf-0076,exists,tripletrail-ids,3.584
-rinf-0076,union,tripletrail-ids,2.533
-rinf-0076,group by / distinct,tripletrail-ids,3.273
-rinf-0076,property path,tripletrail-ids,4.177
-rinf-0076,regex / string,tripletrail-ids,3.408
-rinf-0076,result size,tripletrail-ids,26.659
-rinf-0076,numeric,tripletrail-ids,1.359
-rinf-0076,filter / language,tripletrail-ids,1.492
-rinf-0076,date,tripletrail-ids,0.892
-rinf-0076,count,tripletrail-ids,0.832

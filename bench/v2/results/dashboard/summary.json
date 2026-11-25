@@ -156,10 +156,6 @@
      "qlever": {
       "value": 6.077,
       "speedup": 2.4
-     },
-     "tripletrail-ids": {
-      "value": 2.309,
-      "speedup": 0.91
      }
     }
    },
@@ -187,10 +183,6 @@
      "qlever": {
       "value": 10.428,
       "speedup": 3.42
-     },
-     "tripletrail-ids": {
-      "value": 3.015,
-      "speedup": 0.99
      }
     }
    }
@@ -220,10 +212,6 @@
      "qlever": {
       "value": 20895.3,
       "speedup": 3.13
-     },
-     "tripletrail-ids": {
-      "value": 65347.23,
-      "speedup": 1.0
      }
     }
    },
@@ -251,10 +239,6 @@
      "qlever": {
       "value": 6429.58,
       "speedup": 25.41
-     },
-     "tripletrail-ids": {
-      "value": 188933.45,
-      "speedup": 0.86
      }
     }
    },
@@ -278,10 +262,6 @@
      "oxigraph": {
       "value": 29194.27,
       "speedup": 3.24
-     },
-     "tripletrail-ids": {
-      "value": 102681.46,
-      "speedup": 0.92
      }
     }
    },
@@ -309,10 +289,6 @@
      "qlever": {
       "value": 4791.0,
       "speedup": 6.05
-     },
-     "tripletrail-ids": {
-      "value": 31234.3,
-      "speedup": 0.93
      }
     }
    },
@@ -340,10 +316,6 @@
      "qlever": {
       "value": 6756.24,
       "speedup": 19.7
-     },
-     "tripletrail-ids": {
-      "value": 143728.51,
-      "speedup": 0.93
      }
     }
    },
@@ -367,10 +339,6 @@
      "oxigraph": {
       "value": 12595.69,
       "speedup": 6.34
-     },
-     "tripletrail-ids": {
-      "value": 89854.31,
-      "speedup": 0.89
      }
     }
    }
@@ -400,10 +368,6 @@
      "qlever": {
       "value": 1.257,
       "speedup": 2.23
-     },
-     "tripletrail-ids": {
-      "value": 0.587,
-      "speedup": 1.04
      }
     }
    },
@@ -431,10 +395,6 @@
      "qlever": {
       "value": 0.917,
       "speedup": 1.65
-     },
-     "tripletrail-ids": {
-      "value": 0.558,
-      "speedup": 1.0
      }
     }
    },
@@ -462,10 +422,6 @@
      "qlever": {
       "value": 9.13,
       "speedup": 2.42
-     },
-     "tripletrail-ids": {
-      "value": 3.775,
-      "speedup": 1.0
      }
     }
    }
