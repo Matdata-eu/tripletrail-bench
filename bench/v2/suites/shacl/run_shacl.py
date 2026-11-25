@@ -29,6 +29,7 @@ import argparse
 import glob
 import json
 import os
+import re
 import shutil
 import statistics
 import subprocess
@@ -96,15 +97,29 @@ def setup():
     print("engines ready in", ENG)
 
 
+def error_line(log, code):
+    """The line of an engine's log that names its error: the first Java exception or error (not
+    the last line of a stack trace), else the last line."""
+    lines = open(log, errors="replace").read().strip().splitlines()
+    for line in lines:
+        if re.search(r"(Exception|Error)\b", line) and not line.lstrip().startswith("at "):
+            return line.strip()[:300]
+    return lines[-1].strip()[:300] if lines else f"exit {code}"
+
+
 def engine_env():
     """The environment run_phase0's commands read, pointing at the engines of setup()."""
     heap = os.environ.get("JAVA_HEAP", "48g")
+    stack = os.environ.get("JAVA_STACK", "1g")
     env = {
         "JENA_HOME": os.path.join(ENG, JENA[0]),
         "TOPBRAID_HOME": os.path.join(ENG, TOPBRAID[0]),
         "RDF4J_JAR": os.path.join(ENG, "rdf4j-shacl-validate.jar"),
         "JAVA_HEAP": heap,
-        "JVM_ARGS": f"-Xmx{heap}",
+        # A deep thread stack: java.util.regex recurses once per repetition, so a sh:pattern on a
+        # long literal (all of RINF has some) overflows the default 1 MB stack.
+        "JAVA_STACK": stack,
+        "JVM_ARGS": f"-Xmx{heap} -Xss{stack}",
         "GRAPHDB_HEAP": os.environ.get("GRAPHDB_HEAP", heap),
         "PATH": os.path.join(ENG, "py", "bin") + os.pathsep + os.environ["PATH"],
     }
@@ -203,8 +218,7 @@ def run_one(engine, data, shapes, out):
         rec["report_bytes"] = os.path.getsize(report)
         rec.update(run_phase0.count_report(report))
     if "results" not in rec:
-        tail = open(os.path.join(out, f"{engine}.log")).read().strip().splitlines()
-        rec["error"] = "timed out" if rec["timed_out"] else (tail[-1][:300] if tail else f"exit {rec['exit']}")
+        rec["error"] = "timed out" if rec["timed_out"] else error_line(os.path.join(out, f"{engine}.log"), rec["exit"])
     # The report holds RINF values: it is not kept once counted.
     if os.path.exists(report):
         os.remove(report)
@@ -280,6 +294,13 @@ def fmt(x, d=1):
     return "" if x is None else f"{x:,.{d}f}"
 
 
+def results_cell(r):
+    """Results, and the distinct result keys when fewer: an engine can give several results with
+    the same key (another value or message of one focus node and path)."""
+    d = r.get("distinct_results")
+    return f"{r['results']:,}" + (f" ({d:,} distinct)" if d is not None and d != r["results"] else "")
+
+
 def report():
     out = ["# SHACL validation suite", "",
            "The ERA RINF shapes on RINF data, in three profiles (`suites/shacl/run_shacl.py`): `core` is "
@@ -287,7 +308,8 @@ def report():
            "published. Time is the whole command (median of 3 runs when under "
            f"{REPEAT_BELOW:.0f} s), validation is the engine's own validation time where it logs one. Same "
            "results compares the sorted result keys (focus node, path, constraint component, severity) with "
-           "TopBraid's and with the majority's.", ""]
+           "TopBraid's and with the majority's; results shows the distinct keys too when an engine gives "
+           "several results with one key.", ""]
     for d in sorted(glob.glob(os.path.join(RESULTS, "*", "data.json"))):
         ds_dir = os.path.dirname(d)
         meta = json.load(open(d))
@@ -314,7 +336,7 @@ def report():
                 sev = r.get("by_severity", {})
                 a = agree.get(e, ("", ""))
                 out.append(f"| {e} | {fmt(r['wall_s'])} | {fmt(r.get('validate_s'))} | "
-                           f"{fmt(r['peak_rss_bytes'] / 2**20, 0)} | {r['results']:,} | {sev.get('Violation', 0):,} | "
+                           f"{fmt(r['peak_rss_bytes'] / 2**20, 0)} | {results_cell(r)} | {sev.get('Violation', 0):,} | "
                            f"{sev.get('Warning', 0):,} | {a[0]} | {a[1]} |")
             out.append("")
     notes = os.path.join(RESULTS, "notes.md")
