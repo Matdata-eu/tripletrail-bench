@@ -76,7 +76,10 @@ On the Benchmarks workflow: suite `all`, dataset `shacl` (one server for the thr
 - **Agreement**: the result keys of each engine are compared with TopBraid's and with the
   majority's (the hash most engines share). An engine can give several results with one key
   (another value or message for the same focus node and path); the report then shows the distinct
-  keys beside the results.
+  keys beside the results. TripleTrail gives identical results once (tripletrail#91, as pySHACL
+  does), while Jena and TopBraid give one per solution of a SPARQL constraint: on Germany
+  a `UNION` of `era:isPartOf` and `era:hasPart` finds the same track twice, so Jena and TopBraid
+  report 947,629 results where TripleTrail reports 894,300, with the same distinct results.
 - **Errors**: a failed engine's error is the class of its first exception (or our script's own
   message), never the exception's message, which can quote RINF values.
 - **Output**: `results/shacl/<dataset>/<profile>/<engine>.json`, `results/shacl/<dataset>/data.json`
