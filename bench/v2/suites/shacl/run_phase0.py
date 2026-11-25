@@ -46,7 +46,7 @@ def commands(data, shapes, report):
         "topbraid": (["sh", f"{tq}/bin/shaclvalidate.sh", "-datafile", data, "-shapesfile", shapes], report),
         "pyshacl": (["pyshacl", "-a", "-s", shapes, "-f", "turtle", "-o", report, data], None),
         "graphdb": (["bash", os.path.join(HERE, "graphdb_validate.sh"), data, shapes, report], None),
-        "rdf4j": (["java", f"-Xmx{os.environ.get('JAVA_HEAP', '12g')}", "-jar", os.environ.get(
+        "rdf4j": (["java", f"-Xmx{os.environ.get('JAVA_HEAP', '12g')}", f"-Xss{os.environ.get('JAVA_STACK', '1g')}", "-jar", os.environ.get(
             "RDF4J_JAR", os.path.join(HERE, "rdf4j", "target", "rdf4j-shacl-validate.jar")), data, shapes, report], None),
     }
 

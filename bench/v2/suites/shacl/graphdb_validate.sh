@@ -7,7 +7,7 @@
 # then adds the shapes to RDF4J's shapes graph in one transaction: GraphDB (RDF4J's ShaclSail
 # inside) validates all the data then, and refuses the transaction with the report when the data
 # does not conform. Writes the report (or a conforming one) and exits 1 when it does not
-# conform, 0 when it does, 2 on an error. Env: GRAPHDB_IMAGE, GRAPHDB_HEAP (default 8g).
+# conform, 0 when it does, 2 on an error. Env: GRAPHDB_IMAGE, GRAPHDB_HEAP (default 8g), JAVA_STACK (default 1g).
 set -euo pipefail
 HERE=$(cd "$(dirname "$0")" && pwd)
 IMAGE=${GRAPHDB_IMAGE:-mirror.gcr.io/ontotext/graphdb:10.8.0}
@@ -20,14 +20,15 @@ DATA=$(realpath "$1") SHAPES=$(realpath "$2") REPORT=$3
 case "$DATA" in *.nt) TYPE=application/n-triples ;; *) TYPE=text/turtle ;; esac
 docker rm -f $NAME >/dev/null 2>&1 || true
 docker run -d --name $NAME -p $PORT:7200 \
-  -e GDB_JAVA_OPTS="-Xms$HEAP -Xmx$HEAP" "$IMAGE" >/dev/null
+  -e GDB_JAVA_OPTS="-Xms$HEAP -Xmx$HEAP -Xss${JAVA_STACK:-1g}" "$IMAGE" >/dev/null
 trap 'docker rm -f $NAME >/dev/null 2>&1 || true' EXIT
 for _ in $(seq 1 300); do curl -sf "$BASE/rest/repositories" >/dev/null 2>&1 && break; sleep 1; done
 curl -sSf -X POST "$BASE/rest/repositories" -F "config=@$HERE/graphdb-repo.ttl" >/dev/null || exit 2
 
 t0=$(date +%s.%N)
+# -T streams the file; --data-binary reads it into memory first and fails above 2 GB.
 curl -sSf -X POST "$BASE/repositories/shacl/statements" -H "Content-Type: $TYPE" \
-  --data-binary "@$DATA" >/dev/null || { echo "graphdb: loading the data failed" >&2; exit 2; }
+  -T "$DATA" >/dev/null || { echo "graphdb: loading the data failed" >&2; exit 2; }
 t1=$(date +%s.%N)
 code=$(curl -s -o "$REPORT.body" -w '%{http_code}' -X POST \
   "$BASE/repositories/shacl/statements?context=%3Chttp%3A%2F%2Frdf4j.org%2Fschema%2Frdf4j%23SHACLShapeGraph%3E" \
