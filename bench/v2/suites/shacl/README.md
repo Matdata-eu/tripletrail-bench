@@ -60,7 +60,9 @@ On the Benchmarks workflow: suite `all`, dataset `shacl` (one server for the thr
   downloaded and checked against their SHA-256, rdflib and pySHACL in a venv, and the RDF4J jar
   built in a Maven container (the bench server has Java 21 but no Maven). GraphDB is its Docker
   image. TripleTrail is the core build of the run. `JAVA_HEAP` (48g) sets the JVMs' heap and
-  `GRAPHDB_HEAP` GraphDB's.
+  `GRAPHDB_HEAP` GraphDB's. `JAVA_STACK` (1g) sets every JVM's thread stack: Java's regular
+  expressions recurse once per repeated character, and with the default 1 MB a `sh:pattern` on a
+  long literal in all of RINF ends in a `StackOverflowError` in Jena, TopBraid and RDF4J alike.
 - **Profiles**, made from the pinned shapes at run time: `core` drops every SPARQL constraint and
   SPARQL target (SHACL Core only); `era-local` unlinks the 5 SPARQL constraints and 2 property
   shapes ERA marks `era:scope "global"`, which need the whole network; `era` is the shapes as
@@ -72,7 +74,11 @@ On the Benchmarks workflow: suite `all`, dataset `shacl` (one server for the thr
   on M and L after failing on S). TripleTrail, GraphDB and RDF4J also log their
   validation time apart from loading.
 - **Agreement**: the result keys of each engine are compared with TopBraid's and with the
-  majority's (the hash most engines share).
+  majority's (the hash most engines share). An engine can give several results with one key
+  (another value or message for the same focus node and path); the report then shows the distinct
+  keys beside the results.
+- **Errors**: a failed engine's error is the class of its first exception (or our script's own
+  message), never the exception's message, which can quote RINF values.
 - **Output**: `results/shacl/<dataset>/<profile>/<engine>.json`, `results/shacl/<dataset>/data.json`
   and `results/shacl/report.md`. Reports are counted and deleted in the work directory.
 

@@ -97,14 +97,24 @@ def setup():
     print("engines ready in", ENG)
 
 
+# Exception messages that cannot hold data. Any other message is left out: Java and Python
+# messages quote the literal or IRI they failed on, and the results are public.
+SAFE_MESSAGES = ("java.lang.OutOfMemoryError: Java heap space",)
+
+
 def error_line(log, code):
-    """The line of an engine's log that names its error: the first Java exception or error (not
-    the last line of a stack trace), else the last line."""
-    lines = open(log, errors="replace").read().strip().splitlines()
-    for line in lines:
-        if re.search(r"(Exception|Error)\b", line) and not line.lstrip().startswith("at "):
-            return line.strip()[:300]
-    return lines[-1].strip()[:300] if lines else f"exit {code}"
+    """What a failed engine's log says went wrong, without data: the class of its first exception
+    or error (as `Exception in thread "main" X`, `Caused by: X` or a line starting with X), or our
+    own scripts' `graphdb: ...` line, else the exit code."""
+    cls = re.compile(r"^(?:Exception in thread \"[^\"]*\" |Caused by: )?([\w.$]+(?:Exception|Error))\b")
+    for line in open(log, errors="replace").read().splitlines():
+        line = line.strip()
+        if line.startswith("graphdb: "):
+            return line[:120]
+        m = cls.match(line)
+        if m:
+            return next((s for s in SAFE_MESSAGES if s in line), m.group(1))
+    return f"exit {code}"
 
 
 def engine_env():
