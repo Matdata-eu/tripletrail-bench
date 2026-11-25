@@ -1,0 +1,33 @@
+{"products":28480,"triples":9609918}
+=== bsbm 28480 on tripletrail (2026-11-25T13:10:33+00:00)
+loading bsbm-28480 into tripletrail
+tripletrail bsbm-28480 explore
+  QMpH 133123.97
+tripletrail bsbm-28480 bi
+  QMpH 28973.25
+tripletrail bsbm-28480 update
+  QMpH 79867.7
+=== bsbm 28480 on qlever (2026-11-25T13:10:57+00:00)
+loading bsbm-28480 into qlever
+qlever bsbm-28480 explore
+  QMpH 6756.24
+qlever bsbm-28480 bi
+  QMpH 4791.0
+=== bsbm 28480 on maplib (2026-11-25T13:12:30+00:00)
+loading bsbm-28480 into maplib
+maplib bsbm-28480 explore
+  QMpH 7471.15
+maplib bsbm-28480 bi
+  QMpH 23176.7
+maplib bsbm-28480 update
+  QMpH 1168.1
+=== bsbm 28480 on tripletrail-ids (2026-11-25T13:15:55+00:00)
+loading bsbm-28480 into tripletrail-ids
+tripletrail-ids bsbm-28480 explore
+  QMpH 143728.51
+tripletrail-ids bsbm-28480 bi
+  QMpH 31234.3
+tripletrail-ids bsbm-28480 update
+  QMpH 89854.31
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/bsbm/report.md
+=== done (2026-11-25T13:16:19+00:00)

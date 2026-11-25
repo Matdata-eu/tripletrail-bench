@@ -1,0 +1,83 @@
+Unable to find image 'mirror.gcr.io/library/python:3.12-slim' locally
+3.12-slim: Pulling from library/python
+30cf67d7101c: Pulling fs layer
+286d8c291daa: Pulling fs layer
+40748add9f4f: Pulling fs layer
+e3e428093f5e: Pulling fs layer
+286d8c291daa: Download complete
+21a336b2ac9e: Download complete
+111e8faa2bc5: Download complete
+30cf67d7101c: Download complete
+e3e428093f5e: Download complete
+40748add9f4f: Download complete
+40748add9f4f: Pull complete
+30cf67d7101c: Pull complete
+286d8c291daa: Pull complete
+e3e428093f5e: Pull complete
+Digest: sha256:191083cdf6c7bda8c76158983163ead5d5cf7b77cf3033e805bb0f5296f51b4b
+Status: Downloaded newer image for mirror.gcr.io/library/python:3.12-slim
+Generating medium dataset (~100K triples)...
+  Generated 98000 triples in 0.07s
+  Wrote medium.ttl in 0.02s
+  Wrote medium.nt in 0.15s
+
+Generating large dataset (~1M triples)...
+  Generated 1001000 triples in 0.72s
+  Wrote large.ttl in 0.15s
+  Wrote large.nt in 1.57s
+
+Generating xlarge dataset (~10M triples)...
+  Generated 9995000 triples in 7.23s
+  Wrote xlarge.ttl in 1.46s
+  Wrote xlarge.nt in 15.69s
+
+Wrote 6 SPARQL queries to queries/
+
+File sizes:
+  data/medium.ttl: 3.6 MB
+  data/medium.nt: 10.9 MB
+  data/large.ttl: 36.9 MB
+  data/large.nt: 111.6 MB
+  data/xlarge.ttl: 368.7 MB
+  data/xlarge.nt: 1114.8 MB
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/data/trainmarks-medium.nt: 98000 triples
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/data/trainmarks-large.nt: 1001000 triples
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/data/trainmarks-xlarge.nt: 9995000 triples
+=== trainmarks medium on tripletrail (2026-11-25T13:05:38+00:00)
+loading trainmarks-medium into tripletrail
+tripletrail medium q1_count: 1.134 ms
+tripletrail medium q2_customer_orders: 3.303 ms
+tripletrail medium q3_join_3_entities: 1.731 ms
+tripletrail medium q4_optional_aggregation: 3.246 ms
+tripletrail medium q5_construct: 6.534 ms
+tripletrail medium q6_delete_insert: {'status': 'ok', 'ms': 4.616}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/medium/tripletrail.json
+=== trainmarks medium on qlever (2026-11-25T13:05:41+00:00)
+loading trainmarks-medium into qlever
+qlever medium q1_count: 1.963 ms
+qlever medium q2_customer_orders: 10.065 ms
+qlever medium q3_join_3_entities: 22.149 ms
+qlever medium q4_optional_aggregation: 13.876 ms
+qlever medium q5_construct: 22.463 ms
+qlever medium q6_delete_insert: {'status': 'ok', 'ms': 10.742}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/medium/qlever.json
+=== trainmarks medium on maplib (2026-11-25T13:05:48+00:00)
+loading trainmarks-medium into maplib
+maplib medium q1_count: 1.434 ms
+maplib medium q2_customer_orders: 4.263 ms
+maplib medium q3_join_3_entities: 6.837 ms
+maplib medium q4_optional_aggregation: 6.367 ms
+maplib medium q5_construct: 23.423 ms
+maplib medium q6_delete_insert: {'status': 'ok', 'ms': 8.543}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/medium/maplib.json
+=== trainmarks medium on tripletrail-ids (2026-11-25T13:06:15+00:00)
+loading trainmarks-medium into tripletrail-ids
+tripletrail-ids medium q1_count: 0.993 ms
+tripletrail-ids medium q2_customer_orders: 3.103 ms
+tripletrail-ids medium q3_join_3_entities: 1.653 ms
+tripletrail-ids medium q4_optional_aggregation: 2.922 ms
+tripletrail-ids medium q5_construct: 4.556 ms
+tripletrail-ids medium q6_delete_insert: {'status': 'ok', 'ms': 4.622}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/medium/tripletrail-ids.json
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/report.md
+=== done (2026-11-25T13:06:18+00:00)

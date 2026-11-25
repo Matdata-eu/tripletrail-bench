@@ -1,0 +1,127 @@
+{
+ "run": "45618838119",
+ "request": "all executor",
+ "engines": "tripletrail tripletrail-ids maplib qlever",
+ "machine": "ccx43",
+ "commit": "7c161bf8db07f5ea5ad1dfdf1d803718eb07d4d0",
+ "started": "2026-11-25T13:05:06+00:00",
+ "finished": "2026-11-25T13:18:29+00:00",
+ "env": {
+  "cpu": "AMD EPYC-Milan Processor",
+  "cpus": 16,
+  "memory": "64291344 kB",
+  "kernel": "6.8.0-147-generic",
+  "disk_free": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/sda1       338G   16G  309G   5% /",
+  "tripletrail_commit": "7c161bf8db07f5ea5ad1dfdf1d803718eb07d4d0",
+  "bench_commit": "1a786d0f523894cdac5e2c7dd58b0eac379dfcce",
+  "postgres": "psql (PostgreSQL) 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1)",
+  "postgis": "dpkg-query: no packages found matching postgresql-16-postgis-3\ndpkg-query: no packages found matching postgresql-16-pgrouting",
+  "docker": "29.1.3",
+  "graphdb_image": "Error response from daemon: No such image: mirror.gcr.io/ontotext/graphdb:10.8.0",
+  "qlever_image": "sha256:22bada6032ee54e80aabd94b745143f9e753ecc5921b2e2f3bd0796e75eb8c94 commit-ba7b74ccb0",
+  "oxigraph_image": "Error response from daemon: No such image: ghcr.io/oxigraph/oxigraph:0.5.13",
+  "java": "openjdk version \"21.0.13.1\" 2026-11-17\nOpenJDK Runtime Environment (build 21.0.13.1+2-1-24.04.1-Ubuntu)\nOpenJDK 64-Bit Server VM (build 21.0.13.1+2-1-24.04.1-Ubuntu, mixed mode, sharing)",
+  "jena_jar": "jena-fuseki-geosparql-6.2.0.jar"
+ },
+ "jobs": [
+  {
+   "suite": "trainmarks",
+   "dataset": "medium",
+   "engines": [
+    "tripletrail",
+    "qlever",
+    "maplib",
+    "tripletrail-ids"
+   ],
+   "status": "ok",
+   "seconds": 72,
+   "finished": "2026-11-25T13:06:18+00:00",
+   "log": "45618838119-trainmarks-medium.log"
+  },
+  {
+   "suite": "trainmarks",
+   "dataset": "large",
+   "engines": [
+    "tripletrail",
+    "qlever",
+    "maplib",
+    "tripletrail-ids"
+   ],
+   "status": "ok",
+   "seconds": 15,
+   "finished": "2026-11-25T13:06:33+00:00",
+   "log": "45618838119-trainmarks-large.log"
+  },
+  {
+   "suite": "trainmarks",
+   "dataset": "xlarge",
+   "engines": [
+    "tripletrail",
+    "qlever",
+    "maplib",
+    "tripletrail-ids"
+   ],
+   "status": "ok",
+   "seconds": 84,
+   "finished": "2026-11-25T13:07:57+00:00",
+   "log": "45618838119-trainmarks-xlarge.log"
+  },
+  {
+   "suite": "bsbm",
+   "dataset": "2785",
+   "engines": [
+    "tripletrail",
+    "qlever",
+    "maplib",
+    "tripletrail-ids"
+   ],
+   "status": "ok",
+   "seconds": 140,
+   "finished": "2026-11-25T13:10:17+00:00",
+   "log": "45618838119-bsbm-2785.log"
+  },
+  {
+   "suite": "bsbm",
+   "dataset": "28480",
+   "engines": [
+    "tripletrail",
+    "qlever",
+    "maplib",
+    "tripletrail-ids"
+   ],
+   "status": "ok",
+   "seconds": 362,
+   "finished": "2026-11-25T13:16:19+00:00",
+   "log": "45618838119-bsbm-28480.log"
+  },
+  {
+   "suite": "sparqloscope",
+   "dataset": "bsbm-2785",
+   "engines": [
+    "tripletrail",
+    "qlever",
+    "maplib",
+    "tripletrail-ids"
+   ],
+   "status": "ok",
+   "seconds": 19,
+   "finished": "2026-11-25T13:16:38+00:00",
+   "log": "45618838119-sparqloscope-bsbm-2785.log"
+  },
+  {
+   "suite": "sparqloscope",
+   "dataset": "rinf-0076",
+   "engines": [
+    "tripletrail",
+    "qlever",
+    "maplib",
+    "tripletrail-ids"
+   ],
+   "status": "ok",
+   "seconds": 111,
+   "finished": "2026-11-25T13:18:29+00:00",
+   "log": "45618838119-sparqloscope-rinf-0076.log"
+  }
+ ],
+ "workflow_run": "https://github.com/Matdata-eu/tripletrail-bench/actions/runs/45618838119"
+}

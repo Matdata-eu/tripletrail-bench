@@ -1,0 +1,38 @@
+=== trainmarks large on tripletrail (2026-11-25T13:06:18+00:00)
+loading trainmarks-large into tripletrail
+tripletrail large q1_count: 1.235 ms
+tripletrail large q2_customer_orders: 12.026 ms
+tripletrail large q3_join_3_entities: 8.519 ms
+tripletrail large q4_optional_aggregation: 13.714 ms
+tripletrail large q5_construct: 76.541 ms
+tripletrail large q6_delete_insert: {'status': 'ok', 'ms': 25.701}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/large/tripletrail.json
+=== trainmarks large on qlever (2026-11-25T13:06:22+00:00)
+loading trainmarks-large into qlever
+qlever large q1_count: 2.125 ms
+qlever large q2_customer_orders: 29.142 ms
+qlever large q3_join_3_entities: 26.887 ms
+qlever large q4_optional_aggregation: 38.323 ms
+qlever large q5_construct: 117.652 ms
+qlever large q6_delete_insert: {'status': 'ok', 'ms': 11.681}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/large/qlever.json
+=== trainmarks large on maplib (2026-11-25T13:06:27+00:00)
+loading trainmarks-large into maplib
+maplib large q1_count: 1.511 ms
+maplib large q2_customer_orders: 7.593 ms
+maplib large q3_join_3_entities: 12.719 ms
+maplib large q4_optional_aggregation: 11.262 ms
+maplib large q5_construct: 44.556 ms
+maplib large q6_delete_insert: {'status': 'ok', 'ms': 11.003}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/large/maplib.json
+=== trainmarks large on tripletrail-ids (2026-11-25T13:06:29+00:00)
+loading trainmarks-large into tripletrail-ids
+tripletrail-ids large q1_count: 1.027 ms
+tripletrail-ids large q2_customer_orders: 12.465 ms
+tripletrail-ids large q3_join_3_entities: 8.316 ms
+tripletrail-ids large q4_optional_aggregation: 14.114 ms
+tripletrail-ids large q5_construct: 41.184 ms
+tripletrail-ids large q6_delete_insert: {'status': 'ok', 'ms': 25.434}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/large/tripletrail-ids.json
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/report.md
+=== done (2026-11-25T13:06:33+00:00)

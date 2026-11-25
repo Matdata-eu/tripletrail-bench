@@ -6,61 +6,61 @@
  "queries": {
   "q1_count": {
    "runs": [
-    8.066,
-    4.385,
-    3.911,
-    3.828,
-    3.887,
-    3.712,
-    3.763
+    5.753,
+    1.764,
+    1.512,
+    1.557,
+    1.473,
+    1.511,
+    1.459
    ],
    "rows": 1,
    "first_row": [
     "1001000"
    ],
    "status": "ok",
-   "cold_ms": 8.066,
+   "cold_ms": 5.753,
    "warm": {
     "n": 5,
-    "median_ms": 3.828,
-    "min_ms": 3.712,
-    "max_ms": 3.911
+    "median_ms": 1.511,
+    "min_ms": 1.459,
+    "max_ms": 1.557
    }
   },
   "q2_customer_orders": {
    "runs": [
-    23.821,
-    20.557,
-    18.404,
-    18.672,
-    19.551,
-    18.638,
-    17.559
+    10.301,
+    7.884,
+    8.261,
+    7.829,
+    7.593,
+    7.372,
+    6.837
    ],
    "rows": 20,
    "first_row": [
     "Eve Andersen",
     "663",
-    "1723710.6300000001"
+    "1723710.6300000004"
    ],
    "status": "ok",
-   "cold_ms": 23.821,
+   "cold_ms": 10.301,
    "warm": {
     "n": 5,
-    "median_ms": 18.638,
-    "min_ms": 17.559,
-    "max_ms": 19.551
+    "median_ms": 7.593,
+    "min_ms": 6.837,
+    "max_ms": 8.261
    }
   },
   "q3_join_3_entities": {
    "runs": [
-    33.564,
-    34.296,
-    31.589,
-    33.442,
-    33.174,
-    33.669,
-    33.17
+    12.71,
+    13.441,
+    12.94,
+    13.052,
+    12.719,
+    12.63,
+    12.696
    ],
    "rows": 50,
    "first_row": [
@@ -70,23 +70,23 @@
     "completed"
    ],
    "status": "ok",
-   "cold_ms": 33.564,
+   "cold_ms": 12.71,
    "warm": {
     "n": 5,
-    "median_ms": 33.174,
-    "min_ms": 31.589,
-    "max_ms": 33.669
+    "median_ms": 12.719,
+    "min_ms": 12.63,
+    "max_ms": 13.052
    }
   },
   "q4_optional_aggregation": {
    "runs": [
-    27.615,
-    27.372,
-    27.32,
-    27.701,
-    28.217,
-    27.664,
-    28.638
+    11.54,
+    11.093,
+    10.842,
+    11.262,
+    11.265,
+    11.307,
+    11.078
    ],
    "rows": 50,
    "first_row": [
@@ -96,49 +96,49 @@
     "3085"
    ],
    "status": "ok",
-   "cold_ms": 27.615,
+   "cold_ms": 11.54,
    "warm": {
     "n": 5,
-    "median_ms": 27.701,
-    "min_ms": 27.32,
-    "max_ms": 28.638
+    "median_ms": 11.262,
+    "min_ms": 10.842,
+    "max_ms": 11.307
    }
   },
   "q5_construct": {
    "runs": [
-    254.161,
-    111.728,
-    103.533,
-    104.953,
-    116.54,
-    101.744,
-    97.969
+    156.937,
+    49.257,
+    44.54,
+    45.915,
+    44.556,
+    45.694,
+    43.667
    ],
    "rows": 43091,
    "first_row": [
     "<http://benchmark.example/C000003> <http://benchmark.example/country> <http://benchmark.example/Norway> ."
    ],
    "status": "ok",
-   "cold_ms": 254.161,
+   "cold_ms": 156.937,
    "warm": {
     "n": 5,
-    "median_ms": 103.533,
-    "min_ms": 97.969,
-    "max_ms": 116.54
+    "median_ms": 44.556,
+    "min_ms": 43.667,
+    "max_ms": 45.915
    }
   },
   "q6_delete_insert": {
    "status": "ok",
-   "ms": 19.109
+   "ms": 11.003
   }
  },
  "load": {
   "engine": "maplib",
   "dataset": "trainmarks-large",
-  "load_s": 0.353,
-  "start_s": 0.68,
+  "load_s": 0.273,
+  "start_s": 0.48,
   "disk_bytes": 0,
-  "load_peak_rss_bytes": 434143232,
+  "load_peak_rss_bytes": 459513856,
   "in_memory": true
  }
 }

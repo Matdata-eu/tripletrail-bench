@@ -6,36 +6,36 @@
  "queries": {
   "q1_count": {
    "runs": [
-    10.039,
-    5.17,
-    5.799,
-    5.578,
-    5.629,
-    5.349,
-    5.319
+    4.506,
+    2.054,
+    2.179,
+    1.779,
+    1.804,
+    1.963,
+    1.993
    ],
    "rows": 1,
    "first_row": [
     "98000"
    ],
    "status": "ok",
-   "cold_ms": 10.039,
+   "cold_ms": 4.506,
    "warm": {
     "n": 5,
-    "median_ms": 5.578,
-    "min_ms": 5.319,
-    "max_ms": 5.799
+    "median_ms": 1.963,
+    "min_ms": 1.779,
+    "max_ms": 2.179
    }
   },
   "q2_customer_orders": {
    "runs": [
-    40.789,
-    30.529,
-    30.744,
-    29.518,
-    26.987,
-    26.832,
-    25.726
+    14.414,
+    10.016,
+    10.171,
+    10.463,
+    10.065,
+    9.938,
+    10.016
    ],
    "rows": 20,
    "first_row": [
@@ -44,23 +44,23 @@
     "295454.07"
    ],
    "status": "ok",
-   "cold_ms": 40.789,
+   "cold_ms": 14.414,
    "warm": {
     "n": 5,
-    "median_ms": 26.987,
-    "min_ms": 25.726,
-    "max_ms": 30.744
+    "median_ms": 10.065,
+    "min_ms": 9.938,
+    "max_ms": 10.463
    }
   },
   "q3_join_3_entities": {
    "runs": [
-    39.78,
-    31.134,
-    30.739,
-    30.306,
-    29.66,
-    29.282,
-    30.47
+    23.705,
+    22.572,
+    22.53,
+    22.149,
+    21.624,
+    21.256,
+    22.162
    ],
    "rows": 50,
    "first_row": [
@@ -70,23 +70,23 @@
     "completed"
    ],
    "status": "ok",
-   "cold_ms": 39.78,
+   "cold_ms": 23.705,
    "warm": {
     "n": 5,
-    "median_ms": 30.306,
-    "min_ms": 29.282,
-    "max_ms": 30.739
+    "median_ms": 22.149,
+    "min_ms": 21.256,
+    "max_ms": 22.53
    }
   },
   "q4_optional_aggregation": {
    "runs": [
-    21.51,
-    19.941,
-    19.914,
-    20.162,
-    19.887,
-    20.034,
-    20.08
+    15.05,
+    14.086,
+    13.876,
+    13.696,
+    13.737,
+    13.992,
+    14.17
    ],
    "rows": 50,
    "first_row": [
@@ -96,47 +96,47 @@
     "347"
    ],
    "status": "ok",
-   "cold_ms": 21.51,
+   "cold_ms": 15.05,
    "warm": {
     "n": 5,
-    "median_ms": 20.034,
-    "min_ms": 19.887,
-    "max_ms": 20.162
+    "median_ms": 13.876,
+    "min_ms": 13.696,
+    "max_ms": 14.17
    }
   },
   "q5_construct": {
    "runs": [
-    33.643,
-    31.792,
-    30.855,
-    31.937,
-    30.717,
-    61.13,
-    61.306
+    23.025,
+    24.129,
+    22.115,
+    22.816,
+    22.828,
+    22.373,
+    22.463
    ],
    "rows": 3878,
    "first_row": [
     "<http://benchmark.example/C000004> <http://benchmark.example/country> <http://benchmark.example/Norway> ."
    ],
    "status": "ok",
-   "cold_ms": 33.643,
+   "cold_ms": 23.025,
    "warm": {
     "n": 5,
-    "median_ms": 31.937,
-    "min_ms": 30.717,
-    "max_ms": 61.306
+    "median_ms": 22.463,
+    "min_ms": 22.115,
+    "max_ms": 22.828
    }
   },
   "q6_delete_insert": {
    "status": "ok",
-   "ms": 28.75
+   "ms": 10.742
   }
  },
  "load": {
   "engine": "qlever",
   "dataset": "trainmarks-medium",
-  "load_s": 1.027,
-  "start_s": 0.487,
+  "load_s": 0.917,
+  "start_s": 0.236,
   "disk_bytes": 1666105
  }
 }

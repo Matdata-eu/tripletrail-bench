@@ -6,36 +6,36 @@
  "queries": {
   "q1_count": {
    "runs": [
-    4.833,
-    3.118,
-    2.464,
-    2.524,
-    2.339,
-    2.787,
-    2.373
+    2.599,
+    1.157,
+    1.176,
+    1.313,
+    1.134,
+    0.952,
+    1.015
    ],
    "rows": 1,
    "first_row": [
     "98000"
    ],
    "status": "ok",
-   "cold_ms": 4.833,
+   "cold_ms": 2.599,
    "warm": {
     "n": 5,
-    "median_ms": 2.464,
-    "min_ms": 2.339,
-    "max_ms": 2.787
+    "median_ms": 1.134,
+    "min_ms": 0.952,
+    "max_ms": 1.313
    }
   },
   "q2_customer_orders": {
    "runs": [
-    12.305,
-    9.691,
-    9.37,
-    10.632,
-    9.669,
-    9.513,
-    9.247
+    4.775,
+    3.413,
+    3.517,
+    2.818,
+    3.66,
+    3.303,
+    3.143
    ],
    "rows": 20,
    "first_row": [
@@ -44,23 +44,23 @@
     "295454.07"
    ],
    "status": "ok",
-   "cold_ms": 12.305,
+   "cold_ms": 4.775,
    "warm": {
     "n": 5,
-    "median_ms": 9.513,
-    "min_ms": 9.247,
-    "max_ms": 10.632
+    "median_ms": 3.303,
+    "min_ms": 2.818,
+    "max_ms": 3.66
    }
   },
   "q3_join_3_entities": {
    "runs": [
-    5.705,
-    5.399,
-    5.217,
-    5.679,
-    5.138,
-    5.135,
-    5.352
+    1.952,
+    1.841,
+    1.753,
+    1.717,
+    1.647,
+    1.731,
+    1.875
    ],
    "rows": 50,
    "first_row": [
@@ -70,23 +70,23 @@
     "completed"
    ],
    "status": "ok",
-   "cold_ms": 5.705,
+   "cold_ms": 1.952,
    "warm": {
     "n": 5,
-    "median_ms": 5.217,
-    "min_ms": 5.135,
-    "max_ms": 5.679
+    "median_ms": 1.731,
+    "min_ms": 1.647,
+    "max_ms": 1.875
    }
   },
   "q4_optional_aggregation": {
    "runs": [
-    9.008,
-    8.143,
-    8.374,
-    7.639,
-    7.957,
-    7.715,
-    7.84
+    3.291,
+    3.017,
+    3.031,
+    3.314,
+    3.246,
+    3.18,
+    3.342
    ],
    "rows": 50,
    "first_row": [
@@ -96,73 +96,75 @@
     "347"
    ],
    "status": "ok",
-   "cold_ms": 9.008,
+   "cold_ms": 3.291,
    "warm": {
     "n": 5,
-    "median_ms": 7.84,
-    "min_ms": 7.639,
-    "max_ms": 8.374
+    "median_ms": 3.246,
+    "min_ms": 3.031,
+    "max_ms": 3.342
    }
   },
   "q5_construct": {
    "runs": [
-    8.407,
-    7.947,
-    16.232,
-    16.863,
-    17.216,
-    19.274,
-    18.614
+    7.505,
+    7.672,
+    7.294,
+    6.791,
+    6.439,
+    6.39,
+    6.534
    ],
    "rows": 3878,
    "first_row": [
     "<http://benchmark.example/C000004> <http://benchmark.example/country> <http://benchmark.example/Norway> ."
    ],
    "status": "ok",
-   "cold_ms": 8.407,
+   "cold_ms": 7.505,
    "warm": {
     "n": 5,
-    "median_ms": 17.216,
-    "min_ms": 16.232,
-    "max_ms": 19.274
+    "median_ms": 6.534,
+    "min_ms": 6.39,
+    "max_ms": 7.294
    }
   },
   "q6_delete_insert": {
    "status": "ok",
-   "ms": 12.357
+   "ms": 4.616
   }
  },
  "load": {
   "engine": "tripletrail",
   "dataset": "trainmarks-medium",
-  "load_s": 0.613,
-  "start_s": 0.567,
-  "disk_bytes": 4873596,
+  "load_s": 0.556,
+  "start_s": 0.533,
+  "disk_bytes": 2723166,
   "disk_by_file": {
    "dict.idx": 180264,
    "LOCK": 0,
-   "gpos.seg": 375752,
-   "geoms.bin": 40,
-   "spog.seg": 796448,
    "TIMELINE": 33,
+   "geoms.bin": 40,
+   "namespaces.bin": 91,
+   "gpos.seg": 49056,
+   "spog.seg": 796448,
    "generation": 1,
-   "gpso.seg": 388808,
+   "gpso.seg": 49056,
    "FORMAT": 2,
    "wal.log": 0,
    "stats.bin": 12240,
-   "gosp.seg": 458456,
-   "RETIRED": 5,
+   "gosp.seg": 49056,
+   "checksums": 320,
    "compact-keys": 0,
-   "checksums": 297,
    "ospg.seg": 458456,
+   "RETIRED": 5,
    "render-wkt": 0,
-   "CURRENT": 2,
    "psog.seg": 388808,
-   "posg.seg": 375752,
-   "dict.bin": 641784,
-   "gspo.seg": 796448
+   "CURRENT": 2,
+   "dict.bin": 314480,
+   "gspo.seg": 49056,
+   "posg.seg": 375752
   },
-  "load_peak_rss_bytes": 244903936,
-  "load_peak_anon_bytes": 193490944
+  "load_peak_rss_bytes": 232706048,
+  "load_peak_anon_bytes": 191389696,
+  "rss_when_answering": "50 MiB (heap 25 MiB)"
  }
 }

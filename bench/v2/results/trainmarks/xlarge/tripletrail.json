@@ -6,36 +6,36 @@
  "queries": {
   "q1_count": {
    "runs": [
-    5.005,
-    3.006,
-    2.801,
-    2.989,
-    2.64,
-    2.626,
-    2.636
+    2.541,
+    1.524,
+    1.189,
+    1.142,
+    1.039,
+    0.998,
+    1.0
    ],
    "rows": 1,
    "first_row": [
     "9995000"
    ],
    "status": "ok",
-   "cold_ms": 5.005,
+   "cold_ms": 2.541,
    "warm": {
     "n": 5,
-    "median_ms": 2.64,
-    "min_ms": 2.626,
-    "max_ms": 2.989
+    "median_ms": 1.039,
+    "min_ms": 0.998,
+    "max_ms": 1.189
    }
   },
   "q2_customer_orders": {
    "runs": [
-    153.035,
-    142.191,
-    128.045,
-    123.536,
-    119.939,
-    103.781,
-    111.23
+    90.958,
+    84.754,
+    82.701,
+    82.857,
+    82.231,
+    85.847,
+    84.537
    ],
    "rows": 20,
    "first_row": [
@@ -44,23 +44,23 @@
     "13698872.59"
    ],
    "status": "ok",
-   "cold_ms": 153.035,
+   "cold_ms": 90.958,
    "warm": {
     "n": 5,
-    "median_ms": 119.939,
-    "min_ms": 103.781,
-    "max_ms": 128.045
+    "median_ms": 82.857,
+    "min_ms": 82.231,
+    "max_ms": 85.847
    }
   },
   "q3_join_3_entities": {
    "runs": [
-    62.963,
-    93.597,
-    82.599,
-    87.331,
-    97.54,
-    78.731,
-    100.367
+    30.828,
+    31.854,
+    31.697,
+    30.491,
+    34.064,
+    31.116,
+    32.718
    ],
    "rows": 50,
    "first_row": [
@@ -70,23 +70,23 @@
     "completed"
    ],
    "status": "ok",
-   "cold_ms": 62.963,
+   "cold_ms": 30.828,
    "warm": {
     "n": 5,
-    "median_ms": 87.331,
-    "min_ms": 78.731,
-    "max_ms": 100.367
+    "median_ms": 31.697,
+    "min_ms": 30.491,
+    "max_ms": 34.064
    }
   },
   "q4_optional_aggregation": {
    "runs": [
-    173.426,
-    190.318,
-    190.551,
-    150.114,
-    174.658,
-    186.811,
-    156.889
+    117.338,
+    110.961,
+    111.599,
+    107.506,
+    108.622,
+    114.029,
+    124.553
    ],
    "rows": 50,
    "first_row": [
@@ -96,73 +96,75 @@
     "28110"
    ],
    "status": "ok",
-   "cold_ms": 173.426,
+   "cold_ms": 117.338,
    "warm": {
     "n": 5,
-    "median_ms": 174.658,
-    "min_ms": 150.114,
-    "max_ms": 190.551
+    "median_ms": 111.599,
+    "min_ms": 107.506,
+    "max_ms": 124.553
    }
   },
   "q5_construct": {
    "runs": [
-    1038.077,
-    1037.349,
-    1066.501,
-    1042.313,
-    1079.055,
-    1034.455,
-    1070.186
+    918.167,
+    896.744,
+    953.667,
+    936.619,
+    953.497,
+    960.089,
+    944.654
    ],
    "rows": 439240,
    "first_row": [
     "<http://benchmark.example/C000011> <http://benchmark.example/country> <http://benchmark.example/Norway> ."
    ],
    "status": "ok",
-   "cold_ms": 1038.077,
+   "cold_ms": 918.167,
    "warm": {
     "n": 5,
-    "median_ms": 1066.501,
-    "min_ms": 1034.455,
-    "max_ms": 1079.055
+    "median_ms": 953.497,
+    "min_ms": 936.619,
+    "max_ms": 960.089
    }
   },
   "q6_delete_insert": {
    "status": "ok",
-   "ms": 176.069
+   "ms": 107.315
   }
  },
  "load": {
   "engine": "tripletrail",
   "dataset": "trainmarks-xlarge",
-  "load_s": 3.765,
-  "start_s": 0.557,
-  "disk_bytes": 494838944,
+  "load_s": 3.776,
+  "start_s": 0.538,
+  "disk_bytes": 274652210,
   "disk_by_file": {
    "dict.idx": 17467672,
    "LOCK": 0,
-   "gpos.seg": 36964048,
-   "geoms.bin": 40,
-   "spog.seg": 88282552,
    "TIMELINE": 33,
+   "geoms.bin": 40,
+   "namespaces.bin": 91,
+   "gpos.seg": 4997536,
+   "spog.seg": 88282552,
    "generation": 1,
-   "gpso.seg": 41384816,
+   "gpso.seg": 4997536,
    "FORMAT": 2,
    "wal.log": 0,
    "stats.bin": 12240,
-   "gosp.seg": 40309872,
-   "RETIRED": 5,
+   "gosp.seg": 4997536,
+   "checksums": 340,
    "compact-keys": 0,
-   "checksums": 317,
    "ospg.seg": 40309872,
+   "RETIRED": 5,
    "render-wkt": 0,
-   "CURRENT": 2,
    "psog.seg": 41384816,
-   "posg.seg": 36964048,
-   "dict.bin": 63476056,
-   "gspo.seg": 88282552
+   "CURRENT": 2,
+   "dict.bin": 30240352,
+   "gspo.seg": 4997536,
+   "posg.seg": 36964048
   },
-  "load_peak_rss_bytes": 1694715904,
-  "load_peak_anon_bytes": 1660882944
+  "load_peak_rss_bytes": 1693233152,
+  "load_peak_anon_bytes": 1241133056,
+  "rss_when_answering": "307 MiB (heap 23 MiB)"
  }
 }

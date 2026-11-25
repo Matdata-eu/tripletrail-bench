@@ -1,0 +1,38 @@
+=== trainmarks xlarge on tripletrail (2026-11-25T13:06:33+00:00)
+loading trainmarks-xlarge into tripletrail
+tripletrail xlarge q1_count: 1.039 ms
+tripletrail xlarge q2_customer_orders: 82.857 ms
+tripletrail xlarge q3_join_3_entities: 31.697 ms
+tripletrail xlarge q4_optional_aggregation: 111.599 ms
+tripletrail xlarge q5_construct: 953.497 ms
+tripletrail xlarge q6_delete_insert: {'status': 'ok', 'ms': 107.315}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/xlarge/tripletrail.json
+=== trainmarks xlarge on qlever (2026-11-25T13:06:54+00:00)
+loading trainmarks-xlarge into qlever
+qlever xlarge q1_count: 2.548 ms
+qlever xlarge q2_customer_orders: 228.658 ms
+qlever xlarge q3_join_3_entities: 108.762 ms
+qlever xlarge q4_optional_aggregation: 393.241 ms
+qlever xlarge q5_construct: 1499.789 ms
+qlever xlarge q6_delete_insert: {'status': 'ok', 'ms': 32.361}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/xlarge/qlever.json
+=== trainmarks xlarge on maplib (2026-11-25T13:07:29+00:00)
+loading trainmarks-xlarge into maplib
+maplib xlarge q1_count: 1.452 ms
+maplib xlarge q2_customer_orders: 19.319 ms
+maplib xlarge q3_join_3_entities: 37.346 ms
+maplib xlarge q4_optional_aggregation: 32.351 ms
+maplib xlarge q5_construct: 246.892 ms
+maplib xlarge q6_delete_insert: {'status': 'ok', 'ms': 15.959}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/xlarge/maplib.json
+=== trainmarks xlarge on tripletrail-ids (2026-11-25T13:07:41+00:00)
+loading trainmarks-xlarge into tripletrail-ids
+tripletrail-ids xlarge q1_count: 1.016 ms
+tripletrail-ids xlarge q2_customer_orders: 82.975 ms
+tripletrail-ids xlarge q3_join_3_entities: 31.844 ms
+tripletrail-ids xlarge q4_optional_aggregation: 117.385 ms
+tripletrail-ids xlarge q5_construct: 419.218 ms
+tripletrail-ids xlarge q6_delete_insert: {'status': 'ok', 'ms': 100.447}
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/xlarge/tripletrail-ids.json
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/trainmarks/report.md
+=== done (2026-11-25T13:07:57+00:00)

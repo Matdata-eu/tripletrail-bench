@@ -1,0 +1,170 @@
+{
+ "engine": "tripletrail-ids",
+ "scale": "xlarge",
+ "triples": 9995000,
+ "warm_runs": 5,
+ "queries": {
+  "q1_count": {
+   "runs": [
+    3.423,
+    1.342,
+    0.967,
+    1.016,
+    1.018,
+    0.879,
+    1.224
+   ],
+   "rows": 1,
+   "first_row": [
+    "9995000"
+   ],
+   "status": "ok",
+   "cold_ms": 3.423,
+   "warm": {
+    "n": 5,
+    "median_ms": 1.016,
+    "min_ms": 0.879,
+    "max_ms": 1.224
+   }
+  },
+  "q2_customer_orders": {
+   "runs": [
+    88.255,
+    82.479,
+    80.086,
+    79.94,
+    83.599,
+    82.975,
+    87.139
+   ],
+   "rows": 20,
+   "first_row": [
+    "Quinn Larsen",
+    "5413",
+    "13698872.59"
+   ],
+   "status": "ok",
+   "cold_ms": 88.255,
+   "warm": {
+    "n": 5,
+    "median_ms": 82.975,
+    "min_ms": 79.94,
+    "max_ms": 87.139
+   }
+  },
+  "q3_join_3_entities": {
+   "runs": [
+    32.09,
+    31.303,
+    32.437,
+    29.465,
+    32.175,
+    31.844,
+    29.531
+   ],
+   "rows": 50,
+   "first_row": [
+    "Frank Pedersen",
+    "Product-4924",
+    "4999.98",
+    "completed"
+   ],
+   "status": "ok",
+   "cold_ms": 32.09,
+   "warm": {
+    "n": 5,
+    "median_ms": 31.844,
+    "min_ms": 29.465,
+    "max_ms": 32.437
+   }
+  },
+  "q4_optional_aggregation": {
+   "runs": [
+    118.386,
+    113.466,
+    106.897,
+    107.711,
+    121.501,
+    117.385,
+    121.555
+   ],
+   "rows": 50,
+   "first_row": [
+    "http://benchmark.example/France",
+    "http://benchmark.example/Startup",
+    "2103",
+    "28110"
+   ],
+   "status": "ok",
+   "cold_ms": 118.386,
+   "warm": {
+    "n": 5,
+    "median_ms": 117.385,
+    "min_ms": 106.897,
+    "max_ms": 121.555
+   }
+  },
+  "q5_construct": {
+   "runs": [
+    402.484,
+    419.103,
+    402.725,
+    434.855,
+    431.266,
+    407.235,
+    419.218
+   ],
+   "rows": 439240,
+   "first_row": [
+    "<http://benchmark.example/C000011> <http://benchmark.example/country> <http://benchmark.example/Norway> ."
+   ],
+   "status": "ok",
+   "cold_ms": 402.484,
+   "warm": {
+    "n": 5,
+    "median_ms": 419.218,
+    "min_ms": 402.725,
+    "max_ms": 434.855
+   }
+  },
+  "q6_delete_insert": {
+   "status": "ok",
+   "ms": 100.447
+  }
+ },
+ "load": {
+  "engine": "tripletrail",
+  "dataset": "trainmarks-xlarge",
+  "load_s": 3.775,
+  "start_s": 0.532,
+  "disk_bytes": 274652210,
+  "disk_by_file": {
+   "dict.idx": 17467672,
+   "LOCK": 0,
+   "TIMELINE": 33,
+   "geoms.bin": 40,
+   "namespaces.bin": 91,
+   "gpos.seg": 4997536,
+   "spog.seg": 88282552,
+   "generation": 1,
+   "gpso.seg": 4997536,
+   "FORMAT": 2,
+   "wal.log": 0,
+   "stats.bin": 12240,
+   "gosp.seg": 4997536,
+   "checksums": 340,
+   "compact-keys": 0,
+   "ospg.seg": 40309872,
+   "RETIRED": 5,
+   "render-wkt": 0,
+   "psog.seg": 41384816,
+   "CURRENT": 2,
+   "dict.bin": 30240352,
+   "gspo.seg": 4997536,
+   "posg.seg": 36964048
+  },
+  "load_peak_rss_bytes": 1711656960,
+  "load_peak_anon_bytes": 1634435072,
+  "rss_when_answering": "308 MiB (heap 23 MiB)"
+ }
+}
