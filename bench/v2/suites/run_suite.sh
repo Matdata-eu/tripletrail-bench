@@ -18,7 +18,7 @@ DEFAULT="tripletrail oxigraph qlever jena graphdb maplib"
 [ "$SUITE" = updates ] && DEFAULT="tripletrail oxigraph jena graphdb"
 [ "$SUITE" = shacl ] && DEFAULT="tripletrail jena topbraid graphdb rdf4j pyshacl"
 ENGINES=${*:-$DEFAULT}
-ALL="tripletrail oxigraph qlever jena graphdb maplib postgis"
+ALL="tripletrail tripletrail-ids oxigraph qlever jena graphdb maplib postgis"
 # The general suites need no spatial index.
 export GRAPHDB_NO_GEO=1
 mkdir -p "$V2/results/$SUITE"
@@ -70,7 +70,9 @@ for e in $ENGINES; do
   "$V2/engines/$e.sh" stop >/dev/null 2>&1
   if [ -n "${DROP_AFTER:-}" ]; then
     case $SUITE in bsbm) d=bsbm-$DS ;; trainmarks) d=trainmarks-$DS ;; updates) d=updates-$DS ;; *) d=$DS ;; esac
-    rm -rf "${W:?}/$e/$d"
+    # tripletrail-ids keeps its store in tripletrail's directory (engines/tripletrail-ids.sh).
+    s=$e; [ "$e" = tripletrail-ids ] && s=tripletrail
+    rm -rf "${W:?}/$s/$d"
   fi
 done
 case $SUITE in

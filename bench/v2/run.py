@@ -34,7 +34,7 @@ sys.path.insert(0, HERE)
 from workload import NA, PFX, QUERIES, fill, for_dataset  # noqa: E402
 
 WORK = os.environ.get("BENCH_WORK", os.path.join(HERE, "work"))
-SPARQL_ENGINES = {"tripletrail", "oxigraph", "graphdb", "jena", "qlever"}
+SPARQL_ENGINES = {"tripletrail", "tripletrail-ids", "oxigraph", "graphdb", "jena", "qlever"}
 
 
 def sh(engine, *args, capture=True, stderr=False):
@@ -90,7 +90,7 @@ class Sparql:
     def update(self, text, timeout=3600):
         ep = self.endpoint
         data = {"update": text}
-        if self.engine in ("tripletrail", "oxigraph", "jena", "maplib"):
+        if self.engine in ("tripletrail", "tripletrail-ids", "oxigraph", "jena", "maplib"):
             ep = ep.replace("/query", "/update")
         elif self.engine == "graphdb":
             ep = ep + "/statements"
