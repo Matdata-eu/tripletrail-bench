@@ -1,0 +1,16 @@
+{
+ "engine": "tripletrail",
+ "version": "tripletrail 0.1.0",
+ "expected": 2606,
+ "found": 2606,
+ "recall": 1.0,
+ "already_before": 147,
+ "new_results": 3309,
+ "new_on_touched_nodes": 3309,
+ "precision": 1.0,
+ "missed_by_component": {},
+ "wall_s": {
+  "before": 9.413,
+  "after": 9.208
+ }
+}
