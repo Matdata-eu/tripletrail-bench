@@ -1,0 +1,80 @@
+# Gives every issue of this repository an issue Type (the organisation's
+# Bug, Feature or Task), so that none lands on the board without one.
+#
+# - A new issue that has no Type a minute after it was opened gets one from
+#   its title and labels: Bug for a defect ("fix", "bug", a test that fails,
+#   the bug label), Task for performance, tests, CI, docs and chores ("perf",
+#   "test", "ci", "docs", "chore", "build", "refactor"), Feature otherwise.
+#   The minute leaves time for whoever filed it to set the Type themselves.
+#   Change a wrong guess on the issue; the workflow never overwrites a Type.
+# - Run it by hand (Actions -> Issue type -> Run workflow) to give every
+#   issue without a Type, open and closed, one in the same way.
+#
+# GITHUB_TOKEN with "issues: write" may set the Type.
+name: Issue type
+
+on:
+  issues:
+    types: [opened, reopened]
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+concurrency:
+  group: issue-type-${{ github.event.issue.number || 'backfill' }}
+
+jobs:
+  type:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/github-script@v8
+        with:
+          script: |
+            const guess = (issue) => {
+              const title = issue.title.toLowerCase();
+              const labels = issue.labels.map((l) => (typeof l === 'string' ? l : l.name).toLowerCase());
+              if (labels.includes('bug') || /^(fix|bug)\b/.test(title)
+                  || /\b(fails?|failing|crash(es)?|panics?|wrong|broken|(answers?|returns?) 500|matches nothing)\b/.test(title)
+                     && !/^(perf|feat)\b/.test(title)) return 'Bug';
+              if (/^(perf|test|ci|docs|chore|build|refactor)\b/.test(title)) return 'Task';
+              return 'Feature';
+            };
+            const setType = async (number, type) => {
+              await github.request('PATCH /repos/{owner}/{repo}/issues/{issue_number}', {
+                ...context.repo, issue_number: number, type,
+              });
+              core.info(`#${number}: Type ${type}`);
+            };
+
+            if (context.eventName !== 'workflow_dispatch') {
+              await new Promise((resolve) => setTimeout(resolve, 60000));
+              const { data: issue } = await github.rest.issues.get({
+                ...context.repo, issue_number: context.payload.issue.number,
+              });
+              if (issue.type) {
+                core.info(`#${issue.number} already has Type ${issue.type.name}`);
+                return;
+              }
+              const type = guess(issue);
+              await setType(issue.number, type);
+              core.notice(`#${issue.number} had no Type; set ${type} from its title`);
+              return;
+            }
+
+            const issues = (await github.paginate(github.rest.issues.listForRepo, {
+              ...context.repo, state: 'all', per_page: 100,
+            })).filter((issue) => !issue.pull_request && !issue.type);
+            let failed = 0;
+            for (const issue of issues) {
+              try {
+                await setType(issue.number, guess(issue));
+                await new Promise((resolve) => setTimeout(resolve, 1000));
+              } catch (error) {
+                failed += 1;
+                core.warning(`#${issue.number}: ${error.message}`);
+              }
+            }
+            core.notice(`${issues.length - failed} of ${issues.length} issues without a Type got one`);
+            if (failed) core.setFailed(`${failed} could not be set`);
