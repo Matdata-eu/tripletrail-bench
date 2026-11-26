@@ -1,0 +1,230 @@
++ curl -sSfL --retry 4 -o /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/shacl-engines/apache-jena-6.2.0.tar.gz.part https://archive.apache.org/dist/jena/binaries/apache-jena-6.2.0.tar.gz
++ tar xzf /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/shacl-engines/apache-jena-6.2.0.tar.gz -C /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/shacl-engines
++ curl -sSfL --retry 4 -o /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/shacl-engines/shacl-1.5.0.zip.part https://repo1.maven.org/maven2/org/topbraid/shacl/1.5.0/shacl-1.5.0-bin.zip
++ unzip -q -o /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/shacl-engines/shacl-1.5.0.zip -d /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/shacl-engines
++ /usr/bin/python3 -m venv /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/shacl-engines/py
++ /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/shacl-engines/py/bin/pip install -q rdflib==7.6.0 pyshacl==0.30.1 requests
++ docker run --rm -u 1000:1000 -e HOME=/tmp -v /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/shacl-engines/rdf4j-build:/src -w /src mirror.gcr.io/library/maven:3.9-eclipse-temurin-21 mvn -q -B -Dmaven.repo.local=/tmp/m2 package -DskipTests
+Unable to find image 'mirror.gcr.io/library/maven:3.9-eclipse-temurin-21' locally
+3.9-eclipse-temurin-21: Pulling from library/maven
+405aa165b3ac: Pulling fs layer
+c5b9275bc0db: Pulling fs layer
+edd1ed89f0d4: Pulling fs layer
+bd0bb49686d3: Pulling fs layer
+1bf7f7b7d02f: Pulling fs layer
+49cf9009e0af: Pulling fs layer
+a466b9e11010: Pulling fs layer
+f1408710f65c: Pulling fs layer
+07bad0cccfa1: Pulling fs layer
+9ba33060581d: Download complete
+405aa165b3ac: Download complete
+f1408710f65c: Download complete
+a466b9e11010: Download complete
+49cf9009e0af: Download complete
+1bf7f7b7d02f: Download complete
+9cf53e23c096: Download complete
+c5b9275bc0db: Download complete
+edd1ed89f0d4: Download complete
+bd0bb49686d3: Download complete
+07bad0cccfa1: Download complete
+edd1ed89f0d4: Pull complete
+c5b9275bc0db: Pull complete
+07bad0cccfa1: Pull complete
+f1408710f65c: Pull complete
+49cf9009e0af: Pull complete
+bd0bb49686d3: Pull complete
+405aa165b3ac: Pull complete
+a466b9e11010: Pull complete
+1bf7f7b7d02f: Pull complete
+Digest: sha256:99e61abcff91a9b1333463bd8451fb18495d6eba9250ac66a338b518f8278320
+Status: Downloaded newer image for mirror.gcr.io/library/maven:3.9-eclipse-temurin-21
+mkdir: cannot create directory ‘/root’: Permission denied
+Can not write to /root/.m2/copy_reference_file.log. Wrong volume permissions? Carrying on ...
+engines ready in /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/shacl-engines
+=== shacl rinf-0076 on tripletrail (2026-11-26T12:13:26+00:00)
++ /home/gha/runner/_work/tripletrail-bench/bench-work/shacl-engines/py/bin/python3 /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/suites/data/fetch_rinf.py 0076
+http://data.europa.eu/949/graph/0076 1/124 http://data.europa.eu/949/allocationCompany 3899
+http://data.europa.eu/949/graph/0076 2/124 http://data.europa.eu/949/appliesToDirection 17448
+http://data.europa.eu/949/graph/0076 3/124 http://data.europa.eu/949/bigMetalMass 72
+http://data.europa.eu/949/graph/0076 4/124 http://data.europa.eu/949/complianceInfTsi 1024
+http://data.europa.eu/949/graph/0076 5/124 http://data.europa.eu/949/conditionsAppliedRegenerativeBraking 1
+http://data.europa.eu/949/graph/0076 6/124 http://data.europa.eu/949/contactLineSystem 2244
+http://data.europa.eu/949/graph/0076 7/124 http://data.europa.eu/949/contactLineSystemType 2
+http://data.europa.eu/949/graph/0076 8/124 http://data.europa.eu/949/crossSectionArea 959
+http://data.europa.eu/949/graph/0076 9/124 http://data.europa.eu/949/dieselThermalAllowed 1024
+http://data.europa.eu/949/graph/0076 10/124 http://data.europa.eu/949/documentUrl 1
+http://data.europa.eu/949/graph/0076 11/124 http://data.europa.eu/949/elementA 12884
+http://data.europa.eu/949/graph/0076 12/124 http://data.europa.eu/949/elementB 12884
+http://data.europa.eu/949/graph/0076 13/124 http://data.europa.eu/949/endsAt 24234
+http://data.europa.eu/949/graph/0076 14/124 http://data.europa.eu/949/energySupplySystem 1
+http://data.europa.eu/949/graph/0076 15/124 http://data.europa.eu/949/etcs 72
+http://data.europa.eu/949/graph/0076 16/124 http://data.europa.eu/949/etcsBaseline 2
+http://data.europa.eu/949/graph/0076 17/124 http://data.europa.eu/949/etcsDegradedSituation 72
+http://data.europa.eu/949/graph/0076 18/124 http://data.europa.eu/949/etcsLevelType 2
+http://data.europa.eu/949/graph/0076 19/124 http://data.europa.eu/949/etcsMVersion 2
+http://data.europa.eu/949/graph/0076 20/124 http://data.europa.eu/949/etcsSystemCompatibility 2
+http://data.europa.eu/949/graph/0076 21/124 http://data.europa.eu/949/etcsTransmitsTrackConditions 2
+http://data.europa.eu/949/graph/0076 22/124 http://data.europa.eu/949/freightFlag 7
+http://data.europa.eu/949/graph/0076 23/124 http://data.europa.eu/949/gradient 61
+http://data.europa.eu/949/graph/0076 24/124 http://data.europa.eu/949/gradientProfile 1282
+http://data.europa.eu/949/graph/0076 25/124 http://data.europa.eu/949/handoverPointFlag 4
+http://data.europa.eu/949/graph/0076 26/124 http://data.europa.eu/949/hasElectricShoreSupply 87
+http://data.europa.eu/949/graph/0076 27/124 http://data.europa.eu/949/hasEmergencyPlan 974
+http://data.europa.eu/949/graph/0076 28/124 http://data.europa.eu/949/hasEvacuationAndRescuePoints 1024
+http://data.europa.eu/949/graph/0076 29/124 http://data.europa.eu/949/hasExternalCleaning 544
+http://data.europa.eu/949/graph/0076 30/124 http://data.europa.eu/949/hasHotAxleBoxDetector 2244
+http://data.europa.eu/949/graph/0076 31/124 http://data.europa.eu/949/hasLRS 732
+http://data.europa.eu/949/graph/0076 32/124 http://data.europa.eu/949/hasLevelCrossings 2244
+http://data.europa.eu/949/graph/0076 33/124 http://data.europa.eu/949/hasLrsCoordinate 69772
+http://data.europa.eu/949/graph/0076 34/124 http://data.europa.eu/949/hasOrganisationRole 1
+http://data.europa.eu/949/graph/0076 35/124 http://data.europa.eu/949/hasPart 3912
+http://data.europa.eu/949/graph/0076 36/124 http://data.europa.eu/949/hasPhaseSeparation 15
+http://data.europa.eu/949/graph/0076 37/124 http://data.europa.eu/949/hasRefuelling 563
+http://data.europa.eu/949/graph/0076 38/124 http://data.europa.eu/949/hasSequence 24234
+http://data.europa.eu/949/graph/0076 39/124 http://data.europa.eu/949/hasToiletDischarge 528
+http://data.europa.eu/949/graph/0076 40/124 http://data.europa.eu/949/hasTopoCoordinate 69772
+http://data.europa.eu/949/graph/0076 41/124 http://data.europa.eu/949/hasWalkway 1024
+http://data.europa.eu/949/graph/0076 42/124 http://data.europa.eu/949/hasWaterRestocking 532
+http://data.europa.eu/949/graph/0076 43/124 http://data.europa.eu/949/inCountry 28880
+http://data.europa.eu/949/graph/0076 44/124 http://data.europa.eu/949/includes 20057
+http://data.europa.eu/949/graph/0076 45/124 http://data.europa.eu/949/infrastructureManager 28880
+http://data.europa.eu/949/graph/0076 46/124 http://data.europa.eu/949/isOnOriginOfElementA 12884
+http://data.europa.eu/949/graph/0076 47/124 http://data.europa.eu/949/isOnOriginOfElementB 12884
+http://data.europa.eu/949/graph/0076 48/124 http://data.europa.eu/949/isPartOf 3912
+http://data.europa.eu/949/graph/0076 49/124 http://data.europa.eu/949/kilometer 732
+http://data.europa.eu/949/graph/0076 50/124 http://data.europa.eu/949/kmPost 24045
+http://data.europa.eu/949/graph/0076 51/124 http://data.europa.eu/949/kmPostName 8805
+http://data.europa.eu/949/graph/0076 52/124 http://data.europa.eu/949/lengthOfNetLinearElement 7759
+http://data.europa.eu/949/graph/0076 53/124 http://data.europa.eu/949/lengthOfPlatform 754
+http://data.europa.eu/949/graph/0076 54/124 http://data.europa.eu/949/lengthOfSectionOfLine 717
+http://data.europa.eu/949/graph/0076 55/124 http://data.europa.eu/949/lengthOfTunnel 1023
+http://data.europa.eu/949/graph/0076 56/124 http://data.europa.eu/949/lineReferenceTunnelEnd 1024
+http://data.europa.eu/949/graph/0076 57/124 http://data.europa.eu/949/lineReferenceTunnelStart 1024
+http://data.europa.eu/949/graph/0076 58/124 http://data.europa.eu/949/linesideDistanceIndication 2244
+http://data.europa.eu/949/graph/0076 59/124 http://data.europa.eu/949/linesideDistanceIndicationAppearance 1
+http://data.europa.eu/949/graph/0076 60/124 http://data.europa.eu/949/linesideDistanceIndicationFrequency 1
+http://data.europa.eu/949/graph/0076 61/124 http://data.europa.eu/949/linesideDistanceIndicationPositioning 1
+http://data.europa.eu/949/graph/0076 62/124 http://data.europa.eu/949/linkedToPrimaryLocation 3899
+http://data.europa.eu/949/graph/0076 63/124 http://data.europa.eu/949/maxCurrentStandstillPantograph 1
+http://data.europa.eu/949/graph/0076 64/124 http://data.europa.eu/949/maximumContactWireHeight 1
+http://data.europa.eu/949/graph/0076 65/124 http://data.europa.eu/949/maximumPermittedSpeed 2152
+http://data.europa.eu/949/graph/0076 66/124 http://data.europa.eu/949/minimumContactWireHeight 1
+http://data.europa.eu/949/graph/0076 67/124 http://data.europa.eu/949/minimumHorizontalRadius 876
+http://data.europa.eu/949/graph/0076 68/124 http://data.europa.eu/949/nationalLine 752
+http://data.europa.eu/949/graph/0076 69/124 http://data.europa.eu/949/navigability 12884
+http://data.europa.eu/949/graph/0076 70/124 http://data.europa.eu/949/netReference 31150
+http://data.europa.eu/949/graph/0076 71/124 http://data.europa.eu/949/notApplicable 14580
+http://data.europa.eu/949/graph/0076 72/124 http://data.europa.eu/949/notYetAvailable 12954
+http://data.europa.eu/949/graph/0076 73/124 http://data.europa.eu/949/offsetFromKilometricPost 24045
+http://data.europa.eu/949/graph/0076 74/124 http://data.europa.eu/949/offsetFromOrigin 69266
+http://data.europa.eu/949/graph/0076 75/124 http://data.europa.eu/949/onLinearElement 69266
+http://data.europa.eu/949/graph/0076 76/124 http://data.europa.eu/949/opEnd 717
+http://data.europa.eu/949/graph/0076 77/124 http://data.europa.eu/949/opName 1468
+http://data.europa.eu/949/graph/0076 78/124 http://data.europa.eu/949/opStart 717
+http://data.europa.eu/949/graph/0076 79/124 http://data.europa.eu/949/opType 734
+http://data.europa.eu/949/graph/0076 80/124 http://data.europa.eu/949/organisationCode 1
+http://data.europa.eu/949/graph/0076 81/124 http://data.europa.eu/949/otherTrainProtection 72
+http://data.europa.eu/949/graph/0076 82/124 http://data.europa.eu/949/passengerFlag 678
+http://data.europa.eu/949/graph/0076 83/124 http://data.europa.eu/949/phaseInfoKm 15
+http://data.europa.eu/949/graph/0076 84/124 http://data.europa.eu/949/phaseInfoLength 15
+http://data.europa.eu/949/graph/0076 85/124 http://data.europa.eu/949/phaseInfoPantographLowered 15
+http://data.europa.eu/949/graph/0076 86/124 http://data.europa.eu/949/phaseInfoSwitchOffBreaker 15
+http://data.europa.eu/949/graph/0076 87/124 http://data.europa.eu/949/platformHeight 717
+http://data.europa.eu/949/graph/0076 88/124 http://data.europa.eu/949/platformId 754
+http://data.europa.eu/949/graph/0076 89/124 http://data.europa.eu/949/primaryLocation 715
+http://data.europa.eu/949/graph/0076 90/124 http://data.europa.eu/949/primaryLocationCode 717
+http://data.europa.eu/949/graph/0076 91/124 http://data.europa.eu/949/primaryLocationName 1434
+http://data.europa.eu/949/graph/0076 92/124 http://data.europa.eu/949/raisedPantographsDistance 27
+http://data.europa.eu/949/graph/0076 93/124 http://data.europa.eu/949/raisedPantographsNumber 27
+http://data.europa.eu/949/graph/0076 94/124 http://data.europa.eu/949/raisedPantographsSpeed 27
+http://data.europa.eu/949/graph/0076 95/124 http://data.europa.eu/949/referenceBorderPoint 4
+http://data.europa.eu/949/graph/0076 96/124 http://data.europa.eu/949/role 1
+http://data.europa.eu/949/graph/0076 97/124 http://data.europa.eu/949/roleOf 1
+http://data.europa.eu/949/graph/0076 98/124 http://data.europa.eu/949/rollingStockFireCategory 64
+http://data.europa.eu/949/graph/0076 99/124 http://data.europa.eu/949/schematicOverviewOP 734
+http://data.europa.eu/949/graph/0076 100/124 http://data.europa.eu/949/sidingId 1416
+http://data.europa.eu/949/graph/0076 101/124 http://data.europa.eu/949/signalType 5291
+http://data.europa.eu/949/graph/0076 102/124 http://data.europa.eu/949/solNature 717
+http://data.europa.eu/949/graph/0076 103/124 http://data.europa.eu/949/startsAt 24234
+http://data.europa.eu/949/graph/0076 104/124 http://data.europa.eu/949/subsidiaryLocationCode 3899
+http://data.europa.eu/949/graph/0076 105/124 http://data.europa.eu/949/subsidiaryLocationName 7798
+http://data.europa.eu/949/graph/0076 106/124 http://data.europa.eu/949/trackDirection 2244
+http://data.europa.eu/949/graph/0076 107/124 http://data.europa.eu/949/trackId 2244
+http://data.europa.eu/949/graph/0076 108/124 http://data.europa.eu/949/trackPhaseInfo 15
+http://data.europa.eu/949/graph/0076 109/124 http://data.europa.eu/949/trackRaisedPantographsDistanceAndSpeed 1277
+http://data.europa.eu/949/graph/0076 110/124 http://data.europa.eu/949/tracksideHabd 5
+http://data.europa.eu/949/graph/0076 111/124 http://data.europa.eu/949/tunnelIdentification 1024
+http://data.europa.eu/949/graph/0076 112/124 http://data.europa.eu/949/uopid 734
+http://data.europa.eu/949/graph/0076 113/124 http://data.europa.eu/949/validity 53422
+http://data.europa.eu/949/graph/0076 114/124 http://data.europa.eu/949/wheelSetGauge 2244
+http://data.europa.eu/949/graph/0076 115/124 http://www.opengis.net/ont/geosparql#asWKT 66236
+http://data.europa.eu/949/graph/0076 116/124 http://www.opengis.net/ont/geosparql#hasGeometry 67438
+http://data.europa.eu/949/graph/0076 117/124 http://www.w3.org/1999/02/22-rdf-syntax-ns#first 47627
+http://data.europa.eu/949/graph/0076 118/124 http://www.w3.org/1999/02/22-rdf-syntax-ns#rest 47627
+http://data.europa.eu/949/graph/0076 119/124 http://www.w3.org/1999/02/22-rdf-syntax-ns#type 528699
+http://data.europa.eu/949/graph/0076 120/124 http://www.w3.org/2000/01/rdf-schema#label 66074
+http://data.europa.eu/949/graph/0076 121/124 http://www.w3.org/2006/time#hasBeginning 207
+http://data.europa.eu/949/graph/0076 122/124 http://www.w3.org/2006/time#hasEnd 11
+http://data.europa.eu/949/graph/0076 123/124 http://www.w3.org/2006/time#inXSDDate 201
+http://data.europa.eu/949/graph/0076 124/124 http://www.w3.org/2006/time#inXSDDateTimeStamp 201
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/data/rinf-0076.nt: 1594395 triples (expected 1594395)
++ /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/suites/shacl/fetch_shapes.sh
+shapes e0038a087dfe at 8177357f07e72cad979bc10596e53d88e966af83; lookup: 106150 triples from ontology.ttl and 425 code lists
+=== shacl rinf-0076 core on tripletrail
+{"engine": "tripletrail", "version": "tripletrail 0.1.0", "timeout_s": 3600, "wall_s": 3.604, "peak_rss_bytes": 1141215232, "timed_out": false, "exit": 1, "validate_s": 2.3, "report_bytes": 2344371, "results": 1701, "by_severity": {"Warning": 1697, "Violation": 4}, "conforms": false, "shapes_with_results": 3, "distinct_results": 1701, "results_sha256": "465e850c6c0224209297368250753669116968b610c3d1b21fbe4e4df0f20b75"}
+=== shacl rinf-0076 era-local on tripletrail
+{"engine": "tripletrail", "version": "tripletrail 0.1.0", "timeout_s": 3600, "wall_s": 9.211, "peak_rss_bytes": 1930285056, "timed_out": false, "exit": 1, "validate_s": 8.0, "report_bytes": 32016743, "results": 31783, "by_severity": {"Violation": 28884, "Warning": 2899}, "conforms": false, "shapes_with_results": 9, "distinct_results": 31180, "results_sha256": "7a54b1a583ff9e2f67eb551bab6d39e3277f5fe6a50660d214cb5ee20e3f1de5"}
+=== shacl rinf-0076 era on tripletrail
+{"engine": "tripletrail", "version": "tripletrail 0.1.0", "timeout_s": 3600, "wall_s": 9.413, "peak_rss_bytes": 1946075136, "timed_out": false, "exit": 1, "validate_s": 8.1, "report_bytes": 32016504, "results": 31783, "by_severity": {"Violation": 28884, "Warning": 2899}, "conforms": false, "shapes_with_results": 9, "distinct_results": 31180, "results_sha256": "7a54b1a583ff9e2f67eb551bab6d39e3277f5fe6a50660d214cb5ee20e3f1de5"}
++ /home/gha/runner/_work/tripletrail-bench/bench-work/shacl-engines/py/bin/python3 /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/suites/shacl/inject.py /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/data/shacl/rinf-0076.nt /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/data/shacl/profiles/era-local.ttl /home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/shacl/rinf-0076/injected --seed 31 --rate 0.01
+{"seed": 31, "rate": 0.01, "focus_nodes": 312342, "drawn": 3123, "mutated": 2606, "touched_nodes": 44925, "by_kind": {"datatype": 1093, "missing": 727, "code-list": 418, "pattern": 3, "duplicate": 365}, "lines_removed": 2241, "lines_added": 1879}
+=== shacl rinf-0076 injected on tripletrail
+{"engine": "tripletrail", "version": "tripletrail 0.1.0", "expected": 2606, "found": 2606, "recall": 1.0, "already_before": 147, "new_results": 3309, "new_on_touched_nodes": 3309, "precision": 1.0, "missed_by_component": {}, "wall_s": {"before": 9.413, "after": 9.208}}
+=== shacl rinf-0076 on jena (2026-11-26T12:16:28+00:00)
+=== shacl rinf-0076 core on jena
+{"engine": "jena", "version": "apache-jena-6.2.0", "timeout_s": 3600, "wall_s": 24.227, "peak_rss_bytes": 5980639232, "timed_out": false, "exit": 0, "report_bytes": 1357014, "results": 1701, "by_severity": {"Warning": 1697, "Violation": 4}, "conforms": false, "shapes_with_results": 3, "distinct_results": 1701, "results_sha256": "465e850c6c0224209297368250753669116968b610c3d1b21fbe4e4df0f20b75"}
+=== shacl rinf-0076 era-local on jena
+{"engine": "jena", "version": "apache-jena-6.2.0", "timeout_s": 3600, "wall_s": 47.847, "peak_rss_bytes": 4437561344, "timed_out": false, "exit": 0, "report_bytes": 35789796, "results": 31783, "by_severity": {"Violation": 28884, "Warning": 2899}, "conforms": false, "shapes_with_results": 9, "distinct_results": 31180, "results_sha256": "7a54b1a583ff9e2f67eb551bab6d39e3277f5fe6a50660d214cb5ee20e3f1de5"}
+=== shacl rinf-0076 era on jena
+{"engine": "jena", "version": "apache-jena-6.2.0", "timeout_s": 3600, "wall_s": 48.049, "peak_rss_bytes": 4393693184, "timed_out": false, "exit": 0, "report_bytes": 34078242, "results": 31783, "by_severity": {"Violation": 28884, "Warning": 2899}, "conforms": false, "shapes_with_results": 9, "distinct_results": 31180, "results_sha256": "7a54b1a583ff9e2f67eb551bab6d39e3277f5fe6a50660d214cb5ee20e3f1de5"}
+=== shacl rinf-0076 injected on jena
+{"engine": "jena", "version": "apache-jena-6.2.0", "expected": 2606, "found": 2606, "recall": 1.0, "already_before": 147, "new_results": 3309, "new_on_touched_nodes": 3309, "precision": 1.0, "missed_by_component": {}, "wall_s": {"before": 48.054, "after": 48.454}}
+=== shacl rinf-0076 on topbraid (2026-11-26T12:24:14+00:00)
+=== shacl rinf-0076 core on topbraid
+{"engine": "topbraid", "version": "shacl-1.5.0", "timeout_s": 3600, "wall_s": 32.232, "peak_rss_bytes": 6801559552, "timed_out": false, "exit": 1, "report_bytes": 1350468, "results": 1701, "by_severity": {"Warning": 1697, "Violation": 4}, "conforms": false, "shapes_with_results": 3, "distinct_results": 1701, "results_sha256": "465e850c6c0224209297368250753669116968b610c3d1b21fbe4e4df0f20b75"}
+=== shacl rinf-0076 era-local on topbraid
+{"engine": "topbraid", "version": "shacl-1.5.0", "timeout_s": 3600, "wall_s": 55.246, "peak_rss_bytes": 7434665984, "timed_out": false, "exit": 1, "report_bytes": 35504810, "results": 31783, "by_severity": {"Violation": 28884, "Warning": 2899}, "conforms": false, "shapes_with_results": 9, "distinct_results": 31180, "results_sha256": "7a54b1a583ff9e2f67eb551bab6d39e3277f5fe6a50660d214cb5ee20e3f1de5"}
+=== shacl rinf-0076 era on topbraid
+{"engine": "topbraid", "version": "shacl-1.5.0", "timeout_s": 3600, "wall_s": 55.061, "peak_rss_bytes": 5938896896, "timed_out": false, "exit": 1, "report_bytes": 33793276, "results": 31783, "by_severity": {"Violation": 28884, "Warning": 2899}, "conforms": false, "shapes_with_results": 9, "distinct_results": 31180, "results_sha256": "7a54b1a583ff9e2f67eb551bab6d39e3277f5fe6a50660d214cb5ee20e3f1de5"}
+=== shacl rinf-0076 injected on topbraid
+{"engine": "topbraid", "version": "shacl-1.5.0", "expected": 2606, "found": 2606, "recall": 1.0, "already_before": 147, "new_results": 3309, "new_on_touched_nodes": 3309, "precision": 1.0, "missed_by_component": {}, "wall_s": {"before": 55.26, "after": 54.461}}
+=== shacl rinf-0076 on graphdb (2026-11-26T12:33:20+00:00)
+=== shacl rinf-0076 core on graphdb
+{"engine": "graphdb", "version": "graphdb:10.8.0", "timeout_s": 3600, "wall_s": 70.667, "peak_rss_bytes": 34073198592, "timed_out": false, "exit": 1, "validate_s": 24.323106184, "report_bytes": 1168263, "results": 1701, "by_severity": {"Warning": 1697, "Violation": 4}, "conforms": false, "shapes_with_results": 3, "distinct_results": 1701, "results_sha256": "465e850c6c0224209297368250753669116968b610c3d1b21fbe4e4df0f20b75"}
+=== shacl rinf-0076 era-local on graphdb
+{"engine": "graphdb", "version": "graphdb:10.8.0", "timeout_s": 3600, "wall_s": 222.225, "peak_rss_bytes": 46524407808, "timed_out": false, "exit": 1, "validate_s": 182.941146842, "report_bytes": 60957851, "results": 31783, "by_severity": {"Violation": 28884, "Warning": 2899}, "conforms": false, "shapes_with_results": 9, "distinct_results": 31180, "results_sha256": "7a54b1a583ff9e2f67eb551bab6d39e3277f5fe6a50660d214cb5ee20e3f1de5"}
+=== shacl rinf-0076 era on graphdb
+{"engine": "graphdb", "version": "graphdb:10.8.0", "timeout_s": 3600, "wall_s": 225.626, "peak_rss_bytes": 47005061120, "timed_out": false, "exit": 1, "validate_s": 184.798553791, "report_bytes": 60957833, "results": 31783, "by_severity": {"Violation": 28884, "Warning": 2899}, "conforms": false, "shapes_with_results": 9, "distinct_results": 31180, "results_sha256": "7a54b1a583ff9e2f67eb551bab6d39e3277f5fe6a50660d214cb5ee20e3f1de5"}
+=== shacl rinf-0076 injected on graphdb
+{"engine": "graphdb", "version": "graphdb:10.8.0", "expected": 2606, "found": 2606, "recall": 1.0, "already_before": 147, "new_results": 3309, "new_on_touched_nodes": 3309, "precision": 1.0, "missed_by_component": {}, "wall_s": {"before": 229.429, "after": 224.237}}
+=== shacl rinf-0076 on rdf4j (2026-11-26T13:06:58+00:00)
+=== shacl rinf-0076 core on rdf4j
+{"engine": "rdf4j", "version": "rdf4j 5.3.2", "timeout_s": 3600, "wall_s": 3109.235, "peak_rss_bytes": 13306437632, "timed_out": false, "exit": 1, "validate_s": 3106.8, "report_bytes": 679429, "results": 1019, "by_severity": {"Warning": 1015, "Violation": 4}, "conforms": false, "shapes_with_results": 3, "distinct_results": 1019, "results_sha256": "f05d7dd11d3abb5f8ee644eb3c204f6749834f62a9a711a78d81303ea49d1099"}
+=== shacl rinf-0076 era-local on rdf4j
+!!! shacl rinf-0076 era-local failed on rdf4j: org.eclipse.rdf4j.repository.RepositoryException
+{"engine": "rdf4j", "version": "rdf4j 5.3.2", "timeout_s": 3600, "wall_s": 1.201, "peak_rss_bytes": 263467008, "timed_out": false, "exit": 2, "error": "org.eclipse.rdf4j.repository.RepositoryException"}
+=== shacl rinf-0076 era on rdf4j
+!!! shacl rinf-0076 era failed on rdf4j: org.eclipse.rdf4j.repository.RepositoryException
+{"engine": "rdf4j", "version": "rdf4j 5.3.2", "timeout_s": 3600, "wall_s": 1.202, "peak_rss_bytes": 299388928, "timed_out": false, "exit": 2, "error": "org.eclipse.rdf4j.repository.RepositoryException"}
+{"engine": "rdf4j", "skipped": "no era-local result on rinf-0076"}
+=== shacl rinf-0076 on pyshacl (2026-11-26T13:58:53+00:00)
+=== shacl rinf-0076 core on pyshacl
+{"engine": "pyshacl", "version": "pyshacl 0.30.1", "timeout_s": 3600, "wall_s": 216.631, "peak_rss_bytes": 2412568576, "timed_out": false, "exit": 1, "report_bytes": 1084946, "results": 1701, "by_severity": {"Warning": 1697, "Violation": 4}, "conforms": false, "shapes_with_results": 3, "distinct_results": 1701, "results_sha256": "465e850c6c0224209297368250753669116968b610c3d1b21fbe4e4df0f20b75"}
+=== shacl rinf-0076 era-local on pyshacl
+!!! shacl rinf-0076 era-local failed on pyshacl: pyparsing.exceptions.ParseException
+{"engine": "pyshacl", "version": "pyshacl 0.30.1", "timeout_s": 3600, "wall_s": 201.12, "peak_rss_bytes": 2551742464, "timed_out": false, "exit": 1, "error": "pyparsing.exceptions.ParseException"}
+=== shacl rinf-0076 era on pyshacl
+!!! shacl rinf-0076 era failed on pyshacl: pyparsing.exceptions.ParseException
+{"engine": "pyshacl", "version": "pyshacl 0.30.1", "timeout_s": 3600, "wall_s": 71.877, "peak_rss_bytes": 2850848768, "timed_out": false, "exit": 1, "error": "pyparsing.exceptions.ParseException"}
+{"engine": "pyshacl", "skipped": "no era-local result on rinf-0076"}
+=== done (2026-11-26T14:23:53+00:00)

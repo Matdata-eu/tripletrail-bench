@@ -1,0 +1,16 @@
+{
+ "engine": "graphdb",
+ "version": "graphdb:10.8.0",
+ "expected": 2606,
+ "found": 2606,
+ "recall": 1.0,
+ "already_before": 147,
+ "new_results": 3309,
+ "new_on_touched_nodes": 3309,
+ "precision": 1.0,
+ "missed_by_component": {},
+ "wall_s": {
+  "before": 229.429,
+  "after": 224.237
+ }
+}
