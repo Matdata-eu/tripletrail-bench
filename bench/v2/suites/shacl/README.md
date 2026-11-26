@@ -80,6 +80,22 @@ On the Benchmarks workflow: suite `all`, dataset `shacl` (one server for the thr
   does), while Jena and TopBraid give one per solution of a SPARQL constraint: on Germany
   a `UNION` of `era:isPartOf` and `era:hasPart` finds the same track twice, so Jena and TopBraid
   report 947,629 results where TripleTrail reports 894,300, with the same distinct results.
+- **Injected violations** (`inject.py`, tracker #31): real RINF data already fails many ERA
+  shapes, which measures speed on realistic reports but not whether an engine misses violations.
+  `run_shacl.py inject --dataset D` (by `run_suite.sh` on the datasets in `SHACL_INJECT`, Norway
+  by default) draws 1% of the instances of the classes the `era-local` shapes target
+  (`SHACL_INJECT_RATE`, seed `SHACL_INJECT_SEED`, 31) and gives each one mutation its class's
+  shapes and its own triples allow, the kinds in turn: a value with the wrong datatype
+  (`xsd:string`), every value of a required property removed, a code-list value replaced by an IRI
+  in no SKOS scheme, a value its `sh:pattern` rejects, and a second value where `sh:maxCount 1`
+  applies. Each engine validates the data before and after with `era-local`. Recall is the share
+  of injected violations (focus node, path, constraint component) it reports; precision the share
+  of its new results that are on a node the mutations touched: the mutated node, a node a removed
+  triple pointed to, or one up to three links before the mutated node, which inverse and sequence
+  paths read. A mutation can break more than the one constraint it targets, so precision does not
+  ask for the expected results only. The seed and the counts by kind go into
+  `results/shacl/<dataset>/injected/manifest.json`; the mutated data and the expected violations
+  hold RINF values and stay in the work directory.
 - **Errors**: a failed engine's error is the class of its first exception (or our script's own
   message), never the exception's message, which can quote RINF values.
 - **Output**: `results/shacl/<dataset>/<profile>/<engine>.json`, `results/shacl/<dataset>/data.json`
