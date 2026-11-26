@@ -65,7 +65,13 @@ for e in $ENGINES; do
     trainmarks) python3 "$HERE/trainmarks/run_trainmarks.py" run --scale "$DS" --engine "$e" ;;
     updates) python3 "$HERE/updates/run_updates.py" run --source "$DS" --engine "$e" ;;
     # run_shacl.py prints "!!! " itself for a profile an engine fails on.
-    shacl) "$SHPY" "$HERE/shacl/run_shacl.py" run --dataset "$DS" --engine "$e" ;;
+    # Seeded violations (recall and precision) on the datasets in SHACL_INJECT, Norway by default.
+    shacl) "$SHPY" "$HERE/shacl/run_shacl.py" run --dataset "$DS" --engine "$e"; rc=$?
+      case " ${SHACL_INJECT-rinf-0076} " in
+        *" $DS "*) "$SHPY" "$HERE/shacl/run_shacl.py" inject --dataset "$DS" --engine "$e" \
+          || echo "!!! $SUITE $DS injected violations failed on $e" ;;
+      esac
+      (exit $rc) ;;
   esac || echo "!!! $SUITE $DS failed on $e"
   "$V2/engines/$e.sh" stop >/dev/null 2>&1
   if [ -n "${DROP_AFTER:-}" ]; then

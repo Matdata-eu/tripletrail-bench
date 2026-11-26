@@ -7,6 +7,9 @@ engine's own validator (tracker: #30; phase 0 and the engine commands: run_phase
   run_shacl.py run --dataset D [--engine E ...]
                                            D = rinf-<graph code> (rinf-0076 Norway, rinf-0080
                                            Germany) or rinf-all; fetches data and shapes on first use
+  run_shacl.py inject --dataset D [--engine E ...]
+                                           seeded violations (inject.py) in D, validated with the
+                                           era-local profile before and after: recall and precision
   run_shacl.py report                      results/shacl/report.md from every results/shacl/<D>/
 
 Profiles, all made at run time from ERA's ERA-RINF-shapes.ttl (fetch_shapes.sh):
@@ -38,6 +41,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 V2 = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, HERE)
+import inject  # noqa: E402
 import run_phase0  # noqa: E402
 
 W = os.environ.get("BENCH_WORK", os.path.join(V2, "work"))
@@ -46,6 +50,9 @@ RESULTS = os.path.join(V2, "results", "shacl")
 ENGINES = ["tripletrail", "jena", "topbraid", "graphdb", "rdf4j", "pyshacl"]
 PROFILES = ["core", "era-local", "era"]
 REPEAT_BELOW = float(os.environ.get("SHACL_REPEAT_BELOW", "300"))
+INJECT_SEED = int(os.environ.get("SHACL_INJECT_SEED", "31"))
+INJECT_RATE = float(os.environ.get("SHACL_INJECT_RATE", "0.01"))
+INJECT_PROFILE = "era-local"
 
 # Pinned downloads (SHA-256 checked).
 JENA = ("apache-jena-6.2.0", "https://archive.apache.org/dist/jena/binaries/apache-jena-6.2.0.tar.gz",
@@ -200,8 +207,9 @@ def validation_seconds(engine, log):
     return float(m.group(1)) if m else None
 
 
-def run_one(engine, data, shapes, out):
-    """One engine on one profile: one run, or three when it is quick."""
+def run_one(engine, data, shapes, out, keys_out=None, once=False):
+    """One engine on one profile: one run, or three when it is quick (once: one run). With
+    keys_out, the report's distinct result keys are written there (a work file)."""
     report = os.path.join(out, f"{engine}.report.ttl")
     cmd, stdout_to = run_phase0.commands(data, shapes, report)[engine]
     runs = []
@@ -215,7 +223,7 @@ def run_one(engine, data, shapes, out):
             r["peak_rss_bytes"] = int(m.group(1))
         r["validate_s"] = validation_seconds(engine, log)
         runs.append(r)
-        if r["timed_out"] or r["exit"] not in (0, 1) or r["wall_s"] >= REPEAT_BELOW or len(runs) == 3:
+        if once or r["timed_out"] or r["exit"] not in (0, 1) or r["wall_s"] >= REPEAT_BELOW or len(runs) == 3:
             break
     rec = {"engine": engine, "version": run_phase0.version(engine), "timeout_s": run_phase0.TIMEOUT,
            "runs": runs, "wall_s": statistics.median(r["wall_s"] for r in runs),
@@ -226,7 +234,7 @@ def run_one(engine, data, shapes, out):
         rec["validate_s"] = statistics.median(v)
     if os.path.exists(report) and os.path.getsize(report) and not rec["timed_out"]:
         rec["report_bytes"] = os.path.getsize(report)
-        rec.update(run_phase0.count_report(report))
+        rec.update(run_phase0.count_report(report, keys_out))
     if "results" not in rec:
         rec["error"] = "timed out" if rec["timed_out"] else error_line(os.path.join(out, f"{engine}.log"), rec["exit"])
     # The report holds RINF values: it is not kept once counted.
@@ -267,6 +275,52 @@ def run(ds, engines):
                                             text=True).stdout.split()[0],
             "profiles": {p: sum(1 for line in open(f) if line.strip()) for p, f in shapes.items()}}
     json.dump(meta, open(os.path.join(RESULTS, ds, "data.json"), "w"), indent=1)
+    report()
+
+
+def run_inject(ds, engines):
+    """Seeded violations in the dataset (inject.py), and each engine's recall and precision on
+    them with the era-local profile: it validates the data before and after the mutations, and
+    their result keys are compared with the expected ones. An engine that failed, timed out or
+    was skipped on era-local in the suite's run of this dataset is skipped here too."""
+    run_phase0.need_rdflib()
+    os.environ.update(engine_env())
+    data, shapes = prepare(ds)
+    work = os.path.join(W, "shacl", ds, "injected")
+    os.makedirs(work, exist_ok=True)
+    manifest_file = os.path.join(work, "manifest.json")
+    want = {"seed": INJECT_SEED, "rate": INJECT_RATE}
+    if not os.path.exists(manifest_file) or any(json.load(open(manifest_file)).get(k) != v for k, v in want.items()):
+        sh([sys.executable, os.path.join(HERE, "inject.py"), data, shapes[INJECT_PROFILE], work,
+            "--seed", str(INJECT_SEED), "--rate", str(INJECT_RATE)])
+    manifest = json.load(open(manifest_file))
+    res = os.path.join(RESULTS, ds, "injected")
+    os.makedirs(res, exist_ok=True)
+    json.dump(dict(manifest, profile=INJECT_PROFILE), open(os.path.join(res, "manifest.json"), "w"), indent=1)
+    for engine in engines:
+        suite = os.path.join(RESULTS, ds, INJECT_PROFILE, f"{engine}.json")
+        prior = json.load(open(suite)) if os.path.exists(suite) else {}
+        if "skipped" in prior or "error" in prior or prior.get("timed_out"):
+            rec = {"engine": engine, "skipped": f"no {INJECT_PROFILE} result on {ds}"}
+        else:
+            print(f"=== shacl {ds} injected on {engine}", flush=True)
+            keys = {x: os.path.join(work, f"{engine}.{x}.keys") for x in ("before", "after")}
+            before = run_one(engine, data, shapes[INJECT_PROFILE], work, keys["before"], once=True)
+            after = run_one(engine, os.path.join(work, "mutated.nt"), shapes[INJECT_PROFILE], work,
+                            keys["after"], once=True)
+            rec = {"engine": engine, "version": before.get("version")}
+            failed = [r for r in (before, after) if "results" not in r]
+            if failed:
+                rec["error"] = failed[0].get("error", "no report")
+            else:
+                rec.update(inject.score(work, keys["before"], keys["after"]))
+                rec["wall_s"] = {"before": before["wall_s"], "after": after["wall_s"]}
+            # The keys hold RINF values: not kept once scored.
+            for k in keys.values():
+                if os.path.exists(k):
+                    os.remove(k)
+        json.dump(rec, open(os.path.join(res, f"{engine}.json"), "w"), indent=1)
+        print(json.dumps(rec), flush=True)
     report()
 
 
@@ -349,6 +403,30 @@ def report():
                            f"{fmt(r['peak_rss_bytes'] / 2**20, 0)} | {results_cell(r)} | {sev.get('Violation', 0):,} | "
                            f"{sev.get('Warning', 0):,} | {a[0]} | {a[1]} |")
             out.append("")
+        inj = os.path.join(ds_dir, "injected", "manifest.json")
+        if os.path.exists(inj):
+            m = json.load(open(inj))
+            kinds = ", ".join(f"{k} {n:,}" for k, n in m["by_kind"].items())
+            out += ["### injected violations", "",
+                    f"{m['mutated']:,} violations injected (seed {m['seed']}, {m['rate']:.0%} of "
+                    f"{m['focus_nodes']:,} focus nodes drawn: {kinds}; `suites/shacl/inject.py`), "
+                    f"validated with the {m.get('profile', INJECT_PROFILE)} profile before and after. "
+                    "Recall is the share of injected violations reported; precision the share of new "
+                    "results on a node the mutations touched.", "",
+                    "| engine | recall | precision | found | new results | missed (by component) |",
+                    "|---|---:|---:|---:|---:|---|"]
+            for e in ENGINES:
+                f = os.path.join(ds_dir, "injected", f"{e}.json")
+                if not os.path.exists(f):
+                    continue
+                r = json.load(open(f))
+                if "skipped" in r or "error" in r:
+                    out.append(f"| {e} | {r.get('skipped') or r.get('error')} | | | | |")
+                    continue
+                missed = ", ".join(f"{c} {n:,}" for c, n in r["missed_by_component"].items()) or "none"
+                out.append(f"| {e} | {r['recall']:.1%} | {'' if r['precision'] is None else format(r['precision'], '.1%')} | "
+                           f"{r['found']:,} of {r['expected']:,} | {r['new_results']:,} | {missed} |")
+            out.append("")
     notes = os.path.join(RESULTS, "notes.md")
     if os.path.exists(notes):
         out += [open(notes).read().strip(), ""]
@@ -363,12 +441,17 @@ def main():
     r = sub.add_parser("run")
     r.add_argument("--dataset", required=True)
     r.add_argument("--engine", action="append")
+    i = sub.add_parser("inject")
+    i.add_argument("--dataset", required=True)
+    i.add_argument("--engine", action="append")
     sub.add_parser("report")
     a = ap.parse_args()
     if a.cmd == "setup":
         setup()
     elif a.cmd == "run":
         run(a.dataset, a.engine or ENGINES)
+    elif a.cmd == "inject":
+        run_inject(a.dataset, a.engine or ENGINES)
     else:
         report()
 

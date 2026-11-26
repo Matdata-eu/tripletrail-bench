@@ -72,14 +72,15 @@ def version(engine):
     return None
 
 
-def count_report(path):
+def count_report(path, keys_out=None):
     """Results in the report, by severity, and whether it says it conforms. With JENA_HOME set,
     Jena's riot turns the report into N-Triples, read line by line (a report of a million results
-    is too big for rdflib); otherwise rdflib reads it."""
+    is too big for rdflib); otherwise rdflib reads it. With keys_out, the sorted distinct result
+    keys are also written there (they hold RINF values: a work file, never published)."""
     jena = os.environ.get("JENA_HOME")
     if jena and os.path.exists(f"{jena}/bin/riot"):
-        return count_report_nt(path, f"{jena}/bin/riot")
-    return count_report_rdflib(path)
+        return count_report_nt(path, f"{jena}/bin/riot", keys_out)
+    return count_report_rdflib(path, keys_out)
 
 
 NT = re.compile(r'^(\S+) <([^>]*)> (.*) \.$')
@@ -87,7 +88,7 @@ FIELDS = {SH + "focusNode": 0, SH + "resultPath": 1, SH + "sourceConstraintCompo
           SH + "resultSeverity": 3}
 
 
-def count_report_nt(path, riot):
+def count_report_nt(path, riot, keys_out=None):
     # riot's warnings go to a file: a pipe read only after stdout could fill and hang it.
     errf = tempfile.TemporaryFile(mode="w+")
     p = subprocess.Popen([riot, "--syntax=turtle", "--output=nt", path], stdout=subprocess.PIPE,
@@ -116,17 +117,20 @@ def count_report_nt(path, riot):
         k = (f[3] or "none").rsplit("#", 1)[-1]
         sev[k] = sev.get(k, 0) + 1
         keys.append("\t".join("None" if v is None else v for v in f))
-    return summary(sev, keys, conforms, {shapes.get(r) for r in results})
+    return summary(sev, keys, conforms, {shapes.get(r) for r in results}, keys_out)
 
 
-def summary(sev, keys, conforms, shapes):
+def summary(sev, keys, conforms, shapes, keys_out=None):
     keys = sorted(set(keys))
+    if keys_out:
+        with open(keys_out, "w", encoding="utf-8") as f:
+            f.writelines(k + "\n" for k in keys)
     return {"results": sum(sev.values()), "by_severity": sev, "conforms": conforms,
             "shapes_with_results": len(shapes), "distinct_results": len(keys),
             "results_sha256": hashlib.sha256("\n".join(keys).encode()).hexdigest()}
 
 
-def count_report_rdflib(path):
+def count_report_rdflib(path, keys_out=None):
     """count_report with rdflib."""
     import rdflib
     g = rdflib.Graph()
@@ -148,7 +152,7 @@ def count_report_rdflib(path):
     conforms = [bool(o.toPython()) for o in g.objects(None, rdflib.URIRef(SH + "conforms"))]
     shapes = {str(g.value(r, rdflib.URIRef(SH + "sourceShape")))
               for r in g.objects(None, rdflib.URIRef(SH + "result"))}
-    return summary(sev, keys, conforms[0] if conforms else None, shapes)
+    return summary(sev, keys, conforms[0] if conforms else None, shapes, keys_out)
 
 
 def run(engine, cmd, stdout_to, out):
