@@ -3,4 +3,6 @@
 # S = RINF Norway (~1.6 M triples), M = Germany (~11.9 M), L = every RINF graph (~43 M).
 shacl rinf-0076
 shacl rinf-0080
-shacl rinf-all
+# GraphDB is left out of all of RINF: on 2026-11-26 the 64 GB server lost its runner during
+# GraphDB's core run there (run 45716857732), after it had timed out on Germany's era-local.
+shacl rinf-all SHACL_SKIP=graphdb

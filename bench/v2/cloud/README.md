@@ -63,6 +63,12 @@ status and time of each job, link to the run) and the index `bench/v2/results/ru
 A job whose inputs or tools are missing is skipped with the reason in the manifest; a failed job
 does not stop the others, but the run is marked failed.
 
+After each job, `bench.sh` also pushes the results so far to the branch
+`bench-partial/<run id>`. If the server is lost before the run's artifact is uploaded, the
+results pull request is made from that branch instead, so the jobs that finished are kept.
+A profile line can leave engines out of its job with `SHACL_SKIP=<engine>`, as
+[`../profiles/shacl.txt`](../profiles/shacl.txt) does for GraphDB on all of RINF.
+
 ### Inputs that cannot be generated
 
 [`../data/fetch_inputs.sh`](../data/fetch_inputs.sh) downloads them once per server:
