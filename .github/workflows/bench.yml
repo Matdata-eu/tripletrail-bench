@@ -220,6 +220,8 @@ jobs:
           BENCH_DATA_REPO: ${{ vars.BENCH_DATA_REPO }}
         run: bench/v2/data/fetch_inputs.sh
       - name: Run ${{ inputs.suite }} ${{ inputs.dataset }}
+        env:
+          BENCH_PUSH_PARTIAL: "1"
         run: bench/v2/bench.sh "${{ inputs.suite }}" "${{ inputs.dataset }}" ${{ inputs.engines }}
       - name: Jobs of this run
         if: always()
@@ -284,10 +286,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
+        id: artifact
         with:
           name: results-${{ github.run_id }}-bench
           path: bench/v2/results
         continue-on-error: true
+      # A server lost before its upload: the results bench.sh pushed after each job.
+      - name: Results pushed during the run
+        if: steps.artifact.outcome != 'success'
+        run: |
+          b="bench-partial/${{ github.run_id }}"
+          if git fetch --depth=1 origin "$b"; then
+            git checkout FETCH_HEAD -- bench/v2/results && git reset -q
+            echo "::warning::no artifact: the results come from $b"
+          else
+            echo "::warning::no artifact and no $b"
+          fi
       - name: Push the results and open a pull request
         env:
           GH_TOKEN: ${{ github.token }}

@@ -18,6 +18,13 @@ DEFAULT="tripletrail oxigraph qlever jena graphdb maplib"
 [ "$SUITE" = updates ] && DEFAULT="tripletrail oxigraph jena graphdb"
 [ "$SUITE" = shacl ] && DEFAULT="tripletrail jena topbraid graphdb rdf4j pyshacl"
 ENGINES=${*:-$DEFAULT}
+# SHACL_SKIP (a profile line's KEY=VALUE, such as GraphDB on all of RINF): engines left out.
+# Out of the default set too, so a run of the profile still counts as one of the default engines
+# (ENV_FILE below); run_shacl.py records each as skipped with the reason.
+for x in ${SHACL_SKIP:-}; do
+  ENGINES=$(echo " $ENGINES " | sed "s/ $x / /; s/^ *//; s/ *$//")
+  DEFAULT=$(echo " $DEFAULT " | sed "s/ $x / /; s/^ *//; s/ *$//")
+done
 ALL="tripletrail tripletrail-ids oxigraph qlever jena graphdb maplib postgis"
 # The general suites need no spatial index.
 export GRAPHDB_NO_GEO=1

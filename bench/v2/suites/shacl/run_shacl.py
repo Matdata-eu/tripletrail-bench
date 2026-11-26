@@ -251,9 +251,15 @@ def run(ds, engines):
     work = os.path.join(W, "shacl", ds)
     timed_out = set()
     triples = sum(1 for _ in open(data, "rb"))
+    # Engines the benchmark profile leaves out of this dataset (SHACL_SKIP, bench/v2/profiles):
+    # shown in the report as not run, with the reason.
+    left_out = os.environ.get("SHACL_SKIP", "").split()
     for profile in PROFILES:
         res = os.path.join(RESULTS, ds, profile)
         os.makedirs(res, exist_ok=True)
+        for engine in left_out:
+            json.dump({"engine": engine, "skipped": "left out of this dataset by the benchmark profile "
+                       "(bench/v2/profiles/shacl.txt)"}, open(os.path.join(res, f"{engine}.json"), "w"), indent=1)
         os.makedirs(os.path.join(work, profile), exist_ok=True)
         for engine in engines:
             smaller = failed_on_smaller(ds, triples, profile, engine)

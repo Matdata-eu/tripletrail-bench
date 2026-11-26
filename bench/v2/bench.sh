@@ -58,6 +58,30 @@ engines() {
   echo "${out# }"
 }
 
+# BENCH_PUSH_PARTIAL=1 (the workflow): after each job, the results so far are committed to the
+# branch bench-partial/<run> and pushed, so a server lost later in a long run keeps them; the
+# collect job takes them from there when the run's artifact is missing.
+push_partial() {
+  local repo idx tree parent c
+  repo=$(cd "$V2/../.." && pwd)
+  idx=$(mktemp -u)
+  # A commit made from a temporary index: the checkout's HEAD and index stay as they were, so
+  # env.py still records the harness commit the run measured.
+  if c=$(cd "$repo" && export GIT_INDEX_FILE="$idx" &&
+      git read-tree HEAD && git add bench/v2/results && tree=$(git write-tree) &&
+      parent=${PARTIAL:-$(git rev-parse HEAD)} &&
+      if [ "$tree" = "$(git rev-parse "$parent^{tree}")" ]; then echo "$parent"; else
+        git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+          commit-tree "$tree" -p "$parent" -m "chore(bench): partial results of run $RUN after $1"; fi) &&
+     (cd "$repo" && git push -q origin "$c:refs/heads/bench-partial/$RUN"); then
+    PARTIAL=$c
+  else
+    echo "::warning::results after $1 not pushed to bench-partial/$RUN"
+  fi
+  rm -f "$idx"
+}
+
+PARTIAL=""
 PG_STARTED=""; PG_WHY=""
 # PostGIS: the local cluster when there is one, otherwise a container like docker-compose.yml's
 # (started once per run, removed at the end). On failure the reason is in PG_WHY.
@@ -133,6 +157,10 @@ FAILED=0
 while read -r suite ds extra; do
   [ -n "$suite" ] || continue
   es=$(engines "$suite")
+  # SHACL_SKIP=<engines> on a profile line leaves those engines out of the job.
+  for kv in $extra; do
+    case $kv in SHACL_SKIP=*) for x in ${kv#SHACL_SKIP=}; do es=$(echo " $es " | sed "s/ $x / /; s/^ *//; s/ *$//"); done ;; esac
+  done
   LOG=$V2/results/runs/$RUN-$suite-$ds.log
   skip=""; note=""
   case $suite in
@@ -178,6 +206,7 @@ while read -r suite ds extra; do
   status=ok; [ "$st" = 0 ] || { status=failed; FAILED=1; }
   python3 "$V2/runs.py" job "$MANIFEST" --suite "$suite" --dataset "$ds" --engines "$es" --status $status \
     ${note:+--reason "$note"} --seconds $(( $(date +%s) - t0 )) --log "$(basename "$LOG")"
+  [ -n "${BENCH_PUSH_PARTIAL:-}" ] && push_partial "$suite $ds"
 done <<<"$JOBS"
 python3 "$V2/runs.py" finish "$MANIFEST"
 python3 "$V2/runs.py" index "$V2/results/runs"
