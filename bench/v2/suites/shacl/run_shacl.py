@@ -412,7 +412,8 @@ def report():
                     f"{m['focus_nodes']:,} focus nodes drawn: {kinds}; `suites/shacl/inject.py`), "
                     f"validated with the {m.get('profile', INJECT_PROFILE)} profile before and after. "
                     "Recall is the share of injected violations reported; precision the share of new "
-                    "results on a node the mutations touched.", "",
+                    f"results on one of the {m['touched_nodes']:,} nodes the mutations touched (the "
+                    "mutated nodes, the objects of removed triples and up to three hops upstream).", "",
                     "| engine | recall | precision | found | new results | missed (by component) |",
                     "|---|---:|---:|---:|---:|---|"]
             for e in ENGINES:
