@@ -1,0 +1,18 @@
+{
+ "seed": 31,
+ "rate": 0.01,
+ "focus_nodes": 312342,
+ "drawn": 3123,
+ "mutated": 2606,
+ "touched_nodes": 44925,
+ "by_kind": {
+  "datatype": 1093,
+  "missing": 727,
+  "code-list": 418,
+  "pattern": 3,
+  "duplicate": 365
+ },
+ "lines_removed": 2241,
+ "lines_added": 1879,
+ "profile": "era-local"
+}
