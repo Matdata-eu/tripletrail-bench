@@ -18,6 +18,7 @@ machine, and the raw results are next to it in `bench/v2/results/`.
 | [`bench/v2/geographica/`](bench/v2/geographica) | Geographica 2 |
 | [`bench/v2/cloud/`](bench/v2/cloud) | How a run rents, uses and deletes a server |
 | [`bench/rml/`](bench/rml) | RML lifting against Morph-KGC |
+| [`bench/facadex/`](bench/facadex) | Facade-X lifting (CSV, JSON, XML) against SPARQL Anything |
 | [`crates/tripletrail-bench/`](crates/tripletrail-bench) | Micro-benchmarks in Rust on a generated ERA-shaped network and on real RINF files (`cargo run --release -p tripletrail-bench`, `--bin store`, `--bin cost`, `--bin rinf`, `--bin access`), built against TripleTrail in `core/` |
 | [`bench/v2/results/`](bench/v2/results) | Results, run manifests, and the files the dashboard reads |
 | [`site/`](site) | The dashboard (GitHub Pages) and `summary.py`, the headline numbers as JSON |

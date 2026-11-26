@@ -1,0 +1,17 @@
+# Each station of stations.json: a class, its name, country, a WKT point and its platforms.
+PREFIX xyz: <http://sparql.xyz/facade-x/data/>
+PREFIX fx:  <http://sparql.xyz/facade-x/ns/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX ex:  <http://example.org/>
+CONSTRUCT {
+  ?station a ex:Station ; ex:name ?name ; ex:country ?country ; geo:asWKT ?wkt ; ex:platform ?platform .
+}
+WHERE {
+  SERVICE <x-sparql-anything:location=data/stations.json> {
+    ?s xyz:code ?code ; xyz:name ?name ; xyz:country ?country ; xyz:lat ?lat ; xyz:lon ?lon ;
+       xyz:platforms ?ps .
+    ?ps fx:anySlot ?platform .
+  }
+  BIND(fx:entity("http://example.org/station/", ?code) AS ?station)
+  BIND(STRDT(CONCAT("POINT(", STR(?lon), " ", STR(?lat), ")"), geo:wktLiteral) AS ?wkt)
+}
