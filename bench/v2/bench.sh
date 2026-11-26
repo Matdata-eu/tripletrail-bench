@@ -62,16 +62,26 @@ engines() {
 # branch bench-partial/<run> and pushed, so a server lost later in a long run keeps them; the
 # collect job takes them from there when the run's artifact is missing.
 push_partial() {
-  local repo; repo=$(cd "$V2/../.." && pwd)
-  ( cd "$repo" &&
-    git add -f bench/v2/results &&
-    { git diff --cached --quiet ||
-      git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
-        commit -q -m "chore(bench): partial results of run $RUN after $1"; } &&
-    git push -q origin "HEAD:refs/heads/bench-partial/$RUN" ) ||
+  local repo idx tree parent c
+  repo=$(cd "$V2/../.." && pwd)
+  idx=$(mktemp -u)
+  # A commit made from a temporary index: the checkout's HEAD and index stay as they were, so
+  # env.py still records the harness commit the run measured.
+  if c=$(cd "$repo" && export GIT_INDEX_FILE="$idx" &&
+      git read-tree HEAD && git add bench/v2/results && tree=$(git write-tree) &&
+      parent=${PARTIAL:-$(git rev-parse HEAD)} &&
+      if [ "$tree" = "$(git rev-parse "$parent^{tree}")" ]; then echo "$parent"; else
+        git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+          commit-tree "$tree" -p "$parent" -m "chore(bench): partial results of run $RUN after $1"; fi) &&
+     (cd "$repo" && git push -q origin "$c:refs/heads/bench-partial/$RUN"); then
+    PARTIAL=$c
+  else
     echo "::warning::results after $1 not pushed to bench-partial/$RUN"
+  fi
+  rm -f "$idx"
 }
 
+PARTIAL=""
 PG_STARTED=""; PG_WHY=""
 # PostGIS: the local cluster when there is one, otherwise a container like docker-compose.yml's
 # (started once per run, removed at the end). On failure the reason is in PG_WHY.

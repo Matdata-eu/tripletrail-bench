@@ -66,8 +66,12 @@ does not stop the others, but the run is marked failed.
 After each job, `bench.sh` also pushes the results so far to the branch
 `bench-partial/<run id>`. If the server is lost before the run's artifact is uploaded, the
 results pull request is made from that branch instead, so the jobs that finished are kept.
+The pushes use the job's token, which expires after 24 hours: on a longer run they stop then,
+with a warning. The checkout's own commit is not moved, so each job still records the
+harness commit the run measured.
 A profile line can leave engines out of its job with `SHACL_SKIP=<engine>`, as
-[`../profiles/shacl.txt`](../profiles/shacl.txt) does for GraphDB on all of RINF.
+[`../profiles/shacl.txt`](../profiles/shacl.txt) does for GraphDB on all of RINF; the SHACL report
+shows such an engine as skipped, with the reason.
 
 ### Inputs that cannot be generated
 
