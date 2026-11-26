@@ -1,0 +1,18 @@
+# Each track of tracks.csv: a class, its line and three typed values (5 triples a row).
+PREFIX xyz: <http://sparql.xyz/facade-x/data/>
+PREFIX fx:  <http://sparql.xyz/facade-x/ns/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex:  <http://example.org/>
+CONSTRUCT {
+  ?track a ex:Track ; ex:line ?line ; ex:length ?length ; ex:speed ?speed ; ex:electrified ?electrified .
+}
+WHERE {
+  SERVICE <x-sparql-anything:location=data/tracks.csv,csv.headers=true> {
+    ?row xyz:id ?id ; xyz:line ?l ; xyz:length ?len ; xyz:speed ?s ; xyz:electrified ?e .
+  }
+  BIND(fx:entity("http://example.org/track/", ?id) AS ?track)
+  BIND(fx:entity("http://example.org/line/", ?l) AS ?line)
+  BIND(xsd:decimal(?len) AS ?length)
+  BIND(xsd:integer(?s) AS ?speed)
+  BIND(xsd:boolean(?e) AS ?electrified)
+}

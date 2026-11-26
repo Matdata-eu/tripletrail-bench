@@ -1,0 +1,17 @@
+# Each operational point of points.xml: a class, its name, type and kilometre.
+PREFIX xyz: <http://sparql.xyz/facade-x/data/>
+PREFIX fx:  <http://sparql.xyz/facade-x/ns/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex:  <http://example.org/>
+CONSTRUCT {
+  ?point a ex:OperationalPoint ; ex:name ?name ; ex:type ?type ; ex:km ?km .
+}
+WHERE {
+  SERVICE <x-sparql-anything:location=data/points.xml> {
+    ?p a xyz:point ; xyz:id ?id ;
+       fx:anySlot [ a xyz:name ; rdf:_1 ?name ] , [ a xyz:type ; rdf:_1 ?type ] , [ a xyz:km ; rdf:_1 ?k ] .
+  }
+  BIND(fx:entity("http://example.org/point/", ?id) AS ?point)
+  BIND(xsd:decimal(?k) AS ?km)
+}

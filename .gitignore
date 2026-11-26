@@ -3,3 +3,6 @@
 /bench/v2/work/
 __pycache__/
 /target/
+/bench/facadex/data
+/bench/facadex/lib
+/bench/facadex/out

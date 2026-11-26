@@ -1,0 +1,16 @@
+<!-- Fetches the SPARQL Anything command line and its dependencies from Maven Central into
+     lib/: mvn -q dependency:copy-dependencies -DoutputDirectory=lib -->
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>eu.tripletrail.bench</groupId>
+  <artifactId>facadex-sparql-anything</artifactId>
+  <version>1</version>
+  <packaging>pom</packaging>
+  <dependencies>
+    <dependency>
+      <groupId>io.github.sparql-anything</groupId>
+      <artifactId>sparql-anything-cli</artifactId>
+      <version>1.3.0</version>
+    </dependency>
+  </dependencies>
+</project>
