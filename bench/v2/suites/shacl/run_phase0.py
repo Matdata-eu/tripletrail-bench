@@ -26,6 +26,7 @@ import json
 import os
 import re
 import resource
+import signal
 import subprocess
 import sys
 import tempfile
@@ -159,7 +160,9 @@ def run(engine, cmd, stdout_to, out):
     log = open(os.path.join(out, f"{engine}.log"), "w")
     sink = open(stdout_to, "w") if stdout_to else subprocess.DEVNULL
     t0 = time.monotonic()
-    p = subprocess.Popen(cmd, stdout=sink, stderr=log)
+    # Its own process group, so a timeout ends the engine's children too (curl, the JVM under a
+    # launcher script), not only the command.
+    p = subprocess.Popen(cmd, stdout=sink, stderr=log, start_new_session=True)
     status, timed_out = None, False
     while status is None:
         pid, st, ru = os.wait4(p.pid, os.WNOHANG)
@@ -167,11 +170,32 @@ def run(engine, cmd, stdout_to, out):
             status = st
             break
         if time.monotonic() - t0 > TIMEOUT:
-            p.kill()
-            _, status, ru = os.wait4(p.pid, 0)
+            # TERM first, so a wrapper's cleanup (graphdb_validate.sh removes its container on
+            # exit) runs; KILL after 30 s.
+            try:
+                os.killpg(p.pid, signal.SIGTERM)
+            except ProcessLookupError:
+                pass
+            for _ in range(150):
+                pid, status, ru = os.wait4(p.pid, os.WNOHANG)
+                if pid:
+                    break
+                time.sleep(0.2)
+            else:
+                os.killpg(p.pid, signal.SIGKILL)
+                _, status, ru = os.wait4(p.pid, 0)
             timed_out = True
             break
         time.sleep(0.2)
+    try:
+        os.killpg(p.pid, signal.SIGKILL)
+    except (ProcessLookupError, PermissionError):
+        pass
+    if engine == "graphdb":
+        # A GraphDB container left running holds tens of GB, and the next engine then runs out
+        # of memory (run 45816390204 lost its runner that way, rdf4j after a GraphDB timeout).
+        subprocess.run(["docker", "rm", "-f", "shacl-graphdb"], stdout=subprocess.DEVNULL,
+                       stderr=subprocess.DEVNULL, check=False)
     wall = time.monotonic() - t0
     # ru_maxrss (kB on Linux) as wait4 answers it: the largest of the child and of every
     # descendant it waited for, so the JVM under a launcher script counts, and engines run one

@@ -67,4 +67,13 @@ sudo -u gha bash -c "mkdir -p ~/runner && cd ~/runner && \
   curl -sSfL -o r.tgz https://github.com/actions/runner/releases/download/v$ver/actions-runner-linux-x64-$ver.tar.gz && \
   tar xzf r.tgz && rm r.tgz && \
   ./config.sh --unattended --ephemeral --url '$REPO_URL' --token '$RUNNER_TOKEN' --labels '$LABELS' --name \$(hostname)"
-cd /home/gha/runner && ./svc.sh install gha && ./svc.sh start
+cd /home/gha/runner && ./svc.sh install gha
+# systemd stops a whole service when the kernel's OOM killer ends one of its processes
+# (OOMPolicy=stop is the default), so one engine running out of memory took the runner, and the
+# rest of the run, with it (run 45816390204). Keep the runner: the engine's job records the kill.
+for unit in /etc/systemd/system/actions.runner.*.service; do
+  mkdir -p "$unit.d"
+  printf '[Service]\nOOMPolicy=continue\n' >"$unit.d/oom.conf"
+done
+systemctl daemon-reload
+./svc.sh start
