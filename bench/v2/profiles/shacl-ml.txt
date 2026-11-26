@@ -1,0 +1,5 @@
+# The SHACL validation suite's M and L steps only (workflow suite=all, dataset=shacl-ml,
+# machine=ccx43), to finish a run whose S step (RINF Norway) is already in the results: run
+# 45816390204 measured Norway and lost its runner on Germany (fixed in bench PR #62).
+shacl rinf-0080
+shacl rinf-all SHACL_SKIP=graphdb
