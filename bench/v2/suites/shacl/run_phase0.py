@@ -187,6 +187,8 @@ def run(engine, cmd, stdout_to, out):
             timed_out = True
             break
         time.sleep(0.2)
+    # The engine's time, before the cleanup below.
+    wall = time.monotonic() - t0
     try:
         os.killpg(p.pid, signal.SIGKILL)
     except (ProcessLookupError, PermissionError):
@@ -196,7 +198,6 @@ def run(engine, cmd, stdout_to, out):
         # of memory (run 45816390204 lost its runner that way, rdf4j after a GraphDB timeout).
         subprocess.run(["docker", "rm", "-f", "shacl-graphdb"], stdout=subprocess.DEVNULL,
                        stderr=subprocess.DEVNULL, check=False)
-    wall = time.monotonic() - t0
     # ru_maxrss (kB on Linux) as wait4 answers it: the largest of the child and of every
     # descendant it waited for, so the JVM under a launcher script counts, and engines run one
     # after the other in one process do not inherit each other's peak.
