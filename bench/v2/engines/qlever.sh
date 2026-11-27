@@ -3,13 +3,15 @@
 #   qlever.sh load <dataset>   qlever-index with the geo-split vocabulary + start; prints JSON
 #   qlever.sh start <dataset> | stop | endpoint | rss
 # Env: BENCH_WORK, QLEVER_IMAGE, QLEVER_MEMORY (memory for queries incl. cache, default 8G),
-# QLEVER_CACHE (default 2G).
+# QLEVER_CACHE (default 2G), QLEVER_NOFILE (open files, default 1048576).
 set -euo pipefail
 HERE=$(cd "$(dirname "$0")" && pwd)
 W=${BENCH_WORK:-$HERE/../work}
 IMAGE=${QLEVER_IMAGE:-mirror.gcr.io/adfreiburg/qlever:latest}
 MEM=${QLEVER_MEMORY:-8G}
 CACHE=${QLEVER_CACHE:-2G}
+# Open files for the container; a host whose hard limit is lower (a cloud sandbox) sets it lower.
+NOFILE=${QLEVER_NOFILE:-1048576}
 NAME=bench-qlever
 PORT=7001
 EP=http://localhost:$PORT/
@@ -39,7 +41,7 @@ start() {
   local ds=$1
   ensure_image
   docker rm -f $NAME >/dev/null 2>&1 || true
-  docker run -d --name $NAME --ulimit nofile=1048576:1048576 -p $PORT:7001 -u "$(id -u):$(id -g)" -v "$W/qlever/$ds:/index" \
+  docker run -d --name $NAME --ulimit nofile=$NOFILE:$NOFILE -p $PORT:7001 -u "$(id -u):$(id -g)" -v "$W/qlever/$ds:/index" \
     --entrypoint /qlever/qlever-server "$IMAGE" -i /index/bench -p 7001 -j 2 \
     -m "$MEM" -c "$CACHE" -s 600s -a benchtoken >/dev/null
   wait_up
@@ -55,7 +57,7 @@ case "$1" in
     t0=$(date +%s.%N)
     # The vocabulary merge of a large input keeps one file open per partial vocabulary (978
     # for OSM Europe), more than Docker's default limit of 1024 open files allows.
-    docker run --rm --ulimit nofile=1048576:1048576 -u "$(id -u):$(id -g)" \
+    docker run --rm --ulimit nofile=$NOFILE:$NOFILE -u "$(id -u):$(id -g)" \
       -v "$W/qlever/$ds:/index" -v "$W/data:/data:ro" -w /index \
       --entrypoint /qlever/qlever-index "$IMAGE" -i /index/bench -f "/data/$(basename "$IN")" -F "${IN##*.}" -p true \
       -s /index/bench.settings.json --vocabulary-type on-disk-compressed-geo-split -m 4G \
