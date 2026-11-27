@@ -1,0 +1,19 @@
+{"products":2785,"triples":952930}
+=== bsbm 2785 on tripletrail (2026-11-27T13:22:03+00:00)
+loading bsbm-2785 into tripletrail
+tripletrail bsbm-2785 explore
+  QMpH 211430.51
+tripletrail bsbm-2785 bi
+  QMpH 73342.19
+tripletrail bsbm-2785 update
+  QMpH 119814.24
+=== bsbm 2785 on tripletrail-1t (2026-11-27T13:22:12+00:00)
+loading bsbm-2785 into tripletrail-1t
+tripletrail-1t bsbm-2785 explore
+  QMpH 199692.92
+tripletrail-1t bsbm-2785 bi
+  QMpH 71828.97
+tripletrail-1t bsbm-2785 update
+  QMpH 115947.04
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/bsbm/report.md
+=== done (2026-11-27T13:22:22+00:00)
