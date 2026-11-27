@@ -1,28 +1,34 @@
 # RML throughput benchmark
 
 How fast `tripletrail lift` runs an RML mapping over a large CSV file, and how much memory it
-takes, next to [Morph-KGC](https://github.com/morph-kgc/morph-kgc) (Apache-2.0, Python). Two
-mappings:
+takes, next to [Morph-KGC](https://github.com/morph-kgc/morph-kgc) (Apache-2.0, Python) and
+[RMLMapper](https://github.com/RMLio/rmlmapper-java) (MIT, Java). Two mappings:
 
 - `simple.rml.ttl`: one triples map over `tracks.csv`, a subject template, a class and four
   typed literals (`xsd:decimal`, `xsd:integer`, `xsd:boolean`), so 5 triples a row.
 - `join.rml.ttl`: each track linked to its line in `lines.csv` (100,000 rows) through a
   join condition (`tracks.line = lines.id`), plus the lines' classes.
 
-RMLMapper is left out: it is a Java jar, which this benchmark does not run. Never run in CI.
+Both start with `@base`, since RMLMapper refuses the relative IRIs of the triples maps
+otherwise. Never run in CI.
 
 ## Running it
 
 ```sh
 python3 gen.py --rows 21500000 --lines 100000 data/     # tracks.csv is about 1 GB
 python3 -m venv /tmp/mk && /tmp/mk/bin/pip install morph-kgc
+./fetch_rmlmapper.sh data/                               # RMLMapper 7.3.3, SHA-256 checked
 (cd ../../core && cargo build --release -p tripletrail-server)   # TripleTrail checked out in core/
-python3 run.py --tripletrail ../../core/target/release/tripletrail --morph-python /tmp/mk/bin/python
+python3 run.py --tripletrail ../../core/target/release/tripletrail --morph-python /tmp/mk/bin/python \
+    --rmlmapper data/rmlmapper.jar --java-image mirror.gcr.io/library/eclipse-temurin:21-jre
 ```
 
 `run.py` prints wall time, peak resident memory and the triples written. TripleTrail's
-N-Triples are counted from its standard output; Morph-KGC writes a file to `out/`, counted
-and removed.
+N-Triples are counted from its standard output; Morph-KGC and RMLMapper write a file to
+`out/`, counted and removed. RMLMapper runs with `java` on the host, or with `--java-image` in
+a Java container (nothing installed on the host), with `-Xmx12g` (`--java-heap`); its memory
+is the JVM's peak resident memory. `--timeout` (default 7200 s) stops a run, and `--tools`
+picks some of `tripletrail morph-kgc rmlmapper`.
 
 ## Results (2026-11-14)
 
