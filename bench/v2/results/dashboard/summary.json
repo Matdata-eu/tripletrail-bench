@@ -191,77 +191,77 @@
    {
     "dataset": "bsbm-2785 bi",
     "metric": "query mixes per hour",
-    "tripletrail": 71853.06,
+    "tripletrail": 30952.9,
     "others": {
      "graphdb": {
       "value": 4734.54,
-      "speedup": 15.18
+      "speedup": 6.54
      },
      "jena": {
       "value": 2906.87,
-      "speedup": 24.72
+      "speedup": 10.65
      },
      "maplib": {
       "value": 10816.56,
-      "speedup": 6.64
+      "speedup": 2.86
      },
      "oxigraph": {
       "value": 630.83,
-      "speedup": 113.9
+      "speedup": 49.07
      },
      "qlever": {
       "value": 11255.14,
-      "speedup": 6.38
+      "speedup": 2.75
      }
     }
    },
    {
     "dataset": "bsbm-2785 explore",
     "metric": "query mixes per hour",
-    "tripletrail": 199680.31,
+    "tripletrail": 128249.05,
     "others": {
      "graphdb": {
       "value": 22448.22,
-      "speedup": 8.9
+      "speedup": 5.71
      },
      "jena": {
       "value": 9749.36,
-      "speedup": 20.48
+      "speedup": 13.15
      },
      "maplib": {
       "value": 4839.43,
-      "speedup": 41.26
+      "speedup": 26.5
      },
      "oxigraph": {
       "value": 37379.67,
-      "speedup": 5.34
+      "speedup": 3.43
      },
      "qlever": {
       "value": 4661.18,
-      "speedup": 42.84
+      "speedup": 27.51
      }
     }
    },
    {
     "dataset": "bsbm-2785 update",
     "metric": "query mixes per hour",
-    "tripletrail": 112322.27,
+    "tripletrail": 46632.04,
     "others": {
      "graphdb": {
       "value": 12641.38,
-      "speedup": 8.89
+      "speedup": 3.69
      },
      "jena": {
       "value": 5808.25,
-      "speedup": 19.34
+      "speedup": 8.03
      },
      "maplib": {
       "value": 2072.82,
-      "speedup": 54.19
+      "speedup": 22.5
      },
      "oxigraph": {
       "value": 29194.27,
-      "speedup": 3.85
+      "speedup": 1.6
      }
     }
    },
