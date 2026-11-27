@@ -38,8 +38,8 @@
    "dataset": "osm_europe",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "a9aae02",
-   "date": "2026-11-22"
+   "commit": "13e940f",
+   "date": "2026-11-27"
   },
   {
    "suite": "sparqloscope",
@@ -110,7 +110,7 @@
    "dataset": "osm_europe",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "cc8c2f4",
+   "commit": "13e940f",
    "date": ""
   },
   {
@@ -468,15 +468,15 @@
    {
     "dataset": "osm_europe",
     "metric": "load time (s)",
-    "tripletrail": 4931.481,
+    "tripletrail": 4374.383,
     "others": {
      "graphdb": {
       "value": 4747.255,
-      "speedup": 0.96
+      "speedup": 1.09
      },
      "qlever": {
       "value": 1623.029,
-      "speedup": 0.33
+      "speedup": 0.37
      }
     }
    },
@@ -576,13 +576,13 @@
     "others": {
      "graphdb": {
       "value": 1180.236,
-      "tripletrail": 3.652,
-      "speedup": 323.18
+      "tripletrail": 6.899,
+      "speedup": 171.07
      },
      "qlever": {
       "value": 327.028,
-      "tripletrail": 41.346,
-      "speedup": 7.91
+      "tripletrail": 106.747,
+      "speedup": 3.06
      }
     }
    },

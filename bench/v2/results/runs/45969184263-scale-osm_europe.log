@@ -1,0 +1,29 @@
+downloading https://download.geofabrik.de/europe-latest.osm.pbf (2026-11-27T09:00:38+00:00)
+set a: 173359401 triples, {'station': 98701, 'track': 1253312, 'landuse': 33274701, 'admin': 18754}
+set b: 826696217 triples, {'highway': 40756214, 'building': 121230248} (capped)
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/suites/scale/run_scale.sh: line 83: 13898 Aborted                 (core dumped) osmium export -O -f geojsonseq --add-unique-id=type_id -i "sparse_file_array,$tmp/$set.idx" -o - "$tmp/$set.osm.pbf" 2> "$tmp/$set.export.log"
+     13899 Done                    | python3 "$CONV" --set "$set" --meta "$meta.part" --max-triples "$budget" >> "$nt.part"
+prepared osm_europe: 1000055618 triples
+=== tripletrail on osm_europe (2026-11-27T10:06:46+00:00)
+load 10 min: heap 13763 MB, store 1 MB, read 93936 MB, written 36866 MB, cpu 3710 s
+load 21 min: heap 7053 MB, store 4958 MB, read 166565 MB, written 50016 MB, cpu 6488 s
+load 32 min: heap 8936 MB, store 4958 MB, read 206907 MB, written 62304 MB, cpu 8954 s
+load 43 min: heap 16152 MB, store 4958 MB, read 237070 MB, written 66400 MB, cpu 10660 s
+load 54 min: heap 18465 MB, store 4958 MB, read 323125 MB, written 74593 MB, cpu 12648 s
+load 65 min: heap 8851 MB, store 20943 MB, read 347065 MB, written 115392 MB, cpu 14850 s
+ds: map made ahead in part: the facets of 2 of 6 collections in 300.1 s; out of time (300 s) for OsmHighway, OsmLanduse, OsmStation, OsmTrack, which the first request makes
+{"engine": "tripletrail", "dataset": "osm_europe", "load_s": 4374.383, "start_s": 0.563, "disk_bytes": 65518884789, "disk_by_file": {"LOCK": 0, "dict.idx": 7072104816, "TIMELINE": 33, "spog.seg": 9941515632, "geoms.bin": 6799265080, "namespaces.bin": 217, "gpos.seg": 500027872, "generation": 1, "wal.log": 0, "gpso.seg": 500027872, "FORMAT": 2, "stats.bin": 8208, "gosp.seg": 500027872, "render-wkt": 0, "RETIRED": 5, "checksums": 369, "compact-keys": 0, "ospg.seg": 3568179488, "psog.seg": 5256244584, "CURRENT": 2, "gspo.seg": 500027872, "posg.seg": 3194145344, "dict.bin": 27687309520}, "load_peak_rss_bytes": 60359794688, "load_peak_anon_bytes": 29738086400, "rss_when_answering": "7145 MiB (heap 31 MiB)", "wall_s": 4675.009, "rss_after_start": "51667 MiB (heap 14921 MiB)", "triples": 1000055618}
+[tripletrail] restarted for family 8 osm in 326.8 s
+[tripletrail] osm_station_admin        ok         cold 14266.893 ms  p50 3989.581 p95 3994.668 (n=3)
+[tripletrail] osm_track_landuse        failed     cold - ms  p50 - p95 - (n=0)  client timeout
+[tripletrail] osm_track_track_5m       ok         cold 279837.208 ms  p50 163708.22 p95 164079.934 (n=2)
+[tripletrail] restarted for family 9 scale in 419.8 s
+[tripletrail] scale_class_counts       ok         cold 155.492 ms  p50 2.736 p95 7.819 (n=3)
+[tripletrail] scale_building_kinds     ok         cold 1320.251 ms  p50 11.866 p95 12.366 (n=3)
+[tripletrail] scale_label_lookup       ok         cold 492.493 ms  p50 2.438 p95 2.797 (n=20)
+[tripletrail] scale_named_stations     ok         cold 4004.158 ms  p50 28.621 p95 28.693 (n=3)
+ds: map made ahead in part: the facets of 1 of 6 collections in 304.2 s; out of time (300 s) for OsmHighway, OsmLanduse, OsmStation, OsmTrack, which the first request makes; facets that failed: OsmBuilding: The operation took longer than its timeout
+updates: 60 x 10000: p50 161.0 ms, p95 337.1 ms, total 11.1 s
+per-commit ms: [179.9, 147.4, 144.6, 164.4, 149.4, 154.5, 684.9, 140.3, 166.3, 214.1, 157.3, 175.5, 162.4, 421.9, 151.8, 151.8, 172.4, 157.1, 174.0, 155.3, 363.9, 131.4, 148.7, 159.2, 161.4, 160.7, 157.7, 243.4, 143.6, 137.5, 115.9, 135.4, 143.5, 151.1, 291.4, 163.3, 166.0, 147.0, 151.5, 173.6, 181.9, 268.5, 146.8, 150.8, 154.9, 164.1, 156.4, 173.9, 337.1, 149.4, 172.8, 185.7, 164.7, 136.0, 173.9, 242.8, 148.8, 171.5, 186.5, 164.7]
+tripletrail rss after the updates: 51665 MiB (heap 15430 MiB)
+=== done (2026-11-27T12:10:03+00:00)
