@@ -1,0 +1,30 @@
+# Every pull request says which issue it closes, so the board can follow it and the PM can
+# trace work back to the plan. Passes when the body has "Closes|Fixes|Resolves <repo>#<n>"
+# (or #<n> for this repository), or when the pull request has the label "no-issue" (pure
+# chores, release PRs, tests QA adds). Pull requests from Dependabot pass.
+#
+# Make "PR links an issue" a required check in the branch ruleset.
+name: PR links an issue
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize, labeled, unlabeled]
+
+permissions:
+  pull-requests: read
+
+jobs:
+  link:
+    name: PR links an issue
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/github-script@v8
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            if (pr.user.login === 'dependabot[bot]') return core.notice('Dependabot: no issue needed');
+            if (pr.labels.some((l) => l.name === 'no-issue')) return core.notice('Label no-issue');
+            const re = /\b(close[sd]?|fix(e[sd])?|resolve[sd]?)\b:?\s+((Matdata-eu\/)?[\w.-]+)?#\d+/i;
+            if (re.test(pr.body || '')) return core.notice('Links an issue');
+            core.setFailed('The body must say "Closes Matdata-eu/<repo>#<n>" (or carry the label no-issue).');
