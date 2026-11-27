@@ -122,6 +122,7 @@ mkdir -p $BENCH_WORK/jena && curl -o $BENCH_WORK/jena/jena-fuseki-geosparql-6.2.
 bench/v2/bench.sh v2 small                       # benchmark v2 on the small synthetic set, all engines
 bench/v2/bench.sh bsbm 2785 tripletrail qlever   # one suite, some engines
 bench/v2/bench.sh all full                       # everything of profiles/full.txt (a 64 GB machine)
+bench/v2/bench.sh all threads tripletrail tripletrail-1t  # all cores against one (profiles/threads.txt)
 ```
 
 Requirements: Linux, Docker (QLever, GraphDB, Oxigraph and the suites' tools run in

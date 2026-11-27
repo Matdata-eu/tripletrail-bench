@@ -10,7 +10,8 @@
 # Engines: none given (or "default") = each suite's own default set; otherwise each job runs the
 # given engines it supports (v2: postgis tripletrail qlever jena graphdb; geographica: tripletrail
 # qlever jena graphdb; bsbm, sparqloscope and trainmarks: tripletrail oxigraph qlever jena graphdb
-# maplib; tripletrail-ids, the id-column executor, only when named).
+# maplib; tripletrail-1t, one thread per query, in v2 and those three, and tripletrail-ids, the
+# id-column executor, in those three, only when named).
 # A job whose inputs or tools are missing is skipped with the reason, not failed: osm_norway and
 # geographica need their inputs (data/fetch_inputs.sh, from the bench-data release), osm_norway
 # needs osmium, postgis needs psql and python3-psycopg2.
@@ -41,7 +42,7 @@ python3 "$V2/runs.py" start "$MANIFEST" --run "$RUN" --request "$SUITE $DS" --en
 engines() {
   local all extra=""
   case $1 in
-    v2) all="postgis tripletrail qlever jena graphdb" ;;
+    v2) all="postgis tripletrail qlever jena graphdb"; extra="tripletrail-1t" ;;
     geographica) all="tripletrail qlever jena graphdb" ;;
     # GraphDB runs the scale suite only when asked for by name (its own paid run).
     scale) all="tripletrail qlever"; extra="graphdb" ;;
@@ -50,8 +51,9 @@ engines() {
     shacl) all="tripletrail jena topbraid graphdb rdf4j pyshacl" ;;
     *) all="tripletrail oxigraph qlever jena graphdb maplib" ;;
   esac
-  # tripletrail-ids (the id-column executor as the default) runs only when asked for by name.
-  case $1 in bsbm|sparqloscope|trainmarks|updates) extra="$extra tripletrail-ids" ;; esac
+  # tripletrail-ids (the id-column executor as the default) and tripletrail-1t (one thread per
+  # query) run only when asked for by name.
+  case $1 in bsbm|sparqloscope|trainmarks|updates) extra="$extra tripletrail-ids tripletrail-1t" ;; esac
   [ -z "$REQ" ] && { echo "$all"; return; }
   local out=""
   for e in $all $extra; do case " $REQ " in *" $e "*) out="$out $e" ;; esac; done

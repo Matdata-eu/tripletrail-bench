@@ -25,7 +25,7 @@ for x in ${SHACL_SKIP:-}; do
   ENGINES=$(echo " $ENGINES " | sed "s/ $x / /; s/^ *//; s/ *$//")
   DEFAULT=$(echo " $DEFAULT " | sed "s/ $x / /; s/^ *//; s/ *$//")
 done
-ALL="tripletrail tripletrail-ids oxigraph qlever jena graphdb maplib postgis"
+ALL="tripletrail tripletrail-ids tripletrail-1t oxigraph qlever jena graphdb maplib postgis"
 # The general suites need no spatial index.
 export GRAPHDB_NO_GEO=1
 mkdir -p "$V2/results/$SUITE"
@@ -83,8 +83,8 @@ for e in $ENGINES; do
   "$V2/engines/$e.sh" stop >/dev/null 2>&1
   if [ -n "${DROP_AFTER:-}" ]; then
     case $SUITE in bsbm) d=bsbm-$DS ;; trainmarks) d=trainmarks-$DS ;; updates) d=updates-$DS ;; *) d=$DS ;; esac
-    # tripletrail-ids keeps its store in tripletrail's directory (engines/tripletrail-ids.sh).
-    s=$e; [ "$e" = tripletrail-ids ] && s=tripletrail
+    # tripletrail-ids and tripletrail-1t keep their store in tripletrail's directory (engines/).
+    s=$e; case $e in tripletrail-*) s=tripletrail ;; esac
     rm -rf "${W:?}/$s/$d"
   fi
 done

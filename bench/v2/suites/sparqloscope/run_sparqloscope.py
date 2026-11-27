@@ -33,6 +33,7 @@ large machine, see bench/v2/cloud/README.md).
 """
 import argparse
 import glob
+import hashlib
 import json
 import math
 import os
@@ -176,6 +177,7 @@ def cmd_run(a):
                 rec["runtime_info"] = {"client_time": dt}
                 rec["result_size"] = len(rows)
                 rec["results"] = [[str(v) for v in r] for r in rows[:5]]
+                rec["digest"] = digest(rows)
                 status = f"{dt * 1000:.0f} ms, {len(rows)} rows"
             except Exception as e:  # noqa: BLE001 - recorded, not hidden
                 rec["runtime_info"] = {"client_time": time.perf_counter() - t}
@@ -203,6 +205,15 @@ def cmd_run(a):
         doc["load"] = old["load"]
     yaml.safe_dump(doc, open(path, "w"), sort_keys=False, allow_unicode=True, width=120)
     print(path)
+
+
+def digest(rows):
+    """SHA-256 of every row in the order the engine sent them: two runs of one engine (all cores
+    against one, tripletrail#4) must give the same answer in the same order."""
+    h = hashlib.sha256()
+    for r in rows:
+        h.update(("\t".join("" if v is None else str(v) for v in r) + "\n").encode())
+    return h.hexdigest()
 
 
 def alive(e):
@@ -244,6 +255,25 @@ def fmt(s):
     if s is None:
         return ""
     return f"{s * 1000:.1f} ms" if s < 1 else f"{s:.2f} s"
+
+
+def same_order(ids, by, es):
+    """Each TripleTrail variant (tripletrail-1t: one thread per query, tripletrail-ids, ...)
+    against tripletrail: every row, in order, by digest. Only runs that both answered count."""
+    out = []
+    for e in [e for e in es if e.startswith("tripletrail-") and "tripletrail" in es]:
+        both, diff = 0, []
+        for qid in ids:
+            a, b = by["tripletrail"].get(qid), by[e].get(qid)
+            if not a or not b or failed(a) or failed(b) or "digest" not in a or "digest" not in b:
+                continue
+            both += 1
+            if a["digest"] != b["digest"]:
+                diff.append(qid)
+        if both:
+            out += [f"Same rows in the same order, {e} against tripletrail: {both - len(diff)} of {both} "
+                    "queries" + (f"; different: {', '.join(diff)}" if diff else "") + ".", ""]
+    return out
 
 
 def cmd_report(_a):
@@ -327,6 +357,7 @@ def cmd_report(_a):
         lines += ["", "</details>", ""]
         if mism:
             lines += ["Queries where engines disagree (row count, or the value of a one-row answer):", ""] + mism + [""]
+        lines += same_order(ids, by, es)
     open(os.path.join(OUT, "report.md"), "w").write("\n".join(lines))
     print(os.path.join(OUT, "report.md"))
 
