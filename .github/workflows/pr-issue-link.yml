@@ -1,7 +1,12 @@
-# Every pull request says which issue it closes, so the board can follow it and the PM can
-# trace work back to the plan. Passes when the body has "Closes|Fixes|Resolves <repo>#<n>"
-# (or #<n> for this repository), or when the pull request has the label "no-issue" (pure
-# chores, release PRs, tests QA adds). Pull requests from Dependabot pass.
+# Every pull request names the issue it works on, so the board can follow it and the PM can
+# trace work back to the plan. Passes when the body has one of
+#   Closes|Fixes|Resolves <repo>#<n>   the pull request finishes the issue (it closes on merge)
+#   Refs|Part of|Part 2 of <repo>#<n>  one step of an issue that stays open
+# (<repo># may be left out for an issue of this repository, and Matdata-eu/ may stand in front
+# of it), or when the pull request has the label "no-issue" (pure chores, release PRs, tests QA
+# adds). Pull requests opened by bots (Dependabot, benchmark results from GitHub Actions) pass.
+# A number in the title alone does not count, and neither does "Follow-up to #<pr>": name the
+# issue as well.
 #
 # Make "PR links an issue" a required check in the branch ruleset.
 name: PR links an issue
@@ -23,8 +28,14 @@ jobs:
         with:
           script: |
             const pr = context.payload.pull_request;
-            if (pr.user.login === 'dependabot[bot]') return core.notice('Dependabot: no issue needed');
+            if (pr.user.type === 'Bot') return core.notice(`${pr.user.login}: no issue needed`);
             if (pr.labels.some((l) => l.name === 'no-issue')) return core.notice('Label no-issue');
-            const re = /\b(close[sd]?|fix(e[sd])?|resolve[sd]?)\b:?\s+((Matdata-eu\/)?[\w.-]+)?#\d+/i;
-            if (re.test(pr.body || '')) return core.notice('Links an issue');
-            core.setFailed('The body must say "Closes Matdata-eu/<repo>#<n>" (or carry the label no-issue).');
+            const issue = /\s*:?\s+((Matdata-eu\/)?[\w.-]+)?#\d+/.source;
+            const closes = new RegExp(/\b(close[sd]?|fix(e[sd])?|resolve[sd]?)\b/.source + issue, 'i');
+            const refs = new RegExp(/\b(refs?|references|part( \d+)? of)\b/.source + issue, 'i');
+            const body = pr.body || '';
+            if (closes.test(body)) return core.notice('Closes an issue');
+            if (refs.test(body)) return core.notice('Refers to an issue that stays open');
+            core.setFailed('The body must say "Closes Matdata-eu/<repo>#<n>" (finishes the issue) or '
+              + '"Part of Matdata-eu/<repo>#<n>" / "Refs ..." (one step of an issue that stays open), '
+              + 'or the pull request must carry the label no-issue.');
