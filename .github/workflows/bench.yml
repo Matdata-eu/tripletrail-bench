@@ -24,7 +24,7 @@ on:
   workflow_dispatch:
     inputs:
       core_ref:
-        description: "TripleTrail tag, branch or commit to measure"
+        description: "TripleTrail tag, branch or commit (full or short id) to measure"
         required: true
         default: main
       suite:
@@ -62,8 +62,24 @@ jobs:
   approve:
     runs-on: ubuntu-latest
     environment: benchmark
+    outputs:
+      core_sha: ${{ steps.ref.outputs.sha }}
     steps:
       - run: echo "approved by ${{ github.actor }}"
+      # actions/checkout fetches a tag, a branch or a full commit id, but not a short one
+      # (e36d3ba), so resolve core_ref here, before a server is rented: a ref that does not
+      # exist fails now instead of on the server.
+      - name: Resolve core_ref to a commit
+        id: ref
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REF: ${{ inputs.core_ref }}
+        run: |
+          set -euo pipefail
+          sha=$(gh api "repos/Matdata-eu/tripletrail/commits/$REF" --jq .sha) \
+            || { echo "::error::core_ref '$REF' is not a tag, branch or commit of Matdata-eu/tripletrail"; exit 1; }
+          echo "core_ref $REF = $sha"
+          echo "sha=$sha" >>"$GITHUB_OUTPUT"
 
   provision:
     needs: approve
@@ -168,7 +184,7 @@ jobs:
           exit 1
 
   bench:
-    needs: [provision, await-runner]
+    needs: [approve, provision, await-runner]
     runs-on: ${{ fromJSON(format('["self-hosted","{0}"]', needs.provision.outputs.label)) }}
     timeout-minutes: 2880
     env:
@@ -198,7 +214,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: Matdata-eu/tripletrail
-          ref: ${{ inputs.core_ref }}
+          ref: ${{ needs.approve.outputs.core_sha }}
           path: core
       - uses: dtolnay/rust-toolchain@master
         with:
