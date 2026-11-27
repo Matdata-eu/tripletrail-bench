@@ -2,9 +2,9 @@
 
 Each query has a rows form (the answer as a client gets it) and a count form (the same solutions,
 counted on the server), so a report can tell the cost of the join from the cost of writing rows.
-The count form is the rows form's pattern under `SELECT (COUNT(*) AS ?solutions)`; when the rows form has
-a GROUP BY, ORDER BY or LIMIT, the rows form goes in a subquery instead, so both count the same
-solutions. An ablation control (`control_of`) is a top-k or facet query with patterns taken out:
+The count form is the rows form's pattern under `SELECT (COUNT(*) AS ?solutions)`; when the rows
+form has a GROUP BY, ORDER BY or LIMIT, the rows form goes in a subquery instead, so both count
+the same solutions. An ablation control (`control_of`) is a top-k or facet query with patterns taken out:
 it shows which part of the query the time goes to.
 
 The queries come from the research spike of tripletrail #297 and #298 (59 M triples of RINF), and
