@@ -1,0 +1,68 @@
+triples=10539890 elements=344256 relations=406032 signals=313280 ops=54736 tracks=15665 regions=25
+=== tripletrail on large (2026-11-27T13:25:19+00:00)
+ds: map ready: 9 collections and their facets in 8.1 s
+{"engine": "tripletrail", "dataset": "large", "load_s": 5.41, "start_s": 0.538, "disk_bytes": 403635857, "disk_by_file": {"dict.idx": 51851424, "LOCK": 0, "gpos.seg": 5269984, "namespaces.bin": 202, "geoms.bin": 12744960, "spog.seg": 74162480, "TIMELINE": 33, "generation": 1, "FORMAT": 2, "gpso.seg": 5269984, "wal.log": 0, "stats.bin": 18000, "gosp.seg": 5269984, "ospg.seg": 52389432, "checksums": 348, "compact-keys": 0, "RETIRED": 5, "render-wkt": 0, "psog.seg": 41290240, "CURRENT": 2, "gspo.seg": 5269984, "dict.bin": 111758648, "posg.seg": 38340144}, "load_peak_rss_bytes": 2041987072, "load_peak_anon_bytes": 2027536384, "rss_when_answering": "484 MiB (heap 77 MiB)", "wall_s": 14.606, "rss_after_start": "1052 MiB (heap 641 MiB)", "triples": 10539890}
+[tripletrail] restarted for family 1 selection in 9.7 s
+[tripletrail] sel_bbox                 ok         cold 20.576 ms  p50 1.534 p95 1.843 (n=30)
+[tripletrail] sel_polygon              ok         cold 1.359 ms  p50 1.143 p95 1.436 (n=30)
+[tripletrail] sel_distance             ok         cold 1.03 ms  p50 1.581 p95 2.622 (n=30)
+[tripletrail] restarted for family 2 knn in 9.7 s
+[tripletrail] knn_signals              ok         cold 49.947 ms  p50 4.883 p95 7.719 (n=30)
+[tripletrail] knn_ops                  ok         cold 5.666 ms  p50 8.401 p95 10.707 (n=30)
+[tripletrail] restarted for family 3 join in 9.7 s
+[tripletrail] join_signal_ne_20m       ok         cold 211.467 ms  p50 158.003 p95 176.602 (n=5)
+[tripletrail] join_op_region           ok         cold 29.162 ms  p50 28.754 p95 29.718 (n=5)
+[tripletrail] restarted for family 4 aggregate in 9.7 s
+[tripletrail] agg_length_region        ok         cold 551.156 ms  p50 490.183 p95 536.338 (n=5)
+[tripletrail] agg_total_length         ok         cold 80.769 ms  p50 72.077 p95 93.064 (n=5)
+[tripletrail] agg_union_buffers        ok         cold 21.547 ms  p50 3.357 p95 5.322 (n=20)
+[tripletrail] restarted for family 5 linear referencing in 9.7 s
+[tripletrail] lr_km_to_point           ok         cold 5.415 ms  p50 4.532 p95 5.343 (n=30)
+[tripletrail] lr_assets_between_km     ok         cold 320.535 ms  p50 1.708 p95 3.711 (n=30)
+[tripletrail] restarted for family 6 routing in 9.7 s
+[tripletrail] setup routing: 2.983 ms
+[tripletrail] route_dijkstra           ok         cold 3081.521 ms  p50 26.389 p95 50.236 (n=1000)
+[tripletrail] route_dijkstra_cost      ok         cold 50.632 ms  p50 23.197 p95 45.347 (n=1000)
+[tripletrail] route_bddijkstra         ok         cold 58.074 ms  p50 20.252 p95 48.357 (n=1000)
+[tripletrail] route_ch                 ok         cold 2927.627 ms  p50 3.908 p95 6.252 (n=1000)
+[tripletrail] route_constrained        ok         cold 6324.24 ms  p50 20.948 p95 39.073 (n=200)
+[tripletrail] driving_distance_50km    ok         cold 4.607 ms  p50 3.73 p95 6.094 (n=50)
+[tripletrail] ksp5                     ok         cold 123.815 ms  p50 61.296 p95 148.646 (n=50)
+[tripletrail] cost_matrix_100          ok         cold 452.659 ms  p50 448.197 p95 458.479 (n=10)
+[tripletrail] components               ok         cold 501.377 ms  p50 223.553 p95 238.751 (n=5)
+[tripletrail] restarted for family 7 mixed in 10.2 s
+[tripletrail] mixed_route_signals      ok         cold 917.871 ms  p50 435.938 p95 495.482 (n=50)
+=== tripletrail-1t on large (2026-11-27T13:29:12+00:00)
+ds: map ready: 9 collections and their facets in 8.4 s
+{"engine": "tripletrail", "dataset": "large", "load_s": 5.373, "start_s": 0.537, "disk_bytes": 403635857, "disk_by_file": {"dict.idx": 51851424, "LOCK": 0, "gpos.seg": 5269984, "namespaces.bin": 202, "geoms.bin": 12744960, "spog.seg": 74162480, "TIMELINE": 33, "generation": 1, "FORMAT": 2, "gpso.seg": 5269984, "wal.log": 0, "stats.bin": 18000, "gosp.seg": 5269984, "ospg.seg": 52389432, "checksums": 348, "compact-keys": 0, "RETIRED": 5, "render-wkt": 0, "psog.seg": 41290240, "CURRENT": 2, "gspo.seg": 5269984, "dict.bin": 111758648, "posg.seg": 38340144}, "load_peak_rss_bytes": 1995436032, "load_peak_anon_bytes": 1946632192, "rss_when_answering": "488 MiB (heap 81 MiB)", "wall_s": 14.562, "rss_after_start": "781 MiB (heap 370 MiB)", "triples": 10539890}
+[tripletrail-1t] restarted for family 1 selection in 9.7 s
+[tripletrail-1t] sel_bbox                 ok         cold 28.768 ms  p50 1.678 p95 2.617 (n=30)
+[tripletrail-1t] sel_polygon              ok         cold 1.467 ms  p50 1.169 p95 1.449 (n=30)
+[tripletrail-1t] sel_distance             ok         cold 0.996 ms  p50 1.651 p95 2.562 (n=30)
+[tripletrail-1t] restarted for family 2 knn in 9.7 s
+[tripletrail-1t] knn_signals              ok         cold 49.89 ms  p50 4.934 p95 7.619 (n=30)
+[tripletrail-1t] knn_ops                  ok         cold 5.586 ms  p50 8.705 p95 11.191 (n=30)
+[tripletrail-1t] restarted for family 3 join in 9.7 s
+[tripletrail-1t] join_signal_ne_20m       ok         cold 300.789 ms  p50 242.531 p95 257.3 (n=5)
+[tripletrail-1t] join_op_region           ok         cold 28.852 ms  p50 30.779 p95 41.161 (n=5)
+[tripletrail-1t] restarted for family 4 aggregate in 9.7 s
+[tripletrail-1t] agg_length_region        ok         cold 643.913 ms  p50 576.072 p95 609.342 (n=5)
+[tripletrail-1t] agg_total_length         ok         cold 113.319 ms  p50 115.851 p95 124.499 (n=5)
+[tripletrail-1t] agg_union_buffers        ok         cold 21.255 ms  p50 3.257 p95 5.225 (n=20)
+[tripletrail-1t] restarted for family 5 linear referencing in 9.7 s
+[tripletrail-1t] lr_km_to_point           ok         cold 4.978 ms  p50 4.554 p95 5.277 (n=30)
+[tripletrail-1t] lr_assets_between_km     ok         cold 325.469 ms  p50 1.649 p95 1.784 (n=30)
+[tripletrail-1t] restarted for family 6 routing in 9.7 s
+[tripletrail-1t] setup routing: 2.544 ms
+[tripletrail-1t] route_dijkstra           ok         cold 3068.252 ms  p50 26.487 p95 49.867 (n=1000)
+[tripletrail-1t] route_dijkstra_cost      ok         cold 48.663 ms  p50 23.064 p95 45.148 (n=1000)
+[tripletrail-1t] route_bddijkstra         ok         cold 58.381 ms  p50 20.388 p95 48.799 (n=1000)
+[tripletrail-1t] route_ch                 ok         cold 2963.061 ms  p50 3.888 p95 6.246 (n=1000)
+[tripletrail-1t] route_constrained        ok         cold 6291.822 ms  p50 21.162 p95 39.997 (n=200)
+[tripletrail-1t] driving_distance_50km    ok         cold 4.125 ms  p50 3.595 p95 5.736 (n=50)
+[tripletrail-1t] ksp5                     ok         cold 121.639 ms  p50 63.466 p95 146.842 (n=50)
+[tripletrail-1t] cost_matrix_100          ok         cold 444.702 ms  p50 440.788 p95 460.028 (n=10)
+[tripletrail-1t] components               ok         cold 462.853 ms  p50 223.262 p95 247.725 (n=5)
+[tripletrail-1t] restarted for family 7 mixed in 10.2 s
+[tripletrail-1t] mixed_route_signals      ok         cold 947.818 ms  p50 468.46 p95 534.782 (n=50)
+=== done (2026-11-27T13:33:08+00:00)

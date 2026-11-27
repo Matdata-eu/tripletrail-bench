@@ -1,0 +1,116 @@
+{
+ "engine": "tripletrail-1t",
+ "qid": "agg_total_length",
+ "family": "4 aggregate",
+ "kind": "scalars",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 113.319,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     166293719.22495377
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 115.082,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     166293719.22495377
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 114.303,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     166293719.22495377
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 115.241,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     166293719.22495377
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 113.972,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     166293719.22495377
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 124.499,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     166293719.22495377
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 6,
+   "ms": 115.851,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     166293719.22495377
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 7,
+   "ms": 116.535,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     166293719.22495377
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 113.319,
+ "warm": {
+  "n": 5,
+  "p50_ms": 115.851,
+  "p95_ms": 124.499,
+  "min_ms": 113.972,
+  "max_ms": 124.499,
+  "mean_ms": 117.22
+ },
+ "dataset": "large",
+ "rss_after": "1191 MiB (heap 778 MiB)"
+}

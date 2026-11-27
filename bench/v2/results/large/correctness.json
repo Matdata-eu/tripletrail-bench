@@ -35,6 +35,15 @@
   "examples": [],
   "notes": {}
  },
+ "sel_bbox/tripletrail-1t": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
  "sel_polygon/graphdb": {
   "counts": {
    "match": 33,
@@ -63,6 +72,15 @@
   "notes": {}
  },
  "sel_polygon/tripletrail": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "sel_polygon/tripletrail-1t": {
   "counts": {
    "match": 33,
    "tie": 0,
@@ -123,6 +141,15 @@
   "examples": [],
   "notes": {}
  },
+ "sel_distance/tripletrail-1t": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
  "knn_signals/graphdb": {
   "counts": {
    "match": 33,
@@ -163,6 +190,15 @@
   "examples": [],
   "notes": {}
  },
+ "knn_signals/tripletrail-1t": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
  "knn_ops/graphdb": {
   "counts": {
    "match": 33,
@@ -191,6 +227,15 @@
   "notes": {}
  },
  "knn_ops/tripletrail": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "knn_ops/tripletrail-1t": {
   "counts": {
    "match": 33,
    "tie": 0,
@@ -237,6 +282,15 @@
   }
  },
  "join_signal_ne_20m/tripletrail": {
+  "counts": {
+   "match": 8,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "join_signal_ne_20m/tripletrail-1t": {
   "counts": {
    "match": 8,
    "tie": 0,
@@ -309,7 +363,25 @@
   "examples": [],
   "notes": {}
  },
+ "join_op_region/tripletrail-1t": {
+  "counts": {
+   "match": 8,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
  "agg_length_region/tripletrail": {
+  "counts": {
+   "match": 8,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "agg_length_region/tripletrail-1t": {
   "counts": {
    "match": 8,
    "tie": 0,
@@ -371,6 +443,15 @@
   "examples": [],
   "notes": {}
  },
+ "agg_total_length/tripletrail-1t": {
+  "counts": {
+   "match": 8,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
  "agg_union_buffers/tripletrail": {
   "counts": {
    "match": 23,
@@ -380,7 +461,28 @@
   "examples": [],
   "notes": {}
  },
+ "agg_union_buffers/tripletrail-1t": {
+  "counts": {
+   "match": 23,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
  "lr_km_to_point/tripletrail": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {
+   "match: 0.000 m": 26,
+   "match: 0.001 m": 7
+  }
+ },
+ "lr_km_to_point/tripletrail-1t": {
   "counts": {
    "match": 33,
    "tie": 0,
@@ -428,6 +530,15 @@
   "examples": [],
   "notes": {}
  },
+ "lr_assets_between_km/tripletrail-1t": {
+  "counts": {
+   "match": 33,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
  "route_dijkstra/tripletrail": {
   "counts": {
    "match": 1003,
@@ -439,7 +550,27 @@
    "match: no path": 23
   }
  },
+ "route_dijkstra/tripletrail-1t": {
+  "counts": {
+   "match": 1003,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {
+   "match: no path": 23
+  }
+ },
  "route_dijkstra_cost/tripletrail": {
+  "counts": {
+   "match": 1003,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "route_dijkstra_cost/tripletrail-1t": {
   "counts": {
    "match": 1003,
    "tie": 0,
@@ -472,7 +603,53 @@
    "cost 180525.2000000001 vs 180465.59999999986 (354 vs 356 edges)": 1
   }
  },
+ "route_bddijkstra/tripletrail-1t": {
+  "counts": {
+   "match": 1001,
+   "tie": 0,
+   "mismatch": 2
+  },
+  "examples": [
+   {
+    "index": 10,
+    "verdict": "mismatch",
+    "note": "cost 116812.4 vs 116700.80000000003 (232 vs 232 edges)"
+   },
+   {
+    "index": 764,
+    "verdict": "mismatch",
+    "note": "cost 180525.2000000001 vs 180465.59999999986 (354 vs 356 edges)"
+   }
+  ],
+  "notes": {
+   "cost 116812.4 vs 116700.80000000003 (232 vs 232 edges)": 1,
+   "match: no path": 23,
+   "cost 180525.2000000001 vs 180465.59999999986 (354 vs 356 edges)": 1
+  }
+ },
+ "route_ch/tripletrail-1t": {
+  "counts": {
+   "match": 1003,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {
+   "match: no path": 23
+  }
+ },
  "route_constrained/tripletrail": {
+  "counts": {
+   "match": 203,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {
+   "match: no path": 74
+  }
+ },
+ "route_constrained/tripletrail-1t": {
   "counts": {
    "match": 203,
    "tie": 0,
@@ -492,7 +669,25 @@
   "examples": [],
   "notes": {}
  },
+ "driving_distance_50km/tripletrail-1t": {
+  "counts": {
+   "match": 53,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
  "ksp5/tripletrail": {
+  "counts": {
+   "match": 50,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "ksp5/tripletrail-1t": {
   "counts": {
    "match": 50,
    "tie": 0,
@@ -510,6 +705,15 @@
   "examples": [],
   "notes": {}
  },
+ "cost_matrix_100/tripletrail-1t": {
+  "counts": {
+   "match": 13,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
  "components/tripletrail": {
   "counts": {
    "match": 8,
@@ -519,7 +723,25 @@
   "examples": [],
   "notes": {}
  },
+ "components/tripletrail-1t": {
+  "counts": {
+   "match": 8,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
  "mixed_route_signals/tripletrail": {
+  "counts": {
+   "match": 53,
+   "tie": 0,
+   "mismatch": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "mixed_route_signals/tripletrail-1t": {
   "counts": {
    "match": 53,
    "tie": 0,

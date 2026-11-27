@@ -1,0 +1,710 @@
+{
+ "engine": "tripletrail-1t",
+ "qid": "driving_distance_50km",
+ "family": "6 routing",
+ "kind": "scalars",
+ "runs": [
+  {
+   "phase": "cold",
+   "index": 0,
+   "ms": 4.125,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     994.0,
+     36654586.800000004
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 1,
+   "ms": 4.872,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2900.0,
+     108848478.90000002
+    ]
+   }
+  },
+  {
+   "phase": "warmup",
+   "index": 2,
+   "ms": 4.844,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1702.0,
+     65144607.40000014
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 3,
+   "ms": 3.518,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2141.0,
+     81593311.00000016
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 4,
+   "ms": 5.508,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2461.0,
+     91939195.20000008
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 5.379,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2626.0,
+     97972183.20000008
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 6,
+   "ms": 4.353,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2866.0,
+     106685875.39999998
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 7,
+   "ms": 4.31,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2771.0,
+     101275688.30000031
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 8,
+   "ms": 5.736,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2311.0,
+     88739285.39999993
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 9,
+   "ms": 3.428,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1655.0,
+     61085632.49999997
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 10,
+   "ms": 2.964,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1673.0,
+     64040616.39999993
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 11,
+   "ms": 4.719,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2004.0,
+     77519256.70000029
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 12,
+   "ms": 6.311,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     3648.0,
+     133057019.40000021
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 13,
+   "ms": 3.726,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2256.0,
+     85227847.20000006
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 14,
+   "ms": 5.918,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     3704.0,
+     135242243.69999987
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 15,
+   "ms": 3.278,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2000.0,
+     74701721.99999997
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 16,
+   "ms": 4.263,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2554.0,
+     95986804.70000002
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 17,
+   "ms": 3.239,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2060.0,
+     79107985.79999986
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 18,
+   "ms": 3.929,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2455.0,
+     93767125.6999999
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 19,
+   "ms": 4.236,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2771.0,
+     101270828.1999999
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 20,
+   "ms": 3.621,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2444.0,
+     93426896.69999984
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 21,
+   "ms": 2.957,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1772.0,
+     68092661.40000005
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 22,
+   "ms": 3.225,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2154.0,
+     83016213.20000009
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 23,
+   "ms": 3.63,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2538.0,
+     96095690.89999978
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 24,
+   "ms": 2.851,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1776.0,
+     67305308.5000001
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 25,
+   "ms": 2.87,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1701.0,
+     65684035.50000007
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 26,
+   "ms": 3.515,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2540.0,
+     94362967.49999994
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 27,
+   "ms": 2.601,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1537.0,
+     59126569.49999992
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 28,
+   "ms": 3.006,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1899.0,
+     73526076.60000002
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 29,
+   "ms": 3.112,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1988.0,
+     76058968.10000004
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 30,
+   "ms": 4.546,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     3445.0,
+     126714843.59999992
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 31,
+   "ms": 2.595,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1531.0,
+     55806908.3000001
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 32,
+   "ms": 4.408,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2891.0,
+     107624310.00000006
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 33,
+   "ms": 2.739,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1631.0,
+     62501650.20000007
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 34,
+   "ms": 3.341,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2065.0,
+     79764442.09999998
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 35,
+   "ms": 4.11,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2834.0,
+     106156914.29999988
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 36,
+   "ms": 3.658,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2546.0,
+     96041050.1
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 37,
+   "ms": 4.449,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     3294.0,
+     121263785.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 38,
+   "ms": 3.328,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2298.0,
+     88273516.29999991
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 39,
+   "ms": 2.972,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1979.0,
+     77045712.00000009
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 40,
+   "ms": 4.404,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     3434.0,
+     121766955.3000003
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 41,
+   "ms": 3.457,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2292.0,
+     87917843.79999991
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 42,
+   "ms": 3.385,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2462.0,
+     86674549.10000013
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 43,
+   "ms": 3.826,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2781.0,
+     101243159.29999988
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 44,
+   "ms": 3.927,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2783.0,
+     102332688.00000009
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 45,
+   "ms": 4.033,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2949.0,
+     109905288.99999994
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 46,
+   "ms": 3.313,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2288.0,
+     86891631.80000004
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 47,
+   "ms": 2.407,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     1350.0,
+     49816130.10000009
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 48,
+   "ms": 5.466,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     3691.0,
+     134100880.39999983
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 49,
+   "ms": 3.25,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2188.0,
+     84117219.40000015
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 50,
+   "ms": 3.568,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2215.0,
+     85622070.20000012
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 51,
+   "ms": 4.068,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2860.0,
+     106126637.39999983
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 52,
+   "ms": 3.226,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     2087.0,
+     79455066.79999995
+    ]
+   }
+  }
+ ],
+ "status": "ok",
+ "cold_ms": 4.125,
+ "warm": {
+  "n": 50,
+  "p50_ms": 3.595,
+  "p95_ms": 5.736,
+  "min_ms": 2.407,
+  "max_ms": 6.311,
+  "mean_ms": 3.814
+ },
+ "dataset": "large",
+ "family_setup_ms": 2.544,
+ "rss_after": "2797 MiB (heap 2385 MiB)"
+}

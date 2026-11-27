@@ -7,7 +7,7 @@
   {
    "phase": "cold",
    "index": 0,
-   "ms": 1685.291,
+   "ms": 551.156,
    "ok": true,
    "rows": 25,
    "result": {
@@ -43,7 +43,7 @@
   {
    "phase": "warmup",
    "index": 1,
-   "ms": 1588.642,
+   "ms": 486.311,
    "ok": true,
    "rows": 25,
    "result": {
@@ -79,7 +79,7 @@
   {
    "phase": "warmup",
    "index": 2,
-   "ms": 1614.082,
+   "ms": 499.015,
    "ok": true,
    "rows": 25,
    "result": {
@@ -115,7 +115,7 @@
   {
    "phase": "warm",
    "index": 3,
-   "ms": 1536.133,
+   "ms": 484.257,
    "ok": true,
    "rows": 25,
    "result": {
@@ -151,7 +151,7 @@
   {
    "phase": "warm",
    "index": 4,
-   "ms": 1585.23,
+   "ms": 536.338,
    "ok": true,
    "rows": 25,
    "result": {
@@ -187,7 +187,7 @@
   {
    "phase": "warm",
    "index": 5,
-   "ms": 1568.249,
+   "ms": 512.59,
    "ok": true,
    "rows": 25,
    "result": {
@@ -223,7 +223,7 @@
   {
    "phase": "warm",
    "index": 6,
-   "ms": 1616.577,
+   "ms": 490.183,
    "ok": true,
    "rows": 25,
    "result": {
@@ -259,7 +259,7 @@
   {
    "phase": "warm",
    "index": 7,
-   "ms": 1592.543,
+   "ms": 483.97,
    "ok": true,
    "rows": 25,
    "result": {
@@ -294,15 +294,15 @@
   }
  ],
  "status": "ok",
- "cold_ms": 1685.291,
+ "cold_ms": 551.156,
  "warm": {
   "n": 5,
-  "p50_ms": 1585.23,
-  "p95_ms": 1616.577,
-  "min_ms": 1536.133,
-  "max_ms": 1616.577,
-  "mean_ms": 1579.746
+  "p50_ms": 490.183,
+  "p95_ms": 536.338,
+  "min_ms": 483.97,
+  "max_ms": 536.338,
+  "mean_ms": 501.468
  },
  "dataset": "large",
- "rss_after": "1771 MiB (heap 1107 MiB)"
+ "rss_after": "1760 MiB (heap 1348 MiB)"
 }
