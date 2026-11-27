@@ -1,14 +1,18 @@
 # Gives every issue of this repository an issue Type (the organisation's
-# Bug, Feature or Task), so that none lands on the board without one.
+# Epic, Bug, Feature or Task), so that none lands on the board without one.
 #
 # - A new issue that has no Type a minute after it was opened gets one from
-#   its title and labels: Bug for a defect ("fix", "bug", a test that fails,
+#   its title and labels: Epic for a tracker (a title that starts with
+#   "Tracker:"), Bug for a defect ("fix", "bug", a test that fails,
 #   the bug label), Task for performance, tests, CI, docs and chores ("perf",
 #   "test", "ci", "docs", "chore", "build", "refactor"), Feature otherwise.
 #   The minute leaves time for whoever filed it to set the Type themselves.
-#   Change a wrong guess on the issue; the workflow never overwrites a Type.
+#   Change a wrong guess on the issue; the workflow never overwrites a Type,
+#   except to make a "Tracker:" issue an Epic.
 # - Run it by hand (Actions -> Issue type -> Run workflow) to give every
-#   issue without a Type, open and closed, one in the same way.
+#   issue without a Type, open and closed, one in the same way. A run by hand
+#   also makes every open "Tracker:" issue an Epic, whatever its Type was.
+#   (The hourly Board hygiene workflow makes any issue with sub-issues an Epic.)
 #
 # GITHUB_TOKEN with "issues: write" may set the Type.
 name: Issue type
@@ -32,9 +36,11 @@ jobs:
       - uses: actions/github-script@v8
         with:
           script: |
+            const isTracker = (issue) => /^tracker\s*:/i.test(issue.title);
             const guess = (issue) => {
               const title = issue.title.toLowerCase();
               const labels = issue.labels.map((l) => (typeof l === 'string' ? l : l.name).toLowerCase());
+              if (isTracker(issue)) return 'Epic';
               if (labels.includes('bug') || /^(fix|bug)\b/.test(title)
                   || /\b(fails?|failing|crash(es)?|panics?|wrong|broken|(answers?|returns?) 500|matches nothing)\b/.test(title)
                      && !/^(perf|feat)\b/.test(title)) return 'Bug';
@@ -53,7 +59,7 @@ jobs:
               const { data: issue } = await github.rest.issues.get({
                 ...context.repo, issue_number: context.payload.issue.number,
               });
-              if (issue.type) {
+              if (issue.type && !(isTracker(issue) && issue.type.name !== 'Epic')) {
                 core.info(`#${issue.number} already has Type ${issue.type.name}`);
                 return;
               }
@@ -65,7 +71,8 @@ jobs:
 
             const issues = (await github.paginate(github.rest.issues.listForRepo, {
               ...context.repo, state: 'all', per_page: 100,
-            })).filter((issue) => !issue.pull_request && !issue.type);
+            })).filter((issue) => !issue.pull_request && (!issue.type
+              || (issue.state === 'open' && isTracker(issue) && issue.type.name !== 'Epic')));
             let failed = 0;
             for (const issue of issues) {
               try {
