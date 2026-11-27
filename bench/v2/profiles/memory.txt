@@ -1,0 +1,6 @@
+# Where TripleTrail's memory after start goes and what its short lookups spend their time on
+# (core #188), on OSM Benelux (~200M triples), for engine "tripletrail" (workflow suite=all,
+# dataset=memory). load.json gets memory_when_answering and memory_after_start (heap, store
+# pages and the parts the server counts itself); the three short queries get a perf profile.
+# One job per line: <suite> <dataset> [KEY=VALUE ...] (environment for that job only).
+scale osm_benelux PERF_QUERIES=scale_label_lookup,scale_class_counts,scale_named_stations

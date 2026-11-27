@@ -27,6 +27,9 @@ for i in 1 2 3; do apt-get update -q && break; sleep 10; done
 apt-get install -y -q ca-certificates curl git jq unzip bc time build-essential clang pkg-config \
   python3 python3-pip python3-venv python3-requests python3-yaml python3-psycopg2 openjdk-21-jre-headless docker.io gh \
   postgresql-client osmium-tool
+# perf, for run.py's PERF_QUERIES (core #188); best effort, a run without it just has no profile.
+apt-get install -y -q "linux-tools-$(uname -r)" linux-tools-common || echo "no perf for kernel $(uname -r)"
+echo 1 >/proc/sys/kernel/perf_event_paranoid || true
 systemctl enable --now docker
 
 useradd -m -s /bin/bash -G docker gha || true
