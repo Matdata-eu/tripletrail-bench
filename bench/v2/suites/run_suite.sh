@@ -5,6 +5,7 @@
 #   run_suite.sh trainmarks <scale> [engine...]       medium | large | xlarge
 #   run_suite.sh updates <dataset> [engine...]        bsbm-<products> | rinf-<code> | any $BENCH_WORK/data/<name>.nt
 #   run_suite.sh shacl <dataset> [engine...]          rinf-<code> | rinf-all (engines: tripletrail jena topbraid graphdb rdf4j pyshacl)
+#   run_suite.sh rinfshapes <dataset> [engine...]     rinf-all | rinf-<code> (engines: tripletrail oxigraph qlever jena graphdb)
 # Default engines: tripletrail oxigraph qlever jena graphdb maplib (updates: no qlever, no maplib). Datasets are generated or downloaded
 # on first use (into $BENCH_WORK/data, never into git). DROP_AFTER=1 deletes each engine's store
 # after its run (needed for dblp on a 300 GB disk). Never run in CI on pull requests: see
@@ -17,6 +18,7 @@ SUITE=$1; DS=$2; shift 2
 DEFAULT="tripletrail oxigraph qlever jena graphdb maplib"
 [ "$SUITE" = updates ] && DEFAULT="tripletrail oxigraph jena graphdb"
 [ "$SUITE" = shacl ] && DEFAULT="tripletrail jena topbraid graphdb rdf4j pyshacl"
+[ "$SUITE" = rinfshapes ] && DEFAULT="tripletrail oxigraph qlever jena graphdb"
 ENGINES=${*:-$DEFAULT}
 # SHACL_SKIP (a profile line's KEY=VALUE, such as GraphDB on all of RINF): engines left out.
 # Out of the default set too, so a run of the profile still counts as one of the default engines
@@ -60,6 +62,11 @@ case $SUITE in
     # setup makes a venv with rdflib and pySHACL; the suite then runs in it.
     python3 "$HERE/shacl/run_shacl.py" setup || exit 1
     SHPY=$W/shacl-engines/py/bin/python3 ;;
+  rinfshapes)
+    case $DS in
+      rinf-*) [ -f "$W/data/$DS.nt" ] || python3 "$HERE/data/fetch_rinf.py" "${DS#rinf-}" || exit 1 ;;
+      *) echo "rinfshapes runs on rinf-all or rinf-<code>" >&2; exit 2 ;;
+    esac ;;
   *) echo "unknown suite $SUITE" >&2; exit 2 ;;
 esac
 
@@ -79,6 +86,7 @@ for e in $ENGINES; do
           || echo "!!! $SUITE $DS injected violations failed on $e" ;;
       esac
       (exit $rc) ;;
+    rinfshapes) python3 "$HERE/rinfshapes/run_rinfshapes.py" run --dataset "$DS" --engine "$e" ;;
   esac || echo "!!! $SUITE $DS failed on $e"
   "$V2/engines/$e.sh" stop >/dev/null 2>&1
   if [ -n "${DROP_AFTER:-}" ]; then
@@ -94,6 +102,7 @@ case $SUITE in
   trainmarks) python3 "$HERE/trainmarks/run_trainmarks.py" report ;;
   updates) python3 "$HERE/updates/run_updates.py" report ;;
   shacl) python3 "$HERE/shacl/run_shacl.py" report ;;
+  rinfshapes) python3 "$HERE/rinfshapes/run_rinfshapes.py" report ;;
 esac
 # Again now that the engines' images are pulled (the first capture runs before, on a fresh server).
 python3 "$V2/env.py" >"$ENV_FILE"
