@@ -1,0 +1,22 @@
+downloading https://download.geofabrik.de/europe-latest.osm.pbf (2026-11-27T22:49:13+00:00)
+set a: 20322247 triples, {'station': 3755, 'track': 96293, 'landuse': 3967428, 'admin': 183}
+set b: 180830165 triples, {'highway': 6783331, 'building': 28837493}
+prepared osm_benelux: 201152412 triples
+=== tripletrail on osm_benelux (2026-11-27T23:02:54+00:00)
+ds: map ready: 6 collections and their facets in 166.6 s
+{"engine": "tripletrail", "dataset": "osm_benelux", "load_s": 191.666, "start_s": 0.57, "disk_bytes": 12435571545, "disk_by_file": {"dict.idx": 1434821880, "LOCK": 0, "gpos.seg": 100576256, "namespaces.bin": 217, "geoms.bin": 1353455600, "spog.seg": 1868165528, "TIMELINE": 33, "generation": 1, "FORMAT": 2, "gpso.seg": 100576256, "wal.log": 0, "stats.bin": 8208, "gosp.seg": 100576256, "ospg.seg": 679490472, "checksums": 365, "compact-keys": 0, "RETIRED": 5, "render-wkt": 0, "psog.seg": 998138736, "CURRENT": 2, "gspo.seg": 100576256, "dict.bin": 5077408368, "posg.seg": 621777104}, "load_peak_rss_bytes": 31110414336, "load_peak_anon_bytes": 18092240896, "rss_when_answering": "1754 MiB (heap 31 MiB)", "memory_when_answering": {"rss_kb": 1832320, "anon_kb": 31824, "file_kb": 1800496, "counted_bytes": 233, "counted": {"dictionary": 233, "geometries": 0, "quads": 0, "rangeIndexes": 0, "resultCache": 0, "routingNetworks": 0, "spatialIndex": 0, "textIndex": 0, "unionCopies": 0, "vectorIndexes": 0}, "mapped_bytes": 14847373455}, "memory_after_start": {"rss_kb": 13443340, "anon_kb": 3644336, "file_kb": 9799004, "counted_bytes": 2632366434, "counted": {"dictionary": 233, "geometries": 0, "quads": 0, "rangeIndexes": 0, "resultCache": 0, "routingNetworks": 0, "spatialIndex": 2390530096, "textIndex": 241836105, "unionCopies": 0, "vectorIndexes": 0}, "mapped_bytes": 14847373455}, "wall_s": 358.894, "rss_after_start": "13128 MiB (heap 3559 MiB)", "triples": 201152412}
+[tripletrail] restarted for family 8 osm in 166.9 s
+[tripletrail] osm_station_admin        ok         cold 173.94 ms  p50 105.388 p95 118.873 (n=3)
+[tripletrail] osm_track_landuse        ok         cold 1416.517 ms  p50 1374.922 p95 1398.491 (n=3)
+[tripletrail] osm_track_track_5m       ok         cold 1237.039 ms  p50 1204.308 p95 1219.937 (n=3)
+[tripletrail] restarted for family 9 scale in 164.8 s
+[tripletrail] scale_class_counts       ok         cold 3.073 ms  p50 4.088 p95 5.608 (n=3)
+[tripletrail] scale_building_kinds     ok         cold 74.606 ms  p50 8.114 p95 8.208 (n=3)
+[tripletrail] scale_label_lookup       ok         cold 34.145 ms  p50 2.565 p95 4.828 (n=20)
+[tripletrail] scale_named_stations     ok         cold 6.217 ms  p50 7.213 p95 9.19 (n=3)
+ds: map ready: 6 collections and their facets in 165.7 s
+updates: 60 x 10000: p50 135.8 ms, p95 208.9 ms, total 8.42 s
+per-commit ms: [141.7, 127.6, 134.7, 137.3, 139.5, 142.4, 203.3, 149.5, 136.1, 105.3, 127.5, 138.6, 136.3, 208.9, 122.2, 134.6, 106.3, 133.9, 137.2, 154.2, 192.5, 118.1, 105.7, 119.7, 118.5, 103.0, 109.5, 258.0, 106.0, 136.1, 105.2, 114.6, 156.4, 138.1, 213.8, 90.7, 125.2, 135.4, 133.7, 138.1, 140.9, 207.9, 92.5, 125.6, 134.3, 142.7, 138.2, 138.0, 276.0, 104.5, 131.6, 133.9, 138.3, 133.9, 140.3, 204.4, 96.2, 138.1, 136.5, 135.3]
+tripletrail rss after the updates: 13255 MiB (heap 3647 MiB)
+updates: 60 x 10000: p50 128.9 ms, p95 218.5 ms, total 8.16 s
+=== done (2026-11-27T23:20:03+00:00)

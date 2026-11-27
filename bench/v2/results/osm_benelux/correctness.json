@@ -10,31 +10,31 @@
    {
     "index": 0,
     "verdict": "mismatch",
-    "note": "1 groups differ, e.g. 125331: 36.0 vs 34.0"
+    "note": "2 groups differ, e.g. 125331: 36.0 vs 34.0"
    },
    {
     "index": 1,
     "verdict": "mismatch",
-    "note": "1 groups differ, e.g. 125331: 36.0 vs 34.0"
+    "note": "2 groups differ, e.g. 125331: 36.0 vs 34.0"
    },
    {
     "index": 2,
     "verdict": "mismatch",
-    "note": "1 groups differ, e.g. 125331: 36.0 vs 34.0"
+    "note": "2 groups differ, e.g. 125331: 36.0 vs 34.0"
    },
    {
     "index": 3,
     "verdict": "mismatch",
-    "note": "1 groups differ, e.g. 125331: 36.0 vs 34.0"
+    "note": "2 groups differ, e.g. 125331: 36.0 vs 34.0"
    },
    {
     "index": 4,
     "verdict": "mismatch",
-    "note": "1 groups differ, e.g. 125331: 36.0 vs 34.0"
+    "note": "2 groups differ, e.g. 125331: 36.0 vs 34.0"
    }
   ],
   "notes": {
-   "1 groups differ, e.g. 125331: 36.0 vs 34.0": 6
+   "2 groups differ, e.g. 125331: 36.0 vs 34.0": 6
   }
  },
  "osm_track_landuse/qlever": {
@@ -48,31 +48,31 @@
    {
     "index": 0,
     "verdict": "mismatch",
-    "note": "[97515.0] vs [97424.0]"
+    "note": "[97585.0] vs [97424.0]"
    },
    {
     "index": 1,
     "verdict": "mismatch",
-    "note": "[97515.0] vs [97424.0]"
+    "note": "[97585.0] vs [97424.0]"
    },
    {
     "index": 2,
     "verdict": "mismatch",
-    "note": "[97515.0] vs [97424.0]"
+    "note": "[97585.0] vs [97424.0]"
    },
    {
     "index": 3,
     "verdict": "mismatch",
-    "note": "[97515.0] vs [97424.0]"
+    "note": "[97585.0] vs [97424.0]"
    },
    {
     "index": 4,
     "verdict": "mismatch",
-    "note": "[97515.0] vs [97424.0]"
+    "note": "[97585.0] vs [97424.0]"
    }
   ],
   "notes": {
-   "[97515.0] vs [97424.0]": 6
+   "[97585.0] vs [97424.0]": 6
   }
  },
  "osm_track_track_5m/qlever": {
@@ -86,31 +86,31 @@
    {
     "index": 0,
     "verdict": "mismatch",
-    "note": "[489216.0] vs [489252.0]"
+    "note": "[489358.0] vs [489252.0]"
    },
    {
     "index": 1,
     "verdict": "mismatch",
-    "note": "[489216.0] vs [489252.0]"
+    "note": "[489358.0] vs [489252.0]"
    },
    {
     "index": 2,
     "verdict": "mismatch",
-    "note": "[489216.0] vs [489252.0]"
+    "note": "[489358.0] vs [489252.0]"
    },
    {
     "index": 3,
     "verdict": "mismatch",
-    "note": "[489216.0] vs [489252.0]"
+    "note": "[489358.0] vs [489252.0]"
    },
    {
     "index": 4,
     "verdict": "mismatch",
-    "note": "[489216.0] vs [489252.0]"
+    "note": "[489358.0] vs [489252.0]"
    }
   ],
   "notes": {
-   "[489216.0] vs [489252.0]": 6
+   "[489358.0] vs [489252.0]": 6
   }
  },
  "scale_class_counts/graphdb": {
@@ -124,31 +124,31 @@
    {
     "index": 0,
     "verdict": "mismatch",
-    "note": "6 groups differ, e.g. OsmStation: 3753.0 vs 3751.0"
+    "note": "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0"
    },
    {
     "index": 1,
     "verdict": "mismatch",
-    "note": "6 groups differ, e.g. OsmStation: 3753.0 vs 3751.0"
+    "note": "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0"
    },
    {
     "index": 2,
     "verdict": "mismatch",
-    "note": "6 groups differ, e.g. OsmStation: 3753.0 vs 3751.0"
+    "note": "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0"
    },
    {
     "index": 3,
     "verdict": "mismatch",
-    "note": "6 groups differ, e.g. OsmStation: 3753.0 vs 3751.0"
+    "note": "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0"
    },
    {
     "index": 4,
     "verdict": "mismatch",
-    "note": "6 groups differ, e.g. OsmStation: 3753.0 vs 3751.0"
+    "note": "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0"
    }
   ],
   "notes": {
-   "6 groups differ, e.g. OsmStation: 3753.0 vs 3751.0": 6
+   "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0": 6
   }
  },
  "scale_class_counts/qlever": {
@@ -162,31 +162,31 @@
    {
     "index": 0,
     "verdict": "mismatch",
-    "note": "6 groups differ, e.g. OsmStation: 3753.0 vs 3751.0"
+    "note": "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0"
    },
    {
     "index": 1,
     "verdict": "mismatch",
-    "note": "6 groups differ, e.g. OsmStation: 3753.0 vs 3751.0"
+    "note": "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0"
    },
    {
     "index": 2,
     "verdict": "mismatch",
-    "note": "6 groups differ, e.g. OsmStation: 3753.0 vs 3751.0"
+    "note": "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0"
    },
    {
     "index": 3,
     "verdict": "mismatch",
-    "note": "6 groups differ, e.g. OsmStation: 3753.0 vs 3751.0"
+    "note": "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0"
    },
    {
     "index": 4,
     "verdict": "mismatch",
-    "note": "6 groups differ, e.g. OsmStation: 3753.0 vs 3751.0"
+    "note": "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0"
    }
   ],
   "notes": {
-   "6 groups differ, e.g. OsmStation: 3753.0 vs 3751.0": 6
+   "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0": 6
   }
  },
  "scale_building_kinds/graphdb": {
@@ -200,31 +200,31 @@
    {
     "index": 0,
     "verdict": "mismatch",
-    "note": "52 groups differ, e.g. construction: 88993.0 vs 89057.0"
+    "note": "keys differ (805 vs 804)"
    },
    {
     "index": 1,
     "verdict": "mismatch",
-    "note": "52 groups differ, e.g. construction: 88993.0 vs 89057.0"
+    "note": "keys differ (805 vs 804)"
    },
    {
     "index": 2,
     "verdict": "mismatch",
-    "note": "52 groups differ, e.g. construction: 88993.0 vs 89057.0"
+    "note": "keys differ (805 vs 804)"
    },
    {
     "index": 3,
     "verdict": "mismatch",
-    "note": "52 groups differ, e.g. construction: 88993.0 vs 89057.0"
+    "note": "keys differ (805 vs 804)"
    },
    {
     "index": 4,
     "verdict": "mismatch",
-    "note": "52 groups differ, e.g. construction: 88993.0 vs 89057.0"
+    "note": "keys differ (805 vs 804)"
    }
   ],
   "notes": {
-   "52 groups differ, e.g. construction: 88993.0 vs 89057.0": 6
+   "keys differ (805 vs 804)": 6
   }
  },
  "scale_building_kinds/qlever": {
@@ -238,31 +238,31 @@
    {
     "index": 0,
     "verdict": "mismatch",
-    "note": "52 groups differ, e.g. construction: 88993.0 vs 89057.0"
+    "note": "keys differ (805 vs 804)"
    },
    {
     "index": 1,
     "verdict": "mismatch",
-    "note": "52 groups differ, e.g. construction: 88993.0 vs 89057.0"
+    "note": "keys differ (805 vs 804)"
    },
    {
     "index": 2,
     "verdict": "mismatch",
-    "note": "52 groups differ, e.g. construction: 88993.0 vs 89057.0"
+    "note": "keys differ (805 vs 804)"
    },
    {
     "index": 3,
     "verdict": "mismatch",
-    "note": "52 groups differ, e.g. construction: 88993.0 vs 89057.0"
+    "note": "keys differ (805 vs 804)"
    },
    {
     "index": 4,
     "verdict": "mismatch",
-    "note": "52 groups differ, e.g. construction: 88993.0 vs 89057.0"
+    "note": "keys differ (805 vs 804)"
    }
   ],
   "notes": {
-   "52 groups differ, e.g. construction: 88993.0 vs 89057.0": 6
+   "keys differ (805 vs 804)": 6
   }
  },
  "scale_label_lookup/graphdb": {
@@ -296,31 +296,31 @@
    {
     "index": 0,
     "verdict": "mismatch",
-    "note": "[3431.0] vs [3429.0]"
+    "note": "[3433.0] vs [3429.0]"
    },
    {
     "index": 1,
     "verdict": "mismatch",
-    "note": "[3431.0] vs [3429.0]"
+    "note": "[3433.0] vs [3429.0]"
    },
    {
     "index": 2,
     "verdict": "mismatch",
-    "note": "[3431.0] vs [3429.0]"
+    "note": "[3433.0] vs [3429.0]"
    },
    {
     "index": 3,
     "verdict": "mismatch",
-    "note": "[3431.0] vs [3429.0]"
+    "note": "[3433.0] vs [3429.0]"
    },
    {
     "index": 4,
     "verdict": "mismatch",
-    "note": "[3431.0] vs [3429.0]"
+    "note": "[3433.0] vs [3429.0]"
    }
   ],
   "notes": {
-   "[3431.0] vs [3429.0]": 6
+   "[3433.0] vs [3429.0]": 6
   }
  },
  "scale_named_stations/qlever": {
@@ -334,31 +334,31 @@
    {
     "index": 0,
     "verdict": "mismatch",
-    "note": "[3431.0] vs [3429.0]"
+    "note": "[3433.0] vs [3429.0]"
    },
    {
     "index": 1,
     "verdict": "mismatch",
-    "note": "[3431.0] vs [3429.0]"
+    "note": "[3433.0] vs [3429.0]"
    },
    {
     "index": 2,
     "verdict": "mismatch",
-    "note": "[3431.0] vs [3429.0]"
+    "note": "[3433.0] vs [3429.0]"
    },
    {
     "index": 3,
     "verdict": "mismatch",
-    "note": "[3431.0] vs [3429.0]"
+    "note": "[3433.0] vs [3429.0]"
    },
    {
     "index": 4,
     "verdict": "mismatch",
-    "note": "[3431.0] vs [3429.0]"
+    "note": "[3433.0] vs [3429.0]"
    }
   ],
   "notes": {
-   "[3431.0] vs [3429.0]": 6
+   "[3433.0] vs [3429.0]": 6
   }
  }
 }

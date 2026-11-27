@@ -1,6 +1,6 @@
 | Engine | Load (s) | Index / start (s) | On disk | RSS after start | Triples |
 |---|---|---|---|---|---|
-| tripletrail | 167.2 | 0.574 | 11.58 GiB | 10099 MiB (heap 2771 MiB); 1752 MiB (heap 31 MiB) when it first answered | 201,089,129 |
+| tripletrail | 191.7 | 0.57 | 11.58 GiB | 13128 MiB (heap 3559 MiB); 1754 MiB (heap 31 MiB) when it first answered | 201,152,412 |
 | GraphDB | 906.6 | 1082.251 | 41.06 GiB | 24.57GiB / 61.31GiB | 201,065,992 |
 | QLever | 198.3 | 1.28 | 8.28 GiB | 21.64MiB / 61.31GiB | 201,065,992 |
 
@@ -11,18 +11,18 @@ The engines loaded different extracts (see the Triples column), so their answers
 
 | Query | tripletrail | GraphDB | QLever |
 |---|---|---|---|
-| osm_station_admin | 108 / 115 (300) | timeout [1] | 2.42 s / 2.42 s (2.46 s) |
-| osm_track_landuse | 1.31 s / 1.33 s (1.85 s) | timeout [2] | 16 s / 16 s (16 s) |
-| osm_track_track_5m | 586 / 600 (588) | timeout [3] | 2.33 s / 2.34 s (2.31 s) |
+| osm_station_admin | 105 / 119 (174) | timeout [1] | 2.42 s / 2.42 s (2.46 s) |
+| osm_track_landuse | 1.37 s / 1.40 s (1.42 s) | timeout [2] | 16 s / 16 s (16 s) |
+| osm_track_track_5m | 1.20 s / 1.22 s (1.24 s) | timeout [3] | 2.33 s / 2.34 s (2.31 s) |
 
 **Family 9 scale** — warm p50 / p95 in ms (cold first run in brackets)
 
 | Query | tripletrail | GraphDB | QLever |
 |---|---|---|---|
-| scale_class_counts | 2.6 / 3.1 (8.5) | 12 s / 12 s (16 s) | 3.7 / 4.8 (7.0) |
-| scale_building_kinds | 7.8 / 9.0 (112) | 4.38 s / 4.41 s (4.72 s) | 16 / 16 (17) |
-| scale_label_lookup | 2.2 / 2.6 (10) | 3.5 / 6.1 (13) | 6.7 / 8.5 (9.7) |
-| scale_named_stations | 5.3 / 5.3 (138) | 19 / 22 (46) | 87 / 89 (89) |
+| scale_class_counts | 4.1 / 5.6 (3.1) | 12 s / 12 s (16 s) | 3.7 / 4.8 (7.0) |
+| scale_building_kinds | 8.1 / 8.2 (75) | 4.38 s / 4.41 s (4.72 s) | 16 / 16 (17) |
+| scale_label_lookup | 2.6 / 4.8 (34) | 3.5 / 6.1 (13) | 6.7 / 8.5 (9.7) |
+| scale_named_stations | 7.2 / 9.2 (6.2) | 19 / 22 (46) | 87 / 89 (89) |
 
 Notes:
 

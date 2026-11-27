@@ -1,7 +1,7 @@
 {
  "source": "europe-latest.osm.pbf",
- "source_bytes": 35534160283,
- "source_mtime": "2026-11-23T22:12:48Z",
+ "source_bytes": 35561604789,
+ "source_mtime": "2026-11-27T22:51:47Z",
  "bbox_filter": "2.5,49.4,7.3,53.6",
  "max_triples": null,
  "bbox": [
@@ -12,27 +12,27 @@
  ],
  "sets": {
   "a": {
-   "triples": 20312749,
+   "triples": 20322247,
    "counts": {
-    "station": 3753,
-    "track": 96270,
-    "landuse": 3965580,
+    "station": 3755,
+    "track": 96293,
+    "landuse": 3967428,
     "admin": 183
    },
    "capped": false,
-   "seconds": 72.6
+   "seconds": 69.8
   },
   "b": {
-   "triples": 180776380,
+   "triples": 180830165,
    "counts": {
-    "highway": 6778842,
-    "building": 28831410
+    "highway": 6783331,
+    "building": 28837493
    },
    "capped": false,
-   "seconds": 279.1
+   "seconds": 280.6
   }
  },
- "triples": 201089129,
- "convert_s": 457,
- "nt_bytes": 36773336451
+ "triples": 201152412,
+ "convert_s": 451,
+ "nt_bytes": 36785098586
 }
