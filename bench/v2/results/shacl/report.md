@@ -49,3 +49,73 @@ The ERA RINF shapes on RINF data, in three profiles (`suites/shacl/run_shacl.py`
 | graphdb | 100.0% | 100.0% | 2,606 of 2,606 | 3,309 | none |
 | rdf4j | no era-local result on rinf-0076 | | | | |
 | pyshacl | no era-local result on rinf-0076 | | | | |
+
+## rinf-0080 (11,830,200 triples with the ontology and code lists)
+
+### core
+
+| engine | time (s) | validation (s) | peak memory (MB) | results | violations | warnings | same as TopBraid | same as majority |
+|---|---:|---:|---:|---:|---:|---:|---|---|
+| tripletrail | 32.4 | 27.3 | 1,745 | 281,387 | 96 | 281,291 | yes | yes |
+| jena | 73.2 |  | 12,843 | 281,387 | 96 | 281,291 | yes | yes |
+| topbraid | 255.8 |  | 14,181 | 281,387 | 96 | 281,291 | yes | yes |
+| graphdb | 374.5 | 246.2 | 52,694 | 281,387 | 96 | 281,291 | yes | yes |
+| rdf4j | 556.9 | 553.5 | 20,978 | 2,100 | 96 | 2,004 | no | no |
+| pyshacl | 2,668.2 |  | 15,230 | 281,387 | 96 | 281,291 | yes | yes |
+
+### era-local
+
+| engine | time (s) | validation (s) | peak memory (MB) | results | violations | warnings | same as TopBraid | same as majority |
+|---|---:|---:|---:|---:|---:|---:|---|---|
+| tripletrail | 179.5 | 174.0 | 11,966 | 894,300 | 297,578 | 596,722 | yes | yes |
+| jena | 778.8 |  | 12,415 | 947,629 (894,300 distinct) | 297,578 | 650,051 | yes | yes |
+| topbraid | 1,253.0 |  | 11,961 | 947,629 (894,300 distinct) | 297,578 | 650,051 | yes | yes |
+| graphdb | 3,199.0 (graphdb: container peak memory 53157052416 bytes) | | 50,695 | | | | | |
+| rdf4j | skipped: failed on rinf-0076 | | | | | | | |
+| pyshacl | skipped: failed on rinf-0076 | | | | | | | |
+
+### era
+
+| engine | time (s) | validation (s) | peak memory (MB) | results | violations | warnings | same as TopBraid | same as majority |
+|---|---:|---:|---:|---:|---:|---:|---|---|
+| tripletrail | 203.8 | 198.4 | 12,625 | 894,300 | 297,578 | 596,722 | yes | yes |
+| jena | 800.9 |  | 12,355 | 947,629 (894,300 distinct) | 297,578 | 650,051 | yes | yes |
+| topbraid | 1,343.7 |  | 11,913 | 947,629 (894,300 distinct) | 297,578 | 650,051 | yes | yes |
+| graphdb | 3,136.0 (graphdb: container peak memory 54429499392 bytes) | | 51,908 | | | | | |
+| rdf4j | skipped: failed on rinf-0076 | | | | | | | |
+| pyshacl | skipped: failed on rinf-0076 | | | | | | | |
+
+## rinf-all (43,003,520 triples with the ontology and code lists)
+
+### core
+
+| engine | time (s) | validation (s) | peak memory (MB) | results | violations | warnings | same as TopBraid | same as majority |
+|---|---:|---:|---:|---:|---:|---:|---|---|
+| tripletrail | 109.1 | 88.6 | 4,647 | 923,615 (919,987 distinct) | 131,086 | 792,529 |  | yes |
+| jena | 324.3 |  | 24,230 | 923,615 (919,987 distinct) | 131,086 | 792,529 |  | yes |
+| topbraid | 977.5 (exit 1) | | 28,745 | | | | | |
+| graphdb | skipped: left out of this dataset by the benchmark profile (bench/v2/profiles/shacl.txt) | | | | | | | |
+| rdf4j | 2,459.8 | 2,454.3 | 50,310 | 15,058 (14,655 distinct) | 11,179 | 3,879 |  | no |
+| pyshacl | 3,603.8 (timed out) | | 41,767 | | | | | |
+
+### era-local
+
+| engine | time (s) | validation (s) | peak memory (MB) | results | violations | warnings | same as TopBraid | same as majority |
+|---|---:|---:|---:|---:|---:|---:|---|---|
+| tripletrail | 525.4 | 504.9 | 36,112 | 3,626,416 (3,579,628 distinct) | 265,853 | 3,360,563 |  |  |
+| jena | 2,352.5 |  | 37,668 | 3,804,723 (3,579,560 distinct) | 266,245 | 3,538,478 |  |  |
+| topbraid | 3,600.2 (timed out) | | 101 | | | | | |
+| graphdb | skipped: left out of this dataset by the benchmark profile (bench/v2/profiles/shacl.txt) | | | | | | | |
+| rdf4j | skipped: failed on rinf-0076 | | | | | | | |
+| pyshacl | skipped: timed out on an earlier profile of this dataset | | | | | | | |
+
+### era
+
+| engine | time (s) | validation (s) | peak memory (MB) | results | violations | warnings | same as TopBraid | same as majority |
+|---|---:|---:|---:|---:|---:|---:|---|---|
+| tripletrail | 592.0 | 571.3 | 36,141 | 3,626,762 (3,579,669 distinct) | 266,199 | 3,360,563 |  |  |
+| jena | 2,377.9 |  | 38,873 | 3,805,069 (3,579,601 distinct) | 266,591 | 3,538,478 |  |  |
+| topbraid | skipped: timed out on an earlier profile of this dataset | | | | | | | |
+| graphdb | skipped: left out of this dataset by the benchmark profile (bench/v2/profiles/shacl.txt) | | | | | | | |
+| rdf4j | skipped: failed on rinf-0076 | | | | | | | |
+| pyshacl | skipped: timed out on an earlier profile of this dataset | | | | | | | |

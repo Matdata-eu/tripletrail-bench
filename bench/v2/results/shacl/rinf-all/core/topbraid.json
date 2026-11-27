@@ -1,0 +1,21 @@
+{
+ "engine": "topbraid",
+ "version": "shacl-1.5.0",
+ "timeout_s": 3600,
+ "runs": [
+  {
+   "exit": 1,
+   "timed_out": false,
+   "wall_s": 977.526,
+   "peak_rss_bytes": 30141710336,
+   "validate_s": null
+  }
+ ],
+ "wall_s": 977.526,
+ "peak_rss_bytes": 30141710336,
+ "timed_out": false,
+ "exit": 1,
+ "report_bytes": 731347901,
+ "report_parse_error": "02:49:52 ERROR riot            :: [line: 1, col: 3 ] Undefined prefix:",
+ "error": "exit 1"
+}

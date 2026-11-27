@@ -1,0 +1,10 @@
+{
+ "dataset": "rinf-0080",
+ "data_triples": 11830200,
+ "shapes_sha256": "e0038a087dfeffd5575bd5ea78136632747d894cc2b9d7a657ec62186bf58097",
+ "profiles": {
+  "core": 9405,
+  "era-local": 9738,
+  "era": 11115
+ }
+}

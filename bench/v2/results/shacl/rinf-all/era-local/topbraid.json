@@ -1,0 +1,19 @@
+{
+ "engine": "topbraid",
+ "version": "shacl-1.5.0",
+ "timeout_s": 3600,
+ "runs": [
+  {
+   "exit": -15,
+   "timed_out": true,
+   "wall_s": 3600.236,
+   "peak_rss_bytes": 105771008,
+   "validate_s": null
+  }
+ ],
+ "wall_s": 3600.236,
+ "peak_rss_bytes": 105771008,
+ "timed_out": true,
+ "exit": -15,
+ "error": "timed out"
+}
