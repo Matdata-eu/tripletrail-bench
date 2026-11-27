@@ -1,0 +1,64 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 286  of event 'cycles:P'
+# Event count (approx.): 11780780
+#
+# Overhead  Shared Object     Symbol                                                                                                                                                             IPC   [IPC Coverage]
+# ........  ................  .................................................................................................................................................................  ....................
+#
+     6.63%  [unknown]         [k] 0xffffffffc08e2e5a                                                                                                                                             -      -            
+     6.18%  [unknown]         [k] 0xffffffff90590706                                                                                                                                             -      -            
+     5.67%  tripletrail       [.] _RNvNtNtCs9q1GW9UbmuS_9spargebra6parser6parser13___parse_Query                                                                                                 -      -            
+     5.13%  tripletrail       [.] _RNvXs16_NtCs9q1GW9UbmuS_9spargebra4termNtB6_10GroundTermNtNtCscI6d9CVNmLh_4core5clone5Clone5clone                                                             -      -            
+     4.57%  libc.so.6         [.] syscall                                                                                                                                                        -      -            
+     4.19%  tripletrail       [.] _RNvXse_NtCseKjfZWQ1E1_17tripletrail_store5indexNtB5_4ScanNtNtNtNtCscI6d9CVNmLh_4core4iter6traits8iterator8Iterator4next.llvm.6061267115672257168              -      -            
+     3.35%  [unknown]         [k] 0xffffffff8fed9081                                                                                                                                             -      -            
+     3.05%  [unknown]         [k] 0xffffffff91200ba3                                                                                                                                             -      -            
+     2.86%  libc.so.6         [.] clock_nanosleep                                                                                                                                                -      -            
+     2.74%  [unknown]         [k] 0xffffffff8ff59598                                                                                                                                             -      -            
+     2.61%  tripletrail       [.] _RNvNtCs926Kj0DVamp_11tripletrail6propfn4kind                                                                                                                  -      -            
+     2.24%  [unknown]         [k] 0xffffffff91200155                                                                                                                                             -      -            
+     2.11%  tripletrail       [.] _RNvXs3_NtNtCscI6d9CVNmLh_4core4hash3sipINtB5_6HasherNtB5_11Sip13RoundsENtB7_6Hasher5writeCs926Kj0DVamp_11tripletrail                                          -      -            
+     2.11%  [unknown]         [k] 0xffffffff91080175                                                                                                                                             -      -            
+     1.82%  [unknown]         [k] 0xffffffff8ff92e06                                                                                                                                             -      -            
+     1.75%  [unknown]         [k] 0xffffffff8ff76061                                                                                                                                             -      -            
+     1.74%  [unknown]         [k] 0xffffffff8ff7c6af                                                                                                                                             -      -            
+     1.68%  [unknown]         [k] 0xffffffff90d043e6                                                                                                                                             -      -            
+     1.67%  tripletrail       [.] _RNvMs13_Cs8Ehysy3IZCp_5oxiriINtB6_9IriParserNtB6_16VoidOutputBufferKb0_E10parse_portCs926Kj0DVamp_11tripletrail                                               -      -            
+     1.67%  [unknown]         [k] 0xffffffff91201668                                                                                                                                             -      -            
+     1.61%  [unknown]         [k] 0xffffffff91200175                                                                                                                                             -      -            
+     1.59%  [unknown]         [k] 0xffffffff8ff8fb3d                                                                                                                                             -      -            
+     1.53%  [unknown]         [k] 0xffffffff8ff7cf8c                                                                                                                                             -      -            
+     1.31%  [unknown]         [k] 0xffffffff90fe2d26                                                                                                                                             -      -            
+     1.30%  [unknown]         [k] 0xffffffff8ff89e56                                                                                                                                             -      -            
+     1.29%  tripletrail       [.] _mi_bin_size                                                                                                                                                   -      -            
+     1.26%  [unknown]         [k] 0xffffffff91077b26                                                                                                                                             -      -            
+     1.24%  [unknown]         [k] 0xffffffff8ff68362                                                                                                                                             -      -            
+     1.24%  tripletrail       [.] _RNvXs_NtCs3oxvDaHV6DS_9tiny_http6clientNtB4_16ClientConnectionNtNtNtNtCscI6d9CVNmLh_4core4iter6traits8iterator8Iterator4next                                  -      -            
+     1.23%  [unknown]         [k] 0xffffffff90027097                                                                                                                                             -      -            
+     1.23%  [unknown]         [k] 0xffffffff8ffecd51                                                                                                                                             -      -            
+     1.22%  [unknown]         [k] 0xffffffff8ff5d1d4                                                                                                                                             -      -            
+     1.19%  [unknown]         [k] 0xffffffff8ffa772c                                                                                                                                             -      -            
+     1.14%  [unknown]         [k] 0xffffffff9106def3                                                                                                                                             -      -            
+     0.99%  [unknown]         [k] 0xffffffff8ff96af2                                                                                                                                             -      -            
+     0.90%  [unknown]         [k] 0xffffffff8ff6a25c                                                                                                                                             -      -            
+     0.86%  [unknown]         [k] 0xffffffff8ff60b51                                                                                                                                             -      -            
+     0.85%  [unknown]         [k] 0xffffffff8ff620c5                                                                                                                                             -      -            
+     0.84%  [unknown]         [k] 0xffffffff8ff71f70                                                                                                                                             -      -            
+     0.82%  [unknown]         [k] 0xffffffff8ff6851c                                                                                                                                             -      -            
+     0.81%  [unknown]         [k] 0xffffffff8ff6210d                                                                                                                                             -      -            
+     0.80%  [unknown]         [k] 0xffffffff903712a6                                                                                                                                             -      -            
+     0.77%  [unknown]         [k] 0xffffffff9108032c                                                                                                                                             -      -            
+     0.72%  [unknown]         [k] 0xffffffff9000fc3c                                                                                                                                             -      -            
+     0.71%  [unknown]         [k] 0xffffffff8fe6d2b5                                                                                                                                             -      -            
+     0.70%  tripletrail       [.] _RINvNtNtCsgczF5crJ4sT_3std3sys9backtrace28___rust_begin_short_backtraceNCNvMs0_NtNtCs3oxvDaHV6DS_9tiny_http4util9task_poolNtB1f_8TaskPool10add_thread0uEB1j_  -      -            
+     0.63%  [vdso]            [.] 0x0000000000000cae                                                                                                                                             -      -            
+     0.54%  [unknown]         [k] 0xffffffff90fe3101                                                                                                                                             -      -            
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
