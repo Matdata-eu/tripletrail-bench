@@ -16,6 +16,7 @@ import unittest
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from queries import QUERIES, BY_ID  # noqa: E402
+from run_rinfshapes import clean  # noqa: E402
 
 BIN = os.environ.get("TRIPLETRAIL_BIN", os.path.join(HERE, "..", "..", "..", "..", "core", "target", "release", "tripletrail"))
 DATA = os.path.join(HERE, "testdata", "extract.ttl")
@@ -87,6 +88,29 @@ class Suite(unittest.TestCase):
             if q.control_of:
                 self.assertIn(q.control_of, BY_ID)
                 self.assertEqual(q.shape, "control")
+
+
+class Clean(unittest.TestCase):
+    XSD = "http://www.w3.org/2001/XMLSchema#"
+
+    def line(self, literal):
+        return f"<http://a> <http://b> {literal} .\n".encode()
+
+    def test_numbers(self):
+        self.assertIsNone(clean(self.line(f'"12"^^<{self.XSD}integer>')))
+        self.assertIsNone(clean(self.line(f'"-1.5E3"^^<{self.XSD}double>')))
+        self.assertEqual(clean(self.line(f'"N"^^<{self.XSD}integer>')), "not a number: xsd:integer")
+        self.assertEqual(clean(self.line(f'"1.5"^^<{self.XSD}integer>')), "not a number: xsd:integer")
+
+    def test_geometries(self):
+        wkt = "<http://www.opengis.net/ont/geosparql#wktLiteral>"
+        self.assertEqual(clean(self.line(f'"LINESTRING (24.27 54.89)"^^{wkt}')), "LINESTRING of one point")
+        self.assertIsNone(clean(self.line(f'"LINESTRING (1 2, 3 4)"^^{wkt}')))
+        self.assertIsNone(clean(self.line(f'"POINT (1 2)"^^{wkt}')))
+
+    def test_long_lines(self):
+        self.assertEqual(clean(self.line('"' + "x" * (16 * 1024 * 1024) + '"')), "line over 16 MiB")
+        self.assertIsNone(clean(self.line('"short"')))
 
 
 @unittest.skipUnless(os.access(BIN, os.X_OK), f"no tripletrail binary at {BIN} (set TRIPLETRAIL_BIN)")

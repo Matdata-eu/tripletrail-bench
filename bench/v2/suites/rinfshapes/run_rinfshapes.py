@@ -2,9 +2,12 @@
 """RINF query-shape suite (tripletrail-bench #64): facets, top-k, stars, chains, wide tables and
 anti-joins on real RINF data, each query in a rows form and a count form (queries.py).
 
+  run_rinfshapes.py prepare --dataset rinf-all|rinf-<code>
+      $BENCH_WORK/data/rinf-<x>.nt -> $BENCH_WORK/data/rinfshapes-<x>.nt, without the triples
+      that some engine cannot load (see clean())
   run_rinfshapes.py run --dataset rinf-all|rinf-<code> --engine E [--skip-load] [--warm 7]
-      load $BENCH_WORK/data/<dataset>.nt (engines/E.sh load), start the engine, then per query
-      and form: one cold run, 2 warm-ups and --warm timed runs (median)
+      load rinfshapes-<x> (engines/E.sh load), start the engine, then per query and form: one
+      cold run, 2 warm-ups and --warm timed runs (median)
       -> results/rinfshapes/<dataset>/<engine>.json
   run_rinfshapes.py report   -> results/rinfshapes/report.md
 
@@ -16,6 +19,7 @@ import argparse
 import glob
 import json
 import os
+import re
 import statistics
 import subprocess
 import sys
@@ -39,6 +43,54 @@ def engine(e, *args):
     return r.stdout.strip()
 
 
+def store_name(dataset):
+    """The engines' dataset: the cleaned copy of the RINF file (rinf-all -> rinfshapes-all)."""
+    return "rinfshapes-" + dataset.removeprefix("rinf-")
+
+
+# RINF as ERA publishes it has triples that stop some engines' bulk loads. None of them is read by
+# the suite's queries, so they are left out for every engine alike:
+LONG_LINE = 16 * 1024 * 1024  # Oxigraph's N-Triples line buffer (era:digitalSchematicOverview WKT)
+NUMBER = re.compile(rb'"([^"]*)"\^\^<http://www\.w3\.org/2001/XMLSchema#(integer|decimal|double|float|int|long)> \.$')
+VALID_NUMBER = {
+    b"integer": re.compile(rb"[+-]?\d+"), b"int": re.compile(rb"[+-]?\d+"), b"long": re.compile(rb"[+-]?\d+"),
+    b"decimal": re.compile(rb"[+-]?(\d+(\.\d*)?|\.\d+)"),
+    b"double": re.compile(rb"[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?|[+-]?INF|NaN"),
+}
+VALID_NUMBER[b"float"] = VALID_NUMBER[b"double"]
+# A LINESTRING of one point, which Jena's spatial index refuses.
+ONE_POINT_LINE = re.compile(rb'"(<[^>]*> )?LINESTRING ?\( *[^,()]+\)"\^\^')
+
+
+def clean(line):
+    """Why a line of N-Triples is left out, or None to keep it."""
+    if len(line) >= LONG_LINE - 1024:
+        return "line over 16 MiB"
+    m = NUMBER.search(line.rstrip())
+    if m and not VALID_NUMBER[m.group(2)].fullmatch(m.group(1)):
+        return f"not a number: xsd:{m.group(2).decode()}"
+    if ONE_POINT_LINE.search(line):
+        return "LINESTRING of one point"
+    return None
+
+
+def cmd_prepare(a):
+    src = os.path.join(WORK, "data", f"{a.dataset}.nt")
+    dst = os.path.join(WORK, "data", f"{store_name(a.dataset)}.nt")
+    kept, left_out = 0, {}
+    with open(src, "rb") as f, open(dst + ".part", "wb") as out:
+        for line in f:
+            why = clean(line)
+            if why:
+                left_out[why] = left_out.get(why, 0) + 1
+            else:
+                out.write(line)
+                kept += 1
+    os.replace(dst + ".part", dst)
+    json.dump({"source": a.dataset, "triples": kept, "left_out": left_out}, open(dst[:-3] + ".meta.json", "w"))
+    print(f"{dst}: {kept} triples, left out {left_out}")
+
+
 def timed(cl, text, warm):
     """Cold run, 2 warm-ups, `warm` timed runs: the summary and the last answer's rows."""
     runs, rows = [], []
@@ -53,15 +105,15 @@ def timed(cl, text, warm):
 
 def cmd_run(a):
     from run import Sparql
-    meta_path = os.path.join(WORK, "data", f"{a.dataset}.meta.json")
-    meta = json.load(open(meta_path)) if os.path.exists(meta_path) else {}
+    store = store_name(a.dataset)
+    meta = json.load(open(os.path.join(WORK, "data", f"{store}.meta.json")))
     os.makedirs(os.path.join(OUT, a.dataset), exist_ok=True)
-    rec = {"engine": a.engine, "dataset": a.dataset, "triples": meta.get("triples"),
-           "warm_runs": a.warm, "queries": {}}
+    rec = {"engine": a.engine, "dataset": a.dataset, "triples": meta["triples"],
+           "left_out": meta["left_out"], "warm_runs": a.warm, "queries": {}}
     if not a.skip_load:
-        print(f"loading {a.dataset} into {a.engine}", flush=True)
-        rec["load"] = json.loads(engine(a.engine, "load", a.dataset).splitlines()[-1])
-    engine(a.engine, "start", a.dataset)
+        print(f"loading {store} into {a.engine}", flush=True)
+        rec["load"] = json.loads(engine(a.engine, "load", store).splitlines()[-1])
+    engine(a.engine, "start", store)
     cl = Sparql(a.engine, engine(a.engine, "endpoint"))
     try:
         for q in QUERIES:
@@ -166,6 +218,8 @@ def cmd_queries(a):
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sp = p.add_subparsers(dest="cmd", required=True)
+    pr = sp.add_parser("prepare")
+    pr.add_argument("--dataset", default="rinf-all")
     r = sp.add_parser("run")
     r.add_argument("--dataset", default="rinf-all")
     r.add_argument("--engine", required=True)
@@ -175,7 +229,7 @@ def main():
     q = sp.add_parser("queries")
     q.add_argument("id", nargs="?")
     a = p.parse_args()
-    {"run": cmd_run, "report": cmd_report, "queries": cmd_queries}[a.cmd](a)
+    {"prepare": cmd_prepare, "run": cmd_run, "report": cmd_report, "queries": cmd_queries}[a.cmd](a)
 
 
 if __name__ == "__main__":

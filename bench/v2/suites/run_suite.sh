@@ -66,7 +66,9 @@ case $SUITE in
     case $DS in
       rinf-*) [ -f "$W/data/$DS.nt" ] || python3 "$HERE/data/fetch_rinf.py" "${DS#rinf-}" || exit 1 ;;
       *) echo "rinfshapes runs on rinf-all or rinf-<code>" >&2; exit 2 ;;
-    esac ;;
+    esac
+    # The engines load a copy without the triples some of them cannot load (rinfshapes-<code>).
+    [ -f "$W/data/rinfshapes-${DS#rinf-}.nt" ] || python3 "$HERE/rinfshapes/run_rinfshapes.py" prepare --dataset "$DS" || exit 1 ;;
   *) echo "unknown suite $SUITE" >&2; exit 2 ;;
 esac
 
@@ -90,7 +92,7 @@ for e in $ENGINES; do
   esac || echo "!!! $SUITE $DS failed on $e"
   "$V2/engines/$e.sh" stop >/dev/null 2>&1
   if [ -n "${DROP_AFTER:-}" ]; then
-    case $SUITE in bsbm) d=bsbm-$DS ;; trainmarks) d=trainmarks-$DS ;; updates) d=updates-$DS ;; *) d=$DS ;; esac
+    case $SUITE in bsbm) d=bsbm-$DS ;; trainmarks) d=trainmarks-$DS ;; updates) d=updates-$DS ;; rinfshapes) d=rinfshapes-${DS#rinf-} ;; *) d=$DS ;; esac
     # tripletrail-ids and tripletrail-1t keep their store in tripletrail's directory (engines/).
     s=$e; case $e in tripletrail-*) s=tripletrail ;; esac
     rm -rf "${W:?}/$s/$d"
