@@ -42,37 +42,37 @@
    "match": 0,
    "tie": 0,
    "mismatch": 0,
-   "other_extract": 6
+   "other_extract": 5
   },
   "examples": [
    {
     "index": 0,
     "verdict": "mismatch",
-    "note": "[5446900.0] vs [5444484.0]"
+    "note": "[5449036.0] vs [5444484.0]"
    },
    {
     "index": 1,
     "verdict": "mismatch",
-    "note": "[5446900.0] vs [5444484.0]"
+    "note": "[5449036.0] vs [5444484.0]"
    },
    {
     "index": 2,
     "verdict": "mismatch",
-    "note": "[5446900.0] vs [5444484.0]"
+    "note": "[5449036.0] vs [5444484.0]"
    },
    {
     "index": 3,
     "verdict": "mismatch",
-    "note": "[5446900.0] vs [5444484.0]"
+    "note": "[5449036.0] vs [5444484.0]"
    },
    {
     "index": 4,
     "verdict": "mismatch",
-    "note": "[5446900.0] vs [5444484.0]"
+    "note": "[5449036.0] vs [5444484.0]"
    }
   ],
   "notes": {
-   "[5446900.0] vs [5444484.0]": 6
+   "[5449036.0] vs [5444484.0]": 5
   }
  },
  "scale_class_counts/graphdb": {
@@ -86,31 +86,31 @@
    {
     "index": 0,
     "verdict": "mismatch",
-    "note": "7 groups differ, e.g. OsmStation: 98863.0 vs 98861.0"
+    "note": "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0"
    },
    {
     "index": 1,
     "verdict": "mismatch",
-    "note": "7 groups differ, e.g. OsmStation: 98863.0 vs 98861.0"
+    "note": "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0"
    },
    {
     "index": 2,
     "verdict": "mismatch",
-    "note": "7 groups differ, e.g. OsmStation: 98863.0 vs 98861.0"
+    "note": "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0"
    },
    {
     "index": 3,
     "verdict": "mismatch",
-    "note": "7 groups differ, e.g. OsmStation: 98863.0 vs 98861.0"
+    "note": "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0"
    },
    {
     "index": 4,
     "verdict": "mismatch",
-    "note": "7 groups differ, e.g. OsmStation: 98863.0 vs 98861.0"
+    "note": "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0"
    }
   ],
   "notes": {
-   "7 groups differ, e.g. OsmStation: 98863.0 vs 98861.0": 6
+   "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0": 6
   }
  },
  "scale_class_counts/qlever": {
@@ -124,31 +124,31 @@
    {
     "index": 0,
     "verdict": "mismatch",
-    "note": "7 groups differ, e.g. OsmStation: 98863.0 vs 98861.0"
+    "note": "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0"
    },
    {
     "index": 1,
     "verdict": "mismatch",
-    "note": "7 groups differ, e.g. OsmStation: 98863.0 vs 98861.0"
+    "note": "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0"
    },
    {
     "index": 2,
     "verdict": "mismatch",
-    "note": "7 groups differ, e.g. OsmStation: 98863.0 vs 98861.0"
+    "note": "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0"
    },
    {
     "index": 3,
     "verdict": "mismatch",
-    "note": "7 groups differ, e.g. OsmStation: 98863.0 vs 98861.0"
+    "note": "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0"
    },
    {
     "index": 4,
     "verdict": "mismatch",
-    "note": "7 groups differ, e.g. OsmStation: 98863.0 vs 98861.0"
+    "note": "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0"
    }
   ],
   "notes": {
-   "7 groups differ, e.g. OsmStation: 98863.0 vs 98861.0": 6
+   "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0": 6
   }
  },
  "scale_building_kinds/graphdb": {
@@ -162,31 +162,31 @@
    {
     "index": 0,
     "verdict": "mismatch",
-    "note": "keys differ (2502 vs 2505)"
+    "note": "keys differ (2507 vs 2505)"
    },
    {
     "index": 1,
     "verdict": "mismatch",
-    "note": "keys differ (2502 vs 2505)"
+    "note": "keys differ (2507 vs 2505)"
    },
    {
     "index": 2,
     "verdict": "mismatch",
-    "note": "keys differ (2502 vs 2505)"
+    "note": "keys differ (2507 vs 2505)"
    },
    {
     "index": 3,
     "verdict": "mismatch",
-    "note": "keys differ (2502 vs 2505)"
+    "note": "keys differ (2507 vs 2505)"
    },
    {
     "index": 4,
     "verdict": "mismatch",
-    "note": "keys differ (2502 vs 2505)"
+    "note": "keys differ (2507 vs 2505)"
    }
   ],
   "notes": {
-   "keys differ (2502 vs 2505)": 6
+   "keys differ (2507 vs 2505)": 6
   }
  },
  "scale_building_kinds/qlever": {
@@ -200,31 +200,31 @@
    {
     "index": 0,
     "verdict": "mismatch",
-    "note": "keys differ (2502 vs 2505)"
+    "note": "keys differ (2507 vs 2505)"
    },
    {
     "index": 1,
     "verdict": "mismatch",
-    "note": "keys differ (2502 vs 2505)"
+    "note": "keys differ (2507 vs 2505)"
    },
    {
     "index": 2,
     "verdict": "mismatch",
-    "note": "keys differ (2502 vs 2505)"
+    "note": "keys differ (2507 vs 2505)"
    },
    {
     "index": 3,
     "verdict": "mismatch",
-    "note": "keys differ (2502 vs 2505)"
+    "note": "keys differ (2507 vs 2505)"
    },
    {
     "index": 4,
     "verdict": "mismatch",
-    "note": "keys differ (2502 vs 2505)"
+    "note": "keys differ (2507 vs 2505)"
    }
   ],
   "notes": {
-   "keys differ (2502 vs 2505)": 6
+   "keys differ (2507 vs 2505)": 6
   }
  },
  "scale_label_lookup/graphdb": {
@@ -258,31 +258,31 @@
    {
     "index": 0,
     "verdict": "mismatch",
-    "note": "[88629.0] vs [88632.0]"
+    "note": "[88482.0] vs [88632.0]"
    },
    {
     "index": 1,
     "verdict": "mismatch",
-    "note": "[88629.0] vs [88632.0]"
+    "note": "[88482.0] vs [88632.0]"
    },
    {
     "index": 2,
     "verdict": "mismatch",
-    "note": "[88629.0] vs [88632.0]"
+    "note": "[88482.0] vs [88632.0]"
    },
    {
     "index": 3,
     "verdict": "mismatch",
-    "note": "[88629.0] vs [88632.0]"
+    "note": "[88482.0] vs [88632.0]"
    },
    {
     "index": 4,
     "verdict": "mismatch",
-    "note": "[88629.0] vs [88632.0]"
+    "note": "[88482.0] vs [88632.0]"
    }
   ],
   "notes": {
-   "[88629.0] vs [88632.0]": 6
+   "[88482.0] vs [88632.0]": 6
   }
  },
  "scale_named_stations/qlever": {
@@ -296,31 +296,31 @@
    {
     "index": 0,
     "verdict": "mismatch",
-    "note": "[88629.0] vs [88632.0]"
+    "note": "[88482.0] vs [88632.0]"
    },
    {
     "index": 1,
     "verdict": "mismatch",
-    "note": "[88629.0] vs [88632.0]"
+    "note": "[88482.0] vs [88632.0]"
    },
    {
     "index": 2,
     "verdict": "mismatch",
-    "note": "[88629.0] vs [88632.0]"
+    "note": "[88482.0] vs [88632.0]"
    },
    {
     "index": 3,
     "verdict": "mismatch",
-    "note": "[88629.0] vs [88632.0]"
+    "note": "[88482.0] vs [88632.0]"
    },
    {
     "index": 4,
     "verdict": "mismatch",
-    "note": "[88629.0] vs [88632.0]"
+    "note": "[88482.0] vs [88632.0]"
    }
   ],
   "notes": {
-   "[88629.0] vs [88632.0]": 6
+   "[88482.0] vs [88632.0]": 6
   }
  }
 }

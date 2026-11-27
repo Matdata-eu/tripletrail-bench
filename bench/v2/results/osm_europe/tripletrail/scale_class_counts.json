@@ -7,122 +7,122 @@
   {
    "phase": "cold",
    "index": 0,
-   "ms": 200.817,
+   "ms": 155.492,
    "ok": true,
    "rows": 7,
    "result": {
     "groups": {
-     "http://example.org/bench/OsmStation": 98863.0,
-     "http://www.opengis.net/ont/geosparql#Geometry": 196629342.0,
-     "http://example.org/bench/OsmTrack": 1252954.0,
-     "http://example.org/bench/OsmLanduse": 33223578.0,
-     "http://example.org/bench/OsmAdmin": 18753.0,
-     "http://example.org/bench/OsmHighway": 40763783.0,
-     "http://example.org/bench/OsmBuilding": 121271411.0
+     "http://example.org/bench/OsmStation": 98701.0,
+     "http://www.opengis.net/ont/geosparql#Geometry": 196631930.0,
+     "http://example.org/bench/OsmTrack": 1253312.0,
+     "http://example.org/bench/OsmLanduse": 33274701.0,
+     "http://example.org/bench/OsmAdmin": 18754.0,
+     "http://example.org/bench/OsmHighway": 40756214.0,
+     "http://example.org/bench/OsmBuilding": 121230248.0
     }
    }
   },
   {
    "phase": "warmup",
    "index": 1,
-   "ms": 2.023,
+   "ms": 3.017,
    "ok": true,
    "rows": 7,
    "result": {
     "groups": {
-     "http://example.org/bench/OsmStation": 98863.0,
-     "http://www.opengis.net/ont/geosparql#Geometry": 196629342.0,
-     "http://example.org/bench/OsmTrack": 1252954.0,
-     "http://example.org/bench/OsmLanduse": 33223578.0,
-     "http://example.org/bench/OsmAdmin": 18753.0,
-     "http://example.org/bench/OsmHighway": 40763783.0,
-     "http://example.org/bench/OsmBuilding": 121271411.0
+     "http://example.org/bench/OsmStation": 98701.0,
+     "http://www.opengis.net/ont/geosparql#Geometry": 196631930.0,
+     "http://example.org/bench/OsmTrack": 1253312.0,
+     "http://example.org/bench/OsmLanduse": 33274701.0,
+     "http://example.org/bench/OsmAdmin": 18754.0,
+     "http://example.org/bench/OsmHighway": 40756214.0,
+     "http://example.org/bench/OsmBuilding": 121230248.0
     }
    }
   },
   {
    "phase": "warmup",
    "index": 2,
-   "ms": 1.461,
+   "ms": 2.572,
    "ok": true,
    "rows": 7,
    "result": {
     "groups": {
-     "http://example.org/bench/OsmStation": 98863.0,
-     "http://www.opengis.net/ont/geosparql#Geometry": 196629342.0,
-     "http://example.org/bench/OsmTrack": 1252954.0,
-     "http://example.org/bench/OsmLanduse": 33223578.0,
-     "http://example.org/bench/OsmAdmin": 18753.0,
-     "http://example.org/bench/OsmHighway": 40763783.0,
-     "http://example.org/bench/OsmBuilding": 121271411.0
+     "http://example.org/bench/OsmStation": 98701.0,
+     "http://www.opengis.net/ont/geosparql#Geometry": 196631930.0,
+     "http://example.org/bench/OsmTrack": 1253312.0,
+     "http://example.org/bench/OsmLanduse": 33274701.0,
+     "http://example.org/bench/OsmAdmin": 18754.0,
+     "http://example.org/bench/OsmHighway": 40756214.0,
+     "http://example.org/bench/OsmBuilding": 121230248.0
     }
    }
   },
   {
    "phase": "warm",
    "index": 3,
-   "ms": 1.16,
+   "ms": 7.819,
    "ok": true,
    "rows": 7,
    "result": {
     "groups": {
-     "http://example.org/bench/OsmStation": 98863.0,
-     "http://www.opengis.net/ont/geosparql#Geometry": 196629342.0,
-     "http://example.org/bench/OsmTrack": 1252954.0,
-     "http://example.org/bench/OsmLanduse": 33223578.0,
-     "http://example.org/bench/OsmAdmin": 18753.0,
-     "http://example.org/bench/OsmHighway": 40763783.0,
-     "http://example.org/bench/OsmBuilding": 121271411.0
+     "http://example.org/bench/OsmStation": 98701.0,
+     "http://www.opengis.net/ont/geosparql#Geometry": 196631930.0,
+     "http://example.org/bench/OsmTrack": 1253312.0,
+     "http://example.org/bench/OsmLanduse": 33274701.0,
+     "http://example.org/bench/OsmAdmin": 18754.0,
+     "http://example.org/bench/OsmHighway": 40756214.0,
+     "http://example.org/bench/OsmBuilding": 121230248.0
     }
    }
   },
   {
    "phase": "warm",
    "index": 4,
-   "ms": 1.695,
+   "ms": 2.722,
    "ok": true,
    "rows": 7,
    "result": {
     "groups": {
-     "http://example.org/bench/OsmStation": 98863.0,
-     "http://www.opengis.net/ont/geosparql#Geometry": 196629342.0,
-     "http://example.org/bench/OsmTrack": 1252954.0,
-     "http://example.org/bench/OsmLanduse": 33223578.0,
-     "http://example.org/bench/OsmAdmin": 18753.0,
-     "http://example.org/bench/OsmHighway": 40763783.0,
-     "http://example.org/bench/OsmBuilding": 121271411.0
+     "http://example.org/bench/OsmStation": 98701.0,
+     "http://www.opengis.net/ont/geosparql#Geometry": 196631930.0,
+     "http://example.org/bench/OsmTrack": 1253312.0,
+     "http://example.org/bench/OsmLanduse": 33274701.0,
+     "http://example.org/bench/OsmAdmin": 18754.0,
+     "http://example.org/bench/OsmHighway": 40756214.0,
+     "http://example.org/bench/OsmBuilding": 121230248.0
     }
    }
   },
   {
    "phase": "warm",
    "index": 5,
-   "ms": 1.179,
+   "ms": 2.736,
    "ok": true,
    "rows": 7,
    "result": {
     "groups": {
-     "http://example.org/bench/OsmStation": 98863.0,
-     "http://www.opengis.net/ont/geosparql#Geometry": 196629342.0,
-     "http://example.org/bench/OsmTrack": 1252954.0,
-     "http://example.org/bench/OsmLanduse": 33223578.0,
-     "http://example.org/bench/OsmAdmin": 18753.0,
-     "http://example.org/bench/OsmHighway": 40763783.0,
-     "http://example.org/bench/OsmBuilding": 121271411.0
+     "http://example.org/bench/OsmStation": 98701.0,
+     "http://www.opengis.net/ont/geosparql#Geometry": 196631930.0,
+     "http://example.org/bench/OsmTrack": 1253312.0,
+     "http://example.org/bench/OsmLanduse": 33274701.0,
+     "http://example.org/bench/OsmAdmin": 18754.0,
+     "http://example.org/bench/OsmHighway": 40756214.0,
+     "http://example.org/bench/OsmBuilding": 121230248.0
     }
    }
   }
  ],
  "status": "ok",
- "cold_ms": 200.817,
+ "cold_ms": 155.492,
  "warm": {
   "n": 3,
-  "p50_ms": 1.179,
-  "p95_ms": 1.695,
-  "min_ms": 1.16,
-  "max_ms": 1.695,
-  "mean_ms": 1.345
+  "p50_ms": 2.736,
+  "p95_ms": 7.819,
+  "min_ms": 2.722,
+  "max_ms": 7.819,
+  "mean_ms": 4.426
  },
  "dataset": "osm_europe",
- "rss_after": "4954 MiB (heap 43 MiB)"
+ "rss_after": "49061 MiB (heap 14923 MiB)"
 }
