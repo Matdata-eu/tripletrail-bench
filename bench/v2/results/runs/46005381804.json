@@ -59,6 +59,18 @@
    "seconds": 9,
    "finished": "2026-11-27T13:23:38+00:00",
    "log": "46005381804-sparqloscope-bsbm-2785.log"
+  },
+  {
+   "suite": "sparqloscope",
+   "dataset": "rinf-0076",
+   "engines": [
+    "tripletrail",
+    "tripletrail-1t"
+   ],
+   "status": "ok",
+   "seconds": 87,
+   "finished": "2026-11-27T13:25:07+00:00",
+   "log": "46005381804-sparqloscope-rinf-0076.log"
   }
  ],
  "workflow_run": "https://github.com/Matdata-eu/tripletrail-bench/actions/runs/46005381804"

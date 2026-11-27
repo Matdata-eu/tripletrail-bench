@@ -148,143 +148,145 @@ Same rows in the same order, tripletrail-1t against tripletrail: 102 of 102 quer
 
 ## rinf-0076 (102 queries)
 
-| | tripletrail | oxigraph | qlever | jena | graphdb | maplib |
-|---|---:|---:|---:|---:|---:|---:|
-| load (s) | 1.69 | 3.28 | 3.405 | 10.697 | 17.509 | 0.859 |
-| answered | 102 | 101 | 102 | 102 | 102 | 102 |
-| failed | 0 | 0 | 0 | 0 | 0 | 0 |
-| timed out | 0 | 1 | 0 | 0 | 0 | 0 |
-| **geometric mean** | **7.0 ms** | **111.1 ms** | **18.8 ms** | **126.4 ms** | **97.5 ms** | **14.7 ms** |
-| join | 7.1 ms | 87.6 ms | 33.0 ms | 77.9 ms | 69.6 ms | 15.6 ms |
-| optional | 8.7 ms | 434.3 ms | 26.4 ms | 552.8 ms | 221.4 ms | 15.2 ms |
-| minus | 10.7 ms | 273.5 ms | 30.6 ms | 207.4 ms | 101.9 ms | 13.5 ms |
-| exists | 10.9 ms | 875.1 ms | 19.3 ms | 252.0 ms | 300.6 ms | 22.2 ms |
-| union | 7.8 ms | 619.4 ms | 16.5 ms | 256.4 ms | 162.2 ms | 11.1 ms |
-| group by / distinct | 7.9 ms | 26.9 ms | 6.1 ms | 67.7 ms | 44.3 ms | 10.7 ms |
-| property path | 9.2 ms | 60.6 ms | 33.3 ms | 90.0 ms | 49.3 ms | 58.3 ms |
-| regex / string | 9.8 ms | 69.6 ms | 53.5 ms | 84.0 ms | 153.6 ms | 10.0 ms |
-| result size | 44.2 ms | 140.1 ms | 236.1 ms | 295.7 ms | 258.4 ms | 107.9 ms |
-| numeric | 1.9 ms | 2.8 ms | 6.8 ms | 9.0 ms | 10.0 ms | 4.5 ms |
-| filter / language | 2.4 ms | 575.1 ms | 13.9 ms | 190.1 ms | 124.5 ms | 5.4 ms |
-| date | 1.4 ms | 2.2 ms | 3.1 ms | 11.0 ms | 11.8 ms | 4.2 ms |
-| count | 1.1 ms | 930.6 ms | 4.0 ms | 917.5 ms | 411.6 ms | 39.1 ms |
+| | tripletrail | oxigraph | qlever | jena | graphdb | maplib | tripletrail-1t |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| load (s) | 1.611 | 3.28 | 3.405 | 10.697 | 17.509 | 0.859 | 1.609 |
+| answered | 102 | 101 | 102 | 102 | 102 | 102 | 102 |
+| failed | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| timed out | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
+| **geometric mean** | **2.8 ms** | **111.1 ms** | **18.8 ms** | **126.4 ms** | **97.5 ms** | **14.7 ms** | **2.9 ms** |
+| join | 2.3 ms | 87.6 ms | 33.0 ms | 77.9 ms | 69.6 ms | 15.6 ms | 2.7 ms |
+| optional | 3.6 ms | 434.3 ms | 26.4 ms | 552.8 ms | 221.4 ms | 15.2 ms | 3.9 ms |
+| minus | 3.4 ms | 273.5 ms | 30.6 ms | 207.4 ms | 101.9 ms | 13.5 ms | 3.4 ms |
+| exists | 3.5 ms | 875.1 ms | 19.3 ms | 252.0 ms | 300.6 ms | 22.2 ms | 3.4 ms |
+| union | 2.4 ms | 619.4 ms | 16.5 ms | 256.4 ms | 162.2 ms | 11.1 ms | 2.3 ms |
+| group by / distinct | 2.7 ms | 26.9 ms | 6.1 ms | 67.7 ms | 44.3 ms | 10.7 ms | 2.6 ms |
+| property path | 3.8 ms | 60.6 ms | 33.3 ms | 90.0 ms | 49.3 ms | 58.3 ms | 3.7 ms |
+| regex / string | 4.0 ms | 69.6 ms | 53.5 ms | 84.0 ms | 153.6 ms | 10.0 ms | 3.7 ms |
+| result size | 25.1 ms | 140.1 ms | 236.1 ms | 295.7 ms | 258.4 ms | 107.9 ms | 24.3 ms |
+| numeric | 1.2 ms | 2.8 ms | 6.8 ms | 9.0 ms | 10.0 ms | 4.5 ms | 1.3 ms |
+| filter / language | 1.5 ms | 575.1 ms | 13.9 ms | 190.1 ms | 124.5 ms | 5.4 ms | 1.7 ms |
+| date | 0.9 ms | 2.2 ms | 3.1 ms | 11.0 ms | 11.8 ms | 4.2 ms | 0.9 ms |
+| count | 0.8 ms | 930.6 ms | 4.0 ms | 917.5 ms | 411.6 ms | 39.1 ms | 0.9 ms |
 
 <details><summary>Per query</summary>
 
-| query | tripletrail | oxigraph | qlever | jena | graphdb | maplib |
-|---|---:|---:|---:|---:|---:|---:|
-| join-2-small-large | 5.2 ms | 36.8 ms | 33.6 ms | 118.0 ms | 218.0 ms | 15.1 ms |
-| join-2-large-small | 3.4 ms | 14.9 ms | 23.2 ms | 32.7 ms | 39.9 ms | 9.4 ms |
-| join-2-large-large | 22.0 ms | 467.9 ms | 25.7 ms | 420.9 ms | 147.4 ms | 12.5 ms |
-| join-2-largest-result | 10.2 ms | 471.7 ms | 20.9 ms | 273.4 ms | 106.8 ms | 16.0 ms |
-| join-2-large-large-with-large-result | 11.2 ms | 482.4 ms | 20.5 ms | 204.0 ms | 105.7 ms | 16.1 ms |
-| join-2-large-large-with-small-result | 7.2 ms | 162.0 ms | 17.7 ms | 77.0 ms | 42.9 ms | 10.2 ms |
-| join-3-star-largest-sum-of-join-sizes | 18.3 ms | 679.0 ms | 29.4 ms | 277.5 ms | 176.4 ms | 23.2 ms |
-| join-3-chain-largest-sum-of-join-sizes | 13.5 ms | 618.0 ms | 37.9 ms | 287.9 ms | 138.2 ms | 24.6 ms |
-| join-xlarge-star-on-small-predicates | 3.4 ms | 14.9 ms | 185.7 ms | 25.0 ms | 41.2 ms | 38.7 ms |
-| join-xlarge-chain-on-small-predicates | 3.3 ms | 4.7 ms | 1.57 s | 13.7 ms | 21.4 ms | 26.2 ms |
-| optional-join-small-large | 4.2 ms | 7.3 ms | 17.1 ms | 88.0 ms | 22.9 ms | 10.0 ms |
-| optional-join-large-small | 3.9 ms | 2.18 s | 25.1 ms | 6.33 s | 913.9 ms | 11.5 ms |
-| optional-join-large-large | 22.6 ms | 2.24 s | 21.6 ms | 1.86 s | 760.1 ms | 13.9 ms |
-| optional-join-2-large-large-with-large-result | 8.3 ms | 455.0 ms | 15.8 ms | 246.5 ms | 281.5 ms | 15.5 ms |
-| optional-join-2-large-large-with-small-join-result-1 | 3.9 ms | 135.2 ms | 16.2 ms | 115.0 ms | 89.9 ms | 10.2 ms |
-| optional-join-2-large-large-with-small-join-result-2 | 6.3 ms | 372.3 ms | 21.5 ms | 287.9 ms | 159.8 ms | 10.1 ms |
-| optional-join-3-star-1 | 9.0 ms | 1.28 s | 40.2 ms | 1.54 s | 560.2 ms | 20.4 ms |
-| optional-join-3-star-2 | 9.5 ms | 538.0 ms | 40.7 ms | 808.1 ms | 182.4 ms | 20.9 ms |
-| optional-join-3-chain-1 | 17.1 ms | 661.0 ms | 41.2 ms | 524.6 ms | 204.6 ms | 21.9 ms |
-| optional-join-3-chain-2 | 22.8 ms | 644.1 ms | 46.7 ms | 481.0 ms | 210.3 ms | 27.2 ms |
-| minus-join-small-large | 4.0 ms | 503.5 ms | 24.6 ms | 292.3 ms | 116.7 ms | 11.1 ms |
-| minus-join-large-small | 3.8 ms | 139.1 ms | 43.9 ms | 249.1 ms | 132.9 ms | 12.9 ms |
-| minus-join-large-large | 22.5 ms | 214.3 ms | 39.0 ms | 336.8 ms | 176.5 ms | 14.6 ms |
-| minus-join-2-large-large-with-large-result | 15.4 ms | 499.9 ms | 32.9 ms | 285.6 ms | 116.6 ms | 11.9 ms |
-| minus-join-2-large-large-with-small-join-result-1 | 6.8 ms | 50.2 ms | 15.0 ms | 63.2 ms | 47.1 ms | 8.8 ms |
-| minus-join-2-large-large-with-small-join-result-2 | 6.7 ms | 68.8 ms | 16.8 ms | 61.5 ms | 50.5 ms | 10.2 ms |
-| minus-join-3-star-1 | 14.5 ms | 574.9 ms | 34.0 ms | 215.7 ms | 112.1 ms | 18.5 ms |
-| minus-join-3-star-2 | 16.9 ms | 452.1 ms | 31.3 ms | 207.1 ms | 87.3 ms | 16.1 ms |
-| minus-join-3-chain-1 | 15.8 ms | 827.7 ms | 41.3 ms | 476.4 ms | 151.1 ms | 15.4 ms |
-| minus-join-3-chain-2 | 20.6 ms | 420.2 ms | 46.8 ms | 254.9 ms | 106.9 ms | 19.5 ms |
-| exists-join-small-large | 3.1 ms | 11.4 ms | 21.1 ms | 32.7 ms | 28.3 ms | 13.9 ms |
-| exists-join-large-small | 3.0 ms | 2.17 s | 26.2 ms | 1.74 s | 3.29 s | 16.2 ms |
-| exists-join-large-large | 20.3 ms | 2.22 s | 28.7 ms | 971.3 ms | 1.56 s | 24.3 ms |
-| exists-join-2-large-large-with-large-result | 16.9 ms | 386.6 ms | 17.2 ms | 163.4 ms | 229.6 ms | 22.6 ms |
-| exists-join-2-large-large-with-small-join-result-1 | 6.4 ms | 168.4 ms | 6.7 ms | 51.4 ms | 106.6 ms | 14.7 ms |
-| exists-join-2-large-large-with-small-join-result-2 | 8.1 ms | 386.3 ms | 7.0 ms | 135.5 ms | 228.4 ms | 15.3 ms |
-| exists-join-3-star-1 | 14.4 ms | 1.28 s | 33.0 ms | 586.8 ms | 315.6 ms | 32.1 ms |
-| exists-join-3-star-2 | 17.9 ms | 725.4 ms | 20.8 ms | 334.6 ms | 276.4 ms | 26.6 ms |
-| exists-join-3-chain-1 | 15.8 ms | 569.0 ms | 26.2 ms | 266.2 ms | 284.3 ms | 34.3 ms |
-| exists-join-3-chain-2 | 33.9 ms | timeout | 30.7 ms | 313.7 ms | 299.4 ms | 35.8 ms |
-| union-no-constraint | 3.0 ms | 203.8 ms | 8.3 ms | 148.8 ms | 191.5 ms | 9.8 ms |
-| union-constraint-from-star | 21.9 ms | 545.1 ms | 27.2 ms | 940.6 ms | 220.1 ms | 14.7 ms |
-| union-constraint-small-join | 7.6 ms | 570.9 ms | 19.1 ms | 75.3 ms | 31.7 ms | 11.9 ms |
-| union-constraint-large-join | 21.6 ms | 698.5 ms | 21.8 ms | 978.4 ms | 245.6 ms | 14.3 ms |
-| union-constraint-filter-restrictive | 2.7 ms | 2.06 s | 12.9 ms | 107.5 ms | 342.1 ms | 6.7 ms |
-| multicolumn-join-small | 3.2 ms | 9.6 ms | 6.5 ms | 11.4 ms | 25.6 ms | 9.1 ms |
-| multicolumn-join-large | 6.1 ms | 76.6 ms | 5.2 ms | 23.1 ms | 38.1 ms | 8.2 ms |
-| group-by-count-object-high-multiplicity | 3.0 ms | 11.7 ms | 4.5 ms | 103.2 ms | 67.6 ms | 6.0 ms |
-| group-by-count-object-low-multiplicity | 9.8 ms | 81.3 ms | 6.0 ms | 309.5 ms | 169.8 ms | 11.0 ms |
-| group-by-count-object-wrong-sort-order | 12.5 ms | 181.3 ms | 12.6 ms | 208.8 ms | 50.4 ms | 47.2 ms |
-| group-by-complex-aggregate | 83.3 ms | 500.1 ms | 16.6 ms | 254.4 ms | 190.9 ms | 43.8 ms |
-| group-by-implicit-numeric-baseline | 2.3 ms | 3.9 ms | 3.5 ms | 15.7 ms | 6.6 ms | 6.3 ms |
-| group-by-implicit-numeric-sum | 2.8 ms | 3.2 ms | 3.8 ms | 8.7 ms | 19.0 ms | 5.8 ms |
-| group-by-implicit-numeric-min | 2.5 ms | 3.3 ms | 3.4 ms | 15.7 ms | 9.3 ms | 5.2 ms |
-| group-by-implicit-numeric-max | 2.8 ms | 3.1 ms | 3.5 ms | 7.3 ms | 8.6 ms | 5.4 ms |
-| group-by-implicit-numeric-avg | 2.8 ms | 3.2 ms | 3.7 ms | 17.2 ms | 12.9 ms | 5.8 ms |
-| group-by-implicit-string-baseline | 2.3 ms | 43.5 ms | 2.7 ms | 776.8 ms | 40.4 ms | 6.4 ms |
-| group-by-implicit-string-min | 41.1 ms | 94.1 ms | 3.6 ms | 140.9 ms | 187.3 ms | 6.7 ms |
-| group-by-implicit-string-max | 24.3 ms | 73.1 ms | 3.5 ms | 112.1 ms | 111.3 ms | 6.4 ms |
-| group-by-string-groupconcat | 57.0 ms | 111.8 ms | 171.6 ms | 197.7 ms | 232.0 ms | 53.1 ms |
-| distinct-count-object-high-multiplicity | 5.4 ms | 11.1 ms | 3.7 ms | 17.7 ms | 21.7 ms | 7.1 ms |
-| distinct-count-object-low-multiplicity | 6.3 ms | 29.8 ms | 4.8 ms | 87.7 ms | 46.4 ms | 8.5 ms |
-| distinct-count-object-wrong-sort-order | 12.6 ms | 183.8 ms | 10.1 ms | 113.1 ms | 79.6 ms | 40.4 ms |
-| transitive-path-plus | 16.1 ms | 150.0 ms | 106.5 ms | 385.5 ms | 112.8 ms | 67.2 ms |
-| transitive-path-plus-fixed-subject | 3.6 ms | 3.0 ms | 3.8 ms | 7.2 ms | 7.9 ms | 23.0 ms |
-| transitive-path-large-join-and-plus | 7.4 ms | 193.6 ms | 62.5 ms | 171.4 ms | 92.4 ms | 93.4 ms |
-| transitive-path-small-join-and-plus | 16.3 ms | 154.3 ms | 48.8 ms | 136.8 ms | 72.4 ms | 80.2 ms |
-| regex-3-contains | 7.6 ms | 70.5 ms | 149.5 ms | 75.1 ms | 166.9 ms | 7.1 ms |
-| regex-3-fixed | 10.2 ms | 65.3 ms | 151.8 ms | 96.4 ms | 136.8 ms | 7.4 ms |
-| regex-3 | 8.8 ms | 94.9 ms | 152.3 ms | 75.8 ms | 148.3 ms | 9.4 ms |
-| regex-prefix-1 | 8.5 ms | 65.3 ms | 3.6 ms | 77.1 ms | 113.7 ms | 8.0 ms |
-| regex-prefix-2 | 7.4 ms | 63.5 ms | 3.2 ms | 69.8 ms | 141.5 ms | 7.6 ms |
-| regex-prefix-3 | 7.3 ms | 66.1 ms | 3.2 ms | 68.4 ms | 144.2 ms | 7.3 ms |
-| strlen | 11.9 ms | 67.7 ms | 148.1 ms | 85.0 ms | 192.6 ms | 7.4 ms |
-| strbefore | 14.0 ms | 71.0 ms | 160.4 ms | 96.6 ms | 157.1 ms | 30.1 ms |
-| strafter | 14.1 ms | 70.7 ms | 158.3 ms | 96.9 ms | 167.2 ms | 30.5 ms |
-| strstarts | 9.8 ms | 67.0 ms | 149.8 ms | 101.5 ms | 173.1 ms | 8.3 ms |
-| strends | 10.4 ms | 67.6 ms | 148.9 ms | 90.5 ms | 163.4 ms | 7.9 ms |
-| result-size-tiny | 2.4 ms | 2.7 ms | 4.1 ms | 7.5 ms | 6.9 ms | 4.9 ms |
-| result-size-small | 3.7 ms | 6.9 ms | 11.8 ms | 26.6 ms | 31.9 ms | 9.4 ms |
-| result-size-medium | 98.9 ms | 481.2 ms | 859.8 ms | 795.5 ms | 516.2 ms | 275.5 ms |
-| result-size-large | 434.6 ms | 2.43 s | 4.14 s | 3.81 s | 3.13 s | 1.13 s |
-| result-size-xlarge | 435.9 ms | 2.48 s | 4.20 s | 3.74 s | 3.24 s | 1.02 s |
-| numeric-baseline | 2.9 ms | 3.8 ms | 6.9 ms | 9.5 ms | 9.6 ms | 5.6 ms |
-| numeric-abs | 2.4 ms | 3.6 ms | 7.3 ms | 11.0 ms | 14.4 ms | 5.5 ms |
-| numeric-ceil | 2.0 ms | 2.6 ms | 7.1 ms | 10.5 ms | 10.0 ms | 3.9 ms |
-| numeric-floor | 1.5 ms | 2.5 ms | 6.3 ms | 6.7 ms | 9.1 ms | 4.0 ms |
-| numeric-round | 1.6 ms | 2.4 ms | 7.1 ms | 7.4 ms | 8.5 ms | 4.1 ms |
-| numeric-add | 1.9 ms | 2.5 ms | 6.7 ms | 7.2 ms | 14.8 ms | 3.7 ms |
-| numeric-greater | 1.6 ms | 2.4 ms | 6.3 ms | 12.1 ms | 6.2 ms | 5.1 ms |
-| filter-few-results | 1.2 ms | 1.66 s | 17.4 ms | 77.0 ms | 157.1 ms | 4.7 ms |
-| filter-many-results | 1.4 ms | 1.67 s | 42.7 ms | 727.8 ms | 139.6 ms | 5.4 ms |
-| filter-language-en | 8.2 ms | 68.6 ms | 3.6 ms | 122.7 ms | 88.0 ms | 6.3 ms |
-| date-year | 1.4 ms | 2.0 ms | 3.2 ms | 16.4 ms | 13.4 ms | 3.9 ms |
-| date-month | 1.4 ms | 2.2 ms | 3.0 ms | 7.4 ms | 10.5 ms | 3.8 ms |
-| date-day | 1.3 ms | 2.7 ms | 3.0 ms | 11.0 ms | 11.7 ms | 4.9 ms |
-| number-of-triples | 1.1 ms | 458.3 ms | 2.8 ms | 753.2 ms | 425.7 ms | 2.0 ms |
-| number-of-subjects | 1.2 ms | 595.8 ms | 2.8 ms | 901.0 ms | 472.0 ms | 57.6 ms |
-| number-of-predicates | 1.0 ms | 488.4 ms | 2.7 ms | 529.4 ms | 434.4 ms | 80.8 ms |
-| number-of-objects | 1.2 ms | 638.2 ms | 2.8 ms | 2.35 s | 488.1 ms | 301.7 ms |
-| number-of-literals | 1.2 ms | 2.98 s | 14.9 ms | 1.01 s | 392.1 ms | 55.0 ms |
-| number-of-blank-nodes | 1.2 ms | 2.56 s | 4.6 ms | 700.9 ms | 290.9 ms | 22.7 ms |
+| query | tripletrail | oxigraph | qlever | jena | graphdb | maplib | tripletrail-1t |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| join-2-small-large | 2.5 ms | 36.8 ms | 33.6 ms | 118.0 ms | 218.0 ms | 15.1 ms | 2.8 ms |
+| join-2-large-small | 1.2 ms | 14.9 ms | 23.2 ms | 32.7 ms | 39.9 ms | 9.4 ms | 1.3 ms |
+| join-2-large-large | 6.7 ms | 467.9 ms | 25.7 ms | 420.9 ms | 147.4 ms | 12.5 ms | 7.3 ms |
+| join-2-largest-result | 3.2 ms | 471.7 ms | 20.9 ms | 273.4 ms | 106.8 ms | 16.0 ms | 4.4 ms |
+| join-2-large-large-with-large-result | 3.2 ms | 482.4 ms | 20.5 ms | 204.0 ms | 105.7 ms | 16.1 ms | 4.6 ms |
+| join-2-large-large-with-small-result | 2.2 ms | 162.0 ms | 17.7 ms | 77.0 ms | 42.9 ms | 10.2 ms | 2.6 ms |
+| join-3-star-largest-sum-of-join-sizes | 5.8 ms | 679.0 ms | 29.4 ms | 277.5 ms | 176.4 ms | 23.2 ms | 5.8 ms |
+| join-3-chain-largest-sum-of-join-sizes | 4.1 ms | 618.0 ms | 37.9 ms | 287.9 ms | 138.2 ms | 24.6 ms | 6.4 ms |
+| join-xlarge-star-on-small-predicates | 1.1 ms | 14.9 ms | 185.7 ms | 25.0 ms | 41.2 ms | 38.7 ms | 1.4 ms |
+| join-xlarge-chain-on-small-predicates | 1.0 ms | 4.7 ms | 1.57 s | 13.7 ms | 21.4 ms | 26.2 ms | 1.3 ms |
+| optional-join-small-large | 1.3 ms | 7.3 ms | 17.1 ms | 88.0 ms | 22.9 ms | 10.0 ms | 1.6 ms |
+| optional-join-large-small | 1.3 ms | 2.18 s | 25.1 ms | 6.33 s | 913.9 ms | 11.5 ms | 1.4 ms |
+| optional-join-large-large | 7.2 ms | 2.24 s | 21.6 ms | 1.86 s | 760.1 ms | 13.9 ms | 7.4 ms |
+| optional-join-2-large-large-with-large-result | 5.0 ms | 455.0 ms | 15.8 ms | 246.5 ms | 281.5 ms | 15.5 ms | 4.8 ms |
+| optional-join-2-large-large-with-small-join-result-1 | 2.0 ms | 135.2 ms | 16.2 ms | 115.0 ms | 89.9 ms | 10.2 ms | 2.3 ms |
+| optional-join-2-large-large-with-small-join-result-2 | 2.3 ms | 372.3 ms | 21.5 ms | 287.9 ms | 159.8 ms | 10.1 ms | 2.9 ms |
+| optional-join-3-star-1 | 5.6 ms | 1.28 s | 40.2 ms | 1.54 s | 560.2 ms | 20.4 ms | 6.8 ms |
+| optional-join-3-star-2 | 6.0 ms | 538.0 ms | 40.7 ms | 808.1 ms | 182.4 ms | 20.9 ms | 5.6 ms |
+| optional-join-3-chain-1 | 5.6 ms | 661.0 ms | 41.2 ms | 524.6 ms | 204.6 ms | 21.9 ms | 6.7 ms |
+| optional-join-3-chain-2 | 6.6 ms | 644.1 ms | 46.7 ms | 481.0 ms | 210.3 ms | 27.2 ms | 6.8 ms |
+| minus-join-small-large | 1.2 ms | 503.5 ms | 24.6 ms | 292.3 ms | 116.7 ms | 11.1 ms | 1.2 ms |
+| minus-join-large-small | 1.2 ms | 139.1 ms | 43.9 ms | 249.1 ms | 132.9 ms | 12.9 ms | 1.2 ms |
+| minus-join-large-large | 6.5 ms | 214.3 ms | 39.0 ms | 336.8 ms | 176.5 ms | 14.6 ms | 6.5 ms |
+| minus-join-2-large-large-with-large-result | 4.6 ms | 499.9 ms | 32.9 ms | 285.6 ms | 116.6 ms | 11.9 ms | 4.4 ms |
+| minus-join-2-large-large-with-small-join-result-1 | 1.9 ms | 50.2 ms | 15.0 ms | 63.2 ms | 47.1 ms | 8.8 ms | 1.9 ms |
+| minus-join-2-large-large-with-small-join-result-2 | 1.9 ms | 68.8 ms | 16.8 ms | 61.5 ms | 50.5 ms | 10.2 ms | 1.9 ms |
+| minus-join-3-star-1 | 4.1 ms | 574.9 ms | 34.0 ms | 215.7 ms | 112.1 ms | 18.5 ms | 6.7 ms |
+| minus-join-3-star-2 | 5.1 ms | 452.1 ms | 31.3 ms | 207.1 ms | 87.3 ms | 16.1 ms | 5.4 ms |
+| minus-join-3-chain-1 | 5.0 ms | 827.7 ms | 41.3 ms | 476.4 ms | 151.1 ms | 15.4 ms | 6.2 ms |
+| minus-join-3-chain-2 | 11.9 ms | 420.2 ms | 46.8 ms | 254.9 ms | 106.9 ms | 19.5 ms | 6.6 ms |
+| exists-join-small-large | 1.2 ms | 11.4 ms | 21.1 ms | 32.7 ms | 28.3 ms | 13.9 ms | 1.2 ms |
+| exists-join-large-small | 1.1 ms | 2.17 s | 26.2 ms | 1.74 s | 3.29 s | 16.2 ms | 1.1 ms |
+| exists-join-large-large | 7.6 ms | 2.22 s | 28.7 ms | 971.3 ms | 1.56 s | 24.3 ms | 6.4 ms |
+| exists-join-2-large-large-with-large-result | 4.5 ms | 386.6 ms | 17.2 ms | 163.4 ms | 229.6 ms | 22.6 ms | 4.4 ms |
+| exists-join-2-large-large-with-small-join-result-1 | 2.7 ms | 168.4 ms | 6.7 ms | 51.4 ms | 106.6 ms | 14.7 ms | 1.9 ms |
+| exists-join-2-large-large-with-small-join-result-2 | 2.4 ms | 386.3 ms | 7.0 ms | 135.5 ms | 228.4 ms | 15.3 ms | 2.2 ms |
+| exists-join-3-star-1 | 4.9 ms | 1.28 s | 33.0 ms | 586.8 ms | 315.6 ms | 32.1 ms | 6.4 ms |
+| exists-join-3-star-2 | 5.5 ms | 725.4 ms | 20.8 ms | 334.6 ms | 276.4 ms | 26.6 ms | 5.1 ms |
+| exists-join-3-chain-1 | 5.3 ms | 569.0 ms | 26.2 ms | 266.2 ms | 284.3 ms | 34.3 ms | 6.1 ms |
+| exists-join-3-chain-2 | 7.0 ms | timeout | 30.7 ms | 313.7 ms | 299.4 ms | 35.8 ms | 6.4 ms |
+| union-no-constraint | 0.9 ms | 203.8 ms | 8.3 ms | 148.8 ms | 191.5 ms | 9.8 ms | 0.8 ms |
+| union-constraint-from-star | 7.0 ms | 545.1 ms | 27.2 ms | 940.6 ms | 220.1 ms | 14.7 ms | 6.4 ms |
+| union-constraint-small-join | 2.3 ms | 570.9 ms | 19.1 ms | 75.3 ms | 31.7 ms | 11.9 ms | 2.3 ms |
+| union-constraint-large-join | 5.6 ms | 698.5 ms | 21.8 ms | 978.4 ms | 245.6 ms | 14.3 ms | 5.3 ms |
+| union-constraint-filter-restrictive | 0.9 ms | 2.06 s | 12.9 ms | 107.5 ms | 342.1 ms | 6.7 ms | 0.9 ms |
+| multicolumn-join-small | 1.0 ms | 9.6 ms | 6.5 ms | 11.4 ms | 25.6 ms | 9.1 ms | 0.9 ms |
+| multicolumn-join-large | 1.7 ms | 76.6 ms | 5.2 ms | 23.1 ms | 38.1 ms | 8.2 ms | 2.1 ms |
+| group-by-count-object-high-multiplicity | 0.9 ms | 11.7 ms | 4.5 ms | 103.2 ms | 67.6 ms | 6.0 ms | 0.9 ms |
+| group-by-count-object-low-multiplicity | 2.7 ms | 81.3 ms | 6.0 ms | 309.5 ms | 169.8 ms | 11.0 ms | 2.6 ms |
+| group-by-count-object-wrong-sort-order | 3.8 ms | 181.3 ms | 12.6 ms | 208.8 ms | 50.4 ms | 47.2 ms | 3.8 ms |
+| group-by-complex-aggregate | 8.6 ms | 500.1 ms | 16.6 ms | 254.4 ms | 190.9 ms | 43.8 ms | 8.4 ms |
+| group-by-implicit-numeric-baseline | 1.0 ms | 3.9 ms | 3.5 ms | 15.7 ms | 6.6 ms | 6.3 ms | 0.8 ms |
+| group-by-implicit-numeric-sum | 1.0 ms | 3.2 ms | 3.8 ms | 8.7 ms | 19.0 ms | 5.8 ms | 0.8 ms |
+| group-by-implicit-numeric-min | 0.9 ms | 3.3 ms | 3.4 ms | 15.7 ms | 9.3 ms | 5.2 ms | 0.9 ms |
+| group-by-implicit-numeric-max | 0.9 ms | 3.1 ms | 3.5 ms | 7.3 ms | 8.6 ms | 5.4 ms | 0.8 ms |
+| group-by-implicit-numeric-avg | 0.9 ms | 3.2 ms | 3.7 ms | 17.2 ms | 12.9 ms | 5.8 ms | 0.8 ms |
+| group-by-implicit-string-baseline | 0.8 ms | 43.5 ms | 2.7 ms | 776.8 ms | 40.4 ms | 6.4 ms | 0.8 ms |
+| group-by-implicit-string-min | 16.6 ms | 94.1 ms | 3.6 ms | 140.9 ms | 187.3 ms | 6.7 ms | 16.9 ms |
+| group-by-implicit-string-max | 18.4 ms | 73.1 ms | 3.5 ms | 112.1 ms | 111.3 ms | 6.4 ms | 20.6 ms |
+| group-by-string-groupconcat | 38.4 ms | 111.8 ms | 171.6 ms | 197.7 ms | 232.0 ms | 53.1 ms | 46.1 ms |
+| distinct-count-object-high-multiplicity | 1.8 ms | 11.1 ms | 3.7 ms | 17.7 ms | 21.7 ms | 7.1 ms | 1.8 ms |
+| distinct-count-object-low-multiplicity | 2.1 ms | 29.8 ms | 4.8 ms | 87.7 ms | 46.4 ms | 8.5 ms | 2.0 ms |
+| distinct-count-object-wrong-sort-order | 3.5 ms | 183.8 ms | 10.1 ms | 113.1 ms | 79.6 ms | 40.4 ms | 4.0 ms |
+| transitive-path-plus | 6.2 ms | 150.0 ms | 106.5 ms | 385.5 ms | 112.8 ms | 67.2 ms | 6.1 ms |
+| transitive-path-plus-fixed-subject | 1.0 ms | 3.0 ms | 3.8 ms | 7.2 ms | 7.9 ms | 23.0 ms | 1.0 ms |
+| transitive-path-large-join-and-plus | 6.0 ms | 193.6 ms | 62.5 ms | 171.4 ms | 92.4 ms | 93.4 ms | 5.8 ms |
+| transitive-path-small-join-and-plus | 5.5 ms | 154.3 ms | 48.8 ms | 136.8 ms | 72.4 ms | 80.2 ms | 5.6 ms |
+| regex-3-contains | 2.6 ms | 70.5 ms | 149.5 ms | 75.1 ms | 166.9 ms | 7.1 ms | 5.3 ms |
+| regex-3-fixed | 3.0 ms | 65.3 ms | 151.8 ms | 96.4 ms | 136.8 ms | 7.4 ms | 5.2 ms |
+| regex-3 | 3.1 ms | 94.9 ms | 152.3 ms | 75.8 ms | 148.3 ms | 9.4 ms | 5.5 ms |
+| regex-prefix-1 | 2.2 ms | 65.3 ms | 3.6 ms | 77.1 ms | 113.7 ms | 8.0 ms | 2.1 ms |
+| regex-prefix-2 | 2.1 ms | 63.5 ms | 3.2 ms | 69.8 ms | 141.5 ms | 7.6 ms | 2.0 ms |
+| regex-prefix-3 | 3.7 ms | 66.1 ms | 3.2 ms | 68.4 ms | 144.2 ms | 7.3 ms | 2.0 ms |
+| strlen | 6.5 ms | 67.7 ms | 148.1 ms | 85.0 ms | 192.6 ms | 7.4 ms | 3.9 ms |
+| strbefore | 6.5 ms | 71.0 ms | 160.4 ms | 96.6 ms | 157.1 ms | 30.1 ms | 4.7 ms |
+| strafter | 6.5 ms | 70.7 ms | 158.3 ms | 96.9 ms | 167.2 ms | 30.5 ms | 4.8 ms |
+| strstarts | 6.3 ms | 67.0 ms | 149.8 ms | 101.5 ms | 173.1 ms | 8.3 ms | 3.8 ms |
+| strends | 6.5 ms | 67.6 ms | 148.9 ms | 90.5 ms | 163.4 ms | 7.9 ms | 3.6 ms |
+| result-size-tiny | 1.0 ms | 2.7 ms | 4.1 ms | 7.5 ms | 6.9 ms | 4.9 ms | 0.9 ms |
+| result-size-small | 1.4 ms | 6.9 ms | 11.8 ms | 26.6 ms | 31.9 ms | 9.4 ms | 1.4 ms |
+| result-size-medium | 60.6 ms | 481.2 ms | 859.8 ms | 795.5 ms | 516.2 ms | 275.5 ms | 60.0 ms |
+| result-size-large | 333.6 ms | 2.43 s | 4.14 s | 3.81 s | 3.13 s | 1.13 s | 328.9 ms |
+| result-size-xlarge | 334.4 ms | 2.48 s | 4.20 s | 3.74 s | 3.24 s | 1.02 s | 334.0 ms |
+| numeric-baseline | 2.1 ms | 3.8 ms | 6.9 ms | 9.5 ms | 9.6 ms | 5.6 ms | 2.6 ms |
+| numeric-abs | 1.7 ms | 3.6 ms | 7.3 ms | 11.0 ms | 14.4 ms | 5.5 ms | 1.9 ms |
+| numeric-ceil | 1.2 ms | 2.6 ms | 7.1 ms | 10.5 ms | 10.0 ms | 3.9 ms | 1.3 ms |
+| numeric-floor | 1.1 ms | 2.5 ms | 6.3 ms | 6.7 ms | 9.1 ms | 4.0 ms | 1.1 ms |
+| numeric-round | 1.0 ms | 2.4 ms | 7.1 ms | 7.4 ms | 8.5 ms | 4.1 ms | 1.1 ms |
+| numeric-add | 0.9 ms | 2.5 ms | 6.7 ms | 7.2 ms | 14.8 ms | 3.7 ms | 1.0 ms |
+| numeric-greater | 0.9 ms | 2.4 ms | 6.3 ms | 12.1 ms | 6.2 ms | 5.1 ms | 0.9 ms |
+| filter-few-results | 1.0 ms | 1.66 s | 17.4 ms | 77.0 ms | 157.1 ms | 4.7 ms | 1.0 ms |
+| filter-many-results | 0.9 ms | 1.67 s | 42.7 ms | 727.8 ms | 139.6 ms | 5.4 ms | 1.0 ms |
+| filter-language-en | 4.1 ms | 68.6 ms | 3.6 ms | 122.7 ms | 88.0 ms | 6.3 ms | 5.0 ms |
+| date-year | 0.9 ms | 2.0 ms | 3.2 ms | 16.4 ms | 13.4 ms | 3.9 ms | 0.9 ms |
+| date-month | 0.9 ms | 2.2 ms | 3.0 ms | 7.4 ms | 10.5 ms | 3.8 ms | 0.9 ms |
+| date-day | 0.8 ms | 2.7 ms | 3.0 ms | 11.0 ms | 11.7 ms | 4.9 ms | 0.9 ms |
+| number-of-triples | 0.8 ms | 458.3 ms | 2.8 ms | 753.2 ms | 425.7 ms | 2.0 ms | 0.8 ms |
+| number-of-subjects | 0.8 ms | 595.8 ms | 2.8 ms | 901.0 ms | 472.0 ms | 57.6 ms | 0.9 ms |
+| number-of-predicates | 0.8 ms | 488.4 ms | 2.7 ms | 529.4 ms | 434.4 ms | 80.8 ms | 0.8 ms |
+| number-of-objects | 0.8 ms | 638.2 ms | 2.8 ms | 2.35 s | 488.1 ms | 301.7 ms | 0.9 ms |
+| number-of-literals | 0.8 ms | 2.98 s | 14.9 ms | 1.01 s | 392.1 ms | 55.0 ms | 0.9 ms |
+| number-of-blank-nodes | 0.8 ms | 2.56 s | 4.6 ms | 700.9 ms | 290.9 ms | 22.7 ms | 0.9 ms |
 
 </details>
 
 Queries where engines disagree (row count, or the value of a one-row answer):
 
 - union-constraint-filter-restrictive: graphdb differ (graphdb: ['598471']; majority: ['0'])
-- group-by-complex-aggregate: no majority (tripletrail: ['http://publications.europa.eu/resource/authority/country/NOR', '117377', 'http, oxigraph: ['http://publications.europa.eu/resource/authority/country/NOR', '117377', 'http, qlever: ['http://publications.europa.eu/resource/authority/country/NOR', '117377', 'http, jena: ['http://publications.europa.eu/resource/authority/country/NOR', '117377', 'http, graphdb: ['http://publications.europa.eu/resource/authority/country/NOR', '117377', 'http, maplib: ['http://publications.europa.eu/resource/authority/country/NOR', '117377', 'http)
+- group-by-complex-aggregate: no majority (tripletrail: ['http://publications.europa.eu/resource/authority/country/NOR', '117377', 'http, oxigraph: ['http://publications.europa.eu/resource/authority/country/NOR', '117377', 'http, qlever: ['http://publications.europa.eu/resource/authority/country/NOR', '117377', 'http, jena: ['http://publications.europa.eu/resource/authority/country/NOR', '117377', 'http, graphdb: ['http://publications.europa.eu/resource/authority/country/NOR', '117377', 'http, maplib: ['http://publications.europa.eu/resource/authority/country/NOR', '117377', 'http, tripletrail-1t: ['http://publications.europa.eu/resource/authority/country/NOR', '117377', 'http)
 - group-by-implicit-string-min: qlever, maplib differ (qlever: ['-1'], maplib: ['None']; majority: ['"466,885 ""Snarvei"""'])
-- group-by-implicit-string-max: no majority (tripletrail: ['Landsomfattende LPS - korrigert fra associated positioning system'], oxigraph: ['Øysteinstul track 2 (SP2-O)'], qlever: ['YTTERHEI'], jena: ['Landsomfattende LPS - korrigert fra associated positioning system'], graphdb: ['Landsomfattende LPS - korrigert fra associated positioning system'], maplib: ['None'])
+- group-by-implicit-string-max: oxigraph, qlever, maplib differ (oxigraph: ['Øysteinstul track 2 (SP2-O)'], qlever: ['YTTERHEI'], maplib: ['None']; majority: ['Landsomfattende LPS - korrigert fra associated positioning system'])
 - transitive-path-small-join-and-plus: maplib differ (maplib: ['5076']; majority: ['20057'])
 - numeric-greater: qlever, maplib differ (qlever: ['958'], maplib: ['958']; majority: ['None'])
 - number-of-objects: qlever differ (qlever: ['467289']; majority: ['467302'])
 - number-of-literals: qlever differ (qlever: ['281721']; majority: ['311870'])
+
+Same rows in the same order, tripletrail-1t against tripletrail: 102 of 102 queries.
