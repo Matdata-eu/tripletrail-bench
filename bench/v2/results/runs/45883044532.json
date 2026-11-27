@@ -39,6 +39,21 @@
    "seconds": 16764,
    "finished": "2026-11-27T00:08:01+00:00",
    "log": "45883044532-shacl-rinf-0080.log"
+  },
+  {
+   "suite": "shacl",
+   "dataset": "rinf-all",
+   "engines": [
+    "tripletrail",
+    "jena",
+    "topbraid",
+    "rdf4j",
+    "pyshacl"
+   ],
+   "status": "failed",
+   "seconds": 19386,
+   "finished": "2026-11-27T05:31:10+00:00",
+   "log": "45883044532-shacl-rinf-all.log"
   }
  ],
  "workflow_run": "https://github.com/Matdata-eu/tripletrail-bench/actions/runs/45883044532"
