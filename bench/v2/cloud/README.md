@@ -11,7 +11,9 @@ server for the length of one run:
    The script installs Docker, Java, Python and Rust and registers the server as an
    **ephemeral** runner with a label unique to the run (`bench-<run id>`): it takes this one
    job only. `await-runner` then waits up to 30 minutes for that runner to come online.
-3. `bench` (on the new server): checks out TripleTrail at the input `core_ref` into `core/`,
+3. `bench` (on the new server): checks out TripleTrail at the input `core_ref` (a tag, a branch,
+   or a full or short commit id, which `approve` resolves to the full id before any server is
+   rented, so a ref that does not exist costs nothing) into `core/`,
    builds it, downloads or generates the data, runs every engine in turn (dropping each store
    after its run) and uploads the results as an artifact.
 4. `teardown` (GitHub-hosted): deletes the server, always, also when the run failed or was
