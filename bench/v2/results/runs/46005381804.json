@@ -1,0 +1,89 @@
+{
+ "run": "46005381804",
+ "request": "all threads",
+ "engines": "tripletrail tripletrail-1t",
+ "machine": "ccx43",
+ "commit": "affcc7768357117a1019165827586a2240c5569e",
+ "started": "2026-11-27T13:21:35+00:00",
+ "finished": "2026-11-27T13:33:10+00:00",
+ "env": {
+  "cpu": "AMD EPYC-Milan Processor",
+  "cpus": 16,
+  "memory": "64291324 kB",
+  "kernel": "6.8.0-151-generic",
+  "disk_free": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/sda1       338G   14G  311G   5% /",
+  "tripletrail_commit": "affcc7768357117a1019165827586a2240c5569e",
+  "bench_commit": "b4e484818a8b2d0793f7e949ea714025afd9d96c",
+  "postgres": "psql (PostgreSQL) 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1)",
+  "postgis": "dpkg-query: no packages found matching postgresql-16-postgis-3\ndpkg-query: no packages found matching postgresql-16-pgrouting",
+  "docker": "29.1.3",
+  "graphdb_image": "Error response from daemon: No such image: mirror.gcr.io/ontotext/graphdb:10.8.0",
+  "qlever_image": "Error response from daemon: No such image: mirror.gcr.io/adfreiburg/qlever:latest",
+  "oxigraph_image": "Error response from daemon: No such image: ghcr.io/oxigraph/oxigraph:0.5.13",
+  "java": "openjdk version \"21.0.13.1\" 2026-11-17\nOpenJDK Runtime Environment (build 21.0.13.1+2-1-24.04.1-Ubuntu)\nOpenJDK 64-Bit Server VM (build 21.0.13.1+2-1-24.04.1-Ubuntu, mixed mode, sharing)",
+  "jena_jar": "jena-fuseki-geosparql-6.2.0.jar"
+ },
+ "jobs": [
+  {
+   "suite": "bsbm",
+   "dataset": "2785",
+   "engines": [
+    "tripletrail",
+    "tripletrail-1t"
+   ],
+   "status": "ok",
+   "seconds": 47,
+   "finished": "2026-11-27T13:22:22+00:00",
+   "log": "46005381804-bsbm-2785.log"
+  },
+  {
+   "suite": "bsbm",
+   "dataset": "28480",
+   "engines": [
+    "tripletrail",
+    "tripletrail-1t"
+   ],
+   "status": "ok",
+   "seconds": 64,
+   "finished": "2026-11-27T13:23:28+00:00",
+   "log": "46005381804-bsbm-28480.log"
+  },
+  {
+   "suite": "sparqloscope",
+   "dataset": "bsbm-2785",
+   "engines": [
+    "tripletrail",
+    "tripletrail-1t"
+   ],
+   "status": "ok",
+   "seconds": 9,
+   "finished": "2026-11-27T13:23:38+00:00",
+   "log": "46005381804-sparqloscope-bsbm-2785.log"
+  },
+  {
+   "suite": "sparqloscope",
+   "dataset": "rinf-0076",
+   "engines": [
+    "tripletrail",
+    "tripletrail-1t"
+   ],
+   "status": "ok",
+   "seconds": 87,
+   "finished": "2026-11-27T13:25:07+00:00",
+   "log": "46005381804-sparqloscope-rinf-0076.log"
+  },
+  {
+   "suite": "v2",
+   "dataset": "large",
+   "engines": [
+    "tripletrail",
+    "tripletrail-1t"
+   ],
+   "status": "ok",
+   "seconds": 479,
+   "finished": "2026-11-27T13:33:08+00:00",
+   "log": "46005381804-v2-large.log"
+  }
+ ],
+ "workflow_run": "https://github.com/Matdata-eu/tripletrail-bench/actions/runs/46005381804"
+}

@@ -7,7 +7,7 @@
   {
    "phase": "cold",
    "index": 0,
-   "ms": 174.418,
+   "ms": 123.815,
    "ok": true,
    "rows": 5,
    "result": {
@@ -23,7 +23,7 @@
   {
    "phase": "warmup",
    "index": 1,
-   "ms": 76.78,
+   "ms": 45.743,
    "ok": true,
    "rows": 5,
    "result": {
@@ -39,7 +39,7 @@
   {
    "phase": "warmup",
    "index": 2,
-   "ms": 114.789,
+   "ms": 67.318,
    "ok": true,
    "rows": 5,
    "result": {
@@ -55,7 +55,7 @@
   {
    "phase": "warm",
    "index": 3,
-   "ms": 120.115,
+   "ms": 98.762,
    "ok": true,
    "rows": 5,
    "result": {
@@ -71,7 +71,7 @@
   {
    "phase": "warm",
    "index": 4,
-   "ms": 49.744,
+   "ms": 43.618,
    "ok": true,
    "rows": 5,
    "result": {
@@ -87,7 +87,7 @@
   {
    "phase": "warm",
    "index": 5,
-   "ms": 83.962,
+   "ms": 50.655,
    "ok": true,
    "rows": 5,
    "result": {
@@ -103,7 +103,7 @@
   {
    "phase": "warm",
    "index": 6,
-   "ms": 88.325,
+   "ms": 54.52,
    "ok": true,
    "rows": 5,
    "result": {
@@ -119,7 +119,7 @@
   {
    "phase": "warm",
    "index": 7,
-   "ms": 153.654,
+   "ms": 100.724,
    "ok": true,
    "rows": 5,
    "result": {
@@ -135,7 +135,7 @@
   {
    "phase": "warm",
    "index": 8,
-   "ms": 114.818,
+   "ms": 79.855,
    "ok": true,
    "rows": 5,
    "result": {
@@ -151,7 +151,7 @@
   {
    "phase": "warm",
    "index": 9,
-   "ms": 170.039,
+   "ms": 128.908,
    "ok": true,
    "rows": 5,
    "result": {
@@ -167,7 +167,7 @@
   {
    "phase": "warm",
    "index": 10,
-   "ms": 73.293,
+   "ms": 42.228,
    "ok": true,
    "rows": 5,
    "result": {
@@ -183,7 +183,7 @@
   {
    "phase": "warm",
    "index": 11,
-   "ms": 217.83,
+   "ms": 148.646,
    "ok": true,
    "rows": 5,
    "result": {
@@ -199,7 +199,7 @@
   {
    "phase": "warm",
    "index": 12,
-   "ms": 85.321,
+   "ms": 49.823,
    "ok": true,
    "rows": 5,
    "result": {
@@ -215,7 +215,7 @@
   {
    "phase": "warm",
    "index": 13,
-   "ms": 129.184,
+   "ms": 77.168,
    "ok": true,
    "rows": 5,
    "result": {
@@ -231,7 +231,7 @@
   {
    "phase": "warm",
    "index": 14,
-   "ms": 82.641,
+   "ms": 47.57,
    "ok": true,
    "rows": 5,
    "result": {
@@ -247,7 +247,7 @@
   {
    "phase": "warm",
    "index": 15,
-   "ms": 75.85,
+   "ms": 42.43,
    "ok": true,
    "rows": 5,
    "result": {
@@ -263,7 +263,7 @@
   {
    "phase": "warm",
    "index": 16,
-   "ms": 79.46,
+   "ms": 46.228,
    "ok": true,
    "rows": 5,
    "result": {
@@ -279,7 +279,7 @@
   {
    "phase": "warm",
    "index": 17,
-   "ms": 66.303,
+   "ms": 37.15,
    "ok": true,
    "rows": 5,
    "result": {
@@ -295,7 +295,7 @@
   {
    "phase": "warm",
    "index": 18,
-   "ms": 126.96,
+   "ms": 77.452,
    "ok": true,
    "rows": 5,
    "result": {
@@ -311,7 +311,7 @@
   {
    "phase": "warm",
    "index": 19,
-   "ms": 71.51,
+   "ms": 61.202,
    "ok": true,
    "rows": 5,
    "result": {
@@ -327,7 +327,7 @@
   {
    "phase": "warm",
    "index": 20,
-   "ms": 83.103,
+   "ms": 48.757,
    "ok": true,
    "rows": 5,
    "result": {
@@ -343,7 +343,7 @@
   {
    "phase": "warm",
    "index": 21,
-   "ms": 90.329,
+   "ms": 54.298,
    "ok": true,
    "rows": 5,
    "result": {
@@ -359,7 +359,7 @@
   {
    "phase": "warm",
    "index": 22,
-   "ms": 87.292,
+   "ms": 79.427,
    "ok": true,
    "rows": 5,
    "result": {
@@ -375,7 +375,7 @@
   {
    "phase": "warm",
    "index": 23,
-   "ms": 107.728,
+   "ms": 73.468,
    "ok": true,
    "rows": 5,
    "result": {
@@ -391,7 +391,7 @@
   {
    "phase": "warm",
    "index": 24,
-   "ms": 64.807,
+   "ms": 41.003,
    "ok": true,
    "rows": 5,
    "result": {
@@ -407,7 +407,7 @@
   {
    "phase": "warm",
    "index": 25,
-   "ms": 131.332,
+   "ms": 81.913,
    "ok": true,
    "rows": 5,
    "result": {
@@ -423,7 +423,7 @@
   {
    "phase": "warm",
    "index": 26,
-   "ms": 82.772,
+   "ms": 70.016,
    "ok": true,
    "rows": 5,
    "result": {
@@ -439,7 +439,7 @@
   {
    "phase": "warm",
    "index": 27,
-   "ms": 99.096,
+   "ms": 65.759,
    "ok": true,
    "rows": 5,
    "result": {
@@ -455,7 +455,7 @@
   {
    "phase": "warm",
    "index": 28,
-   "ms": 130.276,
+   "ms": 80.951,
    "ok": true,
    "rows": 5,
    "result": {
@@ -471,7 +471,7 @@
   {
    "phase": "warm",
    "index": 29,
-   "ms": 93.093,
+   "ms": 55.591,
    "ok": true,
    "rows": 5,
    "result": {
@@ -487,7 +487,7 @@
   {
    "phase": "warm",
    "index": 30,
-   "ms": 136.169,
+   "ms": 85.794,
    "ok": true,
    "rows": 5,
    "result": {
@@ -503,7 +503,7 @@
   {
    "phase": "warm",
    "index": 31,
-   "ms": 70.133,
+   "ms": 39.658,
    "ok": true,
    "rows": 5,
    "result": {
@@ -519,7 +519,7 @@
   {
    "phase": "warm",
    "index": 32,
-   "ms": 100.083,
+   "ms": 58.004,
    "ok": true,
    "rows": 5,
    "result": {
@@ -535,7 +535,7 @@
   {
    "phase": "warm",
    "index": 33,
-   "ms": 95.4,
+   "ms": 56.359,
    "ok": true,
    "rows": 5,
    "result": {
@@ -551,7 +551,7 @@
   {
    "phase": "warm",
    "index": 34,
-   "ms": 74.287,
+   "ms": 39.034,
    "ok": true,
    "rows": 5,
    "result": {
@@ -567,7 +567,7 @@
   {
    "phase": "warm",
    "index": 35,
-   "ms": 101.593,
+   "ms": 61.389,
    "ok": true,
    "rows": 5,
    "result": {
@@ -583,7 +583,7 @@
   {
    "phase": "warm",
    "index": 36,
-   "ms": 81.089,
+   "ms": 41.985,
    "ok": true,
    "rows": 5,
    "result": {
@@ -599,7 +599,7 @@
   {
    "phase": "warm",
    "index": 37,
-   "ms": 111.812,
+   "ms": 68.942,
    "ok": true,
    "rows": 5,
    "result": {
@@ -615,7 +615,7 @@
   {
    "phase": "warm",
    "index": 38,
-   "ms": 75.623,
+   "ms": 48.739,
    "ok": true,
    "rows": 5,
    "result": {
@@ -631,7 +631,7 @@
   {
    "phase": "warm",
    "index": 39,
-   "ms": 79.081,
+   "ms": 48.496,
    "ok": true,
    "rows": 5,
    "result": {
@@ -647,7 +647,7 @@
   {
    "phase": "warm",
    "index": 40,
-   "ms": 79.054,
+   "ms": 44.589,
    "ok": true,
    "rows": 5,
    "result": {
@@ -663,7 +663,7 @@
   {
    "phase": "warm",
    "index": 41,
-   "ms": 65.074,
+   "ms": 55.434,
    "ok": true,
    "rows": 5,
    "result": {
@@ -679,7 +679,7 @@
   {
    "phase": "warm",
    "index": 42,
-   "ms": 298.319,
+   "ms": 231.88,
    "ok": true,
    "rows": 5,
    "result": {
@@ -695,7 +695,7 @@
   {
    "phase": "warm",
    "index": 43,
-   "ms": 109.869,
+   "ms": 70.989,
    "ok": true,
    "rows": 5,
    "result": {
@@ -711,7 +711,7 @@
   {
    "phase": "warm",
    "index": 44,
-   "ms": 125.011,
+   "ms": 84.005,
    "ok": true,
    "rows": 5,
    "result": {
@@ -727,7 +727,7 @@
   {
    "phase": "warm",
    "index": 45,
-   "ms": 100.473,
+   "ms": 63.336,
    "ok": true,
    "rows": 5,
    "result": {
@@ -743,7 +743,7 @@
   {
    "phase": "warm",
    "index": 46,
-   "ms": 85.873,
+   "ms": 52.191,
    "ok": true,
    "rows": 5,
    "result": {
@@ -759,7 +759,7 @@
   {
    "phase": "warm",
    "index": 47,
-   "ms": 50.009,
+   "ms": 45.364,
    "ok": true,
    "rows": 5,
    "result": {
@@ -775,7 +775,7 @@
   {
    "phase": "warm",
    "index": 48,
-   "ms": 125.919,
+   "ms": 74.108,
    "ok": true,
    "rows": 5,
    "result": {
@@ -791,7 +791,7 @@
   {
    "phase": "warm",
    "index": 49,
-   "ms": 113.904,
+   "ms": 67.627,
    "ok": true,
    "rows": 5,
    "result": {
@@ -807,7 +807,7 @@
   {
    "phase": "warm",
    "index": 50,
-   "ms": 319.748,
+   "ms": 252.298,
    "ok": true,
    "rows": 5,
    "result": {
@@ -823,7 +823,7 @@
   {
    "phase": "warm",
    "index": 51,
-   "ms": 122.313,
+   "ms": 87.378,
    "ok": true,
    "rows": 5,
    "result": {
@@ -839,7 +839,7 @@
   {
    "phase": "warm",
    "index": 52,
-   "ms": 165.61,
+   "ms": 118.898,
    "ok": true,
    "rows": 5,
    "result": {
@@ -854,16 +854,16 @@
   }
  ],
  "status": "ok",
- "cold_ms": 174.418,
+ "cold_ms": 123.815,
  "warm": {
   "n": 50,
-  "p50_ms": 94.247,
-  "p95_ms": 217.83,
-  "min_ms": 49.744,
-  "max_ms": 319.748,
-  "mean_ms": 108.906
+  "p50_ms": 61.296,
+  "p95_ms": 148.646,
+  "min_ms": 37.15,
+  "max_ms": 252.298,
+  "mean_ms": 72.692
  },
  "dataset": "large",
- "family_setup_ms": 6.492,
- "rss_after": "3152 MiB (heap 2489 MiB)"
+ "family_setup_ms": 2.983,
+ "rss_after": "3201 MiB (heap 2789 MiB)"
 }

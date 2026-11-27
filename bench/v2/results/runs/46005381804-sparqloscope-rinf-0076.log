@@ -1,0 +1,337 @@
+http://data.europa.eu/949/graph/0076 1/124 http://data.europa.eu/949/allocationCompany 3899
+http://data.europa.eu/949/graph/0076 2/124 http://data.europa.eu/949/appliesToDirection 17448
+http://data.europa.eu/949/graph/0076 3/124 http://data.europa.eu/949/bigMetalMass 72
+http://data.europa.eu/949/graph/0076 4/124 http://data.europa.eu/949/complianceInfTsi 1024
+http://data.europa.eu/949/graph/0076 5/124 http://data.europa.eu/949/conditionsAppliedRegenerativeBraking 1
+http://data.europa.eu/949/graph/0076 6/124 http://data.europa.eu/949/contactLineSystem 2244
+http://data.europa.eu/949/graph/0076 7/124 http://data.europa.eu/949/contactLineSystemType 2
+http://data.europa.eu/949/graph/0076 8/124 http://data.europa.eu/949/crossSectionArea 959
+http://data.europa.eu/949/graph/0076 9/124 http://data.europa.eu/949/dieselThermalAllowed 1024
+http://data.europa.eu/949/graph/0076 10/124 http://data.europa.eu/949/documentUrl 1
+http://data.europa.eu/949/graph/0076 11/124 http://data.europa.eu/949/elementA 12884
+http://data.europa.eu/949/graph/0076 12/124 http://data.europa.eu/949/elementB 12884
+http://data.europa.eu/949/graph/0076 13/124 http://data.europa.eu/949/endsAt 24234
+http://data.europa.eu/949/graph/0076 14/124 http://data.europa.eu/949/energySupplySystem 1
+http://data.europa.eu/949/graph/0076 15/124 http://data.europa.eu/949/etcs 72
+http://data.europa.eu/949/graph/0076 16/124 http://data.europa.eu/949/etcsBaseline 2
+http://data.europa.eu/949/graph/0076 17/124 http://data.europa.eu/949/etcsDegradedSituation 72
+http://data.europa.eu/949/graph/0076 18/124 http://data.europa.eu/949/etcsLevelType 2
+http://data.europa.eu/949/graph/0076 19/124 http://data.europa.eu/949/etcsMVersion 2
+http://data.europa.eu/949/graph/0076 20/124 http://data.europa.eu/949/etcsSystemCompatibility 2
+http://data.europa.eu/949/graph/0076 21/124 http://data.europa.eu/949/etcsTransmitsTrackConditions 2
+http://data.europa.eu/949/graph/0076 22/124 http://data.europa.eu/949/freightFlag 7
+http://data.europa.eu/949/graph/0076 23/124 http://data.europa.eu/949/gradient 61
+http://data.europa.eu/949/graph/0076 24/124 http://data.europa.eu/949/gradientProfile 1282
+http://data.europa.eu/949/graph/0076 25/124 http://data.europa.eu/949/handoverPointFlag 4
+http://data.europa.eu/949/graph/0076 26/124 http://data.europa.eu/949/hasElectricShoreSupply 87
+http://data.europa.eu/949/graph/0076 27/124 http://data.europa.eu/949/hasEmergencyPlan 974
+http://data.europa.eu/949/graph/0076 28/124 http://data.europa.eu/949/hasEvacuationAndRescuePoints 1024
+http://data.europa.eu/949/graph/0076 29/124 http://data.europa.eu/949/hasExternalCleaning 544
+http://data.europa.eu/949/graph/0076 30/124 http://data.europa.eu/949/hasHotAxleBoxDetector 2244
+http://data.europa.eu/949/graph/0076 31/124 http://data.europa.eu/949/hasLRS 732
+http://data.europa.eu/949/graph/0076 32/124 http://data.europa.eu/949/hasLevelCrossings 2244
+http://data.europa.eu/949/graph/0076 33/124 http://data.europa.eu/949/hasLrsCoordinate 69772
+http://data.europa.eu/949/graph/0076 34/124 http://data.europa.eu/949/hasOrganisationRole 1
+http://data.europa.eu/949/graph/0076 35/124 http://data.europa.eu/949/hasPart 3912
+http://data.europa.eu/949/graph/0076 36/124 http://data.europa.eu/949/hasPhaseSeparation 15
+http://data.europa.eu/949/graph/0076 37/124 http://data.europa.eu/949/hasRefuelling 563
+http://data.europa.eu/949/graph/0076 38/124 http://data.europa.eu/949/hasSequence 24234
+http://data.europa.eu/949/graph/0076 39/124 http://data.europa.eu/949/hasToiletDischarge 528
+http://data.europa.eu/949/graph/0076 40/124 http://data.europa.eu/949/hasTopoCoordinate 69772
+http://data.europa.eu/949/graph/0076 41/124 http://data.europa.eu/949/hasWalkway 1024
+http://data.europa.eu/949/graph/0076 42/124 http://data.europa.eu/949/hasWaterRestocking 532
+http://data.europa.eu/949/graph/0076 43/124 http://data.europa.eu/949/inCountry 28880
+http://data.europa.eu/949/graph/0076 44/124 http://data.europa.eu/949/includes 20057
+http://data.europa.eu/949/graph/0076 45/124 http://data.europa.eu/949/infrastructureManager 28880
+http://data.europa.eu/949/graph/0076 46/124 http://data.europa.eu/949/isOnOriginOfElementA 12884
+http://data.europa.eu/949/graph/0076 47/124 http://data.europa.eu/949/isOnOriginOfElementB 12884
+http://data.europa.eu/949/graph/0076 48/124 http://data.europa.eu/949/isPartOf 3912
+http://data.europa.eu/949/graph/0076 49/124 http://data.europa.eu/949/kilometer 732
+http://data.europa.eu/949/graph/0076 50/124 http://data.europa.eu/949/kmPost 24045
+http://data.europa.eu/949/graph/0076 51/124 http://data.europa.eu/949/kmPostName 8805
+http://data.europa.eu/949/graph/0076 52/124 http://data.europa.eu/949/lengthOfNetLinearElement 7759
+http://data.europa.eu/949/graph/0076 53/124 http://data.europa.eu/949/lengthOfPlatform 754
+http://data.europa.eu/949/graph/0076 54/124 http://data.europa.eu/949/lengthOfSectionOfLine 717
+http://data.europa.eu/949/graph/0076 55/124 http://data.europa.eu/949/lengthOfTunnel 1023
+http://data.europa.eu/949/graph/0076 56/124 http://data.europa.eu/949/lineReferenceTunnelEnd 1024
+http://data.europa.eu/949/graph/0076 57/124 http://data.europa.eu/949/lineReferenceTunnelStart 1024
+http://data.europa.eu/949/graph/0076 58/124 http://data.europa.eu/949/linesideDistanceIndication 2244
+http://data.europa.eu/949/graph/0076 59/124 http://data.europa.eu/949/linesideDistanceIndicationAppearance 1
+http://data.europa.eu/949/graph/0076 60/124 http://data.europa.eu/949/linesideDistanceIndicationFrequency 1
+http://data.europa.eu/949/graph/0076 61/124 http://data.europa.eu/949/linesideDistanceIndicationPositioning 1
+http://data.europa.eu/949/graph/0076 62/124 http://data.europa.eu/949/linkedToPrimaryLocation 3899
+http://data.europa.eu/949/graph/0076 63/124 http://data.europa.eu/949/maxCurrentStandstillPantograph 1
+http://data.europa.eu/949/graph/0076 64/124 http://data.europa.eu/949/maximumContactWireHeight 1
+http://data.europa.eu/949/graph/0076 65/124 http://data.europa.eu/949/maximumPermittedSpeed 2152
+http://data.europa.eu/949/graph/0076 66/124 http://data.europa.eu/949/minimumContactWireHeight 1
+http://data.europa.eu/949/graph/0076 67/124 http://data.europa.eu/949/minimumHorizontalRadius 876
+http://data.europa.eu/949/graph/0076 68/124 http://data.europa.eu/949/nationalLine 752
+http://data.europa.eu/949/graph/0076 69/124 http://data.europa.eu/949/navigability 12884
+http://data.europa.eu/949/graph/0076 70/124 http://data.europa.eu/949/netReference 31150
+http://data.europa.eu/949/graph/0076 71/124 http://data.europa.eu/949/notApplicable 14580
+http://data.europa.eu/949/graph/0076 72/124 http://data.europa.eu/949/notYetAvailable 12954
+http://data.europa.eu/949/graph/0076 73/124 http://data.europa.eu/949/offsetFromKilometricPost 24045
+http://data.europa.eu/949/graph/0076 74/124 http://data.europa.eu/949/offsetFromOrigin 69266
+http://data.europa.eu/949/graph/0076 75/124 http://data.europa.eu/949/onLinearElement 69266
+http://data.europa.eu/949/graph/0076 76/124 http://data.europa.eu/949/opEnd 717
+http://data.europa.eu/949/graph/0076 77/124 http://data.europa.eu/949/opName 1468
+http://data.europa.eu/949/graph/0076 78/124 http://data.europa.eu/949/opStart 717
+http://data.europa.eu/949/graph/0076 79/124 http://data.europa.eu/949/opType 734
+http://data.europa.eu/949/graph/0076 80/124 http://data.europa.eu/949/organisationCode 1
+http://data.europa.eu/949/graph/0076 81/124 http://data.europa.eu/949/otherTrainProtection 72
+http://data.europa.eu/949/graph/0076 82/124 http://data.europa.eu/949/passengerFlag 678
+http://data.europa.eu/949/graph/0076 83/124 http://data.europa.eu/949/phaseInfoKm 15
+http://data.europa.eu/949/graph/0076 84/124 http://data.europa.eu/949/phaseInfoLength 15
+http://data.europa.eu/949/graph/0076 85/124 http://data.europa.eu/949/phaseInfoPantographLowered 15
+http://data.europa.eu/949/graph/0076 86/124 http://data.europa.eu/949/phaseInfoSwitchOffBreaker 15
+http://data.europa.eu/949/graph/0076 87/124 http://data.europa.eu/949/platformHeight 717
+http://data.europa.eu/949/graph/0076 88/124 http://data.europa.eu/949/platformId 754
+http://data.europa.eu/949/graph/0076 89/124 http://data.europa.eu/949/primaryLocation 715
+http://data.europa.eu/949/graph/0076 90/124 http://data.europa.eu/949/primaryLocationCode 717
+http://data.europa.eu/949/graph/0076 91/124 http://data.europa.eu/949/primaryLocationName 1434
+http://data.europa.eu/949/graph/0076 92/124 http://data.europa.eu/949/raisedPantographsDistance 27
+http://data.europa.eu/949/graph/0076 93/124 http://data.europa.eu/949/raisedPantographsNumber 27
+http://data.europa.eu/949/graph/0076 94/124 http://data.europa.eu/949/raisedPantographsSpeed 27
+http://data.europa.eu/949/graph/0076 95/124 http://data.europa.eu/949/referenceBorderPoint 4
+http://data.europa.eu/949/graph/0076 96/124 http://data.europa.eu/949/role 1
+http://data.europa.eu/949/graph/0076 97/124 http://data.europa.eu/949/roleOf 1
+http://data.europa.eu/949/graph/0076 98/124 http://data.europa.eu/949/rollingStockFireCategory 64
+http://data.europa.eu/949/graph/0076 99/124 http://data.europa.eu/949/schematicOverviewOP 734
+http://data.europa.eu/949/graph/0076 100/124 http://data.europa.eu/949/sidingId 1416
+http://data.europa.eu/949/graph/0076 101/124 http://data.europa.eu/949/signalType 5291
+http://data.europa.eu/949/graph/0076 102/124 http://data.europa.eu/949/solNature 717
+http://data.europa.eu/949/graph/0076 103/124 http://data.europa.eu/949/startsAt 24234
+http://data.europa.eu/949/graph/0076 104/124 http://data.europa.eu/949/subsidiaryLocationCode 3899
+http://data.europa.eu/949/graph/0076 105/124 http://data.europa.eu/949/subsidiaryLocationName 7798
+http://data.europa.eu/949/graph/0076 106/124 http://data.europa.eu/949/trackDirection 2244
+http://data.europa.eu/949/graph/0076 107/124 http://data.europa.eu/949/trackId 2244
+http://data.europa.eu/949/graph/0076 108/124 http://data.europa.eu/949/trackPhaseInfo 15
+http://data.europa.eu/949/graph/0076 109/124 http://data.europa.eu/949/trackRaisedPantographsDistanceAndSpeed 1277
+http://data.europa.eu/949/graph/0076 110/124 http://data.europa.eu/949/tracksideHabd 5
+http://data.europa.eu/949/graph/0076 111/124 http://data.europa.eu/949/tunnelIdentification 1024
+http://data.europa.eu/949/graph/0076 112/124 http://data.europa.eu/949/uopid 734
+http://data.europa.eu/949/graph/0076 113/124 http://data.europa.eu/949/validity 53422
+http://data.europa.eu/949/graph/0076 114/124 http://data.europa.eu/949/wheelSetGauge 2244
+http://data.europa.eu/949/graph/0076 115/124 http://www.opengis.net/ont/geosparql#asWKT 66236
+http://data.europa.eu/949/graph/0076 116/124 http://www.opengis.net/ont/geosparql#hasGeometry 67438
+http://data.europa.eu/949/graph/0076 117/124 http://www.w3.org/1999/02/22-rdf-syntax-ns#first 47627
+http://data.europa.eu/949/graph/0076 118/124 http://www.w3.org/1999/02/22-rdf-syntax-ns#rest 47627
+http://data.europa.eu/949/graph/0076 119/124 http://www.w3.org/1999/02/22-rdf-syntax-ns#type 528699
+http://data.europa.eu/949/graph/0076 120/124 http://www.w3.org/2000/01/rdf-schema#label 66074
+http://data.europa.eu/949/graph/0076 121/124 http://www.w3.org/2006/time#hasBeginning 207
+http://data.europa.eu/949/graph/0076 122/124 http://www.w3.org/2006/time#hasEnd 11
+http://data.europa.eu/949/graph/0076 123/124 http://www.w3.org/2006/time#inXSDDate 201
+http://data.europa.eu/949/graph/0076 124/124 http://www.w3.org/2006/time#inXSDDateTimeStamp 201
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/../bench-work/data/rinf-0076.nt: 1594395 triples (expected 1594395)
+=== sparqloscope rinf-0076 on tripletrail (2026-11-27T13:24:37+00:00)
+loading rinf-0076 into tripletrail
+1/102 join-2-small-large: 2 ms, 1 rows
+2/102 join-2-large-small: 1 ms, 1 rows
+3/102 join-2-large-large: 7 ms, 1 rows
+4/102 join-2-largest-result: 3 ms, 1 rows
+5/102 join-2-large-large-with-large-result: 3 ms, 1 rows
+6/102 join-2-large-large-with-small-result: 2 ms, 1 rows
+7/102 join-3-star-largest-sum-of-join-sizes: 6 ms, 1 rows
+8/102 join-3-chain-largest-sum-of-join-sizes: 4 ms, 1 rows
+9/102 join-xlarge-star-on-small-predicates: 1 ms, 1 rows
+10/102 join-xlarge-chain-on-small-predicates: 1 ms, 1 rows
+11/102 optional-join-small-large: 1 ms, 1 rows
+12/102 optional-join-large-small: 1 ms, 1 rows
+13/102 optional-join-large-large: 7 ms, 1 rows
+14/102 optional-join-2-large-large-with-large-result: 5 ms, 1 rows
+15/102 optional-join-2-large-large-with-small-join-result-1: 2 ms, 1 rows
+16/102 optional-join-2-large-large-with-small-join-result-2: 2 ms, 1 rows
+17/102 optional-join-3-star-1: 6 ms, 1 rows
+18/102 optional-join-3-star-2: 6 ms, 1 rows
+19/102 optional-join-3-chain-1: 6 ms, 1 rows
+20/102 optional-join-3-chain-2: 7 ms, 1 rows
+21/102 minus-join-small-large: 1 ms, 1 rows
+22/102 minus-join-large-small: 1 ms, 1 rows
+23/102 minus-join-large-large: 6 ms, 1 rows
+24/102 minus-join-2-large-large-with-large-result: 5 ms, 1 rows
+25/102 minus-join-2-large-large-with-small-join-result-1: 2 ms, 1 rows
+26/102 minus-join-2-large-large-with-small-join-result-2: 2 ms, 1 rows
+27/102 minus-join-3-star-1: 4 ms, 1 rows
+28/102 minus-join-3-star-2: 5 ms, 1 rows
+29/102 minus-join-3-chain-1: 5 ms, 1 rows
+30/102 minus-join-3-chain-2: 12 ms, 1 rows
+31/102 exists-join-small-large: 1 ms, 1 rows
+32/102 exists-join-large-small: 1 ms, 1 rows
+33/102 exists-join-large-large: 8 ms, 1 rows
+34/102 exists-join-2-large-large-with-large-result: 5 ms, 1 rows
+35/102 exists-join-2-large-large-with-small-join-result-1: 3 ms, 1 rows
+36/102 exists-join-2-large-large-with-small-join-result-2: 2 ms, 1 rows
+37/102 exists-join-3-star-1: 5 ms, 1 rows
+38/102 exists-join-3-star-2: 5 ms, 1 rows
+39/102 exists-join-3-chain-1: 5 ms, 1 rows
+40/102 exists-join-3-chain-2: 7 ms, 1 rows
+41/102 union-no-constraint: 1 ms, 1 rows
+42/102 union-constraint-from-star: 7 ms, 1 rows
+43/102 union-constraint-small-join: 2 ms, 1 rows
+44/102 union-constraint-large-join: 6 ms, 1 rows
+45/102 union-constraint-filter-restrictive: 1 ms, 1 rows
+46/102 multicolumn-join-small: 1 ms, 1 rows
+47/102 multicolumn-join-large: 2 ms, 1 rows
+48/102 group-by-count-object-high-multiplicity: 1 ms, 1 rows
+49/102 group-by-count-object-low-multiplicity: 3 ms, 10 rows
+50/102 group-by-count-object-wrong-sort-order: 4 ms, 1 rows
+51/102 group-by-complex-aggregate: 9 ms, 1 rows
+52/102 group-by-implicit-numeric-baseline: 1 ms, 1 rows
+53/102 group-by-implicit-numeric-sum: 1 ms, 1 rows
+54/102 group-by-implicit-numeric-min: 1 ms, 1 rows
+55/102 group-by-implicit-numeric-max: 1 ms, 1 rows
+56/102 group-by-implicit-numeric-avg: 1 ms, 1 rows
+57/102 group-by-implicit-string-baseline: 1 ms, 1 rows
+58/102 group-by-implicit-string-min: 17 ms, 1 rows
+59/102 group-by-implicit-string-max: 18 ms, 1 rows
+60/102 group-by-string-groupconcat: 38 ms, 1 rows
+61/102 distinct-count-object-high-multiplicity: 2 ms, 1 rows
+62/102 distinct-count-object-low-multiplicity: 2 ms, 1 rows
+63/102 distinct-count-object-wrong-sort-order: 4 ms, 1 rows
+64/102 transitive-path-plus: 6 ms, 1 rows
+65/102 transitive-path-plus-fixed-subject: 1 ms, 1 rows
+66/102 transitive-path-large-join-and-plus: 6 ms, 1 rows
+67/102 transitive-path-small-join-and-plus: 6 ms, 1 rows
+68/102 regex-3-contains: 3 ms, 1 rows
+69/102 regex-3-fixed: 3 ms, 1 rows
+70/102 regex-3: 3 ms, 1 rows
+71/102 regex-prefix-1: 2 ms, 1 rows
+72/102 regex-prefix-2: 2 ms, 1 rows
+73/102 regex-prefix-3: 4 ms, 1 rows
+74/102 strlen: 7 ms, 1 rows
+75/102 strbefore: 7 ms, 1 rows
+76/102 strafter: 7 ms, 1 rows
+77/102 strstarts: 6 ms, 1 rows
+78/102 strends: 6 ms, 1 rows
+79/102 result-size-tiny: 1 ms, 10 rows
+80/102 result-size-small: 1 ms, 1000 rows
+81/102 result-size-medium: 61 ms, 100000 rows
+82/102 result-size-large: 334 ms, 528699 rows
+83/102 result-size-xlarge: 334 ms, 528699 rows
+84/102 numeric-baseline: 2 ms, 1 rows
+85/102 numeric-abs: 2 ms, 1 rows
+86/102 numeric-ceil: 1 ms, 1 rows
+87/102 numeric-floor: 1 ms, 1 rows
+88/102 numeric-round: 1 ms, 1 rows
+89/102 numeric-add: 1 ms, 1 rows
+90/102 numeric-greater: 1 ms, 1 rows
+91/102 filter-few-results: 1 ms, 1 rows
+92/102 filter-many-results: 1 ms, 1 rows
+93/102 filter-language-en: 4 ms, 1 rows
+94/102 date-year: 1 ms, 1 rows
+95/102 date-month: 1 ms, 1 rows
+96/102 date-day: 1 ms, 1 rows
+97/102 number-of-triples: 1 ms, 1 rows
+98/102 number-of-subjects: 1 ms, 1 rows
+99/102 number-of-predicates: 1 ms, 1 rows
+100/102 number-of-objects: 1 ms, 1 rows
+101/102 number-of-literals: 1 ms, 1 rows
+102/102 number-of-blank-nodes: 1 ms, 1 rows
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/sparqloscope/rinf-0076/rinf-0076.tripletrail.results.yaml
+=== sparqloscope rinf-0076 on tripletrail-1t (2026-11-27T13:24:51+00:00)
+loading rinf-0076 into tripletrail-1t
+1/102 join-2-small-large: 3 ms, 1 rows
+2/102 join-2-large-small: 1 ms, 1 rows
+3/102 join-2-large-large: 7 ms, 1 rows
+4/102 join-2-largest-result: 4 ms, 1 rows
+5/102 join-2-large-large-with-large-result: 5 ms, 1 rows
+6/102 join-2-large-large-with-small-result: 3 ms, 1 rows
+7/102 join-3-star-largest-sum-of-join-sizes: 6 ms, 1 rows
+8/102 join-3-chain-largest-sum-of-join-sizes: 6 ms, 1 rows
+9/102 join-xlarge-star-on-small-predicates: 1 ms, 1 rows
+10/102 join-xlarge-chain-on-small-predicates: 1 ms, 1 rows
+11/102 optional-join-small-large: 2 ms, 1 rows
+12/102 optional-join-large-small: 1 ms, 1 rows
+13/102 optional-join-large-large: 7 ms, 1 rows
+14/102 optional-join-2-large-large-with-large-result: 5 ms, 1 rows
+15/102 optional-join-2-large-large-with-small-join-result-1: 2 ms, 1 rows
+16/102 optional-join-2-large-large-with-small-join-result-2: 3 ms, 1 rows
+17/102 optional-join-3-star-1: 7 ms, 1 rows
+18/102 optional-join-3-star-2: 6 ms, 1 rows
+19/102 optional-join-3-chain-1: 7 ms, 1 rows
+20/102 optional-join-3-chain-2: 7 ms, 1 rows
+21/102 minus-join-small-large: 1 ms, 1 rows
+22/102 minus-join-large-small: 1 ms, 1 rows
+23/102 minus-join-large-large: 7 ms, 1 rows
+24/102 minus-join-2-large-large-with-large-result: 4 ms, 1 rows
+25/102 minus-join-2-large-large-with-small-join-result-1: 2 ms, 1 rows
+26/102 minus-join-2-large-large-with-small-join-result-2: 2 ms, 1 rows
+27/102 minus-join-3-star-1: 7 ms, 1 rows
+28/102 minus-join-3-star-2: 5 ms, 1 rows
+29/102 minus-join-3-chain-1: 6 ms, 1 rows
+30/102 minus-join-3-chain-2: 7 ms, 1 rows
+31/102 exists-join-small-large: 1 ms, 1 rows
+32/102 exists-join-large-small: 1 ms, 1 rows
+33/102 exists-join-large-large: 6 ms, 1 rows
+34/102 exists-join-2-large-large-with-large-result: 4 ms, 1 rows
+35/102 exists-join-2-large-large-with-small-join-result-1: 2 ms, 1 rows
+36/102 exists-join-2-large-large-with-small-join-result-2: 2 ms, 1 rows
+37/102 exists-join-3-star-1: 6 ms, 1 rows
+38/102 exists-join-3-star-2: 5 ms, 1 rows
+39/102 exists-join-3-chain-1: 6 ms, 1 rows
+40/102 exists-join-3-chain-2: 6 ms, 1 rows
+41/102 union-no-constraint: 1 ms, 1 rows
+42/102 union-constraint-from-star: 6 ms, 1 rows
+43/102 union-constraint-small-join: 2 ms, 1 rows
+44/102 union-constraint-large-join: 5 ms, 1 rows
+45/102 union-constraint-filter-restrictive: 1 ms, 1 rows
+46/102 multicolumn-join-small: 1 ms, 1 rows
+47/102 multicolumn-join-large: 2 ms, 1 rows
+48/102 group-by-count-object-high-multiplicity: 1 ms, 1 rows
+49/102 group-by-count-object-low-multiplicity: 3 ms, 10 rows
+50/102 group-by-count-object-wrong-sort-order: 4 ms, 1 rows
+51/102 group-by-complex-aggregate: 8 ms, 1 rows
+52/102 group-by-implicit-numeric-baseline: 1 ms, 1 rows
+53/102 group-by-implicit-numeric-sum: 1 ms, 1 rows
+54/102 group-by-implicit-numeric-min: 1 ms, 1 rows
+55/102 group-by-implicit-numeric-max: 1 ms, 1 rows
+56/102 group-by-implicit-numeric-avg: 1 ms, 1 rows
+57/102 group-by-implicit-string-baseline: 1 ms, 1 rows
+58/102 group-by-implicit-string-min: 17 ms, 1 rows
+59/102 group-by-implicit-string-max: 21 ms, 1 rows
+60/102 group-by-string-groupconcat: 46 ms, 1 rows
+61/102 distinct-count-object-high-multiplicity: 2 ms, 1 rows
+62/102 distinct-count-object-low-multiplicity: 2 ms, 1 rows
+63/102 distinct-count-object-wrong-sort-order: 4 ms, 1 rows
+64/102 transitive-path-plus: 6 ms, 1 rows
+65/102 transitive-path-plus-fixed-subject: 1 ms, 1 rows
+66/102 transitive-path-large-join-and-plus: 6 ms, 1 rows
+67/102 transitive-path-small-join-and-plus: 6 ms, 1 rows
+68/102 regex-3-contains: 5 ms, 1 rows
+69/102 regex-3-fixed: 5 ms, 1 rows
+70/102 regex-3: 6 ms, 1 rows
+71/102 regex-prefix-1: 2 ms, 1 rows
+72/102 regex-prefix-2: 2 ms, 1 rows
+73/102 regex-prefix-3: 2 ms, 1 rows
+74/102 strlen: 4 ms, 1 rows
+75/102 strbefore: 5 ms, 1 rows
+76/102 strafter: 5 ms, 1 rows
+77/102 strstarts: 4 ms, 1 rows
+78/102 strends: 4 ms, 1 rows
+79/102 result-size-tiny: 1 ms, 10 rows
+80/102 result-size-small: 1 ms, 1000 rows
+81/102 result-size-medium: 60 ms, 100000 rows
+82/102 result-size-large: 329 ms, 528699 rows
+83/102 result-size-xlarge: 334 ms, 528699 rows
+84/102 numeric-baseline: 3 ms, 1 rows
+85/102 numeric-abs: 2 ms, 1 rows
+86/102 numeric-ceil: 1 ms, 1 rows
+87/102 numeric-floor: 1 ms, 1 rows
+88/102 numeric-round: 1 ms, 1 rows
+89/102 numeric-add: 1 ms, 1 rows
+90/102 numeric-greater: 1 ms, 1 rows
+91/102 filter-few-results: 1 ms, 1 rows
+92/102 filter-many-results: 1 ms, 1 rows
+93/102 filter-language-en: 5 ms, 1 rows
+94/102 date-year: 1 ms, 1 rows
+95/102 date-month: 1 ms, 1 rows
+96/102 date-day: 1 ms, 1 rows
+97/102 number-of-triples: 1 ms, 1 rows
+98/102 number-of-subjects: 1 ms, 1 rows
+99/102 number-of-predicates: 1 ms, 1 rows
+100/102 number-of-objects: 1 ms, 1 rows
+101/102 number-of-literals: 1 ms, 1 rows
+102/102 number-of-blank-nodes: 1 ms, 1 rows
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/sparqloscope/rinf-0076/rinf-0076.tripletrail-1t.results.yaml
+/home/gha/runner/_work/tripletrail-bench/tripletrail-bench/bench/v2/results/sparqloscope/report.md
+=== done (2026-11-27T13:25:07+00:00)

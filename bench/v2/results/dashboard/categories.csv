@@ -1,17 +1,17 @@
 dataset,category,engine,ms
-bsbm-2785,join,tripletrail,5.876
-bsbm-2785,optional,tripletrail,6.106
-bsbm-2785,minus,tripletrail,5.919
-bsbm-2785,exists,tripletrail,6.221
-bsbm-2785,union,tripletrail,5.426
-bsbm-2785,group by / distinct,tripletrail,8.495
-bsbm-2785,property path,tripletrail,4.306
-bsbm-2785,regex / string,tripletrail,4.244
-bsbm-2785,result size,tripletrail,23.482
-bsbm-2785,numeric,tripletrail,6.261
-bsbm-2785,filter / language,tripletrail,1.711
-bsbm-2785,date,tripletrail,14.604
-bsbm-2785,count,tripletrail,2.282
+bsbm-2785,join,tripletrail,1.979
+bsbm-2785,optional,tripletrail,2.015
+bsbm-2785,minus,tripletrail,1.98
+bsbm-2785,exists,tripletrail,1.83
+bsbm-2785,union,tripletrail,1.801
+bsbm-2785,group by / distinct,tripletrail,2.372
+bsbm-2785,property path,tripletrail,1.412
+bsbm-2785,regex / string,tripletrail,1.435
+bsbm-2785,result size,tripletrail,12.68
+bsbm-2785,numeric,tripletrail,2.751
+bsbm-2785,filter / language,tripletrail,1.016
+bsbm-2785,date,tripletrail,2.824
+bsbm-2785,count,tripletrail,0.825
 bsbm-2785,join,oxigraph,59.405
 bsbm-2785,optional,oxigraph,177.401
 bsbm-2785,minus,oxigraph,96.3
@@ -77,19 +77,32 @@ bsbm-2785,numeric,maplib,7.332
 bsbm-2785,filter / language,maplib,5.225
 bsbm-2785,date,maplib,5.585
 bsbm-2785,count,maplib,24.511
-rinf-0076,join,tripletrail,7.146
-rinf-0076,optional,tripletrail,8.678
-rinf-0076,minus,tripletrail,10.667
-rinf-0076,exists,tripletrail,10.877
-rinf-0076,union,tripletrail,7.837
-rinf-0076,group by / distinct,tripletrail,7.861
-rinf-0076,property path,tripletrail,9.16
-rinf-0076,regex / string,tripletrail,9.757
-rinf-0076,result size,tripletrail,44.172
-rinf-0076,numeric,tripletrail,1.938
-rinf-0076,filter / language,tripletrail,2.382
-rinf-0076,date,tripletrail,1.409
-rinf-0076,count,tripletrail,1.144
+bsbm-2785,join,tripletrail-1t,1.921
+bsbm-2785,optional,tripletrail-1t,1.945
+bsbm-2785,minus,tripletrail-1t,1.867
+bsbm-2785,exists,tripletrail-1t,1.897
+bsbm-2785,union,tripletrail-1t,1.756
+bsbm-2785,group by / distinct,tripletrail-1t,2.092
+bsbm-2785,property path,tripletrail-1t,1.347
+bsbm-2785,regex / string,tripletrail-1t,1.386
+bsbm-2785,result size,tripletrail-1t,12.762
+bsbm-2785,numeric,tripletrail-1t,2.684
+bsbm-2785,filter / language,tripletrail-1t,1.022
+bsbm-2785,date,tripletrail-1t,4.818
+bsbm-2785,count,tripletrail-1t,0.792
+rinf-0076,join,tripletrail,2.287
+rinf-0076,optional,tripletrail,3.589
+rinf-0076,minus,tripletrail,3.394
+rinf-0076,exists,tripletrail,3.53
+rinf-0076,union,tripletrail,2.372
+rinf-0076,group by / distinct,tripletrail,2.663
+rinf-0076,property path,tripletrail,3.768
+rinf-0076,regex / string,tripletrail,4.04
+rinf-0076,result size,tripletrail,25.107
+rinf-0076,numeric,tripletrail,1.205
+rinf-0076,filter / language,tripletrail,1.51
+rinf-0076,date,tripletrail,0.868
+rinf-0076,count,tripletrail,0.77
 rinf-0076,join,oxigraph,87.633
 rinf-0076,optional,oxigraph,434.297
 rinf-0076,minus,oxigraph,273.49
@@ -155,3 +168,16 @@ rinf-0076,numeric,maplib,4.509
 rinf-0076,filter / language,maplib,5.412
 rinf-0076,date,maplib,4.169
 rinf-0076,count,maplib,39.055
+rinf-0076,join,tripletrail-1t,2.745
+rinf-0076,optional,tripletrail-1t,3.943
+rinf-0076,minus,tripletrail-1t,3.414
+rinf-0076,exists,tripletrail-1t,3.404
+rinf-0076,union,tripletrail-1t,2.258
+rinf-0076,group by / distinct,tripletrail-1t,2.632
+rinf-0076,property path,tripletrail-1t,3.716
+rinf-0076,regex / string,tripletrail-1t,3.656
+rinf-0076,result size,tripletrail-1t,24.319
+rinf-0076,numeric,tripletrail-1t,1.318
+rinf-0076,filter / language,tripletrail-1t,1.707
+rinf-0076,date,tripletrail-1t,0.92
+rinf-0076,count,tripletrail-1t,0.862

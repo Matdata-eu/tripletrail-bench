@@ -4,11 +4,12 @@ small,qlever,2.501,0.015,805538
 small,jena,6.226,0.31,805538
 small,graphdb,12.772,0.139,805538
 small,postgis,4.538,0.081,
-large,tripletrail,4.906,0.622,10539890
+large,tripletrail,5.41,0.376,10539890
 large,qlever,10.547,0.2,10539890
 large,jena,58.069,1.944,10539890
 large,graphdb,50.086,1.07,10539890
 large,postgis,35.279,0.873,
+large,tripletrail-1t,5.373,0.376,10539890
 osm_norway,tripletrail,1.742,0.166,1458029
 osm_norway,qlever,7.255,0.186,1458029
 osm_norway,jena,14.868,0.792,1458029

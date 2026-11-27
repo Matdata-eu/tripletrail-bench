@@ -109,28 +109,28 @@ small,6 routing,route_dijkstra_cost,postgis,ok,33.272,35.179,40.93
 small,1 selection,sel_bbox,postgis,ok,20.993,0.7,0.814
 small,1 selection,sel_distance,postgis,ok,24.252,1.728,4.616
 small,1 selection,sel_polygon,postgis,ok,0.631,0.562,0.678
-large,4 aggregate,agg_length_region,tripletrail,ok,1685.291,1585.23,1616.577
-large,4 aggregate,agg_total_length,tripletrail,ok,101,116.183,125.843
-large,4 aggregate,agg_union_buffers,tripletrail,ok,49.576,9.899,16.764
-large,6 routing,components,tripletrail,ok,568.142,297.771,301.307
-large,6 routing,cost_matrix_100,tripletrail,ok,498.505,461.906,478.676
-large,6 routing,driving_distance_50km,tripletrail,ok,9.422,8.565,13.136
-large,3 join,join_op_region,tripletrail,ok,47.235,76.425,110.525
-large,3 join,join_signal_ne_20m,tripletrail,ok,321.346,274.802,309.466
-large,2 knn,knn_ops,tripletrail,ok,15.859,24.859,30.538
-large,2 knn,knn_signals,tripletrail,ok,281.575,12.658,20.25
-large,6 routing,ksp5,tripletrail,ok,174.418,94.247,217.83
-large,5 linear referencing,lr_assets_between_km,tripletrail,ok,387.348,5.212,5.603
-large,5 linear referencing,lr_km_to_point,tripletrail,ok,12.518,10.88,12.921
-large,7 mixed,mixed_route_signals,tripletrail,ok,1319.03,591.617,663.368
-large,6 routing,route_bddijkstra,tripletrail,ok,67.198,43.025,79.812
-large,6 routing,route_ch,tripletrail,ok,3330.721,9.121,15.244
-large,6 routing,route_constrained,tripletrail,ok,7366.691,41.804,69.224
-large,6 routing,route_dijkstra,tripletrail,ok,3944.844,50.657,79.819
-large,6 routing,route_dijkstra_cost,tripletrail,ok,78.775,45.916,75.528
-large,1 selection,sel_bbox,tripletrail,ok,229.768,4.254,5.506
-large,1 selection,sel_distance,tripletrail,ok,4.004,4.491,5.858
-large,1 selection,sel_polygon,tripletrail,ok,3.505,3.544,4.191
+large,4 aggregate,agg_length_region,tripletrail,ok,551.156,490.183,536.338
+large,4 aggregate,agg_total_length,tripletrail,ok,80.769,72.077,93.064
+large,4 aggregate,agg_union_buffers,tripletrail,ok,21.547,3.357,5.322
+large,6 routing,components,tripletrail,ok,501.377,223.553,238.751
+large,6 routing,cost_matrix_100,tripletrail,ok,452.659,448.197,458.479
+large,6 routing,driving_distance_50km,tripletrail,ok,4.607,3.73,6.094
+large,3 join,join_op_region,tripletrail,ok,29.162,28.754,29.718
+large,3 join,join_signal_ne_20m,tripletrail,ok,211.467,158.003,176.602
+large,2 knn,knn_ops,tripletrail,ok,5.666,8.401,10.707
+large,2 knn,knn_signals,tripletrail,ok,49.947,4.883,7.719
+large,6 routing,ksp5,tripletrail,ok,123.815,61.296,148.646
+large,5 linear referencing,lr_assets_between_km,tripletrail,ok,320.535,1.708,3.711
+large,5 linear referencing,lr_km_to_point,tripletrail,ok,5.415,4.532,5.343
+large,7 mixed,mixed_route_signals,tripletrail,ok,917.871,435.938,495.482
+large,6 routing,route_bddijkstra,tripletrail,ok,58.074,20.252,48.357
+large,6 routing,route_ch,tripletrail,ok,2927.627,3.908,6.252
+large,6 routing,route_constrained,tripletrail,ok,6324.24,20.948,39.073
+large,6 routing,route_dijkstra,tripletrail,ok,3081.521,26.389,50.236
+large,6 routing,route_dijkstra_cost,tripletrail,ok,50.632,23.197,45.347
+large,1 selection,sel_bbox,tripletrail,ok,20.576,1.534,1.843
+large,1 selection,sel_distance,tripletrail,ok,1.03,1.581,2.622
+large,1 selection,sel_polygon,tripletrail,ok,1.359,1.143,1.436
 large,4 aggregate,agg_length_region,qlever,n/a,,,
 large,4 aggregate,agg_total_length,qlever,ok,502.506,448.236,488.094
 large,4 aggregate,agg_union_buffers,qlever,n/a,,,
@@ -219,6 +219,28 @@ large,6 routing,route_dijkstra_cost,postgis,ok,911.441,830.407,914.218
 large,1 selection,sel_bbox,postgis,ok,17.263,0.667,0.774
 large,1 selection,sel_distance,postgis,ok,23.894,1.636,3.799
 large,1 selection,sel_polygon,postgis,ok,0.848,0.7,0.805
+large,4 aggregate,agg_length_region,tripletrail-1t,ok,643.913,576.072,609.342
+large,4 aggregate,agg_total_length,tripletrail-1t,ok,113.319,115.851,124.499
+large,4 aggregate,agg_union_buffers,tripletrail-1t,ok,21.255,3.257,5.225
+large,6 routing,components,tripletrail-1t,ok,462.853,223.262,247.725
+large,6 routing,cost_matrix_100,tripletrail-1t,ok,444.702,440.788,460.028
+large,6 routing,driving_distance_50km,tripletrail-1t,ok,4.125,3.595,5.736
+large,3 join,join_op_region,tripletrail-1t,ok,28.852,30.779,41.161
+large,3 join,join_signal_ne_20m,tripletrail-1t,ok,300.789,242.531,257.3
+large,2 knn,knn_ops,tripletrail-1t,ok,5.586,8.705,11.191
+large,2 knn,knn_signals,tripletrail-1t,ok,49.89,4.934,7.619
+large,6 routing,ksp5,tripletrail-1t,ok,121.639,63.466,146.842
+large,5 linear referencing,lr_assets_between_km,tripletrail-1t,ok,325.469,1.649,1.784
+large,5 linear referencing,lr_km_to_point,tripletrail-1t,ok,4.978,4.554,5.277
+large,7 mixed,mixed_route_signals,tripletrail-1t,ok,947.818,468.46,534.782
+large,6 routing,route_bddijkstra,tripletrail-1t,ok,58.381,20.388,48.799
+large,6 routing,route_ch,tripletrail-1t,ok,2963.061,3.888,6.246
+large,6 routing,route_constrained,tripletrail-1t,ok,6291.822,21.162,39.997
+large,6 routing,route_dijkstra,tripletrail-1t,ok,3068.252,26.487,49.867
+large,6 routing,route_dijkstra_cost,tripletrail-1t,ok,48.663,23.064,45.148
+large,1 selection,sel_bbox,tripletrail-1t,ok,28.768,1.678,2.617
+large,1 selection,sel_distance,tripletrail-1t,ok,0.996,1.651,2.562
+large,1 selection,sel_polygon,tripletrail-1t,ok,1.467,1.169,1.449
 osm_norway,8 osm,osm_station_admin,tripletrail,ok,68.914,41.272,43.641
 osm_norway,8 osm,osm_track_landuse,tripletrail,ok,165.697,162.378,175.558
 osm_norway,8 osm,osm_track_track_5m,tripletrail,ok,81.479,41.161,44.591
