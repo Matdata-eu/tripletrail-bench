@@ -1,0 +1,4 @@
+{
+ "engine": "graphdb",
+ "skipped": "left out of this dataset by the benchmark profile (bench/v2/profiles/shacl.txt)"
+}

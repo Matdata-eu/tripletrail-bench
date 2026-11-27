@@ -8,6 +8,7 @@ the older ones.
 
 | Run | Started | Commit | Machine | Request | Jobs ok / failed / skipped | Time |
 |---|---|---|---|---|---|---|
+| [45883044532](https://github.com/Matdata-eu/tripletrail-bench/actions/runs/45883044532) | 2026-11-26T19:28 | `9f32d6ce` | ccx43 | all shacl-ml | 0 / 2 / 0 (shacl rinf-0080, shacl rinf-all) | 10.0 h |
 | [45816390204](https://github.com/Matdata-eu/tripletrail-bench/actions/runs/45816390204) | 2026-11-26T12:12 | `99d1a36b` | ccx43 | all shacl | 0 / 1 / 0 (shacl rinf-0076) | 2.2 h |
 | [45275973194](https://github.com/Matdata-eu/tripletrail-bench/actions/runs/45275973194) | 2026-11-23T22:10 | `0f9b0a14` | ccx43 | scale osm_benelux | 1 / 0 / 0 | 22 min |
 | [45127025267](https://github.com/Matdata-eu/tripletrail-bench/actions/runs/45127025267) | 2026-11-23T06:58 | `44f5dcd2` | ccx43 | scale osm_benelux | 1 / 0 / 0 | 22 min |
