@@ -1,0 +1,29 @@
+{
+ "engine": "rdf4j",
+ "version": "rdf4j 5.3.2",
+ "timeout_s": 3600,
+ "runs": [
+  {
+   "exit": 1,
+   "timed_out": false,
+   "wall_s": 556.854,
+   "peak_rss_bytes": 21996888064,
+   "validate_s": 553.5
+  }
+ ],
+ "wall_s": 556.854,
+ "peak_rss_bytes": 21996888064,
+ "timed_out": false,
+ "exit": 1,
+ "validate_s": 553.5,
+ "report_bytes": 1522268,
+ "results": 2100,
+ "by_severity": {
+  "Warning": 2004,
+  "Violation": 96
+ },
+ "conforms": false,
+ "shapes_with_results": 4,
+ "distinct_results": 2100,
+ "results_sha256": "01c794fb92eec7aa5fb77342f4d6262b4587711eb5acabaa67543019e6e51459"
+}

@@ -49,3 +49,38 @@ The ERA RINF shapes on RINF data, in three profiles (`suites/shacl/run_shacl.py`
 | graphdb | 100.0% | 100.0% | 2,606 of 2,606 | 3,309 | none |
 | rdf4j | no era-local result on rinf-0076 | | | | |
 | pyshacl | no era-local result on rinf-0076 | | | | |
+
+## rinf-0080 (11,830,200 triples with the ontology and code lists)
+
+### core
+
+| engine | time (s) | validation (s) | peak memory (MB) | results | violations | warnings | same as TopBraid | same as majority |
+|---|---:|---:|---:|---:|---:|---:|---|---|
+| tripletrail | 32.4 | 27.3 | 1,745 | 281,387 | 96 | 281,291 | yes | yes |
+| jena | 73.2 |  | 12,843 | 281,387 | 96 | 281,291 | yes | yes |
+| topbraid | 255.8 |  | 14,181 | 281,387 | 96 | 281,291 | yes | yes |
+| graphdb | 374.5 | 246.2 | 52,694 | 281,387 | 96 | 281,291 | yes | yes |
+| rdf4j | 556.9 | 553.5 | 20,978 | 2,100 | 96 | 2,004 | no | no |
+| pyshacl | 2,668.2 |  | 15,230 | 281,387 | 96 | 281,291 | yes | yes |
+
+### era-local
+
+| engine | time (s) | validation (s) | peak memory (MB) | results | violations | warnings | same as TopBraid | same as majority |
+|---|---:|---:|---:|---:|---:|---:|---|---|
+| tripletrail | 179.5 | 174.0 | 11,966 | 894,300 | 297,578 | 596,722 | yes | yes |
+| jena | 778.8 |  | 12,415 | 947,629 (894,300 distinct) | 297,578 | 650,051 | yes | yes |
+| topbraid | 1,253.0 |  | 11,961 | 947,629 (894,300 distinct) | 297,578 | 650,051 | yes | yes |
+| graphdb | 3,199.0 (graphdb: container peak memory 53157052416 bytes) | | 50,695 | | | | | |
+| rdf4j | skipped: failed on rinf-0076 | | | | | | | |
+| pyshacl | skipped: failed on rinf-0076 | | | | | | | |
+
+### era
+
+| engine | time (s) | validation (s) | peak memory (MB) | results | violations | warnings | same as TopBraid | same as majority |
+|---|---:|---:|---:|---:|---:|---:|---|---|
+| tripletrail | 203.8 | 198.4 | 12,625 | 894,300 | 297,578 | 596,722 | yes | yes |
+| jena | 800.9 |  | 12,355 | 947,629 (894,300 distinct) | 297,578 | 650,051 | yes | yes |
+| topbraid | 1,343.7 |  | 11,913 | 947,629 (894,300 distinct) | 297,578 | 650,051 | yes | yes |
+| graphdb | 3,136.0 (graphdb: container peak memory 54429499392 bytes) | | 51,908 | | | | | |
+| rdf4j | skipped: failed on rinf-0076 | | | | | | | |
+| pyshacl | skipped: failed on rinf-0076 | | | | | | | |

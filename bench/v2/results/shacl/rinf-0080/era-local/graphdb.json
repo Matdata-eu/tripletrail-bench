@@ -1,0 +1,20 @@
+{
+ "engine": "graphdb",
+ "version": "graphdb:10.8.0",
+ "timeout_s": 3600,
+ "runs": [
+  {
+   "exit": 2,
+   "timed_out": false,
+   "wall_s": 3198.972,
+   "peak_rss_bytes": 53157052416,
+   "validate_s": 3067.71419927
+  }
+ ],
+ "wall_s": 3198.972,
+ "peak_rss_bytes": 53157052416,
+ "timed_out": false,
+ "exit": 2,
+ "validate_s": 3067.71419927,
+ "error": "graphdb: container peak memory 53157052416 bytes"
+}
