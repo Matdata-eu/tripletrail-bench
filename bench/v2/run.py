@@ -193,9 +193,15 @@ def na_reason(engine, qid):
     return None
 
 
+def queries_of(engine):
+    """The folder of an engine's queries: tripletrail's variants (tripletrail-1t, one thread per
+    query) run tripletrail's."""
+    return os.path.join(HERE, "queries", "tripletrail" if engine.startswith("tripletrail-") else engine)
+
+
 def template(engine, qid):
     ext = "sql" if engine == "postgis" else "rq"
-    p = os.path.join(HERE, "queries", engine, f"{qid}.{ext}")
+    p = os.path.join(queries_of(engine), f"{qid}.{ext}")
     if not os.path.exists(p):
         return None
     text = open(p).read()
@@ -273,7 +279,7 @@ def cmd_query(a):
                 print(f"[{a.engine}] restarted for family {fam} in {time.perf_counter() - t:.1f} s", flush=True)
             cl = client(a.engine, a.dataset)
             key = fam.split()[1] if " " in fam else fam
-            sp = os.path.join(HERE, "queries", a.engine, f"setup_{key}.ru")
+            sp = os.path.join(queries_of(a.engine), f"setup_{key}.ru")
             if os.path.exists(sp):
                 setup = round(cl.update(open(sp).read()) * 1000, 3)
                 print(f"[{a.engine}] setup {key}: {setup} ms", flush=True)

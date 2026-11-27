@@ -9,7 +9,7 @@ HERE=$(cd "$(dirname "$0")" && pwd)
 W=${BENCH_WORK:-$HERE/work}
 DS=$1; shift
 ENGINES=${*:-postgis tripletrail qlever jena graphdb}
-ALL="postgis tripletrail qlever jena graphdb"
+ALL="postgis tripletrail tripletrail-1t qlever jena graphdb"
 mkdir -p "$HERE/results/$DS"
 python3 "$HERE/env.py" >"$HERE/results/$DS/env.json"
 for e in $ENGINES; do
@@ -25,6 +25,7 @@ for e in $ENGINES; do
   if [ -n "${DROP_AFTER:-}" ]; then
     case $e in
       postgis) "$HERE/engines/postgis.sh" start && psql "${PG_DSN_BASE:-host=/var/run/postgresql user=postgres} dbname=postgres" -qc "DROP DATABASE IF EXISTS rinf_$DS" && "$HERE/engines/postgis.sh" stop ;;
+      tripletrail-*) rm -rf "${W:?}/tripletrail/$DS" ;;  # tripletrail's store (engines/tripletrail-1t.sh)
       *) rm -rf "${W:?}/$e/$DS" ;;
     esac
   fi

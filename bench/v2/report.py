@@ -15,8 +15,8 @@ sys.path.insert(0, HERE)
 from run import na_reason  # noqa: E402
 from workload import QUERIES  # noqa: E402
 
-ORDER = ["tripletrail", "postgis", "graphdb", "jena", "qlever"]
-NAMES = {"tripletrail": "tripletrail", "postgis": "PostGIS/pgRouting", "graphdb": "GraphDB", "jena": "Jena GeoSPARQL",
+ORDER = ["tripletrail", "tripletrail-1t", "postgis", "graphdb", "jena", "qlever"]
+NAMES = {"tripletrail": "tripletrail", "tripletrail-1t": "tripletrail, 1 thread per query", "postgis": "PostGIS/pgRouting", "graphdb": "GraphDB", "jena": "Jena GeoSPARQL",
          "qlever": "QLever"}
 
 

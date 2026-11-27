@@ -1,8 +1,9 @@
 # One query on all cores against the same query on one (tripletrail#4): the suites its
-# acceptance criteria name, for engines "tripletrail tripletrail-1t" (workflow suite=all,
-# dataset=threads). The thread count is the machine's cores, in each run's manifest.
+# acceptance criteria name (BSBM, Sparqloscope, the spatial joins of benchmark v2), for engines
+# "tripletrail tripletrail-1t" (workflow suite=all, dataset=threads). The thread count is the machine's cores, in each run's manifest.
 # One job per line: <suite> <dataset> [KEY=VALUE ...] (environment for that job only).
 bsbm 2785
 bsbm 28480
 sparqloscope bsbm-2785
 sparqloscope rinf-0076
+v2 large
