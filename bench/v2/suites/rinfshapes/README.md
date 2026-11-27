@@ -17,7 +17,13 @@ python3 bench/v2/suites/rinfshapes/test_queries.py                       # answe
 
 - **Data**: `rinf-all`, every graph of ERA's RINF endpoint (about 43 M triples), or one graph
   `rinf-<code>`. `suites/data/fetch_rinf.py` fetches it into `$BENCH_WORK/data` on first use; it
-  is never committed.
+  is never committed. `run_rinfshapes.py prepare` then writes the copy every engine loads,
+  `rinfshapes-<code>.nt`, without the few triples that stop some engine's bulk load: lines over
+  4 MiB (drawings as WKT, too long for Oxigraph's and QLever's parsers), numbers that are not
+  numbers (`"N"^^xsd:integer`), and geometries Jena's spatial index refuses (`"NYA"` as
+  `geo:asWKT`, a LINESTRING of one point). On `rinf-all` that is about 2,400 of 42.9 M triples,
+  none of them read by the queries; the counts per reason are in `rinfshapes-<code>.meta.json`
+  and in each engine's result file.
 - **Queries** (`queries.py`): 16 queries in 7 shapes. Each has a **rows** form, the answer as a
   client reads it, and a **count** form, `SELECT (COUNT(*) AS ?solutions)` over the same
   pattern (over the rows form as a subquery when it has a GROUP BY, ORDER BY or LIMIT). The

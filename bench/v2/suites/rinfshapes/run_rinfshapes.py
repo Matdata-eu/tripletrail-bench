@@ -50,7 +50,9 @@ def store_name(dataset):
 
 # RINF as ERA publishes it has triples that stop some engines' bulk loads. None of them is read by
 # the suite's queries, so they are left out for every engine alike:
-LONG_LINE = 16 * 1024 * 1024  # Oxigraph's N-Triples line buffer (era:digitalSchematicOverview WKT)
+# Lines over 4 MiB (era:digitalSchematicOverview drawings as WKT, up to 16 MiB): Oxigraph's
+# N-Triples line buffer is 16 MiB, and QLever's parallel parser needs a block end every 10 MB.
+LONG_LINE = 4 * 1024 * 1024
 NUMBER = re.compile(rb'"([^"]*)"\^\^<http://www\.w3\.org/2001/XMLSchema#(integer|decimal|double|float|int|long)> \.$')
 VALID_NUMBER = {
     b"integer": re.compile(rb"[+-]?\d+"), b"int": re.compile(rb"[+-]?\d+"), b"long": re.compile(rb"[+-]?\d+"),
@@ -58,17 +60,21 @@ VALID_NUMBER = {
     b"double": re.compile(rb"[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?|[+-]?INF|NaN"),
 }
 VALID_NUMBER[b"float"] = VALID_NUMBER[b"double"]
-# A LINESTRING of one point, which Jena's spatial index refuses.
+# Geometries Jena's spatial index refuses: a LINESTRING of one point, and geo:asWKT values that
+# are not WKT literals (plain "NYA", not yet available).
+WKT = re.compile(rb'<http://www\.opengis\.net/ont/geosparql#asWKT> (?!"[^"]*"\^\^<http://www\.opengis\.net/ont/geosparql#wktLiteral>)')
 ONE_POINT_LINE = re.compile(rb'"(<[^>]*> )?LINESTRING ?\( *[^,()]+\)"\^\^')
 
 
 def clean(line):
     """Why a line of N-Triples is left out, or None to keep it."""
-    if len(line) >= LONG_LINE - 1024:
-        return "line over 16 MiB"
+    if len(line) > LONG_LINE:
+        return "line over 4 MiB"
     m = NUMBER.search(line.rstrip())
     if m and not VALID_NUMBER[m.group(2)].fullmatch(m.group(1)):
         return f"not a number: xsd:{m.group(2).decode()}"
+    if WKT.search(line):
+        return "geo:asWKT not a WKT literal"
     if ONE_POINT_LINE.search(line):
         return "LINESTRING of one point"
     return None

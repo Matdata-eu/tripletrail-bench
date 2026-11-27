@@ -107,9 +107,12 @@ class Clean(unittest.TestCase):
         self.assertEqual(clean(self.line(f'"LINESTRING (24.27 54.89)"^^{wkt}')), "LINESTRING of one point")
         self.assertIsNone(clean(self.line(f'"LINESTRING (1 2, 3 4)"^^{wkt}')))
         self.assertIsNone(clean(self.line(f'"POINT (1 2)"^^{wkt}')))
+        as_wkt = "<http://www.opengis.net/ont/geosparql#asWKT>"
+        self.assertEqual(clean(f'<http://a> {as_wkt} "NYA" .\n'.encode()), "geo:asWKT not a WKT literal")
+        self.assertIsNone(clean(f'<http://a> {as_wkt} "POINT (1 2)"^^{wkt} .\n'.encode()))
 
     def test_long_lines(self):
-        self.assertEqual(clean(self.line('"' + "x" * (16 * 1024 * 1024) + '"')), "line over 16 MiB")
+        self.assertEqual(clean(self.line('"' + "x" * (4 * 1024 * 1024) + '"')), "line over 4 MiB")
         self.assertIsNone(clean(self.line('"short"')))
 
 
