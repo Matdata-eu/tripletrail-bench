@@ -60,10 +60,24 @@ VALID_NUMBER = {
     b"double": re.compile(rb"[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?|[+-]?INF|NaN"),
 }
 VALID_NUMBER[b"float"] = VALID_NUMBER[b"double"]
-# Geometries Jena's spatial index refuses: a LINESTRING of one point, and geo:asWKT values that
-# are not WKT literals (plain "NYA", not yet available).
+# Geometries that Jena's spatial index or QLever's geometry preprocessing refuse: geo:asWKT
+# values that are not WKT literals (plain "NYA", not yet available), coordinates that are not
+# numbers ("POINT (+-100000000 -100000000)") and LINESTRINGs of fewer than 2 distinct points.
 WKT = re.compile(rb'<http://www\.opengis\.net/ont/geosparql#asWKT> (?!"[^"]*"\^\^<http://www\.opengis\.net/ont/geosparql#wktLiteral>)')
-ONE_POINT_LINE = re.compile(rb'"(<[^>]*> )?LINESTRING ?\( *[^,()]+\)"\^\^')
+WKT_LITERAL = re.compile(rb'"(?:<[^>]*>\s*)?([A-Za-z ]*)(\([^"]*)"\^\^<http://www\.opengis\.net/ont/geosparql#wktLiteral>')
+COORDINATE = re.compile(rb"[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?")
+
+
+def bad_geometry(line):
+    m = WKT_LITERAL.search(line)
+    if not m:
+        return None
+    kind, body = m.group(1).strip().upper(), m.group(2)
+    if not all(COORDINATE.fullmatch(t) for t in re.split(rb"[\s,()]+", body) if t):
+        return "WKT coordinate not a number"
+    if kind == b"LINESTRING" and len({p.strip() for p in body.strip(b"() ").split(b",")}) < 2:
+        return "LINESTRING of fewer than 2 points"
+    return None
 
 
 def clean(line):
@@ -75,9 +89,7 @@ def clean(line):
         return f"not a number: xsd:{m.group(2).decode()}"
     if WKT.search(line):
         return "geo:asWKT not a WKT literal"
-    if ONE_POINT_LINE.search(line):
-        return "LINESTRING of one point"
-    return None
+    return bad_geometry(line)
 
 
 def cmd_prepare(a):

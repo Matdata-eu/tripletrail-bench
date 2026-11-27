@@ -104,7 +104,10 @@ class Clean(unittest.TestCase):
 
     def test_geometries(self):
         wkt = "<http://www.opengis.net/ont/geosparql#wktLiteral>"
-        self.assertEqual(clean(self.line(f'"LINESTRING (24.27 54.89)"^^{wkt}')), "LINESTRING of one point")
+        self.assertEqual(clean(self.line(f'"LINESTRING (24.27 54.89)"^^{wkt}')), "LINESTRING of fewer than 2 points")
+        self.assertEqual(clean(self.line(f'"LINESTRING (1 2, 1 2)"^^{wkt}')), "LINESTRING of fewer than 2 points")
+        self.assertEqual(clean(self.line(f'"POINT (+-100000000 -100000000)"^^{wkt}')), "WKT coordinate not a number")
+        self.assertIsNone(clean(self.line(f'"<http://www.opengis.net/def/crs/EPSG/0/4326> POINT (50.8 4.1)"^^{wkt}')))
         self.assertIsNone(clean(self.line(f'"LINESTRING (1 2, 3 4)"^^{wkt}')))
         self.assertIsNone(clean(self.line(f'"POINT (1 2)"^^{wkt}')))
         as_wkt = "<http://www.opengis.net/ont/geosparql#asWKT>"

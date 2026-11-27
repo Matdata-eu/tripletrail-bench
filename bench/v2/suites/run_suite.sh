@@ -67,6 +67,8 @@ case $SUITE in
       rinf-*) [ -f "$W/data/$DS.nt" ] || python3 "$HERE/data/fetch_rinf.py" "${DS#rinf-}" || exit 1 ;;
       *) echo "rinfshapes runs on rinf-all or rinf-<code>" >&2; exit 2 ;;
     esac
+    # No spatial queries: QLever skips its geometry preprocessing, which asserts on some RINF WKT.
+    export QLEVER_NO_GEO=1
     # The engines load a copy without the triples some of them cannot load (rinfshapes-<code>).
     [ -f "$W/data/rinfshapes-${DS#rinf-}.nt" ] || python3 "$HERE/rinfshapes/run_rinfshapes.py" prepare --dataset "$DS" || exit 1 ;;
   *) echo "unknown suite $SUITE" >&2; exit 2 ;;

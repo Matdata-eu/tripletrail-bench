@@ -3,7 +3,8 @@
 #   qlever.sh load <dataset>   qlever-index with the geo-split vocabulary + start; prints JSON
 #   qlever.sh start <dataset> | stop | endpoint | rss
 # Env: BENCH_WORK, QLEVER_IMAGE, QLEVER_MEMORY (memory for queries incl. cache, default 8G),
-# QLEVER_CACHE (default 2G), QLEVER_NOFILE (open files, default 1048576).
+# QLEVER_CACHE (default 2G), QLEVER_NOFILE (open files, default 1048576), QLEVER_NO_GEO=1 (plain
+# vocabulary, no geometry preprocessing: for suites without spatial queries).
 set -euo pipefail
 HERE=$(cd "$(dirname "$0")" && pwd)
 W=${BENCH_WORK:-$HERE/../work}
@@ -54,13 +55,14 @@ case "$1" in
     rm -rf "$W/qlever/$ds"; mkdir -p "$W/qlever/$ds"
     echo '{"num-triples-per-batch": 1000000}' >"$W/qlever/$ds/bench.settings.json"
     ensure_image
+    VOCAB=on-disk-compressed-geo-split; [ -n "${QLEVER_NO_GEO:-}" ] && VOCAB=on-disk-compressed
     t0=$(date +%s.%N)
     # The vocabulary merge of a large input keeps one file open per partial vocabulary (978
     # for OSM Europe), more than Docker's default limit of 1024 open files allows.
     docker run --rm --ulimit nofile=$NOFILE:$NOFILE -u "$(id -u):$(id -g)" \
       -v "$W/qlever/$ds:/index" -v "$W/data:/data:ro" -w /index \
       --entrypoint /qlever/qlever-index "$IMAGE" -i /index/bench -f "/data/$(basename "$IN")" -F "${IN##*.}" -p true \
-      -s /index/bench.settings.json --vocabulary-type on-disk-compressed-geo-split -m 4G \
+      -s /index/bench.settings.json --vocabulary-type $VOCAB -m 4G \
       >"$W/qlever/$ds.load.log" 2>&1 \
       || { echo "qlever load failed:" >&2; tail -n 30 "$W/qlever/$ds.load.log" >&2; exit 1; }
     t1=$(date +%s.%N)
