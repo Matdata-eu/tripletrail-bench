@@ -132,7 +132,7 @@ compose service (`docker compose -f bench/v2/docker-compose.yml up -d postgis`).
 variables: `BENCH_WORK`, `WARM_SCALE`, `ONLY` (queries or families, e.g. `ONLY=6,mixed_*`),
 `SKIP_LOAD=1`, `DROP_AFTER=1`, `TRIPLETRAIL_BIN`, `TRIPLETRAIL_WARM_WAIT`, `JENA_JAR`, `JENA_HEAP`, `GRAPHDB_IMAGE`,
 `GRAPHDB_HEAP`, `QLEVER_IMAGE`, `QLEVER_MEMORY`, `QLEVER_CACHE`, `PG_DSN_BASE`, `PG_CONTAINER`,
-`GEOGRAPHICA_TIMEOUT`.
+`GEOGRAPHICA_TIMEOUT`, `PERF_QUERIES` (query ids to profile on TripleTrail with `perf` during their warm runs: `perf-<qid>.txt` beside their results).
 
 ## Licence
 

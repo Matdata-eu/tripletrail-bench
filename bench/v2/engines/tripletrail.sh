@@ -1,7 +1,7 @@
 #!/bin/bash
 # tripletrail (this repository's server) for benchmark v2, on the tripletrail store on disk.
 #   tripletrail.sh load <dataset>   `tripletrail load` into an on-disk dataset + start; prints JSON
-#   tripletrail.sh start <dataset> | stop | endpoint | rss
+#   tripletrail.sh start <dataset> | stop | endpoint | rss | memory | pid
 # Env: BENCH_WORK, TRIPLETRAIL_RESULT_CACHE_MB (default 0: result cache off), TRIPLETRAIL_BIN (default core/target/release/tripletrail: the
 # TripleTrail repository checked out in core/, built with `cargo build --release -p tripletrail-server`), TRIPLETRAIL_SERVE_ARGS (more `serve` options, such as
 # `--pack ds=DIR`), TRIPLETRAIL_WARM_WAIT (seconds to wait for the background map warm-up after start, default 600).
@@ -156,14 +156,16 @@ case "$1" in
     # index, the map warm-up) has run: the bench's rss_after_start is taken after wait_warm, so
     # it includes that work, as runs from before tripletrail-bench#39 did not (core #188).
     answering=$("$0" rss)
+    mem_answering=$("$0" memory 2>/dev/null || echo null)
     wait_warm "$ds"  # after t2: start_s stays the time until the dataset answers
+    mem_started=$("$0" memory 2>/dev/null || echo null)
     bytes=$(du -sb "$W/tripletrail/$ds" | cut -f1)
     peak=$(awk -F: '/Maximum resident/ {gsub(/ /,"",$2); print $2*1024}' "$W/tripletrail/$ds.load.log")
     # Bytes by kind of store file (dict.bin, geoms.bin, dict.idx, spog.seg, ...: numbered
     # pieces and runs counted under their kind), for what takes the space (#370).
     files=$(find "$W/tripletrail/$ds" -type f -printf '%s %f\n' | awk '{n=$2; gsub(/-[0-9]+/,"",n); gsub(/\.[0-9]+[ar]?\./,".",n); s[n]+=$1} END {sep=""; for (k in s) {printf "%s\"%s\":%d", sep, k, s[k]; sep=","}}')
-    printf '{"engine":"tripletrail","dataset":"%s","load_s":%.3f,"start_s":%.3f,"disk_bytes":%s,"disk_by_file":{%s},"load_peak_rss_bytes":%s,"load_peak_anon_bytes":%s,"rss_when_answering":"%s"}\n' \
-      "$ds" "$(echo "$t1 - $t0" | bc)" "$(echo "$t2 - $t1" | bc)" "$bytes" "$files" "${peak:-null}" "$((anon * 1024))" "$answering"
+    printf '{"engine":"tripletrail","dataset":"%s","load_s":%.3f,"start_s":%.3f,"disk_bytes":%s,"disk_by_file":{%s},"load_peak_rss_bytes":%s,"load_peak_anon_bytes":%s,"rss_when_answering":"%s","memory_when_answering":%s,"memory_after_start":%s}\n' \
+      "$ds" "$(echo "$t1 - $t0" | bc)" "$(echo "$t2 - $t1" | bc)" "$bytes" "$files" "${peak:-null}" "$((anon * 1024))" "$answering" "$mem_answering" "$mem_started"
     ;;
   start) start "$2" && wait_warm "$2" ;;
   stop) stop ;;
@@ -171,5 +173,30 @@ case "$1" in
   # Resident memory, and of it the anonymous part (heap); the rest is mapped store files.
   rss) awk '/^VmRSS:/ {r=$2} /^RssAnon:/ {a=$2} END {printf "%.0f MiB (heap %.0f MiB)\n", r/1024, a/1024}' \
     "/proc/$(cat "$PIDF")/status" ;;
-  *) echo "usage: $0 load|start <dataset> | stop | endpoint | rss" >&2; exit 2 ;;
+  # The server's process id, for a profiler (run.py's PERF_QUERIES).
+  pid) cat "$PIDF" ;;
+  # Memory as JSON, for where RSS goes (core #188): the process's resident, anonymous (heap) and
+  # file-backed (store pages the OS can drop) KB, and the parts the server counts itself in
+  # /$/stats (the spatial and text indexes, the result cache, ...; a core without them: null).
+  memory)
+    pid=$(cat "$PIDF")
+    stats=$(curl -s --max-time 30 "http://localhost:$PORT/\$/stats/ds" 2>/dev/null || true)
+    python3 - "$pid" "$stats" <<'PY'
+import json, sys
+pid, stats = sys.argv[1], sys.argv[2]
+st = {}
+for line in open(f"/proc/{pid}/status"):
+    k, _, v = line.partition(":")
+    if k in ("VmRSS", "RssAnon", "RssFile", "RssShmem"):
+        st[k] = int(v.split()[0])
+try:
+    d = json.loads(stats)["datasets"]["/ds"]
+except (ValueError, KeyError, TypeError):
+    d = {}
+print(json.dumps({"rss_kb": st.get("VmRSS"), "anon_kb": st.get("RssAnon"), "file_kb": st.get("RssFile"),
+                  "counted_bytes": d.get("memoryBytes"), "counted": d.get("memory"),
+                  "mapped_bytes": d.get("mappedBytes")}, separators=(",", ":")))
+PY
+    ;;
+  *) echo "usage: $0 load|start <dataset> | stop | endpoint | rss | memory | pid" >&2; exit 2 ;;
 esac

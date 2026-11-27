@@ -22,6 +22,8 @@ import hashlib
 import json
 import os
 import re
+import shutil
+import signal
 import statistics
 import subprocess
 import sys
@@ -218,7 +220,37 @@ def summary(times):
             "mean_ms": round(statistics.mean(s) * 1000, 3)}
 
 
-def run_query(engine, cl, q, meta, warm_scale, budget_s):
+def perf_start(engine, qid, outdir):
+    """A CPU profile of the server while `qid`'s warm runs go, when PERF_QUERIES names it
+    (comma-separated query ids, TripleTrail engines only, `perf` installed): where a short
+    query spends its time (core #188). Returns what perf_stop needs, or None."""
+    names = {n.strip() for n in os.environ.get("PERF_QUERIES", "").split(",") if n.strip()}
+    if qid not in names or not engine.startswith("tripletrail") or not shutil.which("perf"):
+        return None
+    data = os.path.join(outdir, f"perf-{qid}.data")
+    p = subprocess.Popen(["perf", "record", "-F", "999", "-o", data, "-p", sh(engine, "pid")],
+                         stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    time.sleep(1)
+    return p, data
+
+
+def perf_stop(handle, outdir, qid):
+    """Stops the profile and writes its report next to the query's results, perf-<qid>.txt."""
+    if not handle:
+        return
+    p, data = handle
+    p.send_signal(signal.SIGINT)
+    try:
+        p.wait(timeout=120)
+    except subprocess.TimeoutExpired:
+        p.kill()
+    with open(os.path.join(outdir, f"perf-{qid}.txt"), "w") as f:
+        subprocess.run(["perf", "report", "-i", data, "--stdio", "--no-children", "--percent-limit", "0.5",
+                        "--sort", "dso,symbol"], stdout=f, stderr=subprocess.DEVNULL)
+    os.remove(data)
+
+
+def run_query(engine, cl, q, meta, warm_scale, budget_s, outdir=None):
     qid = q["qid"]
     rec = {"engine": engine, "qid": qid, "family": q["family"], "kind": q["kind"], "runs": []}
     why = na_reason(engine, qid)
@@ -230,7 +262,10 @@ def run_query(engine, cl, q, meta, warm_scale, budget_s):
     warm = max(1, int(round(q["warm"] * warm_scale)))
     plan = [("cold", 0)] + [("warmup", 1), ("warmup", 2)] + [("warm", 3 + i) for i in range(warm)]
     started = time.perf_counter()
+    profile = None
     for phase, idx in plan:
+        if phase == "warm" and profile is None and outdir:
+            profile = perf_start(engine, qid, outdir) or False
         params = q["params"](qid, idx, meta)
         text = fill(tpl, params)
         run = {"phase": phase, "index": idx}
@@ -251,6 +286,7 @@ def run_query(engine, cl, q, meta, warm_scale, budget_s):
         if time.perf_counter() - started > budget_s and phase == "warm":
             rec["truncated"] = f"stopped after {budget_s} s budget"
             break
+    perf_stop(profile, outdir, qid)
     ok_warm = [r["ms"] / 1000 for r in rec["runs"] if r["phase"] == "warm" and r["ok"]]
     errs = [r for r in rec["runs"] if not r["ok"]]
     rec["status"] = "ok" if not errs else f"ok with {len(errs)} failed runs"
@@ -284,7 +320,7 @@ def cmd_query(a):
                 setup = round(cl.update(open(sp).read()) * 1000, 3)
                 print(f"[{a.engine}] setup {key}: {setup} ms", flush=True)
         for q in fq:
-            rec = run_query(a.engine, cl if runnable else None, q, meta, a.warm_scale, a.budget) \
+            rec = run_query(a.engine, cl if runnable else None, q, meta, a.warm_scale, a.budget, outdir) \
                 if q in runnable else run_query(a.engine, None, q, meta, a.warm_scale, a.budget)
             rec["dataset"] = a.dataset
             if setup is not None:
