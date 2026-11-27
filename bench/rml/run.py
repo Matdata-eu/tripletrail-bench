@@ -19,6 +19,7 @@ import subprocess
 p = argparse.ArgumentParser()
 p.add_argument("--tripletrail", default="tripletrail")
 p.add_argument("--morph-python")
+p.add_argument("--morph-processes", help="Morph-KGC's number_of_processes (default: its own)")
 p.add_argument("--rmlmapper", help="the RMLMapper jar")
 p.add_argument("--java", default="java")
 p.add_argument("--java-image", help="run RMLMapper with docker in this Java image")
@@ -108,7 +109,8 @@ for name in a.mappings:
         with open(ini, "w") as f:
             f.write(
                 f"[CONFIGURATION]\noutput_file={out}\noutput_format=N-TRIPLES\n"
-                f"[DataSource1]\nmappings={name}.rml.ttl\n"
+                + (f"number_of_processes={a.morph_processes}\n" if a.morph_processes else "")
+                + f"[DataSource1]\nmappings={name}.rml.ttl\n"
             )
         print(f"{name} morph-kgc: {measured([a.morph_python, '-m', 'morph_kgc', ini], out)}", flush=True)
     if a.rmlmapper and "rmlmapper" in a.tools:

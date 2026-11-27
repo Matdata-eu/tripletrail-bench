@@ -27,8 +27,10 @@ python3 run.py --tripletrail ../../core/target/release/tripletrail --morph-pytho
 N-Triples are counted from its standard output; Morph-KGC and RMLMapper write a file to
 `out/`, counted and removed. RMLMapper runs with `java` on the host, or with `--java-image` in
 a Java container (nothing installed on the host), with `-Xmx12g` (`--java-heap`); its memory
-is the JVM's peak resident memory. `--timeout` (default 7200 s) stops a run, and `--tools`
-picks some of `tripletrail morph-kgc rmlmapper`.
+is the JVM's peak resident memory. `--timeout` (default 7200 s) stops a run, `--tools`
+picks some of `tripletrail morph-kgc rmlmapper`, and `--morph-processes` sets Morph-KGC's
+`number_of_processes` (on a machine with little memory: each of its processes holds its own
+part of the source).
 
 ## Results (2026-11-14)
 
