@@ -51,12 +51,12 @@ Berlin SPARQL Benchmark with the official bsbmtools 0.2 test driver (seed 808080
 
 50 timed query mixes after 10 warm-up mixes.
 
-| | tripletrail | oxigraph | qlever | jena | graphdb | maplib |
-|---|---:|---:|---:|---:|---:|---:|
-| load (s) | 4.854 | 13.163 | 13.817 | 41.806 | 49.505 | 4.353 |
-| QMpH explore | 46,024 | 13,243 | 4,580 * | 2,003 | 18,231 | 3,342 * |
-| QMpH bi | 13,542 | 52 | 3,532 | 211 | 611 | 9,497 * |
-| QMpH update | 33,556 | 12,596 | n/a | 1,760 | 9,730 | 715 * |
+| | tripletrail | oxigraph | qlever | jena | graphdb | maplib | tripletrail-1t |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| load (s) | 5.939 | 13.163 | 13.817 | 41.806 | 49.505 | 4.353 | 5.933 |
+| QMpH explore | 156,279 | 13,243 | 4,580 * | 2,003 | 18,231 | 3,342 * | 149,766 |
+| QMpH bi | 34,511 | 52 | 3,532 | 211 | 611 | 9,497 * | 24,788 |
+| QMpH update | 99,847 | 12,596 | n/a | 1,760 | 9,730 | 715 * | 99,846 |
 
 \* maplib: BI Q5 skipped: maplib 0.22.0 rejects GROUP BY on a variable its subquery does not bind
 \* maplib: explore-and-update: Q9 (DESCRIBE) and Q12 (CONSTRUCT) skipped: the test driver asks for RDF/XML, which the maplib endpoint does not serve
@@ -65,29 +65,29 @@ Berlin SPARQL Benchmark with the official bsbmtools 0.2 test driver (seed 808080
 
 ### explore: AQET per template (ms), average result count
 
-| query | tripletrail | oxigraph | qlever | jena | graphdb | maplib | results |
-|---|---:|---:|---:|---:|---:|---:|---|
-| Q1 | 1.8 | 5.7 | 12.2 | 2.7 | 4.2 | 80.8 | same |
-| Q2 | 2.4 | 3.0 | 17.9 | 4.4 | 5.3 | 53.6 | same |
-| Q3 | 2.2 | 8.2 | 20.0 | 2.8 | 4.8 | 84.2 | same |
-| Q4 | 2.8 | 7.4 | 46.7 | 3.6 | 5.3 | 162 | same |
-| Q5 | 8.4 | 94.1 | 18.2 | 856 | 35.0 | 24.2 | same |
-| Q7 | 2.9 | 3.6 | 66.1 | 4.0 | 6.1 | 53.1 | same |
-| Q8 | 3.5 | 2.8 | 40.4 | 3.0 | 5.1 | 34.8 | same |
-| Q9 | 0.7 | 1.2 | skipped | 1.5 | 3.8 | skipped | bytes (DESCRIBE/CONSTRUCT), not compared |
-| Q10 | 2.5 | 2.7 | 100 | 2.5 | 5.0 | 26.4 | same |
-| Q11 | 1.5 | 1.6 | 6.0 | 2.0 | 4.2 | 31.7 | same |
-| Q12 | 1.2 | 1.4 | skipped | 2.2 | 4.9 | skipped | bytes (DESCRIBE/CONSTRUCT), not compared |
+| query | tripletrail | oxigraph | qlever | jena | graphdb | maplib | tripletrail-1t | results |
+|---|---:|---:|---:|---:|---:|---:|---:|---|
+| Q1 | 0.4 | 5.7 | 12.2 | 2.7 | 4.2 | 80.8 | 0.5 | same |
+| Q2 | 0.7 | 3.0 | 17.9 | 4.4 | 5.3 | 53.6 | 0.7 | same |
+| Q3 | 0.5 | 8.2 | 20.0 | 2.8 | 4.8 | 84.2 | 0.5 | same |
+| Q4 | 0.6 | 7.4 | 46.7 | 3.6 | 5.3 | 162 | 0.6 | same |
+| Q5 | 2.5 | 94.1 | 18.2 | 856 | 35.0 | 24.2 | 2.7 | same |
+| Q7 | 0.7 | 3.6 | 66.1 | 4.0 | 6.1 | 53.1 | 0.8 | same |
+| Q8 | 0.6 | 2.8 | 40.4 | 3.0 | 5.1 | 34.8 | 0.6 | same |
+| Q9 | 0.2 | 1.2 | skipped | 1.5 | 3.8 | skipped | 0.3 | bytes (DESCRIBE/CONSTRUCT), not compared |
+| Q10 | 0.7 | 2.7 | 100 | 2.5 | 5.0 | 26.4 | 0.7 | same |
+| Q11 | 0.3 | 1.6 | 6.0 | 2.0 | 4.2 | 31.7 | 0.4 | same |
+| Q12 | 0.3 | 1.4 | skipped | 2.2 | 4.9 | skipped | 0.3 | bytes (DESCRIBE/CONSTRUCT), not compared |
 
 ### bi: AQET per template (ms), average result count
 
-| query | tripletrail | oxigraph | qlever | jena | graphdb | maplib | results |
-|---|---:|---:|---:|---:|---:|---:|---|
-| Q1 | 23.4 | 1038 | 28.4 | 6095 | 134 | 30.7 | same |
-| Q2 | 17.4 | 25551 | 313 | 4521 | 2603 | 21.1 | same |
-| Q3 | 89.7 | 4383 | 47.9 | 1621 | 240 | 34.1 | same |
-| Q4 | 35.2 | 149 | 86.6 | 161 | 168 | 26.3 | same |
-| Q5 | 4.5 | 12.6 | 16.8 | 10.5 | 8.8 | skipped | same |
-| Q6 | 12.6 | 32.2 | 30.2 | 16.1 | 22.2 | 46.5 | same |
-| Q7 | 2.1 | 5979 | 16.1 | 5.6 | 3.7 | 14.4 | same |
-| Q8 | 5.8 | 13.3 | 17.2 | 13.8 | 10.2 | 21.9 | same |
+| query | tripletrail | oxigraph | qlever | jena | graphdb | maplib | tripletrail-1t | results |
+|---|---:|---:|---:|---:|---:|---:|---:|---|
+| Q1 | 7.5 | 1038 | 28.4 | 6095 | 134 | 30.7 | 11.5 | same |
+| Q2 | 1.9 | 25551 | 313 | 4521 | 2603 | 21.1 | 1.9 | same |
+| Q3 | 38.5 | 4383 | 47.9 | 1621 | 240 | 34.1 | 73.0 | same |
+| Q4 | 23.8 | 149 | 86.6 | 161 | 168 | 26.3 | 24.1 | same |
+| Q5 | 1.7 | 12.6 | 16.8 | 10.5 | 8.8 | skipped | 1.7 | same |
+| Q6 | 4.7 | 32.2 | 30.2 | 16.1 | 22.2 | 46.5 | 4.9 | same |
+| Q7 | 0.6 | 5979 | 16.1 | 5.6 | 3.7 | 14.4 | 0.6 | same |
+| Q8 | 2.2 | 13.3 | 17.2 | 13.8 | 10.2 | 21.9 | 2.2 | same |
