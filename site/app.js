@@ -256,8 +256,9 @@ const BSBM_SIZES = { "bsbm-2785": "1M triples (2,785 products)", "bsbm-28480": "
 const TM_SIZES = { medium: "Medium (98K triples)", large: "Large (1M)", xlarge: "XLarge (10M)" };
 const SP_SIZES = { small: "Small (0.8M, synthetic rail)", large: "Large (10.5M, synthetic rail)",
   osm_norway: "OSM Norway (1.5M)", osm_benelux: "OSM Benelux", osm_europe: "OSM Europe (1B)" };
+const RS_SIZES = { "rinf-all": "RINF, all countries" };
 // The size each tab opens on: the main dataset of each suite.
-const DEFAULT_SIZE = { sparqloscope: "bsbm-2785", bsbm: "bsbm-2785", trainmarks: "large", spatial: "large" };
+const DEFAULT_SIZE = { sparqloscope: "bsbm-2785", bsbm: "bsbm-2785", trainmarks: "large", spatial: "large", rinfshapes: "rinf-all" };
 const sizeList = (values, labels) => ordered(values, Object.keys(labels)).map((v) => [v, labels[v] || v.replace(/^bsbm-(\d+)$/, "$1 products")]);
 
 function sparqloscope(D) {
@@ -498,6 +499,84 @@ function spatial(D) {
   };
 }
 
+// RINF shapes: the suite's queries grouped by shape, each ablation control right after the
+// query it controls.
+const RS_SHAPES = {
+  facet: "Facet over a big class", topk: "Top-k over a star", star: "Star with combined filters",
+  chain: "Chain", wide: "Wide table with OPTIONALs", anti: "Anti-join", control: "Ablation controls",
+};
+const rsAnswered = (r) => r.status === "ok" || r.status === "forms differ";
+
+function rsQueries(q) {
+  const first = new Map();
+  q.forEach((r, i) => { if (!first.has(r.query)) first.set(r.query, { ...r, i }); });
+  const all = [...first.values()];
+  const shapeRank = (s) => { const i = Object.keys(RS_SHAPES).indexOf(s); return i < 0 ? 99 : i; };
+  const main = all.filter((r) => !r.control_of || !first.has(r.control_of))
+    .sort((a, c) => shapeRank(a.shape) - shapeRank(c.shape) || a.i - c.i);
+  const out = [];
+  for (const r of main) {
+    out.push(r);
+    out.push(...all.filter((c) => c.control_of === r.query).sort((a, c) => a.i - c.i));
+  }
+  return out;
+}
+
+function rinfshapes(D) {
+  if (!D.rs.length) return null;
+  return {
+    id: "rinfshapes", label: "RINF shapes", toggleLabel: "Dataset",
+    sizes: sizeList(D.rs.map((r) => r.dataset), RS_SIZES),
+    build(ds) {
+      const q = D.rs.filter((r) => r.dataset === ds);
+      const engines = ordered(q.map((r) => r.engine), ENGINES);
+      const queries = rsQueries(q);
+      const cell = (qid, e) => q.find((r) => r.query === qid && r.engine === e);
+      const ok = q.filter((r) => rsAnswered(r) && num(r.rows_ms));
+      const common = queries.map((r) => r.query).filter((qid) => engines.every((e) => ok.some((r) => r.query === qid && r.engine === e)));
+      const geo = inOrder(engines.map((e) => ({ engine: e, n: common.length,
+        v: gmean(ok.filter((r) => r.engine === e && common.includes(r.query)).map((r) => num(r.rows_ms))) })).filter((r) => r.v != null));
+      const label = (r) => (r.control_of ? `↳ ${r.query}` : r.query);
+      const perQuery = ok.map((r) => {
+        const head = queries.find((x) => x.query === r.query);
+        return { group: label(head), engine: r.engine, v: num(r.rows_ms),
+          extra: num(r.count_ms) ? ` (count ${fmt(num(r.count_ms))})` : "" };
+      });
+      // The rows each engine returned, and whether they agree.
+      const rowsOf = (qid) => engines.map((e) => cell(qid, e)).filter((r) => r && rsAnswered(r) && r.rows !== "");
+      const differ = (qid) => uniq(rowsOf(qid).map((r) => r.rows)).length > 1;
+      const nDiffer = queries.filter((r) => differ(r.query)).length;
+      const rows = queries.map((r) => ({ ...r }));
+      const time = (r, e) => {
+        const c = cell(r.query, e);
+        if (!c) return "–";
+        if (!rsAnswered(c)) return c.status || "–";
+        return `${fmt(num(c.rows_ms))} / ${fmt(num(c.count_ms))}${c.status === "forms differ" ? " *" : ""}`;
+      };
+      return [
+        el("p", { class: "lead" },
+          versus(geo, { field: "v", unit: "ms", what: `Geometric mean of the rows form's warm medians over the ${plural(common.length, "query", "queries")} every engine answered:` }),
+          nDiffer ? ["The engines return different rows on ", b(plural(nDiffer, "query", "queries")), " (flagged in the table). "] : null,
+          "Lower is better."),
+        provLine(D.prov, "rinfshapes", ds),
+        card("rs-queries", "Time per query", "Warm median of the rows form, ms, log scale; hover for the count form. ↳ marks an ablation control, under the query it repeats with patterns taken out.",
+          dots(perQuery, uniq(queries.map(label)), "ms")),
+        card("rs-table", "Rows and count form per query", "Warm medians, ms: the rows form (the answer as a client gets it) / the count form (the same solutions counted on the server). * = the two forms count different solutions.",
+          table(rows, [
+            // The shape once, on the first query of each.
+            { label: "Shape", l: true, get: (r) => r.control_of || rows.find((x) => x.shape === r.shape && !x.control_of) !== r ? "" : (RS_SHAPES[r.shape] || r.shape) },
+            { label: "Query", l: true, get: (r) => el("span", { title: r.title || null, text: label(r) }) },
+            ...engines.map((e) => ({ label: name(e), get: (r) => time(r, e) })),
+            { label: "Rows", get: (r) => differ(r.query)
+                ? rowsOf(r.query).map((c) => `${name(c.engine)} ${Number(c.rows).toLocaleString("en")}`).join(", ")
+                : (rowsOf(r.query)[0] ? Number(rowsOf(r.query)[0].rows).toLocaleString("en") : "–"),
+              cls: (r) => differ(r.query) ? "down" : null },
+          ])),
+      ];
+    },
+  };
+}
+
 function groupBy(xs, key) {
   const m = new Map();
   for (const x of xs) { const k = key(x); if (!m.has(k)) m.set(k, []); m.get(k).push(x); }
@@ -514,7 +593,7 @@ const SUITES = {
   spatial_queries_p50_ms: ["Spatial, query time", "spatial", (d) => d],
   spatial_load_s: ["Spatial, load", "spatial", (d) => d],
 };
-const LABELS = { sparqloscope: SQ_SIZES, bsbm: BSBM_SIZES, trainmarks: TM_SIZES, spatial: SP_SIZES };
+const LABELS = { sparqloscope: SQ_SIZES, bsbm: BSBM_SIZES, trainmarks: TM_SIZES, spatial: SP_SIZES, rinfshapes: RS_SIZES };
 
 // Rows the page works out from the CSV files itself, the same way as on the suite's tab.
 function computedItems(D, suite) {
@@ -624,22 +703,22 @@ function runs(D) {
 // Page: tabs, a size toggle per tab, and the state in the URL hash (#spatial/large).
 
 async function main() {
-  const [summary, sq, cats, qmph, aqet, tload, tq, sload, squeries, prov, runList] = await Promise.all([
+  const [summary, sq, cats, qmph, aqet, tload, tq, sload, squeries, rs, prov, runList] = await Promise.all([
     load("summary.json"), load("summary.csv"), load("categories.csv"), load("bsbm_qmph.csv"), load("bsbm_aqet.csv"),
     load("trainmarks_load.csv"), load("trainmarks_queries.csv"), load("spatial_load.csv"),
-    load("spatial_queries.csv"), load("provenance.csv"), load("runs.json"),
+    load("spatial_queries.csv"), load("rinfshapes_queries.csv"), load("provenance.csv"), load("runs.json"),
   ]);
-  const D = { sq, cats, qmph, aqet, tload, tq, sload, squeries, prov, runs: runList };
+  const D = { sq, cats, qmph, aqet, tload, tq, sload, squeries, rs, prov, runs: runList };
 
-  const legendEngines = ordered([sq, qmph, tload, sload, squeries].flat().map((r) => r.engine).filter(Boolean), ENGINES);
+  const legendEngines = ordered([sq, qmph, tload, sload, squeries, rs].flat().map((r) => r.engine).filter(Boolean), ENGINES);
   document.getElementById("legend").append(...legendEngines.map((e) =>
     el("li", { class: e === OURS ? "ours" : null }, el("span", { class: "sw", style: `background:${color(e)}` }), name(e))));
 
-  const suites = [sparqloscope(D), bsbm(D), trainmarks(D), spatial(D)].filter(Boolean);
+  const suites = [sparqloscope(D), bsbm(D), trainmarks(D), spatial(D), rinfshapes(D)].filter(Boolean);
   const tabs = [];
   const ov = summary && summary.suites ? overview(summary, D) : null;
   if (ov) tabs.push({ id: "overview", label: "Overview", build: () => ov });
-  for (const s of suites) tabs.push({ id: s.label.toLowerCase(), ...s });
+  for (const s of suites) tabs.push({ id: s.id || s.label.toLowerCase(), ...s });
   const rn = runs(D);
   if (rn) tabs.push({ id: "runs", label: "Runs", build: () => rn });
 

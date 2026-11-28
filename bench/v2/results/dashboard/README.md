@@ -17,6 +17,7 @@ Merging it republishes the dashboard (`.github/workflows/pages.yml`).
 | `trainmarks_queries.csv` | scale, query, engine, warm_ms, cold_ms | `trainmarks/*/*.json` |
 | `spatial_load.csv` | dataset, engine, load_s, disk_gib, triples | bench v2 `<dataset>/<engine>/load.json` |
 | `spatial_queries.csv` | dataset, family, query, engine, status, cold_ms, p50_ms, p95_ms | bench v2 `<dataset>/<engine>/<query>.json` |
+| `rinfshapes_queries.csv` | dataset, shape, query, control_of, engine, status, rows_ms, count_ms, rows, title | `rinfshapes/*/*.json` and `suites/rinfshapes/queries.py` |
 | `provenance.csv` | suite, dataset, machine, cpus, commit, date | `runs/*.json`, else the env files (no date) |
 | `summary.json` | per suite and dataset: TripleTrail's number, each other engine's, and the speedup | the CSV files above |
 

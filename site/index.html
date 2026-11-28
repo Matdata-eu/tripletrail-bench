@@ -42,6 +42,8 @@
       <dd>DataTreehouse/trainmarks data and queries run over HTTP; its own site times libraries in-process, so its numbers are not directly comparable.</dd>
       <dt>Spatial</dt>
       <dd>TripleTrail's own bench v2: GeoSPARQL selections, nearest neighbours, spatial joins, aggregates, linear referencing, routing and OSM queries, the same questions asked of PostGIS/pgRouting in SQL. Warm figures are medians of several runs after one cold run.</dd>
+      <dt>RINF shapes</dt>
+      <dd>Queries on public RINF data grouped by shape: facets, top-k, stars, chains, wide tables and anti-joins, each in a rows form and a count form, with ablation controls that repeat a query with patterns taken out. Warm figures are medians after a cold run and two warm-ups.</dd>
     </dl>
   </details>
 </main>
