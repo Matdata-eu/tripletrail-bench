@@ -9,6 +9,7 @@ scale,osm_benelux,ccx43,16,fed8e96,2026-11-27,tripletrail
 scale,osm_europe,ccx43,16,3a26643,2026-11-22,graphdb
 scale,osm_europe,ccx43,16,a9aae02,2026-11-22,qlever
 scale,osm_europe,ccx43,16,13e940f,2026-11-27,tripletrail
+shacl,rinf-all,ccx43,16,5f3ea55,2026-11-28,jena tripletrail
 sparqloscope,bsbm-2785,ccx43,16,a9aae02,2026-11-22,graphdb jena maplib oxigraph qlever tripletrail
 sparqloscope,rinf-0076,ccx43,16,a9aae02,2026-11-22,graphdb jena maplib oxigraph qlever tripletrail
 trainmarks,large,ccx43,16,a9aae02,2026-11-22,graphdb jena maplib oxigraph qlever tripletrail
