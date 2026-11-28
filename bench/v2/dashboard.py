@@ -17,6 +17,7 @@ Files (plain CSV, no quoted fields):
   trainmarks_queries.csv Trainmarks: scale,query,engine,warm_ms,cold_ms
   spatial_load.csv       bench v2: dataset,engine,load_s,disk_gib,triples
   spatial_queries.csv    bench v2: dataset,family,query,engine,status,cold_ms,p50_ms,p95_ms
+  rinfshapes_queries.csv RINF shapes: dataset,shape,query,control_of,engine,status,rows_ms,count_ms,rows,title
   provenance.csv         suite,dataset,machine,cpus,commit,date: where and when each result ran
 """
 import csv
@@ -187,6 +188,44 @@ def v2(res):
     return load, queries
 
 
+def rinfshapes(res):
+    """RINF query-shape suite: one row per dataset, query and engine, in the order of the
+    suite's queries (suites/rinfshapes/queries.py, which gives each query's shape and title);
+    queries it no longer lists follow. rows_ms and count_ms are the warm medians of the rows
+    and the count form, rows the rows the rows form returned."""
+    try:
+        sys.path.insert(0, os.path.join(HERE, "suites", "rinfshapes"))
+        from queries import QUERIES
+    except ImportError:
+        QUERIES = []
+    known = {q.id: q for q in QUERIES}
+    rows = []
+    for d in sorted(glob.glob(os.path.join(res, "rinfshapes", "*", ""))):
+        ds = os.path.basename(os.path.dirname(d))
+        recs = {}
+        for f in glob.glob(os.path.join(d, "*.json")):
+            try:
+                r = json.load(open(f))
+            except ValueError:
+                continue
+            recs[r.get("engine") or os.path.basename(f)[:-5]] = r
+        ids = list(known) + sorted({q for r in recs.values() for q in r.get("queries", {})} - set(known))
+        for qid in ids:
+            q = known.get(qid)
+            for e in ordered(recs):
+                r = recs[e].get("queries", {}).get(qid)
+                if r is None:
+                    continue
+                answered = r.get("status") in ("ok", "forms differ")
+                rows.append([ds, q.shape if q else "", qid, (q.control_of or "") if q else "", e,
+                             clean(r.get("status", "")),
+                             num(r["rows"]["median_ms"]) if answered else "",
+                             num(r["count"]["median_ms"]) if answered else "",
+                             r["rows"].get("n", "") if answered else "",
+                             clean(q.title) if q else ""])
+    return rows
+
+
 def provenance(res):
     """Per suite and dataset, the run manifest that measured the most engines (the latest of
     those): a later run of one engine only (an engine added afterwards) does not stand for the
@@ -212,7 +251,7 @@ def provenance(res):
                      m.get("commit", "")[:7], m.get("started", "")[:10]])
 
     for suite, pattern, strip in [("sparqloscope", "env-*.json", "env-"), ("bsbm", "env-*.json", "env-"),
-                                  ("trainmarks", "env-*.json", "env-"),
+                                  ("trainmarks", "env-*.json", "env-"), ("rinfshapes", "env-*.json", "env-"),
                                   ("v2", "*/env.json", None)]:
         for f in sorted(glob.glob(os.path.join(res, suite if suite != "v2" else "", pattern))):
             if strip:
@@ -221,7 +260,7 @@ def provenance(res):
                     continue
             else:
                 ds = os.path.basename(os.path.dirname(f))
-                if ds in ("sparqloscope", "bsbm", "trainmarks", "geographica", "runs"):
+                if ds in ("sparqloscope", "bsbm", "trainmarks", "rinfshapes", "geographica", "runs"):
                     continue
             if (suite, ds) in seen:
                 continue
@@ -251,6 +290,9 @@ def main():
     load, queries = v2(res)
     write(out, "spatial_load.csv", ["dataset", "engine", "load_s", "disk_gib", "triples"], load)
     write(out, "spatial_queries.csv", ["dataset", "family", "query", "engine", "status", "cold_ms", "p50_ms", "p95_ms"], queries)
+    write(out, "rinfshapes_queries.csv",
+          ["dataset", "shape", "query", "control_of", "engine", "status", "rows_ms", "count_ms", "rows", "title"],
+          rinfshapes(res))
     write(out, "provenance.csv", ["suite", "dataset", "machine", "cpus", "commit", "date"], provenance(res))
     print(f"dashboard files written to {out}")
 
