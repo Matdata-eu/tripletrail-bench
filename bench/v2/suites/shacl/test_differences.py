@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """differences() counts the result keys only one engine gives, by path, component and severity,
-and keeps no focus node.
+names no focus node, and compares engines run one at a time (as run_suite.sh runs them).
 
   python3 bench/v2/suites/shacl/test_differences.py
 """
@@ -22,19 +22,26 @@ def key(focus, comp, path=P, sev="Violation"):
 
 
 class Differences(unittest.TestCase):
-    def write(self, d, engine, keys):
-        with open(os.path.join(d, f"{engine}.keys"), "w") as f:
+    def write(self, d, engine, keys, res=None):
+        """An engine's key file, and (in res) its record with the keys' hash, as run_one leaves them."""
+        path = os.path.join(d, f"{engine}.keys")
+        with open(path, "w") as f:
             f.writelines(k + "\n" for k in sorted(keys))
+        if res:
+            rec = run_shacl.run_phase0.summary({"Violation": len(keys)}, keys, False, set())
+            json.dump(rec, open(os.path.join(res, f"{engine}.json"), "w"))
 
     def test_counts_by_path_and_component_and_deletes_the_keys(self):
         with tempfile.TemporaryDirectory() as keys, tempfile.TemporaryDirectory() as res:
             same = [key(f"http://x/n{i}", "MinCountConstraintComponent") for i in range(5)]
-            self.write(keys, "jena", same + [key("http://x/j", "SPARQLConstraintComponent", "_:")])
+            # One engine per run, as run_suite.sh does: the first finds nothing to compare with.
             self.write(keys, "tripletrail", same + [key("http://x/t1", "DatatypeConstraintComponent"),
-                                                    key("http://x/t2", "DatatypeConstraintComponent")])
-            self.write(keys, "pyshacl", same)
+                                                    key("http://x/t2", "DatatypeConstraintComponent")], res)
             run_shacl.differences(keys, res)
-            self.assertEqual(os.listdir(keys), [])
+            self.assertFalse(os.path.exists(os.path.join(res, "differences.json")))
+            self.write(keys, "jena", same + [key("http://x/j", "SPARQLConstraintComponent", "_:")], res)
+            self.write(keys, "pyshacl", same, res)
+            run_shacl.differences(keys, res)
             text = open(os.path.join(res, "differences.json")).read()
             self.assertNotIn("http://x/", text)
             d = json.loads(text)
@@ -51,9 +58,19 @@ class Differences(unittest.TestCase):
     def test_no_file_when_the_engines_agree(self):
         with tempfile.TemporaryDirectory() as keys, tempfile.TemporaryDirectory() as res:
             for e in ("topbraid", "jena"):
-                self.write(keys, e, [key("http://x/a", "ClassConstraintComponent")])
+                self.write(keys, e, [key("http://x/a", "ClassConstraintComponent")], res)
             run_shacl.differences(keys, res)
             self.assertFalse(os.path.exists(os.path.join(res, "differences.json")))
+
+    def test_a_key_file_of_an_earlier_run_is_left_out(self):
+        with tempfile.TemporaryDirectory() as keys, tempfile.TemporaryDirectory() as res:
+            self.write(keys, "jena", [key("http://x/a", "ClassConstraintComponent")], res)
+            # A key file whose engine's record no longer has its hash (another run, or a failure).
+            self.write(keys, "tripletrail", [key("http://x/b", "ClassConstraintComponent")])
+            json.dump({"engine": "tripletrail", "error": "timed out"}, open(os.path.join(res, "tripletrail.json"), "w"))
+            run_shacl.differences(keys, res)
+            self.assertFalse(os.path.exists(os.path.join(res, "differences.json")))
+            self.assertEqual(os.listdir(keys), ["jena.keys"])
 
 
 if __name__ == "__main__":

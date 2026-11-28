@@ -25,7 +25,8 @@ logs it, peak memory, the results by severity and the SHA-256 of the sorted resu
 node, path, constraint component, severity). A run under SHACL_REPEAT_BELOW seconds (300) is
 repeated twice more. Where engines' keys differ, results/shacl/<D>/<profile>/differences.json
 counts the keys only one of them gives, by path, constraint component and severity, against
-TopBraid's keys (or Jena's when TopBraid has none): it names no focus node. A timeout (SHACL_TIMEOUT, 3600 s) or a crash is recorded as the result,
+TopBraid's keys (or Jena's when TopBraid has none): it names no focus node (the key files stay
+in $BENCH_WORK, for the engines run_suite.sh runs one at a time). A timeout (SHACL_TIMEOUT, 3600 s) or a crash is recorded as the result,
 and an engine that times out skips the dataset's later profiles; an engine that timed out or
 failed on a profile of a smaller dataset (one already in results/shacl/) skips it on this one. Reports hold RINF values, so
 they stay in $BENCH_WORK; only the JSON is committed.
@@ -315,12 +316,31 @@ def short(iri):
     return iri.removeprefix("http://www.w3.org/ns/shacl#")
 
 
+def keys_sha256(path):
+    """The SHA-256 summary() gives the keys of a key file (joined by newlines, none at the end)."""
+    import hashlib
+    h = hashlib.sha256()
+    for i, k in enumerate(read_keys(path)):
+        h.update(("\n" if i else "").encode() + k.encode())
+    return h.hexdigest()
+
+
 def differences(keys_dir, res):
     """Compares each engine's result keys with the reference engine's (TopBraid, else Jena) and
     writes res/differences.json: per engine, the keys only it gives and those only the reference
-    gives, counted by path, constraint component and severity. The keys name RINF focus nodes, so
-    they are work files, deleted here; the JSON holds no focus node."""
-    files = {os.path.basename(f)[:-5]: f for f in glob.glob(os.path.join(keys_dir, "*.keys"))}
+    gives, counted by path, constraint component and severity. run_suite.sh runs one engine at a
+    time, so the key files stay in the work directory (beside the RINF data they come from) for
+    the next engine's run, and a key file counts only while its hash is the one in the engine's
+    res/<engine>.json. The JSON holds no focus node."""
+    files = {}
+    for f in glob.glob(os.path.join(keys_dir, "*.keys")):
+        engine = os.path.basename(f)[:-5]
+        rec = os.path.join(res, f"{engine}.json")
+        h = json.load(open(rec)).get("results_sha256") if os.path.exists(rec) else None
+        if h and h == keys_sha256(f):
+            files[engine] = f
+        else:
+            os.remove(f)
     ref = next((e for e in ("topbraid", "jena") if e in files), None)
     out = os.path.join(res, "differences.json")
     if os.path.exists(out):
@@ -341,8 +361,6 @@ def differences(keys_dir, res):
                 for (p, c, s), n in sorted(groups.items(), key=lambda kv: -(kv[1]["a"] + kv[1]["b"]))]}
     if found:
         json.dump({"reference": ref, "engines": found}, open(out, "w"), indent=1)
-    for f in files.values():
-        os.remove(f)
 
 
 def differences_lines(path):
