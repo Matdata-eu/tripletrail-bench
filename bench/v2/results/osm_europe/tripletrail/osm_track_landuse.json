@@ -11,8 +11,11 @@
    "error": "client timeout"
   }
  ],
+ "restarted_after": [
+  0
+ ],
  "status": "failed",
  "reason": "client timeout",
  "dataset": "osm_europe",
- "rss_after": "58851 MiB (heap 55255 MiB)"
+ "rss_after": "51698 MiB (heap 13756 MiB)"
 }

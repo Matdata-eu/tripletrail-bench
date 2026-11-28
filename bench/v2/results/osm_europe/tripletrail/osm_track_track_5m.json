@@ -7,75 +7,86 @@
   {
    "phase": "cold",
    "index": 0,
-   "ms": 279837.208,
+   "ms": 29435.03,
    "ok": true,
    "rows": 1,
    "result": {
     "values": [
-     5449036.0
+     5448600.0
     ]
    }
   },
   {
    "phase": "warmup",
    "index": 1,
-   "ms": 160234.618,
+   "ms": 7182.418,
    "ok": true,
    "rows": 1,
    "result": {
     "values": [
-     5449036.0
+     5448600.0
     ]
    }
   },
   {
    "phase": "warmup",
    "index": 2,
-   "ms": 161855.623,
+   "ms": 7125.185,
    "ok": true,
    "rows": 1,
    "result": {
     "values": [
-     5449036.0
+     5448600.0
     ]
    }
   },
   {
    "phase": "warm",
    "index": 3,
-   "ms": 163336.505,
+   "ms": 7047.712,
    "ok": true,
    "rows": 1,
    "result": {
     "values": [
-     5449036.0
+     5448600.0
     ]
    }
   },
   {
    "phase": "warm",
    "index": 4,
-   "ms": 164079.934,
+   "ms": 6909.901,
    "ok": true,
    "rows": 1,
    "result": {
     "values": [
-     5449036.0
+     5448600.0
+    ]
+   }
+  },
+  {
+   "phase": "warm",
+   "index": 5,
+   "ms": 7048.266,
+   "ok": true,
+   "rows": 1,
+   "result": {
+    "values": [
+     5448600.0
     ]
    }
   }
  ],
- "truncated": "stopped after 900 s budget",
  "status": "ok",
- "cold_ms": 279837.208,
+ "cold_ms": 29435.03,
  "warm": {
-  "n": 2,
-  "p50_ms": 163708.22,
-  "p95_ms": 164079.934,
-  "min_ms": 163336.505,
-  "max_ms": 164079.934,
-  "mean_ms": 163708.22
+  "n": 3,
+  "p50_ms": 7047.712,
+  "p95_ms": 7048.266,
+  "min_ms": 6909.901,
+  "max_ms": 7048.266,
+  "mean_ms": 7001.96
  },
  "dataset": "osm_europe",
- "rss_after": "59694 MiB (heap 58753 MiB)"
+ "rss_after": "56628 MiB (heap 23208 MiB)"
 }
