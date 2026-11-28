@@ -137,6 +137,7 @@ for e in $ENGINES; do
   if [ "$e" = tripletrail ]; then
     # Warm runs are evaluated again, not answered from the result cache.
     export TRIPLETRAIL_MEMORY_LIMIT=$LIMIT TRIPLETRAIL_RESULT_CACHE_MB=0
+    rm -f "$W/tripletrail/server.earlier.log" "$W/tripletrail/server.log"
   fi
   if ! python3 "$V2/run.py" load --engine "$e" --dataset "$DS"; then
     echo "!!! load failed for $e"; FAILED=1
@@ -145,6 +146,12 @@ for e in $ENGINES; do
   fi
   python3 "$V2/run.py" query --engine "$e" --dataset "$DS" --warm-scale "${WARM_SCALE:-1}" ${ONLY:+--only "$ONLY"} \
     || { echo "!!! queries failed for $e"; FAILED=1; }
+  if [ "$e" = tripletrail ]; then
+    # Where the time of a slow spatial join went (tripletrail#340), in the job log and the
+    # results, from every server this run started.
+    cat "$W/tripletrail/server.earlier.log" "$W/tripletrail/server.log" 2>/dev/null \
+      | grep "slow join" | tail -n 80 | tee "$OUT/tripletrail-slow-joins.log" || true
+  fi
   if [ "$e" = tripletrail ]; then
     # Small commits on the store on disk, under the memory limit, after the queries.
     "$V2/engines/tripletrail.sh" start "$DS" || { echo "!!! tripletrail did not start"; FAILED=1; }
