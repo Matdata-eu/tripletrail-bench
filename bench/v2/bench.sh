@@ -24,6 +24,8 @@ set -uo pipefail
 V2=$(cd "$(dirname "$0")" && pwd)
 W=${BENCH_WORK:-$V2/work}
 export BENCH_WORK=$W
+# One memory and core budget for every engine of the run (engines/budget.sh, #94).
+. "$V2/engines/budget.sh" || exit 1
 SUITE=$1; DS=$2; shift 2
 REQ=${*:-default}; [ "$REQ" = default ] && REQ=""
 RUN=${GITHUB_RUN_ID:-local-$(date -u +%Y%m%dT%H%M%S)}
@@ -105,10 +107,10 @@ postgis_ready() {
   docker rm -f bench-postgis >/dev/null 2>&1
   docker volume rm bench-postgis >/dev/null 2>&1
   docker run -d --name bench-postgis -e POSTGRES_PASSWORD=bench -p 127.0.0.1:5432:5432 \
-    --shm-size "${PG_SHM:-6g}" -v bench-postgis:/var/lib/postgresql/data "$img" \
-    postgres -c shared_buffers="${PG_SHARED_BUFFERS:-4GB}" -c work_mem=256MB -c maintenance_work_mem=1GB \
-    -c effective_cache_size="${PG_EFFECTIVE_CACHE:-10GB}" -c max_parallel_workers_per_gather=4 \
-    -c max_worker_processes=8 -c max_parallel_workers=4 -c random_page_cost=1.1 -c jit=off \
+    --shm-size "${PG_SHM:-$((BENCH_MEMORY_GIB / 4 + 2))g}" -v bench-postgis:/var/lib/postgresql/data "$img" \
+    postgres -c shared_buffers="${PG_SHARED_BUFFERS:-$(pg_shared_buffers)}" -c work_mem=256MB -c maintenance_work_mem=1GB \
+    -c effective_cache_size="${PG_EFFECTIVE_CACHE:-$(pg_effective_cache)}" -c max_parallel_workers_per_gather="$BENCH_CORES" \
+    -c max_worker_processes="$(pg_worker_processes)" -c max_parallel_workers="$BENCH_CORES" -c random_page_cost=1.1 -c jit=off \
     -c synchronous_commit=off -c max_wal_size=8GB >/dev/null || { PG_WHY="could not start PostGIS"; return 1; }
   export PG_DSN_BASE="host=127.0.0.1 port=5432 user=postgres password=bench" PG_CONTAINER=bench-postgis
   PG_STARTED=1

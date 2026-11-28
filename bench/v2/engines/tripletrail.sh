@@ -2,12 +2,16 @@
 # tripletrail (this repository's server) for benchmark v2, on the tripletrail store on disk.
 #   tripletrail.sh load <dataset>   `tripletrail load` into an on-disk dataset + start; prints JSON
 #   tripletrail.sh start <dataset> | stop | endpoint | rss | memory | pid
-# Env: BENCH_WORK, TRIPLETRAIL_RESULT_CACHE_MB (default 0: result cache off), TRIPLETRAIL_BIN (default core/target/release/tripletrail: the
+# Env: BENCH_WORK, BENCH_MEMORY (budget.sh: the --memory-limit, unless TRIPLETRAIL_MEMORY_LIMIT is set), TRIPLETRAIL_RESULT_CACHE_MB (default 0: result cache off), TRIPLETRAIL_BIN (default core/target/release/tripletrail: the
 # TripleTrail repository checked out in core/, built with `cargo build --release -p tripletrail-server`), TRIPLETRAIL_SERVE_ARGS (more `serve` options, such as
 # `--pack ds=DIR`), TRIPLETRAIL_WARM_WAIT (seconds to wait for the background map warm-up after start, default 600).
 set -euo pipefail
 HERE=$(cd "$(dirname "$0")" && pwd)
 W=${BENCH_WORK:-$HERE/../work}
+. "$HERE/budget.sh"
+# The run's memory budget (budget.sh), as for every engine: `load` and `serve` read it from the
+# environment. TRIPLETRAIL_MEMORY_LIMIT set by the caller wins.
+export TRIPLETRAIL_MEMORY_LIMIT=${TRIPLETRAIL_MEMORY_LIMIT:-$BENCH_MEMORY}
 BIN=${TRIPLETRAIL_BIN:-$HERE/../../../core/target/release/tripletrail}
 PORT=7878
 EP=http://localhost:$PORT/ds/query
