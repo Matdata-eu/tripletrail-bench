@@ -104,6 +104,9 @@ start() {
   local ds=$1
   stop
   mkdir -p "$W/tripletrail"
+  # The log of the server before this one, kept: a restart after a failed query would
+  # otherwise lose what that query logged (tripletrail#340).
+  [ -s "$W/tripletrail/server.log" ] && cat "$W/tripletrail/server.log" >> "$W/tripletrail/server.earlier.log"
   # The result cache is off unless TRIPLETRAIL_RESULT_CACHE_MB says otherwise: a warm run must
   # evaluate its query again, not answer from the cache (QLever's cache is cleared too).
   TRIPLETRAIL_RESULT_CACHE_MB=${TRIPLETRAIL_RESULT_CACHE_MB:-0} nohup "$BIN" serve --bind 127.0.0.1:$PORT --location "$W/tripletrail/$ds" --dataset ds --timeout 600 ${TRIPLETRAIL_SERVE_ARGS:-} \
