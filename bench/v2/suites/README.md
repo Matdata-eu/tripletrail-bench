@@ -11,6 +11,7 @@ plain Oxigraph, QLever, Jena, GraphDB), so the numbers can be put next to publis
 | [Trainmarks](trainmarks/) | load + 6 queries (count, group-by, 3-way join, OPTIONAL + aggregates, CONSTRUCT, DELETE/INSERT) on a synthetic shop | generated, 100K / 1M / 10M triples | no license: fetched at run time, nothing copied | `trainmarks/run_trainmarks.py` |
 | [Updates](updates/) | update throughput by update size (#496): batches of 10 to 10^6 held-out triples as INSERT DATA, then DELETE DATA (time per triple, p50/p95, failures, count checks), plus INSERT { } WHERE { } updates that mint nodes like the rail KG uplift; store size afterwards | any dataset: `bsbm-<n>` (10M triples hold out all sizes), `rinf-<code>` (smaller graphs stop at 10^5) | ours | `updates/run_updates.py` |
 | [SHACL](shacl/) | SHACL validation (Core, SHACL-SPARQL) with the ERA RINF shapes in three profiles (Core only, per country, as published) on TripleTrail, Jena, TopBraid, GraphDB, RDF4J and pySHACL: time, peak memory, results and agreement with TopBraid and the majority; phase 0 adds feature probes per engine | RINF from ERA's endpoint (fetched, never committed); ERA shapes, ontology and code lists pinned to a commit | data: none published; shapes: EUPL-1.2; probes: ours | `shacl/run_shacl.py` (`run_suite.sh shacl rinf-<code>`, profile `shacl`) |
+| [RINF shapes](rinfshapes/) | the query shapes of map clients on real railway data: facets over a big class, top-k over a star, stars with combined filters, chains, wide tables with OPTIONALs, anti-joins, and ablation controls; each query in a rows form and a count form | `rinf-all` (every graph of ERA's RINF endpoint, ~43 M triples, fetched, never committed) or `rinf-<code>` | ours | `rinfshapes/run_rinfshapes.py` (`run_suite.sh rinfshapes rinf-all`) |
 | Rail pack (`railpack/`, in the enterprise repository) | the rail pack's (`packs/rail-era`) map on tripletrail only: `style.json`, every collection's facets unfiltered and under each map view's filters (cold, then from the result cache), and 85 `all` tiles per view with its filters and colours; which SPARQL-computed requirement checks reach their 10 s cap | `all` (every graph of ERA's RINF endpoint, ~43 M triples) or one graph `<code>` | ours | `railpack/run_railpack.py` |
 
 FEASIBLE (query-log based, AGPL, DBpedia 3.5.1 and SWDF logs) was considered and left out: its
@@ -25,6 +26,7 @@ bench/v2/suites/run_suite.sh bsbm 2785                       # all five engines
 bench/v2/suites/run_suite.sh sparqloscope rinf-0076 tripletrail oxigraph qlever
 bench/v2/suites/run_suite.sh trainmarks large
 bench/v2/suites/run_suite.sh updates bsbm-28480              # tripletrail oxigraph jena graphdb
+bench/v2/suites/run_suite.sh rinfshapes rinf-all tripletrail oxigraph qlever jena
 ```
 
 Each suite writes `results/<suite>/report.md` plus the raw per-engine files. For Sparqloscope,

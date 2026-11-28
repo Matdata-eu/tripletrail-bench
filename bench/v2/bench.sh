@@ -5,12 +5,13 @@
 #                                            bsbm <products>, sparqloscope <dataset>,
 #                                            trainmarks <scale>, updates <dataset>,
 #                                            shacl rinf-<code>|rinf-all,
+#                                            rinfshapes rinf-all|rinf-<code>,
 #                                            scale osm_benelux|osm_europe|osm_planet,
 #                                            railpack (only with the enterprise repository's suite and packs)
 # Engines: none given (or "default") = each suite's own default set; otherwise each job runs the
 # given engines it supports (v2: postgis tripletrail qlever jena graphdb; geographica: tripletrail
 # qlever jena graphdb; bsbm, sparqloscope and trainmarks: tripletrail oxigraph qlever jena graphdb
-# maplib; tripletrail-1t, one thread per query, in v2 and those three, and tripletrail-ids, the
+# maplib; rinfshapes: tripletrail oxigraph qlever jena graphdb; tripletrail-1t, one thread per query, in v2 and those three, and tripletrail-ids, the
 # id-column executor, in those three, only when named).
 # A job whose inputs or tools are missing is skipped with the reason, not failed: osm_norway and
 # geographica need their inputs (data/fetch_inputs.sh, from the bench-data release), osm_norway
@@ -49,6 +50,7 @@ engines() {
     railpack) all="tripletrail" ;;
     updates) all="tripletrail oxigraph jena graphdb" ;;
     shacl) all="tripletrail jena topbraid graphdb rdf4j pyshacl" ;;
+    rinfshapes) all="tripletrail oxigraph qlever jena graphdb" ;;
     *) all="tripletrail oxigraph qlever jena graphdb maplib" ;;
   esac
   # tripletrail-ids (the id-column executor as the default) and tripletrail-1t (one thread per
@@ -176,7 +178,7 @@ while read -r suite ds extra; do
       fi ;;
     geographica)
       [ -d "$W/inputs/geographica2/datasets" ] || skip="input geographica2/ is missing (data/fetch_inputs.sh)" ;;
-    bsbm|sparqloscope|trainmarks|updates|shacl) ;;
+    bsbm|sparqloscope|trainmarks|updates|shacl|rinfshapes) ;;
     railpack)
       [ -d "$V2/../../packs/rail-era" ] && [ -f "$V2/suites/railpack/run_railpack.py" ] \
         || skip="the rail pack (packs/rail-era) is not in this tree" ;;

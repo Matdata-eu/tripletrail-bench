@@ -1,0 +1,42 @@
+# A small RINF-like extract for test_queries.py: seven running tracks in Germany and France, one
+# track of another class, three sections of line and three operational points. Made by hand in
+# the shape of ERA's RINF graphs; the expected answers are in test_queries.py.
+@prefix era: <http://data.europa.eu/949/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix c: <http://publications.europa.eu/resource/authority/country/> .
+@prefix g: <http://data.europa.eu/949/concepts/gaugings/> .
+@prefix : <http://data.europa.eu/949/functionalInfrastructure/> .
+
+:t1 a era:RunningTrack ; rdfs:label "T1" ; era:inCountry c:DEU ; era:gaugingProfile g:G1 ;
+  era:maximumPermittedSpeed 200 ; era:cantDeficiency 160 ; era:hasLevelCrossings false ;
+  era:tsiMagneticFields true ; era:isPartOf :sol1 ; era:trackDirection "N" .
+:t2 a era:RunningTrack ; rdfs:label "T2" ; era:inCountry c:DEU ; era:gaugingProfile g:G1 ;
+  era:maximumPermittedSpeed 160 ; era:cantDeficiency 100 ; era:hasLevelCrossings true ;
+  era:tsiMagneticFields true ; era:isPartOf :sol1 .
+:t3 a era:RunningTrack ; rdfs:label "T3" ; era:inCountry c:DEU ; era:gaugingProfile g:G2 ;
+  era:maximumPermittedSpeed 120 ; era:cantDeficiency 150 ; era:isPartOf :sol2 .
+:t4 a era:RunningTrack ; rdfs:label "T4" ; era:inCountry c:FRA ; era:gaugingProfile g:G1 ;
+  era:maximumPermittedSpeed 300 ; era:cantDeficiency 170 ; era:hasLevelCrossings false ;
+  era:tsiMagneticFields true ; era:isPartOf :sol3 .
+:t5 a era:RunningTrack ; rdfs:label "T5" ; era:inCountry c:DEU ; era:gaugingProfile g:G2 .
+:t6 a era:RunningTrack ; rdfs:label "T6" ; era:inCountry c:FRA ; era:cantDeficiency 80 .
+:t7 a era:RunningTrack ; rdfs:label "T7" ; era:inCountry c:FRA ; era:maximumPermittedSpeed 250 ;
+  era:cantDeficiency 160 ; era:hasLevelCrossings false ; era:tsiMagneticFields false ;
+  era:isPartOf :sol3 .
+:x1 a era:Siding ; rdfs:label "X1" ; era:inCountry c:DEU ; era:gaugingProfile g:G1 ;
+  era:maximumPermittedSpeed 400 ; era:cantDeficiency 200 .
+
+:sol1 a era:SectionOfLine ; era:inCountry c:DEU ; era:lengthOfSectionOfLine "10"^^xsd:double ; era:opStart :op1 .
+:sol2 a era:SectionOfLine ; era:inCountry c:DEU ; era:lengthOfSectionOfLine "4"^^xsd:double ; era:opStart :op2 .
+:sol3 a era:SectionOfLine ; era:inCountry c:FRA ; era:lengthOfSectionOfLine "20"^^xsd:double ; era:opStart :op3 .
+
+:op1 a era:OperationalPoint ; rdfs:label "A Nord" ; era:opName "A Nord" ; era:inCountry c:DEU ;
+  era:primaryLocation :pl1 ; era:uopid "DE001" ; era:netReference :nr1 .
+:op2 a era:OperationalPoint ; rdfs:label "B" ; era:opName "B" ; era:inCountry c:DEU ;
+  era:primaryLocation :pl2 ; era:netReference :nr2 .
+:op3 a era:OperationalPoint ; rdfs:label "C" ; era:opName "C" ; era:inCountry c:FRA ;
+  era:primaryLocation :pl3 ; era:uopid "FR001" .
+:nr1 geo:hasGeometry :geom1 . :geom1 geo:asWKT "POINT(4.1 50.8)"^^geo:wktLiteral .
+:nr2 geo:hasGeometry :geom2 . :geom2 geo:asWKT "POINT(4.2 50.9)"^^geo:wktLiteral .
