@@ -34,11 +34,16 @@ python3 bench/v2/suites/rinfshapes/test_queries.py                       # answe
 - **Runs**: per query and form, one cold run, 2 warm-ups and 7 timed runs (`--warm`), wall-clock
   at the client over HTTP with every row read; the median is reported. TripleTrail's result
   cache is off and QLever's is cleared before each run, as in the other suites.
-- **Checks**: the report flags a query whose row count differs between engines, and a count form
-  whose number differs from its rows form's row count. `test_queries.py` checks every query's
-  rows and count on a small hand-made extract (`testdata/extract.ttl`) with `tripletrail query`.
+- **Checks**: the report flags a query whose row count differs between engines. A count form
+  whose number differs from its rows form's row count is recorded with the status `forms differ`
+  (the run goes on, and the times are kept), and the report notes it. `test_queries.py` checks
+  every query's rows and count on a small hand-made extract (`testdata/extract.ttl`) with
+  `tripletrail query`.
 - **Engines**: tripletrail, oxigraph, qlever, jena and graphdb by default.
 - **Output**: `results/rinfshapes/<dataset>/<engine>.json` and `results/rinfshapes/report.md`.
+- **On a rented server**: `bench/v2/bench.sh rinfshapes rinf-all`, or from GitHub, Actions →
+  **Benchmarks** with suite `rinfshapes` and dataset `rinf-all` (or `rinf-<code>`), after
+  approval. The results come back in the run's results commit, as for the other suites.
 
 Not yet: scaled copies of `rinf-all` (instance IRIs copied 2 and 4 times, with concepts and
 vocabulary shared) to show how each shape grows with size.
