@@ -92,6 +92,15 @@
    "engines": "tripletrail"
   },
   {
+   "suite": "shacl",
+   "dataset": "rinf-all",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "5f3ea55",
+   "date": "2026-11-28",
+   "engines": "jena tripletrail"
+  },
+  {
    "suite": "sparqloscope",
    "dataset": "bsbm-2785",
    "machine": "ccx43",

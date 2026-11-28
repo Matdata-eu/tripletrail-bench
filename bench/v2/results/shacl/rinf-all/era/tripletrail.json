@@ -6,17 +6,17 @@
   {
    "exit": 1,
    "timed_out": false,
-   "wall_s": 591.951,
-   "peak_rss_bytes": 37896695808,
-   "validate_s": 571.3
+   "wall_s": 563.395,
+   "peak_rss_bytes": 37872361472,
+   "validate_s": 544.3
   }
  ],
- "wall_s": 591.951,
- "peak_rss_bytes": 37896695808,
+ "wall_s": 563.395,
+ "peak_rss_bytes": 37872361472,
  "timed_out": false,
  "exit": 1,
- "validate_s": 571.3,
- "report_bytes": 3779396054,
+ "validate_s": 544.3,
+ "report_bytes": 3775768316,
  "results": 3626762,
  "by_severity": {
   "Warning": 3360563,
