@@ -3,12 +3,13 @@
 #   postgis.sh load <dataset>   data/export_postgis.py into database rinf_<dataset>; prints JSON
 #   postgis.sh start <dataset> | stop | endpoint <dataset> | rss
 # By default it drives a local Debian/Ubuntu cluster (pg_ctlcluster 16 main, settings in
-# postgis.conf, which `postgis.sh setup` copies to conf.d). With PG_DSN_BASE set (e.g.
+# postgis.conf and the run's budget from budget.sh, which `postgis.sh setup` writes to conf.d). With PG_DSN_BASE set (e.g.
 # "host=localhost port=5432 user=postgres password=bench" for the docker compose service) it only
 # connects; start restarts the container named by PG_CONTAINER (docker-compose.yml), if set.
 set -euo pipefail
 HERE=$(cd "$(dirname "$0")" && pwd)
 W=${BENCH_WORK:-$HERE/../work}
+. "$HERE/budget.sh"
 PGVER=${PGVER:-16}
 BASE=${PG_DSN_BASE:-host=/var/run/postgresql user=postgres}
 
@@ -24,7 +25,13 @@ start() {
 
 case "$1" in
   setup)
-    cp "$HERE/postgis.conf" "/etc/postgresql/$PGVER/main/conf.d/bench.conf"
+    { cat "$HERE/postgis.conf"
+      echo "shared_buffers = ${PG_SHARED_BUFFERS:-$(pg_shared_buffers)}"
+      echo "effective_cache_size = ${PG_EFFECTIVE_CACHE:-$(pg_effective_cache)}"
+      echo "max_parallel_workers_per_gather = $BENCH_CORES"
+      echo "max_parallel_workers = $BENCH_CORES"
+      echo "max_worker_processes = $(pg_worker_processes)"
+    } >"/etc/postgresql/$PGVER/main/conf.d/bench.conf"
     start
     ;;
   load)

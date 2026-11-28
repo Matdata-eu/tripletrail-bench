@@ -2,12 +2,13 @@
 # GraphDB (docker image ontotext/graphdb) for benchmark v2.
 #   graphdb.sh load <dataset>   offline preload (importrdf) + start + GeoSPARQL index; prints JSON
 #   graphdb.sh start <dataset> | stop | endpoint | rss
-# Env: BENCH_WORK (default bench/v2/work), GRAPHDB_IMAGE, GRAPHDB_HEAP (default 8g).
+# Env: BENCH_WORK (default bench/v2/work), GRAPHDB_IMAGE, GRAPHDB_HEAP (default BENCH_MEMORY, see budget.sh).
 set -euo pipefail
 HERE=$(cd "$(dirname "$0")" && pwd)
 W=${BENCH_WORK:-$HERE/../work}
+. "$HERE/budget.sh"
 IMAGE=${GRAPHDB_IMAGE:-mirror.gcr.io/ontotext/graphdb:10.8.0}
-HEAP=${GRAPHDB_HEAP:-8g}
+HEAP=${GRAPHDB_HEAP:-${BENCH_MEMORY_GIB}g}
 NAME=bench-graphdb
 PORT=7200
 EP=http://localhost:$PORT/repositories/bench

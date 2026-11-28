@@ -4,13 +4,14 @@
 #   jena.sh start <dataset> | stop | endpoint | rss
 # Env: BENCH_WORK, JENA_JAR (default $BENCH_WORK/jena/jena-fuseki-geosparql-6.2.0.jar,
 # from https://repo1.maven.org/maven2/org/apache/jena/jena-fuseki-geosparql/6.2.0/),
-# JENA_HEAP (default 8g), JENA_PORT (default 3030), JENA_JAVA_IMAGE (used when the host has no `java`, default
+# JENA_HEAP (default BENCH_MEMORY, see budget.sh), JENA_PORT (default 3030), JENA_JAVA_IMAGE (used when the host has no `java`, default
 # eclipse-temurin:21-jre; the server then runs as container bench-jena on the host network).
 set -euo pipefail
 HERE=$(cd "$(dirname "$0")" && pwd)
 W=${BENCH_WORK:-$HERE/../work}
+. "$HERE/budget.sh"
 JAR=${JENA_JAR:-$W/jena/jena-fuseki-geosparql-6.2.0.jar}
-HEAP=${JENA_HEAP:-8g}
+HEAP=${JENA_HEAP:-${BENCH_MEMORY_GIB}g}
 PORT=${JENA_PORT:-3030}
 EP=http://localhost:$PORT/ds/query
 PIDF=$W/jena/server.pid

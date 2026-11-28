@@ -14,6 +14,15 @@ def out(*cmd):
         return f"n/a ({e})"
 
 
+def budget(here):
+    try:
+        r = subprocess.run(["bash", os.path.join(here, "engines", "budget.sh"), "json"],
+                           capture_output=True, text=True, timeout=60)
+        return json.loads(r.stdout)
+    except Exception as e:  # noqa: BLE001
+        return f"n/a ({e})"
+
+
 def main():
     cpu = ""
     try:
@@ -49,6 +58,8 @@ def main():
         # the last lines only: JAVA_TOOL_OPTIONS (proxy settings) is echoed first
         "java": "\n".join(out("java", "-version").splitlines()[-3:]),
         "jena_jar": "jena-fuseki-geosparql-6.2.0.jar",
+        # The memory and cores every engine was given (engines/budget.sh, #94).
+        "budget": budget(here),
     }
     print(json.dumps(env, indent=1))
 

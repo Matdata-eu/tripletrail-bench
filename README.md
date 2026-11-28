@@ -94,11 +94,31 @@ real-world tarballs into one N-Quads file, each dataset in the named graph the q
   GraphDB has its GeoSPARQL plugin enabled after loading (the time is in "index"). Jena builds
   its spatial index file at first start. QLever builds with
   `--vocabulary-type on-disk-compressed-geo-split`.
-- **Memory.** Each engine gets the same fixed budget, as the only process running:
-  PostgreSQL `shared_buffers=4GB`, `work_mem=256MB`, `effective_cache_size=10GB`,
-  `max_parallel_workers_per_gather=4`, `random_page_cost=1.1`, `jit=off`
-  (`engines/postgis.conf`). GraphDB and Jena `-Xms8g -Xmx8g`. QLever `-m 8G -c 2G`. TripleTrail
-  default settings.
+- **Memory and cores.** Every engine of a run gets the same budget, and runs as the only process
+  ([`engines/budget.sh`](bench/v2/engines/budget.sh), tripletrail-bench#94).
+  - `BENCH_MEMORY` is the memory for each engine. It defaults to half the machine's RAM: 32G on
+    a 64 GB ccx43. The other half is left to the OS page cache and the client.
+  - `BENCH_CORES` is the cores one query may use. It defaults to all of them, since TripleTrail
+    uses them all.
+  - How each engine gets the budget:
+
+    | Engine | Memory | Cores per query |
+    |---|---|---|
+    | TripleTrail | `--memory-limit` | all |
+    | Jena | `-Xms`/`-Xmx` | one (Fuseki's design) |
+    | GraphDB | `-Xms`/`-Xmx` | one |
+    | QLever | `-m` for queries and for the index build, with `-c 2G` of it for the cache | its own |
+    | PostgreSQL | `shared_buffers` 25 % and `effective_cache_size` 75 % of the budget | `max_parallel_workers_per_gather` and `max_parallel_workers` = `BENCH_CORES` |
+
+    PostgreSQL also gets `work_mem=256MB`, `random_page_cost=1.1` and `jit=off`
+    (`engines/postgis.conf`). Oxigraph and maplib have no such settings.
+  - `env.json` (and each run's manifest) records the budget under `budget`, with what each engine
+    was given. The dashboard's provenance table shows it.
+  - An engine's own variable (`JENA_HEAP`, `GRAPHDB_HEAP`, `QLEVER_MEMORY`,
+    `QLEVER_INDEX_MEMORY`, `TRIPLETRAIL_MEMORY_LIMIT`, `PG_SHARED_BUFFERS`,
+    `PG_EFFECTIVE_CACHE`) still overrides it.
+  - Results from before #94 ran with unequal budgets: Jena, GraphDB and QLever had 8 GB,
+    TripleTrail had no limit, and PostgreSQL had 4 parallel workers.
 - **Memory after start.** "RSS after start" is taken once the engine is ready to be timed: for
   TripleTrail, after the R-tree and the map warm-up above. The figure "when it first answered" is
   TripleTrail's RSS as soon as the dataset answers `ASK {}`, before that start-up work. Runs from
@@ -133,9 +153,9 @@ Requirements: Linux, Docker (QLever, GraphDB, Oxigraph and the suites' tools run
 containers), Java 21 for Jena, Python 3 with `requests`, `pyyaml` and `psycopg2`, `osmium-tool`
 for OSM, `bc` and GNU `time`, and either a local PostgreSQL 16 with PostGIS and pgRouting or the
 compose service (`docker compose -f bench/v2/docker-compose.yml up -d postgis`). Environment
-variables: `BENCH_WORK`, `WARM_SCALE`, `ONLY` (queries or families, e.g. `ONLY=6,mixed_*`),
+variables: `BENCH_WORK`, `BENCH_MEMORY`, `BENCH_CORES`, `WARM_SCALE`, `ONLY` (queries or families, e.g. `ONLY=6,mixed_*`),
 `SKIP_LOAD=1`, `DROP_AFTER=1`, `TRIPLETRAIL_BIN`, `TRIPLETRAIL_WARM_WAIT`, `JENA_JAR`, `JENA_HEAP`, `GRAPHDB_IMAGE`,
-`GRAPHDB_HEAP`, `QLEVER_IMAGE`, `QLEVER_MEMORY`, `QLEVER_CACHE`, `PG_DSN_BASE`, `PG_CONTAINER`,
+`GRAPHDB_HEAP`, `QLEVER_IMAGE`, `QLEVER_MEMORY`, `QLEVER_INDEX_MEMORY`, `QLEVER_CACHE`, `PG_DSN_BASE`, `PG_CONTAINER`,
 `GEOGRAPHICA_TIMEOUT`, `PERF_QUERIES` (query ids to profile on TripleTrail with `perf` during their warm runs: `perf-<qid>.txt` beside their results).
 
 ## Licence
