@@ -1,12 +1,16 @@
 name: Dashboard
 
-# Publishes the benchmark dashboard (site/) with the results on main to GitHub Pages.
+# Publishes the benchmark dashboard (site/) with the results on main to GitHub Pages, plus one
+# snapshot per earlier results commit for the page's version picker (site/build.py --history).
 # Settings → Pages → Source: GitHub Actions.
 
 on:
   push:
     branches: [main]
-    paths: ["bench/v2/results/**", "site/**", ".github/workflows/pages.yml"]
+    paths: ["bench/v2/results/**", "bench/v2/dashboard.py", "site/**", ".github/workflows/pages.yml"]
+    # A results tag (results-2026-12, …) marks a snapshot in the picker. Path filters do not
+    # apply to tag pushes.
+    tags: ["results-*"]
   workflow_dispatch:
 
 permissions:
@@ -23,7 +27,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python3 site/build.py bench/v2/results _site
+        with:
+          ref: main
+          fetch-depth: 0  # every results commit and tag, for the snapshots
+      - name: Clone TripleTrail's history (commits only) to name the release each run measured
+        run: git clone --quiet --bare --filter=blob:none https://github.com/Matdata-eu/tripletrail.git "$RUNNER_TEMP/core.git"
+      - run: python3 site/build.py bench/v2/results _site --history --core "$RUNNER_TEMP/core.git"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

@@ -7,7 +7,17 @@
    "machine": "ccx43",
    "cpus": "16",
    "commit": "a9aae02",
-   "date": "2026-11-22"
+   "date": "2026-11-22",
+   "engines": "graphdb jena maplib oxigraph qlever"
+  },
+  {
+   "suite": "bsbm",
+   "dataset": "2785",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "c875571",
+   "date": "2026-11-27",
+   "engines": "tripletrail"
   },
   {
    "suite": "bsbm",
@@ -15,7 +25,8 @@
    "machine": "ccx43",
    "cpus": "16",
    "commit": "a9aae02",
-   "date": "2026-11-22"
+   "date": "2026-11-22",
+   "engines": "graphdb jena maplib oxigraph qlever tripletrail"
   },
   {
    "suite": "geographica",
@@ -23,7 +34,8 @@
    "machine": "ccx43",
    "cpus": "16",
    "commit": "a9aae02",
-   "date": "2026-11-22"
+   "date": "2026-11-22",
+   "engines": "graphdb jena qlever tripletrail"
   },
   {
    "suite": "scale",
@@ -31,7 +43,44 @@
    "machine": "ccx43",
    "cpus": "16",
    "commit": "cee8c3c",
-   "date": "2026-11-21"
+   "date": "2026-11-21",
+   "engines": "qlever"
+  },
+  {
+   "suite": "scale",
+   "dataset": "osm_benelux",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "5d76345",
+   "date": "2026-11-21",
+   "engines": "graphdb"
+  },
+  {
+   "suite": "scale",
+   "dataset": "osm_benelux",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "fed8e96",
+   "date": "2026-11-27",
+   "engines": "tripletrail"
+  },
+  {
+   "suite": "scale",
+   "dataset": "osm_europe",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "3a26643",
+   "date": "2026-11-22",
+   "engines": "graphdb"
+  },
+  {
+   "suite": "scale",
+   "dataset": "osm_europe",
+   "machine": "ccx43",
+   "cpus": "16",
+   "commit": "a9aae02",
+   "date": "2026-11-22",
+   "engines": "qlever"
   },
   {
    "suite": "scale",
@@ -39,7 +88,8 @@
    "machine": "ccx43",
    "cpus": "16",
    "commit": "13e940f",
-   "date": "2026-11-27"
+   "date": "2026-11-27",
+   "engines": "tripletrail"
   },
   {
    "suite": "sparqloscope",
@@ -47,7 +97,8 @@
    "machine": "ccx43",
    "cpus": "16",
    "commit": "a9aae02",
-   "date": "2026-11-22"
+   "date": "2026-11-22",
+   "engines": "graphdb jena maplib oxigraph qlever tripletrail"
   },
   {
    "suite": "sparqloscope",
@@ -55,7 +106,8 @@
    "machine": "ccx43",
    "cpus": "16",
    "commit": "a9aae02",
-   "date": "2026-11-22"
+   "date": "2026-11-22",
+   "engines": "graphdb jena maplib oxigraph qlever tripletrail"
   },
   {
    "suite": "trainmarks",
@@ -63,7 +115,8 @@
    "machine": "ccx43",
    "cpus": "16",
    "commit": "a9aae02",
-   "date": "2026-11-22"
+   "date": "2026-11-22",
+   "engines": "graphdb jena maplib oxigraph qlever tripletrail"
   },
   {
    "suite": "trainmarks",
@@ -71,7 +124,8 @@
    "machine": "ccx43",
    "cpus": "16",
    "commit": "a9aae02",
-   "date": "2026-11-22"
+   "date": "2026-11-22",
+   "engines": "graphdb jena maplib oxigraph qlever tripletrail"
   },
   {
    "suite": "trainmarks",
@@ -79,7 +133,8 @@
    "machine": "ccx43",
    "cpus": "16",
    "commit": "a9aae02",
-   "date": "2026-11-22"
+   "date": "2026-11-22",
+   "engines": "graphdb jena maplib oxigraph qlever tripletrail"
   },
   {
    "suite": "updates",
@@ -87,7 +142,8 @@
    "machine": "ccx43",
    "cpus": "16",
    "commit": "a9aae02",
-   "date": "2026-11-22"
+   "date": "2026-11-22",
+   "engines": "graphdb jena oxigraph tripletrail"
   },
   {
    "suite": "v2",
@@ -95,7 +151,8 @@
    "machine": "ccx43",
    "cpus": "16",
    "commit": "a9aae02",
-   "date": "2026-11-22"
+   "date": "2026-11-22",
+   "engines": "graphdb jena postgis qlever tripletrail"
   },
   {
    "suite": "v2",
@@ -103,7 +160,8 @@
    "machine": "ccx43",
    "cpus": "16",
    "commit": "fed8e96",
-   "date": ""
+   "date": "",
+   "engines": ""
   },
   {
    "suite": "v2",
@@ -111,7 +169,8 @@
    "machine": "ccx43",
    "cpus": "16",
    "commit": "13e940f",
-   "date": ""
+   "date": "",
+   "engines": ""
   },
   {
    "suite": "v2",
@@ -119,7 +178,8 @@
    "machine": "ccx43",
    "cpus": "16",
    "commit": "a9aae02",
-   "date": "2026-11-22"
+   "date": "2026-11-22",
+   "engines": "graphdb jena postgis qlever tripletrail"
   },
   {
    "suite": "v2",
@@ -127,7 +187,8 @@
    "machine": "ccx43",
    "cpus": "16",
    "commit": "a9aae02",
-   "date": "2026-11-22"
+   "date": "2026-11-22",
+   "engines": "graphdb jena postgis qlever tripletrail"
   }
  ],
  "suites": {
