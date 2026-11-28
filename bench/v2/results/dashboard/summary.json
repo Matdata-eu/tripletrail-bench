@@ -87,8 +87,8 @@
    "dataset": "osm_europe",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "13e940f",
-   "date": "2026-11-27",
+   "commit": "22e59f9",
+   "date": "2026-11-28",
    "engines": "tripletrail"
   },
   {
@@ -177,7 +177,7 @@
    "dataset": "osm_europe",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "13e940f",
+   "commit": "22e59f9",
    "date": "",
    "engines": ""
   },
@@ -538,15 +538,15 @@
    {
     "dataset": "osm_europe",
     "metric": "load time (s)",
-    "tripletrail": 4374.383,
+    "tripletrail": 4235.042,
     "others": {
      "graphdb": {
       "value": 4747.255,
-      "speedup": 1.09
+      "speedup": 1.12
      },
      "qlever": {
       "value": 1623.029,
-      "speedup": 0.37
+      "speedup": 0.38
      }
     }
    },
@@ -646,13 +646,13 @@
     "others": {
      "graphdb": {
       "value": 1180.236,
-      "tripletrail": 6.899,
-      "speedup": 171.07
+      "tripletrail": 2.882,
+      "speedup": 409.58
      },
      "qlever": {
       "value": 327.028,
-      "tripletrail": 106.747,
-      "speedup": 3.06
+      "tripletrail": 35.186,
+      "speedup": 9.29
      }
     }
    },
