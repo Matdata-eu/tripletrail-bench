@@ -84,7 +84,10 @@ On the Benchmarks workflow: suite `all`, dataset `shacl` (one server for the thr
   TopBraid has none), `results/shacl/<dataset>/<profile>/differences.json` counts the keys only
   it gives and the keys only the reference gives, by path, constraint component and severity, and
   the report lists the ten largest groups under the profile's table. It names no focus node: the
-  key files hold RINF IRIs, so they stay in the work directory and are deleted once compared.
+  key files hold RINF IRIs, so they stay in the work directory beside the data. `run_suite.sh`
+  runs one engine at a time, so each engine's run compares its keys with those the earlier
+  engines left there, and a key file counts only while its hash is the one in that engine's
+  result JSON.
   `python3 bench/v2/suites/shacl/test_differences.py` tests the comparison.
 - **Injected violations** (`inject.py`, tracker #31): real RINF data already fails many ERA
   shapes, which measures speed on realistic reports but not whether an engine misses violations.
