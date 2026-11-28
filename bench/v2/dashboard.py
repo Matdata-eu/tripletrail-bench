@@ -16,7 +16,9 @@ Files (plain CSV, no quoted fields):
   trainmarks_load.csv    Trainmarks: scale,engine,load_s
   trainmarks_queries.csv Trainmarks: scale,query,engine,warm_ms,cold_ms
   spatial_load.csv       bench v2: dataset,engine,load_s,disk_gib,triples
-  spatial_queries.csv    bench v2: dataset,family,query,engine,status,cold_ms,p50_ms,p95_ms
+  spatial_queries.csv    bench v2: dataset,family,query,engine,status,cold_ms,p50_ms,p95_ms,check,check_note;
+                         check is compare.py's verdict (ok, mismatch, unchecked); a mismatch has the
+                         status "wrong answer", so it counts as not answered everywhere (#96)
   rinfshapes_queries.csv RINF shapes: dataset,shape,query,control_of,engine,status,rows_ms,count_ms,rows,title
   provenance.csv         suite,dataset,machine,cpus,commit,date,engines: where and when each result ran
 """
@@ -34,6 +36,8 @@ except ImportError:  # Sparqloscope's files are YAML; without PyYAML its two CSV
     yaml = None
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+from compare import verdicts  # noqa: E402
 ENGINES = ["tripletrail", "oxigraph", "qlever", "jena", "graphdb", "maplib", "postgis"]
 # bench v2 datasets in the order the dashboard shows them; any other dataset folder follows.
 V2_DATASETS = ["small", "large", "osm_norway", "osm_benelux", "osm_europe", "osm_planet"]
@@ -172,6 +176,7 @@ def v2(res):
     load, queries = [], []
     for ds in [d for d in V2_DATASETS if d in found] + sorted(found - set(V2_DATASETS)):
         engines = [os.path.basename(os.path.dirname(f)) for f in glob.glob(os.path.join(res, ds, "*", "load.json"))]
+        checks = verdicts(os.path.join(res, ds))
         for e in ordered(engines):
             for f in sorted(glob.glob(os.path.join(res, ds, e, "*.json"))):
                 try:
@@ -183,8 +188,14 @@ def v2(res):
                     load.append([ds, e, num(r.get("load_s")), num(disk / 2**30 if disk else None), r.get("triples", "")])
                 elif "qid" in r:
                     w = r.get("warm") or {}
-                    queries.append([ds, clean(r.get("family", "")), r["qid"], e, r.get("status", ""),
-                                    num(r.get("cold_ms")), num(w.get("p50_ms")), num(w.get("p95_ms"))])
+                    status = r.get("status", "")
+                    check, note = checks.get((r["qid"], e), ("", ""))
+                    if check == "mismatch" and status.startswith("ok"):
+                        # A fast wrong answer is no answer: left out of every mean and speedup.
+                        status = "wrong answer"
+                    queries.append([ds, clean(r.get("family", "")), r["qid"], e, status,
+                                    num(r.get("cold_ms")), num(w.get("p50_ms")), num(w.get("p95_ms")),
+                                    check, clean(note)])
     return load, queries
 
 
@@ -294,7 +305,8 @@ def main():
     write(out, "trainmarks_queries.csv", ["scale", "query", "engine", "warm_ms", "cold_ms"], queries)
     load, queries = v2(res)
     write(out, "spatial_load.csv", ["dataset", "engine", "load_s", "disk_gib", "triples"], load)
-    write(out, "spatial_queries.csv", ["dataset", "family", "query", "engine", "status", "cold_ms", "p50_ms", "p95_ms"], queries)
+    write(out, "spatial_queries.csv", ["dataset", "family", "query", "engine", "status", "cold_ms", "p50_ms", "p95_ms",
+                                       "check", "check_note"], queries)
     write(out, "rinfshapes_queries.csv",
           ["dataset", "shape", "query", "control_of", "engine", "status", "rows_ms", "count_ms", "rows", "title"],
           rinfshapes(res))

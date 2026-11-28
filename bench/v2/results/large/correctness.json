@@ -3,7 +3,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -12,7 +13,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -21,7 +23,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -30,7 +33,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -39,7 +43,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -48,7 +53,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -57,7 +63,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -66,7 +73,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -75,7 +83,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -84,7 +93,8 @@
   "counts": {
    "match": 32,
    "tie": 0,
-   "mismatch": 1
+   "mismatch": 1,
+   "no_reference": 0
   },
   "examples": [
    {
@@ -101,7 +111,8 @@
   "counts": {
    "match": 32,
    "tie": 0,
-   "mismatch": 1
+   "mismatch": 1,
+   "no_reference": 0
   },
   "examples": [
    {
@@ -118,7 +129,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -127,7 +139,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -136,7 +149,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {
@@ -147,7 +161,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {
@@ -158,7 +173,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -167,7 +183,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -176,7 +193,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -185,7 +203,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -194,7 +213,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -203,7 +223,8 @@
   "counts": {
    "match": 0,
    "tie": 0,
-   "mismatch": 8
+   "mismatch": 8,
+   "no_reference": 0
   },
   "examples": [
    {
@@ -240,7 +261,8 @@
   "counts": {
    "match": 8,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -249,7 +271,8 @@
   "counts": {
    "match": 8,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -258,7 +281,8 @@
   "counts": {
    "match": 8,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -267,7 +291,8 @@
   "counts": {
    "match": 0,
    "tie": 0,
-   "mismatch": 8
+   "mismatch": 8,
+   "no_reference": 0
   },
   "examples": [
    {
@@ -304,7 +329,8 @@
   "counts": {
    "match": 8,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -313,7 +339,8 @@
   "counts": {
    "match": 8,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -322,7 +349,8 @@
   "counts": {
    "match": 0,
    "tie": 0,
-   "mismatch": 8
+   "mismatch": 8,
+   "no_reference": 0
   },
   "examples": [
    {
@@ -366,7 +394,8 @@
   "counts": {
    "match": 8,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -375,7 +404,8 @@
   "counts": {
    "match": 23,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -384,7 +414,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {
@@ -396,7 +427,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -405,7 +437,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -414,7 +447,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -423,7 +457,8 @@
   "counts": {
    "match": 33,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -432,7 +467,8 @@
   "counts": {
    "match": 1003,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {
@@ -443,7 +479,8 @@
   "counts": {
    "match": 1003,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -452,7 +489,8 @@
   "counts": {
    "match": 1001,
    "tie": 0,
-   "mismatch": 2
+   "mismatch": 2,
+   "no_reference": 0
   },
   "examples": [
    {
@@ -472,11 +510,22 @@
    "cost 180525.2000000001 vs 180465.59999999986 (354 vs 356 edges)": 1
   }
  },
+ "route_ch/tripletrail": {
+  "counts": {
+   "match": 0,
+   "tie": 0,
+   "mismatch": 0,
+   "no_reference": 1003
+  },
+  "examples": [],
+  "notes": {}
+ },
  "route_constrained/tripletrail": {
   "counts": {
    "match": 203,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {
@@ -487,7 +536,8 @@
   "counts": {
    "match": 53,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -496,7 +546,8 @@
   "counts": {
    "match": 50,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 3
   },
   "examples": [],
   "notes": {}
@@ -505,7 +556,8 @@
   "counts": {
    "match": 13,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -514,7 +566,8 @@
   "counts": {
    "match": 8,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -523,7 +576,8 @@
   "counts": {
    "match": 53,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}

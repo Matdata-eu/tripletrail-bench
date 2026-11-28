@@ -443,6 +443,22 @@ const FAMILIES = [
   ["9 scale", "Scans, groups and lookups on a store larger than its memory limit."],
 ];
 
+// The answers that differ from the reference (compare.py's correctness.csv): left out of every
+// time, mean and speedup above, each with its note and a link to the file.
+function wrongCard(q, ds) {
+  const wrong = q.filter((r) => r.check === "mismatch");
+  if (!wrong.length) return null;
+  const file = `https://github.com/Matdata-eu/tripletrail-bench/blob/main/bench/v2/results/${ds}/correctness.csv`;
+  return card("sp-wrong", "Answers that differ from the reference",
+    "The reference is PostGIS where it ran, else the answer most engines gave. These times are left out of the means and speedups above.",
+    table(inOrder(wrong), [
+      { label: "Query", l: true, get: (r) => r.query },
+      { label: "Engine", l: true, get: (r) => name(r.engine) },
+      { label: "Difference", l: true, get: (r) => r.check_note || "–" },
+      { label: "", l: true, get: () => el("a", { href: file, text: "correctness.csv" }) },
+    ]));
+}
+
 function spatial(D) {
   if (!D.sload.length && !D.squeries.length) return null;
   return {
@@ -462,7 +478,8 @@ function spatial(D) {
         const mine = q.filter((r) => r.engine === e);
         const l = loads.find((r) => r.engine === e) || {};
         return { engine: e, answered: mine.filter((r) => (r.status || "ok") === "ok").length, of: total,
-          timeout: mine.filter((r) => /time/i.test(r.status)).length, load_s: l.load_s, disk_gib: l.disk_gib,
+          timeout: mine.filter((r) => /time/i.test(r.status)).length, wrong: mine.filter((r) => r.status === "wrong answer").length,
+          load_s: l.load_s, disk_gib: l.disk_gib,
           geomean_ms: geo.find((g) => g.engine === e)?.geomean_ms };
       });
       const fams = [];
@@ -495,11 +512,12 @@ function spatial(D) {
             bars(loads.map((r) => ({ ...r, v: r.load_s })), { label: (r) => `${fmt(r.v)} s`,
               tip: (r) => [[null, "Load", `${fmt(r.v)} s`], [null, "On disk", `${fmt(r.disk_gib)} GiB`]]
                 .concat(r.triples ? [[null, "Triples", Math.round(r.triples).toLocaleString("en")]] : []) })),
-          card("sp-table", "Answers", "Queries answered of those asked on this dataset; the rest were not supported, failed or timed out.",
+          card("sp-table", "Answers", "Queries answered of those asked on this dataset; the rest were not supported, failed, timed out or answered wrongly.",
             table(summary, [
               { label: "Engine", l: true, get: (r) => name(r.engine) },
               { label: "Answered", get: (r) => `${r.answered} / ${r.of}` },
               { label: "Timed out", get: (r) => String(r.timeout) },
+              { label: "Wrong", get: (r) => String(r.wrong) },
               { label: "On disk", get: (r) => r.disk_gib ? `${fmt(r.disk_gib)} GiB` : "–" },
             ]))),
         grid("",
@@ -507,8 +525,9 @@ function spatial(D) {
             dots(fams, famOrder, "ms"),
             el("details", {}, el("summary", { text: "What the families measure" }),
               el("dl", {}, FAMILIES.filter(([f]) => famOrder.includes(f)).flatMap(([f, d]) => [el("dt", { text: f }), el("dd", { text: d })])))),
-          card("sp-queries", "Time per query", "Warm median, ms, log scale; hover for the cold first run. Queries an engine did not answer are left out.",
+          card("sp-queries", "Time per query", "Warm median, ms, log scale; hover for the cold first run. Queries an engine did not answer, or answered wrongly, are left out.",
             dots(perQuery, queryOrder, "ms"))),
+        wrongCard(q, ds),
       ];
     },
   };
@@ -530,8 +549,9 @@ function routing(D) {
       const queries = uniq(q.map((r) => r.query));
       const rows = queries.map((qq) => {
         const t = get(OURS, qq), p = get("postgis", qq);
-        return { query: qq, t_warm: num(t.p50_ms), t_cold: num(t.cold_ms), p_warm: num(p.p50_ms), p_cold: num(p.cold_ms),
-          p_status: p.status || "not run" };
+        const tOk = (t.status || "ok") === "ok";
+        return { query: qq, t_warm: tOk ? num(t.p50_ms) : null, t_cold: tOk ? num(t.cold_ms) : null, p_warm: num(p.p50_ms), p_cold: num(p.cold_ms),
+          t_status: t.status || "not run", p_status: p.status || "not run" };
       });
       const both = rows.filter((r) => r.t_warm && r.p_warm);
       const ratio = (a, b2) => a && b2 ? ratioText(b2 / a) : "–";
@@ -555,7 +575,7 @@ function routing(D) {
         card("rt-table", "Per query", "Warm median and cold first run, ms. The ratio compares the warm medians.",
           table(rows, [
             { label: "Query", l: true, get: (r) => r.query },
-            { label: "TripleTrail warm", get: (r) => ms(r.t_warm) },
+            { label: "TripleTrail warm", get: (r) => r.t_warm ? ms(r.t_warm) : r.t_status },
             { label: "TripleTrail cold", get: (r) => ms(r.t_cold) },
             { label: "pgRouting warm", get: (r) => r.p_warm ? ms(r.p_warm) : r.p_status },
             { label: "pgRouting cold", get: (r) => ms(r.p_cold) },

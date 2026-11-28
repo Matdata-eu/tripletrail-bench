@@ -79,6 +79,19 @@ real-world tarballs into one N-Quads file, each dataset in the named graph the q
 - **Timing.** Wall clock at the client, including the protocol (HTTP + SPARQL JSON results for
   the RDF engines, libpq for PostGIS) and fetching all rows. Timeout 300 s (600 s for
   joins and aggregates). QLever's result cache is cleared before every run.
+- **Correctness.** `compare.py` checks every engine's answers against a reference, run by run,
+  and writes `correctness.csv` next to the results (tripletrail-bench#96).
+  - The reference is PostGIS/pgRouting where it ran. Elsewhere (the scale suite, `route_ch`, OSM
+    runs without PostGIS), it is the answer a strict majority of the engines gave, at least two of
+    them, on the extract most of them loaded. One engine is never the reference on its own, and
+    TripleTrail is no exception.
+  - A run without such a majority counts as "no reference" for every engine, not as a mismatch.
+  - A query an engine answered differently from the reference in any run is a wrong answer.
+    `report.md` strikes its time out, and the dashboard counts it as not answered. It is
+    therefore left out of every geometric mean and speedup, `summary.json` included, and the
+    dashboard lists it with its note.
+  - Times that could not be checked (another extract, no majority) stay in, marked "unchecked"
+    in `report.md`.
 - **Query forms.** Each engine runs its own fastest correct form of the same question, in
   `bench/v2/queries/<engine>/`. TripleTrail and GraphDB use standard GeoSPARQL `FILTER` functions
   (GraphDB uses its indexed `geo:sfWithin` property form for the box and polygon selections).

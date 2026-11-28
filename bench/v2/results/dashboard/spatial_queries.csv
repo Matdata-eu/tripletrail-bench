@@ -1,276 +1,276 @@
-dataset,family,query,engine,status,cold_ms,p50_ms,p95_ms
-small,4 aggregate,agg_length_region,tripletrail,ok,174.993,181.631,189.963
-small,4 aggregate,agg_total_length,tripletrail,ok,51.396,37.255,40.6
-small,4 aggregate,agg_union_buffers,tripletrail,ok,13.724,9.337,12.406
-small,6 routing,components,tripletrail,ok,38.374,19.831,40.953
-small,6 routing,cost_matrix_100,tripletrail,ok,62.782,31.606,33.841
-small,6 routing,driving_distance_50km,tripletrail,ok,3.61,6.679,9.03
-small,3 join,join_op_region,tripletrail,ok,17.437,16.521,16.904
-small,3 join,join_signal_ne_20m,tripletrail,ok,65.005,67.018,73.059
-small,2 knn,knn_ops,tripletrail,ok,13.27,11.606,16.076
-small,2 knn,knn_signals,tripletrail,ok,18.228,6.184,10.428
-small,6 routing,ksp5,tripletrail,ok,12.81,18.11,43.693
-small,5 linear referencing,lr_assets_between_km,tripletrail,ok,44.628,3.578,3.923
-small,5 linear referencing,lr_km_to_point,tripletrail,ok,6.164,5.518,6.52
-small,7 mixed,mixed_route_signals,tripletrail,ok,106.498,79.854,90.352
-small,6 routing,route_bddijkstra,tripletrail,ok,5.004,6.542,12.095
-small,6 routing,route_ch,tripletrail,ok,109.612,3.189,5.276
-small,6 routing,route_constrained,tripletrail,ok,558.497,7.093,10.077
-small,6 routing,route_dijkstra,tripletrail,ok,279.177,7.55,11.79
-small,6 routing,route_dijkstra_cost,tripletrail,ok,4.753,5.379,8.594
-small,1 selection,sel_bbox,tripletrail,ok,9.61,3.942,4.426
-small,1 selection,sel_distance,tripletrail,ok,3.868,3.39,4.159
-small,1 selection,sel_polygon,tripletrail,ok,3.589,3.158,3.589
-small,4 aggregate,agg_length_region,qlever,n/a,,,
-small,4 aggregate,agg_total_length,qlever,ok,75.852,58.716,67.949
-small,4 aggregate,agg_union_buffers,qlever,n/a,,,
-small,6 routing,components,qlever,n/a,,,
-small,6 routing,cost_matrix_100,qlever,n/a,,,
-small,6 routing,driving_distance_50km,qlever,n/a,,,
-small,3 join,join_op_region,qlever,ok,105.576,76.745,93.089
-small,3 join,join_signal_ne_20m,qlever,ok,304.235,325.55,330.487
-small,2 knn,knn_ops,qlever,ok,18.948,17.311,18.797
-small,2 knn,knn_signals,qlever,ok,44.738,17.864,34.429
-small,6 routing,ksp5,qlever,n/a,,,
-small,5 linear referencing,lr_assets_between_km,qlever,ok,26.902,15.599,18.381
-small,5 linear referencing,lr_km_to_point,qlever,n/a,,,
-small,7 mixed,mixed_route_signals,qlever,n/a,,,
-small,6 routing,route_bddijkstra,qlever,n/a,,,
-small,6 routing,route_ch,qlever,n/a,,,
-small,6 routing,route_constrained,qlever,n/a,,,
-small,6 routing,route_dijkstra,qlever,n/a,,,
-small,6 routing,route_dijkstra_cost,qlever,n/a,,,
-small,1 selection,sel_bbox,qlever,ok,39.796,27.196,31.038
-small,1 selection,sel_distance,qlever,ok,15.696,23.397,25.978
-small,1 selection,sel_polygon,qlever,ok,25.324,25.307,27.363
-small,4 aggregate,agg_length_region,jena,n/a,,,
-small,4 aggregate,agg_total_length,jena,n/a,,,
-small,4 aggregate,agg_union_buffers,jena,n/a,,,
-small,6 routing,components,jena,n/a,,,
-small,6 routing,cost_matrix_100,jena,n/a,,,
-small,6 routing,driving_distance_50km,jena,n/a,,,
-small,3 join,join_op_region,jena,ok,603.454,226.914,248.05
-small,3 join,join_signal_ne_20m,jena,ok,11066.343,7744.531,7938.452
-small,2 knn,knn_ops,jena,ok,147.17,36.344,82.017
-small,2 knn,knn_signals,jena,ok,1326.037,200.446,318.998
-small,6 routing,ksp5,jena,n/a,,,
-small,5 linear referencing,lr_assets_between_km,jena,ok,176.406,18.687,30.509
-small,5 linear referencing,lr_km_to_point,jena,n/a,,,
-small,7 mixed,mixed_route_signals,jena,n/a,,,
-small,6 routing,route_bddijkstra,jena,n/a,,,
-small,6 routing,route_ch,jena,n/a,,,
-small,6 routing,route_constrained,jena,n/a,,,
-small,6 routing,route_dijkstra,jena,n/a,,,
-small,6 routing,route_dijkstra_cost,jena,n/a,,,
-small,1 selection,sel_bbox,jena,ok,133.403,20.508,34.675
-small,1 selection,sel_distance,jena,ok,49.515,24.143,34.714
-small,1 selection,sel_polygon,jena,ok,117.571,24.704,35.89
-small,4 aggregate,agg_length_region,graphdb,n/a,,,
-small,4 aggregate,agg_total_length,graphdb,n/a,,,
-small,4 aggregate,agg_union_buffers,graphdb,n/a,,,
-small,6 routing,components,graphdb,n/a,,,
-small,6 routing,cost_matrix_100,graphdb,n/a,,,
-small,6 routing,driving_distance_50km,graphdb,n/a,,,
-small,3 join,join_op_region,graphdb,ok,663.91,465.827,498.97
-small,3 join,join_signal_ne_20m,graphdb,failed,,,
-small,2 knn,knn_ops,graphdb,ok,79.396,78.525,93.23
-small,2 knn,knn_signals,graphdb,ok,923.941,311.297,657.212
-small,6 routing,ksp5,graphdb,n/a,,,
-small,5 linear referencing,lr_assets_between_km,graphdb,ok,226.131,11.233,22.223
-small,5 linear referencing,lr_km_to_point,graphdb,n/a,,,
-small,7 mixed,mixed_route_signals,graphdb,n/a,,,
-small,6 routing,route_bddijkstra,graphdb,n/a,,,
-small,6 routing,route_ch,graphdb,n/a,,,
-small,6 routing,route_constrained,graphdb,n/a,,,
-small,6 routing,route_dijkstra,graphdb,n/a,,,
-small,6 routing,route_dijkstra_cost,graphdb,n/a,,,
-small,1 selection,sel_bbox,graphdb,ok,482.652,40.049,63.681
-small,1 selection,sel_distance,graphdb,ok,409.944,171.828,285.34
-small,1 selection,sel_polygon,graphdb,ok,63.419,29.423,54.137
-small,4 aggregate,agg_length_region,postgis,ok,479.595,425.148,426.316
-small,4 aggregate,agg_total_length,postgis,ok,66.096,48.797,62.635
-small,4 aggregate,agg_union_buffers,postgis,ok,12.261,5.656,9.737
-small,6 routing,components,postgis,ok,53.298,52.375,52.984
-small,6 routing,cost_matrix_100,postgis,ok,490.95,506.743,564.666
-small,6 routing,driving_distance_50km,postgis,ok,32.228,112.515,163.706
-small,3 join,join_op_region,postgis,ok,5.877,3.848,3.913
-small,3 join,join_signal_ne_20m,postgis,ok,215.912,162.352,176.522
-small,2 knn,knn_ops,postgis,ok,1.539,0.803,0.917
-small,2 knn,knn_signals,postgis,ok,36.984,0.859,0.921
-small,6 routing,ksp5,postgis,ok,137.489,244.256,841.715
-small,5 linear referencing,lr_assets_between_km,postgis,ok,0.999,0.4,0.459
-small,5 linear referencing,lr_km_to_point,postgis,ok,39.876,2.78,3.519
-small,7 mixed,mixed_route_signals,postgis,ok,97.87,42.692,50.981
-small,6 routing,route_bddijkstra,postgis,ok,36.726,35.745,41.687
-small,6 routing,route_ch,postgis,n/a,,,
-small,6 routing,route_constrained,postgis,ok,31.061,31.473,34.205
-small,6 routing,route_dijkstra,postgis,ok,85.385,36.047,41.27
-small,6 routing,route_dijkstra_cost,postgis,ok,33.272,35.179,40.93
-small,1 selection,sel_bbox,postgis,ok,20.993,0.7,0.814
-small,1 selection,sel_distance,postgis,ok,24.252,1.728,4.616
-small,1 selection,sel_polygon,postgis,ok,0.631,0.562,0.678
-large,4 aggregate,agg_length_region,tripletrail,ok,1685.291,1585.23,1616.577
-large,4 aggregate,agg_total_length,tripletrail,ok,101,116.183,125.843
-large,4 aggregate,agg_union_buffers,tripletrail,ok,49.576,9.899,16.764
-large,6 routing,components,tripletrail,ok,568.142,297.771,301.307
-large,6 routing,cost_matrix_100,tripletrail,ok,498.505,461.906,478.676
-large,6 routing,driving_distance_50km,tripletrail,ok,9.422,8.565,13.136
-large,3 join,join_op_region,tripletrail,ok,47.235,76.425,110.525
-large,3 join,join_signal_ne_20m,tripletrail,ok,321.346,274.802,309.466
-large,2 knn,knn_ops,tripletrail,ok,15.859,24.859,30.538
-large,2 knn,knn_signals,tripletrail,ok,281.575,12.658,20.25
-large,6 routing,ksp5,tripletrail,ok,174.418,94.247,217.83
-large,5 linear referencing,lr_assets_between_km,tripletrail,ok,387.348,5.212,5.603
-large,5 linear referencing,lr_km_to_point,tripletrail,ok,12.518,10.88,12.921
-large,7 mixed,mixed_route_signals,tripletrail,ok,1319.03,591.617,663.368
-large,6 routing,route_bddijkstra,tripletrail,ok,67.198,43.025,79.812
-large,6 routing,route_ch,tripletrail,ok,3330.721,9.121,15.244
-large,6 routing,route_constrained,tripletrail,ok,7366.691,41.804,69.224
-large,6 routing,route_dijkstra,tripletrail,ok,3944.844,50.657,79.819
-large,6 routing,route_dijkstra_cost,tripletrail,ok,78.775,45.916,75.528
-large,1 selection,sel_bbox,tripletrail,ok,229.768,4.254,5.506
-large,1 selection,sel_distance,tripletrail,ok,4.004,4.491,5.858
-large,1 selection,sel_polygon,tripletrail,ok,3.505,3.544,4.191
-large,4 aggregate,agg_length_region,qlever,n/a,,,
-large,4 aggregate,agg_total_length,qlever,ok,502.506,448.236,488.094
-large,4 aggregate,agg_union_buffers,qlever,n/a,,,
-large,6 routing,components,qlever,n/a,,,
-large,6 routing,cost_matrix_100,qlever,n/a,,,
-large,6 routing,driving_distance_50km,qlever,n/a,,,
-large,3 join,join_op_region,qlever,ok,388.858,391.952,412.913
-large,3 join,join_signal_ne_20m,qlever,ok,2797.643,2919.357,3096.666
-large,2 knn,knn_ops,qlever,ok,76.71,40.663,55.509
-large,2 knn,knn_signals,qlever,ok,193.063,125.132,152.031
-large,6 routing,ksp5,qlever,n/a,,,
-large,5 linear referencing,lr_assets_between_km,qlever,ok,38.778,23.081,32.053
-large,5 linear referencing,lr_km_to_point,qlever,n/a,,,
-large,7 mixed,mixed_route_signals,qlever,n/a,,,
-large,6 routing,route_bddijkstra,qlever,n/a,,,
-large,6 routing,route_ch,qlever,n/a,,,
-large,6 routing,route_constrained,qlever,n/a,,,
-large,6 routing,route_dijkstra,qlever,n/a,,,
-large,6 routing,route_dijkstra_cost,qlever,n/a,,,
-large,1 selection,sel_bbox,qlever,ok,436.744,584.173,1073.017
-large,1 selection,sel_distance,qlever,ok,154.869,144.395,725.224
-large,1 selection,sel_polygon,qlever,ok,756.424,420.738,749.135
-large,4 aggregate,agg_length_region,jena,n/a,,,
-large,4 aggregate,agg_total_length,jena,n/a,,,
-large,4 aggregate,agg_union_buffers,jena,n/a,,,
-large,6 routing,components,jena,n/a,,,
-large,6 routing,cost_matrix_100,jena,n/a,,,
-large,6 routing,driving_distance_50km,jena,n/a,,,
-large,3 join,join_op_region,jena,ok,9366.721,7642.115,8023.601
-large,3 join,join_signal_ne_20m,jena,failed,,,
-large,2 knn,knn_ops,jena,ok,1707.618,411.924,470.577
-large,2 knn,knn_signals,jena,ok,10061.858,2370.742,2656.173
-large,6 routing,ksp5,jena,n/a,,,
-large,5 linear referencing,lr_assets_between_km,jena,ok,208.152,36.538,58.023
-large,5 linear referencing,lr_km_to_point,jena,n/a,,,
-large,7 mixed,mixed_route_signals,jena,n/a,,,
-large,6 routing,route_bddijkstra,jena,n/a,,,
-large,6 routing,route_ch,jena,n/a,,,
-large,6 routing,route_constrained,jena,n/a,,,
-large,6 routing,route_dijkstra,jena,n/a,,,
-large,6 routing,route_dijkstra_cost,jena,n/a,,,
-large,1 selection,sel_bbox,jena,ok,162.802,31.273,46.544
-large,1 selection,sel_distance,jena,ok,37.206,33.316,54.641
-large,1 selection,sel_polygon,jena,ok,129.87,37.21,53.279
-large,4 aggregate,agg_length_region,graphdb,n/a,,,
-large,4 aggregate,agg_total_length,graphdb,n/a,,,
-large,4 aggregate,agg_union_buffers,graphdb,n/a,,,
-large,6 routing,components,graphdb,n/a,,,
-large,6 routing,cost_matrix_100,graphdb,n/a,,,
-large,6 routing,driving_distance_50km,graphdb,n/a,,,
-large,3 join,join_op_region,graphdb,ok,16672.413,16529.891,16650.34
-large,3 join,join_signal_ne_20m,graphdb,failed,,,
-large,2 knn,knn_ops,graphdb,ok,595.225,589.419,691.062
-large,2 knn,knn_signals,graphdb,ok,4946.644,3162.82,3754.036
-large,6 routing,ksp5,graphdb,n/a,,,
-large,5 linear referencing,lr_assets_between_km,graphdb,ok,232.21,12.595,19.9
-large,5 linear referencing,lr_km_to_point,graphdb,n/a,,,
-large,7 mixed,mixed_route_signals,graphdb,n/a,,,
-large,6 routing,route_bddijkstra,graphdb,n/a,,,
-large,6 routing,route_ch,graphdb,n/a,,,
-large,6 routing,route_constrained,graphdb,n/a,,,
-large,6 routing,route_dijkstra,graphdb,n/a,,,
-large,6 routing,route_dijkstra_cost,graphdb,n/a,,,
-large,1 selection,sel_bbox,graphdb,ok,639.571,196.23,346.064
-large,1 selection,sel_distance,graphdb,ok,2729.926,2075.501,2304.228
-large,1 selection,sel_polygon,graphdb,ok,198.175,168.183,201.832
-large,4 aggregate,agg_length_region,postgis,ok,5833.028,5462.866,5484.658
-large,4 aggregate,agg_total_length,postgis,ok,297.776,256.152,262.474
-large,4 aggregate,agg_union_buffers,postgis,ok,12.204,5.626,12.562
-large,6 routing,components,postgis,ok,904.02,894.802,941.407
-large,6 routing,cost_matrix_100,postgis,ok,20082.211,19959.902,20274.263
-large,6 routing,driving_distance_50km,postgis,ok,1288.807,1843.96,2530.492
-large,3 join,join_op_region,postgis,ok,56.196,41.188,41.411
-large,3 join,join_signal_ne_20m,postgis,ok,964.265,866.799,877.759
-large,2 knn,knn_ops,postgis,ok,1.748,1.037,1.245
-large,2 knn,knn_signals,postgis,ok,37.612,0.674,0.814
-large,6 routing,ksp5,postgis,ok,52499.948,12199.213,53335.414
-large,5 linear referencing,lr_assets_between_km,postgis,ok,1.098,0.292,0.366
-large,5 linear referencing,lr_km_to_point,postgis,ok,41.338,9.159,11.821
-large,7 mixed,mixed_route_signals,postgis,ok,1353.408,816.987,947.451
-large,6 routing,route_bddijkstra,postgis,ok,900.888,834.227,927.112
-large,6 routing,route_ch,postgis,n/a,,,
-large,6 routing,route_constrained,postgis,ok,703.46,712.962,776.959
-large,6 routing,route_dijkstra,postgis,ok,1277.89,836.502,926.687
-large,6 routing,route_dijkstra_cost,postgis,ok,911.441,830.407,914.218
-large,1 selection,sel_bbox,postgis,ok,17.263,0.667,0.774
-large,1 selection,sel_distance,postgis,ok,23.894,1.636,3.799
-large,1 selection,sel_polygon,postgis,ok,0.848,0.7,0.805
-osm_norway,8 osm,osm_station_admin,tripletrail,ok,68.914,41.272,43.641
-osm_norway,8 osm,osm_track_landuse,tripletrail,ok,165.697,162.378,175.558
-osm_norway,8 osm,osm_track_track_5m,tripletrail,ok,81.479,41.161,44.591
-osm_norway,8 osm,osm_station_admin,qlever,ok,2804.006,2769.598,2782.545
-osm_norway,8 osm,osm_track_landuse,qlever,ok,2222.312,2143.663,2158.448
-osm_norway,8 osm,osm_track_track_5m,qlever,ok,501.393,451.374,462.884
-osm_norway,8 osm,osm_station_admin,jena,ok,6699.912,3947.839,4040.723
-osm_norway,8 osm,osm_track_landuse,jena,failed,,,
-osm_norway,8 osm,osm_track_track_5m,jena,ok,99978.424,97557.992,97620.212
-osm_norway,8 osm,osm_station_admin,graphdb,ok,204767.434,204261.684,204352.115
-osm_norway,8 osm,osm_track_landuse,graphdb,failed,,,
-osm_norway,8 osm,osm_track_track_5m,graphdb,failed,,,
-osm_norway,8 osm,osm_station_admin,postgis,ok,213.014,160.098,161.887
-osm_norway,8 osm,osm_track_landuse,postgis,ok,833.13,707.436,717.998
-osm_norway,8 osm,osm_track_track_5m,postgis,ok,2723.389,2735.476,2757.304
-osm_benelux,8 osm,osm_station_admin,tripletrail,ok,173.94,105.388,118.873
-osm_benelux,8 osm,osm_track_landuse,tripletrail,ok,1416.517,1374.922,1398.491
-osm_benelux,8 osm,osm_track_track_5m,tripletrail,ok,1237.039,1204.308,1219.937
-osm_benelux,9 scale,scale_building_kinds,tripletrail,ok,74.606,8.114,8.208
-osm_benelux,9 scale,scale_class_counts,tripletrail,ok,3.073,4.088,5.608
-osm_benelux,9 scale,scale_label_lookup,tripletrail,ok,34.145,2.565,4.828
-osm_benelux,9 scale,scale_named_stations,tripletrail,ok,6.217,7.213,9.19
-osm_benelux,8 osm,osm_station_admin,qlever,ok,2460.746,2419.764,2423.639
-osm_benelux,8 osm,osm_track_landuse,qlever,ok,15828.848,16008.91,16176.719
-osm_benelux,8 osm,osm_track_track_5m,qlever,ok,2314.61,2327.563,2336.316
-osm_benelux,9 scale,scale_building_kinds,qlever,ok,17.168,15.64,15.714
-osm_benelux,9 scale,scale_class_counts,qlever,ok,7.008,3.69,4.803
-osm_benelux,9 scale,scale_label_lookup,qlever,ok,9.701,6.731,8.488
-osm_benelux,9 scale,scale_named_stations,qlever,ok,89.273,86.564,89.465
-osm_benelux,8 osm,osm_station_admin,graphdb,failed,,,
-osm_benelux,8 osm,osm_track_landuse,graphdb,failed,,,
-osm_benelux,8 osm,osm_track_track_5m,graphdb,failed,,,
-osm_benelux,9 scale,scale_building_kinds,graphdb,ok,4722.346,4383.779,4405.595
-osm_benelux,9 scale,scale_class_counts,graphdb,ok,16089.97,12396.803,12398.954
-osm_benelux,9 scale,scale_label_lookup,graphdb,ok,13.117,3.493,6.146
-osm_benelux,9 scale,scale_named_stations,graphdb,ok,46.484,19.09,22.17
-osm_europe,8 osm,osm_station_admin,tripletrail,ok,14266.893,3989.581,3994.668
-osm_europe,8 osm,osm_track_landuse,tripletrail,failed,,,
-osm_europe,8 osm,osm_track_track_5m,tripletrail,ok,279837.208,163708.22,164079.934
-osm_europe,9 scale,scale_building_kinds,tripletrail,ok,1320.251,11.866,12.366
-osm_europe,9 scale,scale_class_counts,tripletrail,ok,155.492,2.736,7.819
-osm_europe,9 scale,scale_label_lookup,tripletrail,ok,492.493,2.438,2.797
-osm_europe,9 scale,scale_named_stations,tripletrail,ok,4004.158,28.621,28.693
-osm_europe,8 osm,osm_station_admin,qlever,ok,85409.145,54997.941,55446.02
-osm_europe,8 osm,osm_track_landuse,qlever,failed,,,
-osm_europe,8 osm,osm_track_track_5m,qlever,ok,23174.651,22728.507,22996.886
-osm_europe,9 scale,scale_building_kinds,qlever,ok,1234.799,32.636,34.12
-osm_europe,9 scale,scale_class_counts,qlever,ok,7.766,4.282,4.349
-osm_europe,9 scale,scale_label_lookup,qlever,ok,14.447,8.23,9.102
-osm_europe,9 scale,scale_named_stations,qlever,ok,779.469,850.837,859.991
-osm_europe,8 osm,osm_track_track_5m,graphdb,failed,,,
-osm_europe,9 scale,scale_building_kinds,graphdb,ok,22632.467,19368.75,19395.868
-osm_europe,9 scale,scale_class_counts,graphdb,ok,72755.013,62313.096,63121.403
-osm_europe,9 scale,scale_label_lookup,graphdb,ok,32.592,5.227,7.685
-osm_europe,9 scale,scale_named_stations,graphdb,ok,1728.793,307.569,353.517
+dataset,family,query,engine,status,cold_ms,p50_ms,p95_ms,check,check_note
+small,4 aggregate,agg_length_region,tripletrail,ok,174.993,181.631,189.963,ok,
+small,4 aggregate,agg_total_length,tripletrail,ok,51.396,37.255,40.6,ok,
+small,4 aggregate,agg_union_buffers,tripletrail,ok,13.724,9.337,12.406,ok,
+small,6 routing,components,tripletrail,ok,38.374,19.831,40.953,ok,
+small,6 routing,cost_matrix_100,tripletrail,ok,62.782,31.606,33.841,ok,
+small,6 routing,driving_distance_50km,tripletrail,ok,3.61,6.679,9.03,ok,
+small,3 join,join_op_region,tripletrail,ok,17.437,16.521,16.904,ok,
+small,3 join,join_signal_ne_20m,tripletrail,ok,65.005,67.018,73.059,ok,
+small,2 knn,knn_ops,tripletrail,wrong answer,13.27,11.606,16.076,mismatch,9/10 in common
+small,2 knn,knn_signals,tripletrail,ok,18.228,6.184,10.428,ok,
+small,6 routing,ksp5,tripletrail,ok,12.81,18.11,43.693,ok,
+small,5 linear referencing,lr_assets_between_km,tripletrail,ok,44.628,3.578,3.923,ok,
+small,5 linear referencing,lr_km_to_point,tripletrail,ok,6.164,5.518,6.52,ok,match: 0.000 m (x21); match: 0.001 m (x12)
+small,7 mixed,mixed_route_signals,tripletrail,ok,106.498,79.854,90.352,ok,
+small,6 routing,route_bddijkstra,tripletrail,wrong answer,5.004,6.542,12.095,mismatch,match: no path (x64); cost 90053.70000000004 vs 89838.50000000001 (178 vs 178 edges); cost 173070.3 vs 172747.69999999992 (344 vs 344 edges)
+small,6 routing,route_ch,tripletrail,ok,109.612,3.189,5.276,unchecked,1003 runs without a majority answer
+small,6 routing,route_constrained,tripletrail,ok,558.497,7.093,10.077,ok,match: no path (x90)
+small,6 routing,route_dijkstra,tripletrail,ok,279.177,7.55,11.79,ok,match: no path (x64)
+small,6 routing,route_dijkstra_cost,tripletrail,ok,4.753,5.379,8.594,ok,
+small,1 selection,sel_bbox,tripletrail,ok,9.61,3.942,4.426,ok,
+small,1 selection,sel_distance,tripletrail,ok,3.868,3.39,4.159,ok,
+small,1 selection,sel_polygon,tripletrail,ok,3.589,3.158,3.589,ok,
+small,4 aggregate,agg_length_region,qlever,n/a,,,,ok,n/a: geof:intersection is not supported by QLever (HTTP 400 'not supported')
+small,4 aggregate,agg_total_length,qlever,wrong answer,75.852,58.716,67.949,mismatch,[13282488.070671618] vs [13261308.97391] (x2); [13282488.070671652] vs [13261308.97391] (x2); [13282488.07067167] vs [13261308.97391]
+small,4 aggregate,agg_union_buffers,qlever,n/a,,,,ok,n/a: geof:buffer and geof:aggUnion are not supported by QLever
+small,6 routing,components,qlever,n/a,,,,ok,n/a: no routing
+small,6 routing,cost_matrix_100,qlever,n/a,,,,ok,n/a: no routing
+small,6 routing,driving_distance_50km,qlever,n/a,,,,ok,n/a: no routing
+small,3 join,join_op_region,qlever,ok,105.576,76.745,93.089,ok,
+small,3 join,join_signal_ne_20m,qlever,ok,304.235,325.55,330.487,ok,
+small,2 knn,knn_ops,qlever,ok,18.948,17.311,18.797,ok,match: same set; other order
+small,2 knn,knn_signals,qlever,ok,44.738,17.864,34.429,ok,
+small,6 routing,ksp5,qlever,n/a,,,,ok,n/a: no routing
+small,5 linear referencing,lr_assets_between_km,qlever,ok,26.902,15.599,18.381,ok,
+small,5 linear referencing,lr_km_to_point,qlever,n/a,,,,ok,n/a: no linear-referencing functions
+small,7 mixed,mixed_route_signals,qlever,n/a,,,,ok,n/a: no routing
+small,6 routing,route_bddijkstra,qlever,n/a,,,,ok,n/a: no routing
+small,6 routing,route_ch,qlever,n/a,,,,ok,n/a: no routing
+small,6 routing,route_constrained,qlever,n/a,,,,ok,n/a: no routing
+small,6 routing,route_dijkstra,qlever,n/a,,,,ok,n/a: no routing
+small,6 routing,route_dijkstra_cost,qlever,n/a,,,,ok,n/a: no routing
+small,1 selection,sel_bbox,qlever,ok,39.796,27.196,31.038,ok,
+small,1 selection,sel_distance,qlever,wrong answer,15.696,23.397,25.978,mismatch,ref 7 got 8: 0 missing; 1 extra
+small,1 selection,sel_polygon,qlever,ok,25.324,25.307,27.363,ok,
+small,4 aggregate,agg_length_region,jena,n/a,,,,ok,n/a: geof:metricLength / metricArea / aggUnion are not implemented by jena-geosparql 6.2 (they return no value; geof:intersection works)
+small,4 aggregate,agg_total_length,jena,n/a,,,,ok,n/a: geof:metricLength / metricArea / aggUnion are not implemented by jena-geosparql 6.2 (they return no value; geof:intersection works)
+small,4 aggregate,agg_union_buffers,jena,n/a,,,,ok,n/a: geof:metricLength / metricArea / aggUnion are not implemented by jena-geosparql 6.2 (they return no value; geof:intersection works)
+small,6 routing,components,jena,n/a,,,,ok,n/a: no routing
+small,6 routing,cost_matrix_100,jena,n/a,,,,ok,n/a: no routing
+small,6 routing,driving_distance_50km,jena,n/a,,,,ok,n/a: no routing
+small,3 join,join_op_region,jena,ok,603.454,226.914,248.05,ok,
+small,3 join,join_signal_ne_20m,jena,wrong answer,11066.343,7744.531,7938.452,mismatch,[24145.0] vs [24084.0] (x8)
+small,2 knn,knn_ops,jena,ok,147.17,36.344,82.017,ok,match: same set; other order
+small,2 knn,knn_signals,jena,ok,1326.037,200.446,318.998,ok,
+small,6 routing,ksp5,jena,n/a,,,,ok,n/a: no routing
+small,5 linear referencing,lr_assets_between_km,jena,ok,176.406,18.687,30.509,ok,
+small,5 linear referencing,lr_km_to_point,jena,n/a,,,,ok,n/a: no linear-referencing functions
+small,7 mixed,mixed_route_signals,jena,n/a,,,,ok,n/a: no routing
+small,6 routing,route_bddijkstra,jena,n/a,,,,ok,n/a: no routing
+small,6 routing,route_ch,jena,n/a,,,,ok,n/a: no routing
+small,6 routing,route_constrained,jena,n/a,,,,ok,n/a: no routing
+small,6 routing,route_dijkstra,jena,n/a,,,,ok,n/a: no routing
+small,6 routing,route_dijkstra_cost,jena,n/a,,,,ok,n/a: no routing
+small,1 selection,sel_bbox,jena,ok,133.403,20.508,34.675,ok,
+small,1 selection,sel_distance,jena,wrong answer,49.515,24.143,34.714,mismatch,ref 7 got 8: 0 missing; 1 extra
+small,1 selection,sel_polygon,jena,ok,117.571,24.704,35.89,ok,
+small,4 aggregate,agg_length_region,graphdb,n/a,,,,ok,n/a: geof:metricLength / metricArea / aggUnion (GeoSPARQL 1.1) are unknown to GraphDB 10.8 (HTTP 500 'Unknown function')
+small,4 aggregate,agg_total_length,graphdb,n/a,,,,ok,n/a: geof:metricLength / metricArea / aggUnion (GeoSPARQL 1.1) are unknown to GraphDB 10.8 (HTTP 500 'Unknown function')
+small,4 aggregate,agg_union_buffers,graphdb,n/a,,,,ok,n/a: geof:metricLength / metricArea / aggUnion (GeoSPARQL 1.1) are unknown to GraphDB 10.8 (HTTP 500 'Unknown function')
+small,6 routing,components,graphdb,n/a,,,,ok,n/a: no routing
+small,6 routing,cost_matrix_100,graphdb,n/a,,,,ok,n/a: no routing
+small,6 routing,driving_distance_50km,graphdb,n/a,,,,ok,n/a: no routing
+small,3 join,join_op_region,graphdb,ok,663.91,465.827,498.97,ok,
+small,3 join,join_signal_ne_20m,graphdb,failed,,,,ok,failed: HTTP 503: Query interrupted: Query evaluation took too long 
+small,2 knn,knn_ops,graphdb,wrong answer,79.396,78.525,93.23,mismatch,9/10 in common
+small,2 knn,knn_signals,graphdb,ok,923.941,311.297,657.212,ok,
+small,6 routing,ksp5,graphdb,n/a,,,,ok,n/a: no routing
+small,5 linear referencing,lr_assets_between_km,graphdb,ok,226.131,11.233,22.223,ok,
+small,5 linear referencing,lr_km_to_point,graphdb,n/a,,,,ok,n/a: no linear-referencing functions
+small,7 mixed,mixed_route_signals,graphdb,n/a,,,,ok,n/a: no routing
+small,6 routing,route_bddijkstra,graphdb,n/a,,,,ok,n/a: no routing
+small,6 routing,route_ch,graphdb,n/a,,,,ok,n/a: no routing
+small,6 routing,route_constrained,graphdb,n/a,,,,ok,n/a: no routing
+small,6 routing,route_dijkstra,graphdb,n/a,,,,ok,n/a: no routing
+small,6 routing,route_dijkstra_cost,graphdb,n/a,,,,ok,n/a: no routing
+small,1 selection,sel_bbox,graphdb,ok,482.652,40.049,63.681,ok,
+small,1 selection,sel_distance,graphdb,ok,409.944,171.828,285.34,ok,
+small,1 selection,sel_polygon,graphdb,ok,63.419,29.423,54.137,ok,
+small,4 aggregate,agg_length_region,postgis,ok,479.595,425.148,426.316,,
+small,4 aggregate,agg_total_length,postgis,ok,66.096,48.797,62.635,,
+small,4 aggregate,agg_union_buffers,postgis,ok,12.261,5.656,9.737,,
+small,6 routing,components,postgis,ok,53.298,52.375,52.984,,
+small,6 routing,cost_matrix_100,postgis,ok,490.95,506.743,564.666,,
+small,6 routing,driving_distance_50km,postgis,ok,32.228,112.515,163.706,,
+small,3 join,join_op_region,postgis,ok,5.877,3.848,3.913,,
+small,3 join,join_signal_ne_20m,postgis,ok,215.912,162.352,176.522,,
+small,2 knn,knn_ops,postgis,ok,1.539,0.803,0.917,,
+small,2 knn,knn_signals,postgis,ok,36.984,0.859,0.921,,
+small,6 routing,ksp5,postgis,ok,137.489,244.256,841.715,,
+small,5 linear referencing,lr_assets_between_km,postgis,ok,0.999,0.4,0.459,,
+small,5 linear referencing,lr_km_to_point,postgis,ok,39.876,2.78,3.519,,
+small,7 mixed,mixed_route_signals,postgis,ok,97.87,42.692,50.981,,
+small,6 routing,route_bddijkstra,postgis,ok,36.726,35.745,41.687,,
+small,6 routing,route_ch,postgis,n/a,,,,ok,n/a: pgRouting has no contraction-hierarchy query (pgr_contraction only contracts)
+small,6 routing,route_constrained,postgis,ok,31.061,31.473,34.205,,
+small,6 routing,route_dijkstra,postgis,ok,85.385,36.047,41.27,,
+small,6 routing,route_dijkstra_cost,postgis,ok,33.272,35.179,40.93,,
+small,1 selection,sel_bbox,postgis,ok,20.993,0.7,0.814,,
+small,1 selection,sel_distance,postgis,ok,24.252,1.728,4.616,,
+small,1 selection,sel_polygon,postgis,ok,0.631,0.562,0.678,,
+large,4 aggregate,agg_length_region,tripletrail,ok,1685.291,1585.23,1616.577,ok,
+large,4 aggregate,agg_total_length,tripletrail,ok,101,116.183,125.843,ok,
+large,4 aggregate,agg_union_buffers,tripletrail,ok,49.576,9.899,16.764,ok,
+large,6 routing,components,tripletrail,ok,568.142,297.771,301.307,ok,
+large,6 routing,cost_matrix_100,tripletrail,ok,498.505,461.906,478.676,ok,
+large,6 routing,driving_distance_50km,tripletrail,ok,9.422,8.565,13.136,ok,
+large,3 join,join_op_region,tripletrail,ok,47.235,76.425,110.525,ok,
+large,3 join,join_signal_ne_20m,tripletrail,ok,321.346,274.802,309.466,ok,
+large,2 knn,knn_ops,tripletrail,ok,15.859,24.859,30.538,ok,
+large,2 knn,knn_signals,tripletrail,ok,281.575,12.658,20.25,ok,
+large,6 routing,ksp5,tripletrail,ok,174.418,94.247,217.83,ok,3 runs without a majority answer
+large,5 linear referencing,lr_assets_between_km,tripletrail,ok,387.348,5.212,5.603,ok,
+large,5 linear referencing,lr_km_to_point,tripletrail,ok,12.518,10.88,12.921,ok,match: 0.000 m (x26); match: 0.001 m (x7)
+large,7 mixed,mixed_route_signals,tripletrail,ok,1319.03,591.617,663.368,ok,
+large,6 routing,route_bddijkstra,tripletrail,wrong answer,67.198,43.025,79.812,mismatch,cost 116812.4 vs 116700.80000000003 (232 vs 232 edges); match: no path (x23); cost 180525.2000000001 vs 180465.59999999986 (354 vs 356 edges)
+large,6 routing,route_ch,tripletrail,ok,3330.721,9.121,15.244,unchecked,1003 runs without a majority answer
+large,6 routing,route_constrained,tripletrail,ok,7366.691,41.804,69.224,ok,match: no path (x74)
+large,6 routing,route_dijkstra,tripletrail,ok,3944.844,50.657,79.819,ok,match: no path (x23)
+large,6 routing,route_dijkstra_cost,tripletrail,ok,78.775,45.916,75.528,ok,
+large,1 selection,sel_bbox,tripletrail,ok,229.768,4.254,5.506,ok,
+large,1 selection,sel_distance,tripletrail,ok,4.004,4.491,5.858,ok,
+large,1 selection,sel_polygon,tripletrail,ok,3.505,3.544,4.191,ok,
+large,4 aggregate,agg_length_region,qlever,n/a,,,,ok,n/a: geof:intersection is not supported by QLever (HTTP 400 'not supported')
+large,4 aggregate,agg_total_length,qlever,wrong answer,502.506,448.236,488.094,mismatch,[166293719.21746182] vs [165988198.3654]; [166293719.21746174] vs [165988198.3654]; [166293719.2174618] vs [165988198.3654]
+large,4 aggregate,agg_union_buffers,qlever,n/a,,,,ok,n/a: geof:buffer and geof:aggUnion are not supported by QLever
+large,6 routing,components,qlever,n/a,,,,ok,n/a: no routing
+large,6 routing,cost_matrix_100,qlever,n/a,,,,ok,n/a: no routing
+large,6 routing,driving_distance_50km,qlever,n/a,,,,ok,n/a: no routing
+large,3 join,join_op_region,qlever,wrong answer,388.858,391.952,412.913,mismatch,4 groups differ; e.g. 0_3: 2588.0 vs 2589.0 (x8)
+large,3 join,join_signal_ne_20m,qlever,wrong answer,2797.643,2919.357,3096.666,mismatch,[315812.0] vs [315829.0] (x8)
+large,2 knn,knn_ops,qlever,ok,76.71,40.663,55.509,ok,
+large,2 knn,knn_signals,qlever,ok,193.063,125.132,152.031,ok,match: same set; other order
+large,6 routing,ksp5,qlever,n/a,,,,ok,n/a: no routing
+large,5 linear referencing,lr_assets_between_km,qlever,ok,38.778,23.081,32.053,ok,
+large,5 linear referencing,lr_km_to_point,qlever,n/a,,,,ok,n/a: no linear-referencing functions
+large,7 mixed,mixed_route_signals,qlever,n/a,,,,ok,n/a: no routing
+large,6 routing,route_bddijkstra,qlever,n/a,,,,ok,n/a: no routing
+large,6 routing,route_ch,qlever,n/a,,,,ok,n/a: no routing
+large,6 routing,route_constrained,qlever,n/a,,,,ok,n/a: no routing
+large,6 routing,route_dijkstra,qlever,n/a,,,,ok,n/a: no routing
+large,6 routing,route_dijkstra_cost,qlever,n/a,,,,ok,n/a: no routing
+large,1 selection,sel_bbox,qlever,ok,436.744,584.173,1073.017,ok,
+large,1 selection,sel_distance,qlever,wrong answer,154.869,144.395,725.224,mismatch,ref 6 got 7: 0 missing; 1 extra
+large,1 selection,sel_polygon,qlever,ok,756.424,420.738,749.135,ok,
+large,4 aggregate,agg_length_region,jena,n/a,,,,ok,n/a: geof:metricLength / metricArea / aggUnion are not implemented by jena-geosparql 6.2 (they return no value; geof:intersection works)
+large,4 aggregate,agg_total_length,jena,n/a,,,,ok,n/a: geof:metricLength / metricArea / aggUnion are not implemented by jena-geosparql 6.2 (they return no value; geof:intersection works)
+large,4 aggregate,agg_union_buffers,jena,n/a,,,,ok,n/a: geof:metricLength / metricArea / aggUnion are not implemented by jena-geosparql 6.2 (they return no value; geof:intersection works)
+large,6 routing,components,jena,n/a,,,,ok,n/a: no routing
+large,6 routing,cost_matrix_100,jena,n/a,,,,ok,n/a: no routing
+large,6 routing,driving_distance_50km,jena,n/a,,,,ok,n/a: no routing
+large,3 join,join_op_region,jena,ok,9366.721,7642.115,8023.601,ok,
+large,3 join,join_signal_ne_20m,jena,failed,,,,ok,failed: HTTP 503: Query timed out 
+large,2 knn,knn_ops,jena,ok,1707.618,411.924,470.577,ok,
+large,2 knn,knn_signals,jena,ok,10061.858,2370.742,2656.173,ok,match: same set; other order
+large,6 routing,ksp5,jena,n/a,,,,ok,n/a: no routing
+large,5 linear referencing,lr_assets_between_km,jena,ok,208.152,36.538,58.023,ok,
+large,5 linear referencing,lr_km_to_point,jena,n/a,,,,ok,n/a: no linear-referencing functions
+large,7 mixed,mixed_route_signals,jena,n/a,,,,ok,n/a: no routing
+large,6 routing,route_bddijkstra,jena,n/a,,,,ok,n/a: no routing
+large,6 routing,route_ch,jena,n/a,,,,ok,n/a: no routing
+large,6 routing,route_constrained,jena,n/a,,,,ok,n/a: no routing
+large,6 routing,route_dijkstra,jena,n/a,,,,ok,n/a: no routing
+large,6 routing,route_dijkstra_cost,jena,n/a,,,,ok,n/a: no routing
+large,1 selection,sel_bbox,jena,ok,162.802,31.273,46.544,ok,
+large,1 selection,sel_distance,jena,wrong answer,37.206,33.316,54.641,mismatch,ref 6 got 7: 0 missing; 1 extra
+large,1 selection,sel_polygon,jena,ok,129.87,37.21,53.279,ok,
+large,4 aggregate,agg_length_region,graphdb,n/a,,,,ok,n/a: geof:metricLength / metricArea / aggUnion (GeoSPARQL 1.1) are unknown to GraphDB 10.8 (HTTP 500 'Unknown function')
+large,4 aggregate,agg_total_length,graphdb,n/a,,,,ok,n/a: geof:metricLength / metricArea / aggUnion (GeoSPARQL 1.1) are unknown to GraphDB 10.8 (HTTP 500 'Unknown function')
+large,4 aggregate,agg_union_buffers,graphdb,n/a,,,,ok,n/a: geof:metricLength / metricArea / aggUnion (GeoSPARQL 1.1) are unknown to GraphDB 10.8 (HTTP 500 'Unknown function')
+large,6 routing,components,graphdb,n/a,,,,ok,n/a: no routing
+large,6 routing,cost_matrix_100,graphdb,n/a,,,,ok,n/a: no routing
+large,6 routing,driving_distance_50km,graphdb,n/a,,,,ok,n/a: no routing
+large,3 join,join_op_region,graphdb,ok,16672.413,16529.891,16650.34,ok,
+large,3 join,join_signal_ne_20m,graphdb,failed,,,,ok,failed: HTTP 503: Query interrupted: Query evaluation took too long 
+large,2 knn,knn_ops,graphdb,ok,595.225,589.419,691.062,ok,
+large,2 knn,knn_signals,graphdb,ok,4946.644,3162.82,3754.036,ok,
+large,6 routing,ksp5,graphdb,n/a,,,,ok,n/a: no routing
+large,5 linear referencing,lr_assets_between_km,graphdb,ok,232.21,12.595,19.9,ok,
+large,5 linear referencing,lr_km_to_point,graphdb,n/a,,,,ok,n/a: no linear-referencing functions
+large,7 mixed,mixed_route_signals,graphdb,n/a,,,,ok,n/a: no routing
+large,6 routing,route_bddijkstra,graphdb,n/a,,,,ok,n/a: no routing
+large,6 routing,route_ch,graphdb,n/a,,,,ok,n/a: no routing
+large,6 routing,route_constrained,graphdb,n/a,,,,ok,n/a: no routing
+large,6 routing,route_dijkstra,graphdb,n/a,,,,ok,n/a: no routing
+large,6 routing,route_dijkstra_cost,graphdb,n/a,,,,ok,n/a: no routing
+large,1 selection,sel_bbox,graphdb,ok,639.571,196.23,346.064,ok,
+large,1 selection,sel_distance,graphdb,ok,2729.926,2075.501,2304.228,ok,
+large,1 selection,sel_polygon,graphdb,ok,198.175,168.183,201.832,ok,
+large,4 aggregate,agg_length_region,postgis,ok,5833.028,5462.866,5484.658,,
+large,4 aggregate,agg_total_length,postgis,ok,297.776,256.152,262.474,,
+large,4 aggregate,agg_union_buffers,postgis,ok,12.204,5.626,12.562,,
+large,6 routing,components,postgis,ok,904.02,894.802,941.407,,
+large,6 routing,cost_matrix_100,postgis,ok,20082.211,19959.902,20274.263,,
+large,6 routing,driving_distance_50km,postgis,ok,1288.807,1843.96,2530.492,,
+large,3 join,join_op_region,postgis,ok,56.196,41.188,41.411,,
+large,3 join,join_signal_ne_20m,postgis,ok,964.265,866.799,877.759,,
+large,2 knn,knn_ops,postgis,ok,1.748,1.037,1.245,,
+large,2 knn,knn_signals,postgis,ok,37.612,0.674,0.814,,
+large,6 routing,ksp5,postgis,ok,52499.948,12199.213,53335.414,,
+large,5 linear referencing,lr_assets_between_km,postgis,ok,1.098,0.292,0.366,,
+large,5 linear referencing,lr_km_to_point,postgis,ok,41.338,9.159,11.821,,
+large,7 mixed,mixed_route_signals,postgis,ok,1353.408,816.987,947.451,,
+large,6 routing,route_bddijkstra,postgis,ok,900.888,834.227,927.112,,
+large,6 routing,route_ch,postgis,n/a,,,,ok,n/a: pgRouting has no contraction-hierarchy query (pgr_contraction only contracts)
+large,6 routing,route_constrained,postgis,ok,703.46,712.962,776.959,,
+large,6 routing,route_dijkstra,postgis,ok,1277.89,836.502,926.687,,
+large,6 routing,route_dijkstra_cost,postgis,ok,911.441,830.407,914.218,,
+large,1 selection,sel_bbox,postgis,ok,17.263,0.667,0.774,,
+large,1 selection,sel_distance,postgis,ok,23.894,1.636,3.799,,
+large,1 selection,sel_polygon,postgis,ok,0.848,0.7,0.805,,
+osm_norway,8 osm,osm_station_admin,tripletrail,ok,68.914,41.272,43.641,ok,
+osm_norway,8 osm,osm_track_landuse,tripletrail,ok,165.697,162.378,175.558,ok,
+osm_norway,8 osm,osm_track_track_5m,tripletrail,wrong answer,81.479,41.161,44.591,mismatch,[42326.0] vs [42328.0] (x6)
+osm_norway,8 osm,osm_station_admin,qlever,ok,2804.006,2769.598,2782.545,ok,
+osm_norway,8 osm,osm_track_landuse,qlever,wrong answer,2222.312,2143.663,2158.448,mismatch,[6599.0] vs [6601.0] (x6)
+osm_norway,8 osm,osm_track_track_5m,qlever,wrong answer,501.393,451.374,462.884,mismatch,[42326.0] vs [42346.0] (x6)
+osm_norway,8 osm,osm_station_admin,jena,ok,6699.912,3947.839,4040.723,ok,
+osm_norway,8 osm,osm_track_landuse,jena,failed,,,,ok,failed: HTTP 503: Query timed out 
+osm_norway,8 osm,osm_track_track_5m,jena,wrong answer,99978.424,97557.992,97620.212,mismatch,[42326.0] vs [39689.0] (x6)
+osm_norway,8 osm,osm_station_admin,graphdb,ok,204767.434,204261.684,204352.115,ok,
+osm_norway,8 osm,osm_track_landuse,graphdb,failed,,,,ok,failed: HTTP 503: Query interrupted: Query evaluation took too long 
+osm_norway,8 osm,osm_track_track_5m,graphdb,failed,,,,ok,failed: HTTP 503: Query interrupted: Query evaluation took too long 
+osm_norway,8 osm,osm_station_admin,postgis,ok,213.014,160.098,161.887,,
+osm_norway,8 osm,osm_track_landuse,postgis,ok,833.13,707.436,717.998,,
+osm_norway,8 osm,osm_track_track_5m,postgis,ok,2723.389,2735.476,2757.304,,
+osm_benelux,8 osm,osm_station_admin,tripletrail,ok,173.94,105.388,118.873,unchecked,other extract (201;152;412 triples against 201;065;992): 0 agree; 6 differ
+osm_benelux,8 osm,osm_track_landuse,tripletrail,ok,1416.517,1374.922,1398.491,unchecked,other extract (201;152;412 triples against 201;065;992): 0 agree; 6 differ
+osm_benelux,8 osm,osm_track_track_5m,tripletrail,ok,1237.039,1204.308,1219.937,unchecked,other extract (201;152;412 triples against 201;065;992): 0 agree; 6 differ
+osm_benelux,9 scale,scale_building_kinds,tripletrail,ok,74.606,8.114,8.208,unchecked,other extract (201;152;412 triples against 201;065;992): 0 agree; 6 differ
+osm_benelux,9 scale,scale_class_counts,tripletrail,ok,3.073,4.088,5.608,unchecked,other extract (201;152;412 triples against 201;065;992): 0 agree; 6 differ
+osm_benelux,9 scale,scale_label_lookup,tripletrail,ok,34.145,2.565,4.828,ok,other extract (201;152;412 triples against 201;065;992): 23 agree; 0 differ
+osm_benelux,9 scale,scale_named_stations,tripletrail,ok,6.217,7.213,9.19,unchecked,other extract (201;152;412 triples against 201;065;992): 0 agree; 6 differ
+osm_benelux,8 osm,osm_station_admin,qlever,ok,2460.746,2419.764,2423.639,unchecked,6 runs without a majority answer
+osm_benelux,8 osm,osm_track_landuse,qlever,ok,15828.848,16008.91,16176.719,unchecked,6 runs without a majority answer
+osm_benelux,8 osm,osm_track_track_5m,qlever,ok,2314.61,2327.563,2336.316,unchecked,6 runs without a majority answer
+osm_benelux,9 scale,scale_building_kinds,qlever,ok,17.168,15.64,15.714,ok,
+osm_benelux,9 scale,scale_class_counts,qlever,ok,7.008,3.69,4.803,ok,
+osm_benelux,9 scale,scale_label_lookup,qlever,ok,9.701,6.731,8.488,ok,
+osm_benelux,9 scale,scale_named_stations,qlever,ok,89.273,86.564,89.465,ok,
+osm_benelux,8 osm,osm_station_admin,graphdb,failed,,,,ok,failed: HTTP 503: Query interrupted: Query evaluation took too long 
+osm_benelux,8 osm,osm_track_landuse,graphdb,failed,,,,ok,failed: HTTP 503: Query interrupted: Query evaluation took too long 
+osm_benelux,8 osm,osm_track_track_5m,graphdb,failed,,,,ok,failed: HTTP 503: Query interrupted: Query evaluation took too long 
+osm_benelux,9 scale,scale_building_kinds,graphdb,ok,4722.346,4383.779,4405.595,ok,
+osm_benelux,9 scale,scale_class_counts,graphdb,ok,16089.97,12396.803,12398.954,ok,
+osm_benelux,9 scale,scale_label_lookup,graphdb,ok,13.117,3.493,6.146,ok,
+osm_benelux,9 scale,scale_named_stations,graphdb,ok,46.484,19.09,22.17,ok,
+osm_europe,8 osm,osm_station_admin,tripletrail,ok,14266.893,3989.581,3994.668,unchecked,other extract (1;000;055;618 triples against 1;000;066;611): 0 agree; 6 differ
+osm_europe,8 osm,osm_track_landuse,tripletrail,failed,,,,,
+osm_europe,8 osm,osm_track_track_5m,tripletrail,ok,279837.208,163708.22,164079.934,unchecked,other extract (1;000;055;618 triples against 1;000;066;611): 0 agree; 5 differ
+osm_europe,9 scale,scale_building_kinds,tripletrail,ok,1320.251,11.866,12.366,unchecked,other extract (1;000;055;618 triples against 1;000;066;611): 0 agree; 6 differ
+osm_europe,9 scale,scale_class_counts,tripletrail,ok,155.492,2.736,7.819,unchecked,other extract (1;000;055;618 triples against 1;000;066;611): 0 agree; 6 differ
+osm_europe,9 scale,scale_label_lookup,tripletrail,ok,492.493,2.438,2.797,ok,other extract (1;000;055;618 triples against 1;000;066;611): 23 agree; 0 differ
+osm_europe,9 scale,scale_named_stations,tripletrail,ok,4004.158,28.621,28.693,unchecked,other extract (1;000;055;618 triples against 1;000;066;611): 0 agree; 6 differ
+osm_europe,8 osm,osm_station_admin,qlever,ok,85409.145,54997.941,55446.02,unchecked,6 runs without a majority answer
+osm_europe,8 osm,osm_track_landuse,qlever,failed,,,,,
+osm_europe,8 osm,osm_track_track_5m,qlever,ok,23174.651,22728.507,22996.886,unchecked,6 runs without a majority answer
+osm_europe,9 scale,scale_building_kinds,qlever,ok,1234.799,32.636,34.12,ok,
+osm_europe,9 scale,scale_class_counts,qlever,ok,7.766,4.282,4.349,ok,
+osm_europe,9 scale,scale_label_lookup,qlever,ok,14.447,8.23,9.102,ok,
+osm_europe,9 scale,scale_named_stations,qlever,ok,779.469,850.837,859.991,ok,
+osm_europe,8 osm,osm_track_track_5m,graphdb,failed,,,,ok,failed: HTTP 503: Query interrupted: Query evaluation took too long 
+osm_europe,9 scale,scale_building_kinds,graphdb,ok,22632.467,19368.75,19395.868,ok,
+osm_europe,9 scale,scale_class_counts,graphdb,ok,72755.013,62313.096,63121.403,ok,
+osm_europe,9 scale,scale_label_lookup,graphdb,ok,32.592,5.227,7.685,ok,
+osm_europe,9 scale,scale_named_stations,graphdb,ok,1728.793,307.569,353.517,ok,

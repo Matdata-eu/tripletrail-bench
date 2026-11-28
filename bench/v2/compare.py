@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Compare every engine's results with the reference (PostGIS/pgRouting, else tripletrail).
+"""Compare every engine's results with the reference: PostGIS/pgRouting when it answered, else
+the majority answer of the engines that answered (never one engine alone, TripleTrail included).
 
   compare.py <results>/<dataset>     -> correctness.csv and correctness.json in that folder
 
@@ -13,9 +14,18 @@ Runs are matched by run index (same parameters). Checks per result kind:
            edge sequence counts as "tie" (an equal-cost alternative), not as a mismatch
   costs    same number of paths, costs equal within the tolerance
 
+Without PostGIS (the scale suite, OSM runs without it), the reference of each run is the answer a
+strict majority of the engines that answered gave, and at least two of them: with two engines they
+must agree, and one engine alone is never the reference. A run without such a majority counts
+under no_reference, not as a mismatch of anyone (tripletrail-bench#96).
+
 An engine whose load.json names another triple count than the reference's ran on another extract
 (the scale suite downloads the newest OSM file): its differing answers are counted under
-other_extract instead of mismatch, since they say nothing about either engine.
+other_extract instead of mismatch, since they say nothing about either engine. Without PostGIS
+the majority is taken among the engines on the extract most of them loaded.
+
+verdicts() reads correctness.csv back for report.py and dashboard.py, which mark a mismatching
+query and leave it out of means and speedups.
 """
 import csv
 import glob
@@ -113,8 +123,59 @@ def load(folder):
         engine, name = os.path.basename(os.path.dirname(p)), os.path.basename(p)[:-5]
         if name == "load":
             continue
-        res.setdefault(name, {})[engine] = json.load(open(p))
+        with open(p) as f:
+            res.setdefault(name, {})[engine] = json.load(f)
     return res
+
+
+def agree(kind, a, b, tol):
+    return cmp(kind, a, b, tol)[0] in ("match", "tie")
+
+
+def majority(kind, answers, tol):
+    """The answer most of the engines gave for one run: {engine: result} -> (result, engines
+    that gave it), or (None, []) when no answer has a strict majority of at least two engines.
+    One engine alone is never the reference, whatever it is."""
+    best, side = None, []
+    for e, a in sorted(answers.items()):
+        with_e = [f for f, b in answers.items() if agree(kind, a, b, tol)]
+        if len(with_e) > len(side):
+            best, side = a, with_e
+    if len(side) >= 2 and 2 * len(side) > len(answers):
+        return best, sorted(side)
+    return None, []
+
+
+def main_extract(loaded):
+    """The triple count most engines of the dataset loaded (the larger one on a tie), or None
+    when they all loaded the same or say nothing."""
+    by = {}
+    for n in loaded.values():
+        by[n] = by.get(n, 0) + 1
+    return max(by, key=lambda n: (by[n], n)) if len(by) > 1 else None
+
+
+def references(q, ok, loaded):
+    """The reference answer of each run of one query: PostGIS/pgRouting when it answered, else
+    the majority answer of the engines that answered (majority above), among the engines that
+    loaded the extract most engines of the dataset loaded. Returns (name, {index: result},
+    engines on another extract)."""
+    if "postgis" in ok:
+        return "postgis", {r["index"]: r["result"] for r in ok["postgis"]["runs"] if r.get("ok")}, set()
+    # Engines on another extract than most say nothing about the others' answers.
+    main_n = main_extract(loaded)
+    pool = {e for e in ok if main_n is None or loaded.get(e, main_n) == main_n}
+    runs = {}
+    for e in pool:
+        for r in ok[e]["runs"]:
+            if r.get("ok"):
+                runs.setdefault(r["index"], {})[e] = r["result"]
+    ref = {}
+    for i, answers in runs.items():
+        a, _ = majority(q["kind"], answers, q["tol"])
+        if a is not None:
+            ref[i] = a
+    return "majority", ref, set(ok) - pool
 
 
 def main():
@@ -125,21 +186,24 @@ def main():
     for qid, q in QUERIES.items():
         by = res.get(qid, {})
         ok = {e: r for e, r in by.items() if r.get("status", "").startswith("ok")}
-        ref_engine = "postgis" if "postgis" in ok else ("tripletrail" if "tripletrail" in ok else None)
-        if not ref_engine:
+        if not ok:
             continue
-        ref_runs = {r["index"]: r["result"] for r in ok[ref_engine]["runs"] if r.get("ok")}
+        ref_engine, ref_runs, elsewhere = references(q, ok, loaded)
         for e, rec in sorted(by.items()):
             if e == ref_engine:
                 continue
             if not rec.get("status", "").startswith("ok"):
                 rows.append(dict(qid=qid, engine=e, reference=ref_engine, compared=0, match=0, tie=0,
-                                 mismatch=0, other_extract=0, note=f"{rec.get('status')}: {rec.get('reason', '')}"[:200]))
+                                 mismatch=0, other_extract=0, no_reference=0,
+                                 note=f"{rec.get('status')}: {rec.get('reason', '')}"[:200]))
                 continue
-            counts = {"match": 0, "tie": 0, "mismatch": 0}
+            counts = {"match": 0, "tie": 0, "mismatch": 0, "no_reference": 0}
             notes, examples = {}, []
             for r in rec["runs"]:
-                if not r.get("ok") or r["index"] not in ref_runs:
+                if not r.get("ok"):
+                    continue
+                if r["index"] not in ref_runs:
+                    counts["no_reference"] += 1
                     continue
                 v, note = cmp(q["kind"], ref_runs[r["index"]], r["result"], q["tol"])
                 counts[v] += 1
@@ -149,25 +213,58 @@ def main():
                 if v != "match" and len(examples) < 5:
                     examples.append({"index": r["index"], "verdict": v, "note": note})
             summary_note = "; ".join(f"{k} (x{n})" if n > 1 else k for k, n in list(notes.items())[:3])
-            if e in loaded and ref_engine in loaded and loaded[e] != loaded[ref_engine]:
+            if counts["no_reference"]:
+                summary_note = (f"{counts['no_reference']} runs without a majority answer"
+                                + (f"; {summary_note}" if summary_note else ""))
+            ref_n = loaded.get(ref_engine) if ref_engine != "majority" else None
+            if e in elsewhere or (e in loaded and ref_n is not None and loaded[e] != ref_n):
                 # Another extract: a differing answer says nothing about either engine.
-                summary_note = (f"other extract ({loaded[e]:,} triples against {loaded[ref_engine]:,}): "
-                                f"{counts['match'] + counts['tie']} agree, {counts['mismatch']} differ")
-                counts = {"match": counts["match"], "tie": counts["tie"], "mismatch": 0, "other_extract": counts["mismatch"]}
+                theirs = ref_n if ref_n is not None else main_extract(loaded)
+                summary_note = (f"other extract ({loaded[e]:,} triples against {theirs:,}): "
+                                f"{counts['match'] + counts['tie']} agree, "
+                                f"{counts['mismatch'] + counts['no_reference']} differ") if theirs else "other extract"
+                counts = {"match": counts["match"], "tie": counts["tie"], "mismatch": 0, "no_reference": 0,
+                          "other_extract": counts["mismatch"] + counts["no_reference"]}
             rows.append(dict(qid=qid, engine=e, reference=ref_engine, compared=sum(counts.values()),
-                             **{k: counts.get(k, 0) for k in ("match", "tie", "mismatch", "other_extract")},
+                             **{k: counts.get(k, 0) for k in ("match", "tie", "mismatch", "other_extract",
+                                                              "no_reference")},
                              note=summary_note[:300]))
             details[f"{qid}/{e}"] = {"counts": counts, "examples": examples, "notes": notes}
     with open(os.path.join(folder, "correctness.csv"), "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=["qid", "engine", "reference", "compared", "match", "tie", "mismatch", "other_extract", "note"])
+        w = csv.DictWriter(f, fieldnames=FIELDS)
         w.writeheader()
         w.writerows(rows)
     with open(os.path.join(folder, "correctness.json"), "w") as f:
         json.dump(details, f, indent=1)
     for r in rows:
         print(f"{r['qid']:24s} {r['engine']:8s} vs {r['reference']:8s} {r['compared']:5d} compared: "
-              f"{r['match']} match, {r['tie']} tie, {r['mismatch']} mismatch, {r['other_extract']} other extract"
-              f"  {r['note'][:150]}")
+              f"{r['match']} match, {r['tie']} tie, {r['mismatch']} mismatch, {r['other_extract']} other extract, "
+              f"{r['no_reference']} no reference  {r['note'][:150]}")
+
+
+FIELDS = ["qid", "engine", "reference", "compared", "match", "tie", "mismatch", "other_extract", "no_reference",
+          "note"]
+
+
+def verdicts(folder):
+    """{(qid, engine): (verdict, note)} from a dataset's correctness.csv, for the report and the
+    dashboard: "mismatch" when any run differs from the reference, "unchecked" when no run could
+    be compared (another extract, no majority), else "ok". Empty without the file."""
+    out = {}
+    path = os.path.join(folder, "correctness.csv")
+    if not os.path.exists(path):
+        return out
+    with open(path, newline="") as f:
+        for r in csv.DictReader(f):
+            n = {k: int(r.get(k) or 0) for k in ("match", "tie", "mismatch", "other_extract", "no_reference")}
+            if n["mismatch"]:
+                v = "mismatch"
+            elif n["match"] + n["tie"] == 0 and n["other_extract"] + n["no_reference"]:
+                v = "unchecked"
+            else:
+                v = "ok"
+            out[(r["qid"], r["engine"])] = (v, r.get("note", ""))
+    return out
 
 
 if __name__ == "__main__":

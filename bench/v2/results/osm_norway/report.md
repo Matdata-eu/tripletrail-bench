@@ -12,8 +12,8 @@
 | Query | tripletrail | PostGIS/pgRouting | GraphDB | Jena GeoSPARQL | QLever |
 |---|---|---|---|---|---|
 | osm_station_admin | 41 / 44 (69) | 160 / 162 (213) | 204 s / 204 s (205 s) | 3.95 s / 4.04 s (6.70 s) | 2.77 s / 2.78 s (2.80 s) |
-| osm_track_landuse | 162 / 176 (166) | 707 / 718 (833) | error [1] | error [2] | 2.14 s / 2.16 s (2.22 s) |
-| osm_track_track_5m | 41 / 45 (81) | 2.74 s / 2.76 s (2.72 s) | error [3] | 98 s / 98 s (100 s) | 451 / 463 (501) |
+| osm_track_landuse | 162 / 176 (166) | 707 / 718 (833) | timeout [1] | timeout [2] | ~~2.14 s / 2.16 s (2.22 s)~~ wrong [3] |
+| osm_track_track_5m | ~~41 / 45 (81)~~ wrong [4] | 2.74 s / 2.76 s (2.72 s) | timeout [5] | ~~98 s / 98 s (100 s)~~ wrong [6] | ~~451 / 463 (501)~~ wrong [7] |
 
 Notes:
 
@@ -21,5 +21,9 @@ Notes:
 
 2. Jena GeoSPARQL osm_track_landuse: HTTP 503: Query timed out
 
-3. GraphDB osm_track_track_5m: HTTP 503: Query interrupted: Query evaluation took too long
+3. QLever osm_track_landuse: answer differs from the reference (correctness.csv): [6599.0] vs [6601.0] (x6)
+4. tripletrail osm_track_track_5m: answer differs from the reference (correctness.csv): [42326.0] vs [42328.0] (x6)
+5. GraphDB osm_track_track_5m: HTTP 503: Query interrupted: Query evaluation took too long
 
+6. Jena GeoSPARQL osm_track_track_5m: answer differs from the reference (correctness.csv): [42326.0] vs [39689.0] (x6)
+7. QLever osm_track_track_5m: answer differs from the reference (correctness.csv): [42326.0] vs [42346.0] (x6)
