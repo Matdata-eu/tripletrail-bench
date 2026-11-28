@@ -23,7 +23,9 @@ profile, and results/shacl/<D>/<profile>/<engine>.json gets: every run's wall ti
 command: start, parsing, validation, report), the median, the validation time where the engine
 logs it, peak memory, the results by severity and the SHA-256 of the sorted result keys (focus
 node, path, constraint component, severity). A run under SHACL_REPEAT_BELOW seconds (300) is
-repeated twice more. A timeout (SHACL_TIMEOUT, 3600 s) or a crash is recorded as the result,
+repeated twice more. Where engines' keys differ, results/shacl/<D>/<profile>/differences.json
+counts the keys only one of them gives, by path, constraint component and severity, against
+TopBraid's keys (or Jena's when TopBraid has none): it names no focus node. A timeout (SHACL_TIMEOUT, 3600 s) or a crash is recorded as the result,
 and an engine that times out skips the dataset's later profiles; an engine that timed out or
 failed on a profile of a smaller dataset (one already in results/shacl/) skips it on this one. Reports hold RINF values, so
 they stay in $BENCH_WORK; only the JSON is committed.
@@ -260,7 +262,8 @@ def run(ds, engines):
         for engine in left_out:
             json.dump({"engine": engine, "skipped": "left out of this dataset by the benchmark profile "
                        "(bench/v2/profiles/shacl.txt)"}, open(os.path.join(res, f"{engine}.json"), "w"), indent=1)
-        os.makedirs(os.path.join(work, profile), exist_ok=True)
+        keys_dir = os.path.join(work, profile, "keys")
+        os.makedirs(keys_dir, exist_ok=True)
         for engine in engines:
             smaller = failed_on_smaller(ds, triples, profile, engine)
             if engine in timed_out:
@@ -269,19 +272,91 @@ def run(ds, engines):
                 rec = {"engine": engine, "skipped": smaller}
             else:
                 print(f"=== shacl {ds} {profile} on {engine}", flush=True)
-                rec = run_one(engine, data, shapes[profile], os.path.join(work, profile))
+                rec = run_one(engine, data, shapes[profile], os.path.join(work, profile),
+                              os.path.join(keys_dir, f"{engine}.keys"))
                 if rec.get("timed_out"):
                     timed_out.add(engine)
                 if "error" in rec:
                     print(f"!!! shacl {ds} {profile} failed on {engine}: {rec['error']}", flush=True)
             json.dump(rec, open(os.path.join(res, f"{engine}.json"), "w"), indent=1)
             print(json.dumps({k: v for k, v in rec.items() if k != "runs"}), flush=True)
+        differences(keys_dir, res)
     meta = {"dataset": ds, "data_triples": triples,
             "shapes_sha256": subprocess.run(["sha256sum", shapes["era"]], capture_output=True,
                                             text=True).stdout.split()[0],
             "profiles": {p: sum(1 for line in open(f) if line.strip()) for p, f in shapes.items()}}
     json.dump(meta, open(os.path.join(RESULTS, ds, "data.json"), "w"), indent=1)
     report()
+
+
+def read_keys(path):
+    with open(path, encoding="utf-8") as f:
+        for line in f:
+            yield line.rstrip("\n")
+
+
+def key_diff(a, b):
+    """The keys of sorted key files a and b that only one gives: (key, side), side "a" or "b"."""
+    ia, ib = read_keys(a), read_keys(b)
+    x, y = next(ia, None), next(ib, None)
+    while x is not None or y is not None:
+        if y is None or (x is not None and x < y):
+            yield x, "a"
+            x = next(ia, None)
+        elif x is None or y < x:
+            yield y, "b"
+            y = next(ib, None)
+        else:
+            x, y = next(ia, None), next(ib, None)
+
+
+def short(iri):
+    """A SHACL IRI by its local name (sh:MinCountConstraintComponent as MinCountConstraintComponent)."""
+    return iri.removeprefix("http://www.w3.org/ns/shacl#")
+
+
+def differences(keys_dir, res):
+    """Compares each engine's result keys with the reference engine's (TopBraid, else Jena) and
+    writes res/differences.json: per engine, the keys only it gives and those only the reference
+    gives, counted by path, constraint component and severity. The keys name RINF focus nodes, so
+    they are work files, deleted here; the JSON holds no focus node."""
+    files = {os.path.basename(f)[:-5]: f for f in glob.glob(os.path.join(keys_dir, "*.keys"))}
+    ref = next((e for e in ("topbraid", "jena") if e in files), None)
+    out = os.path.join(res, "differences.json")
+    if os.path.exists(out):
+        os.remove(out)
+    found = {}
+    for engine, f in sorted(files.items()):
+        if ref is None or engine == ref:
+            continue
+        groups, totals = {}, {"a": 0, "b": 0}
+        for key, side in key_diff(f, files[ref]):
+            _, path, comp, sev = (key.split("\t") + [None] * 4)[:4]
+            g = groups.setdefault((path, short(comp or "None"), short(sev or "None")), {"a": 0, "b": 0})
+            g[side] += 1
+            totals[side] += 1
+        if groups:
+            found[engine] = {"only_here": totals["a"], "only_in_reference": totals["b"], "by_path": [
+                {"path": p, "component": c, "severity": s, "only_here": n["a"], "only_in_reference": n["b"]}
+                for (p, c, s), n in sorted(groups.items(), key=lambda kv: -(kv[1]["a"] + kv[1]["b"]))]}
+    if found:
+        json.dump({"reference": ref, "engines": found}, open(out, "w"), indent=1)
+    for f in files.values():
+        os.remove(f)
+
+
+def differences_lines(path):
+    """The report's lines for a differences.json: per engine, the keys only it or only the
+    reference gives, and the ten largest groups."""
+    d = json.load(open(path))
+    lines = []
+    for e, r in d["engines"].items():
+        groups = "; ".join(f"{g['component']} on {g['path']} ({g['severity']}): {g['only_here']:,} only here, "
+                           f"{g['only_in_reference']:,} only in {d['reference']}" for g in r["by_path"][:10])
+        more = f"; and {len(r['by_path']) - 10} more" if len(r["by_path"]) > 10 else ""
+        lines.append(f"- {e} against {d['reference']}: {r['only_here']:,} keys only in {e}, "
+                     f"{r['only_in_reference']:,} only in {d['reference']}. {groups}{more}.")
+    return lines + [""] if lines else []
 
 
 def run_inject(ds, engines):
@@ -386,7 +461,8 @@ def report():
         out += [f"## {meta['dataset']} ({meta['data_triples']:,} triples with the ontology and code lists)", ""]
         for profile in PROFILES:
             recs = {os.path.basename(p)[:-5]: json.load(open(p))
-                    for p in sorted(glob.glob(os.path.join(ds_dir, profile, "*.json")))}
+                    for p in sorted(glob.glob(os.path.join(ds_dir, profile, "*.json")))
+                    if not p.endswith("differences.json")}
             if not recs:
                 continue
             agree = agreement(recs)
@@ -409,6 +485,9 @@ def report():
                            f"{fmt(r['peak_rss_bytes'] / 2**20, 0)} | {results_cell(r)} | {sev.get('Violation', 0):,} | "
                            f"{sev.get('Warning', 0):,} | {a[0]} | {a[1]} |")
             out.append("")
+            diff = os.path.join(ds_dir, profile, "differences.json")
+            if os.path.exists(diff):
+                out += differences_lines(diff)
         inj = os.path.join(ds_dir, "injected", "manifest.json")
         if os.path.exists(inj):
             m = json.load(open(inj))
