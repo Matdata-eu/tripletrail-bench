@@ -92,6 +92,15 @@ real-world tarballs into one N-Quads file, each dataset in the named graph the q
     dashboard lists it with its note.
   - Times that could not be checked (another extract, no majority) stay in, marked "unchecked"
     in `report.md`.
+  - Sparqloscope, BSBM and Trainmarks compare result sizes by the same majority rule
+    (`bench/v2/majority.py`).
+    - Sparqloscope compares the row count, and for a one-row answer its values. A query whose
+      answer differs from the majority is "wrong": its time is left out of that engine's
+      geometric means and counted in a "wrong" row of its report and column of the dashboard.
+    - Trainmarks compares row counts, and leaves a wrong query out of the engine's geometric mean.
+    - BSBM's mixes cannot be split. A use case with wrong result counts keeps its QMpH, marked †,
+      but that QMpH is left out of `summary.json` and of the dashboard's comparison. The wrong
+      templates' average times are left out of the per-template times.
 - **Query forms.** Each engine runs its own fastest correct form of the same question, in
   `bench/v2/queries/<engine>/`. TripleTrail and GraphDB use standard GeoSPARQL `FILTER` functions
   (GraphDB uses its indexed `geo:sfWithin` property form for the box and polygon selections).

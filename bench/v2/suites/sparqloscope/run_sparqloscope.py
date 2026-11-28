@@ -49,6 +49,7 @@ import yaml
 HERE = os.path.dirname(os.path.abspath(__file__))
 V2 = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, V2)
+from majority import sparqloscope_answer as answer, sparqloscope_failed as failed, wrong as off_majority  # noqa: E402
 from run import Sparql  # noqa: E402
 
 WORK = os.environ.get("BENCH_WORK", os.path.join(V2, "work"))
@@ -224,22 +225,6 @@ def alive(e):
         return False
 
 
-def failed(r):
-    return isinstance(r.get("results"), str) and r["results"].startswith("Exception")
-
-
-def one_row(rows):
-    """The values of a one-row answer, numbers rounded to 10 significant digits (engines print
-    decimals with different precision)."""
-    out = []
-    for v in (rows[0] if rows else []):
-        try:
-            out.append(f"{float(v):.10g}")
-        except (TypeError, ValueError):
-            out.append(str(v))
-    return str(out)
-
-
 def category(qid):
     for name, pat in CATEGORIES:
         if re.search(pat, qid):
@@ -280,8 +265,11 @@ def cmd_report(_a):
     lines = ["# Sparqloscope results", "",
              "One cold run per query after an engine restart (QLever's cache cleared before each "
              "query), at the client, HTTP included. Failed and timed-out queries count as 2 x the "
-             "timeout in the geometric means, as on the QLever evaluation site. Engines whose "
-             "result sizes differ from the majority are listed per query in the last section.", ""]
+             "timeout in the geometric means, as on the QLever evaluation site. A query whose "
+             "answer (row count, or the value of a one-row answer) differs from the majority is "
+             "wrong: it is left out of that engine's geometric means, counted in the wrong row, "
+             "marked in the per-query table and listed in the last section. The majority is at "
+             "least two engines, and more than half of those that answered.", ""]
     for d in sorted(glob.glob(os.path.join(OUT, "*", ""))):
         ds = os.path.basename(os.path.dirname(d))
         docs = {}
@@ -292,14 +280,23 @@ def cmd_report(_a):
             continue
         es = [e for e in ENGINES if e in docs] + sorted(set(docs) - set(ENGINES))
         n = max(len(doc["queries"]) for doc in docs.values())
+        answers = {}
+        for e in es:
+            for r in docs[e]["queries"]:
+                if not failed(r):
+                    answers.setdefault(r["query"], {})[e] = answer(r)
+        bad = {q: off_majority(a) for q, a in answers.items()}
         lines += [f"## {ds} ({n} queries)", "", "| | " + " | ".join(es) + " |", "|---|" + "---:|" * len(es)]
         stats = {}
         for e in es:
             doc = docs[e]
             to = doc.get("timeout", 180)
-            times, ok, fail, tout, cats = [], 0, 0, 0, {}
+            times, ok, fail, tout, wrong, cats = [], 0, 0, 0, 0, {}
             for r in doc["queries"]:
                 t = r.get("runtime_info", {}).get("client_time", 0)
+                if e in bad.get(r["query"], ()):
+                    wrong += 1
+                    continue
                 if failed(r):
                     msg = r["results"].lower()
                     if "timeout" in msg or "timed out" in msg or "cancel" in msg:
@@ -311,12 +308,13 @@ def cmd_report(_a):
                     ok += 1
                 times.append(t)
                 cats.setdefault(category(r["query"]), []).append(t)
-            stats[e] = dict(ok=ok, fail=fail, tout=tout, g=gmean(times), cats=cats,
+            stats[e] = dict(ok=ok, fail=fail, tout=tout, wrong=wrong, g=gmean(times), cats=cats,
                             load=doc.get("load", {}).get("load_s"))
         lines.append("| load (s) | " + " | ".join(str(stats[e]["load"] or "") for e in es) + " |")
         lines.append("| answered | " + " | ".join(str(stats[e]["ok"]) for e in es) + " |")
         lines.append("| failed | " + " | ".join(str(stats[e]["fail"]) for e in es) + " |")
         lines.append("| timed out | " + " | ".join(str(stats[e]["tout"]) for e in es) + " |")
+        lines.append("| wrong (not in the means) | " + " | ".join(str(stats[e]["wrong"]) for e in es) + " |")
         lines.append("| **geometric mean** | " + " | ".join(f"**{fmt(stats[e]['g'])}**" for e in es) + " |")
         for c, _ in CATEGORIES + [("other", "")]:
             if any(c in stats[e]["cats"] for e in es):
@@ -337,11 +335,9 @@ def cmd_report(_a):
                 elif failed(r):
                     cells.append("timeout" if "timeout" in r["results"].lower() else "failed")
                 else:
-                    cells.append(fmt(r["runtime_info"]["client_time"]))
-                    # The first row is only compared for one-row answers (COUNT, SUM, MIN, ...):
-                    # the order of a LIMIT without ORDER BY is up to the engine.
-                    n = r.get("result_size")
-                    sizes[e] = (n, one_row(r.get("results", [])) if n == 1 else "")
+                    t = fmt(r["runtime_info"]["client_time"])
+                    cells.append(f"~~{t}~~ wrong" if e in bad.get(qid, ()) else t)
+                    sizes[e] = answer(r)
             lines.append(f"| {qid} | " + " | ".join(cells) + " |")
             vals = list(sizes.values())
             if len(set(vals)) > 1:

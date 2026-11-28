@@ -1,26 +1,27 @@
 # Sparqloscope results
 
-One cold run per query after an engine restart (QLever's cache cleared before each query), at the client, HTTP included. Failed and timed-out queries count as 2 x the timeout in the geometric means, as on the QLever evaluation site. Engines whose result sizes differ from the majority are listed per query in the last section.
+One cold run per query after an engine restart (QLever's cache cleared before each query), at the client, HTTP included. Failed and timed-out queries count as 2 x the timeout in the geometric means, as on the QLever evaluation site. A query whose answer (row count, or the value of a one-row answer) differs from the majority is wrong: it is left out of that engine's geometric means, counted in the wrong row, marked in the per-query table and listed in the last section. The majority is at least two engines, and more than half of those that answered.
 
 ## bsbm-2785 (102 queries)
 
 | | tripletrail | oxigraph | qlever | jena | graphdb | maplib |
 |---|---:|---:|---:|---:|---:|---:|
 | load (s) | 1.152 | 1.957 | 2.372 | 6.48 | 13.421 | 0.48 |
-| answered | 102 | 101 | 102 | 102 | 102 | 102 |
+| answered | 102 | 101 | 98 | 102 | 101 | 99 |
 | failed | 0 | 0 | 0 | 0 | 0 | 0 |
 | timed out | 0 | 1 | 0 | 0 | 0 | 0 |
-| **geometric mean** | **6.0 ms** | **76.4 ms** | **14.1 ms** | **106.7 ms** | **73.5 ms** | **11.9 ms** |
+| wrong (not in the means) | 0 | 0 | 4 | 0 | 1 | 3 |
+| **geometric mean** | **6.0 ms** | **76.4 ms** | **14.7 ms** | **106.7 ms** | **72.8 ms** | **12.1 ms** |
 | join | 5.9 ms | 59.4 ms | 20.8 ms | 70.5 ms | 51.7 ms | 11.4 ms |
 | optional | 6.1 ms | 177.4 ms | 22.3 ms | 389.0 ms | 112.4 ms | 12.7 ms |
 | minus | 5.9 ms | 96.3 ms | 16.7 ms | 138.3 ms | 53.7 ms | 10.1 ms |
 | exists | 6.2 ms | 379.4 ms | 16.8 ms | 117.3 ms | 186.6 ms | 18.6 ms |
-| union | 5.4 ms | 288.6 ms | 16.8 ms | 120.2 ms | 155.6 ms | 10.2 ms |
-| group by / distinct | 8.5 ms | 42.0 ms | 9.6 ms | 99.4 ms | 61.7 ms | 9.5 ms |
+| union | 5.4 ms | 288.6 ms | 16.8 ms | 120.2 ms | 148.6 ms | 10.2 ms |
+| group by / distinct | 8.5 ms | 42.0 ms | 9.6 ms | 99.4 ms | 61.7 ms | 9.9 ms |
 | property path | 4.3 ms | 30.5 ms | 7.8 ms | 62.4 ms | 12.1 ms | 28.1 ms |
-| regex / string | 4.2 ms | 12.5 ms | 16.4 ms | 30.4 ms | 34.1 ms | 7.6 ms |
+| regex / string | 4.2 ms | 12.5 ms | 25.3 ms | 30.4 ms | 34.1 ms | 7.6 ms |
 | result size | 23.5 ms | 65.7 ms | 121.6 ms | 163.9 ms | 148.4 ms | 49.0 ms |
-| numeric | 6.3 ms | 24.9 ms | 6.3 ms | 58.5 ms | 47.9 ms | 7.3 ms |
+| numeric | 6.3 ms | 24.9 ms | 6.2 ms | 58.5 ms | 47.9 ms | 7.6 ms |
 | filter / language | 1.7 ms | 172.8 ms | 6.6 ms | 55.6 ms | 47.6 ms | 5.2 ms |
 | date | 14.6 ms | 33.5 ms | 7.4 ms | 84.5 ms | 92.7 ms | 5.6 ms |
 | count | 2.3 ms | 511.0 ms | 4.1 ms | 541.2 ms | 306.2 ms | 24.5 ms |
@@ -73,7 +74,7 @@ One cold run per query after an engine restart (QLever's cache cleared before ea
 | union-constraint-from-star | 12.2 ms | 415.4 ms | 16.6 ms | 312.7 ms | 243.2 ms | 13.2 ms |
 | union-constraint-small-join | 5.3 ms | 208.9 ms | 41.8 ms | 75.3 ms | 68.3 ms | 11.2 ms |
 | union-constraint-large-join | 12.0 ms | 413.1 ms | 19.0 ms | 319.4 ms | 306.2 ms | 13.2 ms |
-| union-constraint-filter-restrictive | 2.5 ms | 679.9 ms | 15.0 ms | 45.3 ms | 186.9 ms | 7.7 ms |
+| union-constraint-filter-restrictive | 2.5 ms | 679.9 ms | 15.0 ms | 45.3 ms | ~~186.9 ms~~ wrong | 7.7 ms |
 | multicolumn-join-small | 2.8 ms | 8.1 ms | 14.3 ms | 9.0 ms | 16.6 ms | 8.7 ms |
 | multicolumn-join-large | 18.0 ms | 257.0 ms | 27.3 ms | 79.3 ms | 97.8 ms | 11.6 ms |
 | group-by-count-object-high-multiplicity | 2.9 ms | 19.0 ms | 8.0 ms | 140.5 ms | 64.5 ms | 6.4 ms |
@@ -86,8 +87,8 @@ One cold run per query after an engine restart (QLever's cache cleared before ea
 | group-by-implicit-numeric-max | 8.5 ms | 16.7 ms | 6.7 ms | 22.4 ms | 23.2 ms | 6.9 ms |
 | group-by-implicit-numeric-avg | 22.2 ms | 17.5 ms | 7.5 ms | 57.4 ms | 34.2 ms | 7.7 ms |
 | group-by-implicit-string-baseline | 2.5 ms | 10.1 ms | 5.1 ms | 373.9 ms | 24.4 ms | 6.8 ms |
-| group-by-implicit-string-min | 4.5 ms | 54.9 ms | 5.8 ms | 74.6 ms | 118.2 ms | 6.9 ms |
-| group-by-implicit-string-max | 4.6 ms | 53.6 ms | 5.8 ms | 55.8 ms | 118.9 ms | 7.7 ms |
+| group-by-implicit-string-min | 4.5 ms | 54.9 ms | 5.8 ms | 74.6 ms | 118.2 ms | ~~6.9 ms~~ wrong |
+| group-by-implicit-string-max | 4.6 ms | 53.6 ms | 5.8 ms | 55.8 ms | 118.9 ms | ~~7.7 ms~~ wrong |
 | group-by-string-groupconcat | 58.2 ms | 177.6 ms | 117.7 ms | 175.0 ms | 246.0 ms | 37.9 ms |
 | distinct-count-object-high-multiplicity | 5.2 ms | 16.8 ms | 5.8 ms | 41.7 ms | 23.8 ms | 9.4 ms |
 | distinct-count-object-low-multiplicity | 7.2 ms | 23.0 ms | 6.4 ms | 63.4 ms | 25.7 ms | 10.1 ms |
@@ -99,9 +100,9 @@ One cold run per query after an engine restart (QLever's cache cleared before ea
 | regex-3-contains | 5.8 ms | 16.0 ms | 31.6 ms | 98.5 ms | 31.3 ms | 7.4 ms |
 | regex-3-fixed | 5.6 ms | 13.7 ms | 24.7 ms | 48.3 ms | 32.6 ms | 8.2 ms |
 | regex-3 | 6.7 ms | 13.1 ms | 24.5 ms | 20.8 ms | 33.7 ms | 8.2 ms |
-| regex-prefix-1 | 3.3 ms | 12.1 ms | 5.3 ms | 22.9 ms | 23.7 ms | 6.2 ms |
-| regex-prefix-2 | 3.0 ms | 11.9 ms | 5.1 ms | 18.5 ms | 21.9 ms | 6.3 ms |
-| regex-prefix-3 | 3.0 ms | 11.7 ms | 5.0 ms | 15.0 ms | 21.6 ms | 6.8 ms |
+| regex-prefix-1 | 3.3 ms | 12.1 ms | ~~5.3 ms~~ wrong | 22.9 ms | 23.7 ms | 6.2 ms |
+| regex-prefix-2 | 3.0 ms | 11.9 ms | ~~5.1 ms~~ wrong | 18.5 ms | 21.9 ms | 6.3 ms |
+| regex-prefix-3 | 3.0 ms | 11.7 ms | ~~5.0 ms~~ wrong | 15.0 ms | 21.6 ms | 6.8 ms |
 | strlen | 4.1 ms | 11.7 ms | 23.7 ms | 18.8 ms | 55.6 ms | 7.7 ms |
 | strbefore | 4.2 ms | 12.3 ms | 25.4 ms | 41.4 ms | 58.9 ms | 9.2 ms |
 | strafter | 4.3 ms | 12.2 ms | 25.4 ms | 36.1 ms | 34.5 ms | 7.9 ms |
@@ -118,7 +119,7 @@ One cold run per query after an engine restart (QLever's cache cleared before ea
 | numeric-floor | 3.2 ms | 17.6 ms | 5.9 ms | 51.6 ms | 39.1 ms | 8.3 ms |
 | numeric-round | 6.1 ms | 18.1 ms | 5.8 ms | 69.0 ms | 63.8 ms | 6.9 ms |
 | numeric-add | 8.1 ms | 19.8 ms | 6.1 ms | 58.8 ms | 76.0 ms | 8.3 ms |
-| numeric-greater | 8.6 ms | 17.7 ms | 6.9 ms | 63.0 ms | 17.9 ms | 6.0 ms |
+| numeric-greater | 8.6 ms | 17.7 ms | ~~6.9 ms~~ wrong | 63.0 ms | 17.9 ms | ~~6.0 ms~~ wrong |
 | filter-few-results | 1.4 ms | 294.0 ms | 7.5 ms | 22.7 ms | 49.4 ms | 4.8 ms |
 | filter-many-results | 1.1 ms | 298.9 ms | 9.4 ms | 130.3 ms | 69.1 ms | 5.3 ms |
 | filter-language-en | 3.3 ms | 58.7 ms | 4.0 ms | 58.3 ms | 31.6 ms | 5.6 ms |
@@ -149,23 +150,24 @@ Queries where engines disagree (row count, or the value of a one-row answer):
 | | tripletrail | oxigraph | qlever | jena | graphdb | maplib |
 |---|---:|---:|---:|---:|---:|---:|
 | load (s) | 1.69 | 3.28 | 3.405 | 10.697 | 17.509 | 0.859 |
-| answered | 102 | 101 | 102 | 102 | 102 | 102 |
+| answered | 102 | 101 | 98 | 102 | 101 | 99 |
 | failed | 0 | 0 | 0 | 0 | 0 | 0 |
 | timed out | 0 | 1 | 0 | 0 | 0 | 0 |
-| **geometric mean** | **7.0 ms** | **111.1 ms** | **18.8 ms** | **126.4 ms** | **97.5 ms** | **14.7 ms** |
+| wrong (not in the means) | 0 | 0 | 4 | 0 | 1 | 3 |
+| **geometric mean** | **7.0 ms** | **111.1 ms** | **19.8 ms** | **126.4 ms** | **96.3 ms** | **14.7 ms** |
 | join | 7.1 ms | 87.6 ms | 33.0 ms | 77.9 ms | 69.6 ms | 15.6 ms |
 | optional | 8.7 ms | 434.3 ms | 26.4 ms | 552.8 ms | 221.4 ms | 15.2 ms |
 | minus | 10.7 ms | 273.5 ms | 30.6 ms | 207.4 ms | 101.9 ms | 13.5 ms |
 | exists | 10.9 ms | 875.1 ms | 19.3 ms | 252.0 ms | 300.6 ms | 22.2 ms |
-| union | 7.8 ms | 619.4 ms | 16.5 ms | 256.4 ms | 162.2 ms | 11.1 ms |
-| group by / distinct | 7.9 ms | 26.9 ms | 6.1 ms | 67.7 ms | 44.3 ms | 10.7 ms |
-| property path | 9.2 ms | 60.6 ms | 33.3 ms | 90.0 ms | 49.3 ms | 58.3 ms |
+| union | 7.8 ms | 619.4 ms | 16.5 ms | 256.4 ms | 134.6 ms | 11.1 ms |
+| group by / distinct | 7.9 ms | 26.9 ms | 6.3 ms | 67.7 ms | 44.3 ms | 11.0 ms |
+| property path | 9.2 ms | 60.6 ms | 33.3 ms | 90.0 ms | 49.3 ms | 52.5 ms |
 | regex / string | 9.8 ms | 69.6 ms | 53.5 ms | 84.0 ms | 153.6 ms | 10.0 ms |
 | result size | 44.2 ms | 140.1 ms | 236.1 ms | 295.7 ms | 258.4 ms | 107.9 ms |
-| numeric | 1.9 ms | 2.8 ms | 6.8 ms | 9.0 ms | 10.0 ms | 4.5 ms |
+| numeric | 1.9 ms | 2.8 ms | 6.9 ms | 9.0 ms | 10.0 ms | 4.4 ms |
 | filter / language | 2.4 ms | 575.1 ms | 13.9 ms | 190.1 ms | 124.5 ms | 5.4 ms |
 | date | 1.4 ms | 2.2 ms | 3.1 ms | 11.0 ms | 11.8 ms | 4.2 ms |
-| count | 1.1 ms | 930.6 ms | 4.0 ms | 917.5 ms | 411.6 ms | 39.1 ms |
+| count | 1.1 ms | 930.6 ms | 3.1 ms | 917.5 ms | 411.6 ms | 39.1 ms |
 
 <details><summary>Per query</summary>
 
@@ -215,7 +217,7 @@ Queries where engines disagree (row count, or the value of a one-row answer):
 | union-constraint-from-star | 21.9 ms | 545.1 ms | 27.2 ms | 940.6 ms | 220.1 ms | 14.7 ms |
 | union-constraint-small-join | 7.6 ms | 570.9 ms | 19.1 ms | 75.3 ms | 31.7 ms | 11.9 ms |
 | union-constraint-large-join | 21.6 ms | 698.5 ms | 21.8 ms | 978.4 ms | 245.6 ms | 14.3 ms |
-| union-constraint-filter-restrictive | 2.7 ms | 2.06 s | 12.9 ms | 107.5 ms | 342.1 ms | 6.7 ms |
+| union-constraint-filter-restrictive | 2.7 ms | 2.06 s | 12.9 ms | 107.5 ms | ~~342.1 ms~~ wrong | 6.7 ms |
 | multicolumn-join-small | 3.2 ms | 9.6 ms | 6.5 ms | 11.4 ms | 25.6 ms | 9.1 ms |
 | multicolumn-join-large | 6.1 ms | 76.6 ms | 5.2 ms | 23.1 ms | 38.1 ms | 8.2 ms |
 | group-by-count-object-high-multiplicity | 3.0 ms | 11.7 ms | 4.5 ms | 103.2 ms | 67.6 ms | 6.0 ms |
@@ -228,7 +230,7 @@ Queries where engines disagree (row count, or the value of a one-row answer):
 | group-by-implicit-numeric-max | 2.8 ms | 3.1 ms | 3.5 ms | 7.3 ms | 8.6 ms | 5.4 ms |
 | group-by-implicit-numeric-avg | 2.8 ms | 3.2 ms | 3.7 ms | 17.2 ms | 12.9 ms | 5.8 ms |
 | group-by-implicit-string-baseline | 2.3 ms | 43.5 ms | 2.7 ms | 776.8 ms | 40.4 ms | 6.4 ms |
-| group-by-implicit-string-min | 41.1 ms | 94.1 ms | 3.6 ms | 140.9 ms | 187.3 ms | 6.7 ms |
+| group-by-implicit-string-min | 41.1 ms | 94.1 ms | ~~3.6 ms~~ wrong | 140.9 ms | 187.3 ms | ~~6.7 ms~~ wrong |
 | group-by-implicit-string-max | 24.3 ms | 73.1 ms | 3.5 ms | 112.1 ms | 111.3 ms | 6.4 ms |
 | group-by-string-groupconcat | 57.0 ms | 111.8 ms | 171.6 ms | 197.7 ms | 232.0 ms | 53.1 ms |
 | distinct-count-object-high-multiplicity | 5.4 ms | 11.1 ms | 3.7 ms | 17.7 ms | 21.7 ms | 7.1 ms |
@@ -237,7 +239,7 @@ Queries where engines disagree (row count, or the value of a one-row answer):
 | transitive-path-plus | 16.1 ms | 150.0 ms | 106.5 ms | 385.5 ms | 112.8 ms | 67.2 ms |
 | transitive-path-plus-fixed-subject | 3.6 ms | 3.0 ms | 3.8 ms | 7.2 ms | 7.9 ms | 23.0 ms |
 | transitive-path-large-join-and-plus | 7.4 ms | 193.6 ms | 62.5 ms | 171.4 ms | 92.4 ms | 93.4 ms |
-| transitive-path-small-join-and-plus | 16.3 ms | 154.3 ms | 48.8 ms | 136.8 ms | 72.4 ms | 80.2 ms |
+| transitive-path-small-join-and-plus | 16.3 ms | 154.3 ms | 48.8 ms | 136.8 ms | 72.4 ms | ~~80.2 ms~~ wrong |
 | regex-3-contains | 7.6 ms | 70.5 ms | 149.5 ms | 75.1 ms | 166.9 ms | 7.1 ms |
 | regex-3-fixed | 10.2 ms | 65.3 ms | 151.8 ms | 96.4 ms | 136.8 ms | 7.4 ms |
 | regex-3 | 8.8 ms | 94.9 ms | 152.3 ms | 75.8 ms | 148.3 ms | 9.4 ms |
@@ -260,7 +262,7 @@ Queries where engines disagree (row count, or the value of a one-row answer):
 | numeric-floor | 1.5 ms | 2.5 ms | 6.3 ms | 6.7 ms | 9.1 ms | 4.0 ms |
 | numeric-round | 1.6 ms | 2.4 ms | 7.1 ms | 7.4 ms | 8.5 ms | 4.1 ms |
 | numeric-add | 1.9 ms | 2.5 ms | 6.7 ms | 7.2 ms | 14.8 ms | 3.7 ms |
-| numeric-greater | 1.6 ms | 2.4 ms | 6.3 ms | 12.1 ms | 6.2 ms | 5.1 ms |
+| numeric-greater | 1.6 ms | 2.4 ms | ~~6.3 ms~~ wrong | 12.1 ms | 6.2 ms | ~~5.1 ms~~ wrong |
 | filter-few-results | 1.2 ms | 1.66 s | 17.4 ms | 77.0 ms | 157.1 ms | 4.7 ms |
 | filter-many-results | 1.4 ms | 1.67 s | 42.7 ms | 727.8 ms | 139.6 ms | 5.4 ms |
 | filter-language-en | 8.2 ms | 68.6 ms | 3.6 ms | 122.7 ms | 88.0 ms | 6.3 ms |
@@ -270,8 +272,8 @@ Queries where engines disagree (row count, or the value of a one-row answer):
 | number-of-triples | 1.1 ms | 458.3 ms | 2.8 ms | 753.2 ms | 425.7 ms | 2.0 ms |
 | number-of-subjects | 1.2 ms | 595.8 ms | 2.8 ms | 901.0 ms | 472.0 ms | 57.6 ms |
 | number-of-predicates | 1.0 ms | 488.4 ms | 2.7 ms | 529.4 ms | 434.4 ms | 80.8 ms |
-| number-of-objects | 1.2 ms | 638.2 ms | 2.8 ms | 2.35 s | 488.1 ms | 301.7 ms |
-| number-of-literals | 1.2 ms | 2.98 s | 14.9 ms | 1.01 s | 392.1 ms | 55.0 ms |
+| number-of-objects | 1.2 ms | 638.2 ms | ~~2.8 ms~~ wrong | 2.35 s | 488.1 ms | 301.7 ms |
+| number-of-literals | 1.2 ms | 2.98 s | ~~14.9 ms~~ wrong | 1.01 s | 392.1 ms | 55.0 ms |
 | number-of-blank-nodes | 1.2 ms | 2.56 s | 4.6 ms | 700.9 ms | 290.9 ms | 22.7 ms |
 
 </details>

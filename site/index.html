@@ -49,7 +49,9 @@
         checked against the answer most engines gave, never against one engine alone. A query an
         engine answered differently is counted as not answered, so its time is in no mean or
         speedup, and each such answer is listed under the tab with a link to its note in
-        correctness.csv.</dd>
+        correctness.csv. Sparqloscope, BSBM and Trainmarks compare result sizes the same way.
+        A query whose result size differs from the majority is counted as wrong and left out of
+        the means; a BSBM mix with wrong result counts is left out of the comparison.</dd>
       <dt>Sparqloscope</dt>
       <dd>The benchmark behind the QLever evaluation site: about 100 generated queries per dataset, each isolating one SPARQL feature. One cold run per query after an engine restart.</dd>
       <dt>BSBM</dt>
