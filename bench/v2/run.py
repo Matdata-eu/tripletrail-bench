@@ -13,7 +13,10 @@ GeoSPARQL and serves the general suites in suites/). The engine is restarted
 before every query family, so the first ("cold") run of each family's first query sees empty
 engine caches (the OS page cache stays warm: dropping it needs root on the host). Then 2
 untimed warm-up runs and N timed warm runs, each with its own parameters (run index i draws the
-same parameters on every engine). Times are wall-clock at the client, including the protocol
+same parameters on every engine). After a failed run (a timeout or an error) the engine is
+restarted, and the family's setup run again, before the next run: a query an engine does not
+cancel would otherwise share the machine with the next one (tripletrail#338); the query's
+results name the runs it was restarted after (`restarted_after`). Times are wall-clock at the client, including the protocol
 (HTTP + SPARQL JSON results for the RDF engines, libpq for PostGIS) and fetching all rows.
 """
 import argparse
@@ -250,7 +253,10 @@ def perf_stop(handle, outdir, qid):
     os.remove(data)
 
 
-def run_query(engine, cl, q, meta, warm_scale, budget_s, outdir=None):
+def run_query(engine, cl, q, meta, warm_scale, budget_s, outdir=None, restart=None):
+    """Times one query. After a failed run (a timeout, an error) `restart` is called, when given:
+    a server that does not cancel a timed-out query would otherwise go on with it while the next
+    run is timed (tripletrail#338). It returns the client to go on with."""
     qid = q["qid"]
     rec = {"engine": engine, "qid": qid, "family": q["family"], "kind": q["kind"], "runs": []}
     why = na_reason(engine, qid)
@@ -279,6 +285,9 @@ def run_query(engine, cl, q, meta, warm_scale, budget_s, outdir=None):
             msg = str(e)
             run.update(ok=False, error=("timeout: " if "timeout" in msg.lower() or "cancel" in msg.lower() else "") + msg[:800])
         rec["runs"].append(run)
+        if not run["ok"] and restart:
+            cl = restart()
+            rec.setdefault("restarted_after", []).append(idx)
         if not run["ok"] and phase == "cold":
             rec["status"] = "failed"
             rec["reason"] = run["error"][:300]
@@ -308,20 +317,36 @@ def cmd_query(a):
         fq = [q for q in qs if q["family"] == fam]
         runnable = [q for q in fq if not na_reason(a.engine, q["qid"]) and template(a.engine, q["qid"])]
         setup = None
-        if runnable:
+        key = fam.split()[1] if " " in fam else fam
+        sp = os.path.join(queries_of(a.engine), f"setup_{key}.ru")
+
+        def fresh(why):
+            """Restarts the engine (unless --no-restart) and runs the family's setup again: a
+            client for the fresh server, and the setup's time in ms (None without one)."""
             if not a.no_restart:
                 t = time.perf_counter()
                 sh(a.engine, "start", a.dataset)
-                print(f"[{a.engine}] restarted for family {fam} in {time.perf_counter() - t:.1f} s", flush=True)
-            cl = client(a.engine, a.dataset)
-            key = fam.split()[1] if " " in fam else fam
-            sp = os.path.join(queries_of(a.engine), f"setup_{key}.ru")
+                print(f"[{a.engine}] restarted {why} in {time.perf_counter() - t:.1f} s", flush=True)
+            c = client(a.engine, a.dataset)
+            ms = None
             if os.path.exists(sp):
-                setup = round(cl.update(open(sp).read()) * 1000, 3)
-                print(f"[{a.engine}] setup {key}: {setup} ms", flush=True)
+                ms = round(c.update(open(sp).read()) * 1000, 3)
+                print(f"[{a.engine}] setup {key}: {ms} ms", flush=True)
+            return c, ms
+
+        def restart():
+            # After a failed run: a fresh server, so a query still running in it (a timeout the
+            # engine does not cancel) cannot share the machine with the next timed run.
+            return fresh("after a failed run")[0]
+
+        if runnable:
+            cl, setup = fresh(f"for family {fam}")
         for q in fq:
-            rec = run_query(a.engine, cl if runnable else None, q, meta, a.warm_scale, a.budget, outdir) \
+            rec = run_query(a.engine, cl if runnable else None, q, meta, a.warm_scale, a.budget, outdir,
+                            restart=None if a.no_restart else restart) \
                 if q in runnable else run_query(a.engine, None, q, meta, a.warm_scale, a.budget)
+            if rec.get("restarted_after"):
+                cl = client(a.engine, a.dataset)  # the server the next query runs on
             rec["dataset"] = a.dataset
             if setup is not None:
                 rec["family_setup_ms"] = setup

@@ -12,7 +12,7 @@
 #                  5,000,000,000); needs about 3 TB of work disk (bench.yml gives it a
 #                  3,000 GB volume: the N-Triples, about 1 TB, next to the largest store, GraphDB's
 #                  about 1.2 TB) and more memory than a ccx43 (a ccx53, 128 GB)
-# Env: BENCH_WORK, TRIPLETRAIL_MEMORY_LIMIT (default 32G), SCALE_MAX_TRIPLES, SCALE_PBF_URL
+# Env: BENCH_WORK, TRIPLETRAIL_MEMORY_LIMIT (default 32G; QLEVER_MEMORY defaults to it), SCALE_MAX_TRIPLES, SCALE_PBF_URL
 # (default Geofabrik's europe-latest, or the planet for osm_planet), SCALE_KEEP=1 (keep the inputs, the N-Triples and the
 # stores; otherwise each goes once it is no longer needed: the disk of a 360 GB server holds one
 # at a time). Results: results/<dataset>/ as for v2, plus updates-*.json and scale.json.
@@ -27,6 +27,9 @@ ENGINES=${*:-tripletrail qlever}
 # machine as heap; its default 8g is too small at this size.
 export GRAPHDB_HEAP=${GRAPHDB_HEAP:-32g}
 LIMIT=${TRIPLETRAIL_MEMORY_LIMIT:-32G}
+# QLever gets the same memory for its queries as TripleTrail's limit and GraphDB's heap (its
+# default 8G was a quarter of theirs, tripletrail-bench#94).
+export QLEVER_MEMORY=${QLEVER_MEMORY:-$LIMIT}
 case $DS in
   osm_planet) URL=${SCALE_PBF_URL:-https://planet.openstreetmap.org/pbf/planet-latest.osm.pbf} ;;
   *) URL=${SCALE_PBF_URL:-https://download.geofabrik.de/europe-latest.osm.pbf} ;;
@@ -177,6 +180,9 @@ for e in $ENGINES; do
   [ -z "${SCALE_KEEP:-}" ] && rm -rf "${W:?}/$e/$DS"
 done
 [ -z "${SCALE_KEEP:-}" ] && rm -f "$W/data/$DS.nt"
+# Again now that the engines' images are pulled: the first capture runs on a fresh server, before
+# any image is there, and named no engine's version (tripletrail-bench#99).
+python3 "$V2/env.py" >"$OUT/env.json"
 python3 "$V2/compare.py" "$OUT" >/dev/null || true
 python3 "$V2/report.py" "$OUT" >/dev/null || true
 echo "=== done ($(date -Is))"

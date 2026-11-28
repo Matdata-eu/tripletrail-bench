@@ -69,6 +69,10 @@ real-world tarballs into one N-Quads file, each dataset in the named graph the q
   warm-up runs, then N timed *warm* runs. Each run has its own parameters (bounding box,
   point, route pair...), drawn from a seed per query and run index, so run *i* uses the same
   parameters on every engine. The tables give the warm p50 / p95 and the cold run.
+- **After a failure.** A run that times out or fails is followed by a restart of the engine (and
+  the family's setup again) before the next run, so a query the engine did not cancel cannot
+  share the machine with the next one. The query's result file lists those runs under
+  `restarted_after`.
 - **N.** `small`: 30 runs for selections, KNN and LR, 1,000 route pairs, 200 constrained pairs,
   50 driving-distance / KSP / mixed runs, 10 cost matrices, 5 joins and aggregates. `large`: the
   same counts × 0.2 (`WARM_SCALE=0.2`, so 200 route pairs and one warm run for the joins).

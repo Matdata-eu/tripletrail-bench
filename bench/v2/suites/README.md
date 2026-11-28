@@ -94,7 +94,7 @@ suite on one dataset, on a Hetzner server it rents for the run and deletes after
 `suites/scale/run_scale.sh osm_benelux|osm_europe [engine...]` (or `bench.sh scale <dataset>`,
 or the "Benchmarks (manual)" workflow with suite `scale` on `ccx43`, 64 GB): OSM data as
 N-Triples, loaded and queried by TripleTrail (on its store on disk, with `--memory-limit 32G`) and
-QLever.
+QLever (with the same 32G for its queries, `QLEVER_MEMORY`; GraphDB, when named, gets a 32g heap).
 
 - Data: Geofabrik's `europe-latest.osm.pbf` (about 31 GB), downloaded on the server.
   `data/osm_scale.py` turns `osmium export` output into the shape of `osm_norway` (rail
