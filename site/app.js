@@ -273,7 +273,7 @@ const SP_SIZES = { small: "Small (0.8M, synthetic rail)", large: "Large (10.5M, 
   osm_norway: "OSM Norway (1.5M)", osm_benelux: "OSM Benelux", osm_europe: "OSM Europe (1B)" };
 const RS_SIZES = { "rinf-all": "RINF, all countries" };
 // The size each tab opens on: the main dataset of each suite.
-const DEFAULT_SIZE = { sparqloscope: "bsbm-2785", bsbm: "bsbm-2785", trainmarks: "large", spatial: "large", rinfshapes: "rinf-all" };
+const DEFAULT_SIZE = { sparqloscope: "bsbm-2785", bsbm: "bsbm-2785", trainmarks: "large", spatial: "large", routing: "large", rinfshapes: "rinf-all" };
 const sizeList = (values, labels) => ordered(values, Object.keys(labels)).map((v) => [v, labels[v] || v.replace(/^bsbm-(\d+)$/, "$1 products")]);
 
 function sparqloscope(D) {
@@ -509,6 +509,60 @@ function spatial(D) {
               el("dl", {}, FAMILIES.filter(([f]) => famOrder.includes(f)).flatMap(([f, d]) => [el("dt", { text: f }), el("dd", { text: d })])))),
           card("sp-queries", "Time per query", "Warm median, ms, log scale; hover for the cold first run. Queries an engine did not answer are left out.",
             dots(perQuery, queryOrder, "ms"))),
+      ];
+    },
+  };
+}
+
+// Routing: the routing and mixed families of the spatial benchmark on their own, TripleTrail
+// against pgRouting, warm and cold side by side. The RDF engines have no routing, so on the
+// Spatial tab these queries hide among the others.
+const RT_FAMILIES = ["6 routing", "7 mixed"];
+function routing(D) {
+  const all = D.squeries.filter((r) => RT_FAMILIES.includes(r.family) && (r.engine === OURS || r.engine === "postgis"));
+  if (!all.some((r) => r.engine === OURS && num(r.p50_ms))) return null;
+  return {
+    id: "routing", label: "Routing", toggleLabel: "Dataset",
+    sizes: sizeList(all.map((r) => r.dataset), SP_SIZES),
+    build(ds) {
+      const q = all.filter((r) => r.dataset === ds);
+      const get = (e, qq) => q.find((r) => r.engine === e && r.query === qq) || {};
+      const queries = uniq(q.map((r) => r.query));
+      const rows = queries.map((qq) => {
+        const t = get(OURS, qq), p = get("postgis", qq);
+        return { query: qq, t_warm: num(t.p50_ms), t_cold: num(t.cold_ms), p_warm: num(p.p50_ms), p_cold: num(p.cold_ms),
+          p_status: p.status || "not run" };
+      });
+      const both = rows.filter((r) => r.t_warm && r.p_warm);
+      const ratio = (a, b2) => a && b2 ? ratioText(b2 / a) : "–";
+      const gw = both.length ? gmean(both.map((r) => r.p_warm)) / gmean(both.map((r) => r.t_warm)) : null;
+      const bc = both.filter((r) => r.t_cold && r.p_cold);
+      const gc = bc.length ? gmean(bc.map((r) => r.p_cold)) / gmean(bc.map((r) => r.t_cold)) : null;
+      const ms = (v) => v ? `${fmt(v)} ms` : "–";
+      const perQuery = spOk(q).map((r) => ({ group: r.query, engine: r.engine, v: num(r.p50_ms),
+        extra: num(r.cold_ms) ? ` (cold ${fmt(num(r.cold_ms))})` : "" }));
+      return [
+        el("p", { class: "lead" },
+          "TripleTrail's routing functions against PostGIS with pgRouting, on the same track graph and the same route pairs; the RDF engines have no routing. ",
+          gw ? ["Over the ", b(plural(both.length, "query", "queries")), " both answered, TripleTrail is ", b(ratioText(gw)),
+            " pgRouting warm (geometric mean of the warm medians)", gc ? [" and ", b(ratioText(gc)), " pgRouting on the cold first run"] : "", ". "] : null,
+          "Lower is better."),
+        el("p", { class: "note" },
+          "How they differ: pgRouting builds its graph from an SQL edge query on every call, which is most of its time on a single route. ",
+          "TripleTrail builds a named network once, on the first routing query after a restart, and keeps it in memory: that build is in TripleTrail's cold time, not in its warm times. ",
+          "route_ch uses contraction hierarchies, which pgRouting does not have; it has no pgRouting time."),
+        provLine(D.prov, "v2", ds),
+        card("rt-table", "Per query", "Warm median and cold first run, ms. The ratio compares the warm medians.",
+          table(rows, [
+            { label: "Query", l: true, get: (r) => r.query },
+            { label: "TripleTrail warm", get: (r) => ms(r.t_warm) },
+            { label: "TripleTrail cold", get: (r) => ms(r.t_cold) },
+            { label: "pgRouting warm", get: (r) => r.p_warm ? ms(r.p_warm) : r.p_status },
+            { label: "pgRouting cold", get: (r) => ms(r.p_cold) },
+            { label: "TripleTrail is", get: (r) => ratio(r.t_warm, r.p_warm) },
+          ])),
+        card("rt-queries", "Time per query", "Warm median, ms, log scale; hover for the cold first run.",
+          dots(perQuery, queries, "ms")),
       ];
     },
   };
@@ -780,7 +834,7 @@ async function main() {
   document.getElementById("legend").append(...legendEngines.map((e) =>
     el("li", { class: e === OURS ? "ours" : null }, el("span", { class: "sw", style: `background:${color(e)}` }), name(e))));
 
-  const suites = [sparqloscope(D), bsbm(D), trainmarks(D), spatial(D), rinfshapes(D)].filter(Boolean);
+  const suites = [sparqloscope(D), bsbm(D), trainmarks(D), spatial(D), routing(D), rinfshapes(D)].filter(Boolean);
   const tabs = [];
   const ov = summary && summary.suites ? overview(summary, D) : null;
   if (ov) tabs.push({ id: "overview", label: "Overview", build: () => ov });
