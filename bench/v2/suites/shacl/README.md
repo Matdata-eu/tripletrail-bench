@@ -80,6 +80,12 @@ On the Benchmarks workflow: suite `all`, dataset `shacl` (one server for the thr
   does), while Jena and TopBraid give one per solution of a SPARQL constraint: on Germany
   a `UNION` of `era:isPartOf` and `era:hasPart` finds the same track twice, so Jena and TopBraid
   report 947,629 results where TripleTrail reports 894,300, with the same distinct results.
+- **Differences**: where an engine's keys differ from the reference's (TopBraid's, or Jena's when
+  TopBraid has none), `results/shacl/<dataset>/<profile>/differences.json` counts the keys only
+  it gives and the keys only the reference gives, by path, constraint component and severity, and
+  the report lists the ten largest groups under the profile's table. It names no focus node: the
+  key files hold RINF IRIs, so they stay in the work directory and are deleted once compared.
+  `python3 bench/v2/suites/shacl/test_differences.py` tests the comparison.
 - **Injected violations** (`inject.py`, tracker #31): real RINF data already fails many ERA
   shapes, which measures speed on realistic reports but not whether an engine misses violations.
   `run_shacl.py inject --dataset D` (by `run_suite.sh` on the datasets in `SHACL_INJECT`, Norway
