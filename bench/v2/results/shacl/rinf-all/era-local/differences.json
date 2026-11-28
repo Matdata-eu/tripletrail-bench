@@ -1,0 +1,32 @@
+{
+ "reference": "jena",
+ "engines": {
+  "tripletrail": {
+   "only_here": 68,
+   "only_in_reference": 0,
+   "by_path": [
+    {
+     "path": "http://www.opengis.net/ont/geosparql#asWKT",
+     "component": "SPARQLConstraintComponent",
+     "severity": "Violation",
+     "only_here": 59,
+     "only_in_reference": 0
+    },
+    {
+     "path": "http://www.w3.org/2000/01/rdf-schema#label",
+     "component": "SPARQLConstraintComponent",
+     "severity": "Violation",
+     "only_here": 8,
+     "only_in_reference": 0
+    },
+    {
+     "path": "http://data.europa.eu/949/typeOfTraffic",
+     "component": "SPARQLConstraintComponent",
+     "severity": "Violation",
+     "only_here": 1,
+     "only_in_reference": 0
+    }
+   ]
+  }
+ }
+}

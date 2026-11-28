@@ -6,35 +6,35 @@
   {
    "exit": 1,
    "timed_out": false,
-   "wall_s": 112.688,
-   "peak_rss_bytes": 4852502528,
-   "validate_s": 93.2
+   "wall_s": 124.778,
+   "peak_rss_bytes": 5018030080,
+   "validate_s": 102.2
   },
   {
    "exit": 1,
    "timed_out": false,
-   "wall_s": 111.7,
-   "peak_rss_bytes": 4792786944,
-   "validate_s": 92.8
+   "wall_s": 124.986,
+   "peak_rss_bytes": 4990943232,
+   "validate_s": 102.9
   },
   {
    "exit": 1,
    "timed_out": false,
-   "wall_s": 111.518,
-   "peak_rss_bytes": 4811968512,
-   "validate_s": 92.5
+   "wall_s": 125.971,
+   "peak_rss_bytes": 4980039680,
+   "validate_s": 103.2
   }
  ],
- "wall_s": 111.7,
- "peak_rss_bytes": 4852502528,
+ "wall_s": 124.986,
+ "peak_rss_bytes": 5018030080,
  "timed_out": false,
  "exit": 1,
- "validate_s": 92.8,
- "report_bytes": 1121786942,
+ "validate_s": 102.9,
+ "report_bytes": 1121789162,
  "results": 923615,
  "by_severity": {
-  "Violation": 131086,
-  "Warning": 792529
+  "Warning": 792529,
+  "Violation": 131086
  },
  "conforms": false,
  "shapes_with_results": 57,

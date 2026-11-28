@@ -96,7 +96,7 @@
    "dataset": "rinf-all",
    "machine": "ccx43",
    "cpus": "16",
-   "commit": "5f3ea55",
+   "commit": "63f3986",
    "date": "2026-11-28",
    "engines": "jena tripletrail"
   },
