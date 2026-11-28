@@ -1,1 +1,85 @@
 dataset,shape,query,control_of,engine,status,rows_ms,count_ms,rows,title
+rinf-all,facet,facet-gauging-deu,,tripletrail,ok,30.378,38.286,6,German tracks per gauging profile
+rinf-all,facet,facet-gauging-deu,,oxigraph,ok,2856.891,2805.198,6,German tracks per gauging profile
+rinf-all,facet,facet-gauging-deu,,qlever,ok,41.099,39.67,6,German tracks per gauging profile
+rinf-all,facet,facet-gauging-deu,,jena,ok,955.873,929.166,6,German tracks per gauging profile
+rinf-all,facet,facet-sol-length,,tripletrail,ok,17.031,16.218,28,Sections of line per country; with the SUM of their length
+rinf-all,facet,facet-sol-length,,oxigraph,ok,845.515,890.797,28,Sections of line per country; with the SUM of their length
+rinf-all,facet,facet-sol-length,,qlever,ok,25.035,23.231,28,Sections of line per country; with the SUM of their length
+rinf-all,facet,facet-sol-length,,jena,ok,484.344,489.531,28,Sections of line per country; with the SUM of their length
+rinf-all,topk,topk-speed-label,,tripletrail,ok,2.661,3.106,20,The 20 fastest tracks; with their label
+rinf-all,topk,topk-speed-label,,oxigraph,ok,3459.183,3331.069,20,The 20 fastest tracks; with their label
+rinf-all,topk,topk-speed-label,,qlever,ok,30.922,33.305,20,The 20 fastest tracks; with their label
+rinf-all,topk,topk-speed-label,,jena,ok,1278.734,1314.973,20,The 20 fastest tracks; with their label
+rinf-all,topk,topk-cant-speed,,tripletrail,ok,3.375,2.71,20,The 20 tracks with the most cant deficiency; ordered on speed next
+rinf-all,topk,topk-cant-speed,,oxigraph,ok,3441.017,3603.597,20,The 20 tracks with the most cant deficiency; ordered on speed next
+rinf-all,topk,topk-cant-speed,,qlever,ok,31.734,39.616,20,The 20 tracks with the most cant deficiency; ordered on speed next
+rinf-all,topk,topk-cant-speed,,jena,ok,1326.784,1338.206,20,The 20 tracks with the most cant deficiency; ordered on speed next
+rinf-all,star,star-speed-cant-deu,,tripletrail,ok,4.661,4.739,122,German tracks with speed >= 160 and cant deficiency >= 150
+rinf-all,star,star-speed-cant-deu,,oxigraph,ok,2911.756,2892.572,122,German tracks with speed >= 160 and cant deficiency >= 150
+rinf-all,star,star-speed-cant-deu,,qlever,ok,27.422,28.228,122,German tracks with speed >= 160 and cant deficiency >= 150
+rinf-all,star,star-speed-cant-deu,,jena,ok,868.688,924.372,122,German tracks with speed >= 160 and cant deficiency >= 150
+rinf-all,star,star-bool-range,,tripletrail,ok,8.983,6.4,4811,Tracks with speed >= 160; no level crossings; TSI magnetic fields
+rinf-all,star,star-bool-range,,oxigraph,ok,912.252,940.544,4811,Tracks with speed >= 160; no level crossings; TSI magnetic fields
+rinf-all,star,star-bool-range,,qlever,ok,39.062,16.2,4811,Tracks with speed >= 160; no level crossings; TSI magnetic fields
+rinf-all,star,star-bool-range,,jena,ok,1143.303,1086.05,4811,Tracks with speed >= 160; no level crossings; TSI magnetic fields
+rinf-all,chain,chain-track-op,,tripletrail,ok,54.936,21.558,19692,Track; section of line; start operational point; its name
+rinf-all,chain,chain-track-op,,oxigraph,ok,4043.333,3520.577,19692,Track; section of line; start operational point; its name
+rinf-all,chain,chain-track-op,,qlever,ok,317.291,47.282,19692,Track; section of line; start operational point; its name
+rinf-all,chain,chain-track-op,,jena,ok,1847.487,1284.921,19692,Track; section of line; start operational point; its name
+rinf-all,chain,chain-op-wkt,,tripletrail,ok,175.843,28.082,88907,Operational point; net reference; geometry; WKT
+rinf-all,chain,chain-op-wkt,,oxigraph,ok,5370.038,2613.493,88907,Operational point; net reference; geometry; WKT
+rinf-all,chain,chain-op-wkt,,qlever,ok,898.088,59.496,88875,Operational point; net reference; geometry; WKT
+rinf-all,chain,chain-op-wkt,,jena,ok,2901.598,837.128,88907,Operational point; net reference; geometry; WKT
+rinf-all,wide,wide-track-optional,,tripletrail,ok,648.465,65.525,412885,Tracks with label and 3 OPTIONAL properties
+rinf-all,wide,wide-track-optional,,oxigraph,ok,14050.715,7952.808,412885,Tracks with label and 3 OPTIONAL properties
+rinf-all,wide,wide-track-optional,,qlever,ok,3713.759,97.593,412885,Tracks with label and 3 OPTIONAL properties
+rinf-all,wide,wide-track-optional,,jena,ok,14571.622,6605.036,412885,Tracks with label and 3 OPTIONAL properties
+rinf-all,wide,wide-op,,tripletrail,ok,149.974,36.983,54108,Operational points with label; country; location and OPTIONAL id
+rinf-all,wide,wide-op,,oxigraph,ok,3098.655,1500.477,54108,Operational points with label; country; location and OPTIONAL id
+rinf-all,wide,wide-op,,qlever,ok,841.828,32.637,54108,Operational points with label; country; location and OPTIONAL id
+rinf-all,wide,wide-op,,jena,ok,2502.099,787.025,54108,Operational points with label; country; location and OPTIONAL id
+rinf-all,anti,anti-track-no-speed,,tripletrail,ok,256.49,20.199,304739,Tracks without a speed (NOT EXISTS)
+rinf-all,anti,anti-track-no-speed,,oxigraph,ok,5398.829,2734.172,304739,Tracks without a speed (NOT EXISTS)
+rinf-all,anti,anti-track-no-speed,,qlever,ok,617.565,22.867,304739,Tracks without a speed (NOT EXISTS)
+rinf-all,anti,anti-track-no-speed,,jena,ok,3264.406,1341.833,304739,Tracks without a speed (NOT EXISTS)
+rinf-all,valid,valid-day-sol,,tripletrail,ok,488.636,410.303,35108,Sections of line valid on 2026-11-28
+rinf-all,valid,valid-day-sol,,oxigraph,ok,2414.891,2340.562,35108,Sections of line valid on 2026-11-28
+rinf-all,valid,valid-day-sol,,qlever,ok,1059.93,976.717,35108,Sections of line valid on 2026-11-28
+rinf-all,valid,valid-day-sol,,jena,ok,1663.578,1402.98,35108,Sections of line valid on 2026-11-28
+rinf-all,valid,valid-day-op,,tripletrail,ok,340.486,360.295,35983,Operational points valid on 2026-11-28
+rinf-all,valid,valid-day-op,,oxigraph,ok,2482.541,2149.114,35983,Operational points valid on 2026-11-28
+rinf-all,valid,valid-day-op,,qlever,ok,1028.784,944.362,35983,Operational points valid on 2026-11-28
+rinf-all,valid,valid-day-op,,jena,ok,1678.446,1452.874,35983,Operational points valid on 2026-11-28
+rinf-all,valid,valid-day-track,,tripletrail,ok,700.855,647.029,218327,Running tracks valid on 2026-11-28
+rinf-all,valid,valid-day-track,,oxigraph,ok,15293.095,13304.851,218327,Running tracks valid on 2026-11-28
+rinf-all,valid,valid-day-track,,qlever,ok,6388.996,5996.527,218327,Running tracks valid on 2026-11-28
+rinf-all,valid,valid-day-track,,jena,ok,12427.777,10619.741,218327,Running tracks valid on 2026-11-28
+rinf-all,valid,valid-day-any,,tripletrail,ok,1441.712,992.778,488380,Anything valid on 2026-11-28; without a class
+rinf-all,valid,valid-day-any,,oxigraph,ok,23316.568,23309.396,488380,Anything valid on 2026-11-28; without a class
+rinf-all,valid,valid-day-any,,qlever,ok,13442.283,12445.006,488380,Anything valid on 2026-11-28; without a class
+rinf-all,valid,valid-day-any,,jena,ok,23547.772,21015.089,488380,Anything valid on 2026-11-28; without a class
+rinf-all,control,control-topk-speed,topk-speed-label,tripletrail,ok,1.681,1.55,20,Sort on the speed predicate alone
+rinf-all,control,control-topk-speed,topk-speed-label,oxigraph,ok,125.75,132.714,20,Sort on the speed predicate alone
+rinf-all,control,control-topk-speed,topk-speed-label,qlever,ok,3.634,4.572,20,Sort on the speed predicate alone
+rinf-all,control,control-topk-speed,topk-speed-label,jena,ok,316.688,296.248,20,Sort on the speed predicate alone
+rinf-all,control,control-topk-cant,topk-cant-speed,tripletrail,ok,1.722,1.821,20,Sort on the cant deficiency predicate alone
+rinf-all,control,control-topk-cant,topk-cant-speed,oxigraph,ok,95.272,96.023,20,Sort on the cant deficiency predicate alone
+rinf-all,control,control-topk-cant,topk-cant-speed,qlever,ok,4.323,4.871,20,Sort on the cant deficiency predicate alone
+rinf-all,control,control-topk-cant,topk-cant-speed,jena,ok,418.163,376.394,20,Sort on the cant deficiency predicate alone
+rinf-all,control,control-facet-gauging-join,facet-gauging-deu,tripletrail,ok,69.209,34.262,103364,The German gauging join without GROUP BY
+rinf-all,control,control-facet-gauging-join,facet-gauging-deu,oxigraph,ok,3797.521,2838.328,103364,The German gauging join without GROUP BY
+rinf-all,control,control-facet-gauging-join,facet-gauging-deu,qlever,ok,543.338,33.881,103364,The German gauging join without GROUP BY
+rinf-all,control,control-facet-gauging-join,facet-gauging-deu,jena,ok,2194.563,1071.529,103364,The German gauging join without GROUP BY
+rinf-all,control,control-facet-gauging-noclass,facet-gauging-deu,tripletrail,ok,20.813,25.732,6,The German gauging facet without the class
+rinf-all,control,control-facet-gauging-noclass,facet-gauging-deu,oxigraph,ok,1920.023,1930.855,6,The German gauging facet without the class
+rinf-all,control,control-facet-gauging-noclass,facet-gauging-deu,qlever,ok,23.001,23.256,6,The German gauging facet without the class
+rinf-all,control,control-facet-gauging-noclass,facet-gauging-deu,jena,ok,968.6,946.429,6,The German gauging facet without the class
+rinf-all,control,control-valid-track-join,valid-day-track,tripletrail,ok,276.07,150.231,319335,The tracks' validity join without the day filter
+rinf-all,control,control-valid-track-join,valid-day-track,oxigraph,ok,14352.197,12085.266,319335,The tracks' validity join without the day filter
+rinf-all,control,control-valid-track-join,valid-day-track,qlever,ok,876.996,175.531,319335,The tracks' validity join without the day filter
+rinf-all,control,control-valid-track-join,valid-day-track,jena,ok,14496.339,9959.613,319335,The tracks' validity join without the day filter
+rinf-all,control,control-facet-sol-join,facet-sol-length,tripletrail,ok,60.919,10.617,69711,The section-of-line join without GROUP BY
+rinf-all,control,control-facet-sol-join,facet-sol-length,oxigraph,ok,1713.847,809.05,69711,The section-of-line join without GROUP BY
+rinf-all,control,control-facet-sol-join,facet-sol-length,qlever,ok,569.877,20.89,69711,The section-of-line join without GROUP BY
+rinf-all,control,control-facet-sol-join,facet-sol-length,jena,ok,1750.905,378.226,69711,The section-of-line join without GROUP BY

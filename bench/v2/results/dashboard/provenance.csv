@@ -3,6 +3,7 @@ bsbm,2785,ccx43,16,a9aae02,2026-11-22,graphdb jena maplib oxigraph qlever
 bsbm,2785,ccx43,16,c875571,2026-11-27,tripletrail
 bsbm,28480,ccx43,16,a9aae02,2026-11-22,graphdb jena maplib oxigraph qlever tripletrail
 geographica,all,ccx43,16,a9aae02,2026-11-22,graphdb jena qlever tripletrail
+rinfshapes,rinf-all,"cloud container (4 cores, 16 GB)",4,b3f39d4,2026-11-28,jena oxigraph qlever tripletrail
 scale,osm_benelux,ccx43,16,cee8c3c,2026-11-21,qlever
 scale,osm_benelux,ccx43,16,5d76345,2026-11-21,graphdb
 scale,osm_benelux,ccx43,16,fed8e96,2026-11-27,tripletrail
