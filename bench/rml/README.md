@@ -32,7 +32,50 @@ picks some of `tripletrail morph-kgc rmlmapper`, and `--morph-processes` sets Mo
 `number_of_processes` (on a machine with little memory: each of its processes holds its own
 part of the source).
 
-## Results (2026-11-14)
+## Results (2026-11-28)
+
+The same 4-core Intel Xeon at 2.10 GHz with 15 GB of memory (the session's limit is 14 GB,
+page cache included), Linux. TripleTrail from main at fed8e960, Morph-KGC 2.10.0 on
+Python 3.13 with `--morph-processes 2` (its default of one process per core ran out of
+memory on 210 MB), RMLMapper 7.3.3 in `eclipse-temurin:21-jre` with `-Xmx12g`. Times are wall
+time, memory is peak resident memory, and a run is stopped after an hour.
+
+**45 MB, 1,000,000 rows**
+
+| Mapping | Tool | Time | Peak memory | Triples |
+|---|---|---:|---:|---:|
+| simple | TripleTrail | 6.9 s | 372 MiB | 5,000,000 |
+| simple | Morph-KGC | 12.2 s | 968 MiB | 5,000,000 |
+| simple | RMLMapper | 32.5 s | 7.9 GiB | 5,000,000 |
+| join | TripleTrail | 3.0 s | 372 MiB | 1,100,000 |
+| join | Morph-KGC | 5.8 s | 874 MiB | 1,100,000 |
+| join | RMLMapper | did not finish in 1 h | | |
+
+**210 MB, 4,500,000 rows**
+
+| Mapping | Tool | Time | Peak memory | Triples |
+|---|---|---:|---:|---:|
+| simple | TripleTrail | 32.9 s | 1.1 GiB | 22,500,000 |
+| simple | Morph-KGC | 64.8 s | 3.9 GiB | 22,500,000 |
+| simple | RMLMapper | failed after 212 s at its 12 GiB heap | 12.4 GiB | |
+| join | TripleTrail | 16.1 s | 906 MiB | 4,600,000 |
+| join | Morph-KGC | 26.2 s | 3.3 GiB | 4,600,000 |
+| join | RMLMapper | did not finish in 1 h | | |
+
+**1 GB, 21,500,000 rows** (TripleTrail only: Morph-KGC did not finish in 2 h on 2026-11-14,
+and RMLMapper already fails on a fifth of the rows)
+
+| Mapping | Tool | Time | Peak memory | Triples |
+|---|---|---:|---:|---:|
+| simple | TripleTrail | 168 s | 3.4 GiB | 107,500,000 |
+| join | TripleTrail | 57 s | 3.4 GiB | 21,600,000 |
+
+All tools that finish write the same number of triples. RMLMapper's memory grows with the
+output (about 1.6 KiB a triple on the simple mapping), so a 12 GiB heap holds less than
+22,500,000 triples. Its join of 1,000,000 tracks with 100,000 lines
+did not end within the hour.
+
+## Earlier results (2026-11-14)
 
 A 4-core Intel Xeon at 2.10 GHz with 15 GB of memory, Linux; TripleTrail from main with the
 streaming lift (#159), Morph-KGC 2.10.0 on Python 3.13.

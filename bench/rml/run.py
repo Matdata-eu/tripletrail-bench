@@ -62,7 +62,10 @@ peak = [l.split() for l in err if l.startswith(b"peak ")]
 if name:
     # The docker client's own memory says nothing: the command's, if it could read it.
     m = int(peak[-1][1]) if peak and peak[-1][1:2] and peak[-1][1].isdigit() else None
-state = "" if rc == 0 else (f", stopped after {timeout} s" if timed_out else f", failed ({rc})")
+# A failure says why: the last line of its standard error that is not the memory.
+why = [l.decode(errors="replace").strip() for l in err if l.strip() and not l.startswith(b"peak ")]
+failed = f", failed ({rc}" + (f": {why[-1][:200]}" if why else "") + ")"
+state = "" if rc == 0 else (f", stopped after {timeout} s" if timed_out else failed)
 memory = "? MiB" if m is None else f"{m / 2**20:.0f} MiB"
 print(f"{t:.1f} s, {memory}, {n} triples" + state)
 """
