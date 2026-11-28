@@ -29,9 +29,13 @@ function parseCSV(text) {
   });
 }
 
-async function load(file) {
+// The results shown: data/ is the latest; data/v/<commit>/ an earlier snapshot (versions.json,
+// written by build.py --history, and the ?v= parameter of the page's URL).
+let BASE = "data/";
+
+async function load(file, base = BASE) {
   try {
-    const r = await fetch(`data/${file}`, { cache: "no-cache" });
+    const r = await fetch(`${base}${file}`, { cache: "no-cache" });
     if (!r.ok) return [];
     return file.endsWith(".json") ? await r.json() : parseCSV(await r.text());
   } catch {
@@ -240,12 +244,23 @@ function versus(rows, { field, lower = true, unit, what }) {
   ];
 }
 
+// Where a tab's results ran. A later run of some engines only (TripleTrail alone, say) replaces
+// only their results, so a tab can come from several runs: name each with its engines.
 function provLine(prov, suite, dataset) {
-  const p = prov.find((r) => r.suite === suite && r.dataset === dataset);
-  if (!p) return null;
-  const commit = p.commit ? el("a", { href: `https://github.com/Matdata-eu/tripletrail/commit/${p.commit}`, text: p.commit.slice(0, 8) }) : "an unrecorded commit";
-  return el("p", { class: "prov" }, "Ran on ", b(p.machine || "?"), p.cpus ? ` (${p.cpus} vCPU)` : "",
-    " with TripleTrail at ", commit, p.date ? `, ${p.date}` : "", ".");
+  const ps = prov.filter((r) => r.suite === suite && r.dataset === dataset);
+  if (!ps.length) return null;
+  const commit = (p) => p.commit ? el("a", { href: `https://github.com/Matdata-eu/tripletrail/commit/${p.commit}`, text: p.commit.slice(0, 8) }) : "an unrecorded commit";
+  const machines = uniq(ps.map((p) => `${p.machine || "?"}${p.cpus ? ` (${p.cpus} vCPU)` : ""}`));
+  const at = (p) => [commit(p), p.date ? `, ${p.date}` : ""];
+  if (ps.length === 1) return el("p", { class: "prov" }, "Ran on ", b(machines[0]), " with TripleTrail at ", ...at(ps[0]), ".");
+  // The run that measured TripleTrail first, then the others.
+  const sorted = [...ps].sort((x, y) => (y.engines || "").split(" ").includes(OURS) - (x.engines || "").split(" ").includes(OURS));
+  const parts = sorted.map((p) => {
+    const es = (p.engines || "").split(" ").filter(Boolean);
+    return [" ", b(`${inOrder(es.map((engine) => ({ engine }))).map((r) => name(r.engine)).join(", ") || "Other engines"}:`),
+      " run of ", p.date || "an unrecorded date", " with TripleTrail at ", commit(p), "."];
+  });
+  return el("p", { class: "prov" }, "Ran on ", b(machines.join(", ")), ".", ...parts.flat());
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -695,6 +710,7 @@ function runs(D) {
         { label: "Suite", l: true, get: (r) => r.suite }, { label: "Dataset", l: true, get: (r) => r.dataset },
         { label: "Machine", l: true, get: (r) => r.machine }, { label: "CPUs", get: (r) => r.cpus },
         { label: "TripleTrail", l: true, get: (r) => commit(r.commit) }, { label: "Date", l: true, get: (r) => r.date },
+        { label: "Engines", l: true, get: (r) => (r.engines || "").split(" ").filter(Boolean).map(name).join(", ") || "–" },
       ])) : null,
   ];
 }
@@ -702,7 +718,57 @@ function runs(D) {
 // ---------------------------------------------------------------------------------------------
 // Page: tabs, a size toggle per tab, and the state in the URL hash (#spatial/large).
 
+// Which snapshot the page opens on without ?v=: "latest" (the newest results, tagged or not) or
+// "tagged" (the newest results tag, results-*, falling back to the latest when there is none).
+const DEFAULT_VERSION = "latest";
+
+const versionLabel = (v) => [
+  v.id === "latest" ? "Latest" : v.date,
+  v.version ? `TripleTrail ${v.version}` : v.tripletrail ? `TripleTrail ${v.tripletrail.slice(0, 8)}` : null,
+  v.tags && v.tags.length ? `★ ${v.tags.join(", ")}` : null,
+].filter(Boolean).join(" · ");
+
+// Picks the snapshot from ?v= (an id, a commit or a tag), fills the picker and, for an earlier
+// snapshot, says so above the tabs. Returns the chosen version (or null without versions.json).
+async function chooseVersion() {
+  const versions = await load("versions.json", "data/");
+  if (!Array.isArray(versions) || !versions.length) return null;
+  const want = new URLSearchParams(location.search).get("v");
+  const tagged = versions.find((v) => v.tags && v.tags.length);
+  const v = (want && versions.find((x) => x.id === want || (x.bench_commit || "").startsWith(want) || (x.tags || []).includes(want)))
+    || (DEFAULT_VERSION === "tagged" && tagged) || versions[0];
+  BASE = v.path;
+
+  const select = document.getElementById("version");
+  for (const x of versions) {
+    const o = el("option", { value: x.id, text: versionLabel(x) });
+    if (x === v) o.selected = true;
+    select.append(o);
+  }
+  select.addEventListener("change", () => {
+    const u = new URL(location.href);
+    if (select.value === versions[0].id && DEFAULT_VERSION === "latest") u.searchParams.delete("v");
+    else u.searchParams.set("v", select.value);
+    location.assign(u.toString());
+  });
+  document.getElementById("version-box").hidden = false;
+
+  if (v !== versions[0]) {
+    const u = new URL(location.href);
+    u.searchParams.delete("v");
+    const commit = v.tripletrail ? el("a", { href: `https://github.com/Matdata-eu/tripletrail/commit/${v.tripletrail}`, text: v.tripletrail.slice(0, 8) }) : null;
+    const box = document.getElementById("older");
+    box.append(...["These are the results as of ", b(v.date || "an earlier commit"),
+      commit ? [", whose newest run measured TripleTrail ", v.version ? `${v.version} (` : "", commit, v.version ? ")" : ""] : null,
+      v.tags && v.tags.length ? [", tagged ", b(v.tags.join(", "))] : null,
+      ". ", el("a", { href: u.toString(), text: "Show the latest results" }), "."].flat().filter((x) => x != null && x !== ""));
+    box.hidden = false;
+  }
+  return v;
+}
+
 async function main() {
+  await chooseVersion();
   const [summary, sq, cats, qmph, aqet, tload, tq, sload, squeries, rs, prov, runList] = await Promise.all([
     load("summary.json"), load("summary.csv"), load("categories.csv"), load("bsbm_qmph.csv"), load("bsbm_aqet.csv"),
     load("trainmarks_load.csv"), load("trainmarks_queries.csv"), load("spatial_load.csv"),

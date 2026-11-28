@@ -17,11 +17,16 @@
       <a href="https://github.com/Matdata-eu/tripletrail-bench/actions/workflows/bench.yml">benchmark workflow</a>
       on a rented server, with its inputs, logs and raw results in
       <a href="https://github.com/Matdata-eu/tripletrail-bench">the repository</a>.</p>
+    <div class="version" id="version-box" hidden>
+      <label for="version">TripleTrail version</label>
+      <select id="version"></select>
+    </div>
     <ul class="legend" id="legend" aria-label="Engines"></ul>
     <nav id="tabs" role="tablist" aria-label="Benchmark"></nav>
   </div>
 </header>
 <main class="wrap">
+  <p class="older" id="older" hidden></p>
   <div id="empty" hidden>
     <h2>No results yet</h2>
     <p>The first complete run on the published open core is on its way. Until then, the method
@@ -32,8 +37,13 @@
     <summary>How these were measured</summary>
     <dl>
       <dt>Machine</dt>
-      <dd>Each tab names the machine, TripleTrail commit and date of its run, from
+      <dd>Each tab names the machine, TripleTrail commit and date of the runs its results come from
+        (a later run of one engine replaces only that engine's results), from
         <a href="data/provenance.csv">provenance.csv</a>. One engine at a time, all times at the client over HTTP.</dd>
+      <dt>Versions</dt>
+      <dd>The version picker goes back to the results as they stood after each earlier results
+        commit, labelled with the TripleTrail release before its newest run (v0.1.0+22: 22 commits
+        after v0.1.0). Starred entries are tagged results, the only ones quoted elsewhere.</dd>
       <dt>Sparqloscope</dt>
       <dd>The benchmark behind the QLever evaluation site: about 100 generated queries per dataset, each isolating one SPARQL feature. One cold run per query after an engine restart.</dd>
       <dt>BSBM</dt>

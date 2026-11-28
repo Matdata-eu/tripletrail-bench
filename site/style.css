@@ -55,6 +55,9 @@ h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
 h2 { font-size: 16px; font-weight: 600; margin: 0 0 4px; }
 .lede { color: var(--muted); max-width: 80ch; margin: 0 0 14px; }
 
+.version { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 0 0 12px; font-size: 13px; color: var(--muted); }
+.version select { font: inherit; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px; max-width: 100%; }
+.older { margin: 16px 0 4px; padding: 10px 14px; border: 1px solid var(--accent); border-radius: 8px; background: var(--panel); font-size: 14px; }
 .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0 0 12px; padding: 0; list-style: none; font-size: 13px; color: var(--muted); }
 .legend li { display: flex; align-items: center; gap: 6px; }
 .legend li.ours { color: var(--fg); font-weight: 600; }

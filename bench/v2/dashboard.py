@@ -18,7 +18,7 @@ Files (plain CSV, no quoted fields):
   spatial_load.csv       bench v2: dataset,engine,load_s,disk_gib,triples
   spatial_queries.csv    bench v2: dataset,family,query,engine,status,cold_ms,p50_ms,p95_ms
   rinfshapes_queries.csv RINF shapes: dataset,shape,query,control_of,engine,status,rows_ms,count_ms,rows,title
-  provenance.csv         suite,dataset,machine,cpus,commit,date: where and when each result ran
+  provenance.csv         suite,dataset,machine,cpus,commit,date,engines: where and when each result ran
 """
 import csv
 import glob
@@ -227,11 +227,12 @@ def rinfshapes(res):
 
 
 def provenance(res):
-    """Per suite and dataset, the run manifest that measured the most engines (the latest of
-    those): a later run of one engine only (an engine added afterwards) does not stand for the
-    whole table. For results without a manifest, their env file (no date)."""
+    """Per suite and dataset, the run manifests the results come from: for each engine, the
+    latest ok run that measured it (a later run of one engine overwrites only that engine's
+    results), one row per run with the engines it stands for. The run that measured the most
+    engines comes first. For results without a manifest, their env file (no date, no engines)."""
     rows, seen = [], set()
-    best = {}
+    latest = {}  # (suite, dataset) -> engine -> manifest
     for f in glob.glob(os.path.join(res, "runs", "*.json")):
         try:
             m = json.load(open(f))
@@ -240,15 +241,19 @@ def provenance(res):
         for j in m.get("jobs", []):
             if j.get("status") != "ok":
                 continue
-            key = (j["suite"], j["dataset"])
-            rank = (len(j.get("engines", [])), m.get("started", ""))
-            if key not in best or rank > best[key][0]:
-                best[key] = (rank, m)
-    for (suite, ds), (_, m) in sorted(best.items()):
-        env = m.get("env", {})
+            per = latest.setdefault((j["suite"], j["dataset"]), {})
+            for e in j.get("engines", []):
+                if e not in per or m.get("started", "") > per[e].get("started", ""):
+                    per[e] = m
+    for (suite, ds), per in sorted(latest.items()):
         seen.add((suite, ds))
-        rows.append([suite, ds, m.get("machine", ""), env.get("cpus", ""),
-                     m.get("commit", "")[:7], m.get("started", "")[:10]])
+        by_run = {}
+        for e, m in per.items():
+            by_run.setdefault(m.get("run"), (m, []))[1].append(e)
+        for m, engines in sorted(by_run.values(), key=lambda x: (-len(x[1]), x[0].get("started", ""))):
+            env = m.get("env", {})
+            rows.append([suite, ds, m.get("machine", ""), env.get("cpus", ""),
+                         m.get("commit", "")[:7], m.get("started", "")[:10], " ".join(sorted(engines))])
 
     for suite, pattern, strip in [("sparqloscope", "env-*.json", "env-"), ("bsbm", "env-*.json", "env-"),
                                   ("trainmarks", "env-*.json", "env-"), ("rinfshapes", "env-*.json", "env-"),
@@ -267,8 +272,8 @@ def provenance(res):
             seen.add((suite, ds))
             env = json.load(open(f))
             machine = "ccx43" if env.get("cpus") == 16 and "EPYC" in env.get("cpu", "") else f"{env.get('cpus', '?')} vCPU container"
-            rows.append([suite, ds, machine, env.get("cpus", ""), env.get("tripletrail_commit", "")[:7], ""])
-    return sorted(rows)
+            rows.append([suite, ds, machine, env.get("cpus", ""), env.get("tripletrail_commit", "")[:7], "", ""])
+    return sorted(rows, key=lambda r: (r[0], r[1]))  # stable: the widest run stays first
 
 
 def main():
@@ -293,7 +298,7 @@ def main():
     write(out, "rinfshapes_queries.csv",
           ["dataset", "shape", "query", "control_of", "engine", "status", "rows_ms", "count_ms", "rows", "title"],
           rinfshapes(res))
-    write(out, "provenance.csv", ["suite", "dataset", "machine", "cpus", "commit", "date"], provenance(res))
+    write(out, "provenance.csv", ["suite", "dataset", "machine", "cpus", "commit", "date", "engines"], provenance(res))
     print(f"dashboard files written to {out}")
 
 
