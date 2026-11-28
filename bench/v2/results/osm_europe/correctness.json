@@ -4,227 +4,159 @@
    "match": 0,
    "tie": 0,
    "mismatch": 0,
+   "no_reference": 6
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "osm_station_admin/tripletrail": {
+  "counts": {
+   "match": 0,
+   "tie": 0,
+   "mismatch": 0,
+   "no_reference": 0,
    "other_extract": 6
   },
-  "examples": [
-   {
-    "index": 0,
-    "verdict": "mismatch",
-    "note": "keys differ (11476 vs 11481)"
-   },
-   {
-    "index": 1,
-    "verdict": "mismatch",
-    "note": "keys differ (11476 vs 11481)"
-   },
-   {
-    "index": 2,
-    "verdict": "mismatch",
-    "note": "keys differ (11476 vs 11481)"
-   },
-   {
-    "index": 3,
-    "verdict": "mismatch",
-    "note": "keys differ (11476 vs 11481)"
-   },
-   {
-    "index": 4,
-    "verdict": "mismatch",
-    "note": "keys differ (11476 vs 11481)"
-   }
-  ],
-  "notes": {
-   "keys differ (11476 vs 11481)": 6
-  }
+  "examples": [],
+  "notes": {}
  },
  "osm_track_track_5m/qlever": {
   "counts": {
    "match": 0,
    "tie": 0,
    "mismatch": 0,
+   "no_reference": 6
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "osm_track_track_5m/tripletrail": {
+  "counts": {
+   "match": 0,
+   "tie": 0,
+   "mismatch": 0,
+   "no_reference": 0,
    "other_extract": 5
   },
-  "examples": [
-   {
-    "index": 0,
-    "verdict": "mismatch",
-    "note": "[5449036.0] vs [5444484.0]"
-   },
-   {
-    "index": 1,
-    "verdict": "mismatch",
-    "note": "[5449036.0] vs [5444484.0]"
-   },
-   {
-    "index": 2,
-    "verdict": "mismatch",
-    "note": "[5449036.0] vs [5444484.0]"
-   },
-   {
-    "index": 3,
-    "verdict": "mismatch",
-    "note": "[5449036.0] vs [5444484.0]"
-   },
-   {
-    "index": 4,
-    "verdict": "mismatch",
-    "note": "[5449036.0] vs [5444484.0]"
-   }
-  ],
-  "notes": {
-   "[5449036.0] vs [5444484.0]": 5
-  }
+  "examples": [],
+  "notes": {}
  },
  "scale_class_counts/graphdb": {
   "counts": {
-   "match": 0,
+   "match": 6,
    "tie": 0,
    "mismatch": 0,
-   "other_extract": 6
+   "no_reference": 0
   },
-  "examples": [
-   {
-    "index": 0,
-    "verdict": "mismatch",
-    "note": "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0"
-   },
-   {
-    "index": 1,
-    "verdict": "mismatch",
-    "note": "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0"
-   },
-   {
-    "index": 2,
-    "verdict": "mismatch",
-    "note": "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0"
-   },
-   {
-    "index": 3,
-    "verdict": "mismatch",
-    "note": "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0"
-   },
-   {
-    "index": 4,
-    "verdict": "mismatch",
-    "note": "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0"
-   }
-  ],
-  "notes": {
-   "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0": 6
-  }
+  "examples": [],
+  "notes": {}
  },
  "scale_class_counts/qlever": {
+  "counts": {
+   "match": 6,
+   "tie": 0,
+   "mismatch": 0,
+   "no_reference": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "scale_class_counts/tripletrail": {
   "counts": {
    "match": 0,
    "tie": 0,
    "mismatch": 0,
+   "no_reference": 0,
    "other_extract": 6
   },
   "examples": [
    {
     "index": 0,
     "verdict": "mismatch",
-    "note": "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0"
+    "note": "7 groups differ, e.g. OsmStation: 98861.0 vs 98701.0"
    },
    {
     "index": 1,
     "verdict": "mismatch",
-    "note": "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0"
+    "note": "7 groups differ, e.g. OsmStation: 98861.0 vs 98701.0"
    },
    {
     "index": 2,
     "verdict": "mismatch",
-    "note": "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0"
+    "note": "7 groups differ, e.g. OsmStation: 98861.0 vs 98701.0"
    },
    {
     "index": 3,
     "verdict": "mismatch",
-    "note": "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0"
+    "note": "7 groups differ, e.g. OsmStation: 98861.0 vs 98701.0"
    },
    {
     "index": 4,
     "verdict": "mismatch",
-    "note": "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0"
+    "note": "7 groups differ, e.g. OsmStation: 98861.0 vs 98701.0"
    }
   ],
   "notes": {
-   "7 groups differ, e.g. OsmStation: 98701.0 vs 98861.0": 6
+   "7 groups differ, e.g. OsmStation: 98861.0 vs 98701.0": 6
   }
  },
  "scale_building_kinds/graphdb": {
   "counts": {
-   "match": 0,
+   "match": 6,
    "tie": 0,
    "mismatch": 0,
-   "other_extract": 6
+   "no_reference": 0
   },
-  "examples": [
-   {
-    "index": 0,
-    "verdict": "mismatch",
-    "note": "keys differ (2507 vs 2505)"
-   },
-   {
-    "index": 1,
-    "verdict": "mismatch",
-    "note": "keys differ (2507 vs 2505)"
-   },
-   {
-    "index": 2,
-    "verdict": "mismatch",
-    "note": "keys differ (2507 vs 2505)"
-   },
-   {
-    "index": 3,
-    "verdict": "mismatch",
-    "note": "keys differ (2507 vs 2505)"
-   },
-   {
-    "index": 4,
-    "verdict": "mismatch",
-    "note": "keys differ (2507 vs 2505)"
-   }
-  ],
-  "notes": {
-   "keys differ (2507 vs 2505)": 6
-  }
+  "examples": [],
+  "notes": {}
  },
  "scale_building_kinds/qlever": {
+  "counts": {
+   "match": 6,
+   "tie": 0,
+   "mismatch": 0,
+   "no_reference": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "scale_building_kinds/tripletrail": {
   "counts": {
    "match": 0,
    "tie": 0,
    "mismatch": 0,
+   "no_reference": 0,
    "other_extract": 6
   },
   "examples": [
    {
     "index": 0,
     "verdict": "mismatch",
-    "note": "keys differ (2507 vs 2505)"
+    "note": "keys differ (2505 vs 2507)"
    },
    {
     "index": 1,
     "verdict": "mismatch",
-    "note": "keys differ (2507 vs 2505)"
+    "note": "keys differ (2505 vs 2507)"
    },
    {
     "index": 2,
     "verdict": "mismatch",
-    "note": "keys differ (2507 vs 2505)"
+    "note": "keys differ (2505 vs 2507)"
    },
    {
     "index": 3,
     "verdict": "mismatch",
-    "note": "keys differ (2507 vs 2505)"
+    "note": "keys differ (2505 vs 2507)"
    },
    {
     "index": 4,
     "verdict": "mismatch",
-    "note": "keys differ (2507 vs 2505)"
+    "note": "keys differ (2505 vs 2507)"
    }
   ],
   "notes": {
-   "keys differ (2507 vs 2505)": 6
+   "keys differ (2505 vs 2507)": 6
   }
  },
  "scale_label_lookup/graphdb": {
@@ -232,7 +164,7 @@
    "match": 23,
    "tie": 0,
    "mismatch": 0,
-   "other_extract": 0
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -242,6 +174,17 @@
    "match": 23,
    "tie": 0,
    "mismatch": 0,
+   "no_reference": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "scale_label_lookup/tripletrail": {
+  "counts": {
+   "match": 23,
+   "tie": 0,
+   "mismatch": 0,
+   "no_reference": 0,
    "other_extract": 0
   },
   "examples": [],
@@ -249,78 +192,61 @@
  },
  "scale_named_stations/graphdb": {
   "counts": {
-   "match": 0,
+   "match": 6,
    "tie": 0,
    "mismatch": 0,
-   "other_extract": 6
+   "no_reference": 0
   },
-  "examples": [
-   {
-    "index": 0,
-    "verdict": "mismatch",
-    "note": "[88482.0] vs [88632.0]"
-   },
-   {
-    "index": 1,
-    "verdict": "mismatch",
-    "note": "[88482.0] vs [88632.0]"
-   },
-   {
-    "index": 2,
-    "verdict": "mismatch",
-    "note": "[88482.0] vs [88632.0]"
-   },
-   {
-    "index": 3,
-    "verdict": "mismatch",
-    "note": "[88482.0] vs [88632.0]"
-   },
-   {
-    "index": 4,
-    "verdict": "mismatch",
-    "note": "[88482.0] vs [88632.0]"
-   }
-  ],
-  "notes": {
-   "[88482.0] vs [88632.0]": 6
-  }
+  "examples": [],
+  "notes": {}
  },
  "scale_named_stations/qlever": {
+  "counts": {
+   "match": 6,
+   "tie": 0,
+   "mismatch": 0,
+   "no_reference": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "scale_named_stations/tripletrail": {
   "counts": {
    "match": 0,
    "tie": 0,
    "mismatch": 0,
+   "no_reference": 0,
    "other_extract": 6
   },
   "examples": [
    {
     "index": 0,
     "verdict": "mismatch",
-    "note": "[88482.0] vs [88632.0]"
+    "note": "[88632.0] vs [88482.0]"
    },
    {
     "index": 1,
     "verdict": "mismatch",
-    "note": "[88482.0] vs [88632.0]"
+    "note": "[88632.0] vs [88482.0]"
    },
    {
     "index": 2,
     "verdict": "mismatch",
-    "note": "[88482.0] vs [88632.0]"
+    "note": "[88632.0] vs [88482.0]"
    },
    {
     "index": 3,
     "verdict": "mismatch",
-    "note": "[88482.0] vs [88632.0]"
+    "note": "[88632.0] vs [88482.0]"
    },
    {
     "index": 4,
     "verdict": "mismatch",
-    "note": "[88482.0] vs [88632.0]"
+    "note": "[88632.0] vs [88482.0]"
    }
   ],
   "notes": {
-   "[88482.0] vs [88632.0]": 6
+   "[88632.0] vs [88482.0]": 6
   }
  }
 }

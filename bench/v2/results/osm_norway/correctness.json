@@ -3,7 +3,8 @@
   "counts": {
    "match": 5,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -12,7 +13,8 @@
   "counts": {
    "match": 6,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -21,7 +23,8 @@
   "counts": {
    "match": 6,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -30,7 +33,8 @@
   "counts": {
    "match": 6,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -39,7 +43,8 @@
   "counts": {
    "match": 0,
    "tie": 0,
-   "mismatch": 6
+   "mismatch": 6,
+   "no_reference": 0
   },
   "examples": [
    {
@@ -76,7 +81,8 @@
   "counts": {
    "match": 6,
    "tie": 0,
-   "mismatch": 0
+   "mismatch": 0,
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -85,7 +91,8 @@
   "counts": {
    "match": 0,
    "tie": 0,
-   "mismatch": 6
+   "mismatch": 6,
+   "no_reference": 0
   },
   "examples": [
    {
@@ -122,7 +129,8 @@
   "counts": {
    "match": 0,
    "tie": 0,
-   "mismatch": 6
+   "mismatch": 6,
+   "no_reference": 0
   },
   "examples": [
    {
@@ -159,7 +167,8 @@
   "counts": {
    "match": 0,
    "tie": 0,
-   "mismatch": 6
+   "mismatch": 6,
+   "no_reference": 0
   },
   "examples": [
    {

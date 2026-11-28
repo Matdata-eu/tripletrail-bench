@@ -1,13 +1,19 @@
-qid,engine,reference,compared,match,tie,mismatch,other_extract,note
-osm_station_admin,qlever,tripletrail,6,0,0,0,6,"other extract (1,000,066,611 triples against 1,000,055,618): 0 agree, 6 differ"
-osm_track_track_5m,graphdb,tripletrail,0,0,0,0,0,"failed: HTTP 503: Query interrupted: Query evaluation took too long
+qid,engine,reference,compared,match,tie,mismatch,other_extract,no_reference,note
+osm_station_admin,qlever,majority,6,0,0,0,0,6,6 runs without a majority answer
+osm_station_admin,tripletrail,majority,6,0,0,0,6,0,"other extract (1,000,055,618 triples against 1,000,066,611): 0 agree, 6 differ"
+osm_track_track_5m,graphdb,majority,0,0,0,0,0,0,"failed: HTTP 503: Query interrupted: Query evaluation took too long
 "
-osm_track_track_5m,qlever,tripletrail,5,0,0,0,5,"other extract (1,000,066,611 triples against 1,000,055,618): 0 agree, 5 differ"
-scale_class_counts,graphdb,tripletrail,6,0,0,0,6,"other extract (1,000,066,611 triples against 1,000,055,618): 0 agree, 6 differ"
-scale_class_counts,qlever,tripletrail,6,0,0,0,6,"other extract (1,000,066,611 triples against 1,000,055,618): 0 agree, 6 differ"
-scale_building_kinds,graphdb,tripletrail,6,0,0,0,6,"other extract (1,000,066,611 triples against 1,000,055,618): 0 agree, 6 differ"
-scale_building_kinds,qlever,tripletrail,6,0,0,0,6,"other extract (1,000,066,611 triples against 1,000,055,618): 0 agree, 6 differ"
-scale_label_lookup,graphdb,tripletrail,23,23,0,0,0,"other extract (1,000,066,611 triples against 1,000,055,618): 23 agree, 0 differ"
-scale_label_lookup,qlever,tripletrail,23,23,0,0,0,"other extract (1,000,066,611 triples against 1,000,055,618): 23 agree, 0 differ"
-scale_named_stations,graphdb,tripletrail,6,0,0,0,6,"other extract (1,000,066,611 triples against 1,000,055,618): 0 agree, 6 differ"
-scale_named_stations,qlever,tripletrail,6,0,0,0,6,"other extract (1,000,066,611 triples against 1,000,055,618): 0 agree, 6 differ"
+osm_track_track_5m,qlever,majority,6,0,0,0,0,6,6 runs without a majority answer
+osm_track_track_5m,tripletrail,majority,5,0,0,0,5,0,"other extract (1,000,055,618 triples against 1,000,066,611): 0 agree, 5 differ"
+scale_class_counts,graphdb,majority,6,6,0,0,0,0,
+scale_class_counts,qlever,majority,6,6,0,0,0,0,
+scale_class_counts,tripletrail,majority,6,0,0,0,6,0,"other extract (1,000,055,618 triples against 1,000,066,611): 0 agree, 6 differ"
+scale_building_kinds,graphdb,majority,6,6,0,0,0,0,
+scale_building_kinds,qlever,majority,6,6,0,0,0,0,
+scale_building_kinds,tripletrail,majority,6,0,0,0,6,0,"other extract (1,000,055,618 triples against 1,000,066,611): 0 agree, 6 differ"
+scale_label_lookup,graphdb,majority,23,23,0,0,0,0,
+scale_label_lookup,qlever,majority,23,23,0,0,0,0,
+scale_label_lookup,tripletrail,majority,23,23,0,0,0,0,"other extract (1,000,055,618 triples against 1,000,066,611): 23 agree, 0 differ"
+scale_named_stations,graphdb,majority,6,6,0,0,0,0,
+scale_named_stations,qlever,majority,6,6,0,0,0,0,
+scale_named_stations,tripletrail,majority,6,0,0,0,6,0,"other extract (1,000,055,618 triples against 1,000,066,611): 0 agree, 6 differ"

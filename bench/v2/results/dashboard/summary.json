@@ -608,19 +608,19 @@
       "speedup": 60.97
      },
      "jena": {
-      "value": 194.609,
-      "tripletrail": 9.768,
-      "speedup": 19.92
+      "value": 261.165,
+      "tripletrail": 11.119,
+      "speedup": 23.49
      },
      "postgis": {
-      "value": 87.056,
-      "tripletrail": 42.074,
-      "speedup": 2.07
+      "value": 77.754,
+      "tripletrail": 42.027,
+      "speedup": 1.85
      },
      "qlever": {
-      "value": 234.42,
-      "tripletrail": 18.635,
-      "speedup": 12.58
+      "value": 123.616,
+      "tripletrail": 7.562,
+      "speedup": 16.35
      }
     }
    },
@@ -666,19 +666,19 @@
       "speedup": 4949.16
      },
      "jena": {
-      "value": 19625.067,
-      "tripletrail": 41.216,
-      "speedup": 476.15
+      "value": 3947.839,
+      "tripletrail": 41.272,
+      "speedup": 95.65
      },
      "postgis": {
-      "value": 676.657,
-      "tripletrail": 65.096,
-      "speedup": 10.39
+      "value": 336.54,
+      "tripletrail": 81.864,
+      "speedup": 4.11
      },
      "qlever": {
-      "value": 1389.003,
-      "tripletrail": 65.096,
-      "speedup": 21.34
+      "value": 2769.598,
+      "tripletrail": 41.272,
+      "speedup": 67.11
      }
     }
    },
@@ -687,24 +687,24 @@
     "metric": "geometric mean p50 over shared answered queries (ms)",
     "others": {
      "graphdb": {
-      "value": 82.448,
-      "tripletrail": 5.629,
-      "speedup": 14.65
+      "value": 83.121,
+      "tripletrail": 4.989,
+      "speedup": 16.66
      },
      "jena": {
-      "value": 85.761,
-      "tripletrail": 7.672,
-      "speedup": 11.18
+      "value": 53.311,
+      "tripletrail": 5.39,
+      "speedup": 9.89
      },
      "postgis": {
-      "value": 14.25,
-      "tripletrail": 12.021,
-      "speedup": 1.19
+      "value": 15.795,
+      "tripletrail": 12.435,
+      "speedup": 1.27
      },
      "qlever": {
-      "value": 36.464,
-      "tripletrail": 9.144,
-      "speedup": 3.99
+      "value": 41.06,
+      "tripletrail": 8.204,
+      "speedup": 5.0
      }
     }
    }

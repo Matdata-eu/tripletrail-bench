@@ -1,13 +1,13 @@
-qid,engine,status,cold_ms,n,p50_ms,p95_ms,min_ms,max_ms,mean_ms
-osm_station_admin,tripletrail,ok,68.914,3,41.272,43.641,39.685,43.641,41.533
-osm_station_admin,postgis,ok,213.014,3,160.098,161.887,159.836,161.887,160.607
-osm_station_admin,graphdb,ok,204767.434,2,204261.684,204352.115,204171.252,204352.115,204261.684
-osm_station_admin,jena,ok,6699.912,3,3947.839,4040.723,3633.25,4040.723,3873.937
-osm_station_admin,qlever,ok,2804.006,3,2769.598,2782.545,2741.772,2782.545,2764.638
-osm_track_landuse,tripletrail,ok,165.697,3,162.378,175.558,151.059,175.558,162.998
-osm_track_landuse,postgis,ok,833.13,3,707.436,717.998,705.611,717.998,710.348
-osm_track_landuse,qlever,ok,2222.312,3,2143.663,2158.448,2094.824,2158.448,2132.312
-osm_track_track_5m,tripletrail,ok,81.479,3,41.161,44.591,40.071,44.591,41.941
-osm_track_track_5m,postgis,ok,2723.389,3,2735.476,2757.304,2724.441,2757.304,2739.074
-osm_track_track_5m,jena,ok,99978.424,3,97557.992,97620.212,97485.987,97620.212,97554.73
-osm_track_track_5m,qlever,ok,501.393,3,451.374,462.884,441.252,462.884,451.837
+qid,engine,status,check,cold_ms,n,p50_ms,p95_ms,min_ms,max_ms,mean_ms
+osm_station_admin,tripletrail,ok,ok,68.914,3,41.272,43.641,39.685,43.641,41.533
+osm_station_admin,postgis,ok,,213.014,3,160.098,161.887,159.836,161.887,160.607
+osm_station_admin,graphdb,ok,ok,204767.434,2,204261.684,204352.115,204171.252,204352.115,204261.684
+osm_station_admin,jena,ok,ok,6699.912,3,3947.839,4040.723,3633.25,4040.723,3873.937
+osm_station_admin,qlever,ok,ok,2804.006,3,2769.598,2782.545,2741.772,2782.545,2764.638
+osm_track_landuse,tripletrail,ok,ok,165.697,3,162.378,175.558,151.059,175.558,162.998
+osm_track_landuse,postgis,ok,,833.13,3,707.436,717.998,705.611,717.998,710.348
+osm_track_landuse,qlever,wrong answer,mismatch,2222.312,3,2143.663,2158.448,2094.824,2158.448,2132.312
+osm_track_track_5m,tripletrail,wrong answer,mismatch,81.479,3,41.161,44.591,40.071,44.591,41.941
+osm_track_track_5m,postgis,ok,,2723.389,3,2735.476,2757.304,2724.441,2757.304,2739.074
+osm_track_track_5m,jena,wrong answer,mismatch,99978.424,3,97557.992,97620.212,97485.987,97620.212,97554.73
+osm_track_track_5m,qlever,wrong answer,mismatch,501.393,3,451.374,462.884,441.252,462.884,451.837

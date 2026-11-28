@@ -3,6 +3,9 @@
 
   report.py <results>/<dataset> [engine ...]   -> prints Markdown; also writes report.md and
                                                   summary.csv in that folder
+
+A time whose answer differs from the reference in compare.py's correctness.csv is shown struck
+out with "wrong" and a note, and summary.csv gives it the status "wrong answer" (#96).
 """
 import csv
 import glob
@@ -12,6 +15,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
+from compare import verdicts  # noqa: E402
 from run import na_reason  # noqa: E402
 from workload import QUERIES  # noqa: E402
 
@@ -76,6 +80,7 @@ def main():
         out.append("")
     notes = {}
     summary = []
+    checks = verdicts(folder)
     fam = None
     for qid, q in QUERIES.items():
         if qid not in res:
@@ -107,9 +112,20 @@ def main():
                 cells.append(f"{short} [{notes[f'{NAMES[e]} {qid}: {reason[:160]}']}]")
             else:
                 w = r.get("warm", {})
-                cells.append(f"{fmt_ms(w.get('p50_ms'))} / {fmt_ms(w.get('p95_ms'))} ({fmt_ms(r.get('cold_ms'))})"
-                             + ("*" if st != "ok" else ""))
-                summary.append(dict(qid=qid, engine=e, status=st, cold_ms=r.get("cold_ms"), **w))
+                cell = (f"{fmt_ms(w.get('p50_ms'))} / {fmt_ms(w.get('p95_ms'))} ({fmt_ms(r.get('cold_ms'))})"
+                        + ("*" if st != "ok" else ""))
+                check, why = checks.get((qid, e), ("", ""))
+                if check == "mismatch":
+                    key = f"{NAMES[e]} {qid}: answer differs from the reference (correctness.csv): {why[:160]}"
+                    notes.setdefault(key, len(notes) + 1)
+                    cell = f"~~{cell}~~ wrong [{notes[key]}]"
+                    st = "wrong answer"
+                elif check == "unchecked":
+                    key = f"{NAMES[e]} {qid}: not checked (correctness.csv): {why[:160]}"
+                    notes.setdefault(key, len(notes) + 1)
+                    cell = f"{cell} unchecked [{notes[key]}]"
+                cells.append(cell)
+                summary.append(dict(qid=qid, engine=e, status=st, check=check, cold_ms=r.get("cold_ms"), **w))
         out.append(f"| {qid} | " + " | ".join(cells) + " |")
     if notes:
         out.append("\nNotes:\n")
@@ -124,7 +140,7 @@ def main():
     with open(os.path.join(folder, "report.md"), "w") as f:
         f.write(md + "\n")
     if summary:
-        keys = ["qid", "engine", "status", "cold_ms", "n", "p50_ms", "p95_ms", "min_ms", "max_ms", "mean_ms"]
+        keys = ["qid", "engine", "status", "check", "cold_ms", "n", "p50_ms", "p95_ms", "min_ms", "max_ms", "mean_ms"]
         with open(os.path.join(folder, "summary.csv"), "w", newline="") as f:
             w = csv.DictWriter(f, fieldnames=keys)
             w.writeheader()

@@ -4,265 +4,180 @@
    "match": 0,
    "tie": 0,
    "mismatch": 0,
+   "no_reference": 6
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "osm_station_admin/tripletrail": {
+  "counts": {
+   "match": 0,
+   "tie": 0,
+   "mismatch": 0,
+   "no_reference": 0,
    "other_extract": 6
   },
-  "examples": [
-   {
-    "index": 0,
-    "verdict": "mismatch",
-    "note": "2 groups differ, e.g. 125331: 36.0 vs 34.0"
-   },
-   {
-    "index": 1,
-    "verdict": "mismatch",
-    "note": "2 groups differ, e.g. 125331: 36.0 vs 34.0"
-   },
-   {
-    "index": 2,
-    "verdict": "mismatch",
-    "note": "2 groups differ, e.g. 125331: 36.0 vs 34.0"
-   },
-   {
-    "index": 3,
-    "verdict": "mismatch",
-    "note": "2 groups differ, e.g. 125331: 36.0 vs 34.0"
-   },
-   {
-    "index": 4,
-    "verdict": "mismatch",
-    "note": "2 groups differ, e.g. 125331: 36.0 vs 34.0"
-   }
-  ],
-  "notes": {
-   "2 groups differ, e.g. 125331: 36.0 vs 34.0": 6
-  }
+  "examples": [],
+  "notes": {}
  },
  "osm_track_landuse/qlever": {
   "counts": {
    "match": 0,
    "tie": 0,
    "mismatch": 0,
+   "no_reference": 6
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "osm_track_landuse/tripletrail": {
+  "counts": {
+   "match": 0,
+   "tie": 0,
+   "mismatch": 0,
+   "no_reference": 0,
    "other_extract": 6
   },
-  "examples": [
-   {
-    "index": 0,
-    "verdict": "mismatch",
-    "note": "[97585.0] vs [97424.0]"
-   },
-   {
-    "index": 1,
-    "verdict": "mismatch",
-    "note": "[97585.0] vs [97424.0]"
-   },
-   {
-    "index": 2,
-    "verdict": "mismatch",
-    "note": "[97585.0] vs [97424.0]"
-   },
-   {
-    "index": 3,
-    "verdict": "mismatch",
-    "note": "[97585.0] vs [97424.0]"
-   },
-   {
-    "index": 4,
-    "verdict": "mismatch",
-    "note": "[97585.0] vs [97424.0]"
-   }
-  ],
-  "notes": {
-   "[97585.0] vs [97424.0]": 6
-  }
+  "examples": [],
+  "notes": {}
  },
  "osm_track_track_5m/qlever": {
   "counts": {
    "match": 0,
    "tie": 0,
    "mismatch": 0,
+   "no_reference": 6
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "osm_track_track_5m/tripletrail": {
+  "counts": {
+   "match": 0,
+   "tie": 0,
+   "mismatch": 0,
+   "no_reference": 0,
    "other_extract": 6
   },
-  "examples": [
-   {
-    "index": 0,
-    "verdict": "mismatch",
-    "note": "[489358.0] vs [489252.0]"
-   },
-   {
-    "index": 1,
-    "verdict": "mismatch",
-    "note": "[489358.0] vs [489252.0]"
-   },
-   {
-    "index": 2,
-    "verdict": "mismatch",
-    "note": "[489358.0] vs [489252.0]"
-   },
-   {
-    "index": 3,
-    "verdict": "mismatch",
-    "note": "[489358.0] vs [489252.0]"
-   },
-   {
-    "index": 4,
-    "verdict": "mismatch",
-    "note": "[489358.0] vs [489252.0]"
-   }
-  ],
-  "notes": {
-   "[489358.0] vs [489252.0]": 6
-  }
+  "examples": [],
+  "notes": {}
  },
  "scale_class_counts/graphdb": {
   "counts": {
-   "match": 0,
+   "match": 6,
    "tie": 0,
    "mismatch": 0,
-   "other_extract": 6
+   "no_reference": 0
   },
-  "examples": [
-   {
-    "index": 0,
-    "verdict": "mismatch",
-    "note": "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0"
-   },
-   {
-    "index": 1,
-    "verdict": "mismatch",
-    "note": "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0"
-   },
-   {
-    "index": 2,
-    "verdict": "mismatch",
-    "note": "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0"
-   },
-   {
-    "index": 3,
-    "verdict": "mismatch",
-    "note": "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0"
-   },
-   {
-    "index": 4,
-    "verdict": "mismatch",
-    "note": "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0"
-   }
-  ],
-  "notes": {
-   "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0": 6
-  }
+  "examples": [],
+  "notes": {}
  },
  "scale_class_counts/qlever": {
+  "counts": {
+   "match": 6,
+   "tie": 0,
+   "mismatch": 0,
+   "no_reference": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "scale_class_counts/tripletrail": {
   "counts": {
    "match": 0,
    "tie": 0,
    "mismatch": 0,
+   "no_reference": 0,
    "other_extract": 6
   },
   "examples": [
    {
     "index": 0,
     "verdict": "mismatch",
-    "note": "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0"
+    "note": "6 groups differ, e.g. OsmStation: 3751.0 vs 3755.0"
    },
    {
     "index": 1,
     "verdict": "mismatch",
-    "note": "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0"
+    "note": "6 groups differ, e.g. OsmStation: 3751.0 vs 3755.0"
    },
    {
     "index": 2,
     "verdict": "mismatch",
-    "note": "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0"
+    "note": "6 groups differ, e.g. OsmStation: 3751.0 vs 3755.0"
    },
    {
     "index": 3,
     "verdict": "mismatch",
-    "note": "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0"
+    "note": "6 groups differ, e.g. OsmStation: 3751.0 vs 3755.0"
    },
    {
     "index": 4,
     "verdict": "mismatch",
-    "note": "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0"
+    "note": "6 groups differ, e.g. OsmStation: 3751.0 vs 3755.0"
    }
   ],
   "notes": {
-   "6 groups differ, e.g. OsmStation: 3755.0 vs 3751.0": 6
+   "6 groups differ, e.g. OsmStation: 3751.0 vs 3755.0": 6
   }
  },
  "scale_building_kinds/graphdb": {
   "counts": {
-   "match": 0,
+   "match": 6,
    "tie": 0,
    "mismatch": 0,
-   "other_extract": 6
+   "no_reference": 0
   },
-  "examples": [
-   {
-    "index": 0,
-    "verdict": "mismatch",
-    "note": "keys differ (805 vs 804)"
-   },
-   {
-    "index": 1,
-    "verdict": "mismatch",
-    "note": "keys differ (805 vs 804)"
-   },
-   {
-    "index": 2,
-    "verdict": "mismatch",
-    "note": "keys differ (805 vs 804)"
-   },
-   {
-    "index": 3,
-    "verdict": "mismatch",
-    "note": "keys differ (805 vs 804)"
-   },
-   {
-    "index": 4,
-    "verdict": "mismatch",
-    "note": "keys differ (805 vs 804)"
-   }
-  ],
-  "notes": {
-   "keys differ (805 vs 804)": 6
-  }
+  "examples": [],
+  "notes": {}
  },
  "scale_building_kinds/qlever": {
+  "counts": {
+   "match": 6,
+   "tie": 0,
+   "mismatch": 0,
+   "no_reference": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "scale_building_kinds/tripletrail": {
   "counts": {
    "match": 0,
    "tie": 0,
    "mismatch": 0,
+   "no_reference": 0,
    "other_extract": 6
   },
   "examples": [
    {
     "index": 0,
     "verdict": "mismatch",
-    "note": "keys differ (805 vs 804)"
+    "note": "keys differ (804 vs 805)"
    },
    {
     "index": 1,
     "verdict": "mismatch",
-    "note": "keys differ (805 vs 804)"
+    "note": "keys differ (804 vs 805)"
    },
    {
     "index": 2,
     "verdict": "mismatch",
-    "note": "keys differ (805 vs 804)"
+    "note": "keys differ (804 vs 805)"
    },
    {
     "index": 3,
     "verdict": "mismatch",
-    "note": "keys differ (805 vs 804)"
+    "note": "keys differ (804 vs 805)"
    },
    {
     "index": 4,
     "verdict": "mismatch",
-    "note": "keys differ (805 vs 804)"
+    "note": "keys differ (804 vs 805)"
    }
   ],
   "notes": {
-   "keys differ (805 vs 804)": 6
+   "keys differ (804 vs 805)": 6
   }
  },
  "scale_label_lookup/graphdb": {
@@ -270,7 +185,7 @@
    "match": 23,
    "tie": 0,
    "mismatch": 0,
-   "other_extract": 0
+   "no_reference": 0
   },
   "examples": [],
   "notes": {}
@@ -280,6 +195,17 @@
    "match": 23,
    "tie": 0,
    "mismatch": 0,
+   "no_reference": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "scale_label_lookup/tripletrail": {
+  "counts": {
+   "match": 23,
+   "tie": 0,
+   "mismatch": 0,
+   "no_reference": 0,
    "other_extract": 0
   },
   "examples": [],
@@ -287,78 +213,61 @@
  },
  "scale_named_stations/graphdb": {
   "counts": {
-   "match": 0,
+   "match": 6,
    "tie": 0,
    "mismatch": 0,
-   "other_extract": 6
+   "no_reference": 0
   },
-  "examples": [
-   {
-    "index": 0,
-    "verdict": "mismatch",
-    "note": "[3433.0] vs [3429.0]"
-   },
-   {
-    "index": 1,
-    "verdict": "mismatch",
-    "note": "[3433.0] vs [3429.0]"
-   },
-   {
-    "index": 2,
-    "verdict": "mismatch",
-    "note": "[3433.0] vs [3429.0]"
-   },
-   {
-    "index": 3,
-    "verdict": "mismatch",
-    "note": "[3433.0] vs [3429.0]"
-   },
-   {
-    "index": 4,
-    "verdict": "mismatch",
-    "note": "[3433.0] vs [3429.0]"
-   }
-  ],
-  "notes": {
-   "[3433.0] vs [3429.0]": 6
-  }
+  "examples": [],
+  "notes": {}
  },
  "scale_named_stations/qlever": {
+  "counts": {
+   "match": 6,
+   "tie": 0,
+   "mismatch": 0,
+   "no_reference": 0
+  },
+  "examples": [],
+  "notes": {}
+ },
+ "scale_named_stations/tripletrail": {
   "counts": {
    "match": 0,
    "tie": 0,
    "mismatch": 0,
+   "no_reference": 0,
    "other_extract": 6
   },
   "examples": [
    {
     "index": 0,
     "verdict": "mismatch",
-    "note": "[3433.0] vs [3429.0]"
+    "note": "[3429.0] vs [3433.0]"
    },
    {
     "index": 1,
     "verdict": "mismatch",
-    "note": "[3433.0] vs [3429.0]"
+    "note": "[3429.0] vs [3433.0]"
    },
    {
     "index": 2,
     "verdict": "mismatch",
-    "note": "[3433.0] vs [3429.0]"
+    "note": "[3429.0] vs [3433.0]"
    },
    {
     "index": 3,
     "verdict": "mismatch",
-    "note": "[3433.0] vs [3429.0]"
+    "note": "[3429.0] vs [3433.0]"
    },
    {
     "index": 4,
     "verdict": "mismatch",
-    "note": "[3433.0] vs [3429.0]"
+    "note": "[3429.0] vs [3433.0]"
    }
   ],
   "notes": {
-   "[3433.0] vs [3429.0]": 6
+   "[3429.0] vs [3433.0]": 6
   }
  }
 }
