@@ -2,14 +2,17 @@
 # QLever (docker image adfreiburg/qlever) for benchmark v2.
 #   qlever.sh load <dataset>   qlever-index with the geo-split vocabulary + start; prints JSON
 #   qlever.sh start <dataset> | stop | endpoint | rss
-# Env: BENCH_WORK, QLEVER_IMAGE, QLEVER_MEMORY (memory for queries incl. cache, default 8G),
+# Env: BENCH_WORK, QLEVER_IMAGE, QLEVER_MEMORY (memory for queries incl. cache) and
+# QLEVER_INDEX_MEMORY (for the index build), both BENCH_MEMORY by default (see budget.sh),
 # QLEVER_CACHE (default 2G), QLEVER_NOFILE (open files, default 1048576), QLEVER_NO_GEO=1 (plain
 # vocabulary, no geometry preprocessing: for suites without spatial queries).
 set -euo pipefail
 HERE=$(cd "$(dirname "$0")" && pwd)
 W=${BENCH_WORK:-$HERE/../work}
+. "$HERE/budget.sh"
 IMAGE=${QLEVER_IMAGE:-mirror.gcr.io/adfreiburg/qlever:latest}
-MEM=${QLEVER_MEMORY:-8G}
+MEM=${QLEVER_MEMORY:-$BENCH_MEMORY}
+INDEX_MEM=${QLEVER_INDEX_MEMORY:-$BENCH_MEMORY}
 CACHE=${QLEVER_CACHE:-2G}
 # Open files for the container; a host whose hard limit is lower (a cloud sandbox) sets it lower.
 NOFILE=${QLEVER_NOFILE:-1048576}
@@ -62,7 +65,7 @@ case "$1" in
     docker run --rm --ulimit nofile=$NOFILE:$NOFILE -u "$(id -u):$(id -g)" \
       -v "$W/qlever/$ds:/index" -v "$W/data:/data:ro" -w /index \
       --entrypoint /qlever/qlever-index "$IMAGE" -i /index/bench -f "/data/$(basename "$IN")" -F "${IN##*.}" -p true \
-      -s /index/bench.settings.json --vocabulary-type $VOCAB -m 4G \
+      -s /index/bench.settings.json --vocabulary-type $VOCAB -m "$INDEX_MEM" \
       >"$W/qlever/$ds.load.log" 2>&1 \
       || { echo "qlever load failed:" >&2; tail -n 30 "$W/qlever/$ds.load.log" >&2; exit 1; }
     t1=$(date +%s.%N)

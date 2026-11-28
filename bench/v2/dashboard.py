@@ -21,7 +21,8 @@ Files (plain CSV, no quoted fields):
                          check is compare.py's verdict (ok, mismatch, unchecked); a mismatch has the
                          status "wrong answer", so it counts as not answered everywhere (#96)
   rinfshapes_queries.csv RINF shapes: dataset,shape,query,control_of,engine,status,rows_ms,count_ms,rows,title
-  provenance.csv         suite,dataset,machine,cpus,commit,date,engines: where and when each result ran
+  provenance.csv         suite,dataset,machine,cpus,commit,date,engines,budget: where and when each result ran,
+                         and the memory and cores every engine got (env.json's budget, #94)
 """
 import csv
 import glob
@@ -264,6 +265,15 @@ def rinfshapes(res):
     return rows
 
 
+def budget(env):
+    """The run's budget as one cell ("32G / 16 cores": no comma, as site/build.py writes the CSV
+    as is); empty for runs from before #94, whose engines had unequal budgets."""
+    b = env.get("budget")
+    if not isinstance(b, dict):
+        return ""
+    return f"{b.get('memory', '?')} / {b.get('cores', '?')} cores"
+
+
 def provenance(res):
     """Per suite and dataset, the run manifests the results come from: for each engine, the
     latest ok run that measured it (a later run of one engine overwrites only that engine's
@@ -291,7 +301,8 @@ def provenance(res):
         for m, engines in sorted(by_run.values(), key=lambda x: (-len(x[1]), x[0].get("started", ""))):
             env = m.get("env", {})
             rows.append([suite, ds, m.get("machine", ""), env.get("cpus", ""),
-                         m.get("commit", "")[:7], m.get("started", "")[:10], " ".join(sorted(engines))])
+                         m.get("commit", "")[:7], m.get("started", "")[:10], " ".join(sorted(engines)),
+                         budget(env)])
 
     for suite, pattern, strip in [("sparqloscope", "env-*.json", "env-"), ("bsbm", "env-*.json", "env-"),
                                   ("trainmarks", "env-*.json", "env-"), ("rinfshapes", "env-*.json", "env-"),
@@ -310,7 +321,8 @@ def provenance(res):
             seen.add((suite, ds))
             env = json.load(open(f))
             machine = "ccx43" if env.get("cpus") == 16 and "EPYC" in env.get("cpu", "") else f"{env.get('cpus', '?')} vCPU container"
-            rows.append([suite, ds, machine, env.get("cpus", ""), env.get("tripletrail_commit", "")[:7], "", ""])
+            rows.append([suite, ds, machine, env.get("cpus", ""), env.get("tripletrail_commit", "")[:7], "", "",
+                         budget(env)])
     return sorted(rows, key=lambda r: (r[0], r[1]))  # stable: the widest run stays first
 
 
@@ -338,7 +350,8 @@ def main():
     write(out, "rinfshapes_queries.csv",
           ["dataset", "shape", "query", "control_of", "engine", "status", "rows_ms", "count_ms", "rows", "title"],
           rinfshapes(res))
-    write(out, "provenance.csv", ["suite", "dataset", "machine", "cpus", "commit", "date", "engines"], provenance(res))
+    write(out, "provenance.csv", ["suite", "dataset", "machine", "cpus", "commit", "date", "engines", "budget"],
+          provenance(res))
     print(f"dashboard files written to {out}")
 
 

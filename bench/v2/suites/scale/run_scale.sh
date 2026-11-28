@@ -12,7 +12,7 @@
 #                  5,000,000,000); needs about 3 TB of work disk (bench.yml gives it a
 #                  3,000 GB volume: the N-Triples, about 1 TB, next to the largest store, GraphDB's
 #                  about 1.2 TB) and more memory than a ccx43 (a ccx53, 128 GB)
-# Env: BENCH_WORK, TRIPLETRAIL_MEMORY_LIMIT (default 32G; QLEVER_MEMORY defaults to it), SCALE_MAX_TRIPLES, SCALE_PBF_URL
+# Env: BENCH_WORK, BENCH_MEMORY and BENCH_CORES (engines/budget.sh), TRIPLETRAIL_MEMORY_LIMIT (default BENCH_MEMORY), SCALE_MAX_TRIPLES, SCALE_PBF_URL
 # (default Geofabrik's europe-latest, or the planet for osm_planet), SCALE_KEEP=1 (keep the inputs, the N-Triples and the
 # stores; otherwise each goes once it is no longer needed: the disk of a 360 GB server holds one
 # at a time). Results: results/<dataset>/ as for v2, plus updates-*.json and scale.json.
@@ -23,13 +23,11 @@ W=${BENCH_WORK:-$V2/work}
 export BENCH_WORK=$W
 DS=$1; shift
 ENGINES=${*:-tripletrail qlever}
-# GraphDB runs only when named (run_scale.sh osm_benelux graphdb). It gets half of a 64 GB
-# machine as heap; its default 8g is too small at this size.
-export GRAPHDB_HEAP=${GRAPHDB_HEAP:-32g}
-LIMIT=${TRIPLETRAIL_MEMORY_LIMIT:-32G}
-# QLever gets the same memory for its queries as TripleTrail's limit and GraphDB's heap (its
-# default 8G was a quarter of theirs, tripletrail-bench#94).
-export QLEVER_MEMORY=${QLEVER_MEMORY:-$LIMIT}
+# GraphDB runs only when named (run_scale.sh osm_benelux graphdb). Every engine gets the run's
+# budget (engines/budget.sh: half the machine's RAM, 32G on a ccx43): TripleTrail's
+# --memory-limit, GraphDB's heap and QLever's query and index memory (tripletrail-bench#94).
+. "$V2/engines/budget.sh" || exit 1
+LIMIT=${TRIPLETRAIL_MEMORY_LIMIT:-$BENCH_MEMORY}
 case $DS in
   osm_planet) URL=${SCALE_PBF_URL:-https://planet.openstreetmap.org/pbf/planet-latest.osm.pbf} ;;
   *) URL=${SCALE_PBF_URL:-https://download.geofabrik.de/europe-latest.osm.pbf} ;;

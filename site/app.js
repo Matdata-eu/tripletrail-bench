@@ -789,6 +789,7 @@ function runs(D) {
         { label: "Machine", l: true, get: (r) => r.machine }, { label: "CPUs", get: (r) => r.cpus },
         { label: "TripleTrail", l: true, get: (r) => commit(r.commit) }, { label: "Date", l: true, get: (r) => r.date },
         { label: "Engines", l: true, get: (r) => (r.engines || "").split(" ").filter(Boolean).map(name).join(", ") || "–" },
+        { label: "Budget per engine", l: true, get: (r) => r.budget || "unequal (before #94)" },
       ])) : null,
   ];
 }

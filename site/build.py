@@ -124,7 +124,7 @@ def history(results, data, core, latest_runs):
             files = [n for n in (git("ls-tree", "-r", "--name-only", c, f"{results.rstrip('/')}/") or "").splitlines()
                      if n.endswith(".json") and (n.startswith(f"{results.rstrip('/')}/runs/") or os.path.basename(n).startswith("env"))]
             with open(os.path.join(out, "provenance.csv"), "w", encoding="utf-8") as f:
-                f.write("suite,dataset,machine,cpus,commit,date,engines\n")
+                f.write("suite,dataset,machine,cpus,commit,date,engines,budget\n")
                 for row in provenance_rows(results, c, files):
                     f.write(",".join(str(x) for x in row) + "\n")
             path = f"data/v/{c[:7]}/"
