@@ -1,6 +1,7 @@
 # A small RINF-like extract for test_queries.py: seven running tracks in Germany and France, one
 # track of another class, three sections of line and three operational points. Made by hand in
-# the shape of ERA's RINF graphs; the expected answers are in test_queries.py.
+# the shape of ERA's RINF graphs; the expected answers are in test_queries.py. The validity
+# periods at the end test the valid-day queries on 2026-11-28.
 @prefix era: <http://data.europa.eu/949/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
@@ -8,6 +9,8 @@
 @prefix c: <http://publications.europa.eu/resource/authority/country/> .
 @prefix g: <http://data.europa.eu/949/concepts/gaugings/> .
 @prefix : <http://data.europa.eu/949/functionalInfrastructure/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix v: <http://data.europa.eu/949/temporalFeature/> .
 
 :t1 a era:RunningTrack ; rdfs:label "T1" ; era:inCountry c:DEU ; era:gaugingProfile g:G1 ;
   era:maximumPermittedSpeed 200 ; era:cantDeficiency 160 ; era:hasLevelCrossings false ;
@@ -40,3 +43,34 @@
   era:primaryLocation :pl3 ; era:uopid "FR001" .
 :nr1 geo:hasGeometry :geom1 . :geom1 geo:asWKT "POINT(4.1 50.8)"^^geo:wktLiteral .
 :nr2 geo:hasGeometry :geom2 . :geom2 geo:asWKT "POINT(4.2 50.9)"^^geo:wktLiteral .
+
+# Validity: as ERA writes it (instants with an xsd:date), as Bane NOR writes it (an
+# xsd:dateTimeStamp), open ends, a future beginning, an end on the day itself, an entity with two
+# writings, and a writing without a beginning.
+v:p2015 time:hasBeginning v:d2015 ; time:hasEnd v:d2050 .
+v:p2010 time:hasBeginning v:d2010 ; time:hasEnd v:d2020 .
+v:p2021 time:hasBeginning v:d2021 .
+v:pstamp time:hasBeginning v:s2018 .
+v:p2027 time:hasBeginning v:d2027 .
+v:ptoday time:hasBeginning v:d2010 ; time:hasEnd v:dtoday .
+v:pfromtoday time:hasBeginning v:stoday ; time:hasEnd v:d2026end .
+v:pnobegin time:hasEnd v:d2050 .
+v:d2010 time:inXSDDate "2010-01-01"^^xsd:date .
+v:d2015 time:inXSDDate "2015-01-01"^^xsd:date .
+v:d2020 time:inXSDDate "2020-01-01"^^xsd:date .
+v:d2021 time:inXSDDate "2021-01-01"^^xsd:date .
+v:d2027 time:inXSDDate "2027-01-01"^^xsd:date .
+v:d2050 time:inXSDDate "2050-01-01"^^xsd:date .
+v:dtoday time:inXSDDate "2026-11-28"^^xsd:date .
+v:d2026end time:inXSDDate "2026-12-31"^^xsd:date .
+v:s2018 time:inXSDDateTimeStamp "2017-12-31T22:00:00+00:00"^^xsd:dateTimeStamp .
+v:stoday time:inXSDDateTimeStamp "2026-11-28T00:00:00+00:00"^^xsd:dateTimeStamp .
+:sol1 era:validity v:p2015 .
+:sol2 era:validity v:p2010 , v:p2021 .
+:op1 era:validity v:pstamp .
+:op2 era:validity v:p2027 .
+:op3 era:validity v:ptoday .
+:t1 era:validity v:p2015 .
+:t2 era:validity v:p2010 .
+:t3 era:validity v:pfromtoday .
+:t4 era:validity v:pnobegin .

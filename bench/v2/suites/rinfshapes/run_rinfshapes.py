@@ -5,10 +5,14 @@ anti-joins on real RINF data, each query in a rows form and a count form (querie
   run_rinfshapes.py prepare --dataset rinf-all|rinf-<code>
       $BENCH_WORK/data/rinf-<x>.nt -> $BENCH_WORK/data/rinfshapes-<x>.nt, without the triples
       that some engine cannot load (see clean())
-  run_rinfshapes.py run --dataset rinf-all|rinf-<code> --engine E [--skip-load] [--warm 7]
+  run_rinfshapes.py run --dataset rinf-all|rinf-<code> --engine E [--skip-load] [--warm 7] [--shape S]
       load rinfshapes-<x> (engines/E.sh load), start the engine, then per query and form: one
       cold run, 2 warm-ups and --warm timed runs (median)
       -> results/rinfshapes/<dataset>/<engine>.json
+  run_rinfshapes.py counts --dataset rinf-all [--engine tripletrail]
+      how RINF writes validity, per class (tripletrail #311): entities, writings, writings per
+      entity and entities valid on the valid-day queries' day
+      -> results/rinfshapes/<dataset>/validity-counts.json
   run_rinfshapes.py report   -> results/rinfshapes/report.md
 
 The data is fetched by run_suite.sh (suites/data/fetch_rinf.py) and never committed. Times are
@@ -28,7 +32,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 V2 = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, V2)
 sys.path.insert(0, HERE)
-from queries import QUERIES, SHAPES, BY_ID  # noqa: E402
+from queries import QUERIES, SHAPES, BY_ID, PREFIXES, INSTANT, VALID_ON_DAY  # noqa: E402
 
 WORK = os.environ.get("BENCH_WORK", os.path.join(V2, "work"))
 OUT = os.path.join(V2, "results", "rinfshapes")
@@ -134,7 +138,8 @@ def cmd_run(a):
     engine(a.engine, "start", store)
     cl = Sparql(a.engine, engine(a.engine, "endpoint"))
     try:
-        for q in QUERIES:
+        for q in [q for q in QUERIES if not a.shape or q.shape in a.shape
+                  or (q.control_of and BY_ID[q.control_of].shape in a.shape)]:
             r = {}
             try:
                 r["rows"], rows = timed(cl, q.rows, a.warm)
@@ -153,6 +158,44 @@ def cmd_run(a):
         engine(a.engine, "stop")
     path = os.path.join(OUT, a.dataset, f"{a.engine}.json")
     json.dump(rec, open(path, "w"), indent=1)
+    print(path)
+
+
+# How RINF writes validity, per class (tripletrail #311): the entities with an era:validity, their
+# writings (validity links), how many writings an entity has, and how many entities are valid on
+# the day of the valid-day queries.
+COUNTS = {
+    "per_class": """SELECT ?class (COUNT(DISTINCT ?e) AS ?entities) (COUNT(*) AS ?writings)
+        WHERE { ?e era:validity ?v ; a ?class } GROUP BY ?class""",
+    "writings_per_entity": """SELECT ?class ?k (COUNT(*) AS ?entities) WHERE {
+        { SELECT ?class ?e (COUNT(?v) AS ?k) WHERE { ?e era:validity ?v ; a ?class } GROUP BY ?class ?e } }
+        GROUP BY ?class ?k""",
+    "valid_on_day": f"""SELECT ?class (COUNT(DISTINCT ?e) AS ?valid)
+        WHERE {{ ?e a ?class . {VALID_ON_DAY} }} GROUP BY ?class""",
+    "writings_without_beginning": f"""SELECT (COUNT(*) AS ?writings)
+        WHERE {{ ?e era:validity ?v FILTER NOT EXISTS {{ ?v time:hasBeginning/{INSTANT} ?b }} }}""",
+    "writings_with_end": f"""SELECT (COUNT(*) AS ?writings)
+        WHERE {{ ?e era:validity ?v . ?v time:hasEnd/{INSTANT} ?end }}""",
+}
+
+
+def cmd_counts(a):
+    """Runs COUNTS once on a started engine and writes their rows next to its timings."""
+    from run import Sparql
+    store = store_name(a.dataset)
+    engine(a.engine, "start", store)
+    cl = Sparql(a.engine, engine(a.engine, "endpoint"))
+    out = {"engine": a.engine, "dataset": a.dataset}
+    try:
+        for name, text in COUNTS.items():
+            dt, rows = cl.query(PREFIXES + text, TIMEOUT)
+            out[name] = {"ms": round(dt * 1000, 1), "rows": rows}
+            print(f"{name}: {len(rows)} rows, {dt * 1000:.0f} ms", flush=True)
+    finally:
+        engine(a.engine, "stop")
+    os.makedirs(os.path.join(OUT, a.dataset), exist_ok=True)
+    path = os.path.join(OUT, a.dataset, "validity-counts.json")
+    json.dump(out, open(path, "w"), indent=1)
     print(path)
 
 
@@ -243,11 +286,16 @@ def main():
     r.add_argument("--engine", required=True)
     r.add_argument("--skip-load", action="store_true")
     r.add_argument("--warm", type=int, default=7)
+    r.add_argument("--shape", action="append", help="only this shape's queries and their controls")
+    c = sp.add_parser("counts")
+    c.add_argument("--dataset", default="rinf-all")
+    c.add_argument("--engine", default="tripletrail")
     sp.add_parser("report")
     q = sp.add_parser("queries")
     q.add_argument("id", nargs="?")
     a = p.parse_args()
-    {"prepare": cmd_prepare, "run": cmd_run, "report": cmd_report, "queries": cmd_queries}[a.cmd](a)
+    {"prepare": cmd_prepare, "run": cmd_run, "counts": cmd_counts, "report": cmd_report,
+     "queries": cmd_queries}[a.cmd](a)
 
 
 if __name__ == "__main__":

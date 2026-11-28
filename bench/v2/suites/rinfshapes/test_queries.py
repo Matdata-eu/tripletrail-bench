@@ -48,6 +48,11 @@ EXPECTED = {
     "control-facet-gauging-join": [("t1", "G1"), ("t2", "G1"), ("t3", "G2"), ("t5", "G2")],
     "control-facet-gauging-noclass": [("G1", 3), ("G2", 2)],
     "control-facet-sol-join": [("sol1", "DEU", 10), ("sol2", "DEU", 4), ("sol3", "FRA", 20)],
+    "valid-day-sol": [("sol1",), ("sol2",)],
+    "valid-day-op": [("op1",), ("op3",)],
+    "valid-day-track": [("t1",), ("t3",)],
+    "valid-day-any": [("sol1",), ("sol2",), ("op1",), ("op3",), ("t1",), ("t3",)],
+    "control-valid-track-join": [("t1",), ("t2",), ("t3",)],
 }
 ORDERED = {"topk-speed-label", "topk-cant-speed", "control-topk-speed"}
 

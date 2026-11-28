@@ -56,6 +56,8 @@ engines() {
   # tripletrail-ids (the id-column executor as the default) and tripletrail-1t (one thread per
   # query) run only when asked for by name.
   case $1 in bsbm|sparqloscope|trainmarks|updates) extra="$extra tripletrail-ids tripletrail-1t" ;; esac
+  # rinfshapes: the evaluator as the default too (tripletrail-spareval), for its valid-day queries.
+  case $1 in rinfshapes) extra="$extra tripletrail-ids tripletrail-spareval" ;; esac
   [ -z "$REQ" ] && { echo "$all"; return; }
   local out=""
   for e in $all $extra; do case " $REQ " in *" $e "*) out="$out $e" ;; esac; done
