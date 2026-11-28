@@ -1,6 +1,6 @@
 # Trainmarks-style results
 
-Synthetic e-commerce data and queries from Trainmarks (seed 42), run over HTTP against each engine's SPARQL endpoint. Load = bulk load of the N-Triples file into the engine's store (s). Query times in ms: median of the warm runs (cold run in brackets); q6 is the DELETE/INSERT update, run once. Row counts that differ between engines are flagged. Geometric mean: of the warm medians of the five read queries q1-q5 (not the update), over the queries the engine answered; fewer than 5 is marked. maplib keeps its data in memory only: its load is reading the file into RAM, behind a small HTTP wrapper (engines/maplib_server.py).
+Synthetic e-commerce data and queries from Trainmarks (seed 42), run over HTTP against each engine's SPARQL endpoint. Load = bulk load of the N-Triples file into the engine's store (s). Query times in ms: median of the warm runs (cold run in brackets); q6 is the DELETE/INSERT update, run once. Row counts that differ between engines are flagged; an engine whose row count differs from the majority (at least two engines, more than half of those that answered) answered wrongly: its time is struck out and left out of its geometric mean. Geometric mean: of the warm medians of the five read queries q1-q5 (not the update), over the queries the engine answered correctly; fewer than 5 is marked. maplib keeps its data in memory only: its load is reading the file into RAM, behind a small HTTP wrapper (engines/maplib_server.py).
 
 ## medium (98,000 triples)
 

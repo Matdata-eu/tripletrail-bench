@@ -36,6 +36,7 @@ import time
 HERE = os.path.dirname(os.path.abspath(__file__))
 V2 = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, V2)
+from majority import wrong as off_majority  # noqa: E402
 from run import Sparql  # noqa: E402
 
 WORK = os.environ.get("BENCH_WORK", os.path.join(V2, "work"))
@@ -173,9 +174,12 @@ def cmd_report(_a):
              "Synthetic e-commerce data and queries from Trainmarks (seed 42), run over HTTP against "
              "each engine's SPARQL endpoint. Load = bulk load of the N-Triples file into the engine's "
              "store (s). Query times in ms: median of the warm runs (cold run in brackets); q6 is the "
-             "DELETE/INSERT update, run once. Row counts that differ between engines are flagged. "
+             "DELETE/INSERT update, run once. Row counts that differ between engines are flagged; an "
+             "engine whose row count differs from the majority (at least two engines, more than half "
+             "of those that answered) answered wrongly: its time is struck out and left out of its "
+             "geometric mean. "
              "Geometric mean: of the warm medians of the five read queries q1-q5 (not the update), "
-             "over the queries the engine answered; fewer than 5 is marked. "
+             "over the queries the engine answered correctly; fewer than 5 is marked. "
              "maplib keeps its data in memory only: its load is reading the file into RAM, behind a "
              "small HTTP wrapper (engines/maplib_server.py).", ""]
     for s in SCALES:
@@ -189,6 +193,9 @@ def cmd_report(_a):
         lines += [f"## {s} ({next(iter(recs.values()))['triples']:,} triples)", "",
                   "| | " + " | ".join(es) + " | rows |", "|---|" + "---:|" * len(es) + "---|",
                   "| load (s) | " + " | ".join(str(recs[e].get("load", {}).get("load_s", "")) for e in es) + " | |"]
+        bad = {q: off_majority({e: recs[e]["queries"][q]["rows"] for e in es
+                                if recs[e]["queries"].get(q, {}).get("status") == "ok" and "rows" in recs[e]["queries"][q]})
+               for q in QUERIES}
         for q in QUERIES + [UPDATE]:
             cells, rows = [], {}
             for e in es:
@@ -198,7 +205,8 @@ def cmd_report(_a):
                 elif q == UPDATE:
                     cells.append(fmt(r["ms"]))
                 else:
-                    cells.append(f"{fmt(r['warm']['median_ms'])} ({fmt(r['cold_ms'])})")
+                    t = f"{fmt(r['warm']['median_ms'])} ({fmt(r['cold_ms'])})"
+                    cells.append(f"~~{t}~~ wrong" if e in bad.get(q, ()) else t)
                     rows[e] = r["rows"]
             note = "" if len(set(rows.values())) <= 1 else ", ".join(f"{e}={n}" for e, n in rows.items())
             if rows and not note:
@@ -207,7 +215,8 @@ def cmd_report(_a):
         gm = []
         for e in es:
             ms = [r["warm"]["median_ms"] for q in QUERIES
-                  for r in [recs[e]["queries"].get(q, {})] if r.get("status") == "ok" and r.get("warm")]
+                  for r in [recs[e]["queries"].get(q, {})] if r.get("status") == "ok" and r.get("warm")
+                  and e not in bad.get(q, ())]
             g = fmt(statistics.geometric_mean(ms)) if ms else ""
             gm.append(g if len(ms) == len(QUERIES) or not ms else f"{g} ({len(ms)} of {len(QUERIES)})")
         lines.append("| geometric mean q1-q5 | " + " | ".join(gm) + " | |")

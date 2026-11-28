@@ -284,10 +284,11 @@ function sparqloscope(D) {
     build(ds) {
       const rows = inOrder(D.sq.filter((r) => r.dataset === ds)).map((r) => ({
         engine: r.engine, geomean_ms: num(r.geomean_ms), load_s: num(r.load_s),
-        answered: +r.answered || 0, timed_out: +r.timed_out || 0, failed: +r.failed || 0,
+        answered: +r.answered || 0, timed_out: +r.timed_out || 0, failed: +r.failed || 0, wrong: +r.wrong || 0,
       }));
       const tipLines = (r) => [[null, "Geometric mean", `${fmt(r.geomean_ms)} ms`], [null, "Load", `${fmt(r.load_s)} s`],
-        [null, "Answered", `${r.answered} of ${r.answered + r.timed_out + r.failed}`], [null, "Timed out", String(r.timed_out)]];
+        [null, "Answered", `${r.answered} of ${r.answered + r.timed_out + r.failed + r.wrong}`], [null, "Timed out", String(r.timed_out)],
+        [null, "Wrong (not in the mean)", String(r.wrong)]];
       const cats = D.cats.filter((r) => r.dataset === ds).map((r) => ({ group: r.category, engine: r.engine, v: num(r.ms) }));
       return [
         el("p", { class: "lead" }, versus(rows, { field: "geomean_ms", unit: "ms", what: "Geometric mean over the feature-isolating queries:" }),
@@ -298,12 +299,13 @@ function sparqloscope(D) {
             bars(rows.map((r) => ({ ...r, v: r.geomean_ms })), { label: (r) => `${fmt(r.v)} ms`, tip: tipLines })),
           card("sq-load", "Load time", "Bulk load into the engine's store, seconds.",
             bars(rows.map((r) => ({ ...r, v: r.load_s })), { label: (r) => `${fmt(r.v)} s`, tip: tipLines })),
-          card("sq-table", "Answers", "A query counts as timed out after the suite's limit.",
+          card("sq-table", "Answers", "A query counts as timed out after the suite's limit. Wrong: its row count, or the value of its one-row answer, differs from the majority; it is left out of the means.",
             table(rows, [
               { label: "Engine", l: true, get: (r) => name(r.engine) },
               { label: "Answered", get: (r) => String(r.answered) },
               { label: "Timed out", get: (r) => String(r.timed_out) },
               { label: "Failed", get: (r) => String(r.failed) },
+              { label: "Wrong", get: (r) => String(r.wrong) },
             ]))),
         card("sq-categories", "Geometric mean per query category", "ms per category, log scale. Hover a row for every engine.",
           dots(cats, uniq(cats.map((r) => r.group)), "ms")),
@@ -319,13 +321,14 @@ function bsbm(D) {
     sizes: sizeList(D.qmph.map((r) => r.scale), BSBM_SIZES),
     build(scale) {
       const uc = (u) => inOrder(D.qmph.filter((r) => r.scale === scale && r.usecase === u))
-        .map((r) => ({ engine: r.engine, qmph: num(r.qmph), note: r.note }));
+        .map((r) => ({ engine: r.engine, qmph: num(r.qmph), note: r.note, wrong: r.wrong }));
       const qmphBars = (u) => bars(uc(u).map((r) => ({ ...r, v: r.qmph })), {
         label: (r) => r.v == null ? "not run" : `${Math.round(r.v).toLocaleString("en")}${r.note ? " *" : ""}`,
         tip: (r) => [[null, "QMpH", r.v == null ? "not run" : Math.round(r.v).toLocaleString("en")]].concat(r.note ? [[null, r.note]] : []),
       });
-      // Full mixes only for the lead sentence: an engine that skipped templates ran a lighter mix.
-      const full = (u) => uc(u).filter((r) => !r.note);
+      // Full, correct mixes only for the lead sentence: an engine that skipped templates ran a
+      // lighter mix, and one with wrong result counts has wrong answers in its QMpH.
+      const full = (u) => uc(u).filter((r) => !r.note && !r.wrong);
       const aqet = D.aqet.filter((r) => r.scale === scale && num(r.ms));
       const geo = (u) => {
         const rows = aqet.filter((r) => r.usecase === u);
@@ -370,7 +373,8 @@ const ratioText = (r) => r >= 1 ? `${times(r)} faster than` : `${times(1 / r)} s
 function tmGeo(D, scale) {
   const q = D.tq.filter((r) => r.scale === scale);
   const isRead = (r) => !/delete|insert|update/i.test(r.query);
-  const reads = q.filter((r) => isRead(r) && num(r.warm_ms));
+  // A query whose row count differs from the majority (check "wrong") is left out.
+  const reads = q.filter((r) => isRead(r) && num(r.warm_ms) && r.check !== "wrong");
   const nq = uniq(q.filter(isRead).map((r) => r.query)).length;
   return inOrder(uniq(reads.map((r) => r.engine)).map((e) => {
     const rs = reads.filter((r) => r.engine === e);
@@ -410,7 +414,7 @@ function trainmarks(D) {
       const loads = inOrder(D.tload.filter((r) => r.scale === scale).map((r) => ({ engine: r.engine, load_s: num(r.load_s) })));
       const q = D.tq.filter((r) => r.scale === scale);
       const geo = tmGeo(D, scale);
-      const perQuery = q.map((r) => ({ group: r.query, engine: r.engine, v: num(r.warm_ms),
+      const perQuery = q.filter((r) => r.check !== "wrong").map((r) => ({ group: r.query, engine: r.engine, v: num(r.warm_ms),
         extra: num(r.cold_ms) ? ` (cold ${fmt(num(r.cold_ms))})` : "" }));
       return [
         el("p", { class: "lead" },

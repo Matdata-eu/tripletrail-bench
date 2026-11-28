@@ -8,7 +8,10 @@ CSV files (bench/v2/results/dashboard). The website reads it from a tag of this 
 
 For each dataset of each suite: TripleTrail's number, every other engine's, and how many times
 faster TripleTrail is (`speedup` > 1) or slower (< 1). Lower is better for times, higher for
-query mixes per hour. Engines that did not answer are left out. Standard library only.
+query mixes per hour. Engines that did not answer are left out, and so are wrong answers (the
+dashboard's CSV files mark them, #96): a BSBM mix with wrong result counts, and the spatial
+queries whose status is "wrong answer"; Sparqloscope's means leave such queries out already.
+Standard library only.
 """
 
 import csv
@@ -72,7 +75,8 @@ def main():
     g = {}
     for r in rows(d, "bsbm_qmph.csv"):
         v = num(r["qmph"])
-        if v:
+        # A mix with wrong result counts is no headline number (#96).
+        if v and not r.get("wrong"):
             g.setdefault(f"{r['scale']} {r['usecase']}", {})[r["engine"]] = v
     suites["bsbm_qmph"] = compare(g, "query mixes per hour", lower_is_better=False)
 

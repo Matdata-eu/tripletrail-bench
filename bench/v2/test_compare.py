@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Tests of compare.py's reference rule (tripletrail-bench#96): PostGIS when it answered, else
-the majority of the engines that answered, and never one engine alone.
+the majority of the engines that answered, and never one engine alone; and of majority.py, the
+same rule for result sizes.
 
     python3 bench/v2/test_compare.py
 """
@@ -15,6 +16,7 @@ import unittest
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import compare  # noqa: E402
+import majority  # noqa: E402
 
 QID = "agg_total_length"  # a scalars query: one number per run
 
@@ -100,6 +102,22 @@ class ReferenceRule(unittest.TestCase):
         self.assertEqual((r["tripletrail"]["mismatch"], r["tripletrail"]["other_extract"]), ("0", "1"))
         self.assertIn("other extract", r["tripletrail"]["note"])
         self.assertEqual((r["qlever"]["match"], r["graphdb"]["match"]), ("1", "1"))
+
+
+class MajorityOfSizes(unittest.TestCase):
+    """majority.wrong, the same rule for Sparqloscope's and Trainmarks' result sizes."""
+
+    def test_the_odd_one_out_is_wrong(self):
+        self.assertEqual(majority.wrong({"tripletrail": 3, "qlever": 3, "jena": 4}), {"jena"})
+        self.assertEqual(majority.wrong({"tripletrail": 4, "qlever": 3, "jena": 3}), {"tripletrail"})
+
+    def test_no_majority_says_nothing(self):
+        self.assertEqual(majority.wrong({"tripletrail": 3, "qlever": 4}), set())
+        self.assertEqual(majority.wrong({"tripletrail": 1, "qlever": 1, "jena": 2, "graphdb": 2}), set())
+        self.assertEqual(majority.wrong({"tripletrail": 1, "qlever": 2, "jena": 3}), set())
+
+    def test_one_engine_alone_is_never_right_by_default(self):
+        self.assertEqual(majority.wrong({"tripletrail": 3}), set())
 
 
 if __name__ == "__main__":

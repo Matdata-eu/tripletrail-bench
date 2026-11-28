@@ -9,12 +9,13 @@ carries the dashboard files that match it. Refreshing the dashboard is then: upl
 to it (see bench/v2/results/dashboard/README.md).
 
 Files (plain CSV, no quoted fields):
-  summary.csv            Sparqloscope: dataset,engine,geomean_ms,load_s,answered,timed_out,failed
+  summary.csv            Sparqloscope: dataset,engine,geomean_ms,load_s,answered,timed_out,failed,wrong;
+                         wrong = queries whose answer differs from the majority, not in the mean
   categories.csv         Sparqloscope: dataset,category,engine,ms
-  bsbm_qmph.csv          BSBM: scale,usecase,engine,qmph,note
+  bsbm_qmph.csv          BSBM: scale,usecase,engine,qmph,note,wrong (templates with wrong result counts)
   bsbm_aqet.csv          BSBM: scale,usecase,query,engine,ms
   trainmarks_load.csv    Trainmarks: scale,engine,load_s
-  trainmarks_queries.csv Trainmarks: scale,query,engine,warm_ms,cold_ms
+  trainmarks_queries.csv Trainmarks: scale,query,engine,warm_ms,cold_ms,check ("wrong": rows differ from the majority)
   spatial_load.csv       bench v2: dataset,engine,load_s,disk_gib,triples
   spatial_queries.csv    bench v2: dataset,family,query,engine,status,cold_ms,p50_ms,p95_ms,check,check_note;
                          check is compare.py's verdict (ok, mismatch, unchecked); a mismatch has the
@@ -39,6 +40,7 @@ except ImportError:  # Sparqloscope's files are YAML; without PyYAML its two CSV
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from compare import verdicts  # noqa: E402
+from majority import sparqloscope_answer, sparqloscope_failed, wrong as off_majority  # noqa: E402
 ENGINES = ["tripletrail", "oxigraph", "qlever", "jena", "graphdb", "maplib", "postgis"]
 # bench v2 datasets in the order the dashboard shows them; any other dataset folder follows.
 V2_DATASETS = ["small", "large", "osm_norway", "osm_benelux", "osm_europe", "osm_planet"]
@@ -86,6 +88,9 @@ def ordered(names):
 
 
 def sparqloscope(res):
+    """Per dataset and engine the geometric mean over the queries (failures and timeouts count as
+    2 x the timeout); a query whose answer differs from the majority (row count, or the value of
+    a one-row answer: suites/sparqloscope's report) is counted under wrong and left out (#96)."""
     summary, cats = [], []
     for d in sorted(glob.glob(os.path.join(res, "sparqloscope", "*", ""))):
         ds = os.path.basename(os.path.dirname(d))
@@ -93,13 +98,22 @@ def sparqloscope(res):
         for f in glob.glob(os.path.join(d, f"{ds}.*.results.yaml")):
             doc = yaml.safe_load(open(f))
             docs[doc.get("engine") or f.split(".")[-3]] = doc
+        answers = {}
+        for e, doc in docs.items():
+            for r in doc["queries"]:
+                if not sparqloscope_failed(r):
+                    answers.setdefault(r["query"], {})[e] = sparqloscope_answer(r)
+        bad = {q: off_majority(a) for q, a in answers.items()}
         for e in ordered(docs):
             doc = docs[e]
             to = doc.get("timeout", 180)
-            times, ok, fail, tout, bycat = [], 0, 0, 0, {}
+            times, ok, fail, tout, wrong, bycat = [], 0, 0, 0, 0, {}
             for r in doc["queries"]:
                 t = r.get("runtime_info", {}).get("client_time", 0)
                 res_ = r.get("results")
+                if e in bad.get(r["query"], ()):
+                    wrong += 1
+                    continue
                 if isinstance(res_, str) and res_.startswith("Exception"):
                     msg = res_.lower()
                     if "timeout" in msg or "timed out" in msg or "cancel" in msg:
@@ -112,7 +126,7 @@ def sparqloscope(res):
                 times.append(t)
                 bycat.setdefault(category(r["query"]), []).append(t)
             load = doc.get("load", {}).get("load_s")
-            summary.append([ds, e, num(gmean(times) * 1000), num(load), ok, tout, fail])
+            summary.append([ds, e, num(gmean(times) * 1000), num(load), ok, tout, fail, wrong])
             for c, _ in CATEGORIES + [("other", "")]:
                 if c in bycat:
                     cats.append([ds, c, e, num(gmean(bycat[c]) * 1000)])
@@ -122,6 +136,9 @@ def sparqloscope(res):
 def bsbm(res):
     sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "suites", "bsbm"))
     from run_bsbm import WRONG_CAUSE, note_of, wrong_counts
+    # An engine with wrong result counts in a use case has them in its QMpH: the mix cannot be
+    # split, so the row says which templates (column wrong) and summary.py leaves it out; their
+    # average times are left out of bsbm_aqet.csv (#96).
     qmph, aqet = [], []
     for d in sorted(glob.glob(os.path.join(res, "bsbm", "bsbm-*", "")), key=lambda p: int(p.rstrip("/").split("-")[-1])):
         scale = os.path.basename(os.path.dirname(d))
@@ -135,12 +152,14 @@ def bsbm(res):
                 if e in wrong:
                     note = "; ".join(filter(None, [note, f"wrong result counts on {' '.join(wrong[e])}"
                                                          + (f" ({WRONG_CAUSE[e]})" if e in WRONG_CAUSE else "")]))
-                qmph.append([scale, uc, e, num(u.get("qmph"), 2) if u else "", clean(note)])
+                qmph.append([scale, uc, e, num(u.get("qmph"), 2) if u else "", clean(note), " ".join(wrong.get(e, []))])
                 if not u or uc == "update":
                     continue
                 for q, s in sorted(u.get("queries", {}).items(), key=lambda kv: int(kv[0])):
                     # Explore Q9 and Q12 (DESCRIBE, CONSTRUCT) are left out: QLever skips them.
                     if uc == "explore" and q in ("9", "12"):
+                        continue
+                    if f"Q{q}" in wrong.get(e, []):
                         continue
                     if s.get("aqet"):
                         aqet.append([scale, uc, f"Q{q}", e, num(s["aqet"] * 1000)])
@@ -148,10 +167,18 @@ def bsbm(res):
 
 
 def trainmarks(res):
+    """Load times, and per query the warm median; check is "wrong" when the engine's row count
+    differs from the majority's, and the dashboard leaves that time out (#96)."""
     load, queries = [], []
     for scale in ["medium", "large", "xlarge"]:
         d = os.path.join(res, "trainmarks", scale)
         recs = {os.path.basename(f)[:-5]: json.load(open(f)) for f in glob.glob(os.path.join(d, "*.json"))}
+        rows = {}
+        for e, r in recs.items():
+            for q, s in r.get("queries", {}).items():
+                if s.get("status") == "ok" and "rows" in s:
+                    rows.setdefault(q, {})[e] = s["rows"]
+        bad = {q: off_majority(a) for q, a in rows.items()}
         for e in ordered(recs):
             r = recs[e]
             if r.get("load", {}).get("load_s") is not None:
@@ -165,7 +192,7 @@ def trainmarks(res):
                 if warm is None:  # the update query (q6) runs once and records only "ms"
                     warm = s.get("ms")
                 cold = s.get("cold_ms") if s.get("warm") else None
-                queries.append([scale, q, e, num(warm), num(cold)])
+                queries.append([scale, q, e, num(warm), num(cold), "wrong" if e in bad.get(q, ()) else ""])
     return load, queries
 
 
@@ -305,16 +332,17 @@ def main():
     os.makedirs(out, exist_ok=True)
     if yaml:
         summary, cats = sparqloscope(res)
-        write(out, "summary.csv", ["dataset", "engine", "geomean_ms", "load_s", "answered", "timed_out", "failed"], summary)
+        write(out, "summary.csv", ["dataset", "engine", "geomean_ms", "load_s", "answered", "timed_out", "failed", "wrong"],
+              summary)
         write(out, "categories.csv", ["dataset", "category", "engine", "ms"], cats)
     else:
         print("PyYAML missing: summary.csv and categories.csv (Sparqloscope) not rewritten", file=sys.stderr)
     qmph, aqet = bsbm(res)
-    write(out, "bsbm_qmph.csv", ["scale", "usecase", "engine", "qmph", "note"], qmph)
+    write(out, "bsbm_qmph.csv", ["scale", "usecase", "engine", "qmph", "note", "wrong"], qmph)
     write(out, "bsbm_aqet.csv", ["scale", "usecase", "query", "engine", "ms"], aqet)
     load, queries = trainmarks(res)
     write(out, "trainmarks_load.csv", ["scale", "engine", "load_s"], load)
-    write(out, "trainmarks_queries.csv", ["scale", "query", "engine", "warm_ms", "cold_ms"], queries)
+    write(out, "trainmarks_queries.csv", ["scale", "query", "engine", "warm_ms", "cold_ms", "check"], queries)
     load, queries = v2(res)
     write(out, "spatial_load.csv", ["dataset", "engine", "load_s", "disk_gib", "triples"], load)
     write(out, "spatial_queries.csv", ["dataset", "family", "query", "engine", "status", "cold_ms", "p50_ms", "p95_ms",
